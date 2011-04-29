@@ -19,7 +19,65 @@
                name="applicationCSS"
                value="platform:/plugin/at.bestsolution.e4.addressbook.swt.application/css/default.css">
          </property>
+         <property
+               name="cssTheme"
+               value="org.eclipse.e4.ui.css.theme.e4_default">
+         </property>
+         <property
+				name="applicationCSSResources"
+          value="platform:/plugin/at.bestsolution.e4.addressbook.app/images/">
+		  </property>
       </product>
    </extension>
-
+   <extension
+         point="org.eclipse.e4.ui.css.swt.theme">
+      <theme
+            basestylesheeturi="css/e4_default.css"
+            id="org.eclipse.e4.ui.css.theme.e4_default.noos"
+            label="Default Theme">
+      </theme>
+      <theme
+            basestylesheeturi="css/e4_classic_winxp.css"
+            id="org.eclipse.e4.ui.css.theme.e4_classic"
+            label="Classic">
+      </theme>
+      <theme
+            basestylesheeturi="css/e4_default_gtk.css"
+            id="org.eclipse.e4.ui.css.theme.e4_default"
+            label="GTK"
+            os="linux">
+      </theme>
+      <theme
+            basestylesheeturi="css/e4_default_mac.css"
+            id="org.eclipse.e4.ui.css.theme.e4_default"
+            label="Mac"
+            os="macosx">
+      </theme>
+      <theme
+            basestylesheeturi="css/e4_default_win7.css"
+            id="org.eclipse.e4.ui.css.theme.e4_default"
+            label="Win7"
+            os="win32"
+            os_version="6.1">
+      </theme>
+            <theme
+                  basestylesheeturi="css/e4_default_winxp_blu.css"
+                  id="org.eclipse.e4.ui.css.theme.e4_default"
+                  label="Win XP Blue"
+                  os="win32">
+      </theme>
+	  <theme
+            basestylesheeturi="css/e4_default_winxp_olv.css"
+            id="org.eclipse.e4.ui.css.theme.e4_default.xpolive"
+            label="Win XP Olive"
+            os="win32">
+      </theme>
+   <theme
+         basestylesheeturi="css/e4_classic_win7.css"
+         id="org.eclipse.e4.ui.css.theme.e4_classic"
+         label="Win 7 Classic"
+         os="win32"
+         os_version="6.1">
+   </theme>
+      </extension>
 </plugin>
