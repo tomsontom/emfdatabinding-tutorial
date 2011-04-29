@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            name="at.bestsolution.e4.addressbook.swt.application"
+            application="org.eclipse.e4.ui.workbench.swt.E4Application">
+         <property
+               name="appName"
+               value="at.bestsolution.e4.addressbook.swt.application">
+         </property>
+         <property
+               name="applicationXMI"
+               value="at.bestsolution.e4.addressbook.swt.application/Application.e4xmi">
+         </property>
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/at.bestsolution.e4.addressbook.swt.application/css/default.css">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

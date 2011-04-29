@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_SpbWkHJZEeCrcM0linhcsg" elementId="org.eclipse.e4.ide.application" bindingContexts="_SpbWkXJZEeCrcM0linhcsg">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_SpbWp3JZEeCrcM0linhcsg" label="at.bestsolution.e4.addressbook.swt.application" width="500" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_SpbWr3JZEeCrcM0linhcsg">
+      <children xsi:type="advanced:Perspective" xmi:id="_SpbWsHJZEeCrcM0linhcsg">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_SpbWsXJZEeCrcM0linhcsg">
+          <children xsi:type="basic:PartStack" xmi:id="_Spb9oHJZEeCrcM0linhcsg"/>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_SpbWqHJZEeCrcM0linhcsg" elementId="menu:org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_SpbWqXJZEeCrcM0linhcsg" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_SpbWqnJZEeCrcM0linhcsg" label="Open" iconURI="platform:/plugin/at.bestsolution.e4.addressbook.swt.application/icons/sample.gif" command="_SpbWnnJZEeCrcM0linhcsg"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_SpbWq3JZEeCrcM0linhcsg" label="Save" iconURI="platform:/plugin/at.bestsolution.e4.addressbook.swt.application/icons/save_edit.gif" command="_SpbWoXJZEeCrcM0linhcsg"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_SpbWrHJZEeCrcM0linhcsg" label="Quit" command="_SpbWmnJZEeCrcM0linhcsg"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_SpbWrXJZEeCrcM0linhcsg" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_SpbWrnJZEeCrcM0linhcsg" label="About" command="_SpbWpHJZEeCrcM0linhcsg"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_Spb9oXJZEeCrcM0linhcsg">
+      <children xsi:type="menu:ToolBar" xmi:id="_Spb9onJZEeCrcM0linhcsg" elementId="toolbar:org.eclipse.ui.main.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Spb9o3JZEeCrcM0linhcsg" iconURI="platform:/plugin/at.bestsolution.e4.addressbook.swt.application/icons/sample.gif" command="_SpbWnnJZEeCrcM0linhcsg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Spb9pHJZEeCrcM0linhcsg" iconURI="platform:/plugin/at.bestsolution.e4.addressbook.swt.application/icons/save_edit.gif" command="_SpbWoXJZEeCrcM0linhcsg"/>
+      </children>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_SpbWm3JZEeCrcM0linhcsg" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.swt.application/.handlers.QuitHandler" command="_SpbWmnJZEeCrcM0linhcsg"/>
+  <handlers xmi:id="_SpbWn3JZEeCrcM0linhcsg" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.swt.application/.handlers.OpenHandler" command="_SpbWnnJZEeCrcM0linhcsg"/>
+  <handlers xmi:id="_SpbWonJZEeCrcM0linhcsg" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.swt.application/.handlers.SaveHandler" command="_SpbWoXJZEeCrcM0linhcsg"/>
+  <handlers xmi:id="_SpbWpXJZEeCrcM0linhcsg" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.swt.application/.handlers.AboutHandler" command="_SpbWpHJZEeCrcM0linhcsg"/>
+  <bindingTables xmi:id="_SpbWnHJZEeCrcM0linhcsg" bindingContext="_SpbWkXJZEeCrcM0linhcsg">
+    <bindings xmi:id="_SpbWnXJZEeCrcM0linhcsg" keySequence="Ctrl+Q" command="_SpbWmnJZEeCrcM0linhcsg"/>
+    <bindings xmi:id="_SpbWoHJZEeCrcM0linhcsg" keySequence="Ctrl+O" command="_SpbWnnJZEeCrcM0linhcsg"/>
+    <bindings xmi:id="_SpbWo3JZEeCrcM0linhcsg" keySequence="Ctrl+S" command="_SpbWoXJZEeCrcM0linhcsg"/>
+    <bindings xmi:id="_SpbWpnJZEeCrcM0linhcsg" keySequence="Ctrl+A" command="_SpbWpHJZEeCrcM0linhcsg"/>
+  </bindingTables>
+  <rootContext xmi:id="_SpbWkXJZEeCrcM0linhcsg" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_SpbWknJZEeCrcM0linhcsg" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_SpbWk3JZEeCrcM0linhcsg" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_SpbWmnJZEeCrcM0linhcsg" elementId="at.bestsolution.e4.addressbook.swt.application.quitCommand" commandName="quitCommand"/>
+  <commands xmi:id="_SpbWnnJZEeCrcM0linhcsg" elementId="at.bestsolution.e4.addressbook.swt.application.openCommand" commandName="openCommand"/>
+  <commands xmi:id="_SpbWoXJZEeCrcM0linhcsg" elementId="at.bestsolution.e4.addressbook.swt.application.saveCommand" commandName="saveCommand"/>
+  <commands xmi:id="_SpbWpHJZEeCrcM0linhcsg" elementId="at.bestsolution.e4.addressbook.swt.application.aboutCommand" commandName="aboutCommand"/>
+  <addons xmi:id="_SpbWlHJZEeCrcM0linhcsg" elementId="org.eclipse.e4.core.commands.service" contributionURI="platform:/plugin/org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_SpbWlXJZEeCrcM0linhcsg" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="platform:/plugin/org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_SpbWlnJZEeCrcM0linhcsg" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="platform:/plugin/org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_SpbWl3JZEeCrcM0linhcsg" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="platform:/plugin/org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_SpbWmHJZEeCrcM0linhcsg" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="platform:/plugin/org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_SpbWmXJZEeCrcM0linhcsg" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="platform:/plugin/org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>
