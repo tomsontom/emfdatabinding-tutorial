@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ASCII"?>
+<example:AddressBook xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:example="http://www.eclipse.org/example" xsi:schemaLocation="http://www.eclipse.org/example AddressBook.ecore">
+  <persons firstname="Tom" lastname="Schindl">
+    <addresses street="Hauptstrasse 10" zip="6020" city="Innsbruck" country="//@countries.2" federalState="//@countries.2/@federalStates.6"/>
+    <addresses street="Eduard-Bodemgasse 5-7" zip="6020" city="Innsbruck" country="//@countries.2" federalState="//@countries.2/@federalStates.6" type="BUSINESS"/>
+  </persons>
+  <persons firstname="Ed" lastname="Merks">
+    <addresses street="Mainstreet 10" zip="98660" city="Vancouver" country="//@countries.0" federalState="//@countries.0/@federalStates.0"/>
+  </persons>
+  <persons firstname="Eike" lastname="Stepper">
+    <addresses street="Hauptstrasse 10" zip="03570" city="Berlin" country="//@countries.1" federalState="//@countries.1/@federalStates.2"/>
+  </persons>
+  <countries name="Canada">
+    <federalStates name="British Colombia"/>
+    <federalStates name="Yukon"/>
+    <federalStates name="Northwest Territories"/>
+    <federalStates name="Nunavut"/>
+    <federalStates name="Alberta"/>
+    <federalStates name="Saskatchewan"/>
+    <federalStates name="Manitoba"/>
+    <federalStates name="Ontario"/>
+    <federalStates name="Quebec"/>
+    <federalStates name="New Brunswick"/>
+    <federalStates name="Nova Scotia"/>
+    <federalStates name="Prince Edward Island"/>
+    <federalStates name="Newfoundland and Labrador"/>
+  </countries>
+  <countries name="Germany">
+    <federalStates name="Baden-W&#xfc;rttemberg"/>
+    <federalStates name="Bavaria"/>
+    <federalStates name="Berlin"/>
+    <federalStates name="Brandenburg"/>
+    <federalStates name="Bremen"/>
+    <federalStates name="Hamburg"/>
+    <federalStates name="Hesse"/>
+    <federalStates name="Mecklenburg-Vorpommern"/>
+    <federalStates name="Lower Saxony"/>
+    <federalStates name="North Rhine-Westphalia"/>
+    <federalStates name="Rhineland-Palatinate"/>
+    <federalStates name="Saarland"/>
+    <federalStates name="Saxony"/>
+    <federalStates name="Saxony-Anhalt"/>
+    <federalStates name="Schleswig-Holstein"/>
+    <federalStates name="Thuringia"/>
+  </countries>
+  <countries name="Austria">
+    <federalStates name="Burgenland"/>
+    <federalStates name="Carinthia"/>
+    <federalStates name="Lower Austria"/>
+    <federalStates name="Upper Austria"/>
+    <federalStates name="Salzburg"/>
+    <federalStates name="Styria"/>
+    <federalStates name="Tyrol"/>
+    <federalStates name="Vorarlberg"/>
+    <federalStates name="Vienna"/>
+  </countries>
+</example:AddressBook>

@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Swing
+Bundle-SymbolicName: at.bestsolution.e4.addressbook.ui.swing
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ClassPath: libs/miglayout15-swing.jar,
+ .
+Require-Bundle: org.eclipse.core.databinding;bundle-version="1.4.0",
+ org.eclipse.core.databinding.property;bundle-version="1.4.0",
+ org.eclipse.ufacekit.ui.swing.databinding;bundle-version="1.0.0",
+ org.eclipse.emf.databinding;bundle-version="1.2.0",
+ at.bestsolution.e4.addressbook.model;bundle-version="1.0.0",
+ javax.inject;bundle-version="1.0.0",
+ org.eclipse.emf.ecore.xmi;bundle-version="2.5.0"
