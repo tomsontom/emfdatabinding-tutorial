@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_eXDhoHMlEeCGL8zBvoJgQg">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_gq_TIHMlEeCGL8zBvoJgQg" featurename="commands" parentElementId="org.eclipse.e4.ide.application">
+    <elements xsi:type="commands:Command" xmi:id="_til3sHMlEeCGL8zBvoJgQg" elementId="addressbook.command.undo" commandName="Undo"/>
+    <elements xsi:type="commands:Command" xmi:id="_yD-YMHMlEeCGL8zBvoJgQg" elementId="addressbook.command.redo" commandName="Redo"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_1-fF8HMlEeCGL8zBvoJgQg" featurename="handlers" parentElementId="org.eclipse.e4.ide.application">
+    <elements xsi:type="commands:Handler" xmi:id="_8ZKqYHMlEeCGL8zBvoJgQg" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.ui.undo/at.bestsolution.e4.addressbook.ui.undo.UndoHandler" command="_til3sHMlEeCGL8zBvoJgQg"/>
+    <elements xsi:type="commands:Handler" xmi:id="_AUvIEHMmEeCGL8zBvoJgQg" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.ui.undo/at.bestsolution.e4.addressbook.ui.undo.RedoHandler" command="_yD-YMHMlEeCGL8zBvoJgQg"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_DmfzwHMmEeCGL8zBvoJgQg" featurename="children" parentElementId="org.eclipse.ui.main.toolbar">
+    <elements xsi:type="menu:ToolBar" xmi:id="_YAJ0gHMmEeCGL8zBvoJgQg">
+      <children xsi:type="menu:HandledToolItem" xmi:id="_Y3ynIHMmEeCGL8zBvoJgQg" iconURI="platform:/plugin/at.bestsolution.e4.addressbook.ui.undo/icons/edit-undo.png" tooltip="Undo" command="_til3sHMlEeCGL8zBvoJgQg"/>
+      <children xsi:type="menu:HandledToolItem" xmi:id="_cAuG8HMmEeCGL8zBvoJgQg" iconURI="platform:/plugin/at.bestsolution.e4.addressbook.ui.undo/icons/edit-redo.png" tooltip="Redo" command="_yD-YMHMlEeCGL8zBvoJgQg"/>
+    </elements>
+  </fragments>
+</fragment:ModelFragments>
