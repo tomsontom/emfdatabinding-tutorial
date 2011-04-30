@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: UFace - UI - Swing - Databinding
+Bundle-SymbolicName: org.eclipse.ufacekit.ui.swing.databinding;singleton:=true
+Bundle-Version: 1.0.0.SNAPSHOT
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.ufacekit.ui.swing.custom;version="1.0.0";x-internal:=true,
+ org.eclipse.ufacekit.ui.swing.databinding.internal.swing;version="1.0.0";x-internal:=true,
+ org.eclipse.ufacekit.ui.swing.databinding.swing;version="1.0.0",
+ org.eclipse.ufacekit.ui.swing.databinding.swing.model;version="1.0.0"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Import-Package: org.eclipse.core.databinding,
+ org.eclipse.core.databinding.beans,
+ org.eclipse.core.databinding.conversion,
+ org.eclipse.core.databinding.observable,
+ org.eclipse.core.databinding.observable.list,
+ org.eclipse.core.databinding.observable.map,
+ org.eclipse.core.databinding.observable.masterdetail,
+ org.eclipse.core.databinding.observable.set,
+ org.eclipse.core.databinding.observable.value,
+ org.eclipse.core.databinding.property,
+ org.eclipse.core.databinding.property.value
+Require-Bundle: org.eclipse.equinox.common;bundle-version="3.4.0"
+Bundle-ClassPath: .
