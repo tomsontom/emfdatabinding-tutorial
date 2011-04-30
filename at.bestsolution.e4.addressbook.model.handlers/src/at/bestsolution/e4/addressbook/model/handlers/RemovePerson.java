@@ -14,7 +14,7 @@
  *
  * $Id: EMF_codetemplates.xml,v 1.1 2008/05/06 20:12:20 nickb Exp $
  */
-package at.bestsolution.e4.addressbook.swt.application.handlers;
+package at.bestsolution.e4.addressbook.model.handlers;
 
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;

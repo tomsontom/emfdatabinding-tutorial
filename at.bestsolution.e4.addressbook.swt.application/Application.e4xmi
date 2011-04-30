@@ -18,9 +18,9 @@
       </children>
     </trimBars>
   </children>
-  <handlers xmi:id="_SofdgG9bEeCzmbMi5UEt7g" elementId="addressbook.handler.newperson" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.swt.application/at.bestsolution.e4.addressbook.swt.application.handlers.NewPerson" command="_o9JLUG9bEeCzmbMi5UEt7g"/>
-  <handlers xmi:id="_ZE2c8G9bEeCzmbMi5UEt7g" elementId="addressbook.handler.removeperson" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.swt.application/at.bestsolution.e4.addressbook.swt.application.handlers.RemovePerson" command="_uwMvEG9bEeCzmbMi5UEt7g"/>
-  <handlers xmi:id="_dkROkG9bEeCzmbMi5UEt7g" elementId="addressbook.handler.saveaddressbook" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.swt.application/at.bestsolution.e4.addressbook.swt.application.handlers.SaveAddressBook" command="_gvIBAG9bEeCzmbMi5UEt7g"/>
+  <handlers xmi:id="_SofdgG9bEeCzmbMi5UEt7g" elementId="addressbook.handler.newperson" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.model.handlers/at.bestsolution.e4.addressbook.model.handlers.NewPerson" command="_o9JLUG9bEeCzmbMi5UEt7g"/>
+  <handlers xmi:id="_ZE2c8G9bEeCzmbMi5UEt7g" elementId="addressbook.handler.removeperson" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.model.handlers/at.bestsolution.e4.addressbook.model.handlers.RemovePerson" command="_uwMvEG9bEeCzmbMi5UEt7g"/>
+  <handlers xmi:id="_dkROkG9bEeCzmbMi5UEt7g" elementId="addressbook.handler.saveaddressbook" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.model.handlers/at.bestsolution.e4.addressbook.model.handlers.SaveAddressBook" command="_gvIBAG9bEeCzmbMi5UEt7g"/>
   <bindingTables xmi:id="_x6ehfG9VEeCUGttmLY81_A" bindingContext="_x6ehcW9VEeCUGttmLY81_A"/>
   <rootContext xmi:id="_x6ehcW9VEeCUGttmLY81_A" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
     <children xmi:id="_x6ehcm9VEeCUGttmLY81_A" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
