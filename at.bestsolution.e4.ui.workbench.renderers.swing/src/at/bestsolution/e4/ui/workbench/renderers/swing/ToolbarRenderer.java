@@ -19,6 +19,8 @@ public class ToolbarRenderer extends SwingPartRenderer {
 
 	@Override
 	public Object createWidget(MUIElement element, Object parent) {
+		System.err.println("Creating widget: " + element);
+		
 		JToolBar bar = new JToolBar();
 		bar.setRollover(true);
 		bar.setFloatable(false);

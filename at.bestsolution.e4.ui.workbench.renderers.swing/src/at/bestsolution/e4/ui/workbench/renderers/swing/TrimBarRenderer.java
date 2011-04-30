@@ -3,6 +3,7 @@ package at.bestsolution.e4.ui.workbench.renderers.swing;
 import java.awt.BorderLayout;
 import java.awt.Component;
 
+import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 
 import org.eclipse.e4.ui.model.application.ui.MElementContainer;
@@ -10,15 +11,13 @@ import org.eclipse.e4.ui.model.application.ui.MUIElement;
 import org.eclipse.e4.ui.model.application.ui.MUILabel;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 
-import at.bestsolution.e4.ui.workbench.renderers.swing.layouts.SwingFillLayout;
-
 @SuppressWarnings("restriction")
 public class TrimBarRenderer extends SwingPartRenderer {
 
 	@Override
 	public Object createWidget(MUIElement element, Object parent) {
 		JPanel bar = new JPanel();
-		bar.setLayout(new SwingFillLayout());
+		bar.setLayout(new BoxLayout(bar, BoxLayout.X_AXIS));
 		((JPanel)parent).add(bar, BorderLayout.PAGE_START);
 		return bar;
 	}
