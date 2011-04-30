@@ -115,6 +115,13 @@ public class PersonForm extends JPanel {
 		businessAddressForm = new AddressForm();
 		panel.add(businessAddressForm, BorderLayout.CENTER);
 	}
+	
+	@Inject
+	public PersonForm(JPanel parent) {
+		this();
+		parent.setLayout(new BorderLayout());
+		parent.add(this,BorderLayout.CENTER);
+	}
 
 	@PostConstruct
 	private void init(@Optional EditingDomain editingDomain, AddressBook book, @Optional Person person) {
@@ -258,8 +265,8 @@ public class PersonForm extends JPanel {
 	}
 
 	@Inject
-	void setPerson(Person person) {
-		if( master == null ) {
+	void setPerson(@Optional Person person) {
+		if( master != null ) {
 			master.setValue(person);	
 		}
 	}

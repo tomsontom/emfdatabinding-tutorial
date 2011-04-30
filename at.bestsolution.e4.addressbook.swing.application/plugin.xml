@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            name="at.bestsolution.e4.addressbook.swing.application"
+            application="at.bestsolution.e4.ui.workbench.swing.E4Application">
+         <property
+               name="appName"
+               value="at.bestsolution.e4.addressbook.swing.application">
+         </property>
+         <property
+               name="applicationXMI"
+               value="at.bestsolution.e4.addressbook.swing.application/Application.e4xmi">
+         </property>
+		  <property
+				name="lifeCycleURI"
+          		value="platform:/plugin/at.bestsolution.e4.addressbook.swing.application/at.bestsolution.e4.addressbook.swing.application.FileSelector">
+		  </property>
+      </product>
+   </extension>
+
+</plugin>

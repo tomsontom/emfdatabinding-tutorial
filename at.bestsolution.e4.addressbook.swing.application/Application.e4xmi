@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmi:id="_9Dp4MXMtEeCJHNm5zvSRcQ" elementId="org.eclipse.e4.ide.application" bindingContexts="_9Dp4MnMtEeCJHNm5zvSRcQ">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_9DsUcHMtEeCJHNm5zvSRcQ" label="at.bestsolution.e4.addressbook.swing.application" width="500" height="400">
+    <children xsi:type="basic:PartSashContainer" xmi:id="_aIvtIHMwEeCJHNm5zvSRcQ">
+      <children xsi:type="basic:PartStack" xmi:id="_b4TmQHMwEeCJHNm5zvSRcQ">
+        <children xsi:type="basic:Part" xmi:id="_dolREHMwEeCJHNm5zvSRcQ" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.ui.swing/at.bestsolution.e4.addressbook.ui.swing.PersonList" label="Person List"/>
+      </children>
+      <children xsi:type="basic:PartStack" xmi:id="_cedAQHMwEeCJHNm5zvSRcQ">
+        <children xsi:type="basic:Part" xmi:id="_eDJGIHMwEeCJHNm5zvSRcQ" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.ui.swing/at.bestsolution.e4.addressbook.ui.swing.PersonForm" label="Person Detail"/>
+      </children>
+    </children>
+    <mainMenu xmi:id="_9Ds7gHMtEeCJHNm5zvSRcQ" elementId="menu:org.eclipse.ui.main.menu"/>
+  </children>
+  <bindingTables xmi:id="_9DrGUHMtEeCJHNm5zvSRcQ" bindingContext="_9Dp4MnMtEeCJHNm5zvSRcQ"/>
+  <rootContext xmi:id="_9Dp4MnMtEeCJHNm5zvSRcQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_9Dp4M3MtEeCJHNm5zvSRcQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_9Dp4NHMtEeCJHNm5zvSRcQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <addons xmi:id="_9DqfQHMtEeCJHNm5zvSRcQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="platform:/plugin/org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_9DqfQXMtEeCJHNm5zvSRcQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="platform:/plugin/org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_9DqfQ3MtEeCJHNm5zvSRcQ" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="platform:/plugin/org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_9DqfRHMtEeCJHNm5zvSRcQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="platform:/plugin/org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+</application:Application>

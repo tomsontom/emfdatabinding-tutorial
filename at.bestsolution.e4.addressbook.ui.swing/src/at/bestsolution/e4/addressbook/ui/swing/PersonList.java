@@ -19,6 +19,7 @@ package at.bestsolution.e4.addressbook.ui.swing;
 import java.awt.BorderLayout;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JPanel;
@@ -67,6 +68,13 @@ public class PersonList extends JPanel {
 		scrollPane.setViewportView(w_list);
 	}
 
+	@Inject
+	public PersonList(JPanel parent) {
+		this();
+		parent.setLayout(new BorderLayout());
+		parent.add(this,BorderLayout.CENTER);
+	}
+	
 	@PostConstruct
 	void init(AddressBook book, final PersonSelectionPublisher personService) {
 		{
