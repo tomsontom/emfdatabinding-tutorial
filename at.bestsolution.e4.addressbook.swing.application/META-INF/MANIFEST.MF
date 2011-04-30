@@ -19,7 +19,8 @@ Require-Bundle: javax.inject;bundle-version="1.0.0",
  org.eclipse.e4.core.commands;bundle-version="0.9.0",
  at.bestsolution.e4.addressbook.ui.swing;bundle-version="1.0.0",
  at.bestsolution.e4.addressbook.model;bundle-version="1.0.0",
- org.eclipse.ufacekit.ui.swing.layouts;bundle-version="1.0.0"
+ org.eclipse.ufacekit.ui.swing.layouts;bundle-version="1.0.0",
+ at.bestsolution.e4.addressbook.model.handlers;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: org.osgi.framework;version="1.3.0"
 Bundle-ActivationPolicy: lazy
