@@ -18,10 +18,10 @@ package at.bestsolution.e4.addressbook.swt.application.handlers;
 
 import org.eclipse.e4.core.di.annotations.Execute;
 
-public class RemovePerson
-{
-  @Execute
-  public void removePerson() {
-	  System.err.println("Execute Remove Person");
-  }
+@SuppressWarnings("restriction")
+public class RemovePerson {
+	@Execute
+	public void removePerson() {
+		System.err.println("Execute Remove Person");
+	}
 }

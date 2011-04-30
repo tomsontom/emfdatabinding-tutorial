@@ -18,24 +18,11 @@ package at.bestsolution.e4.addressbook.ui.swt;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import javax.inject.Named;
 
 import org.eclipse.core.databinding.observable.Realm;
 import org.eclipse.core.databinding.observable.map.IObservableMap;
 import org.eclipse.core.databinding.observable.value.IValueChangeListener;
 import org.eclipse.core.databinding.observable.value.ValueChangeEvent;
-import org.eclipse.jface.databinding.swt.SWTObservables;
-import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
-import org.eclipse.jface.databinding.viewers.ObservableMapLabelProvider;
-import org.eclipse.jface.databinding.viewers.ViewerProperties;
-import org.eclipse.jface.viewers.ListViewer;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.FillLayout;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.List;
-import org.eclipse.swt.widgets.Shell;
-
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.IEMFListProperty;
@@ -43,6 +30,17 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.jface.databinding.swt.SWTObservables;
+import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
+import org.eclipse.jface.databinding.viewers.ObservableMapLabelProvider;
+import org.eclipse.jface.databinding.viewers.ViewerProperties;
+import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Table;
 
 import at.bestsolution.e4.addressbook.model.addressbook.AddressBook;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressbookPackage;
@@ -51,7 +49,7 @@ import at.bestsolution.e4.addressbook.ui.services.PersonSelectionPublisher;
 
 public class PersonList extends Composite {
 
-	private List w_list;
+	private Table w_list;
 
 	/**
 	 * Create the composite.
@@ -63,7 +61,8 @@ public class PersonList extends Composite {
 		super(parent, style);
 		setLayout(new FillLayout(SWT.HORIZONTAL));
 
-		w_list = new List(this, SWT.H_SCROLL | SWT.V_SCROLL);
+		w_list = new Table(this, SWT.H_SCROLL | SWT.V_SCROLL
+				| SWT.FULL_SELECTION);
 
 	}
 
@@ -79,7 +78,7 @@ public class PersonList extends Composite {
 			IEMFListProperty mProp = EMFProperties
 					.list(AddressbookPackage.Literals.ADDRESS_BOOK__PERSONS);
 
-			ListViewer viewer = new ListViewer(w_list);
+			TableViewer viewer = new TableViewer(w_list);
 			ObservableListContentProvider cp = new ObservableListContentProvider();
 			viewer.setContentProvider(cp);
 

@@ -26,6 +26,17 @@ import org.eclipse.core.databinding.conversion.Converter;
 import org.eclipse.core.databinding.observable.Realm;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.databinding.observable.value.WritableValue;
+import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.databinding.EMFDataBindingContext;
+import org.eclipse.emf.databinding.EMFProperties;
+import org.eclipse.emf.databinding.EMFUpdateValueStrategy;
+import org.eclipse.emf.databinding.IEMFListProperty.ListElementAccess;
+import org.eclipse.emf.databinding.IEMFValueProperty;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.jface.databinding.swt.IWidgetValueProperty;
 import org.eclipse.jface.databinding.swt.SWTObservables;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
@@ -43,18 +54,6 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
-import org.eclipse.e4.core.di.annotations.Optional;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.databinding.EMFDataBindingContext;
-import org.eclipse.emf.databinding.EMFProperties;
-import org.eclipse.emf.databinding.EMFUpdateValueStrategy;
-import org.eclipse.emf.databinding.IEMFListProperty.ListElementAccess;
-import org.eclipse.emf.databinding.IEMFValueProperty;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-
 import at.bestsolution.e4.addressbook.model.addressbook.Address;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressBook;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressType;
@@ -62,6 +61,7 @@ import at.bestsolution.e4.addressbook.model.addressbook.AddressbookFactory;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressbookPackage;
 import at.bestsolution.e4.addressbook.model.addressbook.Person;
 
+@SuppressWarnings("restriction")
 public class PersonForm extends Composite {
 	private Text w_firstName;
 	private Text w_lastName;
@@ -215,8 +215,8 @@ public class PersonForm extends Composite {
 
 	@Inject
 	public void setPerson(@Optional Person person) {
-		if( master != null ) {
-			master.setValue(person);	
+		if (master != null) {
+			master.setValue(person);
 		}
 	}
 
@@ -236,7 +236,7 @@ public class PersonForm extends Composite {
 					frame.setLayout(new FillLayout());
 					AddressBook book = loadAddressBook();
 					PersonForm form = new PersonForm(frame, SWT.NONE);
-					form.init(book,book.getPersons().get(0));
+					form.init(book, book.getPersons().get(0));
 					frame.pack();
 
 					frame.setVisible(true);

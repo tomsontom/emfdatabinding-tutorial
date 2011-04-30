@@ -34,15 +34,8 @@ import net.miginfocom.swing.MigLayout;
 
 import org.eclipse.core.databinding.UpdateValueStrategy;
 import org.eclipse.core.databinding.conversion.Converter;
-import org.eclipse.core.databinding.observable.Realm;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.databinding.observable.value.WritableValue;
-import org.eclipse.ufacekit.ui.swing.databinding.swing.IWidgetValueProperty;
-import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingObservables;
-import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingProperties;
-import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingRealm;
-import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingProperties.TextType;
-
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.databinding.EMFDataBindingContext;
 import org.eclipse.emf.databinding.EMFProperties;
@@ -53,6 +46,10 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.ufacekit.ui.swing.databinding.swing.IWidgetValueProperty;
+import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingProperties;
+import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingProperties.TextType;
+import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingRealm;
 
 import at.bestsolution.e4.addressbook.model.addressbook.Address;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressBook;
@@ -62,6 +59,11 @@ import at.bestsolution.e4.addressbook.model.addressbook.AddressbookPackage;
 import at.bestsolution.e4.addressbook.model.addressbook.Person;
 
 public class PersonForm extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private JTextField w_firstName;
 	private JTextField w_lastName;
 
@@ -217,17 +219,12 @@ public class PersonForm extends JPanel {
 	private static AddressBook loadAddressBook() {
 		ResourceSet resourceSet = new ResourceSetImpl();
 
-		// Register the appropriate resource factory to handle all file
-		// extensions.
-		//
 		resourceSet
 				.getResourceFactoryRegistry()
 				.getExtensionToFactoryMap()
 				.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
 						new XMIResourceFactoryImpl());
 
-		// Register the package to ensure it is available during loading.
-		//
 		resourceSet.getPackageRegistry().put(AddressbookPackage.eNS_URI,
 				AddressbookPackage.eINSTANCE);
 
@@ -236,34 +233,6 @@ public class PersonForm extends JPanel {
 						URI.createFileURI("/Users/tomschindl/Documents/3x_workspaces/emf_dev/at.bestsolution.e4.addressbook.model/model/AddressBook.xmi"),
 						true);
 		return (AddressBook) resource.getContents().get(0);
-	}
-
-	private static Person createPerson() {
-		final Person p = AddressbookFactory.eINSTANCE.createPerson();
-		p.setFirstname("Tom");
-		p.setLastname("Schindl");
-
-		{
-			Address addr = AddressbookFactory.eINSTANCE.createAddress();
-			addr.setCity("Innsbruck");
-			addr.setStreet("Hauptstrasse 11");
-			addr.setZip("6020");
-			addr.setType(AddressType.PRIVATE);
-
-			p.getAddresses().add(addr);
-		}
-
-		{
-			Address addr = AddressbookFactory.eINSTANCE.createAddress();
-			addr.setCity("Innsbruck");
-			addr.setStreet("Eduard-Bodemgasse 5-7");
-			addr.setZip("6020");
-			addr.setType(AddressType.BUSINESS);
-
-			p.getAddresses().add(addr);
-		}
-
-		return p;
 	}
 
 	private class ElementAccessImpl extends ListElementAccess<Address> {

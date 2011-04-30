@@ -34,18 +34,17 @@ import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.databinding.observable.value.IValueChangeListener;
 import org.eclipse.core.databinding.observable.value.ValueChangeEvent;
 import org.eclipse.core.databinding.property.value.IValueProperty;
+import org.eclipse.emf.databinding.EMFProperties;
+import org.eclipse.emf.databinding.EMFUpdateValueStrategy;
+import org.eclipse.emf.databinding.FeaturePath;
+import org.eclipse.emf.databinding.IEMFListProperty;
+import org.eclipse.emf.databinding.IEMFValueProperty;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.IWidgetValueProperty;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingProperties;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingProperties.TextType;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.model.ILabelDelegate;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.model.ObservableComboBoxModel;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.model.ObservableListCellRender;
-
-import org.eclipse.emf.databinding.EMFProperties;
-import org.eclipse.emf.databinding.EMFUpdateValueStrategy;
-import org.eclipse.emf.databinding.FeaturePath;
-import org.eclipse.emf.databinding.IEMFListProperty;
-import org.eclipse.emf.databinding.IEMFValueProperty;
 
 import at.bestsolution.e4.addressbook.model.addressbook.Address;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressBook;
@@ -54,6 +53,11 @@ import at.bestsolution.e4.addressbook.model.addressbook.Country;
 import at.bestsolution.e4.addressbook.model.addressbook.FederalState;
 
 public class AddressForm extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private JTextField w_street;
 	private JTextField w_zip;
 	private JTextField w_city;

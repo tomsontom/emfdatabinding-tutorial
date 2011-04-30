@@ -28,12 +28,6 @@ import org.eclipse.core.databinding.observable.map.IObservableMap;
 import org.eclipse.core.databinding.observable.value.IValueChangeListener;
 import org.eclipse.core.databinding.observable.value.ValueChangeEvent;
 import org.eclipse.core.databinding.property.value.IValueProperty;
-import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingProperties;
-import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingRealm;
-import org.eclipse.ufacekit.ui.swing.databinding.swing.model.ILabelDelegate;
-import org.eclipse.ufacekit.ui.swing.databinding.swing.model.ObservableListCellRender;
-import org.eclipse.ufacekit.ui.swing.databinding.swing.model.ObservableListModel;
-
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.IEMFListProperty;
@@ -41,6 +35,11 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingProperties;
+import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingRealm;
+import org.eclipse.ufacekit.ui.swing.databinding.swing.model.ILabelDelegate;
+import org.eclipse.ufacekit.ui.swing.databinding.swing.model.ObservableListCellRender;
+import org.eclipse.ufacekit.ui.swing.databinding.swing.model.ObservableListModel;
 
 import at.bestsolution.e4.addressbook.model.addressbook.AddressBook;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressbookPackage;

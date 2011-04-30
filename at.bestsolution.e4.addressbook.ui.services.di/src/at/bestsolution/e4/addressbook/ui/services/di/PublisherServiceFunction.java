@@ -7,6 +7,7 @@ import org.eclipse.e4.ui.model.application.MApplication;
 
 import at.bestsolution.e4.addressbook.ui.services.PersonSelectionPublisher;
 
+@SuppressWarnings("restriction")
 public class PublisherServiceFunction extends ContextFunction {
 
 	@Override

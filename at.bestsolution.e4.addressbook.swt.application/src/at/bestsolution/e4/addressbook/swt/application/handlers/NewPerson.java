@@ -18,10 +18,10 @@ package at.bestsolution.e4.addressbook.swt.application.handlers;
 
 import org.eclipse.e4.core.di.annotations.Execute;
 
-public class NewPerson
-{
-  @Execute
-  public void createPerson() {
-    System.err.println("Execute New Person");
-  }
+@SuppressWarnings("restriction")
+public class NewPerson {
+	@Execute
+	public void createPerson() {
+		System.err.println("Execute New Person");
+	}
 }
