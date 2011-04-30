@@ -102,7 +102,7 @@ public class AddressForm extends Composite {
 				false, 1, 1));
 		lblCountry.setText("Country");
 
-		w_country = new Combo(this, SWT.NONE);
+		w_country = new Combo(this, SWT.READ_ONLY);
 		w_country.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false,
 				2, 1));
 
@@ -111,7 +111,7 @@ public class AddressForm extends Composite {
 				false, 1, 1));
 		lblState.setText("State");
 
-		w_state = new Combo(this, SWT.NONE);
+		w_state = new Combo(this, SWT.READ_ONLY);
 		w_state.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false,
 				2, 1));
 	}

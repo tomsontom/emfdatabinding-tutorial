@@ -58,7 +58,7 @@ public class FileSelector {
 			String[] items = lastFiles.split("#|#");
 			entryList.addAll(Arrays.asList(items));
 
-			combo = new Combo(s, SWT.NONE);
+			combo = new Combo(s, SWT.READ_ONLY);
 			combo.setItems(items);
 			combo.setLayoutData(new GridData(300, SWT.DEFAULT));
 

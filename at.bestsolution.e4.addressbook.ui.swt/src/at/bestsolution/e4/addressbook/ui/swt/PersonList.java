@@ -142,6 +142,9 @@ public class PersonList extends Composite {
 									.getNewValue());
 						}
 					});
+			if( list.size() > 0 ) {
+				viewer.setSelection(new StructuredSelection(list.get(0)));
+			}
 		}
 	}
 

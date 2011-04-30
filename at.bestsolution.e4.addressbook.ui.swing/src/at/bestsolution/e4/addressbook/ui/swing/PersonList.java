@@ -25,6 +25,10 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import org.eclipse.core.databinding.observable.list.IListChangeListener;
+import org.eclipse.core.databinding.observable.list.IObservableList;
+import org.eclipse.core.databinding.observable.list.ListChangeEvent;
+import org.eclipse.core.databinding.observable.list.ListDiffVisitor;
 import org.eclipse.core.databinding.observable.map.IObservableMap;
 import org.eclipse.core.databinding.observable.value.IValueChangeListener;
 import org.eclipse.core.databinding.observable.value.ValueChangeEvent;
@@ -87,8 +91,9 @@ public class PersonList extends JPanel {
 					EMFProperties
 							.value(AddressbookPackage.Literals.PERSON__LASTNAME) };
 
-			ObservableListModel<Person> model = new ObservableListModel<Person>(
-					mProp.observe(book), props);
+			final IObservableList list = mProp.observe(book);
+			
+			ObservableListModel<Person> model = new ObservableListModel<Person>(list, props);
 
 			w_list.setModel(model);
 			w_list.setCellRenderer(new ObservableListCellRender<Person>(model,
@@ -101,6 +106,33 @@ public class PersonList extends JPanel {
 									+ " " + object.getLastname();
 						}
 					}));
+			
+			list.addListChangeListener(new IListChangeListener() {
+				
+				@Override
+				public void handleListChange(ListChangeEvent event) {
+					event.diff.accept(new ListDiffVisitor() {
+						
+						@Override
+						public void handleRemove(int index, Object element) {
+							if( list.size() > index - 1 && w_list.getSelectedValue() == null ) {
+								if( index - 1 >= 0 ) {
+									index--;
+								} else {
+									index = 0;
+								}
+								w_list.setSelectedValue(list.get(index), true);
+							}
+						}
+						
+						@Override
+						public void handleAdd(int index, Object element) {
+							w_list.setSelectedValue(element, true);
+						}
+					});
+				}
+			});
+			
 			SwingProperties.singleSelectionValue().observe(w_list)
 					.addValueChangeListener(new IValueChangeListener() {
 
@@ -110,6 +142,10 @@ public class PersonList extends JPanel {
 									.getNewValue());
 						}
 					});
+			
+			if( list.size() > 0 ) {
+				w_list.setSelectedIndex(0);	
+			}
 		}
 	}
 
