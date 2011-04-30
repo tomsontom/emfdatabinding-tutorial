@@ -45,114 +45,114 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressBook;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressbookPackage;
 import at.bestsolution.e4.addressbook.model.addressbook.Person;
+import at.bestsolution.e4.addressbook.ui.services.PersonSelectionPublisher;
 
-
-public class PersonList extends JPanel
-{
-  /**
+public class PersonList extends JPanel {
+	/**
    * 
    */
-  private static final long serialVersionUID = 1L;
-  
-  private JList w_list;
+	private static final long serialVersionUID = 1L;
 
-  /**
-   * Create the panel.
-   */
-  public PersonList()
-  {
-    setLayout(new BorderLayout(0, 0));
+	private JList w_list;
 
-    JScrollPane scrollPane = new JScrollPane();
-    add(scrollPane, BorderLayout.CENTER);
+	/**
+	 * Create the panel.
+	 */
+	public PersonList() {
+		setLayout(new BorderLayout(0, 0));
 
-    w_list = new JList();
-    scrollPane.setViewportView(w_list);
-  }
+		JScrollPane scrollPane = new JScrollPane();
+		add(scrollPane, BorderLayout.CENTER);
 
-  @PostConstruct
-  void init(AddressBook book, final SelectedPersonService personService)
-  {
-    {
-      IEMFListProperty mProp = EMFProperties.list(AddressbookPackage.Literals.ADDRESS_BOOK__PERSONS);
+		w_list = new JList();
+		scrollPane.setViewportView(w_list);
+	}
 
-      IValueProperty[] props = {
-        EMFProperties.value(AddressbookPackage.Literals.PERSON__FIRSTNAME),
-        EMFProperties.value(AddressbookPackage.Literals.PERSON__LASTNAME) };
+	@PostConstruct
+	void init(AddressBook book, final PersonSelectionPublisher personService) {
+		{
+			IEMFListProperty mProp = EMFProperties
+					.list(AddressbookPackage.Literals.ADDRESS_BOOK__PERSONS);
 
-      ObservableListModel<Person> model = new ObservableListModel<Person>(mProp.observe(book), props);
+			IValueProperty[] props = {
+					EMFProperties
+							.value(AddressbookPackage.Literals.PERSON__FIRSTNAME),
+					EMFProperties
+							.value(AddressbookPackage.Literals.PERSON__LASTNAME) };
 
-      w_list.setModel(model);
-      w_list.setCellRenderer(new ObservableListCellRender<Person>(model, new ILabelDelegate<Person>()
-        {
+			ObservableListModel<Person> model = new ObservableListModel<Person>(
+					mProp.observe(book), props);
 
-          @Override
-          public String getText(Person object, IObservableMap[] maps)
-          {
-            return object == null ? "" : object.getFirstname() + " " + object.getLastname();
-          }
-        }));
-      SwingProperties.singleSelectionValue().observe(w_list).addValueChangeListener(new IValueChangeListener()
-        {
+			w_list.setModel(model);
+			w_list.setCellRenderer(new ObservableListCellRender<Person>(model,
+					new ILabelDelegate<Person>() {
 
-          @Override
-          public void handleValueChange(ValueChangeEvent event)
-          {
-            personService.setPerson((Person)event.diff.getNewValue());
-          }
-        });
-    }
-  }
+						@Override
+						public String getText(Person object,
+								IObservableMap[] maps) {
+							return object == null ? "" : object.getFirstname()
+									+ " " + object.getLastname();
+						}
+					}));
+			SwingProperties.singleSelectionValue().observe(w_list)
+					.addValueChangeListener(new IValueChangeListener() {
 
-  public static void main(String[] args)
-  {
-    SwingRealm.createDefault();
-    
-    try
-    {
-      final JFrame frame = new JFrame();
-      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      AddressBook book = loadAddressBook();
-      PersonList form = new PersonList();
-      form.init(book, new SelectedPersonServiceMock());
-      frame.getContentPane().add(form);
-      frame.pack();
+						@Override
+						public void handleValueChange(ValueChangeEvent event) {
+							personService.setPerson((Person) event.diff
+									.getNewValue());
+						}
+					});
+		}
+	}
 
-      frame.setVisible(true);
-    }
-    catch (Exception e)
-    {
-      e.printStackTrace();
-    }
+	public static void main(String[] args) {
+		SwingRealm.createDefault();
 
-  }
+		try {
+			final JFrame frame = new JFrame();
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			AddressBook book = loadAddressBook();
+			PersonList form = new PersonList();
+			form.init(book, new SelectedPersonServiceMock());
+			frame.getContentPane().add(form);
+			frame.pack();
 
-  static class SelectedPersonServiceMock implements SelectedPersonService
-  {
+			frame.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-    @Override
-    public void setPerson(Person person)
-    {
-    }
-  }
+	}
 
-  private static AddressBook loadAddressBook()
-  {
-    ResourceSet resourceSet = new ResourceSetImpl();
+	static class SelectedPersonServiceMock implements PersonSelectionPublisher {
 
-    // Register the appropriate resource factory to handle all file extensions.
-    //
-    resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(
-      Resource.Factory.Registry.DEFAULT_EXTENSION,
-      new XMIResourceFactoryImpl());
+		@Override
+		public void setPerson(Person person) {
+		}
+	}
 
-    // Register the package to ensure it is available during loading.
-    //
-    resourceSet.getPackageRegistry().put(AddressbookPackage.eNS_URI, AddressbookPackage.eINSTANCE);
+	private static AddressBook loadAddressBook() {
+		ResourceSet resourceSet = new ResourceSetImpl();
 
-    Resource resource = resourceSet.getResource(
-      URI.createFileURI("/Users/tomschindl/Documents/3x_workspaces/emf_dev/at.bestsolution.e4.addressbook.model/model/AddressBook.xmi"),
-      true);
-    return (AddressBook)resource.getContents().get(0);
-  }
+		// Register the appropriate resource factory to handle all file
+		// extensions.
+		//
+		resourceSet
+				.getResourceFactoryRegistry()
+				.getExtensionToFactoryMap()
+				.put(Resource.Factory.Registry.DEFAULT_EXTENSION,
+						new XMIResourceFactoryImpl());
+
+		// Register the package to ensure it is available during loading.
+		//
+		resourceSet.getPackageRegistry().put(AddressbookPackage.eNS_URI,
+				AddressbookPackage.eINSTANCE);
+
+		Resource resource = resourceSet
+				.getResource(
+						URI.createFileURI("/Users/tomschindl/Documents/3x_workspaces/emf_dev/at.bestsolution.e4.addressbook.model/model/AddressBook.xmi"),
+						true);
+		return (AddressBook) resource.getContents().get(0);
+	}
 }

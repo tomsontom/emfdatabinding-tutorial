@@ -15,6 +15,8 @@
    <plugins>
       <plugin id="at.bestsolution.e4.addressbook.model"/>
       <plugin id="at.bestsolution.e4.addressbook.swt.application"/>
+      <plugin id="at.bestsolution.e4.addressbook.ui.services"/>
+      <plugin id="at.bestsolution.e4.addressbook.ui.services.di"/>
       <plugin id="at.bestsolution.e4.addressbook.ui.swt"/>
       <plugin id="com.ibm.icu"/>
       <plugin id="javax.annotation"/>
