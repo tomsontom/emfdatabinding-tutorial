@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" enabled="true" name="at.bestsolution.e4.addressbook.ui.services.di">
+   <implementation class="at.bestsolution.e4.addressbook.ui.services.di.PublisherServiceFunction"/>
+   <service>
+      <provide interface="org.eclipse.e4.core.contexts.IContextFunction"/>
+   </service>
+   <property name="service.context.key" type="String" value="at.bestsolution.e4.addressbook.ui.services.PersonSelectionPublisher"/>
+</scr:component>
