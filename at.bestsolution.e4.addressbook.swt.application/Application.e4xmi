@@ -21,7 +21,11 @@
   <handlers xmi:id="_SofdgG9bEeCzmbMi5UEt7g" elementId="addressbook.handler.newperson" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.model.handlers/at.bestsolution.e4.addressbook.model.handlers.NewPerson" command="_o9JLUG9bEeCzmbMi5UEt7g"/>
   <handlers xmi:id="_ZE2c8G9bEeCzmbMi5UEt7g" elementId="addressbook.handler.removeperson" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.model.handlers/at.bestsolution.e4.addressbook.model.handlers.RemovePerson" command="_uwMvEG9bEeCzmbMi5UEt7g"/>
   <handlers xmi:id="_dkROkG9bEeCzmbMi5UEt7g" elementId="addressbook.handler.saveaddressbook" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.model.handlers/at.bestsolution.e4.addressbook.model.handlers.SaveAddressBook" command="_gvIBAG9bEeCzmbMi5UEt7g"/>
-  <bindingTables xmi:id="_x6ehfG9VEeCUGttmLY81_A" bindingContext="_x6ehcW9VEeCUGttmLY81_A"/>
+  <bindingTables xmi:id="_x6ehfG9VEeCUGttmLY81_A" elementId="addressbook.keybindings.windowsdialogs" bindingContext="_x6ehcW9VEeCUGttmLY81_A">
+    <bindings xmi:id="_DfTdQHM_EeCJHNm5zvSRcQ" keySequence="M1+N" command="_o9JLUG9bEeCzmbMi5UEt7g"/>
+    <bindings xmi:id="_IIE_MHM_EeCJHNm5zvSRcQ" keySequence="M1+D" command="_uwMvEG9bEeCzmbMi5UEt7g"/>
+    <bindings xmi:id="_JiMMwHM_EeCJHNm5zvSRcQ" keySequence="M1+S" command="_gvIBAG9bEeCzmbMi5UEt7g"/>
+  </bindingTables>
   <rootContext xmi:id="_x6ehcW9VEeCUGttmLY81_A" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
     <children xmi:id="_x6ehcm9VEeCUGttmLY81_A" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
     <children xmi:id="_x6ehc29VEeCUGttmLY81_A" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>

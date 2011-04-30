@@ -14,4 +14,8 @@
       <children xsi:type="menu:HandledToolItem" xmi:id="_cAuG8HMmEeCGL8zBvoJgQg" iconURI="platform:/plugin/at.bestsolution.e4.addressbook.ui.undo/icons/edit-redo.png" tooltip="Redo" command="_yD-YMHMlEeCGL8zBvoJgQg"/>
     </elements>
   </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_aYwhQHM_EeCJHNm5zvSRcQ" featurename="bindings" parentElementId="addressbook.keybindings.windowsdialogs">
+    <elements xsi:type="commands:KeyBinding" xmi:id="_nxMiAHM_EeCJHNm5zvSRcQ" keySequence="M1+Z" command="_til3sHMlEeCGL8zBvoJgQg"/>
+    <elements xsi:type="commands:KeyBinding" xmi:id="_qigMAHM_EeCJHNm5zvSRcQ" keySequence="M1+SHIFT+Z" command="_yD-YMHMlEeCGL8zBvoJgQg"/>
+  </fragments>
 </fragment:ModelFragments>

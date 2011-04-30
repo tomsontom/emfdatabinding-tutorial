@@ -21,7 +21,7 @@
   <handlers xmi:id="_kj010HM5EeCJHNm5zvSRcQ" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.model.handlers/at.bestsolution.e4.addressbook.model.handlers.NewPerson" command="_B2_DUHM5EeCJHNm5zvSRcQ"/>
   <handlers xmi:id="_vKtU8HM5EeCJHNm5zvSRcQ" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.model.handlers/at.bestsolution.e4.addressbook.model.handlers.RemovePerson" command="_FEVwIHM5EeCJHNm5zvSRcQ"/>
   <handlers xmi:id="_zTw1AHM5EeCJHNm5zvSRcQ" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.model.handlers/at.bestsolution.e4.addressbook.model.handlers.SaveAddressBook" command="_JEX3EHM5EeCJHNm5zvSRcQ"/>
-  <bindingTables xmi:id="_9DrGUHMtEeCJHNm5zvSRcQ" bindingContext="_9Dp4MnMtEeCJHNm5zvSRcQ"/>
+  <bindingTables xmi:id="_9DrGUHMtEeCJHNm5zvSRcQ" elementId="addressbook.keybindings.windowsdialogs" bindingContext="_9Dp4MnMtEeCJHNm5zvSRcQ"/>
   <rootContext xmi:id="_9Dp4MnMtEeCJHNm5zvSRcQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
     <children xmi:id="_9Dp4M3MtEeCJHNm5zvSRcQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
     <children xmi:id="_9Dp4NHMtEeCJHNm5zvSRcQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
