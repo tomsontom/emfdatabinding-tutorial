@@ -20,6 +20,10 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.eclipse.core.databinding.observable.Realm;
+import org.eclipse.core.databinding.observable.list.IListChangeListener;
+import org.eclipse.core.databinding.observable.list.IObservableList;
+import org.eclipse.core.databinding.observable.list.ListChangeEvent;
+import org.eclipse.core.databinding.observable.list.ListDiffVisitor;
 import org.eclipse.core.databinding.observable.map.IObservableMap;
 import org.eclipse.core.databinding.observable.value.IValueChangeListener;
 import org.eclipse.core.databinding.observable.value.ValueChangeEvent;
@@ -34,6 +38,7 @@ import org.eclipse.jface.databinding.swt.SWTObservables;
 import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
 import org.eclipse.jface.databinding.viewers.ObservableMapLabelProvider;
 import org.eclipse.jface.databinding.viewers.ViewerProperties;
+import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
@@ -78,7 +83,7 @@ public class PersonList extends Composite {
 			IEMFListProperty mProp = EMFProperties
 					.list(AddressbookPackage.Literals.ADDRESS_BOOK__PERSONS);
 
-			TableViewer viewer = new TableViewer(w_list);
+			final TableViewer viewer = new TableViewer(w_list);
 			ObservableListContentProvider cp = new ObservableListContentProvider();
 			viewer.setContentProvider(cp);
 
@@ -98,7 +103,36 @@ public class PersonList extends Composite {
 							+ object.getLastname();
 				}
 			});
-			viewer.setInput(mProp.observe(book));
+			
+			final IObservableList list = mProp.observe(book); 
+			viewer.setInput(list);
+			
+			list.addListChangeListener(new IListChangeListener() {
+				
+				@Override
+				public void handleListChange(ListChangeEvent event) {
+					event.diff.accept(new ListDiffVisitor() {
+						
+						@Override
+						public void handleRemove(int index, Object element) {
+							if( list.size() > index - 1 && viewer.getSelection().isEmpty() ) {
+								if( index - 1 >= 0 ) {
+									index--;
+								} else {
+									index = 0;
+								}
+								viewer.setSelection(new StructuredSelection(list.get(index)));
+							}
+						}
+						
+						@Override
+						public void handleAdd(int index, Object element) {
+							viewer.setSelection(new StructuredSelection(element));
+						}
+					});
+				}
+			});
+			
 			ViewerProperties.singleSelection().observe(viewer)
 					.addValueChangeListener(new IValueChangeListener() {
 

@@ -16,12 +16,20 @@
  */
 package at.bestsolution.e4.addressbook.swt.application.handlers;
 
+import java.io.IOException;
+
 import org.eclipse.e4.core.di.annotations.Execute;
+import org.eclipse.emf.ecore.resource.Resource;
 
 @SuppressWarnings("restriction")
 public class SaveAddressBook {
 	@Execute
-	public void save() {
-		System.err.println("Execute Save Person");
+	public void save(Resource resource) {
+		try {
+			resource.save(null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

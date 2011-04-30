@@ -18,10 +18,20 @@ package at.bestsolution.e4.addressbook.swt.application.handlers;
 
 import org.eclipse.e4.core.di.annotations.Execute;
 
+import at.bestsolution.e4.addressbook.model.addressbook.Address;
+import at.bestsolution.e4.addressbook.model.addressbook.AddressBook;
+import at.bestsolution.e4.addressbook.model.addressbook.AddressType;
+import at.bestsolution.e4.addressbook.model.addressbook.AddressbookFactory;
+import at.bestsolution.e4.addressbook.model.addressbook.Person;
+
 @SuppressWarnings("restriction")
 public class NewPerson {
 	@Execute
-	public void createPerson() {
-		System.err.println("Execute New Person");
+	public void createPerson(AddressBook book) {
+		Person p = AddressbookFactory.eINSTANCE.createPerson();
+		Address address = AddressbookFactory.eINSTANCE.createAddress();
+		address.setType(AddressType.PRIVATE);
+		p.getAddresses().add(address);
+		book.getPersons().add(p);
 	}
 }

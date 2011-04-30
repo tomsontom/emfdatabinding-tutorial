@@ -188,6 +188,7 @@ public class FileSelector {
 					URI.createFileURI(selectedFile), true);
 			context.set(AddressBook.class, (AddressBook) resource.getContents()
 					.get(0));
+			context.set(Resource.class, resource);
 		}
 	}
 }
