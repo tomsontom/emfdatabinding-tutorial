@@ -27,16 +27,21 @@ import org.eclipse.core.databinding.observable.Realm;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.databinding.observable.value.WritableValue;
 import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.databinding.EMFDataBindingContext;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.EMFUpdateValueStrategy;
 import org.eclipse.emf.databinding.IEMFListProperty.ListElementAccess;
 import org.eclipse.emf.databinding.IEMFValueProperty;
+import org.eclipse.emf.databinding.edit.EMFEditProperties;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.emf.edit.command.AddCommand;
+import org.eclipse.emf.edit.command.RemoveCommand;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.jface.databinding.swt.IWidgetValueProperty;
 import org.eclipse.jface.databinding.swt.SWTObservables;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
@@ -69,6 +74,8 @@ public class PersonForm extends Composite {
 	private AddressForm privateAddressForm;
 	private AddressForm businessAddressForm;
 	private Button w_hasBusinessAddress;
+
+	public static final int DELAY = 200;
 
 	/**
 	 * Create the composite.
@@ -131,32 +138,77 @@ public class PersonForm extends Composite {
 	}
 
 	@PostConstruct
-	private void init(AddressBook book, @Optional Person person) {
+	private void init(@Optional final EditingDomain editingDomain,
+			AddressBook book, @Optional Person person) {
 		master = new WritableValue();
-		privateAddressForm.initUI(book);
-		businessAddressForm.initUI(book);
+		privateAddressForm.init(book);
+		businessAddressForm.init(book);
 
-		bindControls();
+		if (editingDomain == null) {
+			bindControls();
+		} else {
+			bindControls(editingDomain);
+		}
 
-		w_hasBusinessAddress.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent ev) {
-				if (w_hasBusinessAddress.getSelection()) {
-					Address address = AddressbookFactory.eINSTANCE
-							.createAddress();
-					address.setType(AddressType.BUSINESS);
-					((Person) master.getValue()).getAddresses().add(address);
-				} else {
-					ElementAccessImpl e = new ElementAccessImpl(
-							AddressType.BUSINESS);
-					int idx = e.getReadValueIndex(((Person) master.getValue())
-							.getAddresses());
-					if (idx != -1) {
-						((Person) master.getValue()).getAddresses().remove(idx);
+		if (editingDomain == null) {
+			w_hasBusinessAddress.addSelectionListener(new SelectionAdapter() {
+				@Override
+				public void widgetSelected(SelectionEvent ev) {
+					if (w_hasBusinessAddress.getSelection()) {
+						Address address = AddressbookFactory.eINSTANCE
+								.createAddress();
+						address.setType(AddressType.BUSINESS);
+						((Person) master.getValue()).getAddresses()
+								.add(address);
+					} else {
+						ElementAccessImpl e = new ElementAccessImpl(
+								AddressType.BUSINESS);
+						int idx = e.getReadValueIndex(((Person) master
+								.getValue()).getAddresses());
+						if (idx != -1) {
+							((Person) master.getValue()).getAddresses().remove(
+									idx);
+						}
 					}
 				}
-			}
-		});
+			});
+		} else {
+			w_hasBusinessAddress.addSelectionListener(new SelectionAdapter() {
+				@Override
+				public void widgetSelected(SelectionEvent ev) {
+					if (w_hasBusinessAddress.getSelection()) {
+						Address address = AddressbookFactory.eINSTANCE
+								.createAddress();
+						address.setType(AddressType.BUSINESS);
+						Command cmd = AddCommand.create(editingDomain,
+								master.getValue(),
+								AddressbookPackage.Literals.PERSON__ADDRESSES,
+								address);
+						if (cmd.canExecute()) {
+							editingDomain.getCommandStack().execute(cmd);
+						}
+					} else {
+						ElementAccessImpl e = new ElementAccessImpl(
+								AddressType.BUSINESS);
+						int idx = e.getReadValueIndex(((Person) master
+								.getValue()).getAddresses());
+						if (idx != -1) {
+							Address address = ((Person) master.getValue())
+									.getAddresses().get(idx);
+							Command cmd = RemoveCommand.create(
+									editingDomain,
+									master.getValue(),
+									AddressbookPackage.Literals.PERSON__ADDRESSES,
+									address);
+							if (cmd.canExecute()) {
+								editingDomain.getCommandStack().execute(cmd);
+							}
+						}
+					}
+				}
+			});
+		}
+
 		master.setValue(person);
 	}
 
@@ -213,6 +265,59 @@ public class PersonForm extends Composite {
 		}
 	}
 
+	private void bindControls(EditingDomain editingDomain) {
+		EMFDataBindingContext dbc = new EMFDataBindingContext();
+
+		IWidgetValueProperty tProp = WidgetProperties.text(SWT.Modify);
+
+		{
+			IEMFValueProperty mProp = EMFEditProperties.value(editingDomain,
+					AddressbookPackage.Literals.PERSON__FIRSTNAME);
+			dbc.bindValue(tProp.observeDelayed(PersonForm.DELAY, w_firstName),
+					mProp.observeDetail(master));
+		}
+
+		{
+			IEMFValueProperty mProp = EMFEditProperties.value(editingDomain,
+					AddressbookPackage.Literals.PERSON__LASTNAME);
+			dbc.bindValue(tProp.observeDelayed(PersonForm.DELAY, w_lastName),
+					mProp.observeDetail(master));
+		}
+
+		{
+			IEMFValueProperty mProp = EMFEditProperties.list(editingDomain,
+					AddressbookPackage.Literals.PERSON__ADDRESSES).value(
+					new ElementAccessImpl(AddressType.PRIVATE));
+			IObservableValue value = mProp.observeDetail(master);
+			privateAddressForm.bindControls(dbc, value);
+		}
+
+		{
+			IEMFValueProperty mProp = EMFEditProperties.list(editingDomain,
+					AddressbookPackage.Literals.PERSON__ADDRESSES).value(
+					new ElementAccessImpl(AddressType.BUSINESS));
+			IObservableValue value = mProp.observeDetail(master);
+
+			IWidgetValueProperty cProp = WidgetProperties.selection();
+
+			EMFUpdateValueStrategy targetToModel = new EMFUpdateValueStrategy(
+					UpdateValueStrategy.POLICY_NEVER);
+			EMFUpdateValueStrategy modelToTarget = new EMFUpdateValueStrategy();
+			modelToTarget.setConverter(new Converter(Address.class,
+					boolean.class) {
+
+				@Override
+				public Object convert(Object fromObject) {
+					return fromObject != null;
+				}
+			});
+			dbc.bindValue(cProp.observe(w_hasBusinessAddress), value,
+					targetToModel, modelToTarget);
+
+			businessAddressForm.bindControls(dbc, value);
+		}
+	}
+
 	@Inject
 	public void setPerson(@Optional Person person) {
 		if (master != null) {
@@ -236,7 +341,7 @@ public class PersonForm extends Composite {
 					frame.setLayout(new FillLayout());
 					AddressBook book = loadAddressBook();
 					PersonForm form = new PersonForm(frame, SWT.NONE);
-					form.init(book, book.getPersons().get(0));
+					form.init(null, book, book.getPersons().get(0));
 					frame.pack();
 
 					frame.setVisible(true);

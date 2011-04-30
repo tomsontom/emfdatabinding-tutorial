@@ -18,7 +18,8 @@ public class PublisherServiceFunction extends ContextFunction {
 		if (service == null) {
 			service = ContextInjectionFactory.make(
 					ContextPersonSelectionPublisher.class, app.getContext());
-			app.getContext().set(PersonSelectionPublisher.class, service);
+			app.getContext().set(ContextPersonSelectionPublisher.class,
+					(ContextPersonSelectionPublisher) service);
 		}
 		return service;
 	}
