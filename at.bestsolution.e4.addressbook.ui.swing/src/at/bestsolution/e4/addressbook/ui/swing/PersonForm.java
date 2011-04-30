@@ -36,16 +36,19 @@ import org.eclipse.core.databinding.UpdateValueStrategy;
 import org.eclipse.core.databinding.conversion.Converter;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.databinding.observable.value.WritableValue;
+import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.databinding.EMFDataBindingContext;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.EMFUpdateValueStrategy;
 import org.eclipse.emf.databinding.IEMFListProperty.ListElementAccess;
 import org.eclipse.emf.databinding.IEMFValueProperty;
+import org.eclipse.emf.databinding.edit.EMFEditProperties;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.IWidgetValueProperty;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingProperties;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingProperties.TextType;
@@ -58,6 +61,7 @@ import at.bestsolution.e4.addressbook.model.addressbook.AddressbookFactory;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressbookPackage;
 import at.bestsolution.e4.addressbook.model.addressbook.Person;
 
+@SuppressWarnings("restriction")
 public class PersonForm extends JPanel {
 	/**
 	 * 
@@ -72,6 +76,8 @@ public class PersonForm extends JPanel {
 	private AddressForm businessAddressForm;
 	private JCheckBox w_hasBusinessAddress;
 
+	public static final int DELAY = 200;
+	
 	/**
 	 * Create the panel.
 	 */
@@ -111,11 +117,16 @@ public class PersonForm extends JPanel {
 	}
 
 	@PostConstruct
-	private void init(AddressBook book) {
+	private void init(@Optional EditingDomain editingDomain, AddressBook book, @Optional Person person) {
 		master = new WritableValue();
-		privateAddressForm.initUI(book);
-		businessAddressForm.initUI(book);
-		bindControls();
+		privateAddressForm.init(book);
+		businessAddressForm.init(book);
+		
+		if (editingDomain == null) {
+			bindControls();
+		} else {
+			bindControls(editingDomain);
+		}
 
 		w_hasBusinessAddress.addActionListener(new ActionListener() {
 
@@ -137,6 +148,7 @@ public class PersonForm extends JPanel {
 				}
 			}
 		});
+		master.setValue(person);
 	}
 
 	private void bindControls() {
@@ -191,10 +203,65 @@ public class PersonForm extends JPanel {
 			businessAddressForm.bindControls(dbc, value);
 		}
 	}
+	
+	private void bindControls(EditingDomain editingDomain) {
+		EMFDataBindingContext dbc = new EMFDataBindingContext();
+
+		IWidgetValueProperty tProp = SwingProperties.text(TextType.Modify);
+
+		{
+			IEMFValueProperty mProp = EMFEditProperties
+					.value(editingDomain,AddressbookPackage.Literals.PERSON__FIRSTNAME);
+			dbc.bindValue(tProp.observeDelayed(DELAY, w_firstName),
+					mProp.observeDetail(master));
+		}
+
+		{
+			IEMFValueProperty mProp = EMFEditProperties
+					.value(editingDomain,AddressbookPackage.Literals.PERSON__LASTNAME);
+			dbc.bindValue(tProp.observeDelayed(DELAY, w_lastName),
+					mProp.observeDetail(master));
+		}
+
+		{
+			IEMFValueProperty mProp = EMFEditProperties.list(editingDomain,
+					AddressbookPackage.Literals.PERSON__ADDRESSES).value(
+					new ElementAccessImpl(AddressType.PRIVATE));
+			IObservableValue value = mProp.observeDetail(master);
+			privateAddressForm.bindControls(editingDomain, dbc, value);
+		}
+
+		{
+			IEMFValueProperty mProp = EMFEditProperties.list(editingDomain,
+					AddressbookPackage.Literals.PERSON__ADDRESSES).value(
+					new ElementAccessImpl(AddressType.BUSINESS));
+			IObservableValue value = mProp.observeDetail(master);
+
+			IWidgetValueProperty cProp = SwingProperties.selection();
+
+			EMFUpdateValueStrategy targetToModel = new EMFUpdateValueStrategy(
+					UpdateValueStrategy.POLICY_NEVER);
+			EMFUpdateValueStrategy modelToTarget = new EMFUpdateValueStrategy();
+			modelToTarget.setConverter(new Converter(Address.class,
+					boolean.class) {
+
+				@Override
+				public Object convert(Object fromObject) {
+					return fromObject != null;
+				}
+			});
+			dbc.bindValue(cProp.observe(w_hasBusinessAddress), value,
+					targetToModel, modelToTarget);
+
+			businessAddressForm.bindControls(editingDomain, dbc, value);
+		}
+	}
 
 	@Inject
 	void setPerson(Person person) {
-		master.setValue(person);
+		if( master == null ) {
+			master.setValue(person);	
+		}
 	}
 
 	public static void main(String[] args) {
@@ -205,11 +272,10 @@ public class PersonForm extends JPanel {
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			AddressBook book = loadAddressBook();
 			PersonForm form = new PersonForm();
-			form.init(book);
+			form.init(null, book, book.getPersons().get(0));
 			frame.getContentPane().add(form);
 			frame.pack();
 
-			form.setPerson(book.getPersons().get(0));
 			frame.setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();

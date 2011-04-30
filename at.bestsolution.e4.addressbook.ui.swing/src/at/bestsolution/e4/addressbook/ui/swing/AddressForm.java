@@ -39,6 +39,8 @@ import org.eclipse.emf.databinding.EMFUpdateValueStrategy;
 import org.eclipse.emf.databinding.FeaturePath;
 import org.eclipse.emf.databinding.IEMFListProperty;
 import org.eclipse.emf.databinding.IEMFValueProperty;
+import org.eclipse.emf.databinding.edit.EMFEditProperties;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.IWidgetValueProperty;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingProperties;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingProperties.TextType;
@@ -57,7 +59,7 @@ public class AddressForm extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private JTextField w_street;
 	private JTextField w_zip;
 	private JTextField w_city;
@@ -67,6 +69,8 @@ public class AddressForm extends JPanel {
 	private Binding stateBinding;
 	private DataBindingContext dbc;
 	private IObservableValue master;
+
+	private EditingDomain editingDomain;
 
 	/**
 	 * Create the panel.
@@ -105,68 +109,7 @@ public class AddressForm extends JPanel {
 		add(w_state, "cell 1 3,growx");
 	}
 
-	public void bindControls(DataBindingContext dbc, IObservableValue master) {
-		this.dbc = dbc;
-		this.master = master;
-		IWidgetValueProperty tProp = SwingProperties.text(TextType.Modify);
-		IWidgetValueProperty sProp = SwingProperties.singleSelectionValue();
-
-		{
-			IEMFValueProperty mProp = EMFProperties
-					.value(AddressbookPackage.Literals.ADDRESS__STREET);
-			dbc.bindValue(tProp.observe(w_street), mProp.observeDetail(master));
-		}
-
-		{
-			IEMFValueProperty mProp = EMFProperties
-					.value(AddressbookPackage.Literals.ADDRESS__ZIP);
-			dbc.bindValue(tProp.observe(w_zip), mProp.observeDetail(master));
-		}
-
-		{
-			IEMFValueProperty mProp = EMFProperties
-					.value(AddressbookPackage.Literals.ADDRESS__CITY);
-			dbc.bindValue(tProp.observe(w_city), mProp.observeDetail(master));
-		}
-
-		{
-			IEMFValueProperty mProp = EMFProperties.value(FeaturePath
-					.fromList(AddressbookPackage.Literals.ADDRESS__COUNTRY));
-			dbc.bindValue(sProp.observe(w_country), mProp.observeDetail(master));
-		}
-
-		bindState(dbc, master);
-
-		IWidgetValueProperty eProp = SwingProperties.enabled();
-		for (Component c : getComponents()) {
-			EMFUpdateValueStrategy modelToTarget = new EMFUpdateValueStrategy();
-			modelToTarget.setConverter(new Converter(Address.class,
-					boolean.class) {
-
-				@Override
-				public Object convert(Object fromObject) {
-					return fromObject != null;
-				}
-			});
-
-			// Work around - No Idea
-			final Binding b = dbc
-					.bindValue(eProp.observe(c), master,
-							new EMFUpdateValueStrategy(
-									UpdateValueStrategy.POLICY_NEVER),
-							modelToTarget);
-			master.addValueChangeListener(new IValueChangeListener() {
-
-				@Override
-				public void handleValueChange(ValueChangeEvent event) {
-					if (event.diff.getNewValue() == null)
-						b.updateModelToTarget();
-				}
-			});
-		}
-	}
-
-	public void initUI(AddressBook book) {
+	public void init(AddressBook book) {
 		{
 			IEMFListProperty mProp = EMFProperties
 					.list(AddressbookPackage.Literals.ADDRESS_BOOK__COUNTRIES);
@@ -231,10 +174,144 @@ public class AddressForm extends JPanel {
 		}
 	}
 
+	public void bindControls(DataBindingContext dbc, IObservableValue master) {
+		this.dbc = dbc;
+		this.master = master;
+		IWidgetValueProperty tProp = SwingProperties.text(TextType.Modify);
+		IWidgetValueProperty sProp = SwingProperties.singleSelectionValue();
+
+		{
+			IEMFValueProperty mProp = EMFProperties
+					.value(AddressbookPackage.Literals.ADDRESS__STREET);
+			dbc.bindValue(tProp.observe(w_street), mProp.observeDetail(master));
+		}
+
+		{
+			IEMFValueProperty mProp = EMFProperties
+					.value(AddressbookPackage.Literals.ADDRESS__ZIP);
+			dbc.bindValue(tProp.observe(w_zip), mProp.observeDetail(master));
+		}
+
+		{
+			IEMFValueProperty mProp = EMFProperties
+					.value(AddressbookPackage.Literals.ADDRESS__CITY);
+			dbc.bindValue(tProp.observe(w_city), mProp.observeDetail(master));
+		}
+
+		{
+			IEMFValueProperty mProp = EMFProperties.value(FeaturePath
+					.fromList(AddressbookPackage.Literals.ADDRESS__COUNTRY));
+			dbc.bindValue(sProp.observe(w_country), mProp.observeDetail(master));
+		}
+
+		bindState(dbc, master);
+
+		IWidgetValueProperty eProp = SwingProperties.enabled();
+		for (Component c : getComponents()) {
+			EMFUpdateValueStrategy modelToTarget = new EMFUpdateValueStrategy();
+			modelToTarget.setConverter(new Converter(Address.class,
+					boolean.class) {
+
+				@Override
+				public Object convert(Object fromObject) {
+					return fromObject != null;
+				}
+			});
+
+			// Work around - No Idea
+			final Binding b = dbc
+					.bindValue(eProp.observe(c), master,
+							new EMFUpdateValueStrategy(
+									UpdateValueStrategy.POLICY_NEVER),
+							modelToTarget);
+			master.addValueChangeListener(new IValueChangeListener() {
+
+				@Override
+				public void handleValueChange(ValueChangeEvent event) {
+					if (event.diff.getNewValue() == null)
+						b.updateModelToTarget();
+				}
+			});
+		}
+	}
+
+	public void bindControls(EditingDomain editingDomain,
+			DataBindingContext dbc, IObservableValue master) {
+		this.dbc = dbc;
+		this.master = master;
+		this.editingDomain = editingDomain;
+
+		IWidgetValueProperty tProp = SwingProperties.text(TextType.Modify);
+		IWidgetValueProperty sProp = SwingProperties.singleSelectionValue();
+
+		{
+			IEMFValueProperty mProp = EMFEditProperties.value(editingDomain,
+					AddressbookPackage.Literals.ADDRESS__STREET);
+			dbc.bindValue(tProp.observe(w_street), mProp.observeDetail(master));
+		}
+
+		{
+			IEMFValueProperty mProp = EMFEditProperties.value(editingDomain,
+					AddressbookPackage.Literals.ADDRESS__ZIP);
+			dbc.bindValue(tProp.observe(w_zip), mProp.observeDetail(master));
+		}
+
+		{
+			IEMFValueProperty mProp = EMFEditProperties.value(editingDomain,
+					AddressbookPackage.Literals.ADDRESS__CITY);
+			dbc.bindValue(tProp.observe(w_city), mProp.observeDetail(master));
+		}
+
+		{
+			IEMFValueProperty mProp = EMFProperties.value(FeaturePath
+					.fromList(AddressbookPackage.Literals.ADDRESS__COUNTRY));
+			dbc.bindValue(sProp.observe(w_country), mProp.observeDetail(master));
+		}
+
+		bindState(dbc, master);
+
+		IWidgetValueProperty eProp = SwingProperties.enabled();
+		for (Component c : getComponents()) {
+			EMFUpdateValueStrategy modelToTarget = new EMFUpdateValueStrategy();
+			modelToTarget.setConverter(new Converter(Address.class,
+					boolean.class) {
+
+				@Override
+				public Object convert(Object fromObject) {
+					return fromObject != null;
+				}
+			});
+
+			// Work around - No Idea
+			final Binding b = dbc
+					.bindValue(eProp.observe(c), master,
+							new EMFUpdateValueStrategy(
+									UpdateValueStrategy.POLICY_NEVER),
+							modelToTarget);
+			master.addValueChangeListener(new IValueChangeListener() {
+
+				@Override
+				public void handleValueChange(ValueChangeEvent event) {
+					if (event.diff.getNewValue() == null)
+						b.updateModelToTarget();
+				}
+			});
+		}
+	}
+
 	private void bindState(DataBindingContext dbc, IObservableValue master) {
 		IWidgetValueProperty sProp = SwingProperties.singleSelectionValue();
-		IEMFValueProperty prop = EMFProperties
-				.value(AddressbookPackage.Literals.ADDRESS__FEDERAL_STATE);
+		IEMFValueProperty prop;
+
+		if (editingDomain == null) {
+			prop = EMFProperties
+					.value(AddressbookPackage.Literals.ADDRESS__FEDERAL_STATE);
+
+		} else {
+			prop = EMFEditProperties.value(editingDomain,
+					AddressbookPackage.Literals.ADDRESS__FEDERAL_STATE);
+
+		}
 		stateBinding = dbc.bindValue(sProp.observe(w_state),
 				prop.observeDetail(master));
 	}
