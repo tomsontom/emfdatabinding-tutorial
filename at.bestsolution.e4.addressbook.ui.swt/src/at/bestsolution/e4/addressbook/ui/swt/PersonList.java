@@ -115,6 +115,9 @@ public class PersonList extends Composite {
 						
 						@Override
 						public void handleRemove(int index, Object element) {
+							if( list.size() == 0 ) {
+								return;
+							}
 							if( list.size() > index - 1 && viewer.getSelection().isEmpty() ) {
 								if( index - 1 >= 0 ) {
 									index--;
