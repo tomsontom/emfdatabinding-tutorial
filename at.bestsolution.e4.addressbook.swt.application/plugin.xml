@@ -25,7 +25,7 @@
          </property>
          <property
 				name="applicationCSSResources"
-          		value="platform:/plugin/at.bestsolution.e4.addressbook.app/images/">
+          		value="platform:/plugin/at.bestsolution.e4.addressbook.swt.application/images/">
 		  </property>
 		  <property
 				name="lifeCycleURI"
