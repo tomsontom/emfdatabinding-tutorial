@@ -303,8 +303,27 @@ public class PartRenderingEngine implements IPresentationEngine {
 
 	}
 
-	public Object run(MApplicationElement uiRoot, IEclipseContext appContext) {
-		System.setProperty("apple.awt.brushMetalLook", "true");
+	public Object run(MApplicationElement uiRoot, IEclipseContext appContext) {		
+		if( System.getProperty("os.name").equals("Mac OS X") ) {
+			System.setProperty("apple.awt.brushMetalLook", "true");	
+		} else {
+			try {
+				UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (InstantiationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (UnsupportedLookAndFeelException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
 
 		theApp = null;
 		if (uiRoot instanceof MApplication) {
