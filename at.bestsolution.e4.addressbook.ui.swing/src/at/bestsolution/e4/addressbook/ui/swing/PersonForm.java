@@ -51,7 +51,6 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.IWidgetValueProperty;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingProperties;
-import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingProperties.TextType;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingRealm;
 
 import at.bestsolution.e4.addressbook.model.addressbook.Address;
@@ -161,21 +160,8 @@ public class PersonForm extends JPanel {
 	private void bindControls() {
 		EMFDataBindingContext dbc = new EMFDataBindingContext();
 
-		IWidgetValueProperty tProp = SwingProperties.text(TextType.Modify);
-
-		{
-			IEMFValueProperty mProp = EMFProperties
-					.value(AddressbookPackage.Literals.PERSON__FIRSTNAME);
-			dbc.bindValue(tProp.observe(w_firstName),
-					mProp.observeDetail(master));
-		}
-
-		{
-			IEMFValueProperty mProp = EMFProperties
-					.value(AddressbookPackage.Literals.PERSON__LASTNAME);
-			dbc.bindValue(tProp.observe(w_lastName),
-					mProp.observeDetail(master));
-		}
+		// TODO Lab 1
+		// Bind Firstname, Lastname Text fields
 
 		{
 			IEMFValueProperty mProp = EMFProperties.list(
@@ -214,22 +200,9 @@ public class PersonForm extends JPanel {
 	private void bindControls(EditingDomain editingDomain) {
 		EMFDataBindingContext dbc = new EMFDataBindingContext();
 
-		IWidgetValueProperty tProp = SwingProperties.text(TextType.Modify);
-
-		{
-			IEMFValueProperty mProp = EMFEditProperties
-					.value(editingDomain,AddressbookPackage.Literals.PERSON__FIRSTNAME);
-			dbc.bindValue(tProp.observeDelayed(DELAY, w_firstName),
-					mProp.observeDetail(master));
-		}
-
-		{
-			IEMFValueProperty mProp = EMFEditProperties
-					.value(editingDomain,AddressbookPackage.Literals.PERSON__LASTNAME);
-			dbc.bindValue(tProp.observeDelayed(DELAY, w_lastName),
-					mProp.observeDetail(master));
-		}
-
+		// TODO Lab 3
+		// Bind the First and Lastname
+		
 		{
 			IEMFValueProperty mProp = EMFEditProperties.list(editingDomain,
 					AddressbookPackage.Literals.PERSON__ADDRESSES).value(

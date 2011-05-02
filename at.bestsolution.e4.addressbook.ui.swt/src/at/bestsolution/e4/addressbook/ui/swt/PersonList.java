@@ -24,7 +24,6 @@ import org.eclipse.core.databinding.observable.list.IListChangeListener;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.list.ListChangeEvent;
 import org.eclipse.core.databinding.observable.list.ListDiffVisitor;
-import org.eclipse.core.databinding.observable.map.IObservableMap;
 import org.eclipse.core.databinding.observable.value.IValueChangeListener;
 import org.eclipse.core.databinding.observable.value.ValueChangeEvent;
 import org.eclipse.emf.common.util.URI;
@@ -35,8 +34,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.jface.databinding.swt.SWTObservables;
-import org.eclipse.jface.databinding.viewers.ObservableListContentProvider;
-import org.eclipse.jface.databinding.viewers.ObservableMapLabelProvider;
 import org.eclipse.jface.databinding.viewers.ViewerProperties;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TableViewer;
@@ -84,28 +81,11 @@ public class PersonList extends Composite {
 					.list(AddressbookPackage.Literals.ADDRESS_BOOK__PERSONS);
 
 			final TableViewer viewer = new TableViewer(w_list);
-			ObservableListContentProvider cp = new ObservableListContentProvider();
-			viewer.setContentProvider(cp);
-
-			IObservableMap[] map = {
-					EMFProperties.value(
-							AddressbookPackage.Literals.PERSON__FIRSTNAME)
-							.observeDetail(cp.getKnownElements()),
-					EMFProperties.value(
-							AddressbookPackage.Literals.PERSON__LASTNAME)
-							.observeDetail(cp.getKnownElements()) };
-
-			viewer.setLabelProvider(new ObservableMapLabelProvider(map) {
-				@Override
-				public String getColumnText(Object element, int columnIndex) {
-					Person object = (Person) element;
-					return object == null ? "" : object.getFirstname() + " "
-							+ object.getLastname();
-				}
-			});
 			
-			final IObservableList list = mProp.observe(book); 
-			viewer.setInput(list);
+			final IObservableList list = mProp.observe(book);
+			
+			// TODO Lab 2
+			// Initialize TableViewer
 			
 			list.addListChangeListener(new IListChangeListener() {
 				

@@ -29,10 +29,8 @@ import org.eclipse.core.databinding.observable.list.IListChangeListener;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.list.ListChangeEvent;
 import org.eclipse.core.databinding.observable.list.ListDiffVisitor;
-import org.eclipse.core.databinding.observable.map.IObservableMap;
 import org.eclipse.core.databinding.observable.value.IValueChangeListener;
 import org.eclipse.core.databinding.observable.value.ValueChangeEvent;
-import org.eclipse.core.databinding.property.value.IValueProperty;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.IEMFListProperty;
@@ -42,9 +40,6 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingProperties;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingRealm;
-import org.eclipse.ufacekit.ui.swing.databinding.swing.model.ILabelDelegate;
-import org.eclipse.ufacekit.ui.swing.databinding.swing.model.ObservableListCellRender;
-import org.eclipse.ufacekit.ui.swing.databinding.swing.model.ObservableListModel;
 
 import at.bestsolution.e4.addressbook.model.addressbook.AddressBook;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressbookPackage;
@@ -85,27 +80,10 @@ public class PersonList extends JPanel {
 			IEMFListProperty mProp = EMFProperties
 					.list(AddressbookPackage.Literals.ADDRESS_BOOK__PERSONS);
 
-			IValueProperty[] props = {
-					EMFProperties
-							.value(AddressbookPackage.Literals.PERSON__FIRSTNAME),
-					EMFProperties
-							.value(AddressbookPackage.Literals.PERSON__LASTNAME) };
-
 			final IObservableList list = mProp.observe(book);
 			
-			ObservableListModel<Person> model = new ObservableListModel<Person>(list, props);
-
-			w_list.setModel(model);
-			w_list.setCellRenderer(new ObservableListCellRender<Person>(model,
-					new ILabelDelegate<Person>() {
-
-						@Override
-						public String getText(Person object,
-								IObservableMap[] maps) {
-							return object == null ? "" : object.getFirstname()
-									+ " " + object.getLastname();
-						}
-					}));
+			// TODO Lab 2
+			// Initialize TableViewer
 			
 			list.addListChangeListener(new IListChangeListener() {
 				

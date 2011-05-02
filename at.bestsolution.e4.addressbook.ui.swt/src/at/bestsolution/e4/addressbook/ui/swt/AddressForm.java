@@ -122,19 +122,10 @@ public class AddressForm extends Composite {
 	}
 
 	public void init(AddressBook book) {
-		{
-			IEMFListProperty mProp = EMFProperties
-					.list(AddressbookPackage.Literals.ADDRESS_BOOK__COUNTRIES);
-			IValueProperty props = EMFProperties
-					.value(AddressbookPackage.Literals.COUNTRY__NAME);
-
-			v_country = new ComboViewer(w_country);
-			ObservableListContentProvider cp = new ObservableListContentProvider();
-			v_country.setContentProvider(cp);
-			v_country.setLabelProvider(new ObservableMapLabelProvider(props
-					.observeDetail(cp.getKnownElements())));
-			v_country.setInput(mProp.observe(book));
-		}
+		
+		// TODO Lab 2
+		// Initialize viewer for Country 
+		v_country = new ComboViewer(w_country);
 
 		{
 			IObservableValue value = ViewerProperties.singleSelection()
@@ -178,32 +169,12 @@ public class AddressForm extends Composite {
 		this.dbc = dbc;
 		this.master = master;
 
-		IWidgetValueProperty tProp = WidgetProperties.text(SWT.Modify);
-		IViewerValueProperty sProp = ViewerProperties.singleSelection();
+		// TODO Lab 1
+		// Binding Street/Zip/City Text Widgets
+		
+		// TODO Lab 2
+		// Bind Selection of Country-ComboBox
 
-		{
-			IEMFValueProperty mProp = EMFProperties
-					.value(AddressbookPackage.Literals.ADDRESS__STREET);
-			dbc.bindValue(tProp.observe(w_street), mProp.observeDetail(master));
-		}
-
-		{
-			IEMFValueProperty mProp = EMFProperties
-					.value(AddressbookPackage.Literals.ADDRESS__ZIP);
-			dbc.bindValue(tProp.observe(w_zip), mProp.observeDetail(master));
-		}
-
-		{
-			IEMFValueProperty mProp = EMFProperties
-					.value(AddressbookPackage.Literals.ADDRESS__CITY);
-			dbc.bindValue(tProp.observe(w_city), mProp.observeDetail(master));
-		}
-
-		{
-			IEMFValueProperty mProp = EMFProperties.value(FeaturePath
-					.fromList(AddressbookPackage.Literals.ADDRESS__COUNTRY));
-			dbc.bindValue(sProp.observe(v_country), mProp.observeDetail(master));
-		}
 
 		bindState();
 

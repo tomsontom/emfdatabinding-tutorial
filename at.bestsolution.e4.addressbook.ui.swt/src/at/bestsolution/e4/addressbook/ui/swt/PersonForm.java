@@ -215,21 +215,8 @@ public class PersonForm extends Composite {
 	private void bindControls() {
 		EMFDataBindingContext dbc = new EMFDataBindingContext();
 
-		IWidgetValueProperty tProp = WidgetProperties.text(SWT.Modify);
-
-		{
-			IEMFValueProperty mProp = EMFProperties
-					.value(AddressbookPackage.Literals.PERSON__FIRSTNAME);
-			dbc.bindValue(tProp.observe(w_firstName),
-					mProp.observeDetail(master));
-		}
-
-		{
-			IEMFValueProperty mProp = EMFProperties
-					.value(AddressbookPackage.Literals.PERSON__LASTNAME);
-			dbc.bindValue(tProp.observe(w_lastName),
-					mProp.observeDetail(master));
-		}
+		// TODO Lab 1
+		// Bind Firstname, Lastname Text fields
 
 		{
 			IEMFValueProperty mProp = EMFProperties.list(
@@ -268,21 +255,8 @@ public class PersonForm extends Composite {
 	private void bindControls(EditingDomain editingDomain) {
 		EMFDataBindingContext dbc = new EMFDataBindingContext();
 
-		IWidgetValueProperty tProp = WidgetProperties.text(SWT.Modify);
-
-		{
-			IEMFValueProperty mProp = EMFEditProperties.value(editingDomain,
-					AddressbookPackage.Literals.PERSON__FIRSTNAME);
-			dbc.bindValue(tProp.observeDelayed(PersonForm.DELAY, w_firstName),
-					mProp.observeDetail(master));
-		}
-
-		{
-			IEMFValueProperty mProp = EMFEditProperties.value(editingDomain,
-					AddressbookPackage.Literals.PERSON__LASTNAME);
-			dbc.bindValue(tProp.observeDelayed(PersonForm.DELAY, w_lastName),
-					mProp.observeDetail(master));
-		}
+		// TODO Lab 3
+		// Bind the First and Lastname
 
 		{
 			IEMFValueProperty mProp = EMFEditProperties.list(editingDomain,

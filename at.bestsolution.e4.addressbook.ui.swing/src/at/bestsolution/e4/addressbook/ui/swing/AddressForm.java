@@ -51,7 +51,6 @@ import org.eclipse.ufacekit.ui.swing.databinding.swing.model.ObservableListCellR
 import at.bestsolution.e4.addressbook.model.addressbook.Address;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressBook;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressbookPackage;
-import at.bestsolution.e4.addressbook.model.addressbook.Country;
 import at.bestsolution.e4.addressbook.model.addressbook.FederalState;
 
 public class AddressForm extends JPanel {
@@ -110,26 +109,10 @@ public class AddressForm extends JPanel {
 	}
 
 	public void init(AddressBook book) {
-		{
-			IEMFListProperty mProp = EMFProperties
-					.list(AddressbookPackage.Literals.ADDRESS_BOOK__COUNTRIES);
-			IValueProperty[] props = { EMFProperties
-					.value(AddressbookPackage.Literals.COUNTRY__NAME) };
-			ObservableComboBoxModel<Country> model = new ObservableComboBoxModel<Country>(
-					mProp.observe(book), props);
-
-			w_country.setRenderer(new ObservableListCellRender<Country>(model,
-					new ILabelDelegate<Country>() {
-
-						@Override
-						public String getText(Country object,
-								IObservableMap[] maps) {
-							return object == null ? "" : object.getName();
-						}
-					}));
-			w_country.setModel(model);
-		}
-
+		
+		// TODO Lab 2
+		// Initialize viewer for Country 
+		
 		{
 			IWidgetValueProperty p = SwingProperties.singleSelectionValue();
 			IObservableValue value = p.observe(w_country);
@@ -177,32 +160,12 @@ public class AddressForm extends JPanel {
 	public void bindControls(DataBindingContext dbc, IObservableValue master) {
 		this.dbc = dbc;
 		this.master = master;
-		IWidgetValueProperty tProp = SwingProperties.text(TextType.Modify);
-		IWidgetValueProperty sProp = SwingProperties.singleSelectionValue();
-
-		{
-			IEMFValueProperty mProp = EMFProperties
-					.value(AddressbookPackage.Literals.ADDRESS__STREET);
-			dbc.bindValue(tProp.observe(w_street), mProp.observeDetail(master));
-		}
-
-		{
-			IEMFValueProperty mProp = EMFProperties
-					.value(AddressbookPackage.Literals.ADDRESS__ZIP);
-			dbc.bindValue(tProp.observe(w_zip), mProp.observeDetail(master));
-		}
-
-		{
-			IEMFValueProperty mProp = EMFProperties
-					.value(AddressbookPackage.Literals.ADDRESS__CITY);
-			dbc.bindValue(tProp.observe(w_city), mProp.observeDetail(master));
-		}
-
-		{
-			IEMFValueProperty mProp = EMFProperties.value(FeaturePath
-					.fromList(AddressbookPackage.Literals.ADDRESS__COUNTRY));
-			dbc.bindValue(sProp.observe(w_country), mProp.observeDetail(master));
-		}
+		
+		// TODO Lab 1
+		// Binding Street/Zip/City Text Widgets
+		
+		// TODO Lab 2
+		// Bind Selection of Country-ComboBox
 
 		bindState(dbc, master);
 
