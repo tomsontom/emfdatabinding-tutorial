@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Databinding
+Bundle-SymbolicName: org.eclipse.ufacekit.ui.jfx.databinding
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: jfxrt;bundle-version="1.0.0",
+ org.eclipse.core.databinding.property;bundle-version="1.4.0",
+ org.eclipse.core.databinding.observable;bundle-version="1.4.0",
+ org.eclipse.equinox.common;bundle-version="3.6.0"
+Export-Package: org.eclipse.ufacekit.ui.jfx.databinding
