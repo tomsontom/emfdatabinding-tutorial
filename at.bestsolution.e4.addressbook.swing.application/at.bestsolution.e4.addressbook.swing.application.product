@@ -14,6 +14,7 @@
 
    <plugins>
       <plugin id="at.bestsolution.e4.addressbook.model"/>
+      <plugin id="at.bestsolution.e4.addressbook.model.handlers"/>
       <plugin id="at.bestsolution.e4.addressbook.swing.application"/>
       <plugin id="at.bestsolution.e4.addressbook.ui.services"/>
       <plugin id="at.bestsolution.e4.addressbook.ui.services.di"/>
