@@ -24,7 +24,7 @@ import org.eclipse.core.databinding.observable.IObserving;
  * 
  * @since 3.3
  */
-public interface IFXBeanObservable extends IObserving {
+public interface IJFXBeanObservable extends IObserving {
 	/**
 	 * @return property descriptor of the property being observed,
 	 *         <code>null</code> if the runtime time information was not

@@ -41,7 +41,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
 import org.eclipse.osgi.service.datalocation.Location;
-import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingRealm;
+import org.eclipse.ufacekit.ui.jfx.databinding.JFXRealm;
 
 @SuppressWarnings("restriction")
 public class E4Application implements IApplication {
@@ -51,7 +51,6 @@ public class E4Application implements IApplication {
 	private IModelResourceHandler handler;
 	
 	public Object start(IApplicationContext context) throws Exception {
-		SwingRealm.createDefault();
 		E4Workbench workbench = createE4Workbench(context);
 //		Location instanceLocation = (Location) workbench.getContext().get(E4Workbench.INSTANCE_LOCATION);
 		

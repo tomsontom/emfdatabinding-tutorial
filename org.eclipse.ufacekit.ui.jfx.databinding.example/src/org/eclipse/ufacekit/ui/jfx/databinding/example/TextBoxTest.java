@@ -30,8 +30,8 @@ import javax.swing.SwingUtilities;
 
 import org.eclipse.core.databinding.observable.value.IValueChangeListener;
 import org.eclipse.core.databinding.observable.value.ValueChangeEvent;
-import org.eclipse.ufacekit.ui.jfx.databinding.FXBeanProperties;
-import org.eclipse.ufacekit.ui.jfx.databinding.IFXBeanValueProperty;
+import org.eclipse.ufacekit.ui.jfx.databinding.JFXBeanProperties;
+import org.eclipse.ufacekit.ui.jfx.databinding.IJFXBeanValueProperty;
 import org.eclipse.ufacekit.ui.swing.databinding.swing.SwingRealm;
 
 public class TextBoxTest {

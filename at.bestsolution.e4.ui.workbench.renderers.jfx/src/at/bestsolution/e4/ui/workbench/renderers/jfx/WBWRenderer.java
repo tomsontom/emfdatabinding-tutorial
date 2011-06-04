@@ -1,10 +1,5 @@
 package at.bestsolution.e4.ui.workbench.renderers.jfx;
 
-import java.awt.BorderLayout;
-import java.awt.Component;
-
-import javax.swing.JFrame;
-
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -33,9 +28,13 @@ public class WBWRenderer extends JFXPartRenderer {
 		stage.setHeight(mWindow.getHeight());
 		
 		BorderPane rootPane = new BorderPane();
-		rootPane.setId("Root");
+		
+		if( element.getElementId() != null ) {
+			rootPane.setId(element.getElementId());	
+		}
+		
 		Scene scene = new Scene(rootPane, mWindow.getWidth(), mWindow.getHeight());
-//		scene.getStylesheets().add("test.css");
+		scene.getStylesheets().add("/test.css"); //FIXME This has to be replaced by contributions
 		stage.setScene(scene);
 		
 		stage.setTitle(mWindow.getLocalizedLabel());

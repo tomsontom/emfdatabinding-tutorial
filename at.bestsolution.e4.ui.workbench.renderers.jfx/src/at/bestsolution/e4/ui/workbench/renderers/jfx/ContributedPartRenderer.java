@@ -15,8 +15,11 @@ public class ContributedPartRenderer extends JFXPartRenderer {
 
 	@Override
 	public Object createWidget(MUIElement element, Object parent) {
-		System.err.println("Creating Part");
 		BorderPane pane = new BorderPane();
+		
+		if( element.getElementId() != null ) {
+			pane.setId(element.getElementId());
+		}
 		
 		MPart part = (MPart) element;
 		IEclipseContext localContext = part.getContext();

@@ -32,6 +32,7 @@ import org.eclipse.e4.ui.workbench.IPresentationEngine;
 import org.eclipse.e4.ui.workbench.modeling.EModelService;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.equinox.app.IApplication;
+import org.eclipse.ufacekit.ui.jfx.databinding.JFXRealm;
 
 import at.bestsolution.e4.ui.workbench.jfx.AbstractPartRenderer;
 import at.bestsolution.e4.ui.workbench.jfx.IRendererFactory;
@@ -381,6 +382,7 @@ public class PartRenderingEngine implements IPresentationEngine {
 		@Override
 		public void start(Stage primaryStage) throws Exception {
 			this.stage = primaryStage;
+			JFXRealm.createDefault();
 			System.err.println("Stage is created");
 		}
 		

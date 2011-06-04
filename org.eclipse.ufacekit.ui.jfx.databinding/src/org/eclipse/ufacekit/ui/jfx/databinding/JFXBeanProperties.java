@@ -13,16 +13,16 @@ import org.eclipse.ufacekit.ui.jfx.databinding.internal.FXBeanValuePropertyDecor
 import javafx.beans.property.Property;
 
 
-public class FXBeanProperties {
-	public static IFXBeanValueProperty value(String propertyName) {
+public class JFXBeanProperties {
+	public static IJFXBeanValueProperty value(String propertyName) {
 		return value(null, propertyName, null);
 	}
 	
-	public static IFXBeanValueProperty value(String propertyName, Class valueType) {
+	public static IJFXBeanValueProperty value(String propertyName, Class valueType) {
 		return value(null, propertyName, valueType);
 	}
 	
-	public static IFXBeanValueProperty value(Class beanClass,
+	public static IJFXBeanValueProperty value(Class beanClass,
 			String propertyName, Class valueType) {
 		String[] propertyNames = split(propertyName);
 		if (propertyNames.length > 1)
@@ -40,7 +40,7 @@ public class FXBeanProperties {
 			property = new FXBeanValueProperty(propertyDescriptor, valueType);
 		}
 
-		IFXBeanValueProperty beanProperty = new FXBeanValuePropertyDecorator(
+		IJFXBeanValueProperty beanProperty = new FXBeanValuePropertyDecorator(
 				property, propertyDescriptor);
 		for (int i = 1; i < propertyNames.length; i++) {
 			beanProperty = beanProperty.value(propertyNames[i]);

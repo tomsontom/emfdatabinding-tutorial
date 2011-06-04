@@ -21,15 +21,15 @@ import org.eclipse.core.databinding.observable.set.IObservableSet;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.databinding.property.value.IValueProperty;
 import org.eclipse.core.databinding.property.value.ValueProperty;
-import org.eclipse.ufacekit.ui.jfx.databinding.FXBeanProperties;
-import org.eclipse.ufacekit.ui.jfx.databinding.IFXBeanValueProperty;
+import org.eclipse.ufacekit.ui.jfx.databinding.JFXBeanProperties;
+import org.eclipse.ufacekit.ui.jfx.databinding.IJFXBeanValueProperty;
 
 /**
  * @since 3.3
  * 
  */
 public class FXBeanValuePropertyDecorator extends ValueProperty implements
-		IFXBeanValueProperty {
+		IJFXBeanValueProperty {
 	private final IValueProperty delegate;
 	private final PropertyDescriptor propertyDescriptor;
 
@@ -59,16 +59,16 @@ public class FXBeanValuePropertyDecorator extends ValueProperty implements
 		delegate.setValue(source, value);
 	}
 
-	public IFXBeanValueProperty value(String propertyName) {
+	public IJFXBeanValueProperty value(String propertyName) {
 		return value(propertyName, null);
 	}
 
-	public IFXBeanValueProperty value(String propertyName, Class valueType) {
+	public IJFXBeanValueProperty value(String propertyName, Class valueType) {
 		Class beanClass = (Class) delegate.getValueType();
-		return value(FXBeanProperties.value(beanClass, propertyName, valueType));
+		return value(JFXBeanProperties.value(beanClass, propertyName, valueType));
 	}
 
-	public IFXBeanValueProperty value(IFXBeanValueProperty property) {
+	public IJFXBeanValueProperty value(IJFXBeanValueProperty property) {
 		return new FXBeanValuePropertyDecorator(super.value(property),
 				property.getPropertyDescriptor());
 	}

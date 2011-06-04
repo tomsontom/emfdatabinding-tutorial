@@ -4,6 +4,6 @@ import java.beans.PropertyDescriptor;
 
 import org.eclipse.core.databinding.property.IProperty;
 
-public interface IFXBeanProperty extends IProperty {
+public interface IJFXBeanProperty extends IProperty {
 	public PropertyDescriptor getPropertyDescriptor();
 }

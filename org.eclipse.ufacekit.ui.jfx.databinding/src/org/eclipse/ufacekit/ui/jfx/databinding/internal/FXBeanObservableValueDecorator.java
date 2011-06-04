@@ -18,15 +18,15 @@ import org.eclipse.core.databinding.observable.IObservable;
 import org.eclipse.core.databinding.observable.IObserving;
 import org.eclipse.core.databinding.observable.value.DecoratingObservableValue;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
-import org.eclipse.ufacekit.ui.jfx.databinding.IFXBeanObservable;
+import org.eclipse.ufacekit.ui.jfx.databinding.IJFXBeanObservable;
 
 /**
- * {@link IFXBeanObservable} decorator for an {@link IObservableValue}.
+ * {@link IJFXBeanObservable} decorator for an {@link IObservableValue}.
  * 
  * @since 3.3
  */
 public class FXBeanObservableValueDecorator extends DecoratingObservableValue
-		implements IFXBeanObservable {
+		implements IJFXBeanObservable {
 	private PropertyDescriptor propertyDescriptor;
 
 	/**

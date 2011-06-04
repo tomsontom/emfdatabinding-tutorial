@@ -2,8 +2,6 @@ package at.bestsolution.e4.ui.workbench.renderers.jfx;
 
 import javafx.scene.Node;
 import javafx.scene.control.SplitPane;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
 
 import org.eclipse.e4.ui.model.application.ui.MElementContainer;
 import org.eclipse.e4.ui.model.application.ui.MUIElement;
@@ -17,6 +15,11 @@ public class SashRenderer extends JFXPartRenderer {
 	@Override
 	public Object createWidget(MUIElement element, Object parent) {
 		SplitPane pane = new SplitPane();
+		
+		if( element.getElementId() != null ) {
+			pane.setId(element.getElementId());	
+		}
+		
 		return pane;
 	}
 

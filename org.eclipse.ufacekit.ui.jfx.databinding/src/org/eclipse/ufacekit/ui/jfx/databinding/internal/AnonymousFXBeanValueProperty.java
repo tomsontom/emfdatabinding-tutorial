@@ -19,7 +19,7 @@ import org.eclipse.core.databinding.observable.masterdetail.MasterDetailObservab
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.databinding.property.value.DelegatingValueProperty;
 import org.eclipse.core.databinding.property.value.IValueProperty;
-import org.eclipse.ufacekit.ui.jfx.databinding.FXBeanProperties;
+import org.eclipse.ufacekit.ui.jfx.databinding.JFXBeanProperties;
 
 /**
  * @since 3.3
@@ -50,7 +50,7 @@ public class AnonymousFXBeanValueProperty extends DelegatingValueProperty {
 
 		IValueProperty delegate;
 		try {
-			delegate = FXBeanProperties.value(beanClass, propertyName,
+			delegate = JFXBeanProperties.value(beanClass, propertyName,
 					(Class<?>) getValueType());
 		} catch (IllegalArgumentException noSuchProperty) {
 			delegate = null;
