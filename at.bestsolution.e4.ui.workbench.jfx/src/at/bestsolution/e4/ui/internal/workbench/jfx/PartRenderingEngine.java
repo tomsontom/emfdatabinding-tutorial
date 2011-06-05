@@ -34,6 +34,9 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.ufacekit.ui.jfx.databinding.JFXRealm;
 
+import com.sun.javafx.runtime.FXExit;
+
+import at.bestsolution.e4.ui.internal.workbench.jfx.E4Application.ApplicationClass;
 import at.bestsolution.e4.ui.workbench.jfx.AbstractPartRenderer;
 import at.bestsolution.e4.ui.workbench.jfx.IRendererFactory;
 
@@ -310,7 +313,6 @@ public class PartRenderingEngine implements IPresentationEngine {
 			theApp = (MApplication) uiRoot;
 			
 			try  {
-				Stage primaryStage = ApplicationClass.bootstrap();
 				final boolean[] initDone = new boolean[1];
 				
 				Platform.runLater(new Runnable() {
@@ -343,6 +345,7 @@ public class PartRenderingEngine implements IPresentationEngine {
 				while ((!theApp.getChildren().isEmpty() && someAreVisible(theApp
 						.getChildren()))) {
 					try {
+//						System.err.println("checking ...");
 						Thread.sleep(1000); // We could do better by using a lock and
 											// call lock.wait()/lock.notify() when a
 											// window is closed
@@ -352,7 +355,8 @@ public class PartRenderingEngine implements IPresentationEngine {
 					}
 				}
 				
-				System.err.println("Check is over");
+				
+//				System.err.println("Check is over");
 				
 			} catch (Throwable e) {
 				e.printStackTrace();
@@ -369,46 +373,12 @@ public class PartRenderingEngine implements IPresentationEngine {
 				return true;
 			}
 		}
+		
 		return false;
 	}
 
 	public void stop() {
 		// TODO Auto-generated method stub
 
-	}
-	
-	public static class ApplicationClass extends Application {
-		private static Stage stage;
-		@Override
-		public void start(Stage primaryStage) throws Exception {
-			this.stage = primaryStage;
-			JFXRealm.createDefault();
-			System.err.println("Stage is created");
-		}
-		
-		@Override
-		public void stop() throws Exception {
-			super.stop();
-			System.err.println("Stop is called");
-		}
-		
-		@Override
-		public void destroy() throws Exception {
-			System.err.println("Destroy is called");
-			super.destroy();
-		}
-		
-		public static Stage bootstrap() {
-			Application.launch(new String[0]);
-			while( stage == null ) {
-				try {
-					Thread.sleep(100);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-			return stage;
-		}
 	}
 }

@@ -1,5 +1,7 @@
 package at.bestsolution.e4.ui.workbench.renderers.jfx;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -100,4 +102,48 @@ public class WBWRenderer extends JFXPartRenderer {
 		return false;
 	}
 
+	@Override
+	public void hookControllerLogic(MUIElement me) {
+		super.hookControllerLogic(me);
+		Object widget = me.getWidget();
+		
+		if( widget instanceof Stage ) {
+			Stage stage = (Stage) widget;
+			final MWindow window = (MWindow) me;
+			stage.widthProperty().addListener(new ChangeListener<Number>() {
+
+				@Override
+				public void changed(ObservableValue<? extends Number> arg0,
+						Number arg1, Number arg2) {
+					window.setWidth(arg2.intValue()); 
+				}
+			});
+			stage.heightProperty().addListener(new ChangeListener<Number>() {
+
+				@Override
+				public void changed(ObservableValue<? extends Number> arg0,
+						Number arg1, Number arg2) {
+					window.setHeight(arg2.intValue());
+				}
+			});
+			
+			stage.xProperty().addListener(new ChangeListener<Number>() {
+
+				@Override
+				public void changed(ObservableValue<? extends Number> arg0,
+						Number arg1, Number arg2) {
+					window.setX(arg2.intValue());
+				}
+			});
+			
+			stage.yProperty().addListener(new ChangeListener<Number>() {
+
+				@Override
+				public void changed(ObservableValue<? extends Number> arg0,
+						Number arg1, Number arg2) {
+					window.setY(arg2.intValue());
+				}
+			});
+		}
+	}
 }

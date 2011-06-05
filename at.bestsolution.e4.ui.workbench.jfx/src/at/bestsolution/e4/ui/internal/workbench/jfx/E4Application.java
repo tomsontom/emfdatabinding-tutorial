@@ -2,6 +2,10 @@ package at.bestsolution.e4.ui.internal.workbench.jfx;
 
 import java.io.IOException;
 
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.stage.Stage;
+
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.RegistryFactory;
@@ -50,12 +54,30 @@ public class E4Application implements IApplication {
 
 	private IModelResourceHandler handler;
 	
-	public Object start(IApplicationContext context) throws Exception {
-		E4Workbench workbench = createE4Workbench(context);
+	public Object start(final IApplicationContext context) throws Exception {
+		System.err.println("FUK OFFFFFFFF");
+		final E4Workbench workbench = createE4Workbench(context);
 //		Location instanceLocation = (Location) workbench.getContext().get(E4Workbench.INSTANCE_LOCATION);
 		
-		IEclipseContext workbenchContext = workbench.getContext();
+		final IEclipseContext workbenchContext = workbench.getContext();
+		Stage primaryStage = ApplicationClass.bootstrap();
+		workbenchContext.set("jfx.primaryStage", primaryStage);
+		
+		Thread hook = new Thread() {
+			@Override
+			public void run() {
+				preShutdown(workbenchContext, workbench);
+			}
+		};
+		
+		Runtime.getRuntime().addShutdownHook(hook);
+		
 		workbench.createAndRunUI(workbench.getApplication());
+		
+		return EXIT_OK;
+	}
+	
+	private void preShutdown(IEclipseContext workbenchContext, E4Workbench workbench) {
 		// Save the model into the targetURI
 		if (lcManager != null) {
 			ContextInjectionFactory.invoke(lcManager, PreSave.class,
@@ -63,7 +85,6 @@ public class E4Application implements IApplication {
 		}
 		saveModel();
 		workbench.close();
-		return EXIT_OK;
 	}
 
 	public void saveModel() {
@@ -404,4 +425,44 @@ public class E4Application implements IApplication {
 		
 	}
 	
+	public static class ApplicationClass extends Application {
+		private static Stage stage;
+		@Override
+		public void start(Stage primaryStage) throws Exception {
+			this.stage = primaryStage;
+			JFXRealm.createDefault();
+			System.err.println("Stage is created");
+		}
+		
+		@Override
+		public void stop() throws Exception {
+			System.err.println("Stop is called");
+			super.stop();
+		}
+		
+		@Override
+		public void destroy() throws Exception {
+			System.err.println("Destroy is called");
+			super.destroy();
+		}
+
+		@Override
+		protected void finalize() throws Throwable {
+			System.err.println("Finalize is called");
+			super.finalize();
+		}
+		
+		public static Stage bootstrap() {
+			Application.launch(ApplicationClass.class, new String[0]);
+			while( stage == null ) {
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			return stage;
+		}
+	}
 }

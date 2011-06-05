@@ -52,13 +52,13 @@ public class PersonForm {
 	public PersonForm(BorderPane parent) {
 		rootPane = new GridPane();
 		
-		fadeOutTransition = new FadeTransition(Duration.valueOf(1000), rootPane);
+		fadeOutTransition = new FadeTransition(Duration.valueOf(800), rootPane);
         fadeOutTransition.setFromValue(1.0f);
-        fadeOutTransition.setToValue(0.2f);
+        fadeOutTransition.setToValue(0.0f);
         fadeOutTransition.setAutoReverse(true);
         
-        fadeInTransition = new FadeTransition(Duration.valueOf(1000), rootPane);
-        fadeInTransition.setFromValue(0.2f);
+        fadeInTransition = new FadeTransition(Duration.valueOf(800), rootPane);
+        fadeInTransition.setFromValue(0.0f);
         fadeInTransition.setToValue(1.0f);
         fadeInTransition.setAutoReverse(true);
 
