@@ -34,6 +34,7 @@ public class PersonList {
 						.value(AddressbookPackage.Literals.PERSON__LASTNAME) };
 		
 		listView = UIFactory.createListView(props, "{0}, {1}");
+		listView.setId("detail-list");
 		
 		pane.setCenter(listView);
 	}

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_9Dp4MXMtEeCJHNm5zvSRcQ" elementId="org.eclipse.e4.ide.application" bindingContexts="_9Dp4MnMtEeCJHNm5zvSRcQ">
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_9DsUcHMtEeCJHNm5zvSRcQ" label="at.bestsolution.e4.addressbook.swing.application" width="500" height="400">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_9DsUcHMtEeCJHNm5zvSRcQ" elementId="mainWindow" label="e4 on JavaFX" width="500" height="400">
     <children xsi:type="basic:PartSashContainer" xmi:id="_aIvtIHMwEeCJHNm5zvSRcQ">
-      <children xsi:type="basic:Part" xmi:id="_t-rawI3UEeCnscsoRhl7Nw" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.ui.jfx/at.bestsolution.e4.addressbook.ui.jfx.PersonList" label="Personlist"/>
-      <children xsi:type="basic:Part" xmi:id="_v8TlEI3UEeCnscsoRhl7Nw" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.ui.jfx/at.bestsolution.e4.addressbook.ui.jfx.PersonForm" label="Persondetail"/>
+      <children xsi:type="basic:Part" xmi:id="_t-rawI3UEeCnscsoRhl7Nw" elementId="personlist-part" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.ui.jfx/at.bestsolution.e4.addressbook.ui.jfx.PersonList" label="Personlist"/>
+      <children xsi:type="basic:Part" xmi:id="_v8TlEI3UEeCnscsoRhl7Nw" elementId="persondetail-part" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.ui.jfx/at.bestsolution.e4.addressbook.ui.jfx.PersonForm" label="Persondetail"/>
     </children>
     <trimBars xmi:id="_3kgG4HM4EeCJHNm5zvSRcQ" elementId="org.eclipse.ui.main.toolbar">
       <children xsi:type="menu:ToolBar" xmi:id="_8D9UwHM4EeCJHNm5zvSRcQ" elementId="toolbar:org.eclipse.ui.main.toolbar">
-        <children xsi:type="menu:HandledToolItem" xmi:id="_84-4QHM4EeCJHNm5zvSRcQ" iconURI="platform:/plugin/at.bestsolution.e4.addressbook.swing.application/icons/list-add-user.png" command="_B2_DUHM5EeCJHNm5zvSRcQ"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_RsY1wHM5EeCJHNm5zvSRcQ" iconURI="platform:/plugin/at.bestsolution.e4.addressbook.swing.application/icons/list-remove-user.png" command="_FEVwIHM5EeCJHNm5zvSRcQ"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_WUsdoHM5EeCJHNm5zvSRcQ" iconURI="platform:/plugin/at.bestsolution.e4.addressbook.swing.application/icons/document-save.png" command="_JEX3EHM5EeCJHNm5zvSRcQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_84-4QHM4EeCJHNm5zvSRcQ" iconURI="platform:/plugin/at.bestsolution.e4.addressbook.jfx.application/icons/list-add-user.png" command="_B2_DUHM5EeCJHNm5zvSRcQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_RsY1wHM5EeCJHNm5zvSRcQ" iconURI="platform:/plugin/at.bestsolution.e4.addressbook.jfx.application/icons/list-remove-user.png" command="_FEVwIHM5EeCJHNm5zvSRcQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_WUsdoHM5EeCJHNm5zvSRcQ" iconURI="platform:/plugin/at.bestsolution.e4.addressbook.jfx.application/icons/document-save.png" command="_JEX3EHM5EeCJHNm5zvSRcQ"/>
       </children>
     </trimBars>
   </children>

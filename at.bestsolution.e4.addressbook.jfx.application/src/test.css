@@ -1,0 +1,84 @@
+#person-pane {
+	-fx-hgap: 10;
+	-fx-vgap: 10;
+}
+
+#persondetail-part {
+    -fx-background-image: url("icons/texture.png");
+    -fx-background-repeat: repeat repeat;
+    -fx-background-position: left top;
+    -fx-padding: 8px;
+}
+
+#address-private {
+	-fx-hgap: 10;
+	-fx-vgap: 10;
+}
+
+#address-business {
+	-fx-hgap: 10;
+	-fx-vgap: 10;
+}
+
+#person-pane VBox {
+	-fx-padding: 10px;
+	-fx-border-style: solid;
+	-fx-border-width: 2;
+	-fx-border-color: #666666;
+	-fx-border-radius: 10;
+}
+
+TextBox {
+	-fx-padding: 2;
+	-fx-border-style: solid;
+	-fx-border-width: 2;
+	-fx-border-color: #666666;
+	-fx-border-radius: 3;
+}
+
+TextBox:focused {
+	-fx-border-color: #ff0000;
+}
+
+.toolbarButton {
+	-fx-background-color: null;   
+}
+
+.toolbarButton:hover {
+	-fx-background-color: rgba(255,255,255,0.4);
+}
+
+*.split-pane-divider{
+    -fx-padding: 0 1 0 0;
+    -fx-background-color: transparent, #333333;
+    -fx-background-insets: 0 -3 0 -3, 0;
+    -fx-border-color: null;
+}
+
+*.horizontal-grabber {
+    -fx-padding: 0;
+    -fx-shape: "";
+}
+
+#detail-list {
+    -fx-background-color: #d1dee3;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+    -fx-effect: innershadow( one-pass-box , rgba(0,0,0,0.1) , 20, 0.0 , 0 , 0 );
+}
+
+#detail-list .list-cell {
+    -fx-indent: 10;
+    -fx-background-color: transparent;
+}
+
+#detail-list .list-cell:filled:selected:focused, #detail-list .list-cell:filled:selected {
+    -fx-background: -fx-accent;
+    -fx-background-color: -fx-selection-bar;
+    -fx-text-fill: -fx-selection-bar-text;
+}
+
+#person-pane .label {
+	-fx-text-fill: white;
+}

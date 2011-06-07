@@ -8,4 +8,5 @@ Require-Bundle: jfxrt;bundle-version="1.0.0",
  org.eclipse.core.databinding.property;bundle-version="1.4.0",
  org.eclipse.core.databinding.observable;bundle-version="1.4.0",
  org.eclipse.equinox.common;bundle-version="3.6.0"
-Export-Package: org.eclipse.ufacekit.ui.jfx.databinding
+Export-Package: org.eclipse.ufacekit.ui.jfx.databinding,
+ org.eclipse.ufacekit.ui.jfx.databinding.controls

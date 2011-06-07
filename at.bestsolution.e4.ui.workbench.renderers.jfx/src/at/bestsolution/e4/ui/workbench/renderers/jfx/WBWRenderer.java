@@ -6,12 +6,17 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import org.eclipse.e4.ui.model.application.ui.MElementContainer;
 import org.eclipse.e4.ui.model.application.ui.MUIElement;
 import org.eclipse.e4.ui.model.application.ui.MUILabel;
+import org.eclipse.e4.ui.model.application.ui.SideValue;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
+import org.eclipse.e4.ui.model.application.ui.basic.MTrimBar;
+import org.eclipse.e4.ui.model.application.ui.basic.MTrimmedWindow;
 import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
+import org.eclipse.e4.ui.workbench.IPresentationEngine;
 
 @SuppressWarnings("restriction")
 public class WBWRenderer extends JFXPartRenderer {
@@ -28,16 +33,14 @@ public class WBWRenderer extends JFXPartRenderer {
 		stage.setY(mWindow.getY());
 		stage.setWidth(mWindow.getWidth());
 		stage.setHeight(mWindow.getHeight());
+//		stage.initStyle(StageStyle.UNDECORATED);
 		
 		BorderPane rootPane = new BorderPane();
-		
-		if( element.getElementId() != null ) {
-			rootPane.setId(element.getElementId());	
-		}
 		
 		Scene scene = new Scene(rootPane, mWindow.getWidth(), mWindow.getHeight());
 		scene.getStylesheets().add("/test.css"); //FIXME This has to be replaced by contributions
 		stage.setScene(scene);
+		setCSSInfo(element, rootPane);
 		
 		stage.setTitle(mWindow.getLocalizedLabel());
 		
@@ -67,6 +70,23 @@ public class WBWRenderer extends JFXPartRenderer {
 			if( e.getWidget() != null ) {
 				BorderPane p = (BorderPane) stage.getScene().getRoot();
 				p.setCenter((Node) e.getWidget());
+			}
+		}
+		
+		IPresentationEngine engine = (IPresentationEngine) context
+				.get(IPresentationEngine.class.getName());
+		
+		if ( (MUIElement)container instanceof MTrimmedWindow) {
+			MTrimmedWindow tWindow = (MTrimmedWindow) (MUIElement)container;
+			for (MTrimBar trimBar : tWindow.getTrimBars()) {
+				BorderPane pane = (BorderPane) stage.getScene().getRoot();
+				Object o = engine.createGui(trimBar, pane, tWindow.getContext());
+				
+				if( o != null ) {
+					if( trimBar.getSide() == SideValue.TOP ) {
+						pane.setTop((Node) o);
+					}
+				}
 			}
 		}
 	}

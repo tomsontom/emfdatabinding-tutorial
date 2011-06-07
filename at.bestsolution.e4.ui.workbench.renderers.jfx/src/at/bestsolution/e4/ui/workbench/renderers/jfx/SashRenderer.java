@@ -1,7 +1,10 @@
 package at.bestsolution.e4.ui.workbench.renderers.jfx;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.Node;
 import javafx.scene.control.SplitPane;
+import javafx.scene.control.SplitPane.Divider;
 
 import org.eclipse.e4.ui.model.application.ui.MElementContainer;
 import org.eclipse.e4.ui.model.application.ui.MUIElement;
@@ -24,20 +27,58 @@ public class SashRenderer extends JFXPartRenderer {
 	}
 
 	@Override
-	public void processContents(MElementContainer<MUIElement> container) {
+	public void processContents(final MElementContainer<MUIElement> container) { 
 		if( !(((MUIElement)container) instanceof MPartSashContainer) ) {
 			return;
 		}
 
 		super.processContents(container);
 		
-		SplitPane splitPane = (SplitPane) container.getWidget();
+		final SplitPane splitPane = (SplitPane) container.getWidget();
 		for( MUIElement e : container.getChildren() ) {
 			if( e.getWidget() != null ) {
 				splitPane.getItems().add((Node) e.getWidget());
-			}
+			} 
 		}
 
+		int i = 0;
+		for( MUIElement e : container.getChildren() ) {
+			String data = e.getContainerData();
+			if( data != null ) {
+				try {
+					double d = Double.parseDouble(data);
+					splitPane.setDividerPosition(i++, d);
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}				
+			}
+		}
+		
+		for( Divider d : splitPane.getDividers() ) {
+			d.positionProperty().addListener(new ChangeListener<Number>() {
+
+				@Override
+				public void changed(ObservableValue<? extends Number> arg0,
+						Number arg1, Number arg2) {
+					int i = 0;
+					for( double d : splitPane.getDividersPositions() ) {
+						container.getChildren().get(i++).setContainerData(Double.toString(d));
+					}
+				}
+			});
+		}
+	}
+	
+	@Override
+	public void hookControllerLogic(MUIElement me) {
+		System.err.println("Hook logic");
+		super.hookControllerLogic(me);
+		
+		final SplitPane pane = (SplitPane) me.getWidget();
+		
+		final MPartSashContainer container = (MPartSashContainer) me;
+		
+		
 	}
 	
 	@Override

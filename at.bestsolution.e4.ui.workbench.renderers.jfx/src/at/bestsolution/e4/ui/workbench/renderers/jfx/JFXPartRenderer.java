@@ -2,6 +2,8 @@ package at.bestsolution.e4.ui.workbench.renderers.jfx;
 
 import java.util.List;
 
+import javafx.scene.Node;
+
 import org.eclipse.e4.ui.model.application.ui.MElementContainer;
 import org.eclipse.e4.ui.model.application.ui.MUIElement;
 import org.eclipse.e4.ui.workbench.IPresentationEngine;
@@ -12,8 +14,36 @@ import at.bestsolution.e4.ui.workbench.jfx.AbstractPartRenderer;
 @SuppressWarnings("restriction")
 public abstract class JFXPartRenderer extends AbstractPartRenderer {
 	
+	protected void setCSSInfo(MUIElement me, Object widget) {
+		if( !(widget instanceof Node) ) {
+			return;
+		}
+		// Set up the CSS Styling parameters; id & class
+//		IEclipseContext ctxt = getContext(me);
+//		if (ctxt == null)
+//			ctxt = getContext(me);
+		
+		// Put all the tags into the class string
+//		EObject eObj = (EObject) me;
+//		String cssClassStr = 'M' + eObj.eClass().getName();
+//		for (String tag : me.getTags())
+//			cssClassStr += ' ' + tag;
+
+		// this will trigger style()
+		String id = me.getElementId();
+		if (id != null) {
+			id = id.replace(".", "-"); //$NON-NLS-1$ //$NON-NLS-2$
+		}
+		
+		Node n = (Node) widget;
+		System.err.println("Setting id: " + id);
+		n.setId(id);
+	}
+	
 	public void bindWidget(MUIElement me, Object widget) {
 		me.setWidget(widget);
+		
+		setCSSInfo(me, widget);
 	}
 	
 	public void hookControllerLogic(MUIElement me) {

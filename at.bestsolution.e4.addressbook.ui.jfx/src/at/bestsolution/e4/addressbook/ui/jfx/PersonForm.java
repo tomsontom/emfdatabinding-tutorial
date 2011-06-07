@@ -1,5 +1,7 @@
 package at.bestsolution.e4.addressbook.ui.jfx;
 
+import java.util.List;
+
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,16 +17,20 @@ import javafx.util.Duration;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.databinding.observable.value.WritableValue;
 import org.eclipse.core.databinding.property.value.IValueProperty;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.emf.databinding.EMFDataBindingContext;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.IEMFValueProperty;
+import org.eclipse.emf.databinding.IEMFListProperty.ListElementAccess;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.ufacekit.ui.jfx.databinding.JFXBeanProperties;
 
+import at.bestsolution.e4.addressbook.model.addressbook.Address;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressBook;
+import at.bestsolution.e4.addressbook.model.addressbook.AddressType;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressbookPackage;
 import at.bestsolution.e4.addressbook.model.addressbook.Person;
 
@@ -51,13 +57,16 @@ public class PersonForm {
 	@Inject
 	public PersonForm(BorderPane parent) {
 		rootPane = new GridPane();
+		rootPane.setId("person-pane");
+//		rootPane.setHgap(10);
+//		rootPane.setVgap(10);
 		
-		fadeOutTransition = new FadeTransition(Duration.valueOf(800), rootPane);
+		fadeOutTransition = new FadeTransition(Duration.valueOf(500), rootPane);
         fadeOutTransition.setFromValue(1.0f);
         fadeOutTransition.setToValue(0.0f);
         fadeOutTransition.setAutoReverse(true);
         
-        fadeInTransition = new FadeTransition(Duration.valueOf(800), rootPane);
+        fadeInTransition = new FadeTransition(Duration.valueOf(500), rootPane);
         fadeInTransition.setFromValue(0.0f);
         fadeInTransition.setToValue(1.0f);
         fadeInTransition.setAutoReverse(true);
@@ -69,7 +78,6 @@ public class PersonForm {
 			w_firstName = new TextBox();
 			GridPane.setHgrow(w_firstName, Priority.ALWAYS);
 			rootPane.add(w_firstName, 1, 0);
-
 		}
 		
 		{
@@ -114,9 +122,12 @@ public class PersonForm {
 	}
 
 	@PostConstruct
-	private void init(@Optional EditingDomain editingDomain, AddressBook book,
+	void init(@Optional EditingDomain editingDomain, AddressBook book,
 			@Optional Person person) {
 		master = new WritableValue();
+		
+		privateAddressForm.init(book);
+		businessAddress.init(book);
 		
 		if (editingDomain == null) {
 			bindControls();
@@ -145,6 +156,22 @@ public class PersonForm {
 			dbc.bindValue(tProp.observe(w_lastName),
 					mProp.observeDetail(master));
 		}
+		
+		{
+			IEMFValueProperty mProp = EMFProperties.list(
+					AddressbookPackage.Literals.PERSON__ADDRESSES).value(
+					new ElementAccessImpl(AddressType.PRIVATE));
+			IObservableValue value = mProp.observeDetail(master);
+			privateAddressForm.bindControls(dbc, value);
+		}
+		
+		{
+			IEMFValueProperty mProp = EMFProperties.list(
+					AddressbookPackage.Literals.PERSON__ADDRESSES).value(
+					new ElementAccessImpl(AddressType.BUSINESS));
+			IObservableValue value = mProp.observeDetail(master);
+			businessAddress.bindControls(dbc, value);
+		}
 	}
 	
 	private void bindControls(EditingDomain editingDomain) {
@@ -166,5 +193,38 @@ public class PersonForm {
 			
 			fadeOutTransition.playFromStart();
 		}
+	}
+	
+	private class ElementAccessImpl extends ListElementAccess<Address> {
+		private AddressType type;
+
+		public ElementAccessImpl(AddressType type) {
+			this.type = type;
+		}
+
+		@Override
+		public int getReadValueIndex(List<Address> list) {
+			int i = 0;
+			for (Address o : list) {
+				if (o.getType() == type) {
+					return i;
+				}
+				i++;
+			}
+			return -1;
+		}
+
+		@Override
+		public int getWriteValueIndex(List<Address> list) {
+			int i = 0;
+			for (Address o : list) {
+				if (o.getType() == type) {
+					return i;
+				}
+				i++;
+			}
+			return -1;
+		}
+
 	}
 }
