@@ -3,22 +3,16 @@ package at.bestsolution.e4.ui.workbench.renderers.jfx;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ContentDisplay;
-import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.transform.Rotate;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -61,7 +55,18 @@ public class WBWRenderer extends JFXPartRenderer {
 		rootPane.setCenter(centerPane);
 		
 		Scene scene = new Scene(rootPane, mWindow.getWidth(), mWindow.getHeight());
-		scene.getStylesheets().add("/test.css"); //FIXME This has to be replaced by contributions
+//		URL url = Platform.getBundle("at.bestsolution.e4.addressbook.jfx.application").getResource("test.css");
+//		try {
+//			URL url2 = new URL(url.toString());
+//			System.err.println("Stream:" +url2.openStream());
+//		} catch (MalformedURLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		scene.getStylesheets().add("/css/test.css"); //FIXME This has to be replaced by contributions
 		stage.setScene(scene);
 		setCSSInfo(element, rootPane);
 		

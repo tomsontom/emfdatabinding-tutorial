@@ -4,7 +4,7 @@
 }
 
 #persondetail-part {
-    -fx-background-image: url("icons/texture.png");
+    -fx-background-image: url("../icons/texture.png");
     -fx-background-repeat: repeat repeat;
     -fx-background-position: left top;
     -fx-padding: 8px;
@@ -90,13 +90,13 @@ TextBox:focused {
 }
 
 .window-close-button {
-	-fx-background-image: url("icons/close_square.png");
+	-fx-background-image: url("../icons/close_square.png");
 }
 
 .window-min-button {
-	-fx-background-image: url("icons/minimize_square.png");
+	-fx-background-image: url("../icons/minimize_square.png");
 }
 
 .window-max-button {
-	-fx-background-image: url("icons/maximize_square.png");
+	-fx-background-image: url("../icons/maximize_square.png");
 }
