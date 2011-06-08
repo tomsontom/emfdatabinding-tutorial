@@ -34,7 +34,7 @@ public abstract class AbstractPartRenderer {
 				.getName());
 	}
 
-	public abstract Object createWidget(MUIElement element, Object parent);
+	public abstract Object createWidget(MUIElement element);
 
 	public abstract void processContents(MElementContainer<MUIElement> container);
 

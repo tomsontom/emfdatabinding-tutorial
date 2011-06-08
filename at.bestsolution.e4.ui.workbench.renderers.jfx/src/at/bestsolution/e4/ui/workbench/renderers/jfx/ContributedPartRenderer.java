@@ -14,7 +14,7 @@ import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 public class ContributedPartRenderer extends JFXPartRenderer {
 
 	@Override
-	public Object createWidget(MUIElement element, Object parent) {
+	public Object createWidget(MUIElement element) {
 		BorderPane pane = new BorderPane();
 		
 		if( element.getElementId() != null ) {

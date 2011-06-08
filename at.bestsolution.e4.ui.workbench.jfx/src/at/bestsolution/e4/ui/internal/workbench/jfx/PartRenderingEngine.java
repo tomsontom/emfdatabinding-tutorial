@@ -177,7 +177,7 @@ public class PartRenderingEngine implements IPresentationEngine {
 		}
 
 		// Create a control appropriate to the part
-		Object newWidget = createWidget(element, parentWidget);
+		Object newWidget = createWidget(element);
 
 		// Remember that we've created the control
 		if (newWidget != null) {
@@ -245,12 +245,12 @@ public class PartRenderingEngine implements IPresentationEngine {
 		}
 	}
 
-	protected Object createWidget(MUIElement element, Object parent) {
-		AbstractPartRenderer renderer = getRenderer(element, parent);
+	protected Object createWidget(MUIElement element) {
+		AbstractPartRenderer renderer = getRenderer(element);
 		if (renderer != null) {
 			// Remember which renderer is responsible for this widget
 			element.setRenderer(renderer);
-			Object newWidget = renderer.createWidget(element, parent);
+			Object newWidget = renderer.createWidget(element);
 			if (newWidget != null) {
 				renderer.bindWidget(element, newWidget);
 				return newWidget;
@@ -260,8 +260,8 @@ public class PartRenderingEngine implements IPresentationEngine {
 		return null;
 	}
 
-	private AbstractPartRenderer getRenderer(MUIElement uiElement, Object parent) {
-		return curFactory.getRenderer(uiElement, parent);
+	private AbstractPartRenderer getRenderer(MUIElement uiElement) {
+		return curFactory.getRenderer(uiElement);
 	}
 
 	public Object createGui(MUIElement element) {

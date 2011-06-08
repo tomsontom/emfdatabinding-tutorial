@@ -49,7 +49,7 @@ public class ToolItemRenderer extends JFXPartRenderer {
 	}
 
 	@Override
-	public Object createWidget(MUIElement element, Object parent) {
+	public Object createWidget(MUIElement element) {
 		Button button = new Button();
 		button.getStyleClass().add("toolbarButton");
 		

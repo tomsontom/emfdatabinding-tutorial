@@ -1,0 +1,7 @@
+The following icons are released under Creative Common Attribution (http://creativecommons.org/licenses/by/2.5/):
+* close_square.png
+* maximize_square.png
+* minimize_square.png
+
+They are download from:
+http://findicons.com/pack/2358/boolean/1

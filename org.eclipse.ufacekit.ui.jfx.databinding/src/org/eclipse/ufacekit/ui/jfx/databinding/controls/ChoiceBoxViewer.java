@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.SingleSelectionModel;
 
 public class ChoiceBoxViewer<T> {
 	public interface LabelConverter<T> {
@@ -30,7 +33,10 @@ public class ChoiceBoxViewer<T> {
 		public boolean equals(Object obj) {
 			@SuppressWarnings("unchecked")
 			StringWrapper<T> o = (StringWrapper<T>) obj;
-			return o.domainObject.equals(domainObject);
+			if( o != null ) {
+				return o.domainObject.equals(domainObject);
+			}
+			return false;
 		}
 		
 		@Override
@@ -52,10 +58,43 @@ public class ChoiceBoxViewer<T> {
 		
 	};
 	
-	private ObjectProperty<T> selectedItem;
+	private ObjectProperty<T> selectedItem = new ObjectProperty<T>();
 	
 	public ChoiceBoxViewer() {
 		this.box = new ChoiceBox<StringWrapper<T>>();
+		
+		this.box.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<StringWrapper<T>>() {
+
+			@Override
+			public void changed(
+					ObservableValue<? extends StringWrapper<T>> arg0,
+					StringWrapper<T> arg1, StringWrapper<T> arg2) {
+				if( arg2 == null ) {
+					selectedItem.setValue(null);
+				} else {
+					selectedItem.setValue(arg2.domainObject);
+				}
+			}
+		});
+	}
+	
+	public T getSelectedItem() {
+		return selectedItem.get();
+	}
+	
+	public void setSelectedItem(T selectedItem) {
+		this.selectedItem.set(selectedItem);
+		
+		if( selectedItem != null ) {
+			this.box.getSelectionModel().select(new StringWrapper<T>(this, selectedItem));
+		} else {
+			this.box.getSelectionModel().clearSelection();
+		}
+			
+	}
+	
+	public ObjectProperty<T> selectedItemProperty() {
+		return selectedItem;
 	}
 	
 	public ChoiceBox<StringWrapper<T>> getChoiceBox() {
@@ -64,10 +103,6 @@ public class ChoiceBoxViewer<T> {
 	
 	public void setLabelConverter(LabelConverter<T> labelConverter) {
 		this.labelConverter = labelConverter;
-	}
-	
-	public void getSelectedItem() {
-		
 	}
 	
 	public void setItems(ObservableList<T> list) {

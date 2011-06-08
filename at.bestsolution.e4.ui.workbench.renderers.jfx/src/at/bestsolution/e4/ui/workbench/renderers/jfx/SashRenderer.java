@@ -16,7 +16,7 @@ import org.eclipse.e4.ui.model.application.ui.basic.MPartSashContainer;
 public class SashRenderer extends JFXPartRenderer {
 
 	@Override
-	public Object createWidget(MUIElement element, Object parent) {
+	public Object createWidget(MUIElement element) {
 		SplitPane pane = new SplitPane();
 		
 		if( element.getElementId() != null ) {

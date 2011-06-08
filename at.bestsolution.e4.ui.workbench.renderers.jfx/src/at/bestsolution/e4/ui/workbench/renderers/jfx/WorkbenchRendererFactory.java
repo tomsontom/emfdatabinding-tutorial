@@ -28,7 +28,7 @@ public class WorkbenchRendererFactory implements IRendererFactory {
 	private ToolItemRenderer toolitemRenderer;
 	
 	@Override
-	public AbstractPartRenderer getRenderer(MUIElement uiElement, Object parent) {
+	public AbstractPartRenderer getRenderer(MUIElement uiElement) {
 		if( uiElement instanceof MWindow ) {
 			if( windowRenderer == null ) {
 				windowRenderer = ContextInjectionFactory.make(WBWRenderer.class, context);

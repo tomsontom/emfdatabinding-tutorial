@@ -73,6 +73,7 @@ public class PersonForm {
 
 		{
 			Label l = new Label("Firstname");
+			l.getStyleClass().add("detail-label");
 			rootPane.add(l, 0, 0);
 
 			w_firstName = new TextBox();
@@ -82,6 +83,7 @@ public class PersonForm {
 		
 		{
 			Label l = new Label("Lastname");
+			l.getStyleClass().add("detail-label");
 			rootPane.add(l, 0, 1);
 
 			w_lastName = new TextBox();
