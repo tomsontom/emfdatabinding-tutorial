@@ -69,7 +69,6 @@ public class PartRenderingEngine implements IPresentationEngine {
 	@Inject
 	public PartRenderingEngine(
 			@Named(E4Workbench.RENDERER_FACTORY_URI) @Optional String factoryUrl) {
-		System.err.println("Instance created");
 		if (factoryUrl == null) {
 			factoryUrl = defaultFactoryUrl;
 		}

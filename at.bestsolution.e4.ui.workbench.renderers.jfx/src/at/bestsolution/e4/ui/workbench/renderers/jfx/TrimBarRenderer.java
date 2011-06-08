@@ -1,6 +1,8 @@
 package at.bestsolution.e4.ui.workbench.renderers.jfx;
 
 import javafx.scene.Node;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
 import org.eclipse.e4.ui.model.application.ui.MElementContainer;
@@ -12,7 +14,7 @@ public class TrimBarRenderer extends JFXPartRenderer {
 
 	@Override
 	public Object createWidget(MUIElement element) {
-		VBox box = new VBox();
+		HBox box = new HBox();
 		return box;
 	}
 	
@@ -20,7 +22,7 @@ public class TrimBarRenderer extends JFXPartRenderer {
 	public void processContents(MElementContainer<MUIElement> container) {
 		super.processContents(container);
 		
-		VBox b = (VBox) container.getWidget();
+		HBox b = (HBox) container.getWidget();
 		
 		for( MUIElement me : container.getChildren() ) {
 			Object o = me.getWidget();
@@ -28,6 +30,11 @@ public class TrimBarRenderer extends JFXPartRenderer {
 				b.getChildren().add((Node) o);
 			}
 		}
+		
+		if( b.getChildren().size() > 0 ) {
+			HBox.setHgrow(b.getChildren().get(b.getChildren().size()-1), Priority.ALWAYS);	
+		}
+		
 	}
 
 	@Override

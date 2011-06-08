@@ -71,7 +71,6 @@ public class SashRenderer extends JFXPartRenderer {
 	
 	@Override
 	public void hookControllerLogic(MUIElement me) {
-		System.err.println("Hook logic");
 		super.hookControllerLogic(me);
 		
 		final SplitPane pane = (SplitPane) me.getWidget();

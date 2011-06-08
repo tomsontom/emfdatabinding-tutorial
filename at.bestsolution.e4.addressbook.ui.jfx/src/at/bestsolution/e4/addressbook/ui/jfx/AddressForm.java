@@ -1,6 +1,7 @@
 package at.bestsolution.e4.addressbook.ui.jfx;
 
 import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextBox;
@@ -9,6 +10,7 @@ import javafx.scene.layout.Priority;
 
 import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.DataBindingContext;
+import org.eclipse.core.databinding.UpdateValueStrategy;
 import org.eclipse.core.databinding.conversion.Converter;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.databinding.observable.value.IValueChangeListener;
@@ -27,6 +29,7 @@ import org.eclipse.ufacekit.ui.jfx.databinding.Util;
 import org.eclipse.ufacekit.ui.jfx.databinding.controls.ChoiceBoxViewer;
 import org.eclipse.ufacekit.ui.jfx.databinding.controls.ChoiceBoxViewer.StringWrapper;
 
+import at.bestsolution.e4.addressbook.model.addressbook.Address;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressBook;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressbookPackage;
 import at.bestsolution.e4.addressbook.model.addressbook.Country;
@@ -187,6 +190,98 @@ public class AddressForm extends GridPane {
 		}
 		
 		bindState(dbc, master);
+		
+		IJFXBeanValueProperty eProp = JFXBeanProperties.value("disable");
+		for (Node c : getChildren()) {
+			EMFUpdateValueStrategy modelToTarget = new EMFUpdateValueStrategy();
+			modelToTarget.setConverter(new Converter(Address.class,
+					boolean.class) {
+
+				@Override
+				public Object convert(Object fromObject) {
+					return fromObject == null;
+				}
+			});
+
+			// Work around - No Idea
+			final Binding b = dbc
+					.bindValue(eProp.observe(c), master,
+							new EMFUpdateValueStrategy(
+									UpdateValueStrategy.POLICY_NEVER),
+							modelToTarget);
+			master.addValueChangeListener(new IValueChangeListener() {
+
+				@Override
+				public void handleValueChange(ValueChangeEvent event) {
+					if (event.diff.getNewValue() == null)
+						b.updateModelToTarget();
+				}
+			});
+		}
+	}
+	
+	public void bindControls(EditingDomain editingDomain,
+			DataBindingContext dbc, IObservableValue master) {
+		this.dbc = dbc;
+		this.master = master;
+		this.editingDomain = editingDomain;
+		
+		IJFXBeanValueProperty tProp = JFXBeanProperties.value("text");
+		IJFXBeanValueProperty sProp = JFXBeanProperties.value("selectedItem");
+		
+		{
+			IEMFValueProperty mProp = EMFEditProperties
+					.value(editingDomain,AddressbookPackage.Literals.ADDRESS__STREET);
+			dbc.bindValue(tProp.observe(w_street), mProp.observeDetail(master), createEmptyStringToNull(), createNullToEmptyString());
+		}
+
+		{
+			IEMFValueProperty mProp = EMFEditProperties
+					.value(editingDomain,AddressbookPackage.Literals.ADDRESS__ZIP);
+			dbc.bindValue(tProp.observe(w_zip), mProp.observeDetail(master), createEmptyStringToNull(), createNullToEmptyString());
+		}
+
+		{
+			IEMFValueProperty mProp = EMFEditProperties
+					.value(editingDomain,AddressbookPackage.Literals.ADDRESS__CITY);
+			dbc.bindValue(tProp.observe(w_city), mProp.observeDetail(master), createEmptyStringToNull(), createNullToEmptyString());
+		}
+		
+		{
+			IEMFValueProperty mProp = EMFEditProperties.value(editingDomain,FeaturePath
+					.fromList(AddressbookPackage.Literals.ADDRESS__COUNTRY));
+			dbc.bindValue(sProp.observe(w_country), mProp.observeDetail(master));
+		}
+		
+		bindState(dbc, master);
+		
+		IJFXBeanValueProperty eProp = JFXBeanProperties.value("disable");
+		for (Node c : getChildren()) {
+			EMFUpdateValueStrategy modelToTarget = new EMFUpdateValueStrategy();
+			modelToTarget.setConverter(new Converter(Address.class,
+					boolean.class) {
+
+				@Override
+				public Object convert(Object fromObject) {
+					return fromObject == null;
+				}
+			});
+
+			// Work around - No Idea
+			final Binding b = dbc
+					.bindValue(eProp.observe(c), master,
+							new EMFUpdateValueStrategy(
+									UpdateValueStrategy.POLICY_NEVER),
+							modelToTarget);
+			master.addValueChangeListener(new IValueChangeListener() {
+
+				@Override
+				public void handleValueChange(ValueChangeEvent event) {
+					if (event.diff.getNewValue() == null)
+						b.updateModelToTarget();
+				}
+			});
+		}
 	}
 	
 	private void bindState(DataBindingContext dbc, IObservableValue master) {

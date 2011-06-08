@@ -1,7 +1,5 @@
 package at.bestsolution.e4.ui.workbench.renderers.jfx;
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -9,6 +7,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -73,13 +73,14 @@ public class ToolItemRenderer extends JFXPartRenderer {
 	}
 	
 	public void hookControllerLogic(MUIElement me) {
-		/*if (me instanceof MHandledItem) {
+		if (me instanceof MHandledItem) {
 			final MHandledItem item = (MHandledItem) me;
 			final IEclipseContext lclContext = getContext(me);
 			Button l = (Button) item.getWidget();
-			l.addMouseListener(new MouseAdapter() {
+			l.setOnAction(new EventHandler<ActionEvent>() {
+				
 				@Override
-				public void mouseClicked(MouseEvent e) {
+				public void handle(ActionEvent arg0) {
 					EHandlerService service = (EHandlerService) lclContext
 							.get(EHandlerService.class.getName());
 					ParameterizedCommand cmd = item.getWbCommand();
@@ -96,7 +97,7 @@ public class ToolItemRenderer extends JFXPartRenderer {
 					lclContext.remove(MItem.class.getName());
 				}
 			});
-		}*/
+		}
 	}
 
 	@Override

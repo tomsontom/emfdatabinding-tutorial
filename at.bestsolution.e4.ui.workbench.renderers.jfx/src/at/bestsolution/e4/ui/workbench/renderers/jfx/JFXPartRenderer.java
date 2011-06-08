@@ -36,7 +36,6 @@ public abstract class JFXPartRenderer extends AbstractPartRenderer {
 		}
 		
 		Node n = (Node) widget;
-		System.err.println("Setting id: " + id);
 		n.setId(id);
 	}
 	

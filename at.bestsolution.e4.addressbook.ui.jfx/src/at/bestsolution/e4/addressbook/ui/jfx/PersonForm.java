@@ -8,6 +8,7 @@ import javafx.event.EventHandler;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextBox;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -17,20 +18,26 @@ import javafx.util.Duration;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.eclipse.core.databinding.UpdateValueStrategy;
+import org.eclipse.core.databinding.conversion.Converter;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.core.databinding.observable.value.WritableValue;
 import org.eclipse.core.databinding.property.value.IValueProperty;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.emf.databinding.EMFDataBindingContext;
 import org.eclipse.emf.databinding.EMFProperties;
-import org.eclipse.emf.databinding.IEMFValueProperty;
+import org.eclipse.emf.databinding.EMFUpdateValueStrategy;
 import org.eclipse.emf.databinding.IEMFListProperty.ListElementAccess;
+import org.eclipse.emf.databinding.IEMFValueProperty;
+import org.eclipse.emf.databinding.edit.EMFEditProperties;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.ufacekit.ui.jfx.databinding.IJFXBeanValueProperty;
 import org.eclipse.ufacekit.ui.jfx.databinding.JFXBeanProperties;
 
 import at.bestsolution.e4.addressbook.model.addressbook.Address;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressBook;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressType;
+import at.bestsolution.e4.addressbook.model.addressbook.AddressbookFactory;
 import at.bestsolution.e4.addressbook.model.addressbook.AddressbookPackage;
 import at.bestsolution.e4.addressbook.model.addressbook.Person;
 
@@ -46,7 +53,7 @@ public class PersonForm {
 
 	private CheckBox w_hasBusinessAddress;
 
-	private AddressForm businessAddress;
+	private AddressForm businessAddressForm;
 
 	private GridPane rootPane;
 
@@ -110,9 +117,9 @@ public class PersonForm {
 			w_hasBusinessAddress = new CheckBox();
 			box.getChildren().add(w_hasBusinessAddress);
 			
-			businessAddress = new AddressForm();
-			businessAddress.setId("address-business");
-			box.getChildren().add(businessAddress);
+			businessAddressForm = new AddressForm();
+			businessAddressForm.setId("address-business");
+			box.getChildren().add(businessAddressForm);
 			
 			GridPane.setColumnSpan(box, 2);
 			GridPane.setHgrow(box, Priority.ALWAYS);
@@ -129,7 +136,7 @@ public class PersonForm {
 		master = new WritableValue();
 		
 		privateAddressForm.init(book);
-		businessAddress.init(book);
+		businessAddressForm.init(book);
 		
 		if (editingDomain == null) {
 			bindControls();
@@ -137,6 +144,27 @@ public class PersonForm {
 			bindControls(editingDomain);
 		}
 
+		w_hasBusinessAddress.setOnMouseReleased(new EventHandler<MouseEvent>() {
+
+			@Override
+			public void handle(MouseEvent arg0) {
+				if (w_hasBusinessAddress.isSelected()) {
+					Address address = AddressbookFactory.eINSTANCE
+							.createAddress();
+					address.setType(AddressType.BUSINESS);
+					((Person) master.getValue()).getAddresses().add(address);
+				} else {
+					ElementAccessImpl e = new ElementAccessImpl(
+							AddressType.BUSINESS);
+					int idx = e.getReadValueIndex(((Person) master.getValue())
+							.getAddresses());
+					if (idx != -1) {
+						((Person) master.getValue()).getAddresses().remove(idx);
+					}
+				}
+			}
+		});
+		
 		master.setValue(person);
 	}
 
@@ -172,12 +200,78 @@ public class PersonForm {
 					AddressbookPackage.Literals.PERSON__ADDRESSES).value(
 					new ElementAccessImpl(AddressType.BUSINESS));
 			IObservableValue value = mProp.observeDetail(master);
-			businessAddress.bindControls(dbc, value);
+
+			IJFXBeanValueProperty cProp = JFXBeanProperties.value("selected");
+
+			EMFUpdateValueStrategy targetToModel = new EMFUpdateValueStrategy(
+					UpdateValueStrategy.POLICY_NEVER);
+			EMFUpdateValueStrategy modelToTarget = new EMFUpdateValueStrategy();
+			modelToTarget.setConverter(new Converter(Address.class,
+					boolean.class) {
+
+				@Override
+				public Object convert(Object fromObject) {
+					return fromObject != null;
+				}
+			});
+			dbc.bindValue(cProp.observe(w_hasBusinessAddress), value,
+					targetToModel, modelToTarget);
+
+			businessAddressForm.bindControls(dbc, value);
 		}
 	}
 	
 	private void bindControls(EditingDomain editingDomain) {
+		EMFDataBindingContext dbc = new EMFDataBindingContext();
+
+		IValueProperty tProp = JFXBeanProperties.value("text");
+
+		{
+			IEMFValueProperty mProp = EMFEditProperties
+					.value(editingDomain, AddressbookPackage.Literals.PERSON__FIRSTNAME);
+			dbc.bindValue(tProp.observe(w_firstName),
+					mProp.observeDetail(master));
+		}
 		
+		{
+			IEMFValueProperty mProp = EMFEditProperties
+					.value(editingDomain, AddressbookPackage.Literals.PERSON__LASTNAME);
+			dbc.bindValue(tProp.observe(w_lastName),
+					mProp.observeDetail(master));
+		}
+		
+		{
+			IEMFValueProperty mProp = EMFEditProperties.list(
+					editingDomain, AddressbookPackage.Literals.PERSON__ADDRESSES).value(
+					new ElementAccessImpl(AddressType.PRIVATE));
+			IObservableValue value = mProp.observeDetail(master);
+			privateAddressForm.bindControls(editingDomain, dbc, value);
+		}
+		
+		{
+			IEMFValueProperty mProp = EMFEditProperties.list(
+					editingDomain, AddressbookPackage.Literals.PERSON__ADDRESSES).value(
+					new ElementAccessImpl(AddressType.BUSINESS));
+			IObservableValue value = mProp.observeDetail(master);
+
+			IJFXBeanValueProperty cProp = JFXBeanProperties.value("selected");
+
+			EMFUpdateValueStrategy targetToModel = new EMFUpdateValueStrategy(
+					UpdateValueStrategy.POLICY_NEVER);
+			EMFUpdateValueStrategy modelToTarget = new EMFUpdateValueStrategy();
+			modelToTarget.setConverter(new Converter(Address.class,
+					boolean.class) {
+
+				@Override
+				public Object convert(Object fromObject) {
+					return fromObject != null;
+				}
+			});
+			dbc.bindValue(cProp.observe(w_hasBusinessAddress), value,
+					targetToModel, modelToTarget);
+
+			businessAddressForm.bindControls(editingDomain, dbc, value);
+		}
 	}
 
 	@Inject

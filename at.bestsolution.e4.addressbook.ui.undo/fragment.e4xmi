@@ -6,7 +6,7 @@
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_1-fF8HMlEeCGL8zBvoJgQg" featurename="handlers" parentElementId="org.eclipse.e4.ide.application">
     <elements xsi:type="commands:Handler" xmi:id="_8ZKqYHMlEeCGL8zBvoJgQg" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.model.handlers/at.bestsolution.e4.addressbook.model.handlers.UndoHandler" command="_til3sHMlEeCGL8zBvoJgQg"/>
-    <elements xsi:type="commands:Handler" xmi:id="_AUvIEHMmEeCGL8zBvoJgQg" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.model.handlers/at.bestsolution.e4.addressbook.model.handlers.RemovePerson" command="_yD-YMHMlEeCGL8zBvoJgQg"/>
+    <elements xsi:type="commands:Handler" xmi:id="_AUvIEHMmEeCGL8zBvoJgQg" contributionURI="platform:/plugin/at.bestsolution.e4.addressbook.model.handlers/at.bestsolution.e4.addressbook.model.handlers.RedoHandler" command="_yD-YMHMlEeCGL8zBvoJgQg"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_DmfzwHMmEeCGL8zBvoJgQg" featurename="children" parentElementId="org.eclipse.ui.main.toolbar">
     <elements xsi:type="menu:ToolBar" xmi:id="_YAJ0gHMmEeCGL8zBvoJgQg">

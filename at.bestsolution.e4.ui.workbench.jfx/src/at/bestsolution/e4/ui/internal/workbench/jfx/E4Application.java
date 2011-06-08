@@ -55,7 +55,6 @@ public class E4Application implements IApplication {
 	private IModelResourceHandler handler;
 	
 	public Object start(final IApplicationContext context) throws Exception {
-		System.err.println("FUK OFFFFFFFF");
 		final E4Workbench workbench = createE4Workbench(context);
 //		Location instanceLocation = (Location) workbench.getContext().get(E4Workbench.INSTANCE_LOCATION);
 		
@@ -431,24 +430,20 @@ public class E4Application implements IApplication {
 		public void start(Stage primaryStage) throws Exception {
 			this.stage = primaryStage;
 			JFXRealm.createDefault();
-			System.err.println("Stage is created");
 		}
 		
 		@Override
 		public void stop() throws Exception {
-			System.err.println("Stop is called");
 			super.stop();
 		}
 		
 		@Override
 		public void destroy() throws Exception {
-			System.err.println("Destroy is called");
 			super.destroy();
 		}
 
 		@Override
 		protected void finalize() throws Throwable {
-			System.err.println("Finalize is called");
 			super.finalize();
 		}
 		
