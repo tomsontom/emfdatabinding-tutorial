@@ -6079,10 +6079,10 @@ public class InternalJFXCssLexer extends Lexer {
         try {
             int _type = T__278;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:277:8: ( 'url(' )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:277:10: 'url('
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:277:8: ( 'url' )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:277:10: 'url'
             {
-            match("url("); 
+            match("url"); 
 
 
             }
@@ -10173,10 +10173,10 @@ public class InternalJFXCssLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10811:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | '-' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10811:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | '-' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10815:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | '-' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10815:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | '-' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10811:11: ( '^' )?
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10815:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -10185,7 +10185,7 @@ public class InternalJFXCssLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10811:11: '^'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10815:11: '^'
                     {
                     match('^'); 
 
@@ -10203,7 +10203,7 @@ public class InternalJFXCssLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10811:40: ( 'a' .. 'z' | '-' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10815:40: ( 'a' .. 'z' | '-' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -10252,11 +10252,11 @@ public class InternalJFXCssLexer extends Lexer {
         try {
             int _type = RULE_HEX_NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10813:17: ( '#' ( 'a' .. 'f' | 'A' .. 'F' | '0' .. '9' )* )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10813:19: '#' ( 'a' .. 'f' | 'A' .. 'F' | '0' .. '9' )*
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10817:17: ( '#' ( 'a' .. 'f' | 'A' .. 'F' | '0' .. '9' )* )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10817:19: '#' ( 'a' .. 'f' | 'A' .. 'F' | '0' .. '9' )*
             {
             match('#'); 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10813:23: ( 'a' .. 'f' | 'A' .. 'F' | '0' .. '9' )*
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10817:23: ( 'a' .. 'f' | 'A' .. 'F' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -10305,10 +10305,10 @@ public class InternalJFXCssLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10815:10: ( ( '-' )? ( '0' .. '9' )+ )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10815:12: ( '-' )? ( '0' .. '9' )+
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10819:10: ( ( '-' )? ( '0' .. '9' )+ )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10819:12: ( '-' )? ( '0' .. '9' )+
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10815:12: ( '-' )?
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10819:12: ( '-' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -10317,7 +10317,7 @@ public class InternalJFXCssLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10815:12: '-'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10819:12: '-'
                     {
                     match('-'); 
 
@@ -10326,7 +10326,7 @@ public class InternalJFXCssLexer extends Lexer {
 
             }
 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10815:17: ( '0' .. '9' )+
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10819:17: ( '0' .. '9' )+
             int cnt5=0;
             loop5:
             do {
@@ -10340,7 +10340,7 @@ public class InternalJFXCssLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10815:18: '0' .. '9'
+            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10819:18: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -10372,10 +10372,10 @@ public class InternalJFXCssLexer extends Lexer {
         try {
             int _type = RULE_REAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10817:11: ( ( '-' )? ( '0' .. '9' )+ '.' ( '0' .. '9' )+ )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10817:13: ( '-' )? ( '0' .. '9' )+ '.' ( '0' .. '9' )+
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10821:11: ( ( '-' )? ( '0' .. '9' )+ '.' ( '0' .. '9' )+ )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10821:13: ( '-' )? ( '0' .. '9' )+ '.' ( '0' .. '9' )+
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10817:13: ( '-' )?
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10821:13: ( '-' )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -10384,7 +10384,7 @@ public class InternalJFXCssLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10817:13: '-'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10821:13: '-'
                     {
                     match('-'); 
 
@@ -10393,7 +10393,7 @@ public class InternalJFXCssLexer extends Lexer {
 
             }
 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10817:18: ( '0' .. '9' )+
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10821:18: ( '0' .. '9' )+
             int cnt7=0;
             loop7:
             do {
@@ -10407,7 +10407,7 @@ public class InternalJFXCssLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10817:19: '0' .. '9'
+            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10821:19: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -10424,7 +10424,7 @@ public class InternalJFXCssLexer extends Lexer {
             } while (true);
 
             match('.'); 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10817:34: ( '0' .. '9' )+
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10821:34: ( '0' .. '9' )+
             int cnt8=0;
             loop8:
             do {
@@ -10438,7 +10438,7 @@ public class InternalJFXCssLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10817:35: '0' .. '9'
+            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10821:35: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -10470,10 +10470,10 @@ public class InternalJFXCssLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10819:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10819:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10823:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10823:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10819:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10823:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -10491,10 +10491,10 @@ public class InternalJFXCssLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10819:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10823:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10819:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10823:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop9:
                     do {
                         int alt9=3;
@@ -10510,7 +10510,7 @@ public class InternalJFXCssLexer extends Lexer {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10819:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10823:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -10526,7 +10526,7 @@ public class InternalJFXCssLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10819:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10823:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -10551,10 +10551,10 @@ public class InternalJFXCssLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10819:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10823:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10819:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10823:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop10:
                     do {
                         int alt10=3;
@@ -10570,7 +10570,7 @@ public class InternalJFXCssLexer extends Lexer {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10819:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10823:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -10586,7 +10586,7 @@ public class InternalJFXCssLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10819:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10823:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -10629,12 +10629,12 @@ public class InternalJFXCssLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10821:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10821:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10825:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10825:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10821:24: ( options {greedy=false; } : . )*
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10825:24: ( options {greedy=false; } : . )*
             loop12:
             do {
                 int alt12=2;
@@ -10659,7 +10659,7 @@ public class InternalJFXCssLexer extends Lexer {
 
                 switch (alt12) {
             	case 1 :
-            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10821:52: .
+            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10825:52: .
             	    {
             	    matchAny(); 
 
@@ -10689,10 +10689,10 @@ public class InternalJFXCssLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10823:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10823:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10827:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10827:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10823:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10827:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -10746,8 +10746,8 @@ public class InternalJFXCssLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10825:16: ( . )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10825:18: .
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10829:16: ( . )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10829:18: .
             {
             matchAny(); 
 
@@ -14064,26 +14064,26 @@ public class InternalJFXCssLexer extends Lexer {
         "\1\uffff\7\72\6\uffff\10\72\1\uffff\23\72\1\u017a\7\72\1\uffff\5"+
         "\72\1\uffff\1\72\1\uffff\47\72\1\u01b1\1\72\1\uffff\3\72\1\u01b6"+
         "\6\72\1\uffff\2\72\1\u01c0\51\72\1\u01ec\7\72\1\u01f5\4\72\3\uffff"+
-        "\20\72\1\uffff\10\72\1\u0227\3\72\1\u022b\12\72\1\u0241\4\72\1\u0246"+
-        "\1\uffff\1\u0247\20\72\1\u0258\1\72\1\u025a\2\72\1\u025d\25\72\1"+
-        "\u0275\1\72\1\u0277\5\72\1\u027d\1\u027e\1\uffff\4\72\1\uffff\3"+
-        "\72\1\u0286\5\72\1\uffff\3\72\1\u0290\1\72\1\u0293\1\72\1\u0296"+
-        "\3\72\1\u029b\1\u029c\7\72\1\u02a4\1\u02a5\3\72\1\u02aa\2\72\1\u02b0"+
-        "\1\u02b1\15\72\1\uffff\7\72\1\u02c6\1\uffff\5\72\1\u02ce\1\u02cf"+
-        "\1\u02d0\2\72\1\uffff\1\u02d3\10\72\24\uffff\3\72\1\u0315\1\72\1"+
-        "\u0317\3\72\1\uffff\3\72\1\uffff\25\72\1\uffff\4\72\2\uffff\2\72"+
-        "\1\u033e\12\72\1\u0349\2\72\1\uffff\1\72\1\uffff\2\72\1\uffff\7"+
-        "\72\1\u0356\4\72\1\u035c\1\72\1\u035e\10\72\1\uffff\1\72\1\uffff"+
-        "\1\72\1\u036a\1\u036c\2\72\2\uffff\7\72\1\uffff\5\72\1\u037b\3\72"+
-        "\1\uffff\2\72\1\uffff\1\u0381\1\72\1\uffff\1\u0383\3\72\2\uffff"+
-        "\1\72\1\u0388\1\u0389\2\72\1\u038c\1\u038e\2\uffff\4\72\1\uffff"+
-        "\3\72\1\u039d\1\72\2\uffff\12\72\1\u03aa\4\72\1\u03af\1\u03b0\3"+
-        "\72\1\uffff\7\72\3\uffff\2\72\1\uffff\1\72\1\u03c0\3\72\1\u03c4"+
-        "\1\u03c5\1\72\66\uffff\3\72\1\uffff\1\72\1\uffff\2\72\1\u03fd\6"+
-        "\72\1\u0404\1\72\1\u0406\16\72\1\u0417\3\72\1\u041b\7\72\1\uffff"+
-        "\4\72\1\u0427\5\72\1\uffff\3\72\1\u0436\6\72\1\u043d\1\72\1\uffff"+
-        "\1\72\1\u0440\2\72\1\u0443\1\uffff\1\72\1\uffff\2\72\1\u0447\1\72"+
-        "\1\u0449\1\u044a\5\72\1\uffff\1\72\1\uffff\1\72\1\u0452\1\u0453"+
+        "\6\72\1\u0200\11\72\1\uffff\10\72\1\u0227\3\72\1\u022b\12\72\1\u0241"+
+        "\4\72\1\u0246\1\uffff\1\u0247\20\72\1\u0258\1\72\1\u025a\2\72\1"+
+        "\u025d\25\72\1\u0275\1\72\1\u0277\5\72\1\u027d\1\u027e\1\uffff\4"+
+        "\72\1\uffff\3\72\1\u0286\5\72\1\uffff\3\72\1\u0290\1\72\1\u0293"+
+        "\1\72\1\u0296\3\72\1\u029b\1\u029c\7\72\1\u02a4\1\u02a5\3\72\1\u02aa"+
+        "\2\72\1\u02b0\1\u02b1\15\72\1\uffff\7\72\1\u02c6\1\uffff\5\72\1"+
+        "\u02ce\1\u02cf\1\u02d0\2\72\1\uffff\1\u02d3\10\72\24\uffff\3\72"+
+        "\1\u0315\1\72\1\u0317\3\72\1\uffff\3\72\1\uffff\25\72\1\uffff\4"+
+        "\72\2\uffff\2\72\1\u033e\12\72\1\u0349\2\72\1\uffff\1\72\1\uffff"+
+        "\2\72\1\uffff\7\72\1\u0356\4\72\1\u035c\1\72\1\u035e\10\72\1\uffff"+
+        "\1\72\1\uffff\1\72\1\u036a\1\u036c\2\72\2\uffff\7\72\1\uffff\5\72"+
+        "\1\u037b\3\72\1\uffff\2\72\1\uffff\1\u0381\1\72\1\uffff\1\u0383"+
+        "\3\72\2\uffff\1\72\1\u0388\1\u0389\2\72\1\u038c\1\u038e\2\uffff"+
+        "\4\72\1\uffff\3\72\1\u039d\1\72\2\uffff\12\72\1\u03aa\4\72\1\u03af"+
+        "\1\u03b0\3\72\1\uffff\7\72\3\uffff\2\72\1\uffff\1\72\1\u03c0\3\72"+
+        "\1\u03c4\1\u03c5\1\72\66\uffff\3\72\1\uffff\1\72\1\uffff\2\72\1"+
+        "\u03fd\6\72\1\u0404\1\72\1\u0406\16\72\1\u0417\3\72\1\u041b\7\72"+
+        "\1\uffff\4\72\1\u0427\5\72\1\uffff\3\72\1\u0436\6\72\1\u043d\1\72"+
+        "\1\uffff\1\72\1\u0440\2\72\1\u0443\1\uffff\1\72\1\uffff\2\72\1\u0447"+
+        "\1\72\1\u0449\1\u044a\5\72\1\uffff\1\72\1\uffff\1\72\1\u0452\1\u0453"+
         "\7\72\1\u045b\1\72\1\u045d\1\u045e\1\uffff\1\u045f\4\72\1\uffff"+
         "\1\72\1\uffff\1\72\1\u0466\1\u0467\1\72\2\uffff\1\72\1\u046a\1\uffff"+
         "\1\72\1\uffff\15\72\1\u0480\1\uffff\5\72\1\u0486\6\72\1\uffff\1"+
@@ -14175,7 +14175,7 @@ public class InternalJFXCssLexer extends Lexer {
         "\1\150\2\145\1\164\1\144\1\157\1\145\1\156\1\144\1\162\1\55\1\163"+
         "\1\151\1\154\1\166\1\156\1\150\1\55\1\145\1\154\1\150\1\156\1\171"+
         "\1\141\1\151\1\55\1\164\2\145\1\141\3\uffff\1\143\1\165\1\153\1"+
-        "\155\1\144\1\160\1\50\1\154\1\145\1\165\1\145\1\162\1\150\1\163"+
+        "\155\1\144\1\160\1\55\1\154\1\145\1\165\1\145\1\162\1\150\1\163"+
         "\1\153\1\154\1\141\2\163\2\162\1\141\1\154\1\146\1\145\1\55\2\164"+
         "\1\157\1\55\1\165\1\160\1\166\1\163\1\142\2\145\1\162\2\145\2\55"+
         "\1\163\1\171\1\151\1\55\1\uffff\1\55\1\141\1\151\1\162\1\151\1\143"+
@@ -14366,7 +14366,7 @@ public class InternalJFXCssLexer extends Lexer {
         "\1\164\1\144\1\157\1\145\1\156\1\144\1\162\1\55\1\163\1\151\1\154"+
         "\1\166\1\156\1\150\1\172\1\145\1\154\1\150\1\156\1\171\1\141\1\151"+
         "\1\172\1\164\2\145\1\141\3\uffff\1\143\1\165\1\153\1\155\1\144\1"+
-        "\160\1\50\1\154\1\145\1\165\1\145\1\162\1\150\1\163\1\153\1\154"+
+        "\160\1\172\1\154\1\145\1\165\1\145\1\162\1\150\1\163\1\153\1\154"+
         "\1\172\2\163\2\162\1\141\1\154\1\163\1\145\1\172\2\164\1\157\1\172"+
         "\1\165\1\163\1\166\1\163\1\166\2\145\1\162\2\145\1\172\1\55\1\163"+
         "\1\171\1\151\1\172\1\uffff\1\172\1\141\1\151\1\162\1\151\1\143\1"+
@@ -14625,7 +14625,7 @@ public class InternalJFXCssLexer extends Lexer {
         "\1\u00a8\4\uffff\1\162\1\u009e\2\uffff\1\u008a\1\u00a3\4\uffff\1"+
         "\u00aa\1\uffff\1\152\1\u0104\1\uffff\1\u00a7\1\154\1\u0103";
     static final String DFA14_specialS =
-        "\1\1\44\uffff\1\2\1\0\u08ea\uffff}>";
+        "\1\0\44\uffff\1\1\1\2\u08ea\uffff}>";
     static final String[] DFA14_transitionS = {
             "\11\51\2\50\2\51\1\50\22\51\1\50\1\51\1\45\1\1\1\51\1\36\1"+
             "\51\1\46\1\21\1\23\2\51\1\22\1\5\1\51\1\47\12\44\1\6\1\4\5\51"+
@@ -14997,7 +14997,8 @@ public class InternalJFXCssLexer extends Lexer {
             "\1\u01fd",
             "\1\u01fe",
             "\1\u01ff",
-            "\1\u0200",
+            "\1\72\2\uffff\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32"+
+            "\72",
             "\1\u0201",
             "\1\u0202",
             "\1\u0203",
@@ -17272,16 +17273,6 @@ public class InternalJFXCssLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA14_38 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA14_38>='\u0000' && LA14_38<='\uFFFF')) ) {s = 170;}
-
-                        else s = 41;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
                         int LA14_0 = input.LA(1);
 
                         s = -1;
@@ -17369,11 +17360,21 @@ public class InternalJFXCssLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 2 : 
+                    case 1 : 
                         int LA14_37 = input.LA(1);
 
                         s = -1;
                         if ( ((LA14_37>='\u0000' && LA14_37<='\uFFFF')) ) {s = 170;}
+
+                        else s = 41;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA14_38 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA14_38>='\u0000' && LA14_38<='\uFFFF')) ) {s = 170;}
 
                         else s = 41;
 

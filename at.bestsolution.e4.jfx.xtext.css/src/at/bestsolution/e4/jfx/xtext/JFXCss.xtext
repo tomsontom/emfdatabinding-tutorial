@@ -341,7 +341,7 @@ RealValue:
 ;
 
 UrlValue:
-	'url(' address=AddressValue  ')'
+	'url' '(' address=AddressValue  ')'
 ;
 
 AddressValue:

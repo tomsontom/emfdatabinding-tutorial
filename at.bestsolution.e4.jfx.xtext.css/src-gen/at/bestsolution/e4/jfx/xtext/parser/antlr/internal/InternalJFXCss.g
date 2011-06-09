@@ -6191,31 +6191,35 @@ ruleUrlValue returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='url(' 
+(	otherlv_0='url' 
     {
     	newLeafNode(otherlv_0, grammarAccess.getUrlValueAccess().getUrlKeyword_0());
+    }
+	otherlv_1='(' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getUrlValueAccess().getLeftParenthesisKeyword_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getUrlValueAccess().getAddressAddressValueParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getUrlValueAccess().getAddressAddressValueParserRuleCall_2_0()); 
 	    }
-		lv_address_1_0=ruleAddressValue		{
+		lv_address_2_0=ruleAddressValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getUrlValueRule());
 	        }
        		set(
        			$current, 
        			"address",
-        		lv_address_1_0, 
+        		lv_address_2_0, 
         		"AddressValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_2=')' 
+)	otherlv_3=')' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getUrlValueAccess().getRightParenthesisKeyword_2());
+    	newLeafNode(otherlv_3, grammarAccess.getUrlValueAccess().getRightParenthesisKeyword_3());
     }
 )
 ;

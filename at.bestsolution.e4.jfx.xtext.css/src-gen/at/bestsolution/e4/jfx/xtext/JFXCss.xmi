@@ -1116,7 +1116,8 @@
       <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//UrlValue"/>
     </type>
     <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:Keyword" value="url("/>
+      <elements xsi:type="xtext:Keyword" value="url"/>
+      <elements xsi:type="xtext:Keyword" value="("/>
       <elements xsi:type="xtext:Assignment" feature="address" operator="=">
         <terminal xsi:type="xtext:RuleCall" rule="//@rules.54"/>
       </elements>

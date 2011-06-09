@@ -283,7 +283,7 @@ public class JFXCssParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBlurValueAccess().getVAssignment(), "rule__BlurValue__VAssignment");
 					put(grammarAccess.getIntegerValueAccess().getValueAssignment(), "rule__IntegerValue__ValueAssignment");
 					put(grammarAccess.getRealValueAccess().getValueAssignment(), "rule__RealValue__ValueAssignment");
-					put(grammarAccess.getUrlValueAccess().getAddressAssignment_1(), "rule__UrlValue__AddressAssignment_1");
+					put(grammarAccess.getUrlValueAccess().getAddressAssignment_2(), "rule__UrlValue__AddressAssignment_2");
 					put(grammarAccess.getAddressValueAccess().getValueAssignment(), "rule__AddressValue__ValueAssignment");
 					put(grammarAccess.getSizeValueAccess().getValueAssignment_0(), "rule__SizeValue__ValueAssignment_0");
 					put(grammarAccess.getSizeValueAccess().getDimensionAssignment_1(), "rule__SizeValue__DimensionAssignment_1");

@@ -2166,7 +2166,7 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getUrlValueAccess().getAddressAddressValueParserRuleCall_1_0(), semanticObject.getAddress());
+		feeder.accept(grammarAccess.getUrlValueAccess().getAddressAddressValueParserRuleCall_2_0(), semanticObject.getAddress());
 		feeder.finish();
 	}
 	
