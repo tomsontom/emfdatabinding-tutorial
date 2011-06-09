@@ -6,8 +6,8 @@
  */
 package at.bestsolution.e4.jfx.xtext.jFXCss.impl;
 
+import at.bestsolution.e4.jfx.xtext.jFXCss.AlignmentProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage;
-import at.bestsolution.e4.jfx.xtext.jFXCss.TextAlignmentProperty;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -17,19 +17,40 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Text Alignment Property</b></em>'.
+ * An implementation of the model object '<em><b>Alignment Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.TextAlignmentPropertyImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.AlignmentPropertyImpl#getProperty <em>Property</em>}</li>
+ *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.AlignmentPropertyImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TextAlignmentPropertyImpl extends FXPropertyImpl implements TextAlignmentProperty
+public class AlignmentPropertyImpl extends FXPropertyImpl implements AlignmentProperty
 {
+  /**
+   * The default value of the '{@link #getProperty() <em>Property</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProperty()
+   * @generated
+   * @ordered
+   */
+  protected static final String PROPERTY_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getProperty() <em>Property</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProperty()
+   * @generated
+   * @ordered
+   */
+  protected String property = PROPERTY_EDEFAULT;
+
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -55,7 +76,7 @@ public class TextAlignmentPropertyImpl extends FXPropertyImpl implements TextAli
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TextAlignmentPropertyImpl()
+  protected AlignmentPropertyImpl()
   {
     super();
   }
@@ -68,7 +89,30 @@ public class TextAlignmentPropertyImpl extends FXPropertyImpl implements TextAli
   @Override
   protected EClass eStaticClass()
   {
-    return JFXCssPackage.Literals.TEXT_ALIGNMENT_PROPERTY;
+    return JFXCssPackage.Literals.ALIGNMENT_PROPERTY;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getProperty()
+  {
+    return property;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setProperty(String newProperty)
+  {
+    String oldProperty = property;
+    property = newProperty;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JFXCssPackage.ALIGNMENT_PROPERTY__PROPERTY, oldProperty, property));
   }
 
   /**
@@ -91,7 +135,7 @@ public class TextAlignmentPropertyImpl extends FXPropertyImpl implements TextAli
     String oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JFXCssPackage.TEXT_ALIGNMENT_PROPERTY__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, JFXCssPackage.ALIGNMENT_PROPERTY__VALUE, oldValue, value));
   }
 
   /**
@@ -104,7 +148,9 @@ public class TextAlignmentPropertyImpl extends FXPropertyImpl implements TextAli
   {
     switch (featureID)
     {
-      case JFXCssPackage.TEXT_ALIGNMENT_PROPERTY__VALUE:
+      case JFXCssPackage.ALIGNMENT_PROPERTY__PROPERTY:
+        return getProperty();
+      case JFXCssPackage.ALIGNMENT_PROPERTY__VALUE:
         return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -120,7 +166,10 @@ public class TextAlignmentPropertyImpl extends FXPropertyImpl implements TextAli
   {
     switch (featureID)
     {
-      case JFXCssPackage.TEXT_ALIGNMENT_PROPERTY__VALUE:
+      case JFXCssPackage.ALIGNMENT_PROPERTY__PROPERTY:
+        setProperty((String)newValue);
+        return;
+      case JFXCssPackage.ALIGNMENT_PROPERTY__VALUE:
         setValue((String)newValue);
         return;
     }
@@ -137,7 +186,10 @@ public class TextAlignmentPropertyImpl extends FXPropertyImpl implements TextAli
   {
     switch (featureID)
     {
-      case JFXCssPackage.TEXT_ALIGNMENT_PROPERTY__VALUE:
+      case JFXCssPackage.ALIGNMENT_PROPERTY__PROPERTY:
+        setProperty(PROPERTY_EDEFAULT);
+        return;
+      case JFXCssPackage.ALIGNMENT_PROPERTY__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
     }
@@ -154,7 +206,9 @@ public class TextAlignmentPropertyImpl extends FXPropertyImpl implements TextAli
   {
     switch (featureID)
     {
-      case JFXCssPackage.TEXT_ALIGNMENT_PROPERTY__VALUE:
+      case JFXCssPackage.ALIGNMENT_PROPERTY__PROPERTY:
+        return PROPERTY_EDEFAULT == null ? property != null : !PROPERTY_EDEFAULT.equals(property);
+      case JFXCssPackage.ALIGNMENT_PROPERTY__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
     return super.eIsSet(featureID);
@@ -171,10 +225,12 @@ public class TextAlignmentPropertyImpl extends FXPropertyImpl implements TextAli
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
+    result.append(" (property: ");
+    result.append(property);
+    result.append(", value: ");
     result.append(value);
     result.append(')');
     return result.toString();
   }
 
-} //TextAlignmentPropertyImpl
+} //AlignmentPropertyImpl

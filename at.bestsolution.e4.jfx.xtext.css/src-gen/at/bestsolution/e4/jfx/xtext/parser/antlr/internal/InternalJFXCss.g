@@ -937,11 +937,11 @@ ruleFXProperty returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getFXPropertyAccess().getTextAlignmentPropertyParserRuleCall_0_26()); 
+        newCompositeNode(grammarAccess.getFXPropertyAccess().getAlignmentPropertyParserRuleCall_0_26()); 
     }
-    this_TextAlignmentProperty_26=ruleTextAlignmentProperty
+    this_AlignmentProperty_26=ruleAlignmentProperty
     { 
-        $current = $this_TextAlignmentProperty_26.current; 
+        $current = $this_AlignmentProperty_26.current; 
         afterParserOrEnumRuleCall();
     }
 
@@ -957,11 +957,11 @@ ruleFXProperty returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getFXPropertyAccess().getBackgroundImagePositionPropertyParserRuleCall_0_28()); 
+        newCompositeNode(grammarAccess.getFXPropertyAccess().getPositionPropertyParserRuleCall_0_28()); 
     }
-    this_BackgroundImagePositionProperty_28=ruleBackgroundImagePositionProperty
+    this_PositionProperty_28=rulePositionProperty
     { 
-        $current = $this_BackgroundImagePositionProperty_28.current; 
+        $current = $this_PositionProperty_28.current; 
         afterParserOrEnumRuleCall();
     }
 
@@ -5097,6 +5097,18 @@ ruleRepeatProperties returns [EObject current=null]
        		setWithLastConsumed($current, "property", lv_property_0_2, null);
 	    }
 
+    |		lv_property_0_3=	'-fx-background-repeat' 
+    {
+        newLeafNode(lv_property_0_3, grammarAccess.getRepeatPropertiesAccess().getPropertyFxBackgroundRepeatKeyword_0_0_2());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRepeatPropertiesRule());
+	        }
+       		setWithLastConsumed($current, "property", lv_property_0_3, null);
+	    }
+
 )
 
 )
@@ -5547,11 +5559,11 @@ ruleStringProperty returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getStringPropertyAccess().getColonKeyword_1());
     }
-(
+((
 (
 		lv_value_2_0=RULE_STRING
 		{
-			newLeafNode(lv_value_2_0, grammarAccess.getStringPropertyAccess().getValueSTRINGTerminalRuleCall_2_0()); 
+			newLeafNode(lv_value_2_0, grammarAccess.getStringPropertyAccess().getValueSTRINGTerminalRuleCall_2_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -5563,6 +5575,215 @@ ruleStringProperty returns [EObject current=null]
         		lv_value_2_0, 
         		"STRING");
 	    }
+
+)
+)
+    |	otherlv_3='null' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getStringPropertyAccess().getNullKeyword_2_1());
+    }
+))
+;
+
+
+
+
+
+// Entry rule entryRulePositionProperty
+entryRulePositionProperty returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getPositionPropertyRule()); }
+	 iv_rulePositionProperty=rulePositionProperty 
+	 { $current=$iv_rulePositionProperty.current; } 
+	 EOF 
+;
+
+// Rule PositionProperty
+rulePositionProperty returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+(
+		lv_property_0_1=	'-fx-background-image-position' 
+    {
+        newLeafNode(lv_property_0_1, grammarAccess.getPositionPropertyAccess().getPropertyFxBackgroundImagePositionKeyword_0_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getPositionPropertyRule());
+	        }
+       		setWithLastConsumed($current, "property", lv_property_0_1, null);
+	    }
+
+    |		lv_property_0_2=	'-fx-background-position' 
+    {
+        newLeafNode(lv_property_0_2, grammarAccess.getPositionPropertyAccess().getPropertyFxBackgroundPositionKeyword_0_0_1());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getPositionPropertyRule());
+	        }
+       		setWithLastConsumed($current, "property", lv_property_0_2, null);
+	    }
+
+)
+
+)
+)	otherlv_1=':' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getPositionPropertyAccess().getColonKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPositionPropertyAccess().getValuesBgPositionValueParserRuleCall_2_0()); 
+	    }
+		lv_values_2_0=ruleBgPositionValue		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPositionPropertyRule());
+	        }
+       		add(
+       			$current, 
+       			"values",
+        		lv_values_2_0, 
+        		"BgPositionValue");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_3=',' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getPositionPropertyAccess().getCommaKeyword_3_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPositionPropertyAccess().getValuesBgPositionValueParserRuleCall_3_1_0()); 
+	    }
+		lv_values_4_0=ruleBgPositionValue		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPositionPropertyRule());
+	        }
+       		add(
+       			$current, 
+       			"values",
+        		lv_values_4_0, 
+        		"BgPositionValue");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*)
+;
+
+
+
+
+
+// Entry rule entryRuleAlignmentProperty
+entryRuleAlignmentProperty returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getAlignmentPropertyRule()); }
+	 iv_ruleAlignmentProperty=ruleAlignmentProperty 
+	 { $current=$iv_ruleAlignmentProperty.current; } 
+	 EOF 
+;
+
+// Rule AlignmentProperty
+ruleAlignmentProperty returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+(
+		lv_property_0_1=	'-fx-text-alignment' 
+    {
+        newLeafNode(lv_property_0_1, grammarAccess.getAlignmentPropertyAccess().getPropertyFxTextAlignmentKeyword_0_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAlignmentPropertyRule());
+	        }
+       		setWithLastConsumed($current, "property", lv_property_0_1, null);
+	    }
+
+    |		lv_property_0_2=	'-fx-alignment' 
+    {
+        newLeafNode(lv_property_0_2, grammarAccess.getAlignmentPropertyAccess().getPropertyFxAlignmentKeyword_0_0_1());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAlignmentPropertyRule());
+	        }
+       		setWithLastConsumed($current, "property", lv_property_0_2, null);
+	    }
+
+)
+
+)
+)	otherlv_1=':' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getAlignmentPropertyAccess().getColonKeyword_1());
+    }
+(
+(
+(
+		lv_value_2_1=	'left' 
+    {
+        newLeafNode(lv_value_2_1, grammarAccess.getAlignmentPropertyAccess().getValueLeftKeyword_2_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAlignmentPropertyRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_2_1, null);
+	    }
+
+    |		lv_value_2_2=	'center' 
+    {
+        newLeafNode(lv_value_2_2, grammarAccess.getAlignmentPropertyAccess().getValueCenterKeyword_2_0_1());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAlignmentPropertyRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_2_2, null);
+	    }
+
+    |		lv_value_2_3=	'right' 
+    {
+        newLeafNode(lv_value_2_3, grammarAccess.getAlignmentPropertyAccess().getValueRightKeyword_2_0_2());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAlignmentPropertyRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_2_3, null);
+	    }
+
+    |		lv_value_2_4=	'justify' 
+    {
+        newLeafNode(lv_value_2_4, grammarAccess.getAlignmentPropertyAccess().getValueJustifyKeyword_2_0_3());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getAlignmentPropertyRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_2_4, null);
+	    }
+
+)
 
 )
 ))
@@ -5714,89 +5935,6 @@ ruleStrokeLineJoinProperty returns [EObject current=null]
 
 
 
-// Entry rule entryRuleTextAlignmentProperty
-entryRuleTextAlignmentProperty returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getTextAlignmentPropertyRule()); }
-	 iv_ruleTextAlignmentProperty=ruleTextAlignmentProperty 
-	 { $current=$iv_ruleTextAlignmentProperty.current; } 
-	 EOF 
-;
-
-// Rule TextAlignmentProperty
-ruleTextAlignmentProperty returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='-fx-text-alignment' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getTextAlignmentPropertyAccess().getFxTextAlignmentKeyword_0());
-    }
-	otherlv_1=':' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getTextAlignmentPropertyAccess().getColonKeyword_1());
-    }
-(
-(
-(
-		lv_value_2_1=	'left' 
-    {
-        newLeafNode(lv_value_2_1, grammarAccess.getTextAlignmentPropertyAccess().getValueLeftKeyword_2_0_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTextAlignmentPropertyRule());
-	        }
-       		setWithLastConsumed($current, "value", lv_value_2_1, null);
-	    }
-
-    |		lv_value_2_2=	'center' 
-    {
-        newLeafNode(lv_value_2_2, grammarAccess.getTextAlignmentPropertyAccess().getValueCenterKeyword_2_0_1());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTextAlignmentPropertyRule());
-	        }
-       		setWithLastConsumed($current, "value", lv_value_2_2, null);
-	    }
-
-    |		lv_value_2_3=	'right' 
-    {
-        newLeafNode(lv_value_2_3, grammarAccess.getTextAlignmentPropertyAccess().getValueRightKeyword_2_0_2());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTextAlignmentPropertyRule());
-	        }
-       		setWithLastConsumed($current, "value", lv_value_2_3, null);
-	    }
-
-    |		lv_value_2_4=	'justify' 
-    {
-        newLeafNode(lv_value_2_4, grammarAccess.getTextAlignmentPropertyAccess().getValueJustifyKeyword_2_0_3());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTextAlignmentPropertyRule());
-	        }
-       		setWithLastConsumed($current, "value", lv_value_2_4, null);
-	    }
-
-)
-
-)
-))
-;
-
-
-
-
-
 // Entry rule entryRuleTextOriginProperty
 entryRuleTextOriginProperty returns [EObject current=null] 
 	:
@@ -5862,75 +6000,6 @@ ruleTextOriginProperty returns [EObject current=null]
 
 )
 ))
-;
-
-
-
-
-
-// Entry rule entryRuleBackgroundImagePositionProperty
-entryRuleBackgroundImagePositionProperty returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getBackgroundImagePositionPropertyRule()); }
-	 iv_ruleBackgroundImagePositionProperty=ruleBackgroundImagePositionProperty 
-	 { $current=$iv_ruleBackgroundImagePositionProperty.current; } 
-	 EOF 
-;
-
-// Rule BackgroundImagePositionProperty
-ruleBackgroundImagePositionProperty returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='-fx-background-image-position' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getBackgroundImagePositionPropertyAccess().getFxBackgroundImagePositionKeyword_0());
-    }
-	otherlv_1=':' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getBackgroundImagePositionPropertyAccess().getColonKeyword_1());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getBackgroundImagePositionPropertyAccess().getValuesBgPositionValueParserRuleCall_2_0()); 
-	    }
-		lv_values_2_0=ruleBgPositionValue		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBackgroundImagePositionPropertyRule());
-	        }
-       		add(
-       			$current, 
-       			"values",
-        		lv_values_2_0, 
-        		"BgPositionValue");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(	otherlv_3=',' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getBackgroundImagePositionPropertyAccess().getCommaKeyword_3_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getBackgroundImagePositionPropertyAccess().getValuesBgPositionValueParserRuleCall_3_1_0()); 
-	    }
-		lv_values_4_0=ruleBgPositionValue		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBackgroundImagePositionPropertyRule());
-	        }
-       		add(
-       			$current, 
-       			"values",
-        		lv_values_4_0, 
-        		"BgPositionValue");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))*)
 ;
 
 

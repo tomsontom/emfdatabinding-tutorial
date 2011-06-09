@@ -20,16 +20,16 @@ Selector:
 ;
 
 SimpleSelector:
+//TODO Needs to be fixed
+//	(element=ID ('#' id=ID)? ('.' class=ID)? ( ':' pseudoClass+=ElementPseudoClass)*)
+//	|
+//	( '#' id=ID ('.' class=ID)? ( ':' pseudoClass+=ElementPseudoClass)* )
+//	|
+//	( '.' class=ID ( ':' pseudoClass+=ElementPseudoClass)* )
+//	
 	(element=ID ) |
 	( '#' id=ID ( ':' pseudoClass+=ElementPseudoClass)*) | 
 	( '.' class=ID ( ':' pseudoClass+=ElementPseudoClass)* )
-	/* (element=ElementName id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
-	|
-	(id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
-	|
-	(class=ElementClass pseudoClass=ElementPseudoClass?)
-	|
-	pseudoClass=ElementPseudoClass*/
 ;
 
 ElementPseudoClass:
@@ -65,9 +65,9 @@ FXProperty:
 		SizeProperties |
 		StrokeLineCapProperty |
 		StrokeLineJoinProperty |
-		TextAlignmentProperty |
+		AlignmentProperty |
 		TextOriginProperty |
-		BackgroundImagePositionProperty |
+		PositionProperty |
 		BackgroundImageSizeProperty |
 		BorderStyleProperty |
 		BorderImageSliceProperty |
@@ -246,7 +246,7 @@ UrlProperties:
 
 RepeatProperties:
 	property=(
-		'-fx-background-image-repeat' | '-fx-border-image-repeat'
+		'-fx-background-image-repeat' | '-fx-border-image-repeat' | '-fx-background-repeat'
 	) ':' values+=RepeatStyleValue (',' values+=RepeatStyleValue)*
 ;
 
@@ -279,8 +279,21 @@ ColorProperty:
 StringProperty:
 	property=(
 		'-fx-skin' | '-fx-shape' | '-fx-text' | '-fx-echo-char'
-	) ':' value=STRING
+	) ':' ( value=STRING | 'null' )
 ;
+
+PositionProperty:
+	property=(
+		'-fx-background-image-position' | '-fx-background-position'
+	) ':' values+=BgPositionValue (',' values+=BgPositionValue)*
+;
+
+AlignmentProperty:
+	property = (
+		'-fx-text-alignment' | '-fx-alignment'
+	) ':' value=('left' | 'center' | 'right' | 'justify')
+;
+
 
 StrokeLineCapProperty:
 	'-fx-stroke-line-cap' ':' value=('square' | 'butt' | 'round')
@@ -290,16 +303,8 @@ StrokeLineJoinProperty:
 	'-fx-stroke-line-join' ':' value=( 'miter' | 'bevel' | 'round' )
 ;
 
-TextAlignmentProperty:
-	'-fx-text-alignment' ':' value=('left' | 'center' | 'right' | 'justify')
-;
-
 TextOriginProperty:
 	'-fx-text-origin' ':' value=('baseline' | 'top' | 'bottom')
-;
-
-BackgroundImagePositionProperty:
-	'-fx-background-image-position' ':' values+=BgPositionValue (',' values+=BgPositionValue)*
 ;
 
 BackgroundImageSizeProperty:

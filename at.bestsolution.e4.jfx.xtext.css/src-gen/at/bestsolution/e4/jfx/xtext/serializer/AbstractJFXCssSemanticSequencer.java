@@ -1,7 +1,7 @@
 package at.bestsolution.e4.jfx.xtext.serializer;
 
 import at.bestsolution.e4.jfx.xtext.jFXCss.AddressValue;
-import at.bestsolution.e4.jfx.xtext.jFXCss.BackgroundImagePositionProperty;
+import at.bestsolution.e4.jfx.xtext.jFXCss.AlignmentProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.BackgroundImageSizeProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.BarPolicyProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.BgPositionValue;
@@ -49,6 +49,7 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.NamedColor;
 import at.bestsolution.e4.jfx.xtext.jFXCss.NumberProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.PaintProperties;
 import at.bestsolution.e4.jfx.xtext.jFXCss.PaintProperty;
+import at.bestsolution.e4.jfx.xtext.jFXCss.PositionProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RGBColor;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RadialGradient;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RealValue;
@@ -65,7 +66,6 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.StopValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.StringProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.StrokeLineCapProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.StrokeLineJoinProperty;
-import at.bestsolution.e4.jfx.xtext.jFXCss.TextAlignmentProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.TextOriginProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.TextOverrunProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.UrlProperties;
@@ -123,10 +123,10 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
-			case JFXCssPackage.BACKGROUND_IMAGE_POSITION_PROPERTY:
+			case JFXCssPackage.ALIGNMENT_PROPERTY:
 				if(context == grammarAccess.getFXPropertyRule() ||
-				   context == grammarAccess.getBackgroundImagePositionPropertyRule()) {
-					sequence_BackgroundImagePositionProperty_BackgroundImagePositionProperty(context, (BackgroundImagePositionProperty) semanticObject); 
+				   context == grammarAccess.getAlignmentPropertyRule()) {
+					sequence_AlignmentProperty_AlignmentProperty(context, (AlignmentProperty) semanticObject); 
 					return; 
 				}
 				else break;
@@ -442,6 +442,13 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
+			case JFXCssPackage.POSITION_PROPERTY:
+				if(context == grammarAccess.getFXPropertyRule() ||
+				   context == grammarAccess.getPositionPropertyRule()) {
+					sequence_PositionProperty_PositionProperty(context, (PositionProperty) semanticObject); 
+					return; 
+				}
+				else break;
 			case JFXCssPackage.RGB_COLOR:
 				if(context == grammarAccess.getPaintValueRule() ||
 				   context == grammarAccess.getColorValueRule() ||
@@ -549,13 +556,6 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
-			case JFXCssPackage.TEXT_ALIGNMENT_PROPERTY:
-				if(context == grammarAccess.getFXPropertyRule() ||
-				   context == grammarAccess.getTextAlignmentPropertyRule()) {
-					sequence_TextAlignmentProperty_TextAlignmentProperty(context, (TextAlignmentProperty) semanticObject); 
-					return; 
-				}
-				else break;
 			case JFXCssPackage.TEXT_ORIGIN_PROPERTY:
 				if(context == grammarAccess.getFXPropertyRule() ||
 				   context == grammarAccess.getTextOriginPropertyRule()) {
@@ -635,12 +635,13 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (values+=BgPositionValue values+=BgPositionValue*)
+	 *     ((property='-fx-text-alignment' | property='-fx-alignment') (value='left' | value='center' | value='right' | value='justify'))
 	 *
 	 * Features:
-	 *    values[1, *]
+	 *    property[0, 2]
+	 *    value[0, 4]
 	 */
-	protected void sequence_BackgroundImagePositionProperty_BackgroundImagePositionProperty(EObject context, BackgroundImagePositionProperty semanticObject) {
+	protected void sequence_AlignmentProperty_AlignmentProperty(EObject context, AlignmentProperty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1805,6 +1806,19 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     ((property='-fx-background-image-position' | property='-fx-background-position') values+=BgPositionValue values+=BgPositionValue*)
+	 *
+	 * Features:
+	 *    property[0, 2]
+	 *    values[1, *]
+	 */
+	protected void sequence_PositionProperty_PositionProperty(EObject context, PositionProperty semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         hex=HEX_NUMBER | 
 	 *         (r=IntegerValue g=IntegerValue b=IntegerValue) | 
@@ -1939,10 +1953,14 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((property='-fx-background-image-repeat' | property='-fx-border-image-repeat') values+=RepeatStyleValue values+=RepeatStyleValue*)
+	 *     (
+	 *         (property='-fx-background-image-repeat' | property='-fx-border-image-repeat' | property='-fx-background-repeat') 
+	 *         values+=RepeatStyleValue 
+	 *         values+=RepeatStyleValue*
+	 *     )
 	 *
 	 * Features:
-	 *    property[0, 2]
+	 *    property[0, 3]
 	 *    values[1, *]
 	 */
 	protected void sequence_RepeatProperties_RepeatProperties(EObject context, RepeatProperties semanticObject) {
@@ -2143,11 +2161,11 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((property='-fx-skin' | property='-fx-shape' | property='-fx-text' | property='-fx-echo-char') value=STRING)
+	 *     ((property='-fx-skin' | property='-fx-shape' | property='-fx-text' | property='-fx-echo-char') value=STRING?)
 	 *
 	 * Features:
 	 *    property[0, 4]
-	 *    value[1, 1]
+	 *    value[0, 1]
 	 */
 	protected void sequence_StringProperty_StringProperty(EObject context, StringProperty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2174,18 +2192,6 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	 *    value[0, 3]
 	 */
 	protected void sequence_StrokeLineJoinProperty_StrokeLineJoinProperty(EObject context, StrokeLineJoinProperty semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (value='left' | value='center' | value='right' | value='justify')
-	 *
-	 * Features:
-	 *    value[0, 4]
-	 */
-	protected void sequence_TextAlignmentProperty_TextAlignmentProperty(EObject context, TextAlignmentProperty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

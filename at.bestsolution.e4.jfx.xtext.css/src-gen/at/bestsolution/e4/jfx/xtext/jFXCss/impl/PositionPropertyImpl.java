@@ -6,12 +6,13 @@
  */
 package at.bestsolution.e4.jfx.xtext.jFXCss.impl;
 
-import at.bestsolution.e4.jfx.xtext.jFXCss.BackgroundImagePositionProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.BgPositionValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage;
+import at.bestsolution.e4.jfx.xtext.jFXCss.PositionProperty;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -19,24 +20,47 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Background Image Position Property</b></em>'.
+ * An implementation of the model object '<em><b>Position Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.BackgroundImagePositionPropertyImpl#getValues <em>Values</em>}</li>
+ *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.PositionPropertyImpl#getProperty <em>Property</em>}</li>
+ *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.PositionPropertyImpl#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class BackgroundImagePositionPropertyImpl extends FXPropertyImpl implements BackgroundImagePositionProperty
+public class PositionPropertyImpl extends FXPropertyImpl implements PositionProperty
 {
+  /**
+   * The default value of the '{@link #getProperty() <em>Property</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProperty()
+   * @generated
+   * @ordered
+   */
+  protected static final String PROPERTY_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getProperty() <em>Property</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProperty()
+   * @generated
+   * @ordered
+   */
+  protected String property = PROPERTY_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -52,7 +76,7 @@ public class BackgroundImagePositionPropertyImpl extends FXPropertyImpl implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  protected BackgroundImagePositionPropertyImpl()
+  protected PositionPropertyImpl()
   {
     super();
   }
@@ -65,7 +89,30 @@ public class BackgroundImagePositionPropertyImpl extends FXPropertyImpl implemen
   @Override
   protected EClass eStaticClass()
   {
-    return JFXCssPackage.Literals.BACKGROUND_IMAGE_POSITION_PROPERTY;
+    return JFXCssPackage.Literals.POSITION_PROPERTY;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getProperty()
+  {
+    return property;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setProperty(String newProperty)
+  {
+    String oldProperty = property;
+    property = newProperty;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JFXCssPackage.POSITION_PROPERTY__PROPERTY, oldProperty, property));
   }
 
   /**
@@ -77,7 +124,7 @@ public class BackgroundImagePositionPropertyImpl extends FXPropertyImpl implemen
   {
     if (values == null)
     {
-      values = new EObjectContainmentEList<BgPositionValue>(BgPositionValue.class, this, JFXCssPackage.BACKGROUND_IMAGE_POSITION_PROPERTY__VALUES);
+      values = new EObjectContainmentEList<BgPositionValue>(BgPositionValue.class, this, JFXCssPackage.POSITION_PROPERTY__VALUES);
     }
     return values;
   }
@@ -92,7 +139,7 @@ public class BackgroundImagePositionPropertyImpl extends FXPropertyImpl implemen
   {
     switch (featureID)
     {
-      case JFXCssPackage.BACKGROUND_IMAGE_POSITION_PROPERTY__VALUES:
+      case JFXCssPackage.POSITION_PROPERTY__VALUES:
         return ((InternalEList<?>)getValues()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -108,7 +155,9 @@ public class BackgroundImagePositionPropertyImpl extends FXPropertyImpl implemen
   {
     switch (featureID)
     {
-      case JFXCssPackage.BACKGROUND_IMAGE_POSITION_PROPERTY__VALUES:
+      case JFXCssPackage.POSITION_PROPERTY__PROPERTY:
+        return getProperty();
+      case JFXCssPackage.POSITION_PROPERTY__VALUES:
         return getValues();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -125,7 +174,10 @@ public class BackgroundImagePositionPropertyImpl extends FXPropertyImpl implemen
   {
     switch (featureID)
     {
-      case JFXCssPackage.BACKGROUND_IMAGE_POSITION_PROPERTY__VALUES:
+      case JFXCssPackage.POSITION_PROPERTY__PROPERTY:
+        setProperty((String)newValue);
+        return;
+      case JFXCssPackage.POSITION_PROPERTY__VALUES:
         getValues().clear();
         getValues().addAll((Collection<? extends BgPositionValue>)newValue);
         return;
@@ -143,7 +195,10 @@ public class BackgroundImagePositionPropertyImpl extends FXPropertyImpl implemen
   {
     switch (featureID)
     {
-      case JFXCssPackage.BACKGROUND_IMAGE_POSITION_PROPERTY__VALUES:
+      case JFXCssPackage.POSITION_PROPERTY__PROPERTY:
+        setProperty(PROPERTY_EDEFAULT);
+        return;
+      case JFXCssPackage.POSITION_PROPERTY__VALUES:
         getValues().clear();
         return;
     }
@@ -160,10 +215,29 @@ public class BackgroundImagePositionPropertyImpl extends FXPropertyImpl implemen
   {
     switch (featureID)
     {
-      case JFXCssPackage.BACKGROUND_IMAGE_POSITION_PROPERTY__VALUES:
+      case JFXCssPackage.POSITION_PROPERTY__PROPERTY:
+        return PROPERTY_EDEFAULT == null ? property != null : !PROPERTY_EDEFAULT.equals(property);
+      case JFXCssPackage.POSITION_PROPERTY__VALUES:
         return values != null && !values.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //BackgroundImagePositionPropertyImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (property: ");
+    result.append(property);
+    result.append(')');
+    return result.toString();
+  }
+
+} //PositionPropertyImpl

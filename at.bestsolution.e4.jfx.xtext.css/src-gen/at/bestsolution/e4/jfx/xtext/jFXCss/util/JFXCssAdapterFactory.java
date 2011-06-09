@@ -259,6 +259,16 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
         return createStringPropertyAdapter();
       }
       @Override
+      public Adapter casePositionProperty(PositionProperty object)
+      {
+        return createPositionPropertyAdapter();
+      }
+      @Override
+      public Adapter caseAlignmentProperty(AlignmentProperty object)
+      {
+        return createAlignmentPropertyAdapter();
+      }
+      @Override
       public Adapter caseStrokeLineCapProperty(StrokeLineCapProperty object)
       {
         return createStrokeLineCapPropertyAdapter();
@@ -269,19 +279,9 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
         return createStrokeLineJoinPropertyAdapter();
       }
       @Override
-      public Adapter caseTextAlignmentProperty(TextAlignmentProperty object)
-      {
-        return createTextAlignmentPropertyAdapter();
-      }
-      @Override
       public Adapter caseTextOriginProperty(TextOriginProperty object)
       {
         return createTextOriginPropertyAdapter();
-      }
-      @Override
-      public Adapter caseBackgroundImagePositionProperty(BackgroundImagePositionProperty object)
-      {
-        return createBackgroundImagePositionPropertyAdapter();
       }
       @Override
       public Adapter caseBackgroundImageSizeProperty(BackgroundImageSizeProperty object)
@@ -1031,6 +1031,36 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.PositionProperty <em>Position Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.PositionProperty
+   * @generated
+   */
+  public Adapter createPositionPropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.AlignmentProperty <em>Alignment Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.AlignmentProperty
+   * @generated
+   */
+  public Adapter createAlignmentPropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.StrokeLineCapProperty <em>Stroke Line Cap Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1061,21 +1091,6 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.TextAlignmentProperty <em>Text Alignment Property</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.TextAlignmentProperty
-   * @generated
-   */
-  public Adapter createTextAlignmentPropertyAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.TextOriginProperty <em>Text Origin Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1086,21 +1101,6 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTextOriginPropertyAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.BackgroundImagePositionProperty <em>Background Image Position Property</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.BackgroundImagePositionProperty
-   * @generated
-   */
-  public Adapter createBackgroundImagePositionPropertyAdapter()
   {
     return null;
   }

@@ -357,6 +357,22 @@ public class JFXCssSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JFXCssPackage.POSITION_PROPERTY:
+      {
+        PositionProperty positionProperty = (PositionProperty)theEObject;
+        T result = casePositionProperty(positionProperty);
+        if (result == null) result = caseFXProperty(positionProperty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JFXCssPackage.ALIGNMENT_PROPERTY:
+      {
+        AlignmentProperty alignmentProperty = (AlignmentProperty)theEObject;
+        T result = caseAlignmentProperty(alignmentProperty);
+        if (result == null) result = caseFXProperty(alignmentProperty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JFXCssPackage.STROKE_LINE_CAP_PROPERTY:
       {
         StrokeLineCapProperty strokeLineCapProperty = (StrokeLineCapProperty)theEObject;
@@ -373,27 +389,11 @@ public class JFXCssSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case JFXCssPackage.TEXT_ALIGNMENT_PROPERTY:
-      {
-        TextAlignmentProperty textAlignmentProperty = (TextAlignmentProperty)theEObject;
-        T result = caseTextAlignmentProperty(textAlignmentProperty);
-        if (result == null) result = caseFXProperty(textAlignmentProperty);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case JFXCssPackage.TEXT_ORIGIN_PROPERTY:
       {
         TextOriginProperty textOriginProperty = (TextOriginProperty)theEObject;
         T result = caseTextOriginProperty(textOriginProperty);
         if (result == null) result = caseFXProperty(textOriginProperty);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case JFXCssPackage.BACKGROUND_IMAGE_POSITION_PROPERTY:
-      {
-        BackgroundImagePositionProperty backgroundImagePositionProperty = (BackgroundImagePositionProperty)theEObject;
-        T result = caseBackgroundImagePositionProperty(backgroundImagePositionProperty);
-        if (result == null) result = caseFXProperty(backgroundImagePositionProperty);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1259,6 +1259,38 @@ public class JFXCssSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Position Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Position Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePositionProperty(PositionProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Alignment Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Alignment Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlignmentProperty(AlignmentProperty object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Stroke Line Cap Property</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1291,22 +1323,6 @@ public class JFXCssSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Text Alignment Property</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Text Alignment Property</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTextAlignmentProperty(TextAlignmentProperty object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Text Origin Property</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1318,22 +1334,6 @@ public class JFXCssSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTextOriginProperty(TextOriginProperty object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Background Image Position Property</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Background Image Position Property</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseBackgroundImagePositionProperty(BackgroundImagePositionProperty object)
   {
     return null;
   }

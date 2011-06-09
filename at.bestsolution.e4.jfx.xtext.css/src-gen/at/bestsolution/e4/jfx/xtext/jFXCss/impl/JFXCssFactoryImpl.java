@@ -105,11 +105,11 @@ public class JFXCssFactoryImpl extends EFactoryImpl implements JFXCssFactory
       case JFXCssPackage.MULTI_PAINT_PROPERTIES: return createMultiPaintProperties();
       case JFXCssPackage.COLOR_PROPERTY: return createColorProperty();
       case JFXCssPackage.STRING_PROPERTY: return createStringProperty();
+      case JFXCssPackage.POSITION_PROPERTY: return createPositionProperty();
+      case JFXCssPackage.ALIGNMENT_PROPERTY: return createAlignmentProperty();
       case JFXCssPackage.STROKE_LINE_CAP_PROPERTY: return createStrokeLineCapProperty();
       case JFXCssPackage.STROKE_LINE_JOIN_PROPERTY: return createStrokeLineJoinProperty();
-      case JFXCssPackage.TEXT_ALIGNMENT_PROPERTY: return createTextAlignmentProperty();
       case JFXCssPackage.TEXT_ORIGIN_PROPERTY: return createTextOriginProperty();
-      case JFXCssPackage.BACKGROUND_IMAGE_POSITION_PROPERTY: return createBackgroundImagePositionProperty();
       case JFXCssPackage.BACKGROUND_IMAGE_SIZE_PROPERTY: return createBackgroundImageSizeProperty();
       case JFXCssPackage.BORDER_STYLE_PROPERTY: return createBorderStyleProperty();
       case JFXCssPackage.BORDER_IMAGE_SLICE_PROPERTY: return createBorderImageSliceProperty();
@@ -591,6 +591,28 @@ public class JFXCssFactoryImpl extends EFactoryImpl implements JFXCssFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public PositionProperty createPositionProperty()
+  {
+    PositionPropertyImpl positionProperty = new PositionPropertyImpl();
+    return positionProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AlignmentProperty createAlignmentProperty()
+  {
+    AlignmentPropertyImpl alignmentProperty = new AlignmentPropertyImpl();
+    return alignmentProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public StrokeLineCapProperty createStrokeLineCapProperty()
   {
     StrokeLineCapPropertyImpl strokeLineCapProperty = new StrokeLineCapPropertyImpl();
@@ -613,32 +635,10 @@ public class JFXCssFactoryImpl extends EFactoryImpl implements JFXCssFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public TextAlignmentProperty createTextAlignmentProperty()
-  {
-    TextAlignmentPropertyImpl textAlignmentProperty = new TextAlignmentPropertyImpl();
-    return textAlignmentProperty;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public TextOriginProperty createTextOriginProperty()
   {
     TextOriginPropertyImpl textOriginProperty = new TextOriginPropertyImpl();
     return textOriginProperty;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public BackgroundImagePositionProperty createBackgroundImagePositionProperty()
-  {
-    BackgroundImagePositionPropertyImpl backgroundImagePositionProperty = new BackgroundImagePositionPropertyImpl();
-    return backgroundImagePositionProperty;
   }
 
   /**

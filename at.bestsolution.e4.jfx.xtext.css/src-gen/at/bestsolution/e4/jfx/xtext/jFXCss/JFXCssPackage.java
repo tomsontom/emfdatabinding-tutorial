@@ -1439,6 +1439,80 @@ public interface JFXCssPackage extends EPackage
   int STRING_PROPERTY_FEATURE_COUNT = FX_PROPERTY_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.PositionPropertyImpl <em>Position Property</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.PositionPropertyImpl
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getPositionProperty()
+   * @generated
+   */
+  int POSITION_PROPERTY = 36;
+
+  /**
+   * The feature id for the '<em><b>Property</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSITION_PROPERTY__PROPERTY = FX_PROPERTY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSITION_PROPERTY__VALUES = FX_PROPERTY_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Position Property</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POSITION_PROPERTY_FEATURE_COUNT = FX_PROPERTY_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.AlignmentPropertyImpl <em>Alignment Property</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.AlignmentPropertyImpl
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getAlignmentProperty()
+   * @generated
+   */
+  int ALIGNMENT_PROPERTY = 37;
+
+  /**
+   * The feature id for the '<em><b>Property</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALIGNMENT_PROPERTY__PROPERTY = FX_PROPERTY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALIGNMENT_PROPERTY__VALUE = FX_PROPERTY_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Alignment Property</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ALIGNMENT_PROPERTY_FEATURE_COUNT = FX_PROPERTY_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.StrokeLineCapPropertyImpl <em>Stroke Line Cap Property</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1446,7 +1520,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getStrokeLineCapProperty()
    * @generated
    */
-  int STROKE_LINE_CAP_PROPERTY = 36;
+  int STROKE_LINE_CAP_PROPERTY = 38;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1474,7 +1548,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getStrokeLineJoinProperty()
    * @generated
    */
-  int STROKE_LINE_JOIN_PROPERTY = 37;
+  int STROKE_LINE_JOIN_PROPERTY = 39;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1495,34 +1569,6 @@ public interface JFXCssPackage extends EPackage
   int STROKE_LINE_JOIN_PROPERTY_FEATURE_COUNT = FX_PROPERTY_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.TextAlignmentPropertyImpl <em>Text Alignment Property</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.TextAlignmentPropertyImpl
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getTextAlignmentProperty()
-   * @generated
-   */
-  int TEXT_ALIGNMENT_PROPERTY = 38;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEXT_ALIGNMENT_PROPERTY__VALUE = FX_PROPERTY_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Text Alignment Property</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEXT_ALIGNMENT_PROPERTY_FEATURE_COUNT = FX_PROPERTY_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.TextOriginPropertyImpl <em>Text Origin Property</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1530,7 +1576,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getTextOriginProperty()
    * @generated
    */
-  int TEXT_ORIGIN_PROPERTY = 39;
+  int TEXT_ORIGIN_PROPERTY = 40;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1549,34 +1595,6 @@ public interface JFXCssPackage extends EPackage
    * @ordered
    */
   int TEXT_ORIGIN_PROPERTY_FEATURE_COUNT = FX_PROPERTY_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.BackgroundImagePositionPropertyImpl <em>Background Image Position Property</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.BackgroundImagePositionPropertyImpl
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getBackgroundImagePositionProperty()
-   * @generated
-   */
-  int BACKGROUND_IMAGE_POSITION_PROPERTY = 40;
-
-  /**
-   * The feature id for the '<em><b>Values</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BACKGROUND_IMAGE_POSITION_PROPERTY__VALUES = FX_PROPERTY_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Background Image Position Property</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BACKGROUND_IMAGE_POSITION_PROPERTY_FEATURE_COUNT = FX_PROPERTY_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.BackgroundImageSizePropertyImpl <em>Background Image Size Property</em>}' class.
@@ -4075,6 +4093,70 @@ public interface JFXCssPackage extends EPackage
   EAttribute getStringProperty_Value();
 
   /**
+   * Returns the meta object for class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.PositionProperty <em>Position Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Position Property</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.PositionProperty
+   * @generated
+   */
+  EClass getPositionProperty();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.e4.jfx.xtext.jFXCss.PositionProperty#getProperty <em>Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Property</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.PositionProperty#getProperty()
+   * @see #getPositionProperty()
+   * @generated
+   */
+  EAttribute getPositionProperty_Property();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link at.bestsolution.e4.jfx.xtext.jFXCss.PositionProperty#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Values</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.PositionProperty#getValues()
+   * @see #getPositionProperty()
+   * @generated
+   */
+  EReference getPositionProperty_Values();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.AlignmentProperty <em>Alignment Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Alignment Property</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.AlignmentProperty
+   * @generated
+   */
+  EClass getAlignmentProperty();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.e4.jfx.xtext.jFXCss.AlignmentProperty#getProperty <em>Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Property</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.AlignmentProperty#getProperty()
+   * @see #getAlignmentProperty()
+   * @generated
+   */
+  EAttribute getAlignmentProperty_Property();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.e4.jfx.xtext.jFXCss.AlignmentProperty#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.AlignmentProperty#getValue()
+   * @see #getAlignmentProperty()
+   * @generated
+   */
+  EAttribute getAlignmentProperty_Value();
+
+  /**
    * Returns the meta object for class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.StrokeLineCapProperty <em>Stroke Line Cap Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4117,27 +4199,6 @@ public interface JFXCssPackage extends EPackage
   EAttribute getStrokeLineJoinProperty_Value();
 
   /**
-   * Returns the meta object for class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.TextAlignmentProperty <em>Text Alignment Property</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Text Alignment Property</em>'.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.TextAlignmentProperty
-   * @generated
-   */
-  EClass getTextAlignmentProperty();
-
-  /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.e4.jfx.xtext.jFXCss.TextAlignmentProperty#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.TextAlignmentProperty#getValue()
-   * @see #getTextAlignmentProperty()
-   * @generated
-   */
-  EAttribute getTextAlignmentProperty_Value();
-
-  /**
    * Returns the meta object for class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.TextOriginProperty <em>Text Origin Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4157,27 +4218,6 @@ public interface JFXCssPackage extends EPackage
    * @generated
    */
   EAttribute getTextOriginProperty_Value();
-
-  /**
-   * Returns the meta object for class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.BackgroundImagePositionProperty <em>Background Image Position Property</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Background Image Position Property</em>'.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.BackgroundImagePositionProperty
-   * @generated
-   */
-  EClass getBackgroundImagePositionProperty();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link at.bestsolution.e4.jfx.xtext.jFXCss.BackgroundImagePositionProperty#getValues <em>Values</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Values</em>'.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.BackgroundImagePositionProperty#getValues()
-   * @see #getBackgroundImagePositionProperty()
-   * @generated
-   */
-  EReference getBackgroundImagePositionProperty_Values();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.BackgroundImageSizeProperty <em>Background Image Size Property</em>}'.
@@ -6314,6 +6354,58 @@ public interface JFXCssPackage extends EPackage
     EAttribute STRING_PROPERTY__VALUE = eINSTANCE.getStringProperty_Value();
 
     /**
+     * The meta object literal for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.PositionPropertyImpl <em>Position Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.PositionPropertyImpl
+     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getPositionProperty()
+     * @generated
+     */
+    EClass POSITION_PROPERTY = eINSTANCE.getPositionProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Property</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute POSITION_PROPERTY__PROPERTY = eINSTANCE.getPositionProperty_Property();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POSITION_PROPERTY__VALUES = eINSTANCE.getPositionProperty_Values();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.AlignmentPropertyImpl <em>Alignment Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.AlignmentPropertyImpl
+     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getAlignmentProperty()
+     * @generated
+     */
+    EClass ALIGNMENT_PROPERTY = eINSTANCE.getAlignmentProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Property</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ALIGNMENT_PROPERTY__PROPERTY = eINSTANCE.getAlignmentProperty_Property();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ALIGNMENT_PROPERTY__VALUE = eINSTANCE.getAlignmentProperty_Value();
+
+    /**
      * The meta object literal for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.StrokeLineCapPropertyImpl <em>Stroke Line Cap Property</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6350,24 +6442,6 @@ public interface JFXCssPackage extends EPackage
     EAttribute STROKE_LINE_JOIN_PROPERTY__VALUE = eINSTANCE.getStrokeLineJoinProperty_Value();
 
     /**
-     * The meta object literal for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.TextAlignmentPropertyImpl <em>Text Alignment Property</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.TextAlignmentPropertyImpl
-     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getTextAlignmentProperty()
-     * @generated
-     */
-    EClass TEXT_ALIGNMENT_PROPERTY = eINSTANCE.getTextAlignmentProperty();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEXT_ALIGNMENT_PROPERTY__VALUE = eINSTANCE.getTextAlignmentProperty_Value();
-
-    /**
      * The meta object literal for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.TextOriginPropertyImpl <em>Text Origin Property</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -6384,24 +6458,6 @@ public interface JFXCssPackage extends EPackage
      * @generated
      */
     EAttribute TEXT_ORIGIN_PROPERTY__VALUE = eINSTANCE.getTextOriginProperty_Value();
-
-    /**
-     * The meta object literal for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.BackgroundImagePositionPropertyImpl <em>Background Image Position Property</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.BackgroundImagePositionPropertyImpl
-     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getBackgroundImagePositionProperty()
-     * @generated
-     */
-    EClass BACKGROUND_IMAGE_POSITION_PROPERTY = eINSTANCE.getBackgroundImagePositionProperty();
-
-    /**
-     * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BACKGROUND_IMAGE_POSITION_PROPERTY__VALUES = eINSTANCE.getBackgroundImagePositionProperty_Values();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.BackgroundImageSizePropertyImpl <em>Background Image Size Property</em>}' class.

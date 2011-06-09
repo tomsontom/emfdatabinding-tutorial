@@ -122,17 +122,25 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPseudoClassAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
 		private final RuleCall cPseudoClassElementPseudoClassParserRuleCall_2_2_1_0 = (RuleCall)cPseudoClassAssignment_2_2_1.eContents().get(0);
 		
-		/// * (element=ElementName id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
-		//	|
-		//	(id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
-		//	|
-		//	(class=ElementClass pseudoClass=ElementPseudoClass?)
-		//	|
-		//	pseudoClass=ElementPseudoClass* / SimpleSelector:
-		//	element=ID | "#" id=ID (":" pseudoClass+=ElementPseudoClass)* | "." class=ID (":" pseudoClass+=ElementPseudoClass)*;
+		//SimpleSelector:
+		//	element=ID //TODO Needs to be fixed
+		//	//	(element=ID ('#' id=ID)? ('.' class=ID)? ( ':' pseudoClass+=ElementPseudoClass)*)
+		//	//	|
+		//	//	( '#' id=ID ('.' class=ID)? ( ':' pseudoClass+=ElementPseudoClass)* )
+		//	//	|
+		//	//	( '.' class=ID ( ':' pseudoClass+=ElementPseudoClass)* )
+		//	//	
+		//	| "#" id=ID (":" pseudoClass+=ElementPseudoClass)* | "." class=ID (":" pseudoClass+=ElementPseudoClass)*;
 		public ParserRule getRule() { return rule; }
 
-		//element=ID | "#" id=ID (":" pseudoClass+=ElementPseudoClass)* | "." class=ID (":" pseudoClass+=ElementPseudoClass)*
+		//element=ID //TODO Needs to be fixed
+		////	(element=ID ('#' id=ID)? ('.' class=ID)? ( ':' pseudoClass+=ElementPseudoClass)*)
+		////	|
+		////	( '#' id=ID ('.' class=ID)? ( ':' pseudoClass+=ElementPseudoClass)* )
+		////	|
+		////	( '.' class=ID ( ':' pseudoClass+=ElementPseudoClass)* )
+		////	
+		//| "#" id=ID (":" pseudoClass+=ElementPseudoClass)* | "." class=ID (":" pseudoClass+=ElementPseudoClass)*
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//element=ID
@@ -334,9 +342,9 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSizePropertiesParserRuleCall_0_23 = (RuleCall)cAlternatives_0.eContents().get(23);
 		private final RuleCall cStrokeLineCapPropertyParserRuleCall_0_24 = (RuleCall)cAlternatives_0.eContents().get(24);
 		private final RuleCall cStrokeLineJoinPropertyParserRuleCall_0_25 = (RuleCall)cAlternatives_0.eContents().get(25);
-		private final RuleCall cTextAlignmentPropertyParserRuleCall_0_26 = (RuleCall)cAlternatives_0.eContents().get(26);
+		private final RuleCall cAlignmentPropertyParserRuleCall_0_26 = (RuleCall)cAlternatives_0.eContents().get(26);
 		private final RuleCall cTextOriginPropertyParserRuleCall_0_27 = (RuleCall)cAlternatives_0.eContents().get(27);
-		private final RuleCall cBackgroundImagePositionPropertyParserRuleCall_0_28 = (RuleCall)cAlternatives_0.eContents().get(28);
+		private final RuleCall cPositionPropertyParserRuleCall_0_28 = (RuleCall)cAlternatives_0.eContents().get(28);
 		private final RuleCall cBackgroundImageSizePropertyParserRuleCall_0_29 = (RuleCall)cAlternatives_0.eContents().get(29);
 		private final RuleCall cBorderStylePropertyParserRuleCall_0_30 = (RuleCall)cAlternatives_0.eContents().get(30);
 		private final RuleCall cBorderImageSlicePropertyParserRuleCall_0_31 = (RuleCall)cAlternatives_0.eContents().get(31);
@@ -354,8 +362,8 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//	EffectProperty | BooleanProperty | SizeProperty | NumberProperty | IntegerProperty | PaintProperty | BlendProperty |
 		//	UrlProperty | PaintProperties | MultiSizeProperties | HPositionProperty | VPositionProperty | SideProperty |
 		//	BarPolicyProperty | UrlProperties | RepeatProperties | MultiSizeProperty | SizeProperties | StrokeLineCapProperty |
-		//	StrokeLineJoinProperty | TextAlignmentProperty | TextOriginProperty | BackgroundImagePositionProperty |
-		//	BackgroundImageSizeProperty | BorderStyleProperty | BorderImageSliceProperty | TextOverrunProperty | InsetsProperty |
+		//	StrokeLineJoinProperty | AlignmentProperty | TextOriginProperty | PositionProperty | BackgroundImageSizeProperty |
+		//	BorderStyleProperty | BorderImageSliceProperty | TextOverrunProperty | InsetsProperty |
 		//	HorizontalGridLineStrokeDashArrayProperty | VerticalGridLineStrokeDashArrayProperty | MultiPaintProperties |
 		//	ColorProperty | StringProperty) ";";
 		public ParserRule getRule() { return rule; }
@@ -365,8 +373,8 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//EffectProperty | BooleanProperty | SizeProperty | NumberProperty | IntegerProperty | PaintProperty | BlendProperty |
 		//UrlProperty | PaintProperties | MultiSizeProperties | HPositionProperty | VPositionProperty | SideProperty |
 		//BarPolicyProperty | UrlProperties | RepeatProperties | MultiSizeProperty | SizeProperties | StrokeLineCapProperty |
-		//StrokeLineJoinProperty | TextAlignmentProperty | TextOriginProperty | BackgroundImagePositionProperty |
-		//BackgroundImageSizeProperty | BorderStyleProperty | BorderImageSliceProperty | TextOverrunProperty | InsetsProperty |
+		//StrokeLineJoinProperty | AlignmentProperty | TextOriginProperty | PositionProperty | BackgroundImageSizeProperty |
+		//BorderStyleProperty | BorderImageSliceProperty | TextOverrunProperty | InsetsProperty |
 		//HorizontalGridLineStrokeDashArrayProperty | VerticalGridLineStrokeDashArrayProperty | MultiPaintProperties |
 		//ColorProperty | StringProperty) ";"
 		public Group getGroup() { return cGroup; }
@@ -376,8 +384,8 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//EffectProperty | BooleanProperty | SizeProperty | NumberProperty | IntegerProperty | PaintProperty | BlendProperty |
 		//UrlProperty | PaintProperties | MultiSizeProperties | HPositionProperty | VPositionProperty | SideProperty |
 		//BarPolicyProperty | UrlProperties | RepeatProperties | MultiSizeProperty | SizeProperties | StrokeLineCapProperty |
-		//StrokeLineJoinProperty | TextAlignmentProperty | TextOriginProperty | BackgroundImagePositionProperty |
-		//BackgroundImageSizeProperty | BorderStyleProperty | BorderImageSliceProperty | TextOverrunProperty | InsetsProperty |
+		//StrokeLineJoinProperty | AlignmentProperty | TextOriginProperty | PositionProperty | BackgroundImageSizeProperty |
+		//BorderStyleProperty | BorderImageSliceProperty | TextOverrunProperty | InsetsProperty |
 		//HorizontalGridLineStrokeDashArrayProperty | VerticalGridLineStrokeDashArrayProperty | MultiPaintProperties |
 		//ColorProperty | StringProperty
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
@@ -461,14 +469,14 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//StrokeLineJoinProperty
 		public RuleCall getStrokeLineJoinPropertyParserRuleCall_0_25() { return cStrokeLineJoinPropertyParserRuleCall_0_25; }
 
-		//TextAlignmentProperty
-		public RuleCall getTextAlignmentPropertyParserRuleCall_0_26() { return cTextAlignmentPropertyParserRuleCall_0_26; }
+		//AlignmentProperty
+		public RuleCall getAlignmentPropertyParserRuleCall_0_26() { return cAlignmentPropertyParserRuleCall_0_26; }
 
 		//TextOriginProperty
 		public RuleCall getTextOriginPropertyParserRuleCall_0_27() { return cTextOriginPropertyParserRuleCall_0_27; }
 
-		//BackgroundImagePositionProperty
-		public RuleCall getBackgroundImagePositionPropertyParserRuleCall_0_28() { return cBackgroundImagePositionPropertyParserRuleCall_0_28; }
+		//PositionProperty
+		public RuleCall getPositionPropertyParserRuleCall_0_28() { return cPositionPropertyParserRuleCall_0_28; }
 
 		//BackgroundImageSizeProperty
 		public RuleCall getBackgroundImageSizePropertyParserRuleCall_0_29() { return cBackgroundImageSizePropertyParserRuleCall_0_29; }
@@ -2423,6 +2431,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cPropertyAlternatives_0_0 = (Alternatives)cPropertyAssignment_0.eContents().get(0);
 		private final Keyword cPropertyFxBackgroundImageRepeatKeyword_0_0_0 = (Keyword)cPropertyAlternatives_0_0.eContents().get(0);
 		private final Keyword cPropertyFxBorderImageRepeatKeyword_0_0_1 = (Keyword)cPropertyAlternatives_0_0.eContents().get(1);
+		private final Keyword cPropertyFxBackgroundRepeatKeyword_0_0_2 = (Keyword)cPropertyAlternatives_0_0.eContents().get(2);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cValuesAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValuesRepeatStyleValueParserRuleCall_2_0 = (RuleCall)cValuesAssignment_2.eContents().get(0);
@@ -2432,18 +2441,18 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValuesRepeatStyleValueParserRuleCall_3_1_0 = (RuleCall)cValuesAssignment_3_1.eContents().get(0);
 		
 		//RepeatProperties:
-		//	property=("-fx-background-image-repeat" | "-fx-border-image-repeat") ":" values+=RepeatStyleValue (","
-		//	values+=RepeatStyleValue)*;
+		//	property=("-fx-background-image-repeat" | "-fx-border-image-repeat" | "-fx-background-repeat") ":"
+		//	values+=RepeatStyleValue ("," values+=RepeatStyleValue)*;
 		public ParserRule getRule() { return rule; }
 
-		//property=("-fx-background-image-repeat" | "-fx-border-image-repeat") ":" values+=RepeatStyleValue (","
-		//values+=RepeatStyleValue)*
+		//property=("-fx-background-image-repeat" | "-fx-border-image-repeat" | "-fx-background-repeat") ":"
+		//values+=RepeatStyleValue ("," values+=RepeatStyleValue)*
 		public Group getGroup() { return cGroup; }
 
-		//property=("-fx-background-image-repeat" | "-fx-border-image-repeat")
+		//property=("-fx-background-image-repeat" | "-fx-border-image-repeat" | "-fx-background-repeat")
 		public Assignment getPropertyAssignment_0() { return cPropertyAssignment_0; }
 
-		//"-fx-background-image-repeat" | "-fx-border-image-repeat"
+		//"-fx-background-image-repeat" | "-fx-border-image-repeat" | "-fx-background-repeat"
 		public Alternatives getPropertyAlternatives_0_0() { return cPropertyAlternatives_0_0; }
 
 		//"-fx-background-image-repeat"
@@ -2451,6 +2460,9 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"-fx-border-image-repeat"
 		public Keyword getPropertyFxBorderImageRepeatKeyword_0_0_1() { return cPropertyFxBorderImageRepeatKeyword_0_0_1; }
+
+		//"-fx-background-repeat"
+		public Keyword getPropertyFxBackgroundRepeatKeyword_0_0_2() { return cPropertyFxBackgroundRepeatKeyword_0_0_2; }
 
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
@@ -2677,14 +2689,16 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPropertyFxTextKeyword_0_0_2 = (Keyword)cPropertyAlternatives_0_0.eContents().get(2);
 		private final Keyword cPropertyFxEchoCharKeyword_0_0_3 = (Keyword)cPropertyAlternatives_0_0.eContents().get(3);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_0_0 = (RuleCall)cValueAssignment_2_0.eContents().get(0);
+		private final Keyword cNullKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
 		
 		//StringProperty:
-		//	property=("-fx-skin" | "-fx-shape" | "-fx-text" | "-fx-echo-char") ":" value=STRING;
+		//	property=("-fx-skin" | "-fx-shape" | "-fx-text" | "-fx-echo-char") ":" (value=STRING | "null");
 		public ParserRule getRule() { return rule; }
 
-		//property=("-fx-skin" | "-fx-shape" | "-fx-text" | "-fx-echo-char") ":" value=STRING
+		//property=("-fx-skin" | "-fx-shape" | "-fx-text" | "-fx-echo-char") ":" (value=STRING | "null")
 		public Group getGroup() { return cGroup; }
 
 		//property=("-fx-skin" | "-fx-shape" | "-fx-text" | "-fx-echo-char")
@@ -2708,11 +2722,131 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 
+		//value=STRING | "null"
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+
 		//value=STRING
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		public Assignment getValueAssignment_2_0() { return cValueAssignment_2_0; }
 
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_2_0() { return cValueSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getValueSTRINGTerminalRuleCall_2_0_0() { return cValueSTRINGTerminalRuleCall_2_0_0; }
+
+		//"null"
+		public Keyword getNullKeyword_2_1() { return cNullKeyword_2_1; }
+	}
+
+	public class PositionPropertyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PositionProperty");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cPropertyAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Alternatives cPropertyAlternatives_0_0 = (Alternatives)cPropertyAssignment_0.eContents().get(0);
+		private final Keyword cPropertyFxBackgroundImagePositionKeyword_0_0_0 = (Keyword)cPropertyAlternatives_0_0.eContents().get(0);
+		private final Keyword cPropertyFxBackgroundPositionKeyword_0_0_1 = (Keyword)cPropertyAlternatives_0_0.eContents().get(1);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValuesAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValuesBgPositionValueParserRuleCall_2_0 = (RuleCall)cValuesAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cValuesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cValuesBgPositionValueParserRuleCall_3_1_0 = (RuleCall)cValuesAssignment_3_1.eContents().get(0);
+		
+		//PositionProperty:
+		//	property=("-fx-background-image-position" | "-fx-background-position") ":" values+=BgPositionValue (","
+		//	values+=BgPositionValue)*;
+		public ParserRule getRule() { return rule; }
+
+		//property=("-fx-background-image-position" | "-fx-background-position") ":" values+=BgPositionValue (","
+		//values+=BgPositionValue)*
+		public Group getGroup() { return cGroup; }
+
+		//property=("-fx-background-image-position" | "-fx-background-position")
+		public Assignment getPropertyAssignment_0() { return cPropertyAssignment_0; }
+
+		//"-fx-background-image-position" | "-fx-background-position"
+		public Alternatives getPropertyAlternatives_0_0() { return cPropertyAlternatives_0_0; }
+
+		//"-fx-background-image-position"
+		public Keyword getPropertyFxBackgroundImagePositionKeyword_0_0_0() { return cPropertyFxBackgroundImagePositionKeyword_0_0_0; }
+
+		//"-fx-background-position"
+		public Keyword getPropertyFxBackgroundPositionKeyword_0_0_1() { return cPropertyFxBackgroundPositionKeyword_0_0_1; }
+
+		//":"
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+
+		//values+=BgPositionValue
+		public Assignment getValuesAssignment_2() { return cValuesAssignment_2; }
+
+		//BgPositionValue
+		public RuleCall getValuesBgPositionValueParserRuleCall_2_0() { return cValuesBgPositionValueParserRuleCall_2_0; }
+
+		//("," values+=BgPositionValue)*
+		public Group getGroup_3() { return cGroup_3; }
+
+		//","
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+
+		//values+=BgPositionValue
+		public Assignment getValuesAssignment_3_1() { return cValuesAssignment_3_1; }
+
+		//BgPositionValue
+		public RuleCall getValuesBgPositionValueParserRuleCall_3_1_0() { return cValuesBgPositionValueParserRuleCall_3_1_0; }
+	}
+
+	public class AlignmentPropertyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AlignmentProperty");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cPropertyAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Alternatives cPropertyAlternatives_0_0 = (Alternatives)cPropertyAssignment_0.eContents().get(0);
+		private final Keyword cPropertyFxTextAlignmentKeyword_0_0_0 = (Keyword)cPropertyAlternatives_0_0.eContents().get(0);
+		private final Keyword cPropertyFxAlignmentKeyword_0_0_1 = (Keyword)cPropertyAlternatives_0_0.eContents().get(1);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Alternatives cValueAlternatives_2_0 = (Alternatives)cValueAssignment_2.eContents().get(0);
+		private final Keyword cValueLeftKeyword_2_0_0 = (Keyword)cValueAlternatives_2_0.eContents().get(0);
+		private final Keyword cValueCenterKeyword_2_0_1 = (Keyword)cValueAlternatives_2_0.eContents().get(1);
+		private final Keyword cValueRightKeyword_2_0_2 = (Keyword)cValueAlternatives_2_0.eContents().get(2);
+		private final Keyword cValueJustifyKeyword_2_0_3 = (Keyword)cValueAlternatives_2_0.eContents().get(3);
+		
+		//AlignmentProperty:
+		//	property=("-fx-text-alignment" | "-fx-alignment") ":" value=("left" | "center" | "right" | "justify");
+		public ParserRule getRule() { return rule; }
+
+		//property=("-fx-text-alignment" | "-fx-alignment") ":" value=("left" | "center" | "right" | "justify")
+		public Group getGroup() { return cGroup; }
+
+		//property=("-fx-text-alignment" | "-fx-alignment")
+		public Assignment getPropertyAssignment_0() { return cPropertyAssignment_0; }
+
+		//"-fx-text-alignment" | "-fx-alignment"
+		public Alternatives getPropertyAlternatives_0_0() { return cPropertyAlternatives_0_0; }
+
+		//"-fx-text-alignment"
+		public Keyword getPropertyFxTextAlignmentKeyword_0_0_0() { return cPropertyFxTextAlignmentKeyword_0_0_0; }
+
+		//"-fx-alignment"
+		public Keyword getPropertyFxAlignmentKeyword_0_0_1() { return cPropertyFxAlignmentKeyword_0_0_1; }
+
+		//":"
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+
+		//value=("left" | "center" | "right" | "justify")
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+
+		//"left" | "center" | "right" | "justify"
+		public Alternatives getValueAlternatives_2_0() { return cValueAlternatives_2_0; }
+
+		//"left"
+		public Keyword getValueLeftKeyword_2_0_0() { return cValueLeftKeyword_2_0_0; }
+
+		//"center"
+		public Keyword getValueCenterKeyword_2_0_1() { return cValueCenterKeyword_2_0_1; }
+
+		//"right"
+		public Keyword getValueRightKeyword_2_0_2() { return cValueRightKeyword_2_0_2; }
+
+		//"justify"
+		public Keyword getValueJustifyKeyword_2_0_3() { return cValueJustifyKeyword_2_0_3; }
 	}
 
 	public class StrokeLineCapPropertyElements extends AbstractParserRuleElementFinder {
@@ -2795,50 +2929,6 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getValueRoundKeyword_2_0_2() { return cValueRoundKeyword_2_0_2; }
 	}
 
-	public class TextAlignmentPropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TextAlignmentProperty");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFxTextAlignmentKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final Alternatives cValueAlternatives_2_0 = (Alternatives)cValueAssignment_2.eContents().get(0);
-		private final Keyword cValueLeftKeyword_2_0_0 = (Keyword)cValueAlternatives_2_0.eContents().get(0);
-		private final Keyword cValueCenterKeyword_2_0_1 = (Keyword)cValueAlternatives_2_0.eContents().get(1);
-		private final Keyword cValueRightKeyword_2_0_2 = (Keyword)cValueAlternatives_2_0.eContents().get(2);
-		private final Keyword cValueJustifyKeyword_2_0_3 = (Keyword)cValueAlternatives_2_0.eContents().get(3);
-		
-		//TextAlignmentProperty:
-		//	"-fx-text-alignment" ":" value=("left" | "center" | "right" | "justify");
-		public ParserRule getRule() { return rule; }
-
-		//"-fx-text-alignment" ":" value=("left" | "center" | "right" | "justify")
-		public Group getGroup() { return cGroup; }
-
-		//"-fx-text-alignment"
-		public Keyword getFxTextAlignmentKeyword_0() { return cFxTextAlignmentKeyword_0; }
-
-		//":"
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
-
-		//value=("left" | "center" | "right" | "justify")
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
-
-		//"left" | "center" | "right" | "justify"
-		public Alternatives getValueAlternatives_2_0() { return cValueAlternatives_2_0; }
-
-		//"left"
-		public Keyword getValueLeftKeyword_2_0_0() { return cValueLeftKeyword_2_0_0; }
-
-		//"center"
-		public Keyword getValueCenterKeyword_2_0_1() { return cValueCenterKeyword_2_0_1; }
-
-		//"right"
-		public Keyword getValueRightKeyword_2_0_2() { return cValueRightKeyword_2_0_2; }
-
-		//"justify"
-		public Keyword getValueJustifyKeyword_2_0_3() { return cValueJustifyKeyword_2_0_3; }
-	}
-
 	public class TextOriginPropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TextOriginProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2877,50 +2967,6 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"bottom"
 		public Keyword getValueBottomKeyword_2_0_2() { return cValueBottomKeyword_2_0_2; }
-	}
-
-	public class BackgroundImagePositionPropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BackgroundImagePositionProperty");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFxBackgroundImagePositionKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValuesAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValuesBgPositionValueParserRuleCall_2_0 = (RuleCall)cValuesAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cValuesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cValuesBgPositionValueParserRuleCall_3_1_0 = (RuleCall)cValuesAssignment_3_1.eContents().get(0);
-		
-		//BackgroundImagePositionProperty:
-		//	"-fx-background-image-position" ":" values+=BgPositionValue ("," values+=BgPositionValue)*;
-		public ParserRule getRule() { return rule; }
-
-		//"-fx-background-image-position" ":" values+=BgPositionValue ("," values+=BgPositionValue)*
-		public Group getGroup() { return cGroup; }
-
-		//"-fx-background-image-position"
-		public Keyword getFxBackgroundImagePositionKeyword_0() { return cFxBackgroundImagePositionKeyword_0; }
-
-		//":"
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
-
-		//values+=BgPositionValue
-		public Assignment getValuesAssignment_2() { return cValuesAssignment_2; }
-
-		//BgPositionValue
-		public RuleCall getValuesBgPositionValueParserRuleCall_2_0() { return cValuesBgPositionValueParserRuleCall_2_0; }
-
-		//("," values+=BgPositionValue)*
-		public Group getGroup_3() { return cGroup_3; }
-
-		//","
-		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
-
-		//values+=BgPositionValue
-		public Assignment getValuesAssignment_3_1() { return cValuesAssignment_3_1; }
-
-		//BgPositionValue
-		public RuleCall getValuesBgPositionValueParserRuleCall_3_1_0() { return cValuesBgPositionValueParserRuleCall_3_1_0; }
 	}
 
 	public class BackgroundImageSizePropertyElements extends AbstractParserRuleElementFinder {
@@ -5796,11 +5842,11 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	private ColorPropertyKeysElements pColorPropertyKeys;
 	private ColorPropertyElements pColorProperty;
 	private StringPropertyElements pStringProperty;
+	private PositionPropertyElements pPositionProperty;
+	private AlignmentPropertyElements pAlignmentProperty;
 	private StrokeLineCapPropertyElements pStrokeLineCapProperty;
 	private StrokeLineJoinPropertyElements pStrokeLineJoinProperty;
-	private TextAlignmentPropertyElements pTextAlignmentProperty;
 	private TextOriginPropertyElements pTextOriginProperty;
-	private BackgroundImagePositionPropertyElements pBackgroundImagePositionProperty;
 	private BackgroundImageSizePropertyElements pBackgroundImageSizeProperty;
 	private BorderStylePropertyElements pBorderStyleProperty;
 	private BorderImageSlicePropertyElements pBorderImageSliceProperty;
@@ -5892,14 +5938,15 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		return getSelectorAccess().getRule();
 	}
 
-	/// * (element=ElementName id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
-	//	|
-	//	(id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
-	//	|
-	//	(class=ElementClass pseudoClass=ElementPseudoClass?)
-	//	|
-	//	pseudoClass=ElementPseudoClass* / SimpleSelector:
-	//	element=ID | "#" id=ID (":" pseudoClass+=ElementPseudoClass)* | "." class=ID (":" pseudoClass+=ElementPseudoClass)*;
+	//SimpleSelector:
+	//	element=ID //TODO Needs to be fixed
+	//	//	(element=ID ('#' id=ID)? ('.' class=ID)? ( ':' pseudoClass+=ElementPseudoClass)*)
+	//	//	|
+	//	//	( '#' id=ID ('.' class=ID)? ( ':' pseudoClass+=ElementPseudoClass)* )
+	//	//	|
+	//	//	( '.' class=ID ( ':' pseudoClass+=ElementPseudoClass)* )
+	//	//	
+	//	| "#" id=ID (":" pseudoClass+=ElementPseudoClass)* | "." class=ID (":" pseudoClass+=ElementPseudoClass)*;
 	public SimpleSelectorElements getSimpleSelectorAccess() {
 		return (pSimpleSelector != null) ? pSimpleSelector : (pSimpleSelector = new SimpleSelectorElements());
 	}
@@ -5925,8 +5972,8 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	//	EffectProperty | BooleanProperty | SizeProperty | NumberProperty | IntegerProperty | PaintProperty | BlendProperty |
 	//	UrlProperty | PaintProperties | MultiSizeProperties | HPositionProperty | VPositionProperty | SideProperty |
 	//	BarPolicyProperty | UrlProperties | RepeatProperties | MultiSizeProperty | SizeProperties | StrokeLineCapProperty |
-	//	StrokeLineJoinProperty | TextAlignmentProperty | TextOriginProperty | BackgroundImagePositionProperty |
-	//	BackgroundImageSizeProperty | BorderStyleProperty | BorderImageSliceProperty | TextOverrunProperty | InsetsProperty |
+	//	StrokeLineJoinProperty | AlignmentProperty | TextOriginProperty | PositionProperty | BackgroundImageSizeProperty |
+	//	BorderStyleProperty | BorderImageSliceProperty | TextOverrunProperty | InsetsProperty |
 	//	HorizontalGridLineStrokeDashArrayProperty | VerticalGridLineStrokeDashArrayProperty | MultiPaintProperties |
 	//	ColorProperty | StringProperty) ";";
 	public FXPropertyElements getFXPropertyAccess() {
@@ -6214,8 +6261,8 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//RepeatProperties:
-	//	property=("-fx-background-image-repeat" | "-fx-border-image-repeat") ":" values+=RepeatStyleValue (","
-	//	values+=RepeatStyleValue)*;
+	//	property=("-fx-background-image-repeat" | "-fx-border-image-repeat" | "-fx-background-repeat") ":"
+	//	values+=RepeatStyleValue ("," values+=RepeatStyleValue)*;
 	public RepeatPropertiesElements getRepeatPropertiesAccess() {
 		return (pRepeatProperties != null) ? pRepeatProperties : (pRepeatProperties = new RepeatPropertiesElements());
 	}
@@ -6276,13 +6323,34 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//StringProperty:
-	//	property=("-fx-skin" | "-fx-shape" | "-fx-text" | "-fx-echo-char") ":" value=STRING;
+	//	property=("-fx-skin" | "-fx-shape" | "-fx-text" | "-fx-echo-char") ":" (value=STRING | "null");
 	public StringPropertyElements getStringPropertyAccess() {
 		return (pStringProperty != null) ? pStringProperty : (pStringProperty = new StringPropertyElements());
 	}
 	
 	public ParserRule getStringPropertyRule() {
 		return getStringPropertyAccess().getRule();
+	}
+
+	//PositionProperty:
+	//	property=("-fx-background-image-position" | "-fx-background-position") ":" values+=BgPositionValue (","
+	//	values+=BgPositionValue)*;
+	public PositionPropertyElements getPositionPropertyAccess() {
+		return (pPositionProperty != null) ? pPositionProperty : (pPositionProperty = new PositionPropertyElements());
+	}
+	
+	public ParserRule getPositionPropertyRule() {
+		return getPositionPropertyAccess().getRule();
+	}
+
+	//AlignmentProperty:
+	//	property=("-fx-text-alignment" | "-fx-alignment") ":" value=("left" | "center" | "right" | "justify");
+	public AlignmentPropertyElements getAlignmentPropertyAccess() {
+		return (pAlignmentProperty != null) ? pAlignmentProperty : (pAlignmentProperty = new AlignmentPropertyElements());
+	}
+	
+	public ParserRule getAlignmentPropertyRule() {
+		return getAlignmentPropertyAccess().getRule();
 	}
 
 	//StrokeLineCapProperty:
@@ -6305,16 +6373,6 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		return getStrokeLineJoinPropertyAccess().getRule();
 	}
 
-	//TextAlignmentProperty:
-	//	"-fx-text-alignment" ":" value=("left" | "center" | "right" | "justify");
-	public TextAlignmentPropertyElements getTextAlignmentPropertyAccess() {
-		return (pTextAlignmentProperty != null) ? pTextAlignmentProperty : (pTextAlignmentProperty = new TextAlignmentPropertyElements());
-	}
-	
-	public ParserRule getTextAlignmentPropertyRule() {
-		return getTextAlignmentPropertyAccess().getRule();
-	}
-
 	//TextOriginProperty:
 	//	"-fx-text-origin" ":" value=("baseline" | "top" | "bottom");
 	public TextOriginPropertyElements getTextOriginPropertyAccess() {
@@ -6323,16 +6381,6 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getTextOriginPropertyRule() {
 		return getTextOriginPropertyAccess().getRule();
-	}
-
-	//BackgroundImagePositionProperty:
-	//	"-fx-background-image-position" ":" values+=BgPositionValue ("," values+=BgPositionValue)*;
-	public BackgroundImagePositionPropertyElements getBackgroundImagePositionPropertyAccess() {
-		return (pBackgroundImagePositionProperty != null) ? pBackgroundImagePositionProperty : (pBackgroundImagePositionProperty = new BackgroundImagePositionPropertyElements());
-	}
-	
-	public ParserRule getBackgroundImagePositionPropertyRule() {
-		return getBackgroundImagePositionPropertyAccess().getRule();
 	}
 
 	//BackgroundImageSizeProperty:

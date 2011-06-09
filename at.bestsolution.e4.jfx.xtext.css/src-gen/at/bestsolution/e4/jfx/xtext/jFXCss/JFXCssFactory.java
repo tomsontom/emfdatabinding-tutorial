@@ -351,6 +351,24 @@ public interface JFXCssFactory extends EFactory
   StringProperty createStringProperty();
 
   /**
+   * Returns a new object of class '<em>Position Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Position Property</em>'.
+   * @generated
+   */
+  PositionProperty createPositionProperty();
+
+  /**
+   * Returns a new object of class '<em>Alignment Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Alignment Property</em>'.
+   * @generated
+   */
+  AlignmentProperty createAlignmentProperty();
+
+  /**
    * Returns a new object of class '<em>Stroke Line Cap Property</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -369,15 +387,6 @@ public interface JFXCssFactory extends EFactory
   StrokeLineJoinProperty createStrokeLineJoinProperty();
 
   /**
-   * Returns a new object of class '<em>Text Alignment Property</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Text Alignment Property</em>'.
-   * @generated
-   */
-  TextAlignmentProperty createTextAlignmentProperty();
-
-  /**
    * Returns a new object of class '<em>Text Origin Property</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -385,15 +394,6 @@ public interface JFXCssFactory extends EFactory
    * @generated
    */
   TextOriginProperty createTextOriginProperty();
-
-  /**
-   * Returns a new object of class '<em>Background Image Position Property</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Background Image Position Property</em>'.
-   * @generated
-   */
-  BackgroundImagePositionProperty createBackgroundImagePositionProperty();
 
   /**
    * Returns a new object of class '<em>Background Image Size Property</em>'.

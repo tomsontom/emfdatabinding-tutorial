@@ -7,7 +7,7 @@
 package at.bestsolution.e4.jfx.xtext.jFXCss.impl;
 
 import at.bestsolution.e4.jfx.xtext.jFXCss.AddressValue;
-import at.bestsolution.e4.jfx.xtext.jFXCss.BackgroundImagePositionProperty;
+import at.bestsolution.e4.jfx.xtext.jFXCss.AlignmentProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.BackgroundImageSizeProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.BarPolicyProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.BgPositionValue;
@@ -63,6 +63,7 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.NumberValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.PaintProperties;
 import at.bestsolution.e4.jfx.xtext.jFXCss.PaintProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.PaintValue;
+import at.bestsolution.e4.jfx.xtext.jFXCss.PositionProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RGBColor;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RadialGradient;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RealValue;
@@ -79,7 +80,6 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.StopValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.StringProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.StrokeLineCapProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.StrokeLineJoinProperty;
-import at.bestsolution.e4.jfx.xtext.jFXCss.TextAlignmentProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.TextOriginProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.TextOverrunProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.UrlProperties;
@@ -362,6 +362,20 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass positionPropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass alignmentPropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass strokeLineCapPropertyEClass = null;
 
   /**
@@ -376,21 +390,7 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass textAlignmentPropertyEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass textOriginPropertyEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass backgroundImagePositionPropertyEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1763,6 +1763,66 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getPositionProperty()
+  {
+    return positionPropertyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPositionProperty_Property()
+  {
+    return (EAttribute)positionPropertyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPositionProperty_Values()
+  {
+    return (EReference)positionPropertyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAlignmentProperty()
+  {
+    return alignmentPropertyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAlignmentProperty_Property()
+  {
+    return (EAttribute)alignmentPropertyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAlignmentProperty_Value()
+  {
+    return (EAttribute)alignmentPropertyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getStrokeLineCapProperty()
   {
     return strokeLineCapPropertyEClass;
@@ -1803,26 +1863,6 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTextAlignmentProperty()
-  {
-    return textAlignmentPropertyEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getTextAlignmentProperty_Value()
-  {
-    return (EAttribute)textAlignmentPropertyEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getTextOriginProperty()
   {
     return textOriginPropertyEClass;
@@ -1836,26 +1876,6 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
   public EAttribute getTextOriginProperty_Value()
   {
     return (EAttribute)textOriginPropertyEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getBackgroundImagePositionProperty()
-  {
-    return backgroundImagePositionPropertyEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getBackgroundImagePositionProperty_Values()
-  {
-    return (EReference)backgroundImagePositionPropertyEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3167,20 +3187,22 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     createEAttribute(stringPropertyEClass, STRING_PROPERTY__PROPERTY);
     createEAttribute(stringPropertyEClass, STRING_PROPERTY__VALUE);
 
+    positionPropertyEClass = createEClass(POSITION_PROPERTY);
+    createEAttribute(positionPropertyEClass, POSITION_PROPERTY__PROPERTY);
+    createEReference(positionPropertyEClass, POSITION_PROPERTY__VALUES);
+
+    alignmentPropertyEClass = createEClass(ALIGNMENT_PROPERTY);
+    createEAttribute(alignmentPropertyEClass, ALIGNMENT_PROPERTY__PROPERTY);
+    createEAttribute(alignmentPropertyEClass, ALIGNMENT_PROPERTY__VALUE);
+
     strokeLineCapPropertyEClass = createEClass(STROKE_LINE_CAP_PROPERTY);
     createEAttribute(strokeLineCapPropertyEClass, STROKE_LINE_CAP_PROPERTY__VALUE);
 
     strokeLineJoinPropertyEClass = createEClass(STROKE_LINE_JOIN_PROPERTY);
     createEAttribute(strokeLineJoinPropertyEClass, STROKE_LINE_JOIN_PROPERTY__VALUE);
 
-    textAlignmentPropertyEClass = createEClass(TEXT_ALIGNMENT_PROPERTY);
-    createEAttribute(textAlignmentPropertyEClass, TEXT_ALIGNMENT_PROPERTY__VALUE);
-
     textOriginPropertyEClass = createEClass(TEXT_ORIGIN_PROPERTY);
     createEAttribute(textOriginPropertyEClass, TEXT_ORIGIN_PROPERTY__VALUE);
-
-    backgroundImagePositionPropertyEClass = createEClass(BACKGROUND_IMAGE_POSITION_PROPERTY);
-    createEReference(backgroundImagePositionPropertyEClass, BACKGROUND_IMAGE_POSITION_PROPERTY__VALUES);
 
     backgroundImageSizePropertyEClass = createEClass(BACKGROUND_IMAGE_SIZE_PROPERTY);
     createEReference(backgroundImageSizePropertyEClass, BACKGROUND_IMAGE_SIZE_PROPERTY__VALUES);
@@ -3394,11 +3416,11 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     multiPaintPropertiesEClass.getESuperTypes().add(this.getFXProperty());
     colorPropertyEClass.getESuperTypes().add(this.getFXProperty());
     stringPropertyEClass.getESuperTypes().add(this.getFXProperty());
+    positionPropertyEClass.getESuperTypes().add(this.getFXProperty());
+    alignmentPropertyEClass.getESuperTypes().add(this.getFXProperty());
     strokeLineCapPropertyEClass.getESuperTypes().add(this.getFXProperty());
     strokeLineJoinPropertyEClass.getESuperTypes().add(this.getFXProperty());
-    textAlignmentPropertyEClass.getESuperTypes().add(this.getFXProperty());
     textOriginPropertyEClass.getESuperTypes().add(this.getFXProperty());
-    backgroundImagePositionPropertyEClass.getESuperTypes().add(this.getFXProperty());
     backgroundImageSizePropertyEClass.getESuperTypes().add(this.getFXProperty());
     borderStylePropertyEClass.getESuperTypes().add(this.getFXProperty());
     borderImageSlicePropertyEClass.getESuperTypes().add(this.getFXProperty());
@@ -3557,20 +3579,22 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     initEAttribute(getStringProperty_Property(), ecorePackage.getEString(), "property", null, 0, 1, StringProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStringProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(positionPropertyEClass, PositionProperty.class, "PositionProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPositionProperty_Property(), ecorePackage.getEString(), "property", null, 0, 1, PositionProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPositionProperty_Values(), this.getBgPositionValue(), null, "values", null, 0, -1, PositionProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(alignmentPropertyEClass, AlignmentProperty.class, "AlignmentProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAlignmentProperty_Property(), ecorePackage.getEString(), "property", null, 0, 1, AlignmentProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAlignmentProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, AlignmentProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(strokeLineCapPropertyEClass, StrokeLineCapProperty.class, "StrokeLineCapProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStrokeLineCapProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, StrokeLineCapProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(strokeLineJoinPropertyEClass, StrokeLineJoinProperty.class, "StrokeLineJoinProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStrokeLineJoinProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, StrokeLineJoinProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(textAlignmentPropertyEClass, TextAlignmentProperty.class, "TextAlignmentProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTextAlignmentProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, TextAlignmentProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(textOriginPropertyEClass, TextOriginProperty.class, "TextOriginProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTextOriginProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, TextOriginProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(backgroundImagePositionPropertyEClass, BackgroundImagePositionProperty.class, "BackgroundImagePositionProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBackgroundImagePositionProperty_Values(), this.getBgPositionValue(), null, "values", null, 0, -1, BackgroundImagePositionProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(backgroundImageSizePropertyEClass, BackgroundImageSizeProperty.class, "BackgroundImageSizeProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBackgroundImageSizeProperty_Values(), this.getBgSizeValue(), null, "values", null, 0, -1, BackgroundImageSizeProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
