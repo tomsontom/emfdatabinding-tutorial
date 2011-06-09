@@ -469,6 +469,14 @@ public class JFXCssSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JFXCssPackage.REAL_VALUE:
+      {
+        RealValue realValue = (RealValue)theEObject;
+        T result = caseRealValue(realValue);
+        if (result == null) result = caseNumberValue(realValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JFXCssPackage.URL_VALUE:
       {
         UrlValue urlValue = (UrlValue)theEObject;
@@ -1448,6 +1456,22 @@ public class JFXCssSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseIntegerValue(IntegerValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Real Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Real Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRealValue(RealValue object)
   {
     return null;
   }

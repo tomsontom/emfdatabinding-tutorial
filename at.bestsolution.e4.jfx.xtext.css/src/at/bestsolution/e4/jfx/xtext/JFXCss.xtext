@@ -329,16 +329,16 @@ BlurValue:
 ;
 
 NumberValue:
-	IntegerValue //| RealValue
+	IntegerValue | RealValue
 ;
 
 IntegerValue:
 	value=INT
 ;
 
-//RealValue:
-//	value=INT
-//;
+RealValue:
+	value=REAL
+;
 
 UrlValue:
 	'url(' address=AddressValue  ')'
@@ -502,7 +502,7 @@ ColorFunction:
 terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'-'|'A'..'Z'|'_'|'0'..'9')*;
 terminal HEX_NUMBER : '#' ('a'..'f'|'A'..'F'|'0'..'9')*;
 terminal INT returns ecore::EInt: ('0'..'9')+;
-// terminal REAL returns ecore::EDouble:('0'..'9')+ '.' ('0'..'9')+;
+terminal REAL returns ecore::EDouble:('0'..'9')+ '.' ('0'..'9')+;
 terminal STRING	: 
 			'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
 			"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'"

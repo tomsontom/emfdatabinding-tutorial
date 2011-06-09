@@ -6068,9 +6068,9 @@ ruleNumberValue returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-
+(
     { 
-        newCompositeNode(grammarAccess.getNumberValueAccess().getIntegerValueParserRuleCall()); 
+        newCompositeNode(grammarAccess.getNumberValueAccess().getIntegerValueParserRuleCall_0()); 
     }
     this_IntegerValue_0=ruleIntegerValue
     { 
@@ -6078,6 +6078,16 @@ ruleNumberValue returns [EObject current=null]
         afterParserOrEnumRuleCall();
     }
 
+    |
+    { 
+        newCompositeNode(grammarAccess.getNumberValueAccess().getRealValueParserRuleCall_1()); 
+    }
+    this_RealValue_1=ruleRealValue
+    { 
+        $current = $this_RealValue_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
 ;
 
 
@@ -6113,6 +6123,45 @@ ruleIntegerValue returns [EObject current=null]
        			"value",
         		lv_value_0_0, 
         		"INT");
+	    }
+
+)
+)
+;
+
+
+
+
+
+// Entry rule entryRuleRealValue
+entryRuleRealValue returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getRealValueRule()); }
+	 iv_ruleRealValue=ruleRealValue 
+	 { $current=$iv_ruleRealValue.current; } 
+	 EOF 
+;
+
+// Rule RealValue
+ruleRealValue returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		lv_value_0_0=RULE_REAL
+		{
+			newLeafNode(lv_value_0_0, grammarAccess.getRealValueAccess().getValueREALTerminalRuleCall_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRealValueRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_0_0, 
+        		"REAL");
 	    }
 
 )
@@ -10759,6 +10808,8 @@ RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'-'|'A'..'Z'|'_'|'0'..'9')*;
 RULE_HEX_NUMBER : '#' ('a'..'f'|'A'..'F'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
+
+RULE_REAL : ('0'..'9')+ '.' ('0'..'9')+;
 
 RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
 

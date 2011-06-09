@@ -329,6 +329,11 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
         return createIntegerValueAdapter();
       }
       @Override
+      public Adapter caseRealValue(RealValue object)
+      {
+        return createRealValueAdapter();
+      }
+      @Override
       public Adapter caseUrlValue(UrlValue object)
       {
         return createUrlValueAdapter();
@@ -1216,6 +1221,21 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIntegerValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.RealValue <em>Real Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.RealValue
+   * @generated
+   */
+  public Adapter createRealValueAdapter()
   {
     return null;
   }

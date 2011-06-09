@@ -477,6 +477,15 @@ public interface JFXCssFactory extends EFactory
   IntegerValue createIntegerValue();
 
   /**
+   * Returns a new object of class '<em>Real Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Real Value</em>'.
+   * @generated
+   */
+  RealValue createRealValue();
+
+  /**
    * Returns a new object of class '<em>Url Value</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

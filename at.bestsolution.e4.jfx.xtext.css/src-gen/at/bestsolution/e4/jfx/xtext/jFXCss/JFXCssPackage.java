@@ -1768,6 +1768,34 @@ public interface JFXCssPackage extends EPackage
   int INTEGER_VALUE_FEATURE_COUNT = NUMBER_VALUE_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.RealValueImpl <em>Real Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.RealValueImpl
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getRealValue()
+   * @generated
+   */
+  int REAL_VALUE = 50;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REAL_VALUE__VALUE = NUMBER_VALUE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Real Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REAL_VALUE_FEATURE_COUNT = NUMBER_VALUE_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.UrlValueImpl <em>Url Value</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1775,7 +1803,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getUrlValue()
    * @generated
    */
-  int URL_VALUE = 50;
+  int URL_VALUE = 51;
 
   /**
    * The feature id for the '<em><b>Address</b></em>' containment reference.
@@ -1803,7 +1831,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getAddressValue()
    * @generated
    */
-  int ADDRESS_VALUE = 51;
+  int ADDRESS_VALUE = 52;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1831,7 +1859,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getSizeValue()
    * @generated
    */
-  int SIZE_VALUE = 52;
+  int SIZE_VALUE = 53;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1868,7 +1896,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getMultiSizeValue()
    * @generated
    */
-  int MULTI_SIZE_VALUE = 53;
+  int MULTI_SIZE_VALUE = 54;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -1896,7 +1924,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getBgPositionValue()
    * @generated
    */
-  int BG_POSITION_VALUE = 54;
+  int BG_POSITION_VALUE = 55;
 
   /**
    * The feature id for the '<em><b>Absx</b></em>' containment reference.
@@ -1951,7 +1979,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getRepeatStyleValue()
    * @generated
    */
-  int REPEAT_STYLE_VALUE = 55;
+  int REPEAT_STYLE_VALUE = 56;
 
   /**
    * The feature id for the '<em><b>V</b></em>' attribute.
@@ -1988,7 +2016,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getBgSizeValue()
    * @generated
    */
-  int BG_SIZE_VALUE = 56;
+  int BG_SIZE_VALUE = 57;
 
   /**
    * The feature id for the '<em><b>Xsize</b></em>' containment reference.
@@ -2052,7 +2080,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getMultiPaintValue()
    * @generated
    */
-  int MULTI_PAINT_VALUE = 57;
+  int MULTI_PAINT_VALUE = 58;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -2080,7 +2108,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getBorderStyleValue()
    * @generated
    */
-  int BORDER_STYLE_VALUE = 58;
+  int BORDER_STYLE_VALUE = 59;
 
   /**
    * The feature id for the '<em><b>Dash Style</b></em>' containment reference.
@@ -2144,7 +2172,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getDashStyleValue()
    * @generated
    */
-  int DASH_STYLE_VALUE = 59;
+  int DASH_STYLE_VALUE = 60;
 
   /**
    * The feature id for the '<em><b>V</b></em>' attribute.
@@ -2172,7 +2200,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getSizeFill()
    * @generated
    */
-  int SIZE_FILL = 60;
+  int SIZE_FILL = 61;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -2209,7 +2237,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getFontValue()
    * @generated
    */
-  int FONT_VALUE = 61;
+  int FONT_VALUE = 62;
 
   /**
    * The feature id for the '<em><b>Style Or Weight String</b></em>' attribute.
@@ -2264,7 +2292,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getFontStyleValue()
    * @generated
    */
-  int FONT_STYLE_VALUE = 62;
+  int FONT_STYLE_VALUE = 63;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2292,7 +2320,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getFontWeightValue()
    * @generated
    */
-  int FONT_WEIGHT_VALUE = 63;
+  int FONT_WEIGHT_VALUE = 64;
 
   /**
    * The feature id for the '<em><b>Value String</b></em>' attribute.
@@ -2329,7 +2357,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getFontFamily()
    * @generated
    */
-  int FONT_FAMILY = 64;
+  int FONT_FAMILY = 65;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2357,7 +2385,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getPaintValue()
    * @generated
    */
-  int PAINT_VALUE = 65;
+  int PAINT_VALUE = 66;
 
   /**
    * The number of structural features of the '<em>Paint Value</em>' class.
@@ -2376,7 +2404,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getLinearGradient()
    * @generated
    */
-  int LINEAR_GRADIENT = 66;
+  int LINEAR_GRADIENT = 67;
 
   /**
    * The feature id for the '<em><b>X1</b></em>' containment reference.
@@ -2440,7 +2468,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getRadialGradient()
    * @generated
    */
-  int RADIAL_GRADIENT = 67;
+  int RADIAL_GRADIENT = 68;
 
   /**
    * The feature id for the '<em><b>Cx</b></em>' containment reference.
@@ -2513,7 +2541,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getStopValue()
    * @generated
    */
-  int STOP_VALUE = 68;
+  int STOP_VALUE = 69;
 
   /**
    * The feature id for the '<em><b>Pos</b></em>' containment reference.
@@ -2550,7 +2578,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getColorValue()
    * @generated
    */
-  int COLOR_VALUE = 69;
+  int COLOR_VALUE = 70;
 
   /**
    * The number of structural features of the '<em>Color Value</em>' class.
@@ -2569,7 +2597,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getNamedColor()
    * @generated
    */
-  int NAMED_COLOR = 70;
+  int NAMED_COLOR = 71;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2597,7 +2625,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getRGBColor()
    * @generated
    */
-  int RGB_COLOR = 71;
+  int RGB_COLOR = 72;
 
   /**
    * The feature id for the '<em><b>Hex</b></em>' attribute.
@@ -2688,7 +2716,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getHSBColor()
    * @generated
    */
-  int HSB_COLOR = 72;
+  int HSB_COLOR = 73;
 
   /**
    * The feature id for the '<em><b>Hue</b></em>' containment reference.
@@ -2743,7 +2771,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getColorFunction()
    * @generated
    */
-  int COLOR_FUNCTION = 73;
+  int COLOR_FUNCTION = 74;
 
   /**
    * The feature id for the '<em><b>Orig</b></em>' containment reference.
@@ -2798,7 +2826,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 74;
+  int BOOLEAN_VALUE = 75;
 
   /**
    * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.HPositionValue <em>HPosition Value</em>}' enum.
@@ -2808,7 +2836,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getHPositionValue()
    * @generated
    */
-  int HPOSITION_VALUE = 75;
+  int HPOSITION_VALUE = 76;
 
 
   /**
@@ -4124,6 +4152,27 @@ public interface JFXCssPackage extends EPackage
    * @generated
    */
   EAttribute getIntegerValue_Value();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.RealValue <em>Real Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Real Value</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.RealValue
+   * @generated
+   */
+  EClass getRealValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.e4.jfx.xtext.jFXCss.RealValue#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.RealValue#getValue()
+   * @see #getRealValue()
+   * @generated
+   */
+  EAttribute getRealValue_Value();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.UrlValue <em>Url Value</em>}'.
@@ -6192,6 +6241,24 @@ public interface JFXCssPackage extends EPackage
      * @generated
      */
     EAttribute INTEGER_VALUE__VALUE = eINSTANCE.getIntegerValue_Value();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.RealValueImpl <em>Real Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.RealValueImpl
+     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getRealValue()
+     * @generated
+     */
+    EClass REAL_VALUE = eINSTANCE.getRealValue();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REAL_VALUE__VALUE = eINSTANCE.getRealValue_Value();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.UrlValueImpl <em>Url Value</em>}' class.

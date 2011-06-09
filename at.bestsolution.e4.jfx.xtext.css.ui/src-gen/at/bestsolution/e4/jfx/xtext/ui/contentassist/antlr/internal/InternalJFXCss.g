@@ -1424,9 +1424,9 @@ ruleNumberValue
     }
 	:
 (
-{ before(grammarAccess.getNumberValueAccess().getIntegerValueParserRuleCall()); }
-	ruleIntegerValue
-{ after(grammarAccess.getNumberValueAccess().getIntegerValueParserRuleCall()); }
+{ before(grammarAccess.getNumberValueAccess().getAlternatives()); }
+(rule__NumberValue__Alternatives)
+{ after(grammarAccess.getNumberValueAccess().getAlternatives()); }
 )
 
 ;
@@ -1455,6 +1455,34 @@ ruleIntegerValue
 { before(grammarAccess.getIntegerValueAccess().getValueAssignment()); }
 (rule__IntegerValue__ValueAssignment)
 { after(grammarAccess.getIntegerValueAccess().getValueAssignment()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+// Entry rule entryRuleRealValue
+entryRuleRealValue 
+:
+{ before(grammarAccess.getRealValueRule()); }
+	 ruleRealValue
+{ after(grammarAccess.getRealValueRule()); } 
+	 EOF 
+;
+
+// Rule RealValue
+ruleRealValue
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getRealValueAccess().getValueAssignment()); }
+(rule__RealValue__ValueAssignment)
+{ after(grammarAccess.getRealValueAccess().getValueAssignment()); }
 )
 
 ;
@@ -4703,6 +4731,28 @@ rule__BlurValue__VAlternatives_0
 	'two-pass-box' 
 
 { after(grammarAccess.getBlurValueAccess().getVTwoPassBoxKeyword_0_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__NumberValue__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getNumberValueAccess().getIntegerValueParserRuleCall_0()); }
+	ruleIntegerValue
+{ after(grammarAccess.getNumberValueAccess().getIntegerValueParserRuleCall_0()); }
+)
+
+    |(
+{ before(grammarAccess.getNumberValueAccess().getRealValueParserRuleCall_1()); }
+	ruleRealValue
+{ after(grammarAccess.getNumberValueAccess().getRealValueParserRuleCall_1()); }
 )
 
 ;
@@ -19308,6 +19358,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__RealValue__ValueAssignment
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getRealValueAccess().getValueREALTerminalRuleCall_0()); }
+	RULE_REAL{ after(grammarAccess.getRealValueAccess().getValueREALTerminalRuleCall_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__UrlValue__AddressAssignment_1
     @init {
 		int stackSize = keepStackSize();
@@ -20538,6 +20603,8 @@ RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'-'|'A'..'Z'|'_'|'0'..'9')*;
 RULE_HEX_NUMBER : '#' ('a'..'f'|'A'..'F'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
+
+RULE_REAL : ('0'..'9')+ '.' ('0'..'9')+;
 
 RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
 

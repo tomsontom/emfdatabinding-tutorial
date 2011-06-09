@@ -63,6 +63,7 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.PaintProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.PaintValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RGBColor;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RadialGradient;
+import at.bestsolution.e4.jfx.xtext.jFXCss.RealValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RepeatProperties;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RepeatStyleValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.ShapeProperty;
@@ -450,6 +451,13 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * @generated
    */
   private EClass integerValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass realValueEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1941,6 +1949,26 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getRealValue()
+  {
+    return realValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRealValue_Value()
+  {
+    return (EAttribute)realValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getUrlValue()
   {
     return urlValueEClass;
@@ -3030,6 +3058,9 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     integerValueEClass = createEClass(INTEGER_VALUE);
     createEAttribute(integerValueEClass, INTEGER_VALUE__VALUE);
 
+    realValueEClass = createEClass(REAL_VALUE);
+    createEAttribute(realValueEClass, REAL_VALUE__VALUE);
+
     urlValueEClass = createEClass(URL_VALUE);
     createEReference(urlValueEClass, URL_VALUE__ADDRESS);
 
@@ -3218,6 +3249,7 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     horizontalGridLineStrokeDashArrayPropertyEClass.getESuperTypes().add(this.getFXProperty());
     verticalGridLineStrokeDashArrayPropertyEClass.getESuperTypes().add(this.getFXProperty());
     integerValueEClass.getESuperTypes().add(this.getNumberValue());
+    realValueEClass.getESuperTypes().add(this.getNumberValue());
     linearGradientEClass.getESuperTypes().add(this.getPaintValue());
     radialGradientEClass.getESuperTypes().add(this.getPaintValue());
     colorValueEClass.getESuperTypes().add(this.getPaintValue());
@@ -3400,6 +3432,9 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
 
     initEClass(integerValueEClass, IntegerValue.class, "IntegerValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getIntegerValue_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntegerValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(realValueEClass, RealValue.class, "RealValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRealValue_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, RealValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(urlValueEClass, UrlValue.class, "UrlValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getUrlValue_Address(), this.getAddressValue(), null, "address", null, 0, 1, UrlValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

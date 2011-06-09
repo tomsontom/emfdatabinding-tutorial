@@ -69,6 +69,7 @@ public class JFXCssParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInsetsPropertyAccess().getAlternatives(), "rule__InsetsProperty__Alternatives");
 					put(grammarAccess.getVPositionValueAccess().getVAlternatives_0(), "rule__VPositionValue__VAlternatives_0");
 					put(grammarAccess.getBlurValueAccess().getVAlternatives_0(), "rule__BlurValue__VAlternatives_0");
+					put(grammarAccess.getNumberValueAccess().getAlternatives(), "rule__NumberValue__Alternatives");
 					put(grammarAccess.getSizeValueAccess().getDimensionAlternatives_1_0(), "rule__SizeValue__DimensionAlternatives_1_0");
 					put(grammarAccess.getMultiSizeValueAccess().getAlternatives(), "rule__MultiSizeValue__Alternatives");
 					put(grammarAccess.getBgPositionValueAccess().getAlternatives_0(), "rule__BgPositionValue__Alternatives_0");
@@ -279,6 +280,7 @@ public class JFXCssParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVPositionValueAccess().getVAssignment(), "rule__VPositionValue__VAssignment");
 					put(grammarAccess.getBlurValueAccess().getVAssignment(), "rule__BlurValue__VAssignment");
 					put(grammarAccess.getIntegerValueAccess().getValueAssignment(), "rule__IntegerValue__ValueAssignment");
+					put(grammarAccess.getRealValueAccess().getValueAssignment(), "rule__RealValue__ValueAssignment");
 					put(grammarAccess.getUrlValueAccess().getAddressAssignment_1(), "rule__UrlValue__AddressAssignment_1");
 					put(grammarAccess.getAddressValueAccess().getValueAssignment(), "rule__AddressValue__ValueAssignment");
 					put(grammarAccess.getSizeValueAccess().getValueAssignment_0(), "rule__SizeValue__ValueAssignment_0");

@@ -119,6 +119,7 @@ public class JFXCssFactoryImpl extends EFactoryImpl implements JFXCssFactory
       case JFXCssPackage.BLUR_VALUE: return createBlurValue();
       case JFXCssPackage.NUMBER_VALUE: return createNumberValue();
       case JFXCssPackage.INTEGER_VALUE: return createIntegerValue();
+      case JFXCssPackage.REAL_VALUE: return createRealValue();
       case JFXCssPackage.URL_VALUE: return createUrlValue();
       case JFXCssPackage.ADDRESS_VALUE: return createAddressValue();
       case JFXCssPackage.SIZE_VALUE: return createSizeValue();
@@ -734,6 +735,17 @@ public class JFXCssFactoryImpl extends EFactoryImpl implements JFXCssFactory
   {
     IntegerValueImpl integerValue = new IntegerValueImpl();
     return integerValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RealValue createRealValue()
+  {
+    RealValueImpl realValue = new RealValueImpl();
+    return realValue;
   }
 
   /**

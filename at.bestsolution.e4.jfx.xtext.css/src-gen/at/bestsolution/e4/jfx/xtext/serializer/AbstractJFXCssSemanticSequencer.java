@@ -49,6 +49,7 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.PaintProperties;
 import at.bestsolution.e4.jfx.xtext.jFXCss.PaintProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RGBColor;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RadialGradient;
+import at.bestsolution.e4.jfx.xtext.jFXCss.RealValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RepeatProperties;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RepeatStyleValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.ShapeProperty;
@@ -436,6 +437,13 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 				if(context == grammarAccess.getPaintValueRule() ||
 				   context == grammarAccess.getRadialGradientRule()) {
 					sequence_RadialGradient_RadialGradient(context, (RadialGradient) semanticObject); 
+					return; 
+				}
+				else break;
+			case JFXCssPackage.REAL_VALUE:
+				if(context == grammarAccess.getNumberValueRule() ||
+				   context == grammarAccess.getRealValueRule()) {
+					sequence_RealValue_RealValue(context, (RealValue) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1831,6 +1839,25 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	 */
 	protected void sequence_RadialGradient_RadialGradient(EObject context, RadialGradient semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=REAL
+	 *
+	 * Features:
+	 *    value[1, 1]
+	 */
+	protected void sequence_RealValue_RealValue(EObject context, RealValue semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, JFXCssPackage.Literals.REAL_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JFXCssPackage.Literals.REAL_VALUE__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getRealValueAccess().getValueREALTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	

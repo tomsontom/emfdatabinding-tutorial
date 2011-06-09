@@ -3027,15 +3027,22 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class NumberValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NumberValue");
-		private final RuleCall cIntegerValueParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cIntegerValueParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cRealValueParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//NumberValue: //| RealValue
-		//	IntegerValue;
+		//NumberValue:
+		//	IntegerValue | RealValue;
 		public ParserRule getRule() { return rule; }
 
-		////| RealValue
+		//IntegerValue | RealValue
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//IntegerValue
-		public RuleCall getIntegerValueParserRuleCall() { return cIntegerValueParserRuleCall; }
+		public RuleCall getIntegerValueParserRuleCall_0() { return cIntegerValueParserRuleCall_0; }
+
+		//RealValue
+		public RuleCall getRealValueParserRuleCall_1() { return cRealValueParserRuleCall_1; }
 	}
 
 	public class IntegerValueElements extends AbstractParserRuleElementFinder {
@@ -3054,6 +3061,22 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getValueINTTerminalRuleCall_0() { return cValueINTTerminalRuleCall_0; }
 	}
 
+	public class RealValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RealValue");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueREALTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//RealValue:
+		//	value=REAL;
+		public ParserRule getRule() { return rule; }
+
+		//value=REAL
+		public Assignment getValueAssignment() { return cValueAssignment; }
+
+		//REAL
+		public RuleCall getValueREALTerminalRuleCall_0() { return cValueREALTerminalRuleCall_0; }
+	}
+
 	public class UrlValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UrlValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3062,9 +3085,6 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAddressAddressValueParserRuleCall_1_0 = (RuleCall)cAddressAssignment_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
-		////RealValue:
-		////	value=INT
-		////;
 		//UrlValue:
 		//	"url(" address=AddressValue ")";
 		public ParserRule getRule() { return rule; }
@@ -5457,6 +5477,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	private BlurValueElements pBlurValue;
 	private NumberValueElements pNumberValue;
 	private IntegerValueElements pIntegerValue;
+	private RealValueElements pRealValue;
 	private UrlValueElements pUrlValue;
 	private AddressValueElements pAddressValue;
 	private SizeValueElements pSizeValue;
@@ -5484,6 +5505,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tID;
 	private TerminalRule tHEX_NUMBER;
 	private TerminalRule tINT;
+	private TerminalRule tREAL;
 	private TerminalRule tSTRING;
 	private TerminalRule tML_COMMENT;
 	private TerminalRule tWS;
@@ -6052,8 +6074,8 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		return getBlurValueAccess().getRule();
 	}
 
-	//NumberValue: //| RealValue
-	//	IntegerValue;
+	//NumberValue:
+	//	IntegerValue | RealValue;
 	public NumberValueElements getNumberValueAccess() {
 		return (pNumberValue != null) ? pNumberValue : (pNumberValue = new NumberValueElements());
 	}
@@ -6072,9 +6094,16 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		return getIntegerValueAccess().getRule();
 	}
 
-	////RealValue:
-	////	value=INT
-	////;
+	//RealValue:
+	//	value=REAL;
+	public RealValueElements getRealValueAccess() {
+		return (pRealValue != null) ? pRealValue : (pRealValue = new RealValueElements());
+	}
+	
+	public ParserRule getRealValueRule() {
+		return getRealValueAccess().getRule();
+	}
+
 	//UrlValue:
 	//	"url(" address=AddressValue ")";
 	public UrlValueElements getUrlValueAccess() {
@@ -6368,7 +6397,12 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		return (tINT != null) ? tINT : (tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT"));
 	} 
 
-	//// terminal REAL returns ecore::EDouble:('0'..'9')+ '.' ('0'..'9')+;
+	//terminal REAL returns ecore::EDouble:
+	//	"0".."9"+ "." "0".."9"+;
+	public TerminalRule getREALRule() {
+		return (tREAL != null) ? tREAL : (tREAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "REAL"));
+	} 
+
 	//terminal STRING:
 	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" |
 	//	"n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
