@@ -9,7 +9,7 @@ JFXCss:
 ;
 
 Definition:
-	selector+=Selector
+	selector+=Selector ( ',' selector+=Selector )*
 	'{'
 		properties+=FXProperty+
 	'}'
@@ -20,9 +20,9 @@ Selector:
 ;
 
 SimpleSelector:
-	element=ElementName |
-	( id=ElementId ( ':' pseudoClass=ElementPseudoClass)?) | 
-	( class=ElementClass ( ':' pseudoClass=ElementPseudoClass)? )
+	(element=ID ) |
+	( '#' id=ID ( ':' pseudoClass+=ElementPseudoClass)*) | 
+	( '.' class=ID ( ':' pseudoClass+=ElementPseudoClass)* )
 	/* (element=ElementName id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
 	|
 	(id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
@@ -30,16 +30,6 @@ SimpleSelector:
 	(class=ElementClass pseudoClass=ElementPseudoClass?)
 	|
 	pseudoClass=ElementPseudoClass*/
-;
-
-ElementName: value=ID;
-
-ElementId:
-	('#') id=ID 
-;
-
-ElementClass:
-	('.') id=ID
 ;
 
 ElementPseudoClass:
@@ -81,14 +71,13 @@ FXProperty:
 		BackgroundImageSizeProperty |
 		BorderStyleProperty |
 		BorderImageSliceProperty |
-		ShapeProperty |
-		TextProperty |
 		TextOverrunProperty |
-		EchoCharProperty |
 		InsetsProperty |
 		HorizontalGridLineStrokeDashArrayProperty |
 		VerticalGridLineStrokeDashArrayProperty |
-		BorderColorProperty
+		MultiPaintProperties |
+		ColorProperty |
+		StringProperty
 	) ';'
 ;
 
@@ -178,7 +167,7 @@ NumberProperty:
 		| '-fx-stroke-dash-offset' | '-fx-stroke-miter-limit' | '-fx-block-increment'
 		| '-fx-unit-increment' | '-fx-major-tick-unit' | '-fx-data-opacity'
 		| '-fx-radius-scale' | '-fx-pie-to-label-line-one-length' | '-fx-pie-to-label-line-stroke-width'
-		| '-fx-pie-to-label-line-two-length' | '-fx-start-angle' | '-fx-tick-unit'
+		| '-fx-pie-to-label-line-two-length' | '-fx-start-angle' | '-fx-tick-unit' | '-fx-indent'
 	) ':' value=NumberValue
 ;
 
@@ -214,7 +203,7 @@ BlendProperty:
 
 UrlProperty:
 	property=(
-		'-fx-image' | '-fx-graphic'
+		'-fx-image' | '-fx-graphic' | '-fx-border-image-source'
 	) ':' value=UrlValue
 ;
 
@@ -273,6 +262,26 @@ SizeProperties:
 	) ':' values+=SizeValue+
 ;
 
+MultiPaintProperties:
+	property=(
+		'-fx-border-color'
+	) ':' ((values+=MultiPaintValue (',' values+=MultiPaintValue)*) | 'null')	
+;
+
+ColorPropertyKeys:
+	'-fx-color' | '-fx-light-text-color' | '-fx-accent' | '-fx-selection-bar' | '-fx-selection-bar-text' | '-fx-background'
+;
+
+ColorProperty:
+	property=ColorPropertyKeys':' value=ColorValue
+;
+
+StringProperty:
+	property=(
+		'-fx-skin' | '-fx-shape' | '-fx-text' | '-fx-echo-char'
+	) ':' value=STRING
+;
+
 StrokeLineCapProperty:
 	'-fx-stroke-line-cap' ':' value=('square' | 'butt' | 'round')
 ;
@@ -297,10 +306,6 @@ BackgroundImageSizeProperty:
 	'-fx-background-image-size' ':' values+=BgSizeValue (',' values+=BgSizeValue)*
 ;
 
-BorderColorProperty:
-	'-fx-border-color' ':' values+=MultiPaintValue (',' values+=MultiPaintValue)*
-;
-
 BorderStyleProperty:
 	'-fx-border-style' ':' values+=BorderStyleValue (',' values+=BorderStyleValue)*
 ;
@@ -309,20 +314,8 @@ BorderImageSliceProperty:
 	'-fx-border-image-slice' ':' values+=SizeFill (',' values+=SizeFill)*
 ;
 
-ShapeProperty:
-	'-fx-shape' ':' value=STRING
-;
-
-TextProperty:
-	'-fx-text' ':' value=STRING
-;
-
 TextOverrunProperty:
 	'-fx-text-overrun' ':' value=( 'center-ellipses' | 'center-word-ellipses' | 'clip' | 'ellipses' | 'leading-ellipses' | 'leading-word-ellipses' | 'word-ellipses' )
-;
-
-EchoCharProperty:
-	'-fx-echo-char' ':' value=ID
 ;
 
 InsetsProperty:
@@ -397,7 +390,7 @@ BgPositionValue:
 ;
 
 RepeatStyleValue:
-	v = ('repeat-x' | 'repeat-y') | (  v=('repeat' | 'space' | 'round' | 'no-repeat') v2=('repeat' | 'space' | 'round' | 'no-repeat')?)
+	v = ('repeat-x' | 'repeat-y') | (  v=('repeat' | 'space' | 'round' | 'no-repeat' | 'stretch') v2=('repeat' | 'space' | 'round' | 'no-repeat'| 'stretch')?)
 ;
 
 BgSizeValue:
@@ -458,9 +451,14 @@ StopValue:
 
 ColorValue:
 	NamedColor |
+	LookedUpColor |
 	RGBColor |
 	HSBColor |
 	ColorFunction
+;
+
+LookedUpColor:
+	value=( ColorPropertyKeys | ID) 
 ;
 
 NamedColor:

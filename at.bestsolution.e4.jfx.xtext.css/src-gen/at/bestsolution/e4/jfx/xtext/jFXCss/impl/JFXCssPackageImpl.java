@@ -16,23 +16,19 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.BlendProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.BlurValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.BooleanProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.BooleanValue;
-import at.bestsolution.e4.jfx.xtext.jFXCss.BorderColorProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.BorderImageSliceProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.BorderStyleProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.BorderStyleValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.ColorFunction;
+import at.bestsolution.e4.jfx.xtext.jFXCss.ColorProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.ColorValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.CursorProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.DashStyleValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.Definition;
-import at.bestsolution.e4.jfx.xtext.jFXCss.EchoCharProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.Effect;
 import at.bestsolution.e4.jfx.xtext.jFXCss.EffectDropShadow;
 import at.bestsolution.e4.jfx.xtext.jFXCss.EffectInnerShadow;
 import at.bestsolution.e4.jfx.xtext.jFXCss.EffectProperty;
-import at.bestsolution.e4.jfx.xtext.jFXCss.ElementClass;
-import at.bestsolution.e4.jfx.xtext.jFXCss.ElementId;
-import at.bestsolution.e4.jfx.xtext.jFXCss.ElementName;
 import at.bestsolution.e4.jfx.xtext.jFXCss.ElementPseudoClass;
 import at.bestsolution.e4.jfx.xtext.jFXCss.FXProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.FontFamily;
@@ -55,6 +51,8 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.JFXCss;
 import at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssFactory;
 import at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage;
 import at.bestsolution.e4.jfx.xtext.jFXCss.LinearGradient;
+import at.bestsolution.e4.jfx.xtext.jFXCss.LookedUpColor;
+import at.bestsolution.e4.jfx.xtext.jFXCss.MultiPaintProperties;
 import at.bestsolution.e4.jfx.xtext.jFXCss.MultiPaintValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.MultiSizeProperties;
 import at.bestsolution.e4.jfx.xtext.jFXCss.MultiSizeProperty;
@@ -71,7 +69,6 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.RealValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RepeatProperties;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RepeatStyleValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.Selector;
-import at.bestsolution.e4.jfx.xtext.jFXCss.ShapeProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.SideProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector;
 import at.bestsolution.e4.jfx.xtext.jFXCss.SizeFill;
@@ -79,12 +76,12 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.SizeProperties;
 import at.bestsolution.e4.jfx.xtext.jFXCss.SizeProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.SizeValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.StopValue;
+import at.bestsolution.e4.jfx.xtext.jFXCss.StringProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.StrokeLineCapProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.StrokeLineJoinProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.TextAlignmentProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.TextOriginProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.TextOverrunProperty;
-import at.bestsolution.e4.jfx.xtext.jFXCss.TextProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.UrlProperties;
 import at.bestsolution.e4.jfx.xtext.jFXCss.UrlProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.UrlValue;
@@ -135,27 +132,6 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * @generated
    */
   private EClass simpleSelectorEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass elementNameEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass elementIdEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass elementClassEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -365,6 +341,27 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass multiPaintPropertiesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass colorPropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringPropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass strokeLineCapPropertyEClass = null;
 
   /**
@@ -407,13 +404,6 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass borderColorPropertyEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass borderStylePropertyEClass = null;
 
   /**
@@ -428,28 +418,7 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass shapePropertyEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass textPropertyEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass textOverrunPropertyEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass echoCharPropertyEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -652,6 +621,13 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass lookedUpColorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass namedColorEClass = null;
 
   /**
@@ -837,9 +813,9 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSimpleSelector_Element()
+  public EAttribute getSimpleSelector_Element()
   {
-    return (EReference)simpleSelectorEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)simpleSelectorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -847,9 +823,9 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSimpleSelector_Id()
+  public EAttribute getSimpleSelector_Id()
   {
-    return (EReference)simpleSelectorEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)simpleSelectorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -867,69 +843,9 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSimpleSelector_Class()
+  public EAttribute getSimpleSelector_Class()
   {
-    return (EReference)simpleSelectorEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getElementName()
-  {
-    return elementNameEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getElementName_Value()
-  {
-    return (EAttribute)elementNameEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getElementId()
-  {
-    return elementIdEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getElementId_Id()
-  {
-    return (EAttribute)elementIdEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getElementClass()
-  {
-    return elementClassEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getElementClass_Id()
-  {
-    return (EAttribute)elementClassEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)simpleSelectorEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1757,6 +1673,96 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getMultiPaintProperties()
+  {
+    return multiPaintPropertiesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMultiPaintProperties_Property()
+  {
+    return (EAttribute)multiPaintPropertiesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMultiPaintProperties_Values()
+  {
+    return (EReference)multiPaintPropertiesEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getColorProperty()
+  {
+    return colorPropertyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getColorProperty_Property()
+  {
+    return (EAttribute)colorPropertyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getColorProperty_Value()
+  {
+    return (EReference)colorPropertyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStringProperty()
+  {
+    return stringPropertyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStringProperty_Property()
+  {
+    return (EAttribute)stringPropertyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStringProperty_Value()
+  {
+    return (EAttribute)stringPropertyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getStrokeLineCapProperty()
   {
     return strokeLineCapPropertyEClass;
@@ -1877,26 +1883,6 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBorderColorProperty()
-  {
-    return borderColorPropertyEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getBorderColorProperty_Values()
-  {
-    return (EReference)borderColorPropertyEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getBorderStyleProperty()
   {
     return borderStylePropertyEClass;
@@ -1937,46 +1923,6 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getShapeProperty()
-  {
-    return shapePropertyEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getShapeProperty_Value()
-  {
-    return (EAttribute)shapePropertyEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getTextProperty()
-  {
-    return textPropertyEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getTextProperty_Value()
-  {
-    return (EAttribute)textPropertyEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getTextOverrunProperty()
   {
     return textOverrunPropertyEClass;
@@ -1990,26 +1936,6 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
   public EAttribute getTextOverrunProperty_Value()
   {
     return (EAttribute)textOverrunPropertyEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getEchoCharProperty()
-  {
-    return echoCharPropertyEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getEchoCharProperty_Value()
-  {
-    return (EAttribute)echoCharPropertyEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2827,6 +2753,26 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getLookedUpColor()
+  {
+    return lookedUpColorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLookedUpColor_Value()
+  {
+    return (EAttribute)lookedUpColorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getNamedColor()
   {
     return namedColorEClass;
@@ -3093,19 +3039,10 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     createEReference(selectorEClass, SELECTOR__SIMPLE_SELECTOR);
 
     simpleSelectorEClass = createEClass(SIMPLE_SELECTOR);
-    createEReference(simpleSelectorEClass, SIMPLE_SELECTOR__ELEMENT);
-    createEReference(simpleSelectorEClass, SIMPLE_SELECTOR__ID);
+    createEAttribute(simpleSelectorEClass, SIMPLE_SELECTOR__ELEMENT);
+    createEAttribute(simpleSelectorEClass, SIMPLE_SELECTOR__ID);
     createEReference(simpleSelectorEClass, SIMPLE_SELECTOR__PSEUDO_CLASS);
-    createEReference(simpleSelectorEClass, SIMPLE_SELECTOR__CLASS);
-
-    elementNameEClass = createEClass(ELEMENT_NAME);
-    createEAttribute(elementNameEClass, ELEMENT_NAME__VALUE);
-
-    elementIdEClass = createEClass(ELEMENT_ID);
-    createEAttribute(elementIdEClass, ELEMENT_ID__ID);
-
-    elementClassEClass = createEClass(ELEMENT_CLASS);
-    createEAttribute(elementClassEClass, ELEMENT_CLASS__ID);
+    createEAttribute(simpleSelectorEClass, SIMPLE_SELECTOR__CLASS);
 
     elementPseudoClassEClass = createEClass(ELEMENT_PSEUDO_CLASS);
     createEAttribute(elementPseudoClassEClass, ELEMENT_PSEUDO_CLASS__VALUE);
@@ -3218,6 +3155,18 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     createEAttribute(sizePropertiesEClass, SIZE_PROPERTIES__PROPERTY);
     createEReference(sizePropertiesEClass, SIZE_PROPERTIES__VALUES);
 
+    multiPaintPropertiesEClass = createEClass(MULTI_PAINT_PROPERTIES);
+    createEAttribute(multiPaintPropertiesEClass, MULTI_PAINT_PROPERTIES__PROPERTY);
+    createEReference(multiPaintPropertiesEClass, MULTI_PAINT_PROPERTIES__VALUES);
+
+    colorPropertyEClass = createEClass(COLOR_PROPERTY);
+    createEAttribute(colorPropertyEClass, COLOR_PROPERTY__PROPERTY);
+    createEReference(colorPropertyEClass, COLOR_PROPERTY__VALUE);
+
+    stringPropertyEClass = createEClass(STRING_PROPERTY);
+    createEAttribute(stringPropertyEClass, STRING_PROPERTY__PROPERTY);
+    createEAttribute(stringPropertyEClass, STRING_PROPERTY__VALUE);
+
     strokeLineCapPropertyEClass = createEClass(STROKE_LINE_CAP_PROPERTY);
     createEAttribute(strokeLineCapPropertyEClass, STROKE_LINE_CAP_PROPERTY__VALUE);
 
@@ -3236,26 +3185,14 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     backgroundImageSizePropertyEClass = createEClass(BACKGROUND_IMAGE_SIZE_PROPERTY);
     createEReference(backgroundImageSizePropertyEClass, BACKGROUND_IMAGE_SIZE_PROPERTY__VALUES);
 
-    borderColorPropertyEClass = createEClass(BORDER_COLOR_PROPERTY);
-    createEReference(borderColorPropertyEClass, BORDER_COLOR_PROPERTY__VALUES);
-
     borderStylePropertyEClass = createEClass(BORDER_STYLE_PROPERTY);
     createEReference(borderStylePropertyEClass, BORDER_STYLE_PROPERTY__VALUES);
 
     borderImageSlicePropertyEClass = createEClass(BORDER_IMAGE_SLICE_PROPERTY);
     createEReference(borderImageSlicePropertyEClass, BORDER_IMAGE_SLICE_PROPERTY__VALUES);
 
-    shapePropertyEClass = createEClass(SHAPE_PROPERTY);
-    createEAttribute(shapePropertyEClass, SHAPE_PROPERTY__VALUE);
-
-    textPropertyEClass = createEClass(TEXT_PROPERTY);
-    createEAttribute(textPropertyEClass, TEXT_PROPERTY__VALUE);
-
     textOverrunPropertyEClass = createEClass(TEXT_OVERRUN_PROPERTY);
     createEAttribute(textOverrunPropertyEClass, TEXT_OVERRUN_PROPERTY__VALUE);
-
-    echoCharPropertyEClass = createEClass(ECHO_CHAR_PROPERTY);
-    createEAttribute(echoCharPropertyEClass, ECHO_CHAR_PROPERTY__VALUE);
 
     insetsPropertyEClass = createEClass(INSETS_PROPERTY);
     createEReference(insetsPropertyEClass, INSETS_PROPERTY__VALUE);
@@ -3366,6 +3303,9 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
 
     colorValueEClass = createEClass(COLOR_VALUE);
 
+    lookedUpColorEClass = createEClass(LOOKED_UP_COLOR);
+    createEAttribute(lookedUpColorEClass, LOOKED_UP_COLOR__VALUE);
+
     namedColorEClass = createEClass(NAMED_COLOR);
     createEAttribute(namedColorEClass, NAMED_COLOR__VALUE);
 
@@ -3451,19 +3391,18 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     repeatPropertiesEClass.getESuperTypes().add(this.getFXProperty());
     multiSizePropertyEClass.getESuperTypes().add(this.getFXProperty());
     sizePropertiesEClass.getESuperTypes().add(this.getFXProperty());
+    multiPaintPropertiesEClass.getESuperTypes().add(this.getFXProperty());
+    colorPropertyEClass.getESuperTypes().add(this.getFXProperty());
+    stringPropertyEClass.getESuperTypes().add(this.getFXProperty());
     strokeLineCapPropertyEClass.getESuperTypes().add(this.getFXProperty());
     strokeLineJoinPropertyEClass.getESuperTypes().add(this.getFXProperty());
     textAlignmentPropertyEClass.getESuperTypes().add(this.getFXProperty());
     textOriginPropertyEClass.getESuperTypes().add(this.getFXProperty());
     backgroundImagePositionPropertyEClass.getESuperTypes().add(this.getFXProperty());
     backgroundImageSizePropertyEClass.getESuperTypes().add(this.getFXProperty());
-    borderColorPropertyEClass.getESuperTypes().add(this.getFXProperty());
     borderStylePropertyEClass.getESuperTypes().add(this.getFXProperty());
     borderImageSlicePropertyEClass.getESuperTypes().add(this.getFXProperty());
-    shapePropertyEClass.getESuperTypes().add(this.getFXProperty());
-    textPropertyEClass.getESuperTypes().add(this.getFXProperty());
     textOverrunPropertyEClass.getESuperTypes().add(this.getFXProperty());
-    echoCharPropertyEClass.getESuperTypes().add(this.getFXProperty());
     insetsPropertyEClass.getESuperTypes().add(this.getFXProperty());
     horizontalGridLineStrokeDashArrayPropertyEClass.getESuperTypes().add(this.getFXProperty());
     verticalGridLineStrokeDashArrayPropertyEClass.getESuperTypes().add(this.getFXProperty());
@@ -3472,6 +3411,7 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     linearGradientEClass.getESuperTypes().add(this.getPaintValue());
     radialGradientEClass.getESuperTypes().add(this.getPaintValue());
     colorValueEClass.getESuperTypes().add(this.getPaintValue());
+    lookedUpColorEClass.getESuperTypes().add(this.getColorValue());
     namedColorEClass.getESuperTypes().add(this.getColorValue());
     rgbColorEClass.getESuperTypes().add(this.getColorValue());
     hsbColorEClass.getESuperTypes().add(this.getColorValue());
@@ -3489,19 +3429,10 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     initEReference(getSelector_SimpleSelector(), this.getSimpleSelector(), null, "simpleSelector", null, 0, -1, Selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(simpleSelectorEClass, SimpleSelector.class, "SimpleSelector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSimpleSelector_Element(), this.getElementName(), null, "element", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSimpleSelector_Id(), this.getElementId(), null, "id", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSimpleSelector_PseudoClass(), this.getElementPseudoClass(), null, "pseudoClass", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSimpleSelector_Class(), this.getElementClass(), null, "class", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(elementNameEClass, ElementName.class, "ElementName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getElementName_Value(), ecorePackage.getEString(), "value", null, 0, 1, ElementName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(elementIdEClass, ElementId.class, "ElementId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getElementId_Id(), ecorePackage.getEString(), "id", null, 0, 1, ElementId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(elementClassEClass, ElementClass.class, "ElementClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getElementClass_Id(), ecorePackage.getEString(), "id", null, 0, 1, ElementClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSimpleSelector_Element(), ecorePackage.getEString(), "element", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSimpleSelector_Id(), ecorePackage.getEString(), "id", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSimpleSelector_PseudoClass(), this.getElementPseudoClass(), null, "pseudoClass", null, 0, -1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSimpleSelector_Class(), ecorePackage.getEString(), "class", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementPseudoClassEClass, ElementPseudoClass.class, "ElementPseudoClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getElementPseudoClass_Value(), ecorePackage.getEString(), "value", null, 0, 1, ElementPseudoClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3614,6 +3545,18 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     initEAttribute(getSizeProperties_Property(), ecorePackage.getEString(), "property", null, 0, 1, SizeProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSizeProperties_Values(), this.getSizeValue(), null, "values", null, 0, -1, SizeProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(multiPaintPropertiesEClass, MultiPaintProperties.class, "MultiPaintProperties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMultiPaintProperties_Property(), ecorePackage.getEString(), "property", null, 0, 1, MultiPaintProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMultiPaintProperties_Values(), this.getMultiPaintValue(), null, "values", null, 0, -1, MultiPaintProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(colorPropertyEClass, ColorProperty.class, "ColorProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getColorProperty_Property(), ecorePackage.getEString(), "property", null, 0, 1, ColorProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getColorProperty_Value(), this.getColorValue(), null, "value", null, 0, 1, ColorProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stringPropertyEClass, StringProperty.class, "StringProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStringProperty_Property(), ecorePackage.getEString(), "property", null, 0, 1, StringProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStringProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(strokeLineCapPropertyEClass, StrokeLineCapProperty.class, "StrokeLineCapProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStrokeLineCapProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, StrokeLineCapProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -3632,26 +3575,14 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     initEClass(backgroundImageSizePropertyEClass, BackgroundImageSizeProperty.class, "BackgroundImageSizeProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBackgroundImageSizeProperty_Values(), this.getBgSizeValue(), null, "values", null, 0, -1, BackgroundImageSizeProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(borderColorPropertyEClass, BorderColorProperty.class, "BorderColorProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBorderColorProperty_Values(), this.getMultiPaintValue(), null, "values", null, 0, -1, BorderColorProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(borderStylePropertyEClass, BorderStyleProperty.class, "BorderStyleProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBorderStyleProperty_Values(), this.getBorderStyleValue(), null, "values", null, 0, -1, BorderStyleProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(borderImageSlicePropertyEClass, BorderImageSliceProperty.class, "BorderImageSliceProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBorderImageSliceProperty_Values(), this.getSizeFill(), null, "values", null, 0, -1, BorderImageSliceProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(shapePropertyEClass, ShapeProperty.class, "ShapeProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getShapeProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, ShapeProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(textPropertyEClass, TextProperty.class, "TextProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTextProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, TextProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(textOverrunPropertyEClass, TextOverrunProperty.class, "TextOverrunProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTextOverrunProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, TextOverrunProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(echoCharPropertyEClass, EchoCharProperty.class, "EchoCharProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEchoCharProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, EchoCharProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(insetsPropertyEClass, InsetsProperty.class, "InsetsProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInsetsProperty_Value(), this.getNumberValue(), null, "value", null, 0, -1, InsetsProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3761,6 +3692,9 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     initEReference(getStopValue_Color(), this.getColorValue(), null, "color", null, 0, 1, StopValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(colorValueEClass, ColorValue.class, "ColorValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(lookedUpColorEClass, LookedUpColor.class, "LookedUpColor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLookedUpColor_Value(), ecorePackage.getEString(), "value", null, 0, 1, LookedUpColor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(namedColorEClass, NamedColor.class, "NamedColor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNamedColor_Value(), ecorePackage.getEString(), "value", null, 0, 1, NamedColor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

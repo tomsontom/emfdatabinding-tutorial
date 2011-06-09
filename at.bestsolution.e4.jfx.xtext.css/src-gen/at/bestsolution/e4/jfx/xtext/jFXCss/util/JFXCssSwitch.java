@@ -104,27 +104,6 @@ public class JFXCssSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case JFXCssPackage.ELEMENT_NAME:
-      {
-        ElementName elementName = (ElementName)theEObject;
-        T result = caseElementName(elementName);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case JFXCssPackage.ELEMENT_ID:
-      {
-        ElementId elementId = (ElementId)theEObject;
-        T result = caseElementId(elementId);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case JFXCssPackage.ELEMENT_CLASS:
-      {
-        ElementClass elementClass = (ElementClass)theEObject;
-        T result = caseElementClass(elementClass);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case JFXCssPackage.ELEMENT_PSEUDO_CLASS:
       {
         ElementPseudoClass elementPseudoClass = (ElementPseudoClass)theEObject;
@@ -354,6 +333,30 @@ public class JFXCssSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JFXCssPackage.MULTI_PAINT_PROPERTIES:
+      {
+        MultiPaintProperties multiPaintProperties = (MultiPaintProperties)theEObject;
+        T result = caseMultiPaintProperties(multiPaintProperties);
+        if (result == null) result = caseFXProperty(multiPaintProperties);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JFXCssPackage.COLOR_PROPERTY:
+      {
+        ColorProperty colorProperty = (ColorProperty)theEObject;
+        T result = caseColorProperty(colorProperty);
+        if (result == null) result = caseFXProperty(colorProperty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JFXCssPackage.STRING_PROPERTY:
+      {
+        StringProperty stringProperty = (StringProperty)theEObject;
+        T result = caseStringProperty(stringProperty);
+        if (result == null) result = caseFXProperty(stringProperty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JFXCssPackage.STROKE_LINE_CAP_PROPERTY:
       {
         StrokeLineCapProperty strokeLineCapProperty = (StrokeLineCapProperty)theEObject;
@@ -402,14 +405,6 @@ public class JFXCssSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case JFXCssPackage.BORDER_COLOR_PROPERTY:
-      {
-        BorderColorProperty borderColorProperty = (BorderColorProperty)theEObject;
-        T result = caseBorderColorProperty(borderColorProperty);
-        if (result == null) result = caseFXProperty(borderColorProperty);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case JFXCssPackage.BORDER_STYLE_PROPERTY:
       {
         BorderStyleProperty borderStyleProperty = (BorderStyleProperty)theEObject;
@@ -426,35 +421,11 @@ public class JFXCssSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case JFXCssPackage.SHAPE_PROPERTY:
-      {
-        ShapeProperty shapeProperty = (ShapeProperty)theEObject;
-        T result = caseShapeProperty(shapeProperty);
-        if (result == null) result = caseFXProperty(shapeProperty);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case JFXCssPackage.TEXT_PROPERTY:
-      {
-        TextProperty textProperty = (TextProperty)theEObject;
-        T result = caseTextProperty(textProperty);
-        if (result == null) result = caseFXProperty(textProperty);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case JFXCssPackage.TEXT_OVERRUN_PROPERTY:
       {
         TextOverrunProperty textOverrunProperty = (TextOverrunProperty)theEObject;
         T result = caseTextOverrunProperty(textOverrunProperty);
         if (result == null) result = caseFXProperty(textOverrunProperty);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case JFXCssPackage.ECHO_CHAR_PROPERTY:
-      {
-        EchoCharProperty echoCharProperty = (EchoCharProperty)theEObject;
-        T result = caseEchoCharProperty(echoCharProperty);
-        if (result == null) result = caseFXProperty(echoCharProperty);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -662,6 +633,15 @@ public class JFXCssSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JFXCssPackage.LOOKED_UP_COLOR:
+      {
+        LookedUpColor lookedUpColor = (LookedUpColor)theEObject;
+        T result = caseLookedUpColor(lookedUpColor);
+        if (result == null) result = caseColorValue(lookedUpColor);
+        if (result == null) result = casePaintValue(lookedUpColor);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JFXCssPackage.NAMED_COLOR:
       {
         NamedColor namedColor = (NamedColor)theEObject;
@@ -762,54 +742,6 @@ public class JFXCssSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSimpleSelector(SimpleSelector object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Element Name</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Element Name</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseElementName(ElementName object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Element Id</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Element Id</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseElementId(ElementId object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Element Class</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Element Class</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseElementClass(ElementClass object)
   {
     return null;
   }
@@ -1279,6 +1211,54 @@ public class JFXCssSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Multi Paint Properties</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Multi Paint Properties</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMultiPaintProperties(MultiPaintProperties object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Color Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Color Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseColorProperty(ColorProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringProperty(StringProperty object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Stroke Line Cap Property</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1375,22 +1355,6 @@ public class JFXCssSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Border Color Property</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Border Color Property</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseBorderColorProperty(BorderColorProperty object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Border Style Property</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1423,38 +1387,6 @@ public class JFXCssSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Shape Property</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Shape Property</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseShapeProperty(ShapeProperty object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Text Property</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Text Property</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTextProperty(TextProperty object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Text Overrun Property</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1466,22 +1398,6 @@ public class JFXCssSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTextOverrunProperty(TextOverrunProperty object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Echo Char Property</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Echo Char Property</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEchoCharProperty(EchoCharProperty object)
   {
     return null;
   }
@@ -1930,6 +1846,22 @@ public class JFXCssSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseColorValue(ColorValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Looked Up Color</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Looked Up Color</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLookedUpColor(LookedUpColor object)
   {
     return null;
   }

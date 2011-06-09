@@ -7,7 +7,7 @@
 package at.bestsolution.e4.jfx.xtext.jFXCss.impl;
 
 import at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage;
-import at.bestsolution.e4.jfx.xtext.jFXCss.TextProperty;
+import at.bestsolution.e4.jfx.xtext.jFXCss.LookedUpColor;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -17,18 +17,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Text Property</b></em>'.
+ * An implementation of the model object '<em><b>Looked Up Color</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.TextPropertyImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.LookedUpColorImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TextPropertyImpl extends FXPropertyImpl implements TextProperty
+public class LookedUpColorImpl extends ColorValueImpl implements LookedUpColor
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -55,7 +55,7 @@ public class TextPropertyImpl extends FXPropertyImpl implements TextProperty
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TextPropertyImpl()
+  protected LookedUpColorImpl()
   {
     super();
   }
@@ -68,7 +68,7 @@ public class TextPropertyImpl extends FXPropertyImpl implements TextProperty
   @Override
   protected EClass eStaticClass()
   {
-    return JFXCssPackage.Literals.TEXT_PROPERTY;
+    return JFXCssPackage.Literals.LOOKED_UP_COLOR;
   }
 
   /**
@@ -91,7 +91,7 @@ public class TextPropertyImpl extends FXPropertyImpl implements TextProperty
     String oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JFXCssPackage.TEXT_PROPERTY__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, JFXCssPackage.LOOKED_UP_COLOR__VALUE, oldValue, value));
   }
 
   /**
@@ -104,7 +104,7 @@ public class TextPropertyImpl extends FXPropertyImpl implements TextProperty
   {
     switch (featureID)
     {
-      case JFXCssPackage.TEXT_PROPERTY__VALUE:
+      case JFXCssPackage.LOOKED_UP_COLOR__VALUE:
         return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -120,7 +120,7 @@ public class TextPropertyImpl extends FXPropertyImpl implements TextProperty
   {
     switch (featureID)
     {
-      case JFXCssPackage.TEXT_PROPERTY__VALUE:
+      case JFXCssPackage.LOOKED_UP_COLOR__VALUE:
         setValue((String)newValue);
         return;
     }
@@ -137,7 +137,7 @@ public class TextPropertyImpl extends FXPropertyImpl implements TextProperty
   {
     switch (featureID)
     {
-      case JFXCssPackage.TEXT_PROPERTY__VALUE:
+      case JFXCssPackage.LOOKED_UP_COLOR__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
     }
@@ -154,7 +154,7 @@ public class TextPropertyImpl extends FXPropertyImpl implements TextProperty
   {
     switch (featureID)
     {
-      case JFXCssPackage.TEXT_PROPERTY__VALUE:
+      case JFXCssPackage.LOOKED_UP_COLOR__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
     return super.eIsSet(featureID);
@@ -177,4 +177,4 @@ public class TextPropertyImpl extends FXPropertyImpl implements TextProperty
     return result.toString();
   }
 
-} //TextPropertyImpl
+} //LookedUpColorImpl

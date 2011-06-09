@@ -99,21 +99,6 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
         return createSimpleSelectorAdapter();
       }
       @Override
-      public Adapter caseElementName(ElementName object)
-      {
-        return createElementNameAdapter();
-      }
-      @Override
-      public Adapter caseElementId(ElementId object)
-      {
-        return createElementIdAdapter();
-      }
-      @Override
-      public Adapter caseElementClass(ElementClass object)
-      {
-        return createElementClassAdapter();
-      }
-      @Override
       public Adapter caseElementPseudoClass(ElementPseudoClass object)
       {
         return createElementPseudoClassAdapter();
@@ -259,6 +244,21 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
         return createSizePropertiesAdapter();
       }
       @Override
+      public Adapter caseMultiPaintProperties(MultiPaintProperties object)
+      {
+        return createMultiPaintPropertiesAdapter();
+      }
+      @Override
+      public Adapter caseColorProperty(ColorProperty object)
+      {
+        return createColorPropertyAdapter();
+      }
+      @Override
+      public Adapter caseStringProperty(StringProperty object)
+      {
+        return createStringPropertyAdapter();
+      }
+      @Override
       public Adapter caseStrokeLineCapProperty(StrokeLineCapProperty object)
       {
         return createStrokeLineCapPropertyAdapter();
@@ -289,11 +289,6 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
         return createBackgroundImageSizePropertyAdapter();
       }
       @Override
-      public Adapter caseBorderColorProperty(BorderColorProperty object)
-      {
-        return createBorderColorPropertyAdapter();
-      }
-      @Override
       public Adapter caseBorderStyleProperty(BorderStyleProperty object)
       {
         return createBorderStylePropertyAdapter();
@@ -304,24 +299,9 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
         return createBorderImageSlicePropertyAdapter();
       }
       @Override
-      public Adapter caseShapeProperty(ShapeProperty object)
-      {
-        return createShapePropertyAdapter();
-      }
-      @Override
-      public Adapter caseTextProperty(TextProperty object)
-      {
-        return createTextPropertyAdapter();
-      }
-      @Override
       public Adapter caseTextOverrunProperty(TextOverrunProperty object)
       {
         return createTextOverrunPropertyAdapter();
-      }
-      @Override
-      public Adapter caseEchoCharProperty(EchoCharProperty object)
-      {
-        return createEchoCharPropertyAdapter();
       }
       @Override
       public Adapter caseInsetsProperty(InsetsProperty object)
@@ -464,6 +444,11 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
         return createColorValueAdapter();
       }
       @Override
+      public Adapter caseLookedUpColor(LookedUpColor object)
+      {
+        return createLookedUpColorAdapter();
+      }
+      @Override
       public Adapter caseNamedColor(NamedColor object)
       {
         return createNamedColorAdapter();
@@ -561,51 +546,6 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSimpleSelectorAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.ElementName <em>Element Name</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.ElementName
-   * @generated
-   */
-  public Adapter createElementNameAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.ElementId <em>Element Id</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.ElementId
-   * @generated
-   */
-  public Adapter createElementIdAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.ElementClass <em>Element Class</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.ElementClass
-   * @generated
-   */
-  public Adapter createElementClassAdapter()
   {
     return null;
   }
@@ -1046,6 +986,51 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.MultiPaintProperties <em>Multi Paint Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.MultiPaintProperties
+   * @generated
+   */
+  public Adapter createMultiPaintPropertiesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.ColorProperty <em>Color Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.ColorProperty
+   * @generated
+   */
+  public Adapter createColorPropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.StringProperty <em>String Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.StringProperty
+   * @generated
+   */
+  public Adapter createStringPropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.StrokeLineCapProperty <em>Stroke Line Cap Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1136,21 +1121,6 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.BorderColorProperty <em>Border Color Property</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.BorderColorProperty
-   * @generated
-   */
-  public Adapter createBorderColorPropertyAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.BorderStyleProperty <em>Border Style Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1181,36 +1151,6 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.ShapeProperty <em>Shape Property</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.ShapeProperty
-   * @generated
-   */
-  public Adapter createShapePropertyAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.TextProperty <em>Text Property</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.TextProperty
-   * @generated
-   */
-  public Adapter createTextPropertyAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.TextOverrunProperty <em>Text Overrun Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1221,21 +1161,6 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTextOverrunPropertyAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.EchoCharProperty <em>Echo Char Property</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.EchoCharProperty
-   * @generated
-   */
-  public Adapter createEchoCharPropertyAdapter()
   {
     return null;
   }
@@ -1656,6 +1581,21 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createColorValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.LookedUpColor <em>Looked Up Color</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.LookedUpColor
+   * @generated
+   */
+  public Adapter createLookedUpColorAdapter()
   {
     return null;
   }

@@ -73,9 +73,6 @@ public class JFXCssFactoryImpl extends EFactoryImpl implements JFXCssFactory
       case JFXCssPackage.DEFINITION: return createDefinition();
       case JFXCssPackage.SELECTOR: return createSelector();
       case JFXCssPackage.SIMPLE_SELECTOR: return createSimpleSelector();
-      case JFXCssPackage.ELEMENT_NAME: return createElementName();
-      case JFXCssPackage.ELEMENT_ID: return createElementId();
-      case JFXCssPackage.ELEMENT_CLASS: return createElementClass();
       case JFXCssPackage.ELEMENT_PSEUDO_CLASS: return createElementPseudoClass();
       case JFXCssPackage.FX_PROPERTY: return createFXProperty();
       case JFXCssPackage.FONT_PROPERTY: return createFontProperty();
@@ -105,19 +102,18 @@ public class JFXCssFactoryImpl extends EFactoryImpl implements JFXCssFactory
       case JFXCssPackage.REPEAT_PROPERTIES: return createRepeatProperties();
       case JFXCssPackage.MULTI_SIZE_PROPERTY: return createMultiSizeProperty();
       case JFXCssPackage.SIZE_PROPERTIES: return createSizeProperties();
+      case JFXCssPackage.MULTI_PAINT_PROPERTIES: return createMultiPaintProperties();
+      case JFXCssPackage.COLOR_PROPERTY: return createColorProperty();
+      case JFXCssPackage.STRING_PROPERTY: return createStringProperty();
       case JFXCssPackage.STROKE_LINE_CAP_PROPERTY: return createStrokeLineCapProperty();
       case JFXCssPackage.STROKE_LINE_JOIN_PROPERTY: return createStrokeLineJoinProperty();
       case JFXCssPackage.TEXT_ALIGNMENT_PROPERTY: return createTextAlignmentProperty();
       case JFXCssPackage.TEXT_ORIGIN_PROPERTY: return createTextOriginProperty();
       case JFXCssPackage.BACKGROUND_IMAGE_POSITION_PROPERTY: return createBackgroundImagePositionProperty();
       case JFXCssPackage.BACKGROUND_IMAGE_SIZE_PROPERTY: return createBackgroundImageSizeProperty();
-      case JFXCssPackage.BORDER_COLOR_PROPERTY: return createBorderColorProperty();
       case JFXCssPackage.BORDER_STYLE_PROPERTY: return createBorderStyleProperty();
       case JFXCssPackage.BORDER_IMAGE_SLICE_PROPERTY: return createBorderImageSliceProperty();
-      case JFXCssPackage.SHAPE_PROPERTY: return createShapeProperty();
-      case JFXCssPackage.TEXT_PROPERTY: return createTextProperty();
       case JFXCssPackage.TEXT_OVERRUN_PROPERTY: return createTextOverrunProperty();
-      case JFXCssPackage.ECHO_CHAR_PROPERTY: return createEchoCharProperty();
       case JFXCssPackage.INSETS_PROPERTY: return createInsetsProperty();
       case JFXCssPackage.HORIZONTAL_GRID_LINE_STROKE_DASH_ARRAY_PROPERTY: return createHorizontalGridLineStrokeDashArrayProperty();
       case JFXCssPackage.VERTICAL_GRID_LINE_STROKE_DASH_ARRAY_PROPERTY: return createVerticalGridLineStrokeDashArrayProperty();
@@ -146,6 +142,7 @@ public class JFXCssFactoryImpl extends EFactoryImpl implements JFXCssFactory
       case JFXCssPackage.RADIAL_GRADIENT: return createRadialGradient();
       case JFXCssPackage.STOP_VALUE: return createStopValue();
       case JFXCssPackage.COLOR_VALUE: return createColorValue();
+      case JFXCssPackage.LOOKED_UP_COLOR: return createLookedUpColor();
       case JFXCssPackage.NAMED_COLOR: return createNamedColor();
       case JFXCssPackage.RGB_COLOR: return createRGBColor();
       case JFXCssPackage.HSB_COLOR: return createHSBColor();
@@ -235,39 +232,6 @@ public class JFXCssFactoryImpl extends EFactoryImpl implements JFXCssFactory
   {
     SimpleSelectorImpl simpleSelector = new SimpleSelectorImpl();
     return simpleSelector;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ElementName createElementName()
-  {
-    ElementNameImpl elementName = new ElementNameImpl();
-    return elementName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ElementId createElementId()
-  {
-    ElementIdImpl elementId = new ElementIdImpl();
-    return elementId;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ElementClass createElementClass()
-  {
-    ElementClassImpl elementClass = new ElementClassImpl();
-    return elementClass;
   }
 
   /**
@@ -594,6 +558,39 @@ public class JFXCssFactoryImpl extends EFactoryImpl implements JFXCssFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public MultiPaintProperties createMultiPaintProperties()
+  {
+    MultiPaintPropertiesImpl multiPaintProperties = new MultiPaintPropertiesImpl();
+    return multiPaintProperties;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ColorProperty createColorProperty()
+  {
+    ColorPropertyImpl colorProperty = new ColorPropertyImpl();
+    return colorProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringProperty createStringProperty()
+  {
+    StringPropertyImpl stringProperty = new StringPropertyImpl();
+    return stringProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public StrokeLineCapProperty createStrokeLineCapProperty()
   {
     StrokeLineCapPropertyImpl strokeLineCapProperty = new StrokeLineCapPropertyImpl();
@@ -660,17 +657,6 @@ public class JFXCssFactoryImpl extends EFactoryImpl implements JFXCssFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BorderColorProperty createBorderColorProperty()
-  {
-    BorderColorPropertyImpl borderColorProperty = new BorderColorPropertyImpl();
-    return borderColorProperty;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public BorderStyleProperty createBorderStyleProperty()
   {
     BorderStylePropertyImpl borderStyleProperty = new BorderStylePropertyImpl();
@@ -693,43 +679,10 @@ public class JFXCssFactoryImpl extends EFactoryImpl implements JFXCssFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ShapeProperty createShapeProperty()
-  {
-    ShapePropertyImpl shapeProperty = new ShapePropertyImpl();
-    return shapeProperty;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TextProperty createTextProperty()
-  {
-    TextPropertyImpl textProperty = new TextPropertyImpl();
-    return textProperty;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public TextOverrunProperty createTextOverrunProperty()
   {
     TextOverrunPropertyImpl textOverrunProperty = new TextOverrunPropertyImpl();
     return textOverrunProperty;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EchoCharProperty createEchoCharProperty()
-  {
-    EchoCharPropertyImpl echoCharProperty = new EchoCharPropertyImpl();
-    return echoCharProperty;
   }
 
   /**
@@ -1038,6 +991,17 @@ public class JFXCssFactoryImpl extends EFactoryImpl implements JFXCssFactory
   {
     ColorValueImpl colorValue = new ColorValueImpl();
     return colorValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LookedUpColor createLookedUpColor()
+  {
+    LookedUpColorImpl lookedUpColor = new LookedUpColorImpl();
+    return lookedUpColor;
   }
 
   /**

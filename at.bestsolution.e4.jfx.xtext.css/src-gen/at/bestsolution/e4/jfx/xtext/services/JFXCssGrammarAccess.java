@@ -37,16 +37,20 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cSelectorAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cSelectorSelectorParserRuleCall_0_0 = (RuleCall)cSelectorAssignment_0.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cPropertiesAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cPropertiesFXPropertyParserRuleCall_2_0 = (RuleCall)cPropertiesAssignment_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cSelectorAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cSelectorSelectorParserRuleCall_1_1_0 = (RuleCall)cSelectorAssignment_1_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cPropertiesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPropertiesFXPropertyParserRuleCall_3_0 = (RuleCall)cPropertiesAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Definition:
-		//	selector+=Selector "{" properties+=FXProperty+ "}";
+		//	selector+=Selector ("," selector+=Selector)* "{" properties+=FXProperty+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//selector+=Selector "{" properties+=FXProperty+ "}"
+		//selector+=Selector ("," selector+=Selector)* "{" properties+=FXProperty+ "}"
 		public Group getGroup() { return cGroup; }
 
 		//selector+=Selector
@@ -55,17 +59,29 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//Selector
 		public RuleCall getSelectorSelectorParserRuleCall_0_0() { return cSelectorSelectorParserRuleCall_0_0; }
 
+		//("," selector+=Selector)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//","
+		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
+
+		//selector+=Selector
+		public Assignment getSelectorAssignment_1_1() { return cSelectorAssignment_1_1; }
+
+		//Selector
+		public RuleCall getSelectorSelectorParserRuleCall_1_1_0() { return cSelectorSelectorParserRuleCall_1_1_0; }
+
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
 		//properties+=FXProperty+
-		public Assignment getPropertiesAssignment_2() { return cPropertiesAssignment_2; }
+		public Assignment getPropertiesAssignment_3() { return cPropertiesAssignment_3; }
 
 		//FXProperty
-		public RuleCall getPropertiesFXPropertyParserRuleCall_2_0() { return cPropertiesFXPropertyParserRuleCall_2_0; }
+		public RuleCall getPropertiesFXPropertyParserRuleCall_3_0() { return cPropertiesFXPropertyParserRuleCall_3_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
 	public class SelectorElements extends AbstractParserRuleElementFinder {
@@ -88,21 +104,23 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SimpleSelector");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cElementAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cElementElementNameParserRuleCall_0_0 = (RuleCall)cElementAssignment_0.eContents().get(0);
+		private final RuleCall cElementIDTerminalRuleCall_0_0 = (RuleCall)cElementAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Assignment cIdAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cIdElementIdParserRuleCall_1_0_0 = (RuleCall)cIdAssignment_1_0.eContents().get(0);
-		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
-		private final Keyword cColonKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
-		private final Assignment cPseudoClassAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
-		private final RuleCall cPseudoClassElementPseudoClassParserRuleCall_1_1_1_0 = (RuleCall)cPseudoClassAssignment_1_1_1.eContents().get(0);
+		private final Keyword cNumberSignKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cIdAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cIdIDTerminalRuleCall_1_1_0 = (RuleCall)cIdAssignment_1_1.eContents().get(0);
+		private final Group cGroup_1_2 = (Group)cGroup_1.eContents().get(2);
+		private final Keyword cColonKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
+		private final Assignment cPseudoClassAssignment_1_2_1 = (Assignment)cGroup_1_2.eContents().get(1);
+		private final RuleCall cPseudoClassElementPseudoClassParserRuleCall_1_2_1_0 = (RuleCall)cPseudoClassAssignment_1_2_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Assignment cClassAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
-		private final RuleCall cClassElementClassParserRuleCall_2_0_0 = (RuleCall)cClassAssignment_2_0.eContents().get(0);
-		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
-		private final Keyword cColonKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
-		private final Assignment cPseudoClassAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
-		private final RuleCall cPseudoClassElementPseudoClassParserRuleCall_2_1_1_0 = (RuleCall)cPseudoClassAssignment_2_1_1.eContents().get(0);
+		private final Keyword cFullStopKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cClassAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cClassIDTerminalRuleCall_2_1_0 = (RuleCall)cClassAssignment_2_1.eContents().get(0);
+		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
+		private final Keyword cColonKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
+		private final Assignment cPseudoClassAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
+		private final RuleCall cPseudoClassElementPseudoClassParserRuleCall_2_2_1_0 = (RuleCall)cPseudoClassAssignment_2_2_1.eContents().get(0);
 		
 		/// * (element=ElementName id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
 		//	|
@@ -111,125 +129,65 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//	(class=ElementClass pseudoClass=ElementPseudoClass?)
 		//	|
 		//	pseudoClass=ElementPseudoClass* / SimpleSelector:
-		//	element=ElementName | id=ElementId (":" pseudoClass=ElementPseudoClass)? | class=ElementClass (":"
-		//	pseudoClass=ElementPseudoClass)?;
+		//	element=ID | "#" id=ID (":" pseudoClass+=ElementPseudoClass)* | "." class=ID (":" pseudoClass+=ElementPseudoClass)*;
 		public ParserRule getRule() { return rule; }
 
-		//element=ElementName | id=ElementId (":" pseudoClass=ElementPseudoClass)? | class=ElementClass (":"
-		//pseudoClass=ElementPseudoClass)?
+		//element=ID | "#" id=ID (":" pseudoClass+=ElementPseudoClass)* | "." class=ID (":" pseudoClass+=ElementPseudoClass)*
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//element=ElementName
+		//element=ID
 		public Assignment getElementAssignment_0() { return cElementAssignment_0; }
 
-		//ElementName
-		public RuleCall getElementElementNameParserRuleCall_0_0() { return cElementElementNameParserRuleCall_0_0; }
+		//ID
+		public RuleCall getElementIDTerminalRuleCall_0_0() { return cElementIDTerminalRuleCall_0_0; }
 
-		//id=ElementId (":" pseudoClass=ElementPseudoClass)?
+		//"#" id=ID (":" pseudoClass+=ElementPseudoClass)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//id=ElementId
-		public Assignment getIdAssignment_1_0() { return cIdAssignment_1_0; }
+		//"#"
+		public Keyword getNumberSignKeyword_1_0() { return cNumberSignKeyword_1_0; }
 
-		//ElementId
-		public RuleCall getIdElementIdParserRuleCall_1_0_0() { return cIdElementIdParserRuleCall_1_0_0; }
+		//id=ID
+		public Assignment getIdAssignment_1_1() { return cIdAssignment_1_1; }
 
-		//(":" pseudoClass=ElementPseudoClass)?
-		public Group getGroup_1_1() { return cGroup_1_1; }
+		//ID
+		public RuleCall getIdIDTerminalRuleCall_1_1_0() { return cIdIDTerminalRuleCall_1_1_0; }
+
+		//(":" pseudoClass+=ElementPseudoClass)*
+		public Group getGroup_1_2() { return cGroup_1_2; }
 
 		//":"
-		public Keyword getColonKeyword_1_1_0() { return cColonKeyword_1_1_0; }
+		public Keyword getColonKeyword_1_2_0() { return cColonKeyword_1_2_0; }
 
-		//pseudoClass=ElementPseudoClass
-		public Assignment getPseudoClassAssignment_1_1_1() { return cPseudoClassAssignment_1_1_1; }
+		//pseudoClass+=ElementPseudoClass
+		public Assignment getPseudoClassAssignment_1_2_1() { return cPseudoClassAssignment_1_2_1; }
 
 		//ElementPseudoClass
-		public RuleCall getPseudoClassElementPseudoClassParserRuleCall_1_1_1_0() { return cPseudoClassElementPseudoClassParserRuleCall_1_1_1_0; }
+		public RuleCall getPseudoClassElementPseudoClassParserRuleCall_1_2_1_0() { return cPseudoClassElementPseudoClassParserRuleCall_1_2_1_0; }
 
-		//class=ElementClass (":" pseudoClass=ElementPseudoClass)?
+		//"." class=ID (":" pseudoClass+=ElementPseudoClass)*
 		public Group getGroup_2() { return cGroup_2; }
 
-		//class=ElementClass
-		public Assignment getClassAssignment_2_0() { return cClassAssignment_2_0; }
+		//"."
+		public Keyword getFullStopKeyword_2_0() { return cFullStopKeyword_2_0; }
 
-		//ElementClass
-		public RuleCall getClassElementClassParserRuleCall_2_0_0() { return cClassElementClassParserRuleCall_2_0_0; }
+		//class=ID
+		public Assignment getClassAssignment_2_1() { return cClassAssignment_2_1; }
 
-		//(":" pseudoClass=ElementPseudoClass)?
-		public Group getGroup_2_1() { return cGroup_2_1; }
+		//ID
+		public RuleCall getClassIDTerminalRuleCall_2_1_0() { return cClassIDTerminalRuleCall_2_1_0; }
+
+		//(":" pseudoClass+=ElementPseudoClass)*
+		public Group getGroup_2_2() { return cGroup_2_2; }
 
 		//":"
-		public Keyword getColonKeyword_2_1_0() { return cColonKeyword_2_1_0; }
+		public Keyword getColonKeyword_2_2_0() { return cColonKeyword_2_2_0; }
 
-		//pseudoClass=ElementPseudoClass
-		public Assignment getPseudoClassAssignment_2_1_1() { return cPseudoClassAssignment_2_1_1; }
+		//pseudoClass+=ElementPseudoClass
+		public Assignment getPseudoClassAssignment_2_2_1() { return cPseudoClassAssignment_2_2_1; }
 
 		//ElementPseudoClass
-		public RuleCall getPseudoClassElementPseudoClassParserRuleCall_2_1_1_0() { return cPseudoClassElementPseudoClassParserRuleCall_2_1_1_0; }
-	}
-
-	public class ElementNameElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ElementName");
-		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cValueIDTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
-		
-		//ElementName:
-		//	value=ID;
-		public ParserRule getRule() { return rule; }
-
-		//value=ID
-		public Assignment getValueAssignment() { return cValueAssignment; }
-
-		//ID
-		public RuleCall getValueIDTerminalRuleCall_0() { return cValueIDTerminalRuleCall_0; }
-	}
-
-	public class ElementIdElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ElementId");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cNumberSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cIdIDTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
-		
-		//ElementId:
-		//	"#" id=ID;
-		public ParserRule getRule() { return rule; }
-
-		//"#" id=ID
-		public Group getGroup() { return cGroup; }
-
-		//"#"
-		public Keyword getNumberSignKeyword_0() { return cNumberSignKeyword_0; }
-
-		//id=ID
-		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
-
-		//ID
-		public RuleCall getIdIDTerminalRuleCall_1_0() { return cIdIDTerminalRuleCall_1_0; }
-	}
-
-	public class ElementClassElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ElementClass");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFullStopKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cIdIDTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
-		
-		//ElementClass:
-		//	"." id=ID;
-		public ParserRule getRule() { return rule; }
-
-		//"." id=ID
-		public Group getGroup() { return cGroup; }
-
-		//"."
-		public Keyword getFullStopKeyword_0() { return cFullStopKeyword_0; }
-
-		//id=ID
-		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
-
-		//ID
-		public RuleCall getIdIDTerminalRuleCall_1_0() { return cIdIDTerminalRuleCall_1_0; }
+		public RuleCall getPseudoClassElementPseudoClassParserRuleCall_2_2_1_0() { return cPseudoClassElementPseudoClassParserRuleCall_2_2_1_0; }
 	}
 
 	public class ElementPseudoClassElements extends AbstractParserRuleElementFinder {
@@ -382,14 +340,13 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBackgroundImageSizePropertyParserRuleCall_0_29 = (RuleCall)cAlternatives_0.eContents().get(29);
 		private final RuleCall cBorderStylePropertyParserRuleCall_0_30 = (RuleCall)cAlternatives_0.eContents().get(30);
 		private final RuleCall cBorderImageSlicePropertyParserRuleCall_0_31 = (RuleCall)cAlternatives_0.eContents().get(31);
-		private final RuleCall cShapePropertyParserRuleCall_0_32 = (RuleCall)cAlternatives_0.eContents().get(32);
-		private final RuleCall cTextPropertyParserRuleCall_0_33 = (RuleCall)cAlternatives_0.eContents().get(33);
-		private final RuleCall cTextOverrunPropertyParserRuleCall_0_34 = (RuleCall)cAlternatives_0.eContents().get(34);
-		private final RuleCall cEchoCharPropertyParserRuleCall_0_35 = (RuleCall)cAlternatives_0.eContents().get(35);
-		private final RuleCall cInsetsPropertyParserRuleCall_0_36 = (RuleCall)cAlternatives_0.eContents().get(36);
-		private final RuleCall cHorizontalGridLineStrokeDashArrayPropertyParserRuleCall_0_37 = (RuleCall)cAlternatives_0.eContents().get(37);
-		private final RuleCall cVerticalGridLineStrokeDashArrayPropertyParserRuleCall_0_38 = (RuleCall)cAlternatives_0.eContents().get(38);
-		private final RuleCall cBorderColorPropertyParserRuleCall_0_39 = (RuleCall)cAlternatives_0.eContents().get(39);
+		private final RuleCall cTextOverrunPropertyParserRuleCall_0_32 = (RuleCall)cAlternatives_0.eContents().get(32);
+		private final RuleCall cInsetsPropertyParserRuleCall_0_33 = (RuleCall)cAlternatives_0.eContents().get(33);
+		private final RuleCall cHorizontalGridLineStrokeDashArrayPropertyParserRuleCall_0_34 = (RuleCall)cAlternatives_0.eContents().get(34);
+		private final RuleCall cVerticalGridLineStrokeDashArrayPropertyParserRuleCall_0_35 = (RuleCall)cAlternatives_0.eContents().get(35);
+		private final RuleCall cMultiPaintPropertiesParserRuleCall_0_36 = (RuleCall)cAlternatives_0.eContents().get(36);
+		private final RuleCall cColorPropertyParserRuleCall_0_37 = (RuleCall)cAlternatives_0.eContents().get(37);
+		private final RuleCall cStringPropertyParserRuleCall_0_38 = (RuleCall)cAlternatives_0.eContents().get(38);
 		private final Keyword cSemicolonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//FXProperty: // Font
@@ -398,9 +355,9 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//	UrlProperty | PaintProperties | MultiSizeProperties | HPositionProperty | VPositionProperty | SideProperty |
 		//	BarPolicyProperty | UrlProperties | RepeatProperties | MultiSizeProperty | SizeProperties | StrokeLineCapProperty |
 		//	StrokeLineJoinProperty | TextAlignmentProperty | TextOriginProperty | BackgroundImagePositionProperty |
-		//	BackgroundImageSizeProperty | BorderStyleProperty | BorderImageSliceProperty | ShapeProperty | TextProperty |
-		//	TextOverrunProperty | EchoCharProperty | InsetsProperty | HorizontalGridLineStrokeDashArrayProperty |
-		//	VerticalGridLineStrokeDashArrayProperty | BorderColorProperty) ";";
+		//	BackgroundImageSizeProperty | BorderStyleProperty | BorderImageSliceProperty | TextOverrunProperty | InsetsProperty |
+		//	HorizontalGridLineStrokeDashArrayProperty | VerticalGridLineStrokeDashArrayProperty | MultiPaintProperties |
+		//	ColorProperty | StringProperty) ";";
 		public ParserRule getRule() { return rule; }
 
 		//// Font
@@ -409,9 +366,9 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//UrlProperty | PaintProperties | MultiSizeProperties | HPositionProperty | VPositionProperty | SideProperty |
 		//BarPolicyProperty | UrlProperties | RepeatProperties | MultiSizeProperty | SizeProperties | StrokeLineCapProperty |
 		//StrokeLineJoinProperty | TextAlignmentProperty | TextOriginProperty | BackgroundImagePositionProperty |
-		//BackgroundImageSizeProperty | BorderStyleProperty | BorderImageSliceProperty | ShapeProperty | TextProperty |
-		//TextOverrunProperty | EchoCharProperty | InsetsProperty | HorizontalGridLineStrokeDashArrayProperty |
-		//VerticalGridLineStrokeDashArrayProperty | BorderColorProperty) ";"
+		//BackgroundImageSizeProperty | BorderStyleProperty | BorderImageSliceProperty | TextOverrunProperty | InsetsProperty |
+		//HorizontalGridLineStrokeDashArrayProperty | VerticalGridLineStrokeDashArrayProperty | MultiPaintProperties |
+		//ColorProperty | StringProperty) ";"
 		public Group getGroup() { return cGroup; }
 
 		//// Font
@@ -420,9 +377,9 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//UrlProperty | PaintProperties | MultiSizeProperties | HPositionProperty | VPositionProperty | SideProperty |
 		//BarPolicyProperty | UrlProperties | RepeatProperties | MultiSizeProperty | SizeProperties | StrokeLineCapProperty |
 		//StrokeLineJoinProperty | TextAlignmentProperty | TextOriginProperty | BackgroundImagePositionProperty |
-		//BackgroundImageSizeProperty | BorderStyleProperty | BorderImageSliceProperty | ShapeProperty | TextProperty |
-		//TextOverrunProperty | EchoCharProperty | InsetsProperty | HorizontalGridLineStrokeDashArrayProperty |
-		//VerticalGridLineStrokeDashArrayProperty | BorderColorProperty
+		//BackgroundImageSizeProperty | BorderStyleProperty | BorderImageSliceProperty | TextOverrunProperty | InsetsProperty |
+		//HorizontalGridLineStrokeDashArrayProperty | VerticalGridLineStrokeDashArrayProperty | MultiPaintProperties |
+		//ColorProperty | StringProperty
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//// Font
@@ -522,29 +479,26 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//BorderImageSliceProperty
 		public RuleCall getBorderImageSlicePropertyParserRuleCall_0_31() { return cBorderImageSlicePropertyParserRuleCall_0_31; }
 
-		//ShapeProperty
-		public RuleCall getShapePropertyParserRuleCall_0_32() { return cShapePropertyParserRuleCall_0_32; }
-
-		//TextProperty
-		public RuleCall getTextPropertyParserRuleCall_0_33() { return cTextPropertyParserRuleCall_0_33; }
-
 		//TextOverrunProperty
-		public RuleCall getTextOverrunPropertyParserRuleCall_0_34() { return cTextOverrunPropertyParserRuleCall_0_34; }
-
-		//EchoCharProperty
-		public RuleCall getEchoCharPropertyParserRuleCall_0_35() { return cEchoCharPropertyParserRuleCall_0_35; }
+		public RuleCall getTextOverrunPropertyParserRuleCall_0_32() { return cTextOverrunPropertyParserRuleCall_0_32; }
 
 		//InsetsProperty
-		public RuleCall getInsetsPropertyParserRuleCall_0_36() { return cInsetsPropertyParserRuleCall_0_36; }
+		public RuleCall getInsetsPropertyParserRuleCall_0_33() { return cInsetsPropertyParserRuleCall_0_33; }
 
 		//HorizontalGridLineStrokeDashArrayProperty
-		public RuleCall getHorizontalGridLineStrokeDashArrayPropertyParserRuleCall_0_37() { return cHorizontalGridLineStrokeDashArrayPropertyParserRuleCall_0_37; }
+		public RuleCall getHorizontalGridLineStrokeDashArrayPropertyParserRuleCall_0_34() { return cHorizontalGridLineStrokeDashArrayPropertyParserRuleCall_0_34; }
 
 		//VerticalGridLineStrokeDashArrayProperty
-		public RuleCall getVerticalGridLineStrokeDashArrayPropertyParserRuleCall_0_38() { return cVerticalGridLineStrokeDashArrayPropertyParserRuleCall_0_38; }
+		public RuleCall getVerticalGridLineStrokeDashArrayPropertyParserRuleCall_0_35() { return cVerticalGridLineStrokeDashArrayPropertyParserRuleCall_0_35; }
 
-		//BorderColorProperty
-		public RuleCall getBorderColorPropertyParserRuleCall_0_39() { return cBorderColorPropertyParserRuleCall_0_39; }
+		//MultiPaintProperties
+		public RuleCall getMultiPaintPropertiesParserRuleCall_0_36() { return cMultiPaintPropertiesParserRuleCall_0_36; }
+
+		//ColorProperty
+		public RuleCall getColorPropertyParserRuleCall_0_37() { return cColorPropertyParserRuleCall_0_37; }
+
+		//StringProperty
+		public RuleCall getStringPropertyParserRuleCall_0_38() { return cStringPropertyParserRuleCall_0_38; }
 
 		//";"
 		public Keyword getSemicolonKeyword_1() { return cSemicolonKeyword_1; }
@@ -1569,6 +1523,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPropertyFxPieToLabelLineTwoLengthKeyword_0_0_19 = (Keyword)cPropertyAlternatives_0_0.eContents().get(19);
 		private final Keyword cPropertyFxStartAngleKeyword_0_0_20 = (Keyword)cPropertyAlternatives_0_0.eContents().get(20);
 		private final Keyword cPropertyFxTickUnitKeyword_0_0_21 = (Keyword)cPropertyAlternatives_0_0.eContents().get(21);
+		private final Keyword cPropertyFxIndentKeyword_0_0_22 = (Keyword)cPropertyAlternatives_0_0.eContents().get(22);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValueNumberValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
@@ -1578,28 +1533,28 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//	"-fx-translate-z" | "-fx-vgap" | "-fx-tile-height" | "-fx-tile-width" | "-fx-stroke-dash-offset" |
 		//	"-fx-stroke-miter-limit" | "-fx-block-increment" | "-fx-unit-increment" | "-fx-major-tick-unit" | "-fx-data-opacity" |
 		//	"-fx-radius-scale" | "-fx-pie-to-label-line-one-length" | "-fx-pie-to-label-line-stroke-width" |
-		//	"-fx-pie-to-label-line-two-length" | "-fx-start-angle" | "-fx-tick-unit") ":" value=NumberValue;
+		//	"-fx-pie-to-label-line-two-length" | "-fx-start-angle" | "-fx-tick-unit" | "-fx-indent") ":" value=NumberValue;
 		public ParserRule getRule() { return rule; }
 
 		//property=("-fx-rotate" | "-fx-scale-x" | "-fx-scale-y" | "-fx-scale-z" | "-fx-translate-x" | "-fx-translate-y" |
 		//"-fx-translate-z" | "-fx-vgap" | "-fx-tile-height" | "-fx-tile-width" | "-fx-stroke-dash-offset" |
 		//"-fx-stroke-miter-limit" | "-fx-block-increment" | "-fx-unit-increment" | "-fx-major-tick-unit" | "-fx-data-opacity" |
 		//"-fx-radius-scale" | "-fx-pie-to-label-line-one-length" | "-fx-pie-to-label-line-stroke-width" |
-		//"-fx-pie-to-label-line-two-length" | "-fx-start-angle" | "-fx-tick-unit") ":" value=NumberValue
+		//"-fx-pie-to-label-line-two-length" | "-fx-start-angle" | "-fx-tick-unit" | "-fx-indent") ":" value=NumberValue
 		public Group getGroup() { return cGroup; }
 
 		//property=("-fx-rotate" | "-fx-scale-x" | "-fx-scale-y" | "-fx-scale-z" | "-fx-translate-x" | "-fx-translate-y" |
 		//"-fx-translate-z" | "-fx-vgap" | "-fx-tile-height" | "-fx-tile-width" | "-fx-stroke-dash-offset" |
 		//"-fx-stroke-miter-limit" | "-fx-block-increment" | "-fx-unit-increment" | "-fx-major-tick-unit" | "-fx-data-opacity" |
 		//"-fx-radius-scale" | "-fx-pie-to-label-line-one-length" | "-fx-pie-to-label-line-stroke-width" |
-		//"-fx-pie-to-label-line-two-length" | "-fx-start-angle" | "-fx-tick-unit")
+		//"-fx-pie-to-label-line-two-length" | "-fx-start-angle" | "-fx-tick-unit" | "-fx-indent")
 		public Assignment getPropertyAssignment_0() { return cPropertyAssignment_0; }
 
 		//"-fx-rotate" | "-fx-scale-x" | "-fx-scale-y" | "-fx-scale-z" | "-fx-translate-x" | "-fx-translate-y" | "-fx-translate-z"
 		//| "-fx-vgap" | "-fx-tile-height" | "-fx-tile-width" | "-fx-stroke-dash-offset" | "-fx-stroke-miter-limit" |
 		//"-fx-block-increment" | "-fx-unit-increment" | "-fx-major-tick-unit" | "-fx-data-opacity" | "-fx-radius-scale" |
 		//"-fx-pie-to-label-line-one-length" | "-fx-pie-to-label-line-stroke-width" | "-fx-pie-to-label-line-two-length" |
-		//"-fx-start-angle" | "-fx-tick-unit"
+		//"-fx-start-angle" | "-fx-tick-unit" | "-fx-indent"
 		public Alternatives getPropertyAlternatives_0_0() { return cPropertyAlternatives_0_0; }
 
 		//"-fx-rotate"
@@ -1667,6 +1622,9 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"-fx-tick-unit"
 		public Keyword getPropertyFxTickUnitKeyword_0_0_21() { return cPropertyFxTickUnitKeyword_0_0_21; }
+
+		//"-fx-indent"
+		public Keyword getPropertyFxIndentKeyword_0_0_22() { return cPropertyFxIndentKeyword_0_0_22; }
 
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
@@ -2083,21 +2041,22 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cPropertyAlternatives_0_0 = (Alternatives)cPropertyAssignment_0.eContents().get(0);
 		private final Keyword cPropertyFxImageKeyword_0_0_0 = (Keyword)cPropertyAlternatives_0_0.eContents().get(0);
 		private final Keyword cPropertyFxGraphicKeyword_0_0_1 = (Keyword)cPropertyAlternatives_0_0.eContents().get(1);
+		private final Keyword cPropertyFxBorderImageSourceKeyword_0_0_2 = (Keyword)cPropertyAlternatives_0_0.eContents().get(2);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValueUrlValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//UrlProperty:
-		//	property=("-fx-image" | "-fx-graphic") ":" value=UrlValue;
+		//	property=("-fx-image" | "-fx-graphic" | "-fx-border-image-source") ":" value=UrlValue;
 		public ParserRule getRule() { return rule; }
 
-		//property=("-fx-image" | "-fx-graphic") ":" value=UrlValue
+		//property=("-fx-image" | "-fx-graphic" | "-fx-border-image-source") ":" value=UrlValue
 		public Group getGroup() { return cGroup; }
 
-		//property=("-fx-image" | "-fx-graphic")
+		//property=("-fx-image" | "-fx-graphic" | "-fx-border-image-source")
 		public Assignment getPropertyAssignment_0() { return cPropertyAssignment_0; }
 
-		//"-fx-image" | "-fx-graphic"
+		//"-fx-image" | "-fx-graphic" | "-fx-border-image-source"
 		public Alternatives getPropertyAlternatives_0_0() { return cPropertyAlternatives_0_0; }
 
 		//"-fx-image"
@@ -2105,6 +2064,9 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"-fx-graphic"
 		public Keyword getPropertyFxGraphicKeyword_0_0_1() { return cPropertyFxGraphicKeyword_0_0_1; }
+
+		//"-fx-border-image-source"
+		public Keyword getPropertyFxBorderImageSourceKeyword_0_0_2() { return cPropertyFxBorderImageSourceKeyword_0_0_2; }
 
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
@@ -2576,6 +2538,183 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getValuesSizeValueParserRuleCall_2_0() { return cValuesSizeValueParserRuleCall_2_0; }
 	}
 
+	public class MultiPaintPropertiesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MultiPaintProperties");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cPropertyAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cPropertyFxBorderColorKeyword_0_0 = (Keyword)cPropertyAssignment_0.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
+		private final Assignment cValuesAssignment_2_0_0 = (Assignment)cGroup_2_0.eContents().get(0);
+		private final RuleCall cValuesMultiPaintValueParserRuleCall_2_0_0_0 = (RuleCall)cValuesAssignment_2_0_0.eContents().get(0);
+		private final Group cGroup_2_0_1 = (Group)cGroup_2_0.eContents().get(1);
+		private final Keyword cCommaKeyword_2_0_1_0 = (Keyword)cGroup_2_0_1.eContents().get(0);
+		private final Assignment cValuesAssignment_2_0_1_1 = (Assignment)cGroup_2_0_1.eContents().get(1);
+		private final RuleCall cValuesMultiPaintValueParserRuleCall_2_0_1_1_0 = (RuleCall)cValuesAssignment_2_0_1_1.eContents().get(0);
+		private final Keyword cNullKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
+		
+		//MultiPaintProperties:
+		//	property="-fx-border-color" ":" (values+=MultiPaintValue ("," values+=MultiPaintValue)* | "null");
+		public ParserRule getRule() { return rule; }
+
+		//property="-fx-border-color" ":" (values+=MultiPaintValue ("," values+=MultiPaintValue)* | "null")
+		public Group getGroup() { return cGroup; }
+
+		//property="-fx-border-color"
+		public Assignment getPropertyAssignment_0() { return cPropertyAssignment_0; }
+
+		//"-fx-border-color"
+		public Keyword getPropertyFxBorderColorKeyword_0_0() { return cPropertyFxBorderColorKeyword_0_0; }
+
+		//":"
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+
+		//values+=MultiPaintValue ("," values+=MultiPaintValue)* | "null"
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+
+		//values+=MultiPaintValue ("," values+=MultiPaintValue)*
+		public Group getGroup_2_0() { return cGroup_2_0; }
+
+		//values+=MultiPaintValue
+		public Assignment getValuesAssignment_2_0_0() { return cValuesAssignment_2_0_0; }
+
+		//MultiPaintValue
+		public RuleCall getValuesMultiPaintValueParserRuleCall_2_0_0_0() { return cValuesMultiPaintValueParserRuleCall_2_0_0_0; }
+
+		//("," values+=MultiPaintValue)*
+		public Group getGroup_2_0_1() { return cGroup_2_0_1; }
+
+		//","
+		public Keyword getCommaKeyword_2_0_1_0() { return cCommaKeyword_2_0_1_0; }
+
+		//values+=MultiPaintValue
+		public Assignment getValuesAssignment_2_0_1_1() { return cValuesAssignment_2_0_1_1; }
+
+		//MultiPaintValue
+		public RuleCall getValuesMultiPaintValueParserRuleCall_2_0_1_1_0() { return cValuesMultiPaintValueParserRuleCall_2_0_1_1_0; }
+
+		//"null"
+		public Keyword getNullKeyword_2_1() { return cNullKeyword_2_1; }
+	}
+
+	public class ColorPropertyKeysElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ColorPropertyKeys");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cFxColorKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cFxLightTextColorKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cFxAccentKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cFxSelectionBarKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Keyword cFxSelectionBarTextKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cFxBackgroundKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		
+		//ColorPropertyKeys:
+		//	"-fx-color" | "-fx-light-text-color" | "-fx-accent" | "-fx-selection-bar" | "-fx-selection-bar-text" |
+		//	"-fx-background";
+		public ParserRule getRule() { return rule; }
+
+		//"-fx-color" | "-fx-light-text-color" | "-fx-accent" | "-fx-selection-bar" | "-fx-selection-bar-text" | "-fx-background"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"-fx-color"
+		public Keyword getFxColorKeyword_0() { return cFxColorKeyword_0; }
+
+		//"-fx-light-text-color"
+		public Keyword getFxLightTextColorKeyword_1() { return cFxLightTextColorKeyword_1; }
+
+		//"-fx-accent"
+		public Keyword getFxAccentKeyword_2() { return cFxAccentKeyword_2; }
+
+		//"-fx-selection-bar"
+		public Keyword getFxSelectionBarKeyword_3() { return cFxSelectionBarKeyword_3; }
+
+		//"-fx-selection-bar-text"
+		public Keyword getFxSelectionBarTextKeyword_4() { return cFxSelectionBarTextKeyword_4; }
+
+		//"-fx-background"
+		public Keyword getFxBackgroundKeyword_5() { return cFxBackgroundKeyword_5; }
+	}
+
+	public class ColorPropertyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ColorProperty");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cPropertyAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cPropertyColorPropertyKeysParserRuleCall_0_0 = (RuleCall)cPropertyAssignment_0.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueColorValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		
+		//ColorProperty:
+		//	property=ColorPropertyKeys ":" value=ColorValue;
+		public ParserRule getRule() { return rule; }
+
+		//property=ColorPropertyKeys ":" value=ColorValue
+		public Group getGroup() { return cGroup; }
+
+		//property=ColorPropertyKeys
+		public Assignment getPropertyAssignment_0() { return cPropertyAssignment_0; }
+
+		//ColorPropertyKeys
+		public RuleCall getPropertyColorPropertyKeysParserRuleCall_0_0() { return cPropertyColorPropertyKeysParserRuleCall_0_0; }
+
+		//":"
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+
+		//value=ColorValue
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+
+		//ColorValue
+		public RuleCall getValueColorValueParserRuleCall_2_0() { return cValueColorValueParserRuleCall_2_0; }
+	}
+
+	public class StringPropertyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StringProperty");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cPropertyAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Alternatives cPropertyAlternatives_0_0 = (Alternatives)cPropertyAssignment_0.eContents().get(0);
+		private final Keyword cPropertyFxSkinKeyword_0_0_0 = (Keyword)cPropertyAlternatives_0_0.eContents().get(0);
+		private final Keyword cPropertyFxShapeKeyword_0_0_1 = (Keyword)cPropertyAlternatives_0_0.eContents().get(1);
+		private final Keyword cPropertyFxTextKeyword_0_0_2 = (Keyword)cPropertyAlternatives_0_0.eContents().get(2);
+		private final Keyword cPropertyFxEchoCharKeyword_0_0_3 = (Keyword)cPropertyAlternatives_0_0.eContents().get(3);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		
+		//StringProperty:
+		//	property=("-fx-skin" | "-fx-shape" | "-fx-text" | "-fx-echo-char") ":" value=STRING;
+		public ParserRule getRule() { return rule; }
+
+		//property=("-fx-skin" | "-fx-shape" | "-fx-text" | "-fx-echo-char") ":" value=STRING
+		public Group getGroup() { return cGroup; }
+
+		//property=("-fx-skin" | "-fx-shape" | "-fx-text" | "-fx-echo-char")
+		public Assignment getPropertyAssignment_0() { return cPropertyAssignment_0; }
+
+		//"-fx-skin" | "-fx-shape" | "-fx-text" | "-fx-echo-char"
+		public Alternatives getPropertyAlternatives_0_0() { return cPropertyAlternatives_0_0; }
+
+		//"-fx-skin"
+		public Keyword getPropertyFxSkinKeyword_0_0_0() { return cPropertyFxSkinKeyword_0_0_0; }
+
+		//"-fx-shape"
+		public Keyword getPropertyFxShapeKeyword_0_0_1() { return cPropertyFxShapeKeyword_0_0_1; }
+
+		//"-fx-text"
+		public Keyword getPropertyFxTextKeyword_0_0_2() { return cPropertyFxTextKeyword_0_0_2; }
+
+		//"-fx-echo-char"
+		public Keyword getPropertyFxEchoCharKeyword_0_0_3() { return cPropertyFxEchoCharKeyword_0_0_3; }
+
+		//":"
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+
+		//value=STRING
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_2_0() { return cValueSTRINGTerminalRuleCall_2_0; }
+	}
+
 	public class StrokeLineCapPropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StrokeLineCapProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2828,50 +2967,6 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getValuesBgSizeValueParserRuleCall_3_1_0() { return cValuesBgSizeValueParserRuleCall_3_1_0; }
 	}
 
-	public class BorderColorPropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BorderColorProperty");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFxBorderColorKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValuesAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValuesMultiPaintValueParserRuleCall_2_0 = (RuleCall)cValuesAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cValuesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cValuesMultiPaintValueParserRuleCall_3_1_0 = (RuleCall)cValuesAssignment_3_1.eContents().get(0);
-		
-		//BorderColorProperty:
-		//	"-fx-border-color" ":" values+=MultiPaintValue ("," values+=MultiPaintValue)*;
-		public ParserRule getRule() { return rule; }
-
-		//"-fx-border-color" ":" values+=MultiPaintValue ("," values+=MultiPaintValue)*
-		public Group getGroup() { return cGroup; }
-
-		//"-fx-border-color"
-		public Keyword getFxBorderColorKeyword_0() { return cFxBorderColorKeyword_0; }
-
-		//":"
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
-
-		//values+=MultiPaintValue
-		public Assignment getValuesAssignment_2() { return cValuesAssignment_2; }
-
-		//MultiPaintValue
-		public RuleCall getValuesMultiPaintValueParserRuleCall_2_0() { return cValuesMultiPaintValueParserRuleCall_2_0; }
-
-		//("," values+=MultiPaintValue)*
-		public Group getGroup_3() { return cGroup_3; }
-
-		//","
-		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
-
-		//values+=MultiPaintValue
-		public Assignment getValuesAssignment_3_1() { return cValuesAssignment_3_1; }
-
-		//MultiPaintValue
-		public RuleCall getValuesMultiPaintValueParserRuleCall_3_1_0() { return cValuesMultiPaintValueParserRuleCall_3_1_0; }
-	}
-
 	public class BorderStylePropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BorderStyleProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -2960,62 +3055,6 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getValuesSizeFillParserRuleCall_3_1_0() { return cValuesSizeFillParserRuleCall_3_1_0; }
 	}
 
-	public class ShapePropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ShapeProperty");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFxShapeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
-		
-		//ShapeProperty:
-		//	"-fx-shape" ":" value=STRING;
-		public ParserRule getRule() { return rule; }
-
-		//"-fx-shape" ":" value=STRING
-		public Group getGroup() { return cGroup; }
-
-		//"-fx-shape"
-		public Keyword getFxShapeKeyword_0() { return cFxShapeKeyword_0; }
-
-		//":"
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
-
-		//value=STRING
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
-
-		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_2_0() { return cValueSTRINGTerminalRuleCall_2_0; }
-	}
-
-	public class TextPropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TextProperty");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFxTextKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
-		
-		//TextProperty:
-		//	"-fx-text" ":" value=STRING;
-		public ParserRule getRule() { return rule; }
-
-		//"-fx-text" ":" value=STRING
-		public Group getGroup() { return cGroup; }
-
-		//"-fx-text"
-		public Keyword getFxTextKeyword_0() { return cFxTextKeyword_0; }
-
-		//":"
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
-
-		//value=STRING
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
-
-		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_2_0() { return cValueSTRINGTerminalRuleCall_2_0; }
-	}
-
 	public class TextOverrunPropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TextOverrunProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -3074,34 +3113,6 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"word-ellipses"
 		public Keyword getValueWordEllipsesKeyword_2_0_6() { return cValueWordEllipsesKeyword_2_0_6; }
-	}
-
-	public class EchoCharPropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EchoCharProperty");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFxEchoCharKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueIDTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
-		
-		//EchoCharProperty:
-		//	"-fx-echo-char" ":" value=ID;
-		public ParserRule getRule() { return rule; }
-
-		//"-fx-echo-char" ":" value=ID
-		public Group getGroup() { return cGroup; }
-
-		//"-fx-echo-char"
-		public Keyword getFxEchoCharKeyword_0() { return cFxEchoCharKeyword_0; }
-
-		//":"
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
-
-		//value=ID
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
-
-		//ID
-		public RuleCall getValueIDTerminalRuleCall_2_0() { return cValueIDTerminalRuleCall_2_0; }
 	}
 
 	public class InsetsPropertyElements extends AbstractParserRuleElementFinder {
@@ -3622,20 +3633,22 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cVSpaceKeyword_1_0_0_1 = (Keyword)cVAlternatives_1_0_0.eContents().get(1);
 		private final Keyword cVRoundKeyword_1_0_0_2 = (Keyword)cVAlternatives_1_0_0.eContents().get(2);
 		private final Keyword cVNoRepeatKeyword_1_0_0_3 = (Keyword)cVAlternatives_1_0_0.eContents().get(3);
+		private final Keyword cVStretchKeyword_1_0_0_4 = (Keyword)cVAlternatives_1_0_0.eContents().get(4);
 		private final Assignment cV2Assignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final Alternatives cV2Alternatives_1_1_0 = (Alternatives)cV2Assignment_1_1.eContents().get(0);
 		private final Keyword cV2RepeatKeyword_1_1_0_0 = (Keyword)cV2Alternatives_1_1_0.eContents().get(0);
 		private final Keyword cV2SpaceKeyword_1_1_0_1 = (Keyword)cV2Alternatives_1_1_0.eContents().get(1);
 		private final Keyword cV2RoundKeyword_1_1_0_2 = (Keyword)cV2Alternatives_1_1_0.eContents().get(2);
 		private final Keyword cV2NoRepeatKeyword_1_1_0_3 = (Keyword)cV2Alternatives_1_1_0.eContents().get(3);
+		private final Keyword cV2StretchKeyword_1_1_0_4 = (Keyword)cV2Alternatives_1_1_0.eContents().get(4);
 		
 		//RepeatStyleValue:
-		//	v=("repeat-x" | "repeat-y") | v=("repeat" | "space" | "round" | "no-repeat") v2=("repeat" | "space" | "round" |
-		//	"no-repeat")?;
+		//	v=("repeat-x" | "repeat-y") | v=("repeat" | "space" | "round" | "no-repeat" | "stretch") v2=("repeat" | "space" |
+		//	"round" | "no-repeat" | "stretch")?;
 		public ParserRule getRule() { return rule; }
 
-		//v=("repeat-x" | "repeat-y") | v=("repeat" | "space" | "round" | "no-repeat") v2=("repeat" | "space" | "round" |
-		//"no-repeat")?
+		//v=("repeat-x" | "repeat-y") | v=("repeat" | "space" | "round" | "no-repeat" | "stretch") v2=("repeat" | "space" |
+		//"round" | "no-repeat" | "stretch")?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//v=("repeat-x" | "repeat-y")
@@ -3650,13 +3663,13 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//"repeat-y"
 		public Keyword getVRepeatYKeyword_0_0_1() { return cVRepeatYKeyword_0_0_1; }
 
-		//v=("repeat" | "space" | "round" | "no-repeat") v2=("repeat" | "space" | "round" | "no-repeat")?
+		//v=("repeat" | "space" | "round" | "no-repeat" | "stretch") v2=("repeat" | "space" | "round" | "no-repeat" | "stretch")?
 		public Group getGroup_1() { return cGroup_1; }
 
-		//v=("repeat" | "space" | "round" | "no-repeat")
+		//v=("repeat" | "space" | "round" | "no-repeat" | "stretch")
 		public Assignment getVAssignment_1_0() { return cVAssignment_1_0; }
 
-		//"repeat" | "space" | "round" | "no-repeat"
+		//"repeat" | "space" | "round" | "no-repeat" | "stretch"
 		public Alternatives getVAlternatives_1_0_0() { return cVAlternatives_1_0_0; }
 
 		//"repeat"
@@ -3671,10 +3684,13 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//"no-repeat"
 		public Keyword getVNoRepeatKeyword_1_0_0_3() { return cVNoRepeatKeyword_1_0_0_3; }
 
-		//v2=("repeat" | "space" | "round" | "no-repeat")?
+		//"stretch"
+		public Keyword getVStretchKeyword_1_0_0_4() { return cVStretchKeyword_1_0_0_4; }
+
+		//v2=("repeat" | "space" | "round" | "no-repeat" | "stretch")?
 		public Assignment getV2Assignment_1_1() { return cV2Assignment_1_1; }
 
-		//"repeat" | "space" | "round" | "no-repeat"
+		//"repeat" | "space" | "round" | "no-repeat" | "stretch"
 		public Alternatives getV2Alternatives_1_1_0() { return cV2Alternatives_1_1_0; }
 
 		//"repeat"
@@ -3688,6 +3704,9 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"no-repeat"
 		public Keyword getV2NoRepeatKeyword_1_1_0_3() { return cV2NoRepeatKeyword_1_1_0_3; }
+
+		//"stretch"
+		public Keyword getV2StretchKeyword_1_1_0_4() { return cV2StretchKeyword_1_1_0_4; }
 	}
 
 	public class BgSizeValueElements extends AbstractParserRuleElementFinder {
@@ -4425,28 +4444,56 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ColorValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cNamedColorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cRGBColorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cHSBColorParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cColorFunctionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cLookedUpColorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cRGBColorParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cHSBColorParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cColorFunctionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//ColorValue:
-		//	NamedColor | RGBColor | HSBColor | ColorFunction;
+		//	NamedColor | LookedUpColor | RGBColor | HSBColor | ColorFunction;
 		public ParserRule getRule() { return rule; }
 
-		//NamedColor | RGBColor | HSBColor | ColorFunction
+		//NamedColor | LookedUpColor | RGBColor | HSBColor | ColorFunction
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//NamedColor
 		public RuleCall getNamedColorParserRuleCall_0() { return cNamedColorParserRuleCall_0; }
 
+		//LookedUpColor
+		public RuleCall getLookedUpColorParserRuleCall_1() { return cLookedUpColorParserRuleCall_1; }
+
 		//RGBColor
-		public RuleCall getRGBColorParserRuleCall_1() { return cRGBColorParserRuleCall_1; }
+		public RuleCall getRGBColorParserRuleCall_2() { return cRGBColorParserRuleCall_2; }
 
 		//HSBColor
-		public RuleCall getHSBColorParserRuleCall_2() { return cHSBColorParserRuleCall_2; }
+		public RuleCall getHSBColorParserRuleCall_3() { return cHSBColorParserRuleCall_3; }
 
 		//ColorFunction
-		public RuleCall getColorFunctionParserRuleCall_3() { return cColorFunctionParserRuleCall_3; }
+		public RuleCall getColorFunctionParserRuleCall_4() { return cColorFunctionParserRuleCall_4; }
+	}
+
+	public class LookedUpColorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LookedUpColor");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cValueAlternatives_0 = (Alternatives)cValueAssignment.eContents().get(0);
+		private final RuleCall cValueColorPropertyKeysParserRuleCall_0_0 = (RuleCall)cValueAlternatives_0.eContents().get(0);
+		private final RuleCall cValueIDTerminalRuleCall_0_1 = (RuleCall)cValueAlternatives_0.eContents().get(1);
+		
+		//LookedUpColor:
+		//	value=(ColorPropertyKeys | ID);
+		public ParserRule getRule() { return rule; }
+
+		//value=(ColorPropertyKeys | ID)
+		public Assignment getValueAssignment() { return cValueAssignment; }
+
+		//ColorPropertyKeys | ID
+		public Alternatives getValueAlternatives_0() { return cValueAlternatives_0; }
+
+		//ColorPropertyKeys
+		public RuleCall getValueColorPropertyKeysParserRuleCall_0_0() { return cValueColorPropertyKeysParserRuleCall_0_0; }
+
+		//ID
+		public RuleCall getValueIDTerminalRuleCall_0_1() { return cValueIDTerminalRuleCall_0_1; }
 	}
 
 	public class NamedColorElements extends AbstractParserRuleElementFinder {
@@ -5716,9 +5763,6 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	private DefinitionElements pDefinition;
 	private SelectorElements pSelector;
 	private SimpleSelectorElements pSimpleSelector;
-	private ElementNameElements pElementName;
-	private ElementIdElements pElementId;
-	private ElementClassElements pElementClass;
 	private ElementPseudoClassElements pElementPseudoClass;
 	private FXPropertyElements pFXProperty;
 	private FontPropertyElements pFontProperty;
@@ -5748,19 +5792,19 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	private RepeatPropertiesElements pRepeatProperties;
 	private MultiSizePropertyElements pMultiSizeProperty;
 	private SizePropertiesElements pSizeProperties;
+	private MultiPaintPropertiesElements pMultiPaintProperties;
+	private ColorPropertyKeysElements pColorPropertyKeys;
+	private ColorPropertyElements pColorProperty;
+	private StringPropertyElements pStringProperty;
 	private StrokeLineCapPropertyElements pStrokeLineCapProperty;
 	private StrokeLineJoinPropertyElements pStrokeLineJoinProperty;
 	private TextAlignmentPropertyElements pTextAlignmentProperty;
 	private TextOriginPropertyElements pTextOriginProperty;
 	private BackgroundImagePositionPropertyElements pBackgroundImagePositionProperty;
 	private BackgroundImageSizePropertyElements pBackgroundImageSizeProperty;
-	private BorderColorPropertyElements pBorderColorProperty;
 	private BorderStylePropertyElements pBorderStyleProperty;
 	private BorderImageSlicePropertyElements pBorderImageSliceProperty;
-	private ShapePropertyElements pShapeProperty;
-	private TextPropertyElements pTextProperty;
 	private TextOverrunPropertyElements pTextOverrunProperty;
-	private EchoCharPropertyElements pEchoCharProperty;
 	private InsetsPropertyElements pInsetsProperty;
 	private HorizontalGridLineStrokeDashArrayPropertyElements pHorizontalGridLineStrokeDashArrayProperty;
 	private VerticalGridLineStrokeDashArrayPropertyElements pVerticalGridLineStrokeDashArrayProperty;
@@ -5791,6 +5835,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	private RadialGradientElements pRadialGradient;
 	private StopValueElements pStopValue;
 	private ColorValueElements pColorValue;
+	private LookedUpColorElements pLookedUpColor;
 	private NamedColorElements pNamedColor;
 	private RGBColorElements pRGBColor;
 	private HSBColorElements pHSBColor;
@@ -5828,7 +5873,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Definition:
-	//	selector+=Selector "{" properties+=FXProperty+ "}";
+	//	selector+=Selector ("," selector+=Selector)* "{" properties+=FXProperty+ "}";
 	public DefinitionElements getDefinitionAccess() {
 		return (pDefinition != null) ? pDefinition : (pDefinition = new DefinitionElements());
 	}
@@ -5854,44 +5899,13 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	//	(class=ElementClass pseudoClass=ElementPseudoClass?)
 	//	|
 	//	pseudoClass=ElementPseudoClass* / SimpleSelector:
-	//	element=ElementName | id=ElementId (":" pseudoClass=ElementPseudoClass)? | class=ElementClass (":"
-	//	pseudoClass=ElementPseudoClass)?;
+	//	element=ID | "#" id=ID (":" pseudoClass+=ElementPseudoClass)* | "." class=ID (":" pseudoClass+=ElementPseudoClass)*;
 	public SimpleSelectorElements getSimpleSelectorAccess() {
 		return (pSimpleSelector != null) ? pSimpleSelector : (pSimpleSelector = new SimpleSelectorElements());
 	}
 	
 	public ParserRule getSimpleSelectorRule() {
 		return getSimpleSelectorAccess().getRule();
-	}
-
-	//ElementName:
-	//	value=ID;
-	public ElementNameElements getElementNameAccess() {
-		return (pElementName != null) ? pElementName : (pElementName = new ElementNameElements());
-	}
-	
-	public ParserRule getElementNameRule() {
-		return getElementNameAccess().getRule();
-	}
-
-	//ElementId:
-	//	"#" id=ID;
-	public ElementIdElements getElementIdAccess() {
-		return (pElementId != null) ? pElementId : (pElementId = new ElementIdElements());
-	}
-	
-	public ParserRule getElementIdRule() {
-		return getElementIdAccess().getRule();
-	}
-
-	//ElementClass:
-	//	"." id=ID;
-	public ElementClassElements getElementClassAccess() {
-		return (pElementClass != null) ? pElementClass : (pElementClass = new ElementClassElements());
-	}
-	
-	public ParserRule getElementClassRule() {
-		return getElementClassAccess().getRule();
 	}
 
 	//ElementPseudoClass:
@@ -5912,9 +5926,9 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	//	UrlProperty | PaintProperties | MultiSizeProperties | HPositionProperty | VPositionProperty | SideProperty |
 	//	BarPolicyProperty | UrlProperties | RepeatProperties | MultiSizeProperty | SizeProperties | StrokeLineCapProperty |
 	//	StrokeLineJoinProperty | TextAlignmentProperty | TextOriginProperty | BackgroundImagePositionProperty |
-	//	BackgroundImageSizeProperty | BorderStyleProperty | BorderImageSliceProperty | ShapeProperty | TextProperty |
-	//	TextOverrunProperty | EchoCharProperty | InsetsProperty | HorizontalGridLineStrokeDashArrayProperty |
-	//	VerticalGridLineStrokeDashArrayProperty | BorderColorProperty) ";";
+	//	BackgroundImageSizeProperty | BorderStyleProperty | BorderImageSliceProperty | TextOverrunProperty | InsetsProperty |
+	//	HorizontalGridLineStrokeDashArrayProperty | VerticalGridLineStrokeDashArrayProperty | MultiPaintProperties |
+	//	ColorProperty | StringProperty) ";";
 	public FXPropertyElements getFXPropertyAccess() {
 		return (pFXProperty != null) ? pFXProperty : (pFXProperty = new FXPropertyElements());
 	}
@@ -6069,7 +6083,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	//	"-fx-translate-z" | "-fx-vgap" | "-fx-tile-height" | "-fx-tile-width" | "-fx-stroke-dash-offset" |
 	//	"-fx-stroke-miter-limit" | "-fx-block-increment" | "-fx-unit-increment" | "-fx-major-tick-unit" | "-fx-data-opacity" |
 	//	"-fx-radius-scale" | "-fx-pie-to-label-line-one-length" | "-fx-pie-to-label-line-stroke-width" |
-	//	"-fx-pie-to-label-line-two-length" | "-fx-start-angle" | "-fx-tick-unit") ":" value=NumberValue;
+	//	"-fx-pie-to-label-line-two-length" | "-fx-start-angle" | "-fx-tick-unit" | "-fx-indent") ":" value=NumberValue;
 	public NumberPropertyElements getNumberPropertyAccess() {
 		return (pNumberProperty != null) ? pNumberProperty : (pNumberProperty = new NumberPropertyElements());
 	}
@@ -6128,7 +6142,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//UrlProperty:
-	//	property=("-fx-image" | "-fx-graphic") ":" value=UrlValue;
+	//	property=("-fx-image" | "-fx-graphic" | "-fx-border-image-source") ":" value=UrlValue;
 	public UrlPropertyElements getUrlPropertyAccess() {
 		return (pUrlProperty != null) ? pUrlProperty : (pUrlProperty = new UrlPropertyElements());
 	}
@@ -6230,6 +6244,47 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		return getSizePropertiesAccess().getRule();
 	}
 
+	//MultiPaintProperties:
+	//	property="-fx-border-color" ":" (values+=MultiPaintValue ("," values+=MultiPaintValue)* | "null");
+	public MultiPaintPropertiesElements getMultiPaintPropertiesAccess() {
+		return (pMultiPaintProperties != null) ? pMultiPaintProperties : (pMultiPaintProperties = new MultiPaintPropertiesElements());
+	}
+	
+	public ParserRule getMultiPaintPropertiesRule() {
+		return getMultiPaintPropertiesAccess().getRule();
+	}
+
+	//ColorPropertyKeys:
+	//	"-fx-color" | "-fx-light-text-color" | "-fx-accent" | "-fx-selection-bar" | "-fx-selection-bar-text" |
+	//	"-fx-background";
+	public ColorPropertyKeysElements getColorPropertyKeysAccess() {
+		return (pColorPropertyKeys != null) ? pColorPropertyKeys : (pColorPropertyKeys = new ColorPropertyKeysElements());
+	}
+	
+	public ParserRule getColorPropertyKeysRule() {
+		return getColorPropertyKeysAccess().getRule();
+	}
+
+	//ColorProperty:
+	//	property=ColorPropertyKeys ":" value=ColorValue;
+	public ColorPropertyElements getColorPropertyAccess() {
+		return (pColorProperty != null) ? pColorProperty : (pColorProperty = new ColorPropertyElements());
+	}
+	
+	public ParserRule getColorPropertyRule() {
+		return getColorPropertyAccess().getRule();
+	}
+
+	//StringProperty:
+	//	property=("-fx-skin" | "-fx-shape" | "-fx-text" | "-fx-echo-char") ":" value=STRING;
+	public StringPropertyElements getStringPropertyAccess() {
+		return (pStringProperty != null) ? pStringProperty : (pStringProperty = new StringPropertyElements());
+	}
+	
+	public ParserRule getStringPropertyRule() {
+		return getStringPropertyAccess().getRule();
+	}
+
 	//StrokeLineCapProperty:
 	//	"-fx-stroke-line-cap" ":" value=("square" | "butt" | "round");
 	public StrokeLineCapPropertyElements getStrokeLineCapPropertyAccess() {
@@ -6290,16 +6345,6 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		return getBackgroundImageSizePropertyAccess().getRule();
 	}
 
-	//BorderColorProperty:
-	//	"-fx-border-color" ":" values+=MultiPaintValue ("," values+=MultiPaintValue)*;
-	public BorderColorPropertyElements getBorderColorPropertyAccess() {
-		return (pBorderColorProperty != null) ? pBorderColorProperty : (pBorderColorProperty = new BorderColorPropertyElements());
-	}
-	
-	public ParserRule getBorderColorPropertyRule() {
-		return getBorderColorPropertyAccess().getRule();
-	}
-
 	//BorderStyleProperty:
 	//	"-fx-border-style" ":" values+=BorderStyleValue ("," values+=BorderStyleValue)*;
 	public BorderStylePropertyElements getBorderStylePropertyAccess() {
@@ -6320,26 +6365,6 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		return getBorderImageSlicePropertyAccess().getRule();
 	}
 
-	//ShapeProperty:
-	//	"-fx-shape" ":" value=STRING;
-	public ShapePropertyElements getShapePropertyAccess() {
-		return (pShapeProperty != null) ? pShapeProperty : (pShapeProperty = new ShapePropertyElements());
-	}
-	
-	public ParserRule getShapePropertyRule() {
-		return getShapePropertyAccess().getRule();
-	}
-
-	//TextProperty:
-	//	"-fx-text" ":" value=STRING;
-	public TextPropertyElements getTextPropertyAccess() {
-		return (pTextProperty != null) ? pTextProperty : (pTextProperty = new TextPropertyElements());
-	}
-	
-	public ParserRule getTextPropertyRule() {
-		return getTextPropertyAccess().getRule();
-	}
-
 	//TextOverrunProperty:
 	//	"-fx-text-overrun" ":" value=("center-ellipses" | "center-word-ellipses" | "clip" | "ellipses" | "leading-ellipses" |
 	//	"leading-word-ellipses" | "word-ellipses");
@@ -6349,16 +6374,6 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getTextOverrunPropertyRule() {
 		return getTextOverrunPropertyAccess().getRule();
-	}
-
-	//EchoCharProperty:
-	//	"-fx-echo-char" ":" value=ID;
-	public EchoCharPropertyElements getEchoCharPropertyAccess() {
-		return (pEchoCharProperty != null) ? pEchoCharProperty : (pEchoCharProperty = new EchoCharPropertyElements());
-	}
-	
-	public ParserRule getEchoCharPropertyRule() {
-		return getEchoCharPropertyAccess().getRule();
 	}
 
 	//InsetsProperty:
@@ -6520,8 +6535,8 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//RepeatStyleValue:
-	//	v=("repeat-x" | "repeat-y") | v=("repeat" | "space" | "round" | "no-repeat") v2=("repeat" | "space" | "round" |
-	//	"no-repeat")?;
+	//	v=("repeat-x" | "repeat-y") | v=("repeat" | "space" | "round" | "no-repeat" | "stretch") v2=("repeat" | "space" |
+	//	"round" | "no-repeat" | "stretch")?;
 	public RepeatStyleValueElements getRepeatStyleValueAccess() {
 		return (pRepeatStyleValue != null) ? pRepeatStyleValue : (pRepeatStyleValue = new RepeatStyleValueElements());
 	}
@@ -6668,13 +6683,23 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ColorValue:
-	//	NamedColor | RGBColor | HSBColor | ColorFunction;
+	//	NamedColor | LookedUpColor | RGBColor | HSBColor | ColorFunction;
 	public ColorValueElements getColorValueAccess() {
 		return (pColorValue != null) ? pColorValue : (pColorValue = new ColorValueElements());
 	}
 	
 	public ParserRule getColorValueRule() {
 		return getColorValueAccess().getRule();
+	}
+
+	//LookedUpColor:
+	//	value=(ColorPropertyKeys | ID);
+	public LookedUpColorElements getLookedUpColorAccess() {
+		return (pLookedUpColor != null) ? pLookedUpColor : (pLookedUpColor = new LookedUpColorElements());
+	}
+	
+	public ParserRule getLookedUpColorRule() {
+		return getLookedUpColorAccess().getRule();
 	}
 
 	//NamedColor:

@@ -9,21 +9,21 @@ package at.bestsolution.e4.jfx.xtext.jFXCss;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Echo Char Property</b></em>'.
+ * A representation of the model object '<em><b>Looked Up Color</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.EchoCharProperty#getValue <em>Value</em>}</li>
+ *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.LookedUpColor#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
- * @see at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage#getEchoCharProperty()
+ * @see at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage#getLookedUpColor()
  * @model
  * @generated
  */
-public interface EchoCharProperty extends FXProperty
+public interface LookedUpColor extends ColorValue
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.
@@ -35,14 +35,14 @@ public interface EchoCharProperty extends FXProperty
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
    * @see #setValue(String)
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage#getEchoCharProperty_Value()
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage#getLookedUpColor_Value()
    * @model
    * @generated
    */
   String getValue();
 
   /**
-   * Sets the value of the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.EchoCharProperty#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.LookedUpColor#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' attribute.
@@ -51,4 +51,4 @@ public interface EchoCharProperty extends FXProperty
    */
   void setValue(String value);
 
-} // EchoCharProperty
+} // LookedUpColor

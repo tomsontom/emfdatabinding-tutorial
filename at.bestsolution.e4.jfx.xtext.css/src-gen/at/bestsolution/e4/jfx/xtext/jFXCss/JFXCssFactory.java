@@ -63,33 +63,6 @@ public interface JFXCssFactory extends EFactory
   SimpleSelector createSimpleSelector();
 
   /**
-   * Returns a new object of class '<em>Element Name</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Element Name</em>'.
-   * @generated
-   */
-  ElementName createElementName();
-
-  /**
-   * Returns a new object of class '<em>Element Id</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Element Id</em>'.
-   * @generated
-   */
-  ElementId createElementId();
-
-  /**
-   * Returns a new object of class '<em>Element Class</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Element Class</em>'.
-   * @generated
-   */
-  ElementClass createElementClass();
-
-  /**
    * Returns a new object of class '<em>Element Pseudo Class</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -351,6 +324,33 @@ public interface JFXCssFactory extends EFactory
   SizeProperties createSizeProperties();
 
   /**
+   * Returns a new object of class '<em>Multi Paint Properties</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Multi Paint Properties</em>'.
+   * @generated
+   */
+  MultiPaintProperties createMultiPaintProperties();
+
+  /**
+   * Returns a new object of class '<em>Color Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Color Property</em>'.
+   * @generated
+   */
+  ColorProperty createColorProperty();
+
+  /**
+   * Returns a new object of class '<em>String Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Property</em>'.
+   * @generated
+   */
+  StringProperty createStringProperty();
+
+  /**
    * Returns a new object of class '<em>Stroke Line Cap Property</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -405,15 +405,6 @@ public interface JFXCssFactory extends EFactory
   BackgroundImageSizeProperty createBackgroundImageSizeProperty();
 
   /**
-   * Returns a new object of class '<em>Border Color Property</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Border Color Property</em>'.
-   * @generated
-   */
-  BorderColorProperty createBorderColorProperty();
-
-  /**
    * Returns a new object of class '<em>Border Style Property</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -432,24 +423,6 @@ public interface JFXCssFactory extends EFactory
   BorderImageSliceProperty createBorderImageSliceProperty();
 
   /**
-   * Returns a new object of class '<em>Shape Property</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Shape Property</em>'.
-   * @generated
-   */
-  ShapeProperty createShapeProperty();
-
-  /**
-   * Returns a new object of class '<em>Text Property</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Text Property</em>'.
-   * @generated
-   */
-  TextProperty createTextProperty();
-
-  /**
    * Returns a new object of class '<em>Text Overrun Property</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -457,15 +430,6 @@ public interface JFXCssFactory extends EFactory
    * @generated
    */
   TextOverrunProperty createTextOverrunProperty();
-
-  /**
-   * Returns a new object of class '<em>Echo Char Property</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Echo Char Property</em>'.
-   * @generated
-   */
-  EchoCharProperty createEchoCharProperty();
 
   /**
    * Returns a new object of class '<em>Insets Property</em>'.
@@ -718,6 +682,15 @@ public interface JFXCssFactory extends EFactory
    * @generated
    */
   ColorValue createColorValue();
+
+  /**
+   * Returns a new object of class '<em>Looked Up Color</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Looked Up Color</em>'.
+   * @generated
+   */
+  LookedUpColor createLookedUpColor();
 
   /**
    * Returns a new object of class '<em>Named Color</em>'.
