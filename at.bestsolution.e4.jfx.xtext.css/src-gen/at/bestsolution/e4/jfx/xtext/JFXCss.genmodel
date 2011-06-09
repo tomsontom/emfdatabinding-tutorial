@@ -33,8 +33,8 @@
     <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SimpleSelector">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SimpleSelector/element"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SimpleSelector/id"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SimpleSelector/class"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SimpleSelector/pseudoClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SimpleSelector/class"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//ElementName">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//ElementName/value"/>

@@ -26,9 +26,9 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="ecore:EClass platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//ElementId"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="class" eType="ecore:EClass platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//ElementClass"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pseudoClass" eType="ecore:EClass platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//ElementPseudoClass"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" eType="ecore:EClass platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//ElementClass"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ElementName">

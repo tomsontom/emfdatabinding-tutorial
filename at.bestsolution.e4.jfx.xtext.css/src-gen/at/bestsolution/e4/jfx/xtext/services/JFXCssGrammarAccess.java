@@ -43,12 +43,10 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Definition:
-		//	selector+=Selector // (':' ('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing') )? 
-		//	"{" properties+=FXProperty+ "}";
+		//	selector+=Selector "{" properties+=FXProperty+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//selector+=Selector // (':' ('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing') )? 
-		//"{" properties+=FXProperty+ "}"
+		//selector+=Selector "{" properties+=FXProperty+ "}"
 		public Group getGroup() { return cGroup; }
 
 		//selector+=Selector
@@ -57,7 +55,6 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//Selector
 		public RuleCall getSelectorSelectorParserRuleCall_0_0() { return cSelectorSelectorParserRuleCall_0_0; }
 
-		//// (':' ('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing') )? 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 
@@ -92,12 +89,20 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cElementAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
 		private final RuleCall cElementElementNameParserRuleCall_0_0 = (RuleCall)cElementAssignment_0.eContents().get(0);
-		private final Assignment cIdAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cIdElementIdParserRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
-		private final Assignment cClassAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cClassElementClassParserRuleCall_2_0 = (RuleCall)cClassAssignment_2.eContents().get(0);
-		private final Assignment cPseudoClassAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
-		private final RuleCall cPseudoClassElementPseudoClassParserRuleCall_3_0 = (RuleCall)cPseudoClassAssignment_3.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Assignment cIdAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cIdElementIdParserRuleCall_1_0_0 = (RuleCall)cIdAssignment_1_0.eContents().get(0);
+		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
+		private final Keyword cColonKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
+		private final Assignment cPseudoClassAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
+		private final RuleCall cPseudoClassElementPseudoClassParserRuleCall_1_1_1_0 = (RuleCall)cPseudoClassAssignment_1_1_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Assignment cClassAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cClassElementClassParserRuleCall_2_0_0 = (RuleCall)cClassAssignment_2_0.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final Keyword cColonKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Assignment cPseudoClassAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final RuleCall cPseudoClassElementPseudoClassParserRuleCall_2_1_1_0 = (RuleCall)cPseudoClassAssignment_2_1_1.eContents().get(0);
 		
 		/// * (element=ElementName id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
 		//	|
@@ -106,10 +111,12 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//	(class=ElementClass pseudoClass=ElementPseudoClass?)
 		//	|
 		//	pseudoClass=ElementPseudoClass* / SimpleSelector:
-		//	element=ElementName | id=ElementId | class=ElementClass | pseudoClass=ElementPseudoClass;
+		//	element=ElementName | id=ElementId (":" pseudoClass=ElementPseudoClass)? | class=ElementClass (":"
+		//	pseudoClass=ElementPseudoClass)?;
 		public ParserRule getRule() { return rule; }
 
-		//element=ElementName | id=ElementId | class=ElementClass | pseudoClass=ElementPseudoClass
+		//element=ElementName | id=ElementId (":" pseudoClass=ElementPseudoClass)? | class=ElementClass (":"
+		//pseudoClass=ElementPseudoClass)?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//element=ElementName
@@ -118,23 +125,47 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//ElementName
 		public RuleCall getElementElementNameParserRuleCall_0_0() { return cElementElementNameParserRuleCall_0_0; }
 
+		//id=ElementId (":" pseudoClass=ElementPseudoClass)?
+		public Group getGroup_1() { return cGroup_1; }
+
 		//id=ElementId
-		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
+		public Assignment getIdAssignment_1_0() { return cIdAssignment_1_0; }
 
 		//ElementId
-		public RuleCall getIdElementIdParserRuleCall_1_0() { return cIdElementIdParserRuleCall_1_0; }
+		public RuleCall getIdElementIdParserRuleCall_1_0_0() { return cIdElementIdParserRuleCall_1_0_0; }
 
-		//class=ElementClass
-		public Assignment getClassAssignment_2() { return cClassAssignment_2; }
+		//(":" pseudoClass=ElementPseudoClass)?
+		public Group getGroup_1_1() { return cGroup_1_1; }
 
-		//ElementClass
-		public RuleCall getClassElementClassParserRuleCall_2_0() { return cClassElementClassParserRuleCall_2_0; }
+		//":"
+		public Keyword getColonKeyword_1_1_0() { return cColonKeyword_1_1_0; }
 
 		//pseudoClass=ElementPseudoClass
-		public Assignment getPseudoClassAssignment_3() { return cPseudoClassAssignment_3; }
+		public Assignment getPseudoClassAssignment_1_1_1() { return cPseudoClassAssignment_1_1_1; }
 
 		//ElementPseudoClass
-		public RuleCall getPseudoClassElementPseudoClassParserRuleCall_3_0() { return cPseudoClassElementPseudoClassParserRuleCall_3_0; }
+		public RuleCall getPseudoClassElementPseudoClassParserRuleCall_1_1_1_0() { return cPseudoClassElementPseudoClassParserRuleCall_1_1_1_0; }
+
+		//class=ElementClass (":" pseudoClass=ElementPseudoClass)?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//class=ElementClass
+		public Assignment getClassAssignment_2_0() { return cClassAssignment_2_0; }
+
+		//ElementClass
+		public RuleCall getClassElementClassParserRuleCall_2_0_0() { return cClassElementClassParserRuleCall_2_0_0; }
+
+		//(":" pseudoClass=ElementPseudoClass)?
+		public Group getGroup_2_1() { return cGroup_2_1; }
+
+		//":"
+		public Keyword getColonKeyword_2_1_0() { return cColonKeyword_2_1_0; }
+
+		//pseudoClass=ElementPseudoClass
+		public Assignment getPseudoClassAssignment_2_1_1() { return cPseudoClassAssignment_2_1_1; }
+
+		//ElementPseudoClass
+		public RuleCall getPseudoClassElementPseudoClassParserRuleCall_2_1_1_0() { return cPseudoClassElementPseudoClassParserRuleCall_2_1_1_0; }
 	}
 
 	public class ElementNameElements extends AbstractParserRuleElementFinder {
@@ -203,29 +234,116 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class ElementPseudoClassElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ElementPseudoClass");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cColonKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cValueBlablaKeyword_1_0 = (Keyword)cValueAssignment_1.eContents().get(0);
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cValueAlternatives_0 = (Alternatives)cValueAssignment.eContents().get(0);
+		private final Keyword cValueDisabledKeyword_0_0 = (Keyword)cValueAlternatives_0.eContents().get(0);
+		private final Keyword cValueFocusedKeyword_0_1 = (Keyword)cValueAlternatives_0.eContents().get(1);
+		private final Keyword cValueHoverKeyword_0_2 = (Keyword)cValueAlternatives_0.eContents().get(2);
+		private final Keyword cValuePressedKeyword_0_3 = (Keyword)cValueAlternatives_0.eContents().get(3);
+		private final Keyword cValueStrongKeyword_0_4 = (Keyword)cValueAlternatives_0.eContents().get(4);
+		private final Keyword cValueArmedKeyword_0_5 = (Keyword)cValueAlternatives_0.eContents().get(5);
+		private final Keyword cValueEmptyKeyword_0_6 = (Keyword)cValueAlternatives_0.eContents().get(6);
+		private final Keyword cValueFilledKeyword_0_7 = (Keyword)cValueAlternatives_0.eContents().get(7);
+		private final Keyword cValueDefinedKeyword_0_8 = (Keyword)cValueAlternatives_0.eContents().get(8);
+		private final Keyword cValueUndefinedKeyword_0_9 = (Keyword)cValueAlternatives_0.eContents().get(9);
+		private final Keyword cValueShowingKeyword_0_10 = (Keyword)cValueAlternatives_0.eContents().get(10);
+		private final Keyword cValueVisitedKeyword_0_11 = (Keyword)cValueAlternatives_0.eContents().get(11);
+		private final Keyword cValueEvenKeyword_0_12 = (Keyword)cValueAlternatives_0.eContents().get(12);
+		private final Keyword cValueOddKeyword_0_13 = (Keyword)cValueAlternatives_0.eContents().get(13);
+		private final Keyword cValueSelectedKeyword_0_14 = (Keyword)cValueAlternatives_0.eContents().get(14);
+		private final Keyword cValueHorizontalKeyword_0_15 = (Keyword)cValueAlternatives_0.eContents().get(15);
+		private final Keyword cValueVerticalKeyword_0_16 = (Keyword)cValueAlternatives_0.eContents().get(16);
+		private final Keyword cValueDeterminateKeyword_0_17 = (Keyword)cValueAlternatives_0.eContents().get(17);
+		private final Keyword cValueIndetermindateKeyword_0_18 = (Keyword)cValueAlternatives_0.eContents().get(18);
+		private final Keyword cValuePannableKeyword_0_19 = (Keyword)cValueAlternatives_0.eContents().get(19);
+		private final Keyword cValueMultilineKeyword_0_20 = (Keyword)cValueAlternatives_0.eContents().get(20);
+		private final Keyword cValueEditableKeyword_0_21 = (Keyword)cValueAlternatives_0.eContents().get(21);
+		private final Keyword cValueReadonlyKeyword_0_22 = (Keyword)cValueAlternatives_0.eContents().get(22);
 		
 		//ElementPseudoClass:
-		//	":" //('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing')
-		//	value="blabla";
+		//	value=("disabled" | "focused" | "hover" | "pressed" | "strong" | "armed" | "empty" | "filled" | "defined" |
+		//	"undefined" | "showing" | "visited" | "even" | "odd" | "selected" | "horizontal" | "vertical" | "determinate" |
+		//	"indetermindate" | "pannable" | "multiline" | "editable" | "readonly");
 		public ParserRule getRule() { return rule; }
 
-		//":" //('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing')
-		//value="blabla"
-		public Group getGroup() { return cGroup; }
+		//value=("disabled" | "focused" | "hover" | "pressed" | "strong" | "armed" | "empty" | "filled" | "defined" | "undefined"
+		//| "showing" | "visited" | "even" | "odd" | "selected" | "horizontal" | "vertical" | "determinate" | "indetermindate" |
+		//"pannable" | "multiline" | "editable" | "readonly")
+		public Assignment getValueAssignment() { return cValueAssignment; }
 
-		//":"
-		public Keyword getColonKeyword_0() { return cColonKeyword_0; }
+		//"disabled" | "focused" | "hover" | "pressed" | "strong" | "armed" | "empty" | "filled" | "defined" | "undefined" |
+		//"showing" | "visited" | "even" | "odd" | "selected" | "horizontal" | "vertical" | "determinate" | "indetermindate" |
+		//"pannable" | "multiline" | "editable" | "readonly"
+		public Alternatives getValueAlternatives_0() { return cValueAlternatives_0; }
 
-		////('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing')
-		//value="blabla"
-		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+		//"disabled"
+		public Keyword getValueDisabledKeyword_0_0() { return cValueDisabledKeyword_0_0; }
 
-		//"blabla"
-		public Keyword getValueBlablaKeyword_1_0() { return cValueBlablaKeyword_1_0; }
+		//"focused"
+		public Keyword getValueFocusedKeyword_0_1() { return cValueFocusedKeyword_0_1; }
+
+		//"hover"
+		public Keyword getValueHoverKeyword_0_2() { return cValueHoverKeyword_0_2; }
+
+		//"pressed"
+		public Keyword getValuePressedKeyword_0_3() { return cValuePressedKeyword_0_3; }
+
+		//"strong"
+		public Keyword getValueStrongKeyword_0_4() { return cValueStrongKeyword_0_4; }
+
+		//"armed"
+		public Keyword getValueArmedKeyword_0_5() { return cValueArmedKeyword_0_5; }
+
+		//"empty"
+		public Keyword getValueEmptyKeyword_0_6() { return cValueEmptyKeyword_0_6; }
+
+		//"filled"
+		public Keyword getValueFilledKeyword_0_7() { return cValueFilledKeyword_0_7; }
+
+		//"defined"
+		public Keyword getValueDefinedKeyword_0_8() { return cValueDefinedKeyword_0_8; }
+
+		//"undefined"
+		public Keyword getValueUndefinedKeyword_0_9() { return cValueUndefinedKeyword_0_9; }
+
+		//"showing"
+		public Keyword getValueShowingKeyword_0_10() { return cValueShowingKeyword_0_10; }
+
+		//"visited"
+		public Keyword getValueVisitedKeyword_0_11() { return cValueVisitedKeyword_0_11; }
+
+		//"even"
+		public Keyword getValueEvenKeyword_0_12() { return cValueEvenKeyword_0_12; }
+
+		//"odd"
+		public Keyword getValueOddKeyword_0_13() { return cValueOddKeyword_0_13; }
+
+		//"selected"
+		public Keyword getValueSelectedKeyword_0_14() { return cValueSelectedKeyword_0_14; }
+
+		//"horizontal"
+		public Keyword getValueHorizontalKeyword_0_15() { return cValueHorizontalKeyword_0_15; }
+
+		//"vertical"
+		public Keyword getValueVerticalKeyword_0_16() { return cValueVerticalKeyword_0_16; }
+
+		//"determinate"
+		public Keyword getValueDeterminateKeyword_0_17() { return cValueDeterminateKeyword_0_17; }
+
+		//"indetermindate"
+		public Keyword getValueIndetermindateKeyword_0_18() { return cValueIndetermindateKeyword_0_18; }
+
+		//"pannable"
+		public Keyword getValuePannableKeyword_0_19() { return cValuePannableKeyword_0_19; }
+
+		//"multiline"
+		public Keyword getValueMultilineKeyword_0_20() { return cValueMultilineKeyword_0_20; }
+
+		//"editable"
+		public Keyword getValueEditableKeyword_0_21() { return cValueEditableKeyword_0_21; }
+
+		//"readonly"
+		public Keyword getValueReadonlyKeyword_0_22() { return cValueReadonlyKeyword_0_22; }
 	}
 
 	public class FXPropertyElements extends AbstractParserRuleElementFinder {
@@ -5710,8 +5828,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Definition:
-	//	selector+=Selector // (':' ('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing') )? 
-	//	"{" properties+=FXProperty+ "}";
+	//	selector+=Selector "{" properties+=FXProperty+ "}";
 	public DefinitionElements getDefinitionAccess() {
 		return (pDefinition != null) ? pDefinition : (pDefinition = new DefinitionElements());
 	}
@@ -5737,7 +5854,8 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	//	(class=ElementClass pseudoClass=ElementPseudoClass?)
 	//	|
 	//	pseudoClass=ElementPseudoClass* / SimpleSelector:
-	//	element=ElementName | id=ElementId | class=ElementClass | pseudoClass=ElementPseudoClass;
+	//	element=ElementName | id=ElementId (":" pseudoClass=ElementPseudoClass)? | class=ElementClass (":"
+	//	pseudoClass=ElementPseudoClass)?;
 	public SimpleSelectorElements getSimpleSelectorAccess() {
 		return (pSimpleSelector != null) ? pSimpleSelector : (pSimpleSelector = new SimpleSelectorElements());
 	}
@@ -5777,8 +5895,9 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ElementPseudoClass:
-	//	":" //('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing')
-	//	value="blabla";
+	//	value=("disabled" | "focused" | "hover" | "pressed" | "strong" | "armed" | "empty" | "filled" | "defined" |
+	//	"undefined" | "showing" | "visited" | "even" | "odd" | "selected" | "horizontal" | "vertical" | "determinate" |
+	//	"indetermindate" | "pannable" | "multiline" | "editable" | "readonly");
 	public ElementPseudoClassElements getElementPseudoClassAccess() {
 		return (pElementPseudoClass != null) ? pElementPseudoClass : (pElementPseudoClass = new ElementPseudoClassElements());
 	}

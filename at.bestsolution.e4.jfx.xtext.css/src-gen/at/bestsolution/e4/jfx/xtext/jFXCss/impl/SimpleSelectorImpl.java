@@ -31,8 +31,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.SimpleSelectorImpl#getElement <em>Element</em>}</li>
  *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.SimpleSelectorImpl#getId <em>Id</em>}</li>
- *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.SimpleSelectorImpl#getClass_ <em>Class</em>}</li>
  *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.SimpleSelectorImpl#getPseudoClass <em>Pseudo Class</em>}</li>
+ *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.SimpleSelectorImpl#getClass_ <em>Class</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,16 +61,6 @@ public class SimpleSelectorImpl extends MinimalEObjectImpl.Container implements 
   protected ElementId id;
 
   /**
-   * The cached value of the '{@link #getClass_() <em>Class</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getClass_()
-   * @generated
-   * @ordered
-   */
-  protected ElementClass class_;
-
-  /**
    * The cached value of the '{@link #getPseudoClass() <em>Pseudo Class</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -79,6 +69,16 @@ public class SimpleSelectorImpl extends MinimalEObjectImpl.Container implements 
    * @ordered
    */
   protected ElementPseudoClass pseudoClass;
+
+  /**
+   * The cached value of the '{@link #getClass_() <em>Class</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClass_()
+   * @generated
+   * @ordered
+   */
+  protected ElementClass class_;
 
   /**
    * <!-- begin-user-doc -->
@@ -202,54 +202,6 @@ public class SimpleSelectorImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public ElementClass getClass_()
-  {
-    return class_;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetClass(ElementClass newClass, NotificationChain msgs)
-  {
-    ElementClass oldClass = class_;
-    class_ = newClass;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JFXCssPackage.SIMPLE_SELECTOR__CLASS, oldClass, newClass);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setClass(ElementClass newClass)
-  {
-    if (newClass != class_)
-    {
-      NotificationChain msgs = null;
-      if (class_ != null)
-        msgs = ((InternalEObject)class_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JFXCssPackage.SIMPLE_SELECTOR__CLASS, null, msgs);
-      if (newClass != null)
-        msgs = ((InternalEObject)newClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JFXCssPackage.SIMPLE_SELECTOR__CLASS, null, msgs);
-      msgs = basicSetClass(newClass, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JFXCssPackage.SIMPLE_SELECTOR__CLASS, newClass, newClass));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public ElementPseudoClass getPseudoClass()
   {
     return pseudoClass;
@@ -298,6 +250,54 @@ public class SimpleSelectorImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
+  public ElementClass getClass_()
+  {
+    return class_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetClass(ElementClass newClass, NotificationChain msgs)
+  {
+    ElementClass oldClass = class_;
+    class_ = newClass;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JFXCssPackage.SIMPLE_SELECTOR__CLASS, oldClass, newClass);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setClass(ElementClass newClass)
+  {
+    if (newClass != class_)
+    {
+      NotificationChain msgs = null;
+      if (class_ != null)
+        msgs = ((InternalEObject)class_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JFXCssPackage.SIMPLE_SELECTOR__CLASS, null, msgs);
+      if (newClass != null)
+        msgs = ((InternalEObject)newClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JFXCssPackage.SIMPLE_SELECTOR__CLASS, null, msgs);
+      msgs = basicSetClass(newClass, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JFXCssPackage.SIMPLE_SELECTOR__CLASS, newClass, newClass));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -307,10 +307,10 @@ public class SimpleSelectorImpl extends MinimalEObjectImpl.Container implements 
         return basicSetElement(null, msgs);
       case JFXCssPackage.SIMPLE_SELECTOR__ID:
         return basicSetId(null, msgs);
-      case JFXCssPackage.SIMPLE_SELECTOR__CLASS:
-        return basicSetClass(null, msgs);
       case JFXCssPackage.SIMPLE_SELECTOR__PSEUDO_CLASS:
         return basicSetPseudoClass(null, msgs);
+      case JFXCssPackage.SIMPLE_SELECTOR__CLASS:
+        return basicSetClass(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -329,10 +329,10 @@ public class SimpleSelectorImpl extends MinimalEObjectImpl.Container implements 
         return getElement();
       case JFXCssPackage.SIMPLE_SELECTOR__ID:
         return getId();
-      case JFXCssPackage.SIMPLE_SELECTOR__CLASS:
-        return getClass_();
       case JFXCssPackage.SIMPLE_SELECTOR__PSEUDO_CLASS:
         return getPseudoClass();
+      case JFXCssPackage.SIMPLE_SELECTOR__CLASS:
+        return getClass_();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -353,11 +353,11 @@ public class SimpleSelectorImpl extends MinimalEObjectImpl.Container implements 
       case JFXCssPackage.SIMPLE_SELECTOR__ID:
         setId((ElementId)newValue);
         return;
-      case JFXCssPackage.SIMPLE_SELECTOR__CLASS:
-        setClass((ElementClass)newValue);
-        return;
       case JFXCssPackage.SIMPLE_SELECTOR__PSEUDO_CLASS:
         setPseudoClass((ElementPseudoClass)newValue);
+        return;
+      case JFXCssPackage.SIMPLE_SELECTOR__CLASS:
+        setClass((ElementClass)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -379,11 +379,11 @@ public class SimpleSelectorImpl extends MinimalEObjectImpl.Container implements 
       case JFXCssPackage.SIMPLE_SELECTOR__ID:
         setId((ElementId)null);
         return;
-      case JFXCssPackage.SIMPLE_SELECTOR__CLASS:
-        setClass((ElementClass)null);
-        return;
       case JFXCssPackage.SIMPLE_SELECTOR__PSEUDO_CLASS:
         setPseudoClass((ElementPseudoClass)null);
+        return;
+      case JFXCssPackage.SIMPLE_SELECTOR__CLASS:
+        setClass((ElementClass)null);
         return;
     }
     super.eUnset(featureID);
@@ -403,10 +403,10 @@ public class SimpleSelectorImpl extends MinimalEObjectImpl.Container implements 
         return element != null;
       case JFXCssPackage.SIMPLE_SELECTOR__ID:
         return id != null;
-      case JFXCssPackage.SIMPLE_SELECTOR__CLASS:
-        return class_ != null;
       case JFXCssPackage.SIMPLE_SELECTOR__PSEUDO_CLASS:
         return pseudoClass != null;
+      case JFXCssPackage.SIMPLE_SELECTOR__CLASS:
+        return class_ != null;
     }
     return super.eIsSet(featureID);
   }

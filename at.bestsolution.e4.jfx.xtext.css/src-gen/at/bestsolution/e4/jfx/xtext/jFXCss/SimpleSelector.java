@@ -18,8 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getElement <em>Element</em>}</li>
  *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getId <em>Id</em>}</li>
- *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getClass_ <em>Class</em>}</li>
  *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getPseudoClass <em>Pseudo Class</em>}</li>
+ *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getClass_ <em>Class</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,32 +82,6 @@ public interface SimpleSelector extends EObject
   void setId(ElementId value);
 
   /**
-   * Returns the value of the '<em><b>Class</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Class</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Class</em>' containment reference.
-   * @see #setClass(ElementClass)
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage#getSimpleSelector_Class()
-   * @model containment="true"
-   * @generated
-   */
-  ElementClass getClass_();
-
-  /**
-   * Sets the value of the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getClass_ <em>Class</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Class</em>' containment reference.
-   * @see #getClass_()
-   * @generated
-   */
-  void setClass(ElementClass value);
-
-  /**
    * Returns the value of the '<em><b>Pseudo Class</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
@@ -132,5 +106,31 @@ public interface SimpleSelector extends EObject
    * @generated
    */
   void setPseudoClass(ElementPseudoClass value);
+
+  /**
+   * Returns the value of the '<em><b>Class</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Class</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Class</em>' containment reference.
+   * @see #setClass(ElementClass)
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage#getSimpleSelector_Class()
+   * @model containment="true"
+   * @generated
+   */
+  ElementClass getClass_();
+
+  /**
+   * Sets the value of the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getClass_ <em>Class</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Class</em>' containment reference.
+   * @see #getClass_()
+   * @generated
+   */
+  void setClass(ElementClass value);
 
 } // SimpleSelector

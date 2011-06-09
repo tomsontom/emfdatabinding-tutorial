@@ -857,7 +857,7 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSimpleSelector_Class()
+  public EReference getSimpleSelector_PseudoClass()
   {
     return (EReference)simpleSelectorEClass.getEStructuralFeatures().get(2);
   }
@@ -867,7 +867,7 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSimpleSelector_PseudoClass()
+  public EReference getSimpleSelector_Class()
   {
     return (EReference)simpleSelectorEClass.getEStructuralFeatures().get(3);
   }
@@ -3095,8 +3095,8 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     simpleSelectorEClass = createEClass(SIMPLE_SELECTOR);
     createEReference(simpleSelectorEClass, SIMPLE_SELECTOR__ELEMENT);
     createEReference(simpleSelectorEClass, SIMPLE_SELECTOR__ID);
-    createEReference(simpleSelectorEClass, SIMPLE_SELECTOR__CLASS);
     createEReference(simpleSelectorEClass, SIMPLE_SELECTOR__PSEUDO_CLASS);
+    createEReference(simpleSelectorEClass, SIMPLE_SELECTOR__CLASS);
 
     elementNameEClass = createEClass(ELEMENT_NAME);
     createEAttribute(elementNameEClass, ELEMENT_NAME__VALUE);
@@ -3491,8 +3491,8 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     initEClass(simpleSelectorEClass, SimpleSelector.class, "SimpleSelector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSimpleSelector_Element(), this.getElementName(), null, "element", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSimpleSelector_Id(), this.getElementId(), null, "id", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSimpleSelector_Class(), this.getElementClass(), null, "class", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSimpleSelector_PseudoClass(), this.getElementPseudoClass(), null, "pseudoClass", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSimpleSelector_Class(), this.getElementClass(), null, "class", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementNameEClass, ElementName.class, "ElementName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getElementName_Value(), ecorePackage.getEString(), "value", null, 0, 1, ElementName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

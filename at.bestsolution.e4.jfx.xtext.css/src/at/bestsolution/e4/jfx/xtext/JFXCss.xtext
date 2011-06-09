@@ -10,8 +10,7 @@ JFXCss:
 
 Definition:
 	selector+=Selector
-	// (':' ('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing') )? 
-		'{'
+	'{'
 		properties+=FXProperty+
 	'}'
 ;
@@ -22,9 +21,8 @@ Selector:
 
 SimpleSelector:
 	element=ElementName |
-	id=ElementId | 
-	class=ElementClass |
-	pseudoClass=ElementPseudoClass
+	( id=ElementId ( ':' pseudoClass=ElementPseudoClass)?) | 
+	( class=ElementClass ( ':' pseudoClass=ElementPseudoClass)? )
 	/* (element=ElementName id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
 	|
 	(id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
@@ -45,7 +43,7 @@ ElementClass:
 ;
 
 ElementPseudoClass:
-	':' value=('blabla')//('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing')
+	value=('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly')
 ;
 
 FXProperty:

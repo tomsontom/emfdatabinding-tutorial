@@ -1174,20 +1174,37 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     value='blabla'
+	 *     (
+	 *         value='disabled' | 
+	 *         value='focused' | 
+	 *         value='hover' | 
+	 *         value='pressed' | 
+	 *         value='strong' | 
+	 *         value='armed' | 
+	 *         value='empty' | 
+	 *         value='filled' | 
+	 *         value='defined' | 
+	 *         value='undefined' | 
+	 *         value='showing' | 
+	 *         value='visited' | 
+	 *         value='even' | 
+	 *         value='odd' | 
+	 *         value='selected' | 
+	 *         value='horizontal' | 
+	 *         value='vertical' | 
+	 *         value='determinate' | 
+	 *         value='indetermindate' | 
+	 *         value='pannable' | 
+	 *         value='multiline' | 
+	 *         value='editable' | 
+	 *         value='readonly'
+	 *     )
 	 *
 	 * Features:
-	 *    value[1, 1]
+	 *    value[0, 23]
 	 */
 	protected void sequence_ElementPseudoClass_ElementPseudoClass(EObject context, ElementPseudoClass semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, JFXCssPackage.Literals.ELEMENT_PSEUDO_CLASS__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JFXCssPackage.Literals.ELEMENT_PSEUDO_CLASS__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getElementPseudoClassAccess().getValueBlablaKeyword_1_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -2053,25 +2070,26 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (element=ElementName | id=ElementId | class=ElementClass | pseudoClass=ElementPseudoClass)
+	 *     (element=ElementName | (id=ElementId pseudoClass=ElementPseudoClass?) | (class=ElementClass pseudoClass=ElementPseudoClass?))
 	 *
 	 * Features:
 	 *    element[0, 1]
 	 *         EXCLUDE_IF_SET id
+	 *         EXCLUDE_IF_SET pseudoClass
 	 *         EXCLUDE_IF_SET class
 	 *         EXCLUDE_IF_SET pseudoClass
-	 *    id[0, 1]
+	 *    id[1, 1]
+	 *         MANDATORY_IF_SET pseudoClass
 	 *         EXCLUDE_IF_SET element
 	 *         EXCLUDE_IF_SET class
 	 *         EXCLUDE_IF_SET pseudoClass
-	 *    class[0, 1]
+	 *    pseudoClass[0, 2]
+	 *         EXCLUDE_IF_SET element
+	 *    class[1, 1]
+	 *         MANDATORY_IF_SET pseudoClass
 	 *         EXCLUDE_IF_SET element
 	 *         EXCLUDE_IF_SET id
 	 *         EXCLUDE_IF_SET pseudoClass
-	 *    pseudoClass[0, 1]
-	 *         EXCLUDE_IF_SET element
-	 *         EXCLUDE_IF_SET id
-	 *         EXCLUDE_IF_SET class
 	 */
 	protected void sequence_SimpleSelector_SimpleSelector(EObject context, SimpleSelector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

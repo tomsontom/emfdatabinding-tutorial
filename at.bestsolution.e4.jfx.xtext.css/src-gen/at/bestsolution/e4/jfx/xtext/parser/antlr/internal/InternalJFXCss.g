@@ -240,10 +240,10 @@ ruleSimpleSelector returns [EObject current=null]
 
 )
 )
-    |(
+    |((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSimpleSelectorAccess().getIdElementIdParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getSimpleSelectorAccess().getIdElementIdParserRuleCall_1_0_0()); 
 	    }
 		lv_id_1_0=ruleElementId		{
 	        if ($current==null) {
@@ -258,30 +258,14 @@ ruleSimpleSelector returns [EObject current=null]
 	    }
 
 )
-)
-    |(
+)(	otherlv_2=':' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getSimpleSelectorAccess().getColonKeyword_1_1_0());
+    }
+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSimpleSelectorAccess().getClassElementClassParserRuleCall_2_0()); 
-	    }
-		lv_class_2_0=ruleElementClass		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getSimpleSelectorRule());
-	        }
-       		set(
-       			$current, 
-       			"class",
-        		lv_class_2_0, 
-        		"ElementClass");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)
-    |(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getSimpleSelectorAccess().getPseudoClassElementPseudoClassParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getSimpleSelectorAccess().getPseudoClassElementPseudoClassParserRuleCall_1_1_1_0()); 
 	    }
 		lv_pseudoClass_3_0=ruleElementPseudoClass		{
 	        if ($current==null) {
@@ -296,7 +280,48 @@ ruleSimpleSelector returns [EObject current=null]
 	    }
 
 )
-))
+))?)
+    |((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSimpleSelectorAccess().getClassElementClassParserRuleCall_2_0_0()); 
+	    }
+		lv_class_4_0=ruleElementClass		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSimpleSelectorRule());
+	        }
+       		set(
+       			$current, 
+       			"class",
+        		lv_class_4_0, 
+        		"ElementClass");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_5=':' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getSimpleSelectorAccess().getColonKeyword_2_1_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSimpleSelectorAccess().getPseudoClassElementPseudoClassParserRuleCall_2_1_1_0()); 
+	    }
+		lv_pseudoClass_6_0=ruleElementPseudoClass		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSimpleSelectorRule());
+	        }
+       		set(
+       			$current, 
+       			"pseudoClass",
+        		lv_pseudoClass_6_0, 
+        		"ElementPseudoClass");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?))
 ;
 
 
@@ -442,26 +467,289 @@ ruleElementPseudoClass returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0=':' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getElementPseudoClassAccess().getColonKeyword_0());
-    }
 (
 (
-		lv_value_1_0=	'blabla' 
+(
+		lv_value_0_1=	'disabled' 
     {
-        newLeafNode(lv_value_1_0, grammarAccess.getElementPseudoClassAccess().getValueBlablaKeyword_1_0());
+        newLeafNode(lv_value_0_1, grammarAccess.getElementPseudoClassAccess().getValueDisabledKeyword_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
 	        }
-       		setWithLastConsumed($current, "value", lv_value_1_0, "blabla");
+       		setWithLastConsumed($current, "value", lv_value_0_1, null);
+	    }
+
+    |		lv_value_0_2=	'focused' 
+    {
+        newLeafNode(lv_value_0_2, grammarAccess.getElementPseudoClassAccess().getValueFocusedKeyword_0_1());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_2, null);
+	    }
+
+    |		lv_value_0_3=	'hover' 
+    {
+        newLeafNode(lv_value_0_3, grammarAccess.getElementPseudoClassAccess().getValueHoverKeyword_0_2());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_3, null);
+	    }
+
+    |		lv_value_0_4=	'pressed' 
+    {
+        newLeafNode(lv_value_0_4, grammarAccess.getElementPseudoClassAccess().getValuePressedKeyword_0_3());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_4, null);
+	    }
+
+    |		lv_value_0_5=	'strong' 
+    {
+        newLeafNode(lv_value_0_5, grammarAccess.getElementPseudoClassAccess().getValueStrongKeyword_0_4());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_5, null);
+	    }
+
+    |		lv_value_0_6=	'armed' 
+    {
+        newLeafNode(lv_value_0_6, grammarAccess.getElementPseudoClassAccess().getValueArmedKeyword_0_5());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_6, null);
+	    }
+
+    |		lv_value_0_7=	'empty' 
+    {
+        newLeafNode(lv_value_0_7, grammarAccess.getElementPseudoClassAccess().getValueEmptyKeyword_0_6());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_7, null);
+	    }
+
+    |		lv_value_0_8=	'filled' 
+    {
+        newLeafNode(lv_value_0_8, grammarAccess.getElementPseudoClassAccess().getValueFilledKeyword_0_7());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_8, null);
+	    }
+
+    |		lv_value_0_9=	'defined' 
+    {
+        newLeafNode(lv_value_0_9, grammarAccess.getElementPseudoClassAccess().getValueDefinedKeyword_0_8());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_9, null);
+	    }
+
+    |		lv_value_0_10=	'undefined' 
+    {
+        newLeafNode(lv_value_0_10, grammarAccess.getElementPseudoClassAccess().getValueUndefinedKeyword_0_9());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_10, null);
+	    }
+
+    |		lv_value_0_11=	'showing' 
+    {
+        newLeafNode(lv_value_0_11, grammarAccess.getElementPseudoClassAccess().getValueShowingKeyword_0_10());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_11, null);
+	    }
+
+    |		lv_value_0_12=	'visited' 
+    {
+        newLeafNode(lv_value_0_12, grammarAccess.getElementPseudoClassAccess().getValueVisitedKeyword_0_11());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_12, null);
+	    }
+
+    |		lv_value_0_13=	'even' 
+    {
+        newLeafNode(lv_value_0_13, grammarAccess.getElementPseudoClassAccess().getValueEvenKeyword_0_12());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_13, null);
+	    }
+
+    |		lv_value_0_14=	'odd' 
+    {
+        newLeafNode(lv_value_0_14, grammarAccess.getElementPseudoClassAccess().getValueOddKeyword_0_13());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_14, null);
+	    }
+
+    |		lv_value_0_15=	'selected' 
+    {
+        newLeafNode(lv_value_0_15, grammarAccess.getElementPseudoClassAccess().getValueSelectedKeyword_0_14());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_15, null);
+	    }
+
+    |		lv_value_0_16=	'horizontal' 
+    {
+        newLeafNode(lv_value_0_16, grammarAccess.getElementPseudoClassAccess().getValueHorizontalKeyword_0_15());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_16, null);
+	    }
+
+    |		lv_value_0_17=	'vertical' 
+    {
+        newLeafNode(lv_value_0_17, grammarAccess.getElementPseudoClassAccess().getValueVerticalKeyword_0_16());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_17, null);
+	    }
+
+    |		lv_value_0_18=	'determinate' 
+    {
+        newLeafNode(lv_value_0_18, grammarAccess.getElementPseudoClassAccess().getValueDeterminateKeyword_0_17());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_18, null);
+	    }
+
+    |		lv_value_0_19=	'indetermindate' 
+    {
+        newLeafNode(lv_value_0_19, grammarAccess.getElementPseudoClassAccess().getValueIndetermindateKeyword_0_18());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_19, null);
+	    }
+
+    |		lv_value_0_20=	'pannable' 
+    {
+        newLeafNode(lv_value_0_20, grammarAccess.getElementPseudoClassAccess().getValuePannableKeyword_0_19());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_20, null);
+	    }
+
+    |		lv_value_0_21=	'multiline' 
+    {
+        newLeafNode(lv_value_0_21, grammarAccess.getElementPseudoClassAccess().getValueMultilineKeyword_0_20());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_21, null);
+	    }
+
+    |		lv_value_0_22=	'editable' 
+    {
+        newLeafNode(lv_value_0_22, grammarAccess.getElementPseudoClassAccess().getValueEditableKeyword_0_21());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_22, null);
+	    }
+
+    |		lv_value_0_23=	'readonly' 
+    {
+        newLeafNode(lv_value_0_23, grammarAccess.getElementPseudoClassAccess().getValueReadonlyKeyword_0_22());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getElementPseudoClassRule());
+	        }
+       		setWithLastConsumed($current, "value", lv_value_0_23, null);
 	    }
 
 )
-))
+
+)
+)
 ;
 
 

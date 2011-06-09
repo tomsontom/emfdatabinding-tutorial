@@ -183,22 +183,22 @@ public interface JFXCssPackage extends EPackage
   int SIMPLE_SELECTOR__ID = 1;
 
   /**
-   * The feature id for the '<em><b>Class</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SIMPLE_SELECTOR__CLASS = 2;
-
-  /**
    * The feature id for the '<em><b>Pseudo Class</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIMPLE_SELECTOR__PSEUDO_CLASS = 3;
+  int SIMPLE_SELECTOR__PSEUDO_CLASS = 2;
+
+  /**
+   * The feature id for the '<em><b>Class</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_SELECTOR__CLASS = 3;
 
   /**
    * The number of structural features of the '<em>Simple Selector</em>' class.
@@ -3141,17 +3141,6 @@ public interface JFXCssPackage extends EPackage
   EReference getSimpleSelector_Id();
 
   /**
-   * Returns the meta object for the containment reference '{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getClass_ <em>Class</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Class</em>'.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getClass_()
-   * @see #getSimpleSelector()
-   * @generated
-   */
-  EReference getSimpleSelector_Class();
-
-  /**
    * Returns the meta object for the containment reference '{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getPseudoClass <em>Pseudo Class</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3161,6 +3150,17 @@ public interface JFXCssPackage extends EPackage
    * @generated
    */
   EReference getSimpleSelector_PseudoClass();
+
+  /**
+   * Returns the meta object for the containment reference '{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getClass_ <em>Class</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Class</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getClass_()
+   * @see #getSimpleSelector()
+   * @generated
+   */
+  EReference getSimpleSelector_Class();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.ElementName <em>Element Name</em>}'.
@@ -5593,20 +5593,20 @@ public interface JFXCssPackage extends EPackage
     EReference SIMPLE_SELECTOR__ID = eINSTANCE.getSimpleSelector_Id();
 
     /**
-     * The meta object literal for the '<em><b>Class</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SIMPLE_SELECTOR__CLASS = eINSTANCE.getSimpleSelector_Class();
-
-    /**
      * The meta object literal for the '<em><b>Pseudo Class</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference SIMPLE_SELECTOR__PSEUDO_CLASS = eINSTANCE.getSimpleSelector_PseudoClass();
+
+    /**
+     * The meta object literal for the '<em><b>Class</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_SELECTOR__CLASS = eINSTANCE.getSimpleSelector_Class();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.ElementNameImpl <em>Element Name</em>}' class.
