@@ -6404,13 +6404,13 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal INT returns ecore::EInt:
-	//	"0".."9"+;
+	//	"-"? "0".."9"+;
 	public TerminalRule getINTRule() {
 		return (tINT != null) ? tINT : (tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT"));
 	} 
 
 	//terminal REAL returns ecore::EDouble:
-	//	"0".."9"+ "." "0".."9"+;
+	//	"-"? "0".."9"+ "." "0".."9"+;
 	public TerminalRule getREALRule() {
 		return (tREAL != null) ? tREAL : (tREAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "REAL"));
 	} 
