@@ -1976,13 +1976,14 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	 *             property='-fx-offset-x' | 
 	 *             property='-fx-category-gap' | 
 	 *             property='-fx-bar-gap' | 
-	 *             property='-fx-graphic-text-gap'
+	 *             property='-fx-graphic-text-gap' | 
+	 *             property='-fx-tab-spacing'
 	 *         ) 
 	 *         value=SizeValue
 	 *     )
 	 *
 	 * Features:
-	 *    property[0, 26]
+	 *    property[0, 27]
 	 *    value[1, 1]
 	 */
 	protected void sequence_SizeProperty_SizeProperty(EObject context, SizeProperty semanticObject) {

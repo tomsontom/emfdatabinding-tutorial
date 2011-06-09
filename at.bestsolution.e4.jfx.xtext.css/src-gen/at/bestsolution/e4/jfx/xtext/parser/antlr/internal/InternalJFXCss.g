@@ -2631,6 +2631,18 @@ ruleSizeProperty returns [EObject current=null]
        		setWithLastConsumed($current, "property", lv_property_0_26, null);
 	    }
 
+    |		lv_property_0_27=	'-fx-tab-spacing' 
+    {
+        newLeafNode(lv_property_0_27, grammarAccess.getSizePropertyAccess().getPropertyFxTabSpacingKeyword_0_0_26());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSizePropertyRule());
+	        }
+       		setWithLastConsumed($current, "property", lv_property_0_27, null);
+	    }
+
 )
 
 )

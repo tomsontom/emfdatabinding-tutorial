@@ -1142,6 +1142,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPropertyFxCategoryGapKeyword_0_0_23 = (Keyword)cPropertyAlternatives_0_0.eContents().get(23);
 		private final Keyword cPropertyFxBarGapKeyword_0_0_24 = (Keyword)cPropertyAlternatives_0_0.eContents().get(24);
 		private final Keyword cPropertyFxGraphicTextGapKeyword_0_0_25 = (Keyword)cPropertyAlternatives_0_0.eContents().get(25);
+		private final Keyword cPropertyFxTabSpacingKeyword_0_0_26 = (Keyword)cPropertyAlternatives_0_0.eContents().get(26);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValueSizeValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
@@ -1153,7 +1154,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//	"-fx-plot-background-stroke-width" | "-fx-horizontal-grid-line-stroke-width" | "-fx-pie-thickness" |
 		//	"-fx-pie-stroke-width" | "-fx-title-gap" | "-fx-legend-gap" | "-fx-hover-stroke-width" |
 		//	"-fx-chart-background-stroke-width" | "-fx-offset-y" | "-fx-offset-x" | "-fx-category-gap" | "-fx-bar-gap" |
-		//	"-fx-graphic-text-gap") ":" value=SizeValue;
+		//	"-fx-graphic-text-gap" | "-fx-tab-spacing") ":" value=SizeValue;
 		public ParserRule getRule() { return rule; }
 
 		//property=("-fx-spacing" | "-fx-arc-height" | "-fx-arc-width" | "-fx-minor-tick-length" | "-fx-stroke-width" |
@@ -1162,7 +1163,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//"-fx-plot-background-stroke-width" | "-fx-horizontal-grid-line-stroke-width" | "-fx-pie-thickness" |
 		//"-fx-pie-stroke-width" | "-fx-title-gap" | "-fx-legend-gap" | "-fx-hover-stroke-width" |
 		//"-fx-chart-background-stroke-width" | "-fx-offset-y" | "-fx-offset-x" | "-fx-category-gap" | "-fx-bar-gap" |
-		//"-fx-graphic-text-gap") ":" value=SizeValue
+		//"-fx-graphic-text-gap" | "-fx-tab-spacing") ":" value=SizeValue
 		public Group getGroup() { return cGroup; }
 
 		//property=("-fx-spacing" | "-fx-arc-height" | "-fx-arc-width" | "-fx-minor-tick-length" | "-fx-stroke-width" |
@@ -1171,7 +1172,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//"-fx-plot-background-stroke-width" | "-fx-horizontal-grid-line-stroke-width" | "-fx-pie-thickness" |
 		//"-fx-pie-stroke-width" | "-fx-title-gap" | "-fx-legend-gap" | "-fx-hover-stroke-width" |
 		//"-fx-chart-background-stroke-width" | "-fx-offset-y" | "-fx-offset-x" | "-fx-category-gap" | "-fx-bar-gap" |
-		//"-fx-graphic-text-gap")
+		//"-fx-graphic-text-gap" | "-fx-tab-spacing")
 		public Assignment getPropertyAssignment_0() { return cPropertyAssignment_0; }
 
 		//"-fx-spacing" | "-fx-arc-height" | "-fx-arc-width" | "-fx-minor-tick-length" | "-fx-stroke-width" | "-fx-start-margin" |
@@ -1180,7 +1181,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//"-fx-plot-background-stroke-width" | "-fx-horizontal-grid-line-stroke-width" | "-fx-pie-thickness" |
 		//"-fx-pie-stroke-width" | "-fx-title-gap" | "-fx-legend-gap" | "-fx-hover-stroke-width" |
 		//"-fx-chart-background-stroke-width" | "-fx-offset-y" | "-fx-offset-x" | "-fx-category-gap" | "-fx-bar-gap" |
-		//"-fx-graphic-text-gap"
+		//"-fx-graphic-text-gap" | "-fx-tab-spacing"
 		public Alternatives getPropertyAlternatives_0_0() { return cPropertyAlternatives_0_0; }
 
 		//"-fx-spacing"
@@ -1260,6 +1261,9 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"-fx-graphic-text-gap"
 		public Keyword getPropertyFxGraphicTextGapKeyword_0_0_25() { return cPropertyFxGraphicTextGapKeyword_0_0_25; }
+
+		//"-fx-tab-spacing"
+		public Keyword getPropertyFxTabSpacingKeyword_0_0_26() { return cPropertyFxTabSpacingKeyword_0_0_26; }
 
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
@@ -5710,7 +5714,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	//	"-fx-plot-background-stroke-width" | "-fx-horizontal-grid-line-stroke-width" | "-fx-pie-thickness" |
 	//	"-fx-pie-stroke-width" | "-fx-title-gap" | "-fx-legend-gap" | "-fx-hover-stroke-width" |
 	//	"-fx-chart-background-stroke-width" | "-fx-offset-y" | "-fx-offset-x" | "-fx-category-gap" | "-fx-bar-gap" |
-	//	"-fx-graphic-text-gap") ":" value=SizeValue;
+	//	"-fx-graphic-text-gap" | "-fx-tab-spacing") ":" value=SizeValue;
 	public SizePropertyElements getSizePropertyAccess() {
 		return (pSizeProperty != null) ? pSizeProperty : (pSizeProperty = new SizePropertyElements());
 	}

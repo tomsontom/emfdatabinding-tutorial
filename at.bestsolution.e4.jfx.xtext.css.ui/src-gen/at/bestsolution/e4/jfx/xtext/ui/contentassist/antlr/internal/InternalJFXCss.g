@@ -3413,6 +3413,14 @@ rule__SizeProperty__PropertyAlternatives_0_0
 { after(grammarAccess.getSizePropertyAccess().getPropertyFxGraphicTextGapKeyword_0_0_25()); }
 )
 
+    |(
+{ before(grammarAccess.getSizePropertyAccess().getPropertyFxTabSpacingKeyword_0_0_26()); }
+
+	'-fx-tab-spacing' 
+
+{ after(grammarAccess.getSizePropertyAccess().getPropertyFxTabSpacingKeyword_0_0_26()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);

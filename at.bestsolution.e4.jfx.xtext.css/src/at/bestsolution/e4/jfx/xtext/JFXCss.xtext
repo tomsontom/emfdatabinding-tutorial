@@ -137,7 +137,7 @@ SizeProperty:
 		| '-fx-vertical-grid-line-stroke-width' | '-fx-plot-background-stroke-width' | '-fx-horizontal-grid-line-stroke-width'
 		| '-fx-pie-thickness' | '-fx-pie-stroke-width' | '-fx-title-gap' | '-fx-legend-gap' | '-fx-hover-stroke-width'
 		| '-fx-chart-background-stroke-width' | '-fx-offset-y' | '-fx-offset-x' | '-fx-category-gap'
-		| '-fx-bar-gap' | '-fx-graphic-text-gap'
+		| '-fx-bar-gap' | '-fx-graphic-text-gap' | '-fx-tab-spacing'
 		) ':' value=SizeValue
 ;
 
