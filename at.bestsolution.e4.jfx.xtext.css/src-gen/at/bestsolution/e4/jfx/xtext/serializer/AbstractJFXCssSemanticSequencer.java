@@ -1722,7 +1722,7 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     (
-	 *         hex=HexDigit | 
+	 *         hex=HEX_NUMBER | 
 	 *         (r=IntegerValue g=IntegerValue b=IntegerValue) | 
 	 *         (rp=IntegerValue gp=IntegerValue bp=IntegerValue) | 
 	 *         (r=IntegerValue g=IntegerValue b=IntegerValue alpha=NumberValue) | 

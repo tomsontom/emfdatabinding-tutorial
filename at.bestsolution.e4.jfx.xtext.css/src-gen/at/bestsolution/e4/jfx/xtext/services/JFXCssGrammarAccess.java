@@ -4805,10 +4805,8 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	public class RGBColorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RGBColor");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cNumberSignKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cHexAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cHexHexDigitParserRuleCall_0_1_0 = (RuleCall)cHexAssignment_0_1.eContents().get(0);
+		private final Assignment cHexAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cHexHEX_NUMBERTerminalRuleCall_0_0 = (RuleCall)cHexAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cRgbKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
@@ -4871,29 +4869,23 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_4_12 = (Keyword)cGroup_4.eContents().get(12);
 		
 		//RGBColor:
-		//	"#" hex=HexDigit | "rgb" "(" r=IntegerValue "," g=IntegerValue "," b=IntegerValue ")" | "rgb" "(" rp=IntegerValue "%"
+		//	hex=HEX_NUMBER | "rgb" "(" r=IntegerValue "," g=IntegerValue "," b=IntegerValue ")" | "rgb" "(" rp=IntegerValue "%"
 		//	"," gp=IntegerValue "%" "," bp=IntegerValue "%" ")" | "rgba" "(" r=IntegerValue "," g=IntegerValue "," b=IntegerValue
 		//	"," alpha=NumberValue ")" | "rgba" "(" rp=IntegerValue "%" "," gp=IntegerValue "%" "," bp=IntegerValue "%" ","
 		//	alpha=NumberValue ")";
 		public ParserRule getRule() { return rule; }
 
-		//"#" hex=HexDigit | "rgb" "(" r=IntegerValue "," g=IntegerValue "," b=IntegerValue ")" | "rgb" "(" rp=IntegerValue "%"
-		//"," gp=IntegerValue "%" "," bp=IntegerValue "%" ")" | "rgba" "(" r=IntegerValue "," g=IntegerValue "," b=IntegerValue
-		//"," alpha=NumberValue ")" | "rgba" "(" rp=IntegerValue "%" "," gp=IntegerValue "%" "," bp=IntegerValue "%" ","
+		//hex=HEX_NUMBER | "rgb" "(" r=IntegerValue "," g=IntegerValue "," b=IntegerValue ")" | "rgb" "(" rp=IntegerValue "%" ","
+		//gp=IntegerValue "%" "," bp=IntegerValue "%" ")" | "rgba" "(" r=IntegerValue "," g=IntegerValue "," b=IntegerValue ","
+		//alpha=NumberValue ")" | "rgba" "(" rp=IntegerValue "%" "," gp=IntegerValue "%" "," bp=IntegerValue "%" ","
 		//alpha=NumberValue ")"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"#" hex=HexDigit
-		public Group getGroup_0() { return cGroup_0; }
+		//hex=HEX_NUMBER
+		public Assignment getHexAssignment_0() { return cHexAssignment_0; }
 
-		//"#"
-		public Keyword getNumberSignKeyword_0_0() { return cNumberSignKeyword_0_0; }
-
-		//hex=HexDigit
-		public Assignment getHexAssignment_0_1() { return cHexAssignment_0_1; }
-
-		//HexDigit
-		public RuleCall getHexHexDigitParserRuleCall_0_1_0() { return cHexHexDigitParserRuleCall_0_1_0; }
+		//HEX_NUMBER
+		public RuleCall getHexHEX_NUMBERTerminalRuleCall_0_0() { return cHexHEX_NUMBERTerminalRuleCall_0_0; }
 
 		//"rgb" "(" r=IntegerValue "," g=IntegerValue "," b=IntegerValue ")"
 		public Group getGroup_1() { return cGroup_1; }
@@ -5327,38 +5319,6 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_1_5_4() { return cRightParenthesisKeyword_1_5_4; }
 	}
-
-	public class HexDigitElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "HexDigit");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		
-		//HexDigit hidden():
-		//	ID | INT ID | INT;
-		public ParserRule getRule() { return rule; }
-
-		//ID | INT ID | INT
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
-
-		//INT ID
-		public Group getGroup_1() { return cGroup_1; }
-
-		//INT
-		public RuleCall getINTTerminalRuleCall_1_0() { return cINTTerminalRuleCall_1_0; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
-
-		//INT
-		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
-	}
 	
 	
 	public class BooleanValueElements extends AbstractEnumRuleElementFinder {
@@ -5522,12 +5482,12 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	private HSBColorElements pHSBColor;
 	private ColorFunctionElements pColorFunction;
 	private TerminalRule tID;
+	private TerminalRule tHEX_NUMBER;
 	private TerminalRule tINT;
 	private TerminalRule tSTRING;
 	private TerminalRule tML_COMMENT;
 	private TerminalRule tWS;
 	private TerminalRule tANY_OTHER;
-	private HexDigitElements pHexDigit;
 	
 	private final GrammarProvider grammarProvider;
 
@@ -6356,7 +6316,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//RGBColor:
-	//	"#" hex=HexDigit | "rgb" "(" r=IntegerValue "," g=IntegerValue "," b=IntegerValue ")" | "rgb" "(" rp=IntegerValue "%"
+	//	hex=HEX_NUMBER | "rgb" "(" r=IntegerValue "," g=IntegerValue "," b=IntegerValue ")" | "rgb" "(" rp=IntegerValue "%"
 	//	"," gp=IntegerValue "%" "," bp=IntegerValue "%" ")" | "rgba" "(" r=IntegerValue "," g=IntegerValue "," b=IntegerValue
 	//	"," alpha=NumberValue ")" | "rgba" "(" rp=IntegerValue "%" "," gp=IntegerValue "%" "," bp=IntegerValue "%" ","
 	//	alpha=NumberValue ")";
@@ -6396,12 +6356,19 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		return (tID != null) ? tID : (tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID"));
 	} 
 
+	//terminal HEX_NUMBER:
+	//	"#" ("a".."f" | "A".."F" | "0".."9")*;
+	public TerminalRule getHEX_NUMBERRule() {
+		return (tHEX_NUMBER != null) ? tHEX_NUMBER : (tHEX_NUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "HEX_NUMBER"));
+	} 
+
 	//terminal INT returns ecore::EInt:
 	//	"0".."9"+;
 	public TerminalRule getINTRule() {
 		return (tINT != null) ? tINT : (tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT"));
 	} 
 
+	//// terminal REAL returns ecore::EDouble:('0'..'9')+ '.' ('0'..'9')+;
 	//terminal STRING:
 	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" |
 	//	"n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
@@ -6426,14 +6393,4 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	public TerminalRule getANY_OTHERRule() {
 		return (tANY_OTHER != null) ? tANY_OTHER : (tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ANY_OTHER"));
 	} 
-
-	//HexDigit hidden():
-	//	ID | INT ID | INT;
-	public HexDigitElements getHexDigitAccess() {
-		return (pHexDigit != null) ? pHexDigit : (pHexDigit = new HexDigitElements());
-	}
-	
-	public ParserRule getHexDigitRule() {
-		return getHexDigitAccess().getRule();
-	}
 }

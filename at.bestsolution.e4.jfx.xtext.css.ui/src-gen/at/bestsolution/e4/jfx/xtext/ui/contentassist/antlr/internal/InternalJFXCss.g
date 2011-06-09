@@ -2143,42 +2143,6 @@ finally {
 
 
 
-// Entry rule entryRuleHexDigit
-entryRuleHexDigit 
-@init {
-	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
-}
-:
-{ before(grammarAccess.getHexDigitRule()); }
-	 ruleHexDigit
-{ after(grammarAccess.getHexDigitRule()); } 
-	 EOF 
-;
-finally {
-	myHiddenTokenState.restore();
-}
-
-// Rule HexDigit
-ruleHexDigit
-    @init {
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getHexDigitAccess().getAlternatives()); }
-(rule__HexDigit__Alternatives)
-{ after(grammarAccess.getHexDigitAccess().getAlternatives()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-	myHiddenTokenState.restore();
-}
-
-
-
 
 // Rule BooleanValue
 ruleBooleanValue
@@ -6836,9 +6800,9 @@ rule__RGBColor__Alternatives
     }
 :
 (
-{ before(grammarAccess.getRGBColorAccess().getGroup_0()); }
-(rule__RGBColor__Group_0__0)
-{ after(grammarAccess.getRGBColorAccess().getGroup_0()); }
+{ before(grammarAccess.getRGBColorAccess().getHexAssignment_0()); }
+(rule__RGBColor__HexAssignment_0)
+{ after(grammarAccess.getRGBColorAccess().getHexAssignment_0()); }
 )
 
     |(
@@ -6907,34 +6871,6 @@ rule__ColorFunction__Alternatives
 { before(grammarAccess.getColorFunctionAccess().getGroup_1()); }
 (rule__ColorFunction__Group_1__0)
 { after(grammarAccess.getColorFunctionAccess().getGroup_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__HexDigit__Alternatives
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getHexDigitAccess().getIDTerminalRuleCall_0()); }
-	RULE_ID
-{ after(grammarAccess.getHexDigitAccess().getIDTerminalRuleCall_0()); }
-)
-
-    |(
-{ before(grammarAccess.getHexDigitAccess().getGroup_1()); }
-(rule__HexDigit__Group_1__0)
-{ after(grammarAccess.getHexDigitAccess().getGroup_1()); }
-)
-
-    |(
-{ before(grammarAccess.getHexDigitAccess().getINTTerminalRuleCall_2()); }
-	RULE_INT
-{ after(grammarAccess.getHexDigitAccess().getINTTerminalRuleCall_2()); }
 )
 
 ;
@@ -15273,69 +15209,6 @@ finally {
 
 
 
-rule__RGBColor__Group_0__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__RGBColor__Group_0__0__Impl
-	rule__RGBColor__Group_0__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__RGBColor__Group_0__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getRGBColorAccess().getNumberSignKeyword_0_0()); }
-
-	'#' 
-
-{ after(grammarAccess.getRGBColorAccess().getNumberSignKeyword_0_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__RGBColor__Group_0__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__RGBColor__Group_0__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__RGBColor__Group_0__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getRGBColorAccess().getHexAssignment_0_1()); }
-(rule__RGBColor__HexAssignment_0_1)
-{ after(grammarAccess.getRGBColorAccess().getHexAssignment_0_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
 rule__RGBColor__Group_1__0
     @init {
 		int stackSize = keepStackSize();
@@ -17986,67 +17859,6 @@ finally {
 
 
 
-rule__HexDigit__Group_1__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__HexDigit__Group_1__0__Impl
-	rule__HexDigit__Group_1__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__HexDigit__Group_1__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getHexDigitAccess().getINTTerminalRuleCall_1_0()); }
-	RULE_INT
-{ after(grammarAccess.getHexDigitAccess().getINTTerminalRuleCall_1_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__HexDigit__Group_1__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__HexDigit__Group_1__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__HexDigit__Group_1__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getHexDigitAccess().getIDTerminalRuleCall_1_1()); }
-	RULE_ID
-{ after(grammarAccess.getHexDigitAccess().getIDTerminalRuleCall_1_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
 
 rule__JFXCss__DefinitionsAssignment
     @init {
@@ -20315,14 +20127,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__RGBColor__HexAssignment_0_1
+rule__RGBColor__HexAssignment_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getRGBColorAccess().getHexHexDigitParserRuleCall_0_1_0()); }
-	ruleHexDigit{ after(grammarAccess.getRGBColorAccess().getHexHexDigitParserRuleCall_0_1_0()); }
+{ before(grammarAccess.getRGBColorAccess().getHexHEX_NUMBERTerminalRuleCall_0_0()); }
+	RULE_HEX_NUMBER{ after(grammarAccess.getRGBColorAccess().getHexHEX_NUMBERTerminalRuleCall_0_0()); }
 )
 
 ;
@@ -20722,6 +20534,8 @@ finally {
 
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'-'|'A'..'Z'|'_'|'0'..'9')*;
+
+RULE_HEX_NUMBER : '#' ('a'..'f'|'A'..'F'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
 

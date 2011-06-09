@@ -101,7 +101,6 @@ public class JFXCssParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRGBColorAccess().getAlternatives(), "rule__RGBColor__Alternatives");
 					put(grammarAccess.getHSBColorAccess().getAlternatives(), "rule__HSBColor__Alternatives");
 					put(grammarAccess.getColorFunctionAccess().getAlternatives(), "rule__ColorFunction__Alternatives");
-					put(grammarAccess.getHexDigitAccess().getAlternatives(), "rule__HexDigit__Alternatives");
 					put(grammarAccess.getBooleanValueAccess().getAlternatives(), "rule__BooleanValue__Alternatives");
 					put(grammarAccess.getHPositionValueAccess().getAlternatives(), "rule__HPositionValue__Alternatives");
 					put(grammarAccess.getDefinitionAccess().getGroup(), "rule__Definition__Group__0");
@@ -178,7 +177,6 @@ public class JFXCssParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRadialGradientAccess().getGroup_3(), "rule__RadialGradient__Group_3__0");
 					put(grammarAccess.getRadialGradientAccess().getGroup_5(), "rule__RadialGradient__Group_5__0");
 					put(grammarAccess.getStopValueAccess().getGroup(), "rule__StopValue__Group__0");
-					put(grammarAccess.getRGBColorAccess().getGroup_0(), "rule__RGBColor__Group_0__0");
 					put(grammarAccess.getRGBColorAccess().getGroup_1(), "rule__RGBColor__Group_1__0");
 					put(grammarAccess.getRGBColorAccess().getGroup_2(), "rule__RGBColor__Group_2__0");
 					put(grammarAccess.getRGBColorAccess().getGroup_3(), "rule__RGBColor__Group_3__0");
@@ -188,7 +186,6 @@ public class JFXCssParser extends AbstractContentAssistParser {
 					put(grammarAccess.getColorFunctionAccess().getGroup_0(), "rule__ColorFunction__Group_0__0");
 					put(grammarAccess.getColorFunctionAccess().getGroup_1(), "rule__ColorFunction__Group_1__0");
 					put(grammarAccess.getColorFunctionAccess().getGroup_1_5(), "rule__ColorFunction__Group_1_5__0");
-					put(grammarAccess.getHexDigitAccess().getGroup_1(), "rule__HexDigit__Group_1__0");
 					put(grammarAccess.getJFXCssAccess().getDefinitionsAssignment(), "rule__JFXCss__DefinitionsAssignment");
 					put(grammarAccess.getDefinitionAccess().getIdAssignment_0_1(), "rule__Definition__IdAssignment_0_1");
 					put(grammarAccess.getDefinitionAccess().getPropertiesAssignment_2(), "rule__Definition__PropertiesAssignment_2");
@@ -334,7 +331,7 @@ public class JFXCssParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStopValueAccess().getPosAssignment_0(), "rule__StopValue__PosAssignment_0");
 					put(grammarAccess.getStopValueAccess().getColorAssignment_2(), "rule__StopValue__ColorAssignment_2");
 					put(grammarAccess.getNamedColorAccess().getValueAssignment(), "rule__NamedColor__ValueAssignment");
-					put(grammarAccess.getRGBColorAccess().getHexAssignment_0_1(), "rule__RGBColor__HexAssignment_0_1");
+					put(grammarAccess.getRGBColorAccess().getHexAssignment_0(), "rule__RGBColor__HexAssignment_0");
 					put(grammarAccess.getRGBColorAccess().getRAssignment_1_2(), "rule__RGBColor__RAssignment_1_2");
 					put(grammarAccess.getRGBColorAccess().getGAssignment_1_4(), "rule__RGBColor__GAssignment_1_4");
 					put(grammarAccess.getRGBColorAccess().getBAssignment_1_6(), "rule__RGBColor__BAssignment_1_6");

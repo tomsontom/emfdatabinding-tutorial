@@ -9937,395 +9937,391 @@ ruleRGBColor returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((	otherlv_0='#' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getRGBColorAccess().getNumberSignKeyword_0_0());
-    }
+((
 (
-(
-		{ 
-	        newCompositeNode(grammarAccess.getRGBColorAccess().getHexHexDigitParserRuleCall_0_1_0()); 
-	    }
-		lv_hex_1_0=ruleHexDigit		{
+		lv_hex_0_0=RULE_HEX_NUMBER
+		{
+			newLeafNode(lv_hex_0_0, grammarAccess.getRGBColorAccess().getHexHEX_NUMBERTerminalRuleCall_0_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getRGBColorRule());
+	            $current = createModelElement(grammarAccess.getRGBColorRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
        			"hex",
-        		lv_hex_1_0, 
-        		"HexDigit");
-	        afterParserOrEnumRuleCall();
+        		lv_hex_0_0, 
+        		"HEX_NUMBER");
 	    }
 
 )
-))
-    |(	otherlv_2='rgb' 
+)
+    |(	otherlv_1='rgb' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getRGBColorAccess().getRgbKeyword_1_0());
+    	newLeafNode(otherlv_1, grammarAccess.getRGBColorAccess().getRgbKeyword_1_0());
     }
-	otherlv_3='(' 
+	otherlv_2='(' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getRGBColorAccess().getLeftParenthesisKeyword_1_1());
+    	newLeafNode(otherlv_2, grammarAccess.getRGBColorAccess().getLeftParenthesisKeyword_1_1());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getRGBColorAccess().getRIntegerValueParserRuleCall_1_2_0()); 
 	    }
-		lv_r_4_0=ruleIntegerValue		{
+		lv_r_3_0=ruleIntegerValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRGBColorRule());
 	        }
        		set(
        			$current, 
        			"r",
-        		lv_r_4_0, 
+        		lv_r_3_0, 
         		"IntegerValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_5=',' 
+)	otherlv_4=',' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getRGBColorAccess().getCommaKeyword_1_3());
+    	newLeafNode(otherlv_4, grammarAccess.getRGBColorAccess().getCommaKeyword_1_3());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getRGBColorAccess().getGIntegerValueParserRuleCall_1_4_0()); 
 	    }
-		lv_g_6_0=ruleIntegerValue		{
+		lv_g_5_0=ruleIntegerValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRGBColorRule());
 	        }
        		set(
        			$current, 
        			"g",
-        		lv_g_6_0, 
+        		lv_g_5_0, 
         		"IntegerValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_7=',' 
+)	otherlv_6=',' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getRGBColorAccess().getCommaKeyword_1_5());
+    	newLeafNode(otherlv_6, grammarAccess.getRGBColorAccess().getCommaKeyword_1_5());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getRGBColorAccess().getBIntegerValueParserRuleCall_1_6_0()); 
 	    }
-		lv_b_8_0=ruleIntegerValue		{
+		lv_b_7_0=ruleIntegerValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRGBColorRule());
 	        }
        		set(
        			$current, 
        			"b",
-        		lv_b_8_0, 
+        		lv_b_7_0, 
         		"IntegerValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_9=')' 
+)	otherlv_8=')' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getRGBColorAccess().getRightParenthesisKeyword_1_7());
+    	newLeafNode(otherlv_8, grammarAccess.getRGBColorAccess().getRightParenthesisKeyword_1_7());
     }
 )
-    |(	otherlv_10='rgb' 
+    |(	otherlv_9='rgb' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getRGBColorAccess().getRgbKeyword_2_0());
+    	newLeafNode(otherlv_9, grammarAccess.getRGBColorAccess().getRgbKeyword_2_0());
     }
-	otherlv_11='(' 
+	otherlv_10='(' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getRGBColorAccess().getLeftParenthesisKeyword_2_1());
+    	newLeafNode(otherlv_10, grammarAccess.getRGBColorAccess().getLeftParenthesisKeyword_2_1());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getRGBColorAccess().getRpIntegerValueParserRuleCall_2_2_0()); 
 	    }
-		lv_rp_12_0=ruleIntegerValue		{
+		lv_rp_11_0=ruleIntegerValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRGBColorRule());
 	        }
        		set(
        			$current, 
        			"rp",
-        		lv_rp_12_0, 
+        		lv_rp_11_0, 
         		"IntegerValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_13='%' 
+)	otherlv_12='%' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getRGBColorAccess().getPercentSignKeyword_2_3());
+    	newLeafNode(otherlv_12, grammarAccess.getRGBColorAccess().getPercentSignKeyword_2_3());
     }
-	otherlv_14=',' 
+	otherlv_13=',' 
     {
-    	newLeafNode(otherlv_14, grammarAccess.getRGBColorAccess().getCommaKeyword_2_4());
+    	newLeafNode(otherlv_13, grammarAccess.getRGBColorAccess().getCommaKeyword_2_4());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getRGBColorAccess().getGpIntegerValueParserRuleCall_2_5_0()); 
 	    }
-		lv_gp_15_0=ruleIntegerValue		{
+		lv_gp_14_0=ruleIntegerValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRGBColorRule());
 	        }
        		set(
        			$current, 
        			"gp",
-        		lv_gp_15_0, 
+        		lv_gp_14_0, 
         		"IntegerValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_16='%' 
+)	otherlv_15='%' 
     {
-    	newLeafNode(otherlv_16, grammarAccess.getRGBColorAccess().getPercentSignKeyword_2_6());
+    	newLeafNode(otherlv_15, grammarAccess.getRGBColorAccess().getPercentSignKeyword_2_6());
     }
-	otherlv_17=',' 
+	otherlv_16=',' 
     {
-    	newLeafNode(otherlv_17, grammarAccess.getRGBColorAccess().getCommaKeyword_2_7());
+    	newLeafNode(otherlv_16, grammarAccess.getRGBColorAccess().getCommaKeyword_2_7());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getRGBColorAccess().getBpIntegerValueParserRuleCall_2_8_0()); 
 	    }
-		lv_bp_18_0=ruleIntegerValue		{
+		lv_bp_17_0=ruleIntegerValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRGBColorRule());
 	        }
        		set(
        			$current, 
        			"bp",
-        		lv_bp_18_0, 
+        		lv_bp_17_0, 
         		"IntegerValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_19='%' 
+)	otherlv_18='%' 
     {
-    	newLeafNode(otherlv_19, grammarAccess.getRGBColorAccess().getPercentSignKeyword_2_9());
+    	newLeafNode(otherlv_18, grammarAccess.getRGBColorAccess().getPercentSignKeyword_2_9());
     }
-	otherlv_20=')' 
+	otherlv_19=')' 
     {
-    	newLeafNode(otherlv_20, grammarAccess.getRGBColorAccess().getRightParenthesisKeyword_2_10());
+    	newLeafNode(otherlv_19, grammarAccess.getRGBColorAccess().getRightParenthesisKeyword_2_10());
     }
 )
-    |(	otherlv_21='rgba' 
+    |(	otherlv_20='rgba' 
     {
-    	newLeafNode(otherlv_21, grammarAccess.getRGBColorAccess().getRgbaKeyword_3_0());
+    	newLeafNode(otherlv_20, grammarAccess.getRGBColorAccess().getRgbaKeyword_3_0());
     }
-	otherlv_22='(' 
+	otherlv_21='(' 
     {
-    	newLeafNode(otherlv_22, grammarAccess.getRGBColorAccess().getLeftParenthesisKeyword_3_1());
+    	newLeafNode(otherlv_21, grammarAccess.getRGBColorAccess().getLeftParenthesisKeyword_3_1());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getRGBColorAccess().getRIntegerValueParserRuleCall_3_2_0()); 
 	    }
-		lv_r_23_0=ruleIntegerValue		{
+		lv_r_22_0=ruleIntegerValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRGBColorRule());
 	        }
        		set(
        			$current, 
        			"r",
-        		lv_r_23_0, 
+        		lv_r_22_0, 
         		"IntegerValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_24=',' 
+)	otherlv_23=',' 
     {
-    	newLeafNode(otherlv_24, grammarAccess.getRGBColorAccess().getCommaKeyword_3_3());
+    	newLeafNode(otherlv_23, grammarAccess.getRGBColorAccess().getCommaKeyword_3_3());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getRGBColorAccess().getGIntegerValueParserRuleCall_3_4_0()); 
 	    }
-		lv_g_25_0=ruleIntegerValue		{
+		lv_g_24_0=ruleIntegerValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRGBColorRule());
 	        }
        		set(
        			$current, 
        			"g",
-        		lv_g_25_0, 
+        		lv_g_24_0, 
         		"IntegerValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_26=',' 
+)	otherlv_25=',' 
     {
-    	newLeafNode(otherlv_26, grammarAccess.getRGBColorAccess().getCommaKeyword_3_5());
+    	newLeafNode(otherlv_25, grammarAccess.getRGBColorAccess().getCommaKeyword_3_5());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getRGBColorAccess().getBIntegerValueParserRuleCall_3_6_0()); 
 	    }
-		lv_b_27_0=ruleIntegerValue		{
+		lv_b_26_0=ruleIntegerValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRGBColorRule());
 	        }
        		set(
        			$current, 
        			"b",
-        		lv_b_27_0, 
+        		lv_b_26_0, 
         		"IntegerValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_28=',' 
+)	otherlv_27=',' 
     {
-    	newLeafNode(otherlv_28, grammarAccess.getRGBColorAccess().getCommaKeyword_3_7());
+    	newLeafNode(otherlv_27, grammarAccess.getRGBColorAccess().getCommaKeyword_3_7());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getRGBColorAccess().getAlphaNumberValueParserRuleCall_3_8_0()); 
 	    }
-		lv_alpha_29_0=ruleNumberValue		{
+		lv_alpha_28_0=ruleNumberValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRGBColorRule());
 	        }
        		set(
        			$current, 
        			"alpha",
-        		lv_alpha_29_0, 
+        		lv_alpha_28_0, 
         		"NumberValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_30=')' 
+)	otherlv_29=')' 
     {
-    	newLeafNode(otherlv_30, grammarAccess.getRGBColorAccess().getRightParenthesisKeyword_3_9());
+    	newLeafNode(otherlv_29, grammarAccess.getRGBColorAccess().getRightParenthesisKeyword_3_9());
     }
 )
-    |(	otherlv_31='rgba' 
+    |(	otherlv_30='rgba' 
     {
-    	newLeafNode(otherlv_31, grammarAccess.getRGBColorAccess().getRgbaKeyword_4_0());
+    	newLeafNode(otherlv_30, grammarAccess.getRGBColorAccess().getRgbaKeyword_4_0());
     }
-	otherlv_32='(' 
+	otherlv_31='(' 
     {
-    	newLeafNode(otherlv_32, grammarAccess.getRGBColorAccess().getLeftParenthesisKeyword_4_1());
+    	newLeafNode(otherlv_31, grammarAccess.getRGBColorAccess().getLeftParenthesisKeyword_4_1());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getRGBColorAccess().getRpIntegerValueParserRuleCall_4_2_0()); 
 	    }
-		lv_rp_33_0=ruleIntegerValue		{
+		lv_rp_32_0=ruleIntegerValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRGBColorRule());
 	        }
        		set(
        			$current, 
        			"rp",
-        		lv_rp_33_0, 
+        		lv_rp_32_0, 
         		"IntegerValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_34='%' 
+)	otherlv_33='%' 
     {
-    	newLeafNode(otherlv_34, grammarAccess.getRGBColorAccess().getPercentSignKeyword_4_3());
+    	newLeafNode(otherlv_33, grammarAccess.getRGBColorAccess().getPercentSignKeyword_4_3());
     }
-	otherlv_35=',' 
+	otherlv_34=',' 
     {
-    	newLeafNode(otherlv_35, grammarAccess.getRGBColorAccess().getCommaKeyword_4_4());
+    	newLeafNode(otherlv_34, grammarAccess.getRGBColorAccess().getCommaKeyword_4_4());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getRGBColorAccess().getGpIntegerValueParserRuleCall_4_5_0()); 
 	    }
-		lv_gp_36_0=ruleIntegerValue		{
+		lv_gp_35_0=ruleIntegerValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRGBColorRule());
 	        }
        		set(
        			$current, 
        			"gp",
-        		lv_gp_36_0, 
+        		lv_gp_35_0, 
         		"IntegerValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_37='%' 
+)	otherlv_36='%' 
     {
-    	newLeafNode(otherlv_37, grammarAccess.getRGBColorAccess().getPercentSignKeyword_4_6());
+    	newLeafNode(otherlv_36, grammarAccess.getRGBColorAccess().getPercentSignKeyword_4_6());
     }
-	otherlv_38=',' 
+	otherlv_37=',' 
     {
-    	newLeafNode(otherlv_38, grammarAccess.getRGBColorAccess().getCommaKeyword_4_7());
+    	newLeafNode(otherlv_37, grammarAccess.getRGBColorAccess().getCommaKeyword_4_7());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getRGBColorAccess().getBpIntegerValueParserRuleCall_4_8_0()); 
 	    }
-		lv_bp_39_0=ruleIntegerValue		{
+		lv_bp_38_0=ruleIntegerValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRGBColorRule());
 	        }
        		set(
        			$current, 
        			"bp",
-        		lv_bp_39_0, 
+        		lv_bp_38_0, 
         		"IntegerValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_40='%' 
+)	otherlv_39='%' 
     {
-    	newLeafNode(otherlv_40, grammarAccess.getRGBColorAccess().getPercentSignKeyword_4_9());
+    	newLeafNode(otherlv_39, grammarAccess.getRGBColorAccess().getPercentSignKeyword_4_9());
     }
-	otherlv_41=',' 
+	otherlv_40=',' 
     {
-    	newLeafNode(otherlv_41, grammarAccess.getRGBColorAccess().getCommaKeyword_4_10());
+    	newLeafNode(otherlv_40, grammarAccess.getRGBColorAccess().getCommaKeyword_4_10());
     }
 (
 (
 		{ 
 	        newCompositeNode(grammarAccess.getRGBColorAccess().getAlphaNumberValueParserRuleCall_4_11_0()); 
 	    }
-		lv_alpha_42_0=ruleNumberValue		{
+		lv_alpha_41_0=ruleNumberValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRGBColorRule());
 	        }
        		set(
        			$current, 
        			"alpha",
-        		lv_alpha_42_0, 
+        		lv_alpha_41_0, 
         		"NumberValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_43=')' 
+)	otherlv_42=')' 
     {
-    	newLeafNode(otherlv_43, grammarAccess.getRGBColorAccess().getRightParenthesisKeyword_4_12());
+    	newLeafNode(otherlv_42, grammarAccess.getRGBColorAccess().getRightParenthesisKeyword_4_12());
     }
 ))
 ;
@@ -10702,67 +10698,6 @@ ruleColorFunction returns [EObject current=null]
 
 
 
-// Entry rule entryRuleHexDigit
-entryRuleHexDigit returns [String current=null] 
-	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
-	}
-	:
-	{ newCompositeNode(grammarAccess.getHexDigitRule()); } 
-	 iv_ruleHexDigit=ruleHexDigit 
-	 { $current=$iv_ruleHexDigit.current.getText(); }  
-	 EOF 
-;
-finally {
-	myHiddenTokenState.restore();
-}
-
-// Rule HexDigit
-ruleHexDigit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
-    }
-    @after { leaveRule(); }:
-(    this_ID_0=RULE_ID    {
-		$current.merge(this_ID_0);
-    }
-
-    { 
-    newLeafNode(this_ID_0, grammarAccess.getHexDigitAccess().getIDTerminalRuleCall_0()); 
-    }
-
-    |(    this_INT_1=RULE_INT    {
-		$current.merge(this_INT_1);
-    }
-
-    { 
-    newLeafNode(this_INT_1, grammarAccess.getHexDigitAccess().getINTTerminalRuleCall_1_0()); 
-    }
-    this_ID_2=RULE_ID    {
-		$current.merge(this_ID_2);
-    }
-
-    { 
-    newLeafNode(this_ID_2, grammarAccess.getHexDigitAccess().getIDTerminalRuleCall_1_1()); 
-    }
-)
-    |    this_INT_3=RULE_INT    {
-		$current.merge(this_INT_3);
-    }
-
-    { 
-    newLeafNode(this_INT_3, grammarAccess.getHexDigitAccess().getINTTerminalRuleCall_2()); 
-    }
-)
-    ;
-finally {
-	myHiddenTokenState.restore();
-}
-
-
-
-
-
 // Rule BooleanValue
 ruleBooleanValue returns [Enumerator current=null] 
     @init { enterRule(); }
@@ -10820,6 +10755,8 @@ ruleHPositionValue returns [Enumerator current=null]
 
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'-'|'A'..'Z'|'_'|'0'..'9')*;
+
+RULE_HEX_NUMBER : '#' ('a'..'f'|'A'..'F'|'0'..'9')*;
 
 RULE_INT : ('0'..'9')+;
 

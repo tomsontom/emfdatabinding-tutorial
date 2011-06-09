@@ -476,7 +476,7 @@ NamedColor:
 ;
 
 RGBColor:
-	('#' hex=HexDigit)
+	hex=HEX_NUMBER
 	|
 	('rgb' '(' r=IntegerValue ',' g=IntegerValue ',' b=IntegerValue ')' )
 	|
@@ -500,7 +500,9 @@ ColorFunction:
 ;
 
 terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'-'|'A'..'Z'|'_'|'0'..'9')*;
+terminal HEX_NUMBER : '#' ('a'..'f'|'A'..'F'|'0'..'9')*;
 terminal INT returns ecore::EInt: ('0'..'9')+;
+// terminal REAL returns ecore::EDouble:('0'..'9')+ '.' ('0'..'9')+;
 terminal STRING	: 
 			'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
 			"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'"
@@ -510,5 +512,3 @@ terminal ML_COMMENT	: '/*' -> '*/';
 terminal WS			: (' '|'\t'|'\r'|'\n')+;
 
 terminal ANY_OTHER: .;
-
-HexDigit hidden(): ID|INT ID|INT;
