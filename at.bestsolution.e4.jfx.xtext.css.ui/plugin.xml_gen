@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+    <extension
+            point="org.eclipse.ui.editors">
+        <editor
+            class="at.bestsolution.e4.jfx.xtext.ui.JFXCssExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+            default="true"
+            extensions="fxcss"
+            id="at.bestsolution.e4.jfx.xtext.JFXCss"
+            name="JFXCss Editor">
+        </editor>
+    </extension>
+    <extension
+        point="org.eclipse.ui.handlers">
+        <handler
+            class="at.bestsolution.e4.jfx.xtext.ui.JFXCssExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
+            <activeWhen>
+                <reference
+                    definitionId="at.bestsolution.e4.jfx.xtext.JFXCss.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+        <handler
+            class="at.bestsolution.e4.jfx.xtext.ui.JFXCssExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="at.bestsolution.e4.jfx.xtext.JFXCss.validate">
+         <activeWhen>
+            <reference
+                    definitionId="at.bestsolution.e4.jfx.xtext.JFXCss.Editor.opened">
+            </reference>
+         </activeWhen>
+      </handler>
+    </extension>
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="at.bestsolution.e4.jfx.xtext.JFXCss.Editor.opened">
+            <and>
+                <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="at.bestsolution.e4.jfx.xtext.JFXCss" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
+    </extension>
+    <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            class="at.bestsolution.e4.jfx.xtext.ui.JFXCssExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="at.bestsolution.e4.jfx.xtext.JFXCss"
+            name="JFXCss">
+            <keywordReference id="at.bestsolution.e4.jfx.xtext.ui.keyword_JFXCss"/>
+        </page>
+        <page
+            category="at.bestsolution.e4.jfx.xtext.JFXCss"
+            class="at.bestsolution.e4.jfx.xtext.ui.JFXCssExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="at.bestsolution.e4.jfx.xtext.JFXCss.coloring"
+            name="Syntax Coloring">
+            <keywordReference id="at.bestsolution.e4.jfx.xtext.ui.keyword_JFXCss"/>
+        </page>
+        <page
+            category="at.bestsolution.e4.jfx.xtext.JFXCss"
+            class="at.bestsolution.e4.jfx.xtext.ui.JFXCssExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="at.bestsolution.e4.jfx.xtext.JFXCss.templates"
+            name="Templates">
+            <keywordReference id="at.bestsolution.e4.jfx.xtext.ui.keyword_JFXCss"/>
+        </page>
+    </extension>
+    <extension
+        point="org.eclipse.ui.keywords">
+        <keyword
+            id="at.bestsolution.e4.jfx.xtext.ui.keyword_JFXCss"
+            label="JFXCss"/>
+    </extension>
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Trigger expensive validation"
+            id="at.bestsolution.e4.jfx.xtext.JFXCss.validate"
+            name="Validate">
+      </command>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+             <command
+                 commandId="at.bestsolution.e4.jfx.xtext.JFXCss.validate"
+                 style="push"
+                 tooltip="Trigger expensive validation">
+            <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="at.bestsolution.e4.jfx.xtext.JFXCss.Editor.opened">
+                </reference>
+            </visibleWhen>
+         </command>  
+         </menuContribution>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
+				<visibleWhen checkEnabled="false">
+                	<reference definitionId="at.bestsolution.e4.jfx.xtext.JFXCss.Editor.opened">
+                	</reference>
+            	</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+	    <handler
+            class="at.bestsolution.e4.jfx.xtext.ui.JFXCssExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            commandId="org.eclipse.xtext.ui.editor.FindReferences">
+            <activeWhen>
+                <reference
+                    definitionId="at.bestsolution.e4.jfx.xtext.JFXCss.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+    </extension>   
+
+<!-- adding resource factories -->
+
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="at.bestsolution.e4.jfx.xtext.ui.JFXCssExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="fxcss">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+            class="at.bestsolution.e4.jfx.xtext.ui.JFXCssExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="fxcss">
+        </resourceServiceProvider>
+    </extension>
+
+
+
+   <extension
+         point="org.eclipse.xtext.builder.participant">
+      <participant
+            class="at.bestsolution.e4.jfx.xtext.ui.JFXCssExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+      </participant>
+   </extension>
+
+	<!-- Quick Outline -->
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler 
+			class="at.bestsolution.e4.jfx.xtext.ui.JFXCssExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
+			<activeWhen>
+				<reference
+					definitionId="at.bestsolution.e4.jfx.xtext.JFXCss.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			description="Open the quick outline."
+			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+			name="Quick Outline">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.open">
+			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+				style="push"
+				tooltip="Open Quick Outline">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="at.bestsolution.e4.jfx.xtext.JFXCss.Editor.opened"/>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+   <!-- quickfix marker resolution generator -->
+   <extension
+         point="org.eclipse.ui.ide.markerResolution">
+      <markerResolutionGenerator
+            class="at.bestsolution.e4.jfx.xtext.ui.JFXCssExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
+      </markerResolutionGenerator>
+   </extension>
+
+   	<!-- Rename Refactoring -->
+	<extension point="org.eclipse.ui.handlers">
+		<handler 
+			class="at.bestsolution.e4.jfx.xtext.ui.JFXCssExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RenameElementHandler"
+			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
+			<activeWhen>
+				<reference
+					definitionId="at.bestsolution.e4.jfx.xtext.JFXCss.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+    <extension point="org.eclipse.ui.menus">
+         <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+         <command commandId="org.eclipse.xtext.ui.refactoring.RenameElement"
+               style="push">
+            <visibleWhen checkEnabled="false">
+               <reference
+                     definitionId="at.bestsolution.e4.jfx.xtext.JFXCss.Editor.opened">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+  <extension point="org.eclipse.compare.contentViewers">
+    <viewer id="at.bestsolution.e4.jfx.xtext.JFXCss.compare.contentViewers"
+            class="at.bestsolution.e4.jfx.xtext.ui.JFXCssExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="fxcss">
+    </viewer>
+  </extension>
+  <extension point="org.eclipse.compare.contentMergeViewers">
+    <viewer id="at.bestsolution.e4.jfx.xtext.JFXCss.compare.contentMergeViewers"
+            class="at.bestsolution.e4.jfx.xtext.ui.JFXCssExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="fxcss" label="JFXCss Compare">
+     </viewer>
+  </extension>
+  <extension point="org.eclipse.ui.editors.documentProviders">
+    <provider id="at.bestsolution.e4.jfx.xtext.JFXCss.editors.documentProviders"
+            class="at.bestsolution.e4.jfx.xtext.ui.JFXCssExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="fxcss">
+    </provider>
+  </extension>
+
+</plugin>

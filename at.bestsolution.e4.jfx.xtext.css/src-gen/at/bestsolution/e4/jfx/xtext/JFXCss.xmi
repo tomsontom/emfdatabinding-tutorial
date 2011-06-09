@@ -1,0 +1,2044 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xtext="http://www.eclipse.org/2008/Xtext">
+  <xtext:Grammar name="at.bestsolution.e4.jfx.xtext.JFXCss" usedGrammars="/1">
+    <metamodelDeclarations xsi:type="xtext:GeneratedMetamodel" name="jFXCss">
+      <ePackage href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#/"/>
+    </metamodelDeclarations>
+    <rules xsi:type="xtext:ParserRule" name="JFXCss">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//JFXCss"/>
+      </type>
+      <alternatives xsi:type="xtext:Assignment" feature="definitions" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="Definition">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//Definition"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="#"/>
+          <elements xsi:type="xtext:Assignment" feature="id" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="{"/>
+        <elements xsi:type="xtext:Assignment" cardinality="+" feature="properties" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="}"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="FXProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//FXProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.4"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.5"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.6"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.14"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.16"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.22"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.24"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.25"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.26"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.27"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.28"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.29"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.30"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.31"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.32"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.33"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.34"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.35"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.37"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.38"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.39"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.40"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.41"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.42"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.43"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.44"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.45"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.36"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=";"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="FontProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//FontProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="-fx-font"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-title-font"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-label-font"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-value-label-font"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-label-font"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-tick-label-font"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.63"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="FontFamilyProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//FontFamilyProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="-fx-font-family"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-title-font-family"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-label-font-family"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-value-label-font-family"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-label-font-family"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-tick-label-font-family"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.66"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="FontSizeProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//FontSizeProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="-fx-font-size"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-title-font-size"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-label-font-size"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-value-label-font-size"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-label-font-size"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-tick-label-font-size"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="FontStyleProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//FontStyleProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="-fx-font-style"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-title-font-style"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-label-font-style"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-value-label-font-style"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-label-font-style"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-tick-label-font-style"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.64"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="FontWeightProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//FontWeightProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="-fx-font-weight"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-title-font-weight"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-label-font-weight"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-value-label-font-weight"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-label-font-weight"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-tick-label-font-weight"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.65"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="CursorProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//CursorProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-cursor"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="crosshair"/>
+            <elements xsi:type="xtext:Keyword" value="default"/>
+            <elements xsi:type="xtext:Keyword" value="hand"/>
+            <elements xsi:type="xtext:Keyword" value="move"/>
+            <elements xsi:type="xtext:Keyword" value="e-resize"/>
+            <elements xsi:type="xtext:Keyword" value="h-resize"/>
+            <elements xsi:type="xtext:Keyword" value="ne-resize"/>
+            <elements xsi:type="xtext:Keyword" value="nw-resize"/>
+            <elements xsi:type="xtext:Keyword" value="n-resize"/>
+            <elements xsi:type="xtext:Keyword" value="se-resize"/>
+            <elements xsi:type="xtext:Keyword" value="sw-resize"/>
+            <elements xsi:type="xtext:Keyword" value="s-resize"/>
+            <elements xsi:type="xtext:Keyword" value="w-resize"/>
+            <elements xsi:type="xtext:Keyword" value="v-resize"/>
+            <elements xsi:type="xtext:Keyword" value="text"/>
+            <elements xsi:type="xtext:Keyword" value="wait"/>
+          </terminal>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="EffectProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//EffectProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-effect"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="Effect">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//Effect"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="EffectDropShadow">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//EffectDropShadow"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="dropshadow"/>
+        <elements xsi:type="xtext:Keyword" value="("/>
+        <elements xsi:type="xtext:Assignment" feature="blur" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.49"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="color" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.71"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="blurRadius" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="spread" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="offsetX" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="offsetY" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=")"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="EffectInnerShadow">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//EffectInnerShadow"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="innershadow("/>
+        <elements xsi:type="xtext:Assignment" feature="blur" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.49"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="color" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.71"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="blurRadius" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="choke" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="offsetX" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="offsetY" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=")"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="BooleanProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//BooleanProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="-fx-focus-traversable"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pannable"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-hgap"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-vpos"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-snap-to-pixel"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-vertical"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-smooth"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-strikethrough"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-underline"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-scale-shape"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-vertical-zero-line-visible"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-vertical-grid-line-visible"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-horizontal-zero-line-visible"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-horizontal-grid-line-visible"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-value-visible"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-to-label-line-curved"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-label-visible"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-clockwise"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-show-symbols"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-legend-visible"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-scale-bubble-radius-using-axis"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-select-on-focus"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-editable"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-snap-to-ticks"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-show-tick-marks"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-show-tick-labels"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-fit-to-width"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-minor-tick-visible"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-gap-start-and-end"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-tick-mark-visible"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-tick-labels-visible"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-fit-to-height"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-click-to-position"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-text-wrap"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-position-shape"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.46"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="SizeProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//SizeProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="-fx-spacing"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-arc-height"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-arc-width"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-minor-tick-length"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-stroke-width"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-start-margin"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-end-margin"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-tick-mark-stroke-width"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-tick-mark-length"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-tick-label-tick-gap"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-axis-stroke-width"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-label-tick-gap"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-vertical-grid-line-stroke-width"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-plot-background-stroke-width"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-horizontal-grid-line-stroke-width"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-thickness"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-stroke-width"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-title-gap"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-legend-gap"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-hover-stroke-width"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-chart-background-stroke-width"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-offset-y"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-offset-x"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-category-gap"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-bar-gap"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-graphic-text-gap"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="NumberProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//NumberProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="-fx-rotate"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-scale-x"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-scale-y"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-scale-z"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-translate-x"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-translate-y"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-translate-z"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-vgap"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-tile-height"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-tile-width"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-stroke-dash-offset"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-stroke-miter-limit"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-block-increment"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-unit-increment"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-major-tick-unit"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-data-opacity"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-radius-scale"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-to-label-line-one-length"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-to-label-line-stroke-width"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-to-label-line-two-length"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-start-angle"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-tick-unit"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="IntegerProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//IntegerProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="-fx-columns"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-rows"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-lines"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-minor-tick-count"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="PaintProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//PaintProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="-fx-fill"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-stroke"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-text-fill"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-bar-fill"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-bar-stroke"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-bottom-shelf-fill"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-bottom-shelf-stroke"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-side-shelf-fill"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-side-shelf-stroke"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-zero-shelf-fill"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-zero-shelf-stroke"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-chart-background-fill"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-chart-background-stroke"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-hover-stroke"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-title-fill"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-label-fill"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-stroke"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-to-label-line-stroke"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-pie-value-label-fill"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-horizontal-alternate-row-fill"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-plot-background-fill"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-horizontal-grid-line-stroke"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-plot-background-stroke"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-vertical-alternate-row-fill"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-vertical-grid-line-stroke"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-axis-stroke"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-tick-label-fill"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-label-fill"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-tick-mark-stroke"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-hover-fill"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.67"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="PaintProperties">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//PaintProperties"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Keyword" value="-fx-background-color"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.67"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.67"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="BlendProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//BlendProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-blend-mode"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="add"/>
+            <elements xsi:type="xtext:Keyword" value="blue"/>
+            <elements xsi:type="xtext:Keyword" value="color-burn"/>
+            <elements xsi:type="xtext:Keyword" value="color-dodge"/>
+            <elements xsi:type="xtext:Keyword" value="darken"/>
+            <elements xsi:type="xtext:Keyword" value="difference"/>
+            <elements xsi:type="xtext:Keyword" value="exclusion"/>
+            <elements xsi:type="xtext:Keyword" value="green"/>
+            <elements xsi:type="xtext:Keyword" value="hard-light"/>
+            <elements xsi:type="xtext:Keyword" value="lighten"/>
+            <elements xsi:type="xtext:Keyword" value="multiply"/>
+            <elements xsi:type="xtext:Keyword" value="overlay"/>
+            <elements xsi:type="xtext:Keyword" value="red"/>
+            <elements xsi:type="xtext:Keyword" value="screen"/>
+            <elements xsi:type="xtext:Keyword" value="soft-light"/>
+            <elements xsi:type="xtext:Keyword" value="src-atop"/>
+            <elements xsi:type="xtext:Keyword" value="src-in"/>
+            <elements xsi:type="xtext:Keyword" value="src-out"/>
+            <elements xsi:type="xtext:Keyword" value="src-over"/>
+          </terminal>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="UrlProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//UrlProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="-fx-image"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-graphic"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.52"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="MultiSizeProperties">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//MultiSizeProperties"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="-fx-background-insets"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-background-radius"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-border-insets"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-border-radius"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-border-width"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-border-image-insets"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-border-image-width"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.55"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.55"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="HPositionProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//HPositionProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="-fx-hpos"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-node-hpos"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-graphic-hpos"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.47"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="VPositionProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//VPositionProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="-fx-vpos"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-node-vpos"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-graphic-vpos"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.48"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="SideProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//SideProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="-fx-legend-side"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-title-side"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-side"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="top"/>
+            <elements xsi:type="xtext:Keyword" value="bottom"/>
+            <elements xsi:type="xtext:Keyword" value="left"/>
+            <elements xsi:type="xtext:Keyword" value="right"/>
+          </terminal>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="BarPolicyProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//BarPolicyProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="-fx-hbar-policy"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-vbar-policy"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="never"/>
+            <elements xsi:type="xtext:Keyword" value="always"/>
+            <elements xsi:type="xtext:Keyword" value="as_needed"/>
+          </terminal>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="UrlProperties">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//UrlProperties"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="&#xA;&#x9;&#x9;-fx-background-image"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-border-image"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.52"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.52"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="RepeatProperties">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//RepeatProperties"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="-fx-background-image-repeat"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-border-image-repeat"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.57"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.57"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="MultiSizeProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//MultiSizeProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Keyword" value="-fx-padding"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.55"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="SizeProperties">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//SizeProperties"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="property" operator="=">
+          <terminal xsi:type="xtext:Keyword" value="-fx-stroke-dash-array"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" cardinality="+" feature="values" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="StrokeLineCapProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//StrokeLineCapProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-stroke-line-cap"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="square"/>
+            <elements xsi:type="xtext:Keyword" value="butt"/>
+            <elements xsi:type="xtext:Keyword" value="round"/>
+          </terminal>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="StrokeLineJoinProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//StrokeLineJoinProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-stroke-line-join"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="miter"/>
+            <elements xsi:type="xtext:Keyword" value="bevel"/>
+            <elements xsi:type="xtext:Keyword" value="round"/>
+          </terminal>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="TextAlignmentProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//TextAlignmentProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-text-alignment"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="left"/>
+            <elements xsi:type="xtext:Keyword" value="center"/>
+            <elements xsi:type="xtext:Keyword" value="right"/>
+            <elements xsi:type="xtext:Keyword" value="justify"/>
+          </terminal>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="TextOriginProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//TextOriginProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-text-origin"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="baseline"/>
+            <elements xsi:type="xtext:Keyword" value="top"/>
+            <elements xsi:type="xtext:Keyword" value="bottom"/>
+          </terminal>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="BackgroundImagePositionProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//BackgroundImagePositionProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-background-image-position"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.56"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.56"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="BackgroundImageSizeProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//BackgroundImageSizeProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-background-image-size"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.58"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.58"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="BorderColorProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//BorderColorProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-border-color"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.59"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.59"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="BorderStyleProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//BorderStyleProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-border-style"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.60"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.60"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="BorderImageSliceProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//BorderImageSliceProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-border-image-slice"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.62"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.62"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="ShapeProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//ShapeProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-shape"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="TextProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//TextProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-text"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="TextOverrunProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//TextOverrunProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-text-overrun"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="center-ellipses"/>
+            <elements xsi:type="xtext:Keyword" value="center-word-ellipses"/>
+            <elements xsi:type="xtext:Keyword" value="clip"/>
+            <elements xsi:type="xtext:Keyword" value="ellipses"/>
+            <elements xsi:type="xtext:Keyword" value="leading-ellipses"/>
+            <elements xsi:type="xtext:Keyword" value="leading-word-ellipses"/>
+            <elements xsi:type="xtext:Keyword" value="word-ellipses"/>
+          </terminal>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="EchoCharProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//EchoCharProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-echo-char"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="InsetsProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//InsetsProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="-fx-insets"/>
+          <elements xsi:type="xtext:Keyword" value=":"/>
+          <elements xsi:type="xtext:Assignment" feature="value" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Assignment" feature="value" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="value" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="value" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="value" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="HorizontalGridLineStrokeDashArrayProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//HorizontalGridLineStrokeDashArrayProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-horizontal-grid-line-stroke-dash-array"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" cardinality="+" feature="value" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="VerticalGridLineStrokeDashArrayProperty">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//VerticalGridLineStrokeDashArrayProperty"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="-fx-vertical-grid-line-stroke-dash-array"/>
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="+" feature="values" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:EnumRule" name="BooleanValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EEnum" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//BooleanValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:EnumLiteralDeclaration">
+          <enumLiteral href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//BooleanValue/true"/>
+          <literal value="true"/>
+        </elements>
+        <elements xsi:type="xtext:EnumLiteralDeclaration">
+          <enumLiteral href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//BooleanValue/false"/>
+          <literal value="false"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:EnumRule" name="HPositionValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EEnum" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//HPositionValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:EnumLiteralDeclaration">
+          <enumLiteral href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//HPositionValue/left"/>
+          <literal value="left"/>
+        </elements>
+        <elements xsi:type="xtext:EnumLiteralDeclaration">
+          <enumLiteral href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//HPositionValue/center"/>
+          <literal value="center"/>
+        </elements>
+        <elements xsi:type="xtext:EnumLiteralDeclaration">
+          <enumLiteral href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//HPositionValue/right"/>
+          <literal value="right"/>
+        </elements>
+        <elements xsi:type="xtext:EnumLiteralDeclaration">
+          <enumLiteral href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//HPositionValue/leading"/>
+          <literal value="leading"/>
+        </elements>
+        <elements xsi:type="xtext:EnumLiteralDeclaration">
+          <enumLiteral href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//HPositionValue/trailing"/>
+          <literal value="trailing"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="VPositionValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//VPositionValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Assignment" feature="v" operator="=">
+        <terminal xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Keyword" value="top"/>
+          <elements xsi:type="xtext:Keyword" value="center"/>
+          <elements xsi:type="xtext:Keyword" value="baseline"/>
+          <elements xsi:type="xtext:Keyword" value="bottom"/>
+          <elements xsi:type="xtext:Keyword" value="page-end"/>
+          <elements xsi:type="xtext:Keyword" value="page-start"/>
+        </terminal>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="BlurValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//BlurValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Assignment" feature="v" operator="=">
+        <terminal xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Keyword" value="gaussian"/>
+          <elements xsi:type="xtext:Keyword" value="one-pass-box"/>
+          <elements xsi:type="xtext:Keyword" value="three-pass-box"/>
+          <elements xsi:type="xtext:Keyword" value="two-pass-box"/>
+        </terminal>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="NumberValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//NumberValue"/>
+      </type>
+      <alternatives xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="IntegerValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//IntegerValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="UrlValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//UrlValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="url("/>
+        <elements xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Group">
+            <elements xsi:type="xtext:Keyword" value="'"/>
+            <elements xsi:type="xtext:Assignment" feature="address" operator="=">
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.53"/>
+            </elements>
+            <elements xsi:type="xtext:Keyword" value="'"/>
+          </elements>
+          <elements xsi:type="xtext:Group">
+            <elements xsi:type="xtext:Keyword" value="&quot;"/>
+            <elements xsi:type="xtext:Assignment" feature="address" operator="=">
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.53"/>
+            </elements>
+            <elements xsi:type="xtext:Keyword" value="&quot;"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=")"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="AddressValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//AddressValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="SizeValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//SizeValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="dimension" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="%"/>
+            <elements xsi:type="xtext:Keyword" value="px"/>
+            <elements xsi:type="xtext:Keyword" value="mm"/>
+            <elements xsi:type="xtext:Keyword" value="cm"/>
+            <elements xsi:type="xtext:Keyword" value="in"/>
+            <elements xsi:type="xtext:Keyword" value="pt"/>
+            <elements xsi:type="xtext:Keyword" value="pc"/>
+            <elements xsi:type="xtext:Keyword" value="em"/>
+            <elements xsi:type="xtext:Keyword" value="ex"/>
+          </terminal>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="MultiSizeValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//MultiSizeValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="values" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="BgPositionValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//BgPositionValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Assignment" feature="absx" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="relx" operator="=">
+            <terminal xsi:type="xtext:Alternatives">
+              <elements xsi:type="xtext:Keyword" value="left"/>
+              <elements xsi:type="xtext:Keyword" value="center"/>
+              <elements xsi:type="xtext:Keyword" value="right"/>
+            </terminal>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Assignment" feature="absy" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="rely" operator="=">
+            <terminal xsi:type="xtext:Alternatives">
+              <elements xsi:type="xtext:Keyword" value="top"/>
+              <elements xsi:type="xtext:Keyword" value="center"/>
+              <elements xsi:type="xtext:Keyword" value="bottom"/>
+            </terminal>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="RepeatStyleValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//RepeatStyleValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Assignment" feature="v" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="repeat-x"/>
+            <elements xsi:type="xtext:Keyword" value="repeat-y"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Assignment" feature="v" operator="=">
+            <terminal xsi:type="xtext:Alternatives">
+              <elements xsi:type="xtext:Keyword" value="repeat"/>
+              <elements xsi:type="xtext:Keyword" value="space"/>
+              <elements xsi:type="xtext:Keyword" value="round"/>
+              <elements xsi:type="xtext:Keyword" value="no-repeat"/>
+            </terminal>
+          </elements>
+          <elements xsi:type="xtext:Assignment" cardinality="?" feature="v2" operator="=">
+            <terminal xsi:type="xtext:Alternatives">
+              <elements xsi:type="xtext:Keyword" value="repeat"/>
+              <elements xsi:type="xtext:Keyword" value="space"/>
+              <elements xsi:type="xtext:Keyword" value="round"/>
+              <elements xsi:type="xtext:Keyword" value="no-repeat"/>
+            </terminal>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="BgSizeValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//BgSizeValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Assignment" feature="xsize" operator="=">
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+            </elements>
+            <elements xsi:type="xtext:Assignment" feature="xauto" operator="=">
+              <terminal xsi:type="xtext:Keyword" value="auto"/>
+            </elements>
+          </elements>
+          <elements xsi:type="xtext:Alternatives" cardinality="?">
+            <elements xsi:type="xtext:Assignment" feature="ysize" operator="=">
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+            </elements>
+            <elements xsi:type="xtext:Assignment" feature="yauto" operator="=">
+              <terminal xsi:type="xtext:Keyword" value="auto"/>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="predefined" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="cover"/>
+            <elements xsi:type="xtext:Keyword" value="contain"/>
+          </terminal>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="MultiPaintValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//MultiPaintValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Assignment" cardinality="+" feature="values" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.67"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="BorderStyleValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//BorderStyleValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="dashStyle" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.61"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="location" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="centered"/>
+            <elements xsi:type="xtext:Keyword" value="inside"/>
+            <elements xsi:type="xtext:Keyword" value="outside"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="line-join"/>
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Group">
+              <elements xsi:type="xtext:Keyword" value="miter"/>
+              <elements xsi:type="xtext:Assignment" feature="miterAbs" operator="=">
+                <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+              </elements>
+            </elements>
+            <elements xsi:type="xtext:Assignment" feature="miterPredefined" operator="=">
+              <terminal xsi:type="xtext:Alternatives">
+                <elements xsi:type="xtext:Keyword" value="bevel"/>
+                <elements xsi:type="xtext:Keyword" value="round"/>
+              </terminal>
+            </elements>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="line-cap"/>
+          <elements xsi:type="xtext:Assignment" feature="lineCap" operator="=">
+            <terminal xsi:type="xtext:Alternatives">
+              <elements xsi:type="xtext:Keyword" value="square"/>
+              <elements xsi:type="xtext:Keyword" value="butt"/>
+              <elements xsi:type="xtext:Keyword" value="round"/>
+            </terminal>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="DashStyleValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//DashStyleValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Assignment" feature="v" operator="=">
+        <terminal xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Keyword" value="none"/>
+          <elements xsi:type="xtext:Keyword" value="solid"/>
+          <elements xsi:type="xtext:Keyword" value="dotted"/>
+          <elements xsi:type="xtext:Keyword" value="dashed"/>
+        </terminal>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="SizeFill">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//SizeFill"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="value" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.55"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="fill" operator="=">
+          <terminal xsi:type="xtext:Keyword" value="fill"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="FontValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//FontValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="styleOrWeight" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="italic"/>
+            <elements xsi:type="xtext:Keyword" value="oblique"/>
+            <elements xsi:type="xtext:Keyword" value="normal"/>
+            <elements xsi:type="xtext:Keyword" value="bold"/>
+            <elements xsi:type="xtext:Keyword" value="bolder"/>
+            <elements xsi:type="xtext:Keyword" value="lighter"/>
+            <elements xsi:type="xtext:Keyword" value="100"/>
+            <elements xsi:type="xtext:Keyword" value="200"/>
+            <elements xsi:type="xtext:Keyword" value="300"/>
+            <elements xsi:type="xtext:Keyword" value="400"/>
+            <elements xsi:type="xtext:Keyword" value="500"/>
+            <elements xsi:type="xtext:Keyword" value="600"/>
+            <elements xsi:type="xtext:Keyword" value="700"/>
+            <elements xsi:type="xtext:Keyword" value="800"/>
+            <elements xsi:type="xtext:Keyword" value="900"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="size" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="family" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.66"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="FontStyleValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//FontStyleValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Keyword" value="normal"/>
+          <elements xsi:type="xtext:Keyword" value="italic"/>
+          <elements xsi:type="xtext:Keyword" value="oblique"/>
+        </terminal>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="FontWeightValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//FontWeightValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Keyword" value="normal"/>
+          <elements xsi:type="xtext:Keyword" value="bold"/>
+          <elements xsi:type="xtext:Keyword" value="bolder"/>
+          <elements xsi:type="xtext:Keyword" value="lighter"/>
+          <elements xsi:type="xtext:Keyword" value="100"/>
+          <elements xsi:type="xtext:Keyword" value="200"/>
+          <elements xsi:type="xtext:Keyword" value="300"/>
+          <elements xsi:type="xtext:Keyword" value="400"/>
+          <elements xsi:type="xtext:Keyword" value="500"/>
+          <elements xsi:type="xtext:Keyword" value="600"/>
+          <elements xsi:type="xtext:Keyword" value="700"/>
+          <elements xsi:type="xtext:Keyword" value="800"/>
+          <elements xsi:type="xtext:Keyword" value="900"/>
+        </terminal>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="FontFamily">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//FontFamily"/>
+      </type>
+      <alternatives xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="PaintValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//PaintValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.68"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.69"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.71"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="LinearGradient">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//LinearGradient"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="linear"/>
+        <elements xsi:type="xtext:Keyword" value="("/>
+        <elements xsi:type="xtext:Assignment" feature="x1" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="y1" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=")"/>
+        <elements xsi:type="xtext:Keyword" value="to"/>
+        <elements xsi:type="xtext:Keyword" value="("/>
+        <elements xsi:type="xtext:Assignment" feature="x2" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="y2" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=")"/>
+        <elements xsi:type="xtext:Keyword" value="stops"/>
+        <elements xsi:type="xtext:Group" cardinality="+">
+          <elements xsi:type="xtext:Keyword" value="("/>
+          <elements xsi:type="xtext:Assignment" feature="stops" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.70"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=")"/>
+        </elements>
+        <elements xsi:type="xtext:Alternatives" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="repeat"/>
+          <elements xsi:type="xtext:Keyword" value="reflect"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="RadialGradient">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//RadialGradient"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="radial"/>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="("/>
+          <elements xsi:type="xtext:Assignment" feature="cx" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="cy" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=")"/>
+          <elements xsi:type="xtext:Keyword" value=","/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="radius" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="focus"/>
+          <elements xsi:type="xtext:Keyword" value="("/>
+          <elements xsi:type="xtext:Assignment" feature="fx" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="fy" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.54"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=")"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="stops"/>
+        <elements xsi:type="xtext:Group" cardinality="+">
+          <elements xsi:type="xtext:Keyword" value="("/>
+          <elements xsi:type="xtext:Assignment" feature="stops" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.70"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=")"/>
+        </elements>
+        <elements xsi:type="xtext:Alternatives" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="repeat"/>
+          <elements xsi:type="xtext:Keyword" value="reflect"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="StopValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//StopValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="pos" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="color" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.71"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="ColorValue">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//ColorValue"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.72"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.73"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.74"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.75"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="NamedColor">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//NamedColor"/>
+      </type>
+      <alternatives xsi:type="xtext:Assignment" feature="value" operator="=">
+        <terminal xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Keyword" value="aliceblue"/>
+          <elements xsi:type="xtext:Keyword" value="antiquewhite"/>
+          <elements xsi:type="xtext:Keyword" value="aqua"/>
+          <elements xsi:type="xtext:Keyword" value="aquamarine"/>
+          <elements xsi:type="xtext:Keyword" value="azure"/>
+          <elements xsi:type="xtext:Keyword" value="beige"/>
+          <elements xsi:type="xtext:Keyword" value="bisque"/>
+          <elements xsi:type="xtext:Keyword" value="black"/>
+          <elements xsi:type="xtext:Keyword" value="blanchedalmond"/>
+          <elements xsi:type="xtext:Keyword" value="blue"/>
+          <elements xsi:type="xtext:Keyword" value="blueviolet"/>
+          <elements xsi:type="xtext:Keyword" value="brown"/>
+          <elements xsi:type="xtext:Keyword" value="burlywood"/>
+          <elements xsi:type="xtext:Keyword" value="cadetblue"/>
+          <elements xsi:type="xtext:Keyword" value="chartreuse"/>
+          <elements xsi:type="xtext:Keyword" value="chocolate"/>
+          <elements xsi:type="xtext:Keyword" value="coral"/>
+          <elements xsi:type="xtext:Keyword" value="cornflowerblue"/>
+          <elements xsi:type="xtext:Keyword" value="cornsilk"/>
+          <elements xsi:type="xtext:Keyword" value="crimson"/>
+          <elements xsi:type="xtext:Keyword" value="cyan"/>
+          <elements xsi:type="xtext:Keyword" value="darkblue"/>
+          <elements xsi:type="xtext:Keyword" value="darkcyan"/>
+          <elements xsi:type="xtext:Keyword" value="darkgoldenrod"/>
+          <elements xsi:type="xtext:Keyword" value="darkgray"/>
+          <elements xsi:type="xtext:Keyword" value="darkgreen"/>
+          <elements xsi:type="xtext:Keyword" value="darkgrey"/>
+          <elements xsi:type="xtext:Keyword" value="darkkhaki"/>
+          <elements xsi:type="xtext:Keyword" value="darkmagenta"/>
+          <elements xsi:type="xtext:Keyword" value="darkolivegreen"/>
+          <elements xsi:type="xtext:Keyword" value="darkorange"/>
+          <elements xsi:type="xtext:Keyword" value="darkorchid"/>
+          <elements xsi:type="xtext:Keyword" value="darkred"/>
+          <elements xsi:type="xtext:Keyword" value="darksalmon"/>
+          <elements xsi:type="xtext:Keyword" value="darkseagreen"/>
+          <elements xsi:type="xtext:Keyword" value="darkslateblue"/>
+          <elements xsi:type="xtext:Keyword" value="darkslategray"/>
+          <elements xsi:type="xtext:Keyword" value="darkslategrey"/>
+          <elements xsi:type="xtext:Keyword" value="darkturquoise"/>
+          <elements xsi:type="xtext:Keyword" value="darkviolet"/>
+          <elements xsi:type="xtext:Keyword" value="deeppink"/>
+          <elements xsi:type="xtext:Keyword" value="deepskyblue"/>
+          <elements xsi:type="xtext:Keyword" value="dimgray"/>
+          <elements xsi:type="xtext:Keyword" value="dimgrey"/>
+          <elements xsi:type="xtext:Keyword" value="dodgerblue"/>
+          <elements xsi:type="xtext:Keyword" value="firebrick"/>
+          <elements xsi:type="xtext:Keyword" value="floralwhite"/>
+          <elements xsi:type="xtext:Keyword" value="forestgreen"/>
+          <elements xsi:type="xtext:Keyword" value="fuchsia"/>
+          <elements xsi:type="xtext:Keyword" value="gainsboro"/>
+          <elements xsi:type="xtext:Keyword" value="ghostwhite"/>
+          <elements xsi:type="xtext:Keyword" value="gold"/>
+          <elements xsi:type="xtext:Keyword" value="goldenrod"/>
+          <elements xsi:type="xtext:Keyword" value="gray"/>
+          <elements xsi:type="xtext:Keyword" value="green"/>
+          <elements xsi:type="xtext:Keyword" value="greenyellow"/>
+          <elements xsi:type="xtext:Keyword" value="grey"/>
+          <elements xsi:type="xtext:Keyword" value="honeydew"/>
+          <elements xsi:type="xtext:Keyword" value="hotpink"/>
+          <elements xsi:type="xtext:Keyword" value="indianred"/>
+          <elements xsi:type="xtext:Keyword" value="indigo"/>
+          <elements xsi:type="xtext:Keyword" value="ivory"/>
+          <elements xsi:type="xtext:Keyword" value="khaki"/>
+          <elements xsi:type="xtext:Keyword" value="lavender"/>
+          <elements xsi:type="xtext:Keyword" value="lavenderblush"/>
+          <elements xsi:type="xtext:Keyword" value="lawngreen"/>
+          <elements xsi:type="xtext:Keyword" value="lemonchiffon"/>
+          <elements xsi:type="xtext:Keyword" value="lightblue"/>
+          <elements xsi:type="xtext:Keyword" value="lightcoral"/>
+          <elements xsi:type="xtext:Keyword" value="lightcyan"/>
+          <elements xsi:type="xtext:Keyword" value="lightgoldenrodyellow"/>
+          <elements xsi:type="xtext:Keyword" value="lightgray"/>
+          <elements xsi:type="xtext:Keyword" value="lightgreen"/>
+          <elements xsi:type="xtext:Keyword" value="lightgrey"/>
+          <elements xsi:type="xtext:Keyword" value="lightpink"/>
+          <elements xsi:type="xtext:Keyword" value="lightsalmon"/>
+          <elements xsi:type="xtext:Keyword" value="lightseagreen"/>
+          <elements xsi:type="xtext:Keyword" value="lightskyblue"/>
+          <elements xsi:type="xtext:Keyword" value="lightslategray"/>
+          <elements xsi:type="xtext:Keyword" value="lightslategrey"/>
+          <elements xsi:type="xtext:Keyword" value="lightsteelblue"/>
+          <elements xsi:type="xtext:Keyword" value="lightyellow"/>
+          <elements xsi:type="xtext:Keyword" value="lime"/>
+          <elements xsi:type="xtext:Keyword" value="limegreen"/>
+          <elements xsi:type="xtext:Keyword" value="linen"/>
+          <elements xsi:type="xtext:Keyword" value="magenta"/>
+          <elements xsi:type="xtext:Keyword" value="maroon"/>
+          <elements xsi:type="xtext:Keyword" value="mediumaquamarine"/>
+          <elements xsi:type="xtext:Keyword" value="mediumblue"/>
+          <elements xsi:type="xtext:Keyword" value="mediumorchid"/>
+          <elements xsi:type="xtext:Keyword" value="mediumpurple"/>
+          <elements xsi:type="xtext:Keyword" value="mediumseagreen"/>
+          <elements xsi:type="xtext:Keyword" value="mediumslateblue"/>
+          <elements xsi:type="xtext:Keyword" value="mediumspringgreen"/>
+          <elements xsi:type="xtext:Keyword" value="mediumturquoise"/>
+          <elements xsi:type="xtext:Keyword" value="mediumvioletred"/>
+          <elements xsi:type="xtext:Keyword" value="midnightblue"/>
+          <elements xsi:type="xtext:Keyword" value="mintcream"/>
+          <elements xsi:type="xtext:Keyword" value="mistyrose"/>
+          <elements xsi:type="xtext:Keyword" value="moccasin"/>
+          <elements xsi:type="xtext:Keyword" value="navajowhite"/>
+          <elements xsi:type="xtext:Keyword" value="navy"/>
+          <elements xsi:type="xtext:Keyword" value="oldlace"/>
+          <elements xsi:type="xtext:Keyword" value="olive"/>
+          <elements xsi:type="xtext:Keyword" value="olivedrab"/>
+          <elements xsi:type="xtext:Keyword" value="orange"/>
+          <elements xsi:type="xtext:Keyword" value="orangered"/>
+          <elements xsi:type="xtext:Keyword" value="orchid"/>
+          <elements xsi:type="xtext:Keyword" value="palegoldenrod"/>
+          <elements xsi:type="xtext:Keyword" value="palegreen"/>
+          <elements xsi:type="xtext:Keyword" value="paleturquoise"/>
+          <elements xsi:type="xtext:Keyword" value="palevioletred"/>
+          <elements xsi:type="xtext:Keyword" value="papayawhip"/>
+          <elements xsi:type="xtext:Keyword" value="peachpuff"/>
+          <elements xsi:type="xtext:Keyword" value="peru"/>
+          <elements xsi:type="xtext:Keyword" value="pink"/>
+          <elements xsi:type="xtext:Keyword" value="plum"/>
+          <elements xsi:type="xtext:Keyword" value="powderblue"/>
+          <elements xsi:type="xtext:Keyword" value="purple"/>
+          <elements xsi:type="xtext:Keyword" value="red"/>
+          <elements xsi:type="xtext:Keyword" value="rosybrown"/>
+          <elements xsi:type="xtext:Keyword" value="royalblue"/>
+          <elements xsi:type="xtext:Keyword" value="saddlebrown"/>
+          <elements xsi:type="xtext:Keyword" value="salmon"/>
+          <elements xsi:type="xtext:Keyword" value="sandybrown"/>
+          <elements xsi:type="xtext:Keyword" value="seagreen"/>
+          <elements xsi:type="xtext:Keyword" value="seashell"/>
+          <elements xsi:type="xtext:Keyword" value="sienna"/>
+          <elements xsi:type="xtext:Keyword" value="silver"/>
+          <elements xsi:type="xtext:Keyword" value="skyblue"/>
+          <elements xsi:type="xtext:Keyword" value="slateblue"/>
+          <elements xsi:type="xtext:Keyword" value="slategray"/>
+          <elements xsi:type="xtext:Keyword" value="slategrey"/>
+          <elements xsi:type="xtext:Keyword" value="snow"/>
+          <elements xsi:type="xtext:Keyword" value="springgreen"/>
+          <elements xsi:type="xtext:Keyword" value="steelblue"/>
+          <elements xsi:type="xtext:Keyword" value="tan"/>
+          <elements xsi:type="xtext:Keyword" value="teal"/>
+          <elements xsi:type="xtext:Keyword" value="thistle"/>
+          <elements xsi:type="xtext:Keyword" value="tomato"/>
+          <elements xsi:type="xtext:Keyword" value="turquoise"/>
+          <elements xsi:type="xtext:Keyword" value="violet"/>
+          <elements xsi:type="xtext:Keyword" value="wheat"/>
+          <elements xsi:type="xtext:Keyword" value="white"/>
+          <elements xsi:type="xtext:Keyword" value="whitesmoke"/>
+          <elements xsi:type="xtext:Keyword" value="yellow"/>
+          <elements xsi:type="xtext:Keyword" value="yellowgreen"/>
+          <elements xsi:type="xtext:Keyword" value="transparent"/>
+        </terminal>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="RGBColor">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//RGBColor"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="#"/>
+          <elements xsi:type="xtext:Assignment" feature="hex" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.76"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="rgb"/>
+          <elements xsi:type="xtext:Keyword" value="("/>
+          <elements xsi:type="xtext:Assignment" feature="r" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="g" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="b" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=")"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="rgb"/>
+          <elements xsi:type="xtext:Keyword" value="("/>
+          <elements xsi:type="xtext:Assignment" feature="rp" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="%"/>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="gp" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="%"/>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="bp" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="%"/>
+          <elements xsi:type="xtext:Keyword" value=")"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="rgba"/>
+          <elements xsi:type="xtext:Keyword" value="("/>
+          <elements xsi:type="xtext:Assignment" feature="r" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="g" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="b" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="alpha" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=")"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="rgba"/>
+          <elements xsi:type="xtext:Keyword" value="("/>
+          <elements xsi:type="xtext:Assignment" feature="rp" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="%"/>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="gp" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="%"/>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="bp" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.51"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="%"/>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="alpha" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=")"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="HSBColor">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//HSBColor"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="hsb"/>
+          <elements xsi:type="xtext:Keyword" value="("/>
+          <elements xsi:type="xtext:Assignment" feature="hue" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="saturation" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="%"/>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="brightness" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="%"/>
+          <elements xsi:type="xtext:Keyword" value=")"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="hsba"/>
+          <elements xsi:type="xtext:Keyword" value="("/>
+          <elements xsi:type="xtext:Assignment" feature="hue" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="saturation" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="%"/>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="brightness" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="%"/>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="alpha" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=")"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="ColorFunction">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//ColorFunction"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="derive"/>
+          <elements xsi:type="xtext:Keyword" value="("/>
+          <elements xsi:type="xtext:Assignment" feature="orig" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.71"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="mod" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="%"/>
+          <elements xsi:type="xtext:Keyword" value=")"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="ladder"/>
+          <elements xsi:type="xtext:Keyword" value="("/>
+          <elements xsi:type="xtext:Assignment" feature="orig" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.71"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=")"/>
+          <elements xsi:type="xtext:Keyword" value="stops"/>
+          <elements xsi:type="xtext:Group" cardinality="+">
+            <elements xsi:type="xtext:Keyword" value="("/>
+            <elements xsi:type="xtext:Assignment" feature="stopNumbers" operator="+=">
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.50"/>
+            </elements>
+            <elements xsi:type="xtext:Keyword" value=","/>
+            <elements xsi:type="xtext:Assignment" feature="stopColors" operator="+=">
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.71"/>
+            </elements>
+            <elements xsi:type="xtext:Keyword" value=")"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="HexDigit" definesHiddenTokens="true">
+      <type metamodel="/1/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+          <elements xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+        </elements>
+        <elements xsi:type="xtext:RuleCall" rule="/1/@rules.1"/>
+      </alternatives>
+    </rules>
+  </xtext:Grammar>
+  <xtext:Grammar name="org.eclipse.xtext.common.Terminals" definesHiddenTokens="true" hiddenTokens="/1/@rules.5 /1/@rules.3 /1/@rules.4">
+    <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="ecore">
+      <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+    </metamodelDeclarations>
+    <rules xsi:type="xtext:TerminalRule" name="ID">
+      <type metamodel="/1/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" cardinality="?" value="^"/>
+        <elements xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:CharacterRange">
+            <left value="a"/>
+            <right value="z"/>
+          </elements>
+          <elements xsi:type="xtext:CharacterRange">
+            <left value="A"/>
+            <right value="Z"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="_"/>
+        </elements>
+        <elements xsi:type="xtext:Alternatives" cardinality="*">
+          <elements xsi:type="xtext:CharacterRange">
+            <left value="a"/>
+            <right value="z"/>
+          </elements>
+          <elements xsi:type="xtext:CharacterRange">
+            <left value="A"/>
+            <right value="Z"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="_"/>
+          <elements xsi:type="xtext:CharacterRange">
+            <left value="0"/>
+            <right value="9"/>
+          </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:TerminalRule" name="INT">
+      <type metamodel="/1/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </type>
+      <alternatives xsi:type="xtext:CharacterRange" cardinality="+">
+        <left value="0"/>
+        <right value="9"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:TerminalRule" name="STRING">
+      <type metamodel="/1/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="&quot;"/>
+          <elements xsi:type="xtext:Alternatives" cardinality="*">
+            <elements xsi:type="xtext:Group">
+              <elements xsi:type="xtext:Keyword" value="\"/>
+              <elements xsi:type="xtext:Alternatives">
+                <elements xsi:type="xtext:Keyword" value="b"/>
+                <elements xsi:type="xtext:Keyword" value="t"/>
+                <elements xsi:type="xtext:Keyword" value="n"/>
+                <elements xsi:type="xtext:Keyword" value="f"/>
+                <elements xsi:type="xtext:Keyword" value="r"/>
+                <elements xsi:type="xtext:Keyword" value="u"/>
+                <elements xsi:type="xtext:Keyword" value="&quot;"/>
+                <elements xsi:type="xtext:Keyword" value="'"/>
+                <elements xsi:type="xtext:Keyword" value="\"/>
+              </elements>
+            </elements>
+            <elements xsi:type="xtext:NegatedToken">
+              <terminal xsi:type="xtext:Alternatives">
+                <elements xsi:type="xtext:Keyword" value="\"/>
+                <elements xsi:type="xtext:Keyword" value="&quot;"/>
+              </terminal>
+            </elements>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="&quot;"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="'"/>
+          <elements xsi:type="xtext:Alternatives" cardinality="*">
+            <elements xsi:type="xtext:Group">
+              <elements xsi:type="xtext:Keyword" value="\"/>
+              <elements xsi:type="xtext:Alternatives">
+                <elements xsi:type="xtext:Keyword" value="b"/>
+                <elements xsi:type="xtext:Keyword" value="t"/>
+                <elements xsi:type="xtext:Keyword" value="n"/>
+                <elements xsi:type="xtext:Keyword" value="f"/>
+                <elements xsi:type="xtext:Keyword" value="r"/>
+                <elements xsi:type="xtext:Keyword" value="u"/>
+                <elements xsi:type="xtext:Keyword" value="&quot;"/>
+                <elements xsi:type="xtext:Keyword" value="'"/>
+                <elements xsi:type="xtext:Keyword" value="\"/>
+              </elements>
+            </elements>
+            <elements xsi:type="xtext:NegatedToken">
+              <terminal xsi:type="xtext:Alternatives">
+                <elements xsi:type="xtext:Keyword" value="\"/>
+                <elements xsi:type="xtext:Keyword" value="'"/>
+              </terminal>
+            </elements>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="'"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:TerminalRule" name="ML_COMMENT">
+      <type metamodel="/1/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="/*"/>
+        <elements xsi:type="xtext:UntilToken">
+          <terminal xsi:type="xtext:Keyword" value="*/"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:TerminalRule" name="SL_COMMENT">
+      <type metamodel="/1/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="//"/>
+        <elements xsi:type="xtext:NegatedToken" cardinality="*">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+            <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+          </terminal>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" cardinality="?" value="&#xD;"/>
+          <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:TerminalRule" name="WS">
+      <type metamodel="/1/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives" cardinality="+">
+        <elements xsi:type="xtext:Keyword" value=" "/>
+        <elements xsi:type="xtext:Keyword" value="&#x9;"/>
+        <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+        <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:TerminalRule" name="ANY_OTHER">
+      <type metamodel="/1/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </type>
+      <alternatives xsi:type="xtext:Wildcard"/>
+    </rules>
+  </xtext:Grammar>
+</xmi:XMI>

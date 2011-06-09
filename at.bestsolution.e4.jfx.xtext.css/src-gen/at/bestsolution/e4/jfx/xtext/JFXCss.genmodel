@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/at.bestsolution.e4.jfx.xtext.css/src-gen"
+    editDirectory="/at.bestsolution.e4.jfx.xtext.css.edit/src" editorDirectory="/at.bestsolution.e4.jfx.xtext.css.editor/src"
+    modelPluginID="at.bestsolution.e4.jfx.xtext.css" forceOverwrite="true" modelName="JFXCss"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="at.bestsolution.e4.jfx.xtext.css.edit"
+    editorPluginID="at.bestsolution.e4.jfx.xtext.css.editor">
+  <genPackages prefix="JFXCss" basePackage="at.bestsolution.e4.jfx.xtext" disposableProviderFactory="true"
+      ecorePackage="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BooleanValue">
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BooleanValue/true"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BooleanValue/false"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//HPositionValue">
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//HPositionValue/left"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//HPositionValue/center"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//HPositionValue/right"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//HPositionValue/leading"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//HPositionValue/trailing"/>
+    </genEnums>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//JFXCss">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//JFXCss/definitions"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//Definition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//Definition/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//Definition/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FXProperty"/>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontProperty/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontFamilyProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontFamilyProperty/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontFamilyProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontSizeProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontSizeProperty/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontSizeProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontStyleProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontStyleProperty/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontStyleProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontWeightProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontWeightProperty/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontWeightProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//CursorProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//CursorProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//EffectProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//EffectProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//Effect">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//Effect/blur"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//Effect/color"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//Effect/blurRadius"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//Effect/offsetX"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//Effect/offsetY"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//EffectDropShadow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//EffectDropShadow/spread"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//EffectInnerShadow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//EffectInnerShadow/choke"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BooleanProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BooleanProperty/property"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BooleanProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SizeProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SizeProperty/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SizeProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//NumberProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//NumberProperty/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//NumberProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//IntegerProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//IntegerProperty/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//IntegerProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//PaintProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//PaintProperty/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//PaintProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//PaintProperties">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//PaintProperties/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//PaintProperties/values"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BlendProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BlendProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//UrlProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//UrlProperty/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//UrlProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//MultiSizeProperties">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//MultiSizeProperties/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//MultiSizeProperties/values"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//HPositionProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//HPositionProperty/property"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//HPositionProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//VPositionProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//VPositionProperty/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//VPositionProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SideProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SideProperty/property"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SideProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BarPolicyProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BarPolicyProperty/property"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BarPolicyProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//UrlProperties">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//UrlProperties/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//UrlProperties/values"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RepeatProperties">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RepeatProperties/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RepeatProperties/values"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//MultiSizeProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//MultiSizeProperty/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//MultiSizeProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SizeProperties">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SizeProperties/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SizeProperties/values"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//StrokeLineCapProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//StrokeLineCapProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//StrokeLineJoinProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//StrokeLineJoinProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//TextAlignmentProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//TextAlignmentProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//TextOriginProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//TextOriginProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BackgroundImagePositionProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BackgroundImagePositionProperty/values"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BackgroundImageSizeProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BackgroundImageSizeProperty/values"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BorderColorProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BorderColorProperty/values"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BorderStyleProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BorderStyleProperty/values"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BorderImageSliceProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BorderImageSliceProperty/values"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//ShapeProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//ShapeProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//TextProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//TextProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//TextOverrunProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//TextOverrunProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//EchoCharProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//EchoCharProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//InsetsProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//InsetsProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//HorizontalGridLineStrokeDashArrayProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//HorizontalGridLineStrokeDashArrayProperty/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//VerticalGridLineStrokeDashArrayProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//VerticalGridLineStrokeDashArrayProperty/values"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//VPositionValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//VPositionValue/v"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BlurValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BlurValue/v"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//NumberValue"/>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//IntegerValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//IntegerValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//UrlValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//UrlValue/address"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//AddressValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//AddressValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SizeValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SizeValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SizeValue/dimension"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//MultiSizeValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//MultiSizeValue/values"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BgPositionValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BgPositionValue/absx"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BgPositionValue/relx"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BgPositionValue/absy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BgPositionValue/rely"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RepeatStyleValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RepeatStyleValue/v"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RepeatStyleValue/v2"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BgSizeValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BgSizeValue/xsize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BgSizeValue/xauto"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BgSizeValue/ysize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BgSizeValue/yauto"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BgSizeValue/predefined"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//MultiPaintValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//MultiPaintValue/values"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BorderStyleValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BorderStyleValue/dashStyle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BorderStyleValue/location"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BorderStyleValue/miterAbs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BorderStyleValue/miterPredefined"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//BorderStyleValue/lineCap"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//DashStyleValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//DashStyleValue/v"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SizeFill">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SizeFill/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//SizeFill/fill"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontValue/styleOrWeight"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontValue/size"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontValue/family"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontStyleValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontStyleValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontWeightValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontWeightValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontFamily">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//FontFamily/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//PaintValue"/>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//LinearGradient">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//LinearGradient/x1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//LinearGradient/y1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//LinearGradient/x2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//LinearGradient/y2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//LinearGradient/stops"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RadialGradient">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RadialGradient/cx"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RadialGradient/cy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RadialGradient/radius"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RadialGradient/fx"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RadialGradient/fy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RadialGradient/stops"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//StopValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//StopValue/pos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//StopValue/color"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//ColorValue"/>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//NamedColor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//NamedColor/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RGBColor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RGBColor/hex"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RGBColor/r"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RGBColor/g"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RGBColor/b"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RGBColor/rp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RGBColor/gp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RGBColor/bp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//RGBColor/alpha"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//HSBColor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//HSBColor/hue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//HSBColor/saturation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//HSBColor/brightness"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//HSBColor/alpha"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//ColorFunction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//ColorFunction/orig"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//ColorFunction/mod"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//ColorFunction/stopNumbers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/JFXCss.ecore#//ColorFunction/stopColors"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
