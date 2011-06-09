@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'#'", "'{'", "'}'", "';'", "'-fx-font'", "'-fx-title-font'", "'-fx-pie-label-font'", "'-fx-pie-value-label-font'", "'-fx-label-font'", "'-fx-tick-label-font'", "':'", "'-fx-font-family'", "'-fx-title-font-family'", "'-fx-pie-label-font-family'", "'-fx-pie-value-label-font-family'", "'-fx-label-font-family'", "'-fx-tick-label-font-family'", "'-fx-font-size'", "'-fx-title-font-size'", "'-fx-pie-label-font-size'", "'-fx-pie-value-label-font-size'", "'-fx-label-font-size'", "'-fx-tick-label-font-size'", "'-fx-font-style'", "'-fx-title-font-style'", "'-fx-pie-label-font-style'", "'-fx-pie-value-label-font-style'", "'-fx-label-font-style'", "'-fx-tick-label-font-style'", "'-fx-font-weight'", "'-fx-title-font-weight'", "'-fx-pie-label-font-weight'", "'-fx-pie-value-label-font-weight'", "'-fx-label-font-weight'", "'-fx-tick-label-font-weight'", "'-fx-cursor'", "'crosshair'", "'default'", "'hand'", "'move'", "'e-resize'", "'h-resize'", "'ne-resize'", "'nw-resize'", "'n-resize'", "'se-resize'", "'sw-resize'", "'s-resize'", "'w-resize'", "'v-resize'", "'text'", "'wait'", "'-fx-effect'", "'dropshadow'", "'('", "','", "')'", "'innershadow('", "'-fx-focus-traversable'", "'-fx-pannable'", "'-fx-hgap'", "'-fx-vpos'", "'-fx-snap-to-pixel'", "'-fx-vertical'", "'-fx-smooth'", "'-fx-strikethrough'", "'-fx-underline'", "'-fx-scale-shape'", "'-fx-vertical-zero-line-visible'", "'-fx-vertical-grid-line-visible'", "'-fx-horizontal-zero-line-visible'", "'-fx-horizontal-grid-line-visible'", "'-fx-pie-value-visible'", "'-fx-pie-to-label-line-curved'", "'-fx-pie-label-visible'", "'-fx-clockwise'", "'-fx-show-symbols'", "'-fx-legend-visible'", "'-fx-scale-bubble-radius-using-axis'", "'-fx-select-on-focus'", "'-fx-editable'", "'-fx-snap-to-ticks'", "'-fx-show-tick-marks'", "'-fx-show-tick-labels'", "'-fx-fit-to-width'", "'-fx-minor-tick-visible'", "'-fx-gap-start-and-end'", "'-fx-tick-mark-visible'", "'-fx-tick-labels-visible'", "'-fx-fit-to-height'", "'-fx-click-to-position'", "'-fx-text-wrap'", "'-fx-position-shape'", "'-fx-spacing'", "'-fx-arc-height'", "'-fx-arc-width'", "'-fx-minor-tick-length'", "'-fx-stroke-width'", "'-fx-start-margin'", "'-fx-end-margin'", "'-fx-tick-mark-stroke-width'", "'-fx-tick-mark-length'", "'-fx-tick-label-tick-gap'", "'-fx-axis-stroke-width'", "'-fx-label-tick-gap'", "'-fx-vertical-grid-line-stroke-width'", "'-fx-plot-background-stroke-width'", "'-fx-horizontal-grid-line-stroke-width'", "'-fx-pie-thickness'", "'-fx-pie-stroke-width'", "'-fx-title-gap'", "'-fx-legend-gap'", "'-fx-hover-stroke-width'", "'-fx-chart-background-stroke-width'", "'-fx-offset-y'", "'-fx-offset-x'", "'-fx-category-gap'", "'-fx-bar-gap'", "'-fx-graphic-text-gap'", "'-fx-rotate'", "'-fx-scale-x'", "'-fx-scale-y'", "'-fx-scale-z'", "'-fx-translate-x'", "'-fx-translate-y'", "'-fx-translate-z'", "'-fx-vgap'", "'-fx-tile-height'", "'-fx-tile-width'", "'-fx-stroke-dash-offset'", "'-fx-stroke-miter-limit'", "'-fx-block-increment'", "'-fx-unit-increment'", "'-fx-major-tick-unit'", "'-fx-data-opacity'", "'-fx-radius-scale'", "'-fx-pie-to-label-line-one-length'", "'-fx-pie-to-label-line-stroke-width'", "'-fx-pie-to-label-line-two-length'", "'-fx-start-angle'", "'-fx-tick-unit'", "'-fx-columns'", "'-fx-rows'", "'-fx-lines'", "'-fx-minor-tick-count'", "'-fx-fill'", "'-fx-stroke'", "'-fx-text-fill'", "'-fx-bar-fill'", "'-fx-bar-stroke'", "'-fx-bottom-shelf-fill'", "'-fx-bottom-shelf-stroke'", "'-fx-side-shelf-fill'", "'-fx-side-shelf-stroke'", "'-fx-zero-shelf-fill'", "'-fx-zero-shelf-stroke'", "'-fx-chart-background-fill'", "'-fx-chart-background-stroke'", "'-fx-hover-stroke'", "'-fx-title-fill'", "'-fx-pie-label-fill'", "'-fx-pie-stroke'", "'-fx-pie-to-label-line-stroke'", "'-fx-pie-value-label-fill'", "'-fx-horizontal-alternate-row-fill'", "'-fx-plot-background-fill'", "'-fx-horizontal-grid-line-stroke'", "'-fx-plot-background-stroke'", "'-fx-vertical-alternate-row-fill'", "'-fx-vertical-grid-line-stroke'", "'-fx-axis-stroke'", "'-fx-tick-label-fill'", "'-fx-label-fill'", "'-fx-tick-mark-stroke'", "'-fx-hover-fill'", "'-fx-background-color'", "'-fx-blend-mode'", "'add'", "'blue'", "'color-burn'", "'color-dodge'", "'darken'", "'difference'", "'exclusion'", "'green'", "'hard-light'", "'lighten'", "'multiply'", "'overlay'", "'red'", "'screen'", "'soft-light'", "'src-atop'", "'src-in'", "'src-out'", "'src-over'", "'-fx-image'", "'-fx-graphic'", "'-fx-background-insets'", "'-fx-background-radius'", "'-fx-border-insets'", "'-fx-border-radius'", "'-fx-border-width'", "'-fx-border-image-insets'", "'-fx-border-image-width'", "'-fx-hpos'", "'-fx-node-hpos'", "'-fx-graphic-hpos'", "'-fx-node-vpos'", "'-fx-graphic-vpos'", "'-fx-legend-side'", "'-fx-title-side'", "'-fx-side'", "'top'", "'bottom'", "'left'", "'right'", "'-fx-hbar-policy'", "'-fx-vbar-policy'", "'never'", "'always'", "'as_needed'", "'-fx-background-image'", "'-fx-border-image'", "'-fx-background-image-repeat'", "'-fx-border-image-repeat'", "'-fx-padding'", "'-fx-stroke-dash-array'", "'-fx-stroke-line-cap'", "'square'", "'butt'", "'round'", "'-fx-stroke-line-join'", "'miter'", "'bevel'", "'-fx-text-alignment'", "'center'", "'justify'", "'-fx-text-origin'", "'baseline'", "'-fx-background-image-position'", "'-fx-background-image-size'", "'-fx-border-color'", "'-fx-border-style'", "'-fx-border-image-slice'", "'-fx-shape'", "'-fx-text'", "'-fx-text-overrun'", "'center-ellipses'", "'center-word-ellipses'", "'clip'", "'ellipses'", "'leading-ellipses'", "'leading-word-ellipses'", "'word-ellipses'", "'-fx-echo-char'", "'-fx-insets'", "'-fx-horizontal-grid-line-stroke-dash-array'", "'-fx-vertical-grid-line-stroke-dash-array'", "'page-end'", "'page-start'", "'gaussian'", "'one-pass-box'", "'three-pass-box'", "'two-pass-box'", "'url('", "'%'", "'px'", "'mm'", "'cm'", "'in'", "'pt'", "'pc'", "'em'", "'ex'", "'repeat-x'", "'repeat-y'", "'repeat'", "'space'", "'no-repeat'", "'auto'", "'cover'", "'contain'", "'centered'", "'inside'", "'outside'", "'line-join'", "'line-cap'", "'none'", "'solid'", "'dotted'", "'dashed'", "'fill'", "'italic'", "'oblique'", "'normal'", "'bold'", "'bolder'", "'lighter'", "'100'", "'200'", "'300'", "'400'", "'500'", "'600'", "'700'", "'800'", "'900'", "'linear'", "'to'", "'stops'", "'reflect'", "'radial'", "'focus'", "'aliceblue'", "'antiquewhite'", "'aqua'", "'aquamarine'", "'azure'", "'beige'", "'bisque'", "'black'", "'blanchedalmond'", "'blueviolet'", "'brown'", "'burlywood'", "'cadetblue'", "'chartreuse'", "'chocolate'", "'coral'", "'cornflowerblue'", "'cornsilk'", "'crimson'", "'cyan'", "'darkblue'", "'darkcyan'", "'darkgoldenrod'", "'darkgray'", "'darkgreen'", "'darkgrey'", "'darkkhaki'", "'darkmagenta'", "'darkolivegreen'", "'darkorange'", "'darkorchid'", "'darkred'", "'darksalmon'", "'darkseagreen'", "'darkslateblue'", "'darkslategray'", "'darkslategrey'", "'darkturquoise'", "'darkviolet'", "'deeppink'", "'deepskyblue'", "'dimgray'", "'dimgrey'", "'dodgerblue'", "'firebrick'", "'floralwhite'", "'forestgreen'", "'fuchsia'", "'gainsboro'", "'ghostwhite'", "'gold'", "'goldenrod'", "'gray'", "'greenyellow'", "'grey'", "'honeydew'", "'hotpink'", "'indianred'", "'indigo'", "'ivory'", "'khaki'", "'lavender'", "'lavenderblush'", "'lawngreen'", "'lemonchiffon'", "'lightblue'", "'lightcoral'", "'lightcyan'", "'lightgoldenrodyellow'", "'lightgray'", "'lightgreen'", "'lightgrey'", "'lightpink'", "'lightsalmon'", "'lightseagreen'", "'lightskyblue'", "'lightslategray'", "'lightslategrey'", "'lightsteelblue'", "'lightyellow'", "'lime'", "'limegreen'", "'linen'", "'magenta'", "'maroon'", "'mediumaquamarine'", "'mediumblue'", "'mediumorchid'", "'mediumpurple'", "'mediumseagreen'", "'mediumslateblue'", "'mediumspringgreen'", "'mediumturquoise'", "'mediumvioletred'", "'midnightblue'", "'mintcream'", "'mistyrose'", "'moccasin'", "'navajowhite'", "'navy'", "'oldlace'", "'olive'", "'olivedrab'", "'orange'", "'orangered'", "'orchid'", "'palegoldenrod'", "'palegreen'", "'paleturquoise'", "'palevioletred'", "'papayawhip'", "'peachpuff'", "'peru'", "'pink'", "'plum'", "'powderblue'", "'purple'", "'rosybrown'", "'royalblue'", "'saddlebrown'", "'salmon'", "'sandybrown'", "'seagreen'", "'seashell'", "'sienna'", "'silver'", "'skyblue'", "'slateblue'", "'slategray'", "'slategrey'", "'snow'", "'springgreen'", "'steelblue'", "'tan'", "'teal'", "'thistle'", "'tomato'", "'turquoise'", "'violet'", "'wheat'", "'white'", "'whitesmoke'", "'yellow'", "'yellowgreen'", "'transparent'", "'rgb'", "'rgba'", "'hsb'", "'hsba'", "'derive'", "'ladder'", "'true'", "'false'", "'leading'", "'trailing'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'#'", "'{'", "'}'", "';'", "'-fx-font'", "'-fx-title-font'", "'-fx-pie-label-font'", "'-fx-pie-value-label-font'", "'-fx-label-font'", "'-fx-tick-label-font'", "':'", "'-fx-font-family'", "'-fx-title-font-family'", "'-fx-pie-label-font-family'", "'-fx-pie-value-label-font-family'", "'-fx-label-font-family'", "'-fx-tick-label-font-family'", "'-fx-font-size'", "'-fx-title-font-size'", "'-fx-pie-label-font-size'", "'-fx-pie-value-label-font-size'", "'-fx-label-font-size'", "'-fx-tick-label-font-size'", "'-fx-font-style'", "'-fx-title-font-style'", "'-fx-pie-label-font-style'", "'-fx-pie-value-label-font-style'", "'-fx-label-font-style'", "'-fx-tick-label-font-style'", "'-fx-font-weight'", "'-fx-title-font-weight'", "'-fx-pie-label-font-weight'", "'-fx-pie-value-label-font-weight'", "'-fx-label-font-weight'", "'-fx-tick-label-font-weight'", "'-fx-cursor'", "'crosshair'", "'default'", "'hand'", "'move'", "'e-resize'", "'h-resize'", "'ne-resize'", "'nw-resize'", "'n-resize'", "'se-resize'", "'sw-resize'", "'s-resize'", "'w-resize'", "'v-resize'", "'text'", "'wait'", "'-fx-effect'", "'dropshadow'", "'('", "','", "')'", "'innershadow('", "'-fx-focus-traversable'", "'-fx-pannable'", "'-fx-hgap'", "'-fx-vpos'", "'-fx-snap-to-pixel'", "'-fx-vertical'", "'-fx-smooth'", "'-fx-strikethrough'", "'-fx-underline'", "'-fx-scale-shape'", "'-fx-vertical-zero-line-visible'", "'-fx-vertical-grid-line-visible'", "'-fx-horizontal-zero-line-visible'", "'-fx-horizontal-grid-line-visible'", "'-fx-pie-value-visible'", "'-fx-pie-to-label-line-curved'", "'-fx-pie-label-visible'", "'-fx-clockwise'", "'-fx-show-symbols'", "'-fx-legend-visible'", "'-fx-scale-bubble-radius-using-axis'", "'-fx-select-on-focus'", "'-fx-editable'", "'-fx-snap-to-ticks'", "'-fx-show-tick-marks'", "'-fx-show-tick-labels'", "'-fx-fit-to-width'", "'-fx-minor-tick-visible'", "'-fx-gap-start-and-end'", "'-fx-tick-mark-visible'", "'-fx-tick-labels-visible'", "'-fx-fit-to-height'", "'-fx-click-to-position'", "'-fx-text-wrap'", "'-fx-position-shape'", "'-fx-spacing'", "'-fx-arc-height'", "'-fx-arc-width'", "'-fx-minor-tick-length'", "'-fx-stroke-width'", "'-fx-start-margin'", "'-fx-end-margin'", "'-fx-tick-mark-stroke-width'", "'-fx-tick-mark-length'", "'-fx-tick-label-tick-gap'", "'-fx-axis-stroke-width'", "'-fx-label-tick-gap'", "'-fx-vertical-grid-line-stroke-width'", "'-fx-plot-background-stroke-width'", "'-fx-horizontal-grid-line-stroke-width'", "'-fx-pie-thickness'", "'-fx-pie-stroke-width'", "'-fx-title-gap'", "'-fx-legend-gap'", "'-fx-hover-stroke-width'", "'-fx-chart-background-stroke-width'", "'-fx-offset-y'", "'-fx-offset-x'", "'-fx-category-gap'", "'-fx-bar-gap'", "'-fx-graphic-text-gap'", "'-fx-rotate'", "'-fx-scale-x'", "'-fx-scale-y'", "'-fx-scale-z'", "'-fx-translate-x'", "'-fx-translate-y'", "'-fx-translate-z'", "'-fx-vgap'", "'-fx-tile-height'", "'-fx-tile-width'", "'-fx-stroke-dash-offset'", "'-fx-stroke-miter-limit'", "'-fx-block-increment'", "'-fx-unit-increment'", "'-fx-major-tick-unit'", "'-fx-data-opacity'", "'-fx-radius-scale'", "'-fx-pie-to-label-line-one-length'", "'-fx-pie-to-label-line-stroke-width'", "'-fx-pie-to-label-line-two-length'", "'-fx-start-angle'", "'-fx-tick-unit'", "'-fx-columns'", "'-fx-rows'", "'-fx-lines'", "'-fx-minor-tick-count'", "'-fx-fill'", "'-fx-stroke'", "'-fx-text-fill'", "'-fx-bar-fill'", "'-fx-bar-stroke'", "'-fx-bottom-shelf-fill'", "'-fx-bottom-shelf-stroke'", "'-fx-side-shelf-fill'", "'-fx-side-shelf-stroke'", "'-fx-zero-shelf-fill'", "'-fx-zero-shelf-stroke'", "'-fx-chart-background-fill'", "'-fx-chart-background-stroke'", "'-fx-hover-stroke'", "'-fx-title-fill'", "'-fx-pie-label-fill'", "'-fx-pie-stroke'", "'-fx-pie-to-label-line-stroke'", "'-fx-pie-value-label-fill'", "'-fx-horizontal-alternate-row-fill'", "'-fx-plot-background-fill'", "'-fx-horizontal-grid-line-stroke'", "'-fx-plot-background-stroke'", "'-fx-vertical-alternate-row-fill'", "'-fx-vertical-grid-line-stroke'", "'-fx-axis-stroke'", "'-fx-tick-label-fill'", "'-fx-label-fill'", "'-fx-tick-mark-stroke'", "'-fx-hover-fill'", "'-fx-background-color'", "'-fx-blend-mode'", "'add'", "'blue'", "'color-burn'", "'color-dodge'", "'darken'", "'difference'", "'exclusion'", "'green'", "'hard-light'", "'lighten'", "'multiply'", "'overlay'", "'red'", "'screen'", "'soft-light'", "'src-atop'", "'src-in'", "'src-out'", "'src-over'", "'-fx-image'", "'-fx-graphic'", "'-fx-background-insets'", "'-fx-background-radius'", "'-fx-border-insets'", "'-fx-border-radius'", "'-fx-border-width'", "'-fx-border-image-insets'", "'-fx-border-image-width'", "'-fx-hpos'", "'-fx-node-hpos'", "'-fx-graphic-hpos'", "'-fx-node-vpos'", "'-fx-graphic-vpos'", "'-fx-legend-side'", "'-fx-title-side'", "'-fx-side'", "'top'", "'bottom'", "'left'", "'right'", "'-fx-hbar-policy'", "'-fx-vbar-policy'", "'never'", "'always'", "'as_needed'", "'-fx-background-image'", "'-fx-border-image'", "'-fx-background-image-repeat'", "'-fx-border-image-repeat'", "'-fx-padding'", "'-fx-stroke-dash-array'", "'-fx-stroke-line-cap'", "'square'", "'butt'", "'round'", "'-fx-stroke-line-join'", "'miter'", "'bevel'", "'-fx-text-alignment'", "'center'", "'justify'", "'-fx-text-origin'", "'baseline'", "'-fx-background-image-position'", "'-fx-background-image-size'", "'-fx-border-color'", "'-fx-border-style'", "'-fx-border-image-slice'", "'-fx-shape'", "'-fx-text'", "'-fx-text-overrun'", "'center-ellipses'", "'center-word-ellipses'", "'clip'", "'ellipses'", "'leading-ellipses'", "'leading-word-ellipses'", "'word-ellipses'", "'-fx-echo-char'", "'-fx-insets'", "'-fx-horizontal-grid-line-stroke-dash-array'", "'-fx-vertical-grid-line-stroke-dash-array'", "'page-end'", "'page-start'", "'gaussian'", "'one-pass-box'", "'three-pass-box'", "'two-pass-box'", "'url('", "'%'", "'px'", "'mm'", "'cm'", "'in'", "'pt'", "'pc'", "'em'", "'ex'", "'repeat-x'", "'repeat-y'", "'repeat'", "'space'", "'no-repeat'", "'auto'", "'cover'", "'contain'", "'centered'", "'inside'", "'outside'", "'line-join'", "'line-cap'", "'none'", "'solid'", "'dotted'", "'dashed'", "'fill'", "'italic'", "'oblique'", "'normal'", "'bold'", "'bolder'", "'lighter'", "'linear'", "'to'", "'stops'", "'reflect'", "'radial'", "'focus'", "'aliceblue'", "'antiquewhite'", "'aqua'", "'aquamarine'", "'azure'", "'beige'", "'bisque'", "'black'", "'blanchedalmond'", "'blueviolet'", "'brown'", "'burlywood'", "'cadetblue'", "'chartreuse'", "'chocolate'", "'coral'", "'cornflowerblue'", "'cornsilk'", "'crimson'", "'cyan'", "'darkblue'", "'darkcyan'", "'darkgoldenrod'", "'darkgray'", "'darkgreen'", "'darkgrey'", "'darkkhaki'", "'darkmagenta'", "'darkolivegreen'", "'darkorange'", "'darkorchid'", "'darkred'", "'darksalmon'", "'darkseagreen'", "'darkslateblue'", "'darkslategray'", "'darkslategrey'", "'darkturquoise'", "'darkviolet'", "'deeppink'", "'deepskyblue'", "'dimgray'", "'dimgrey'", "'dodgerblue'", "'firebrick'", "'floralwhite'", "'forestgreen'", "'fuchsia'", "'gainsboro'", "'ghostwhite'", "'gold'", "'goldenrod'", "'gray'", "'greenyellow'", "'grey'", "'honeydew'", "'hotpink'", "'indianred'", "'indigo'", "'ivory'", "'khaki'", "'lavender'", "'lavenderblush'", "'lawngreen'", "'lemonchiffon'", "'lightblue'", "'lightcoral'", "'lightcyan'", "'lightgoldenrodyellow'", "'lightgray'", "'lightgreen'", "'lightgrey'", "'lightpink'", "'lightsalmon'", "'lightseagreen'", "'lightskyblue'", "'lightslategray'", "'lightslategrey'", "'lightsteelblue'", "'lightyellow'", "'lime'", "'limegreen'", "'linen'", "'magenta'", "'maroon'", "'mediumaquamarine'", "'mediumblue'", "'mediumorchid'", "'mediumpurple'", "'mediumseagreen'", "'mediumslateblue'", "'mediumspringgreen'", "'mediumturquoise'", "'mediumvioletred'", "'midnightblue'", "'mintcream'", "'mistyrose'", "'moccasin'", "'navajowhite'", "'navy'", "'oldlace'", "'olive'", "'olivedrab'", "'orange'", "'orangered'", "'orchid'", "'palegoldenrod'", "'palegreen'", "'paleturquoise'", "'palevioletred'", "'papayawhip'", "'peachpuff'", "'peru'", "'pink'", "'plum'", "'powderblue'", "'purple'", "'rosybrown'", "'royalblue'", "'saddlebrown'", "'salmon'", "'sandybrown'", "'seagreen'", "'seashell'", "'sienna'", "'silver'", "'skyblue'", "'slateblue'", "'slategray'", "'slategrey'", "'snow'", "'springgreen'", "'steelblue'", "'tan'", "'teal'", "'thistle'", "'tomato'", "'turquoise'", "'violet'", "'wheat'", "'white'", "'whitesmoke'", "'yellow'", "'yellowgreen'", "'transparent'", "'rgb'", "'rgba'", "'hsb'", "'hsba'", "'derive'", "'ladder'", "'true'", "'false'", "'leading'", "'trailing'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_ANY_OTHER=10;
@@ -124,13 +124,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final int T__65=65;
     public static final int T__62=62;
     public static final int T__63=63;
-    public static final int T__471=471;
-    public static final int T__472=472;
     public static final int T__470=470;
-    public static final int T__475=475;
-    public static final int T__476=476;
-    public static final int T__473=473;
-    public static final int T__474=474;
     public static final int T__469=469;
     public static final int T__468=468;
     public static final int T__467=467;
@@ -158,9 +152,6 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final int T__54=54;
     public static final int T__340=340;
     public static final int T__59=59;
-    public static final int T__478=478;
-    public static final int T__477=477;
-    public static final int T__479=479;
     public static final int T__339=339;
     public static final int T__338=338;
     public static final int T__50=50;
@@ -15870,7 +15861,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                 int alt63=2;
                 int LA63_0 = input.LA(1);
 
-                if ( (LA63_0==11||LA63_0==189||LA63_0==195||LA63_0==200||LA63_0==319||LA63_0==323||(LA63_0>=325 && LA63_0<=475)) ) {
+                if ( (LA63_0==11||LA63_0==189||LA63_0==195||LA63_0==200||LA63_0==310||LA63_0==314||(LA63_0>=316 && LA63_0<=466)) ) {
                     alt63=1;
                 }
 
@@ -16773,55 +16764,54 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFontValue"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7262:1: ruleFontValue returns [EObject current=null] : ( ( ( (lv_styleOrWeight_0_1= 'italic' | lv_styleOrWeight_0_2= 'oblique' | lv_styleOrWeight_0_3= 'normal' | lv_styleOrWeight_0_4= 'bold' | lv_styleOrWeight_0_5= 'bolder' | lv_styleOrWeight_0_6= 'lighter' | lv_styleOrWeight_0_7= '100' | lv_styleOrWeight_0_8= '200' | lv_styleOrWeight_0_9= '300' | lv_styleOrWeight_0_10= '400' | lv_styleOrWeight_0_11= '500' | lv_styleOrWeight_0_12= '600' | lv_styleOrWeight_0_13= '700' | lv_styleOrWeight_0_14= '800' | lv_styleOrWeight_0_15= '900' ) ) )? ( (lv_size_1_0= ruleSizeValue ) ) ( (lv_family_2_0= ruleFontFamily ) ) ) ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7262:1: ruleFontValue returns [EObject current=null] : ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= ruleIntegerProperty ) ) )? ( (lv_size_2_0= ruleSizeValue ) ) ( (lv_family_3_0= ruleFontFamily ) ) ) ;
     public final EObject ruleFontValue() throws RecognitionException {
         EObject current = null;
 
-        Token lv_styleOrWeight_0_1=null;
-        Token lv_styleOrWeight_0_2=null;
-        Token lv_styleOrWeight_0_3=null;
-        Token lv_styleOrWeight_0_4=null;
-        Token lv_styleOrWeight_0_5=null;
-        Token lv_styleOrWeight_0_6=null;
-        Token lv_styleOrWeight_0_7=null;
-        Token lv_styleOrWeight_0_8=null;
-        Token lv_styleOrWeight_0_9=null;
-        Token lv_styleOrWeight_0_10=null;
-        Token lv_styleOrWeight_0_11=null;
-        Token lv_styleOrWeight_0_12=null;
-        Token lv_styleOrWeight_0_13=null;
-        Token lv_styleOrWeight_0_14=null;
-        Token lv_styleOrWeight_0_15=null;
-        EObject lv_size_1_0 = null;
+        Token lv_styleOrWeightString_0_1=null;
+        Token lv_styleOrWeightString_0_2=null;
+        Token lv_styleOrWeightString_0_3=null;
+        Token lv_styleOrWeightString_0_4=null;
+        Token lv_styleOrWeightString_0_5=null;
+        Token lv_styleOrWeightString_0_6=null;
+        EObject lv_weight_1_0 = null;
 
-        EObject lv_family_2_0 = null;
+        EObject lv_size_2_0 = null;
+
+        EObject lv_family_3_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7265:28: ( ( ( ( (lv_styleOrWeight_0_1= 'italic' | lv_styleOrWeight_0_2= 'oblique' | lv_styleOrWeight_0_3= 'normal' | lv_styleOrWeight_0_4= 'bold' | lv_styleOrWeight_0_5= 'bolder' | lv_styleOrWeight_0_6= 'lighter' | lv_styleOrWeight_0_7= '100' | lv_styleOrWeight_0_8= '200' | lv_styleOrWeight_0_9= '300' | lv_styleOrWeight_0_10= '400' | lv_styleOrWeight_0_11= '500' | lv_styleOrWeight_0_12= '600' | lv_styleOrWeight_0_13= '700' | lv_styleOrWeight_0_14= '800' | lv_styleOrWeight_0_15= '900' ) ) )? ( (lv_size_1_0= ruleSizeValue ) ) ( (lv_family_2_0= ruleFontFamily ) ) ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7266:1: ( ( ( (lv_styleOrWeight_0_1= 'italic' | lv_styleOrWeight_0_2= 'oblique' | lv_styleOrWeight_0_3= 'normal' | lv_styleOrWeight_0_4= 'bold' | lv_styleOrWeight_0_5= 'bolder' | lv_styleOrWeight_0_6= 'lighter' | lv_styleOrWeight_0_7= '100' | lv_styleOrWeight_0_8= '200' | lv_styleOrWeight_0_9= '300' | lv_styleOrWeight_0_10= '400' | lv_styleOrWeight_0_11= '500' | lv_styleOrWeight_0_12= '600' | lv_styleOrWeight_0_13= '700' | lv_styleOrWeight_0_14= '800' | lv_styleOrWeight_0_15= '900' ) ) )? ( (lv_size_1_0= ruleSizeValue ) ) ( (lv_family_2_0= ruleFontFamily ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7265:28: ( ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= ruleIntegerProperty ) ) )? ( (lv_size_2_0= ruleSizeValue ) ) ( (lv_family_3_0= ruleFontFamily ) ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7266:1: ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= ruleIntegerProperty ) ) )? ( (lv_size_2_0= ruleSizeValue ) ) ( (lv_family_3_0= ruleFontFamily ) ) )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7266:1: ( ( ( (lv_styleOrWeight_0_1= 'italic' | lv_styleOrWeight_0_2= 'oblique' | lv_styleOrWeight_0_3= 'normal' | lv_styleOrWeight_0_4= 'bold' | lv_styleOrWeight_0_5= 'bolder' | lv_styleOrWeight_0_6= 'lighter' | lv_styleOrWeight_0_7= '100' | lv_styleOrWeight_0_8= '200' | lv_styleOrWeight_0_9= '300' | lv_styleOrWeight_0_10= '400' | lv_styleOrWeight_0_11= '500' | lv_styleOrWeight_0_12= '600' | lv_styleOrWeight_0_13= '700' | lv_styleOrWeight_0_14= '800' | lv_styleOrWeight_0_15= '900' ) ) )? ( (lv_size_1_0= ruleSizeValue ) ) ( (lv_family_2_0= ruleFontFamily ) ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7266:2: ( ( (lv_styleOrWeight_0_1= 'italic' | lv_styleOrWeight_0_2= 'oblique' | lv_styleOrWeight_0_3= 'normal' | lv_styleOrWeight_0_4= 'bold' | lv_styleOrWeight_0_5= 'bolder' | lv_styleOrWeight_0_6= 'lighter' | lv_styleOrWeight_0_7= '100' | lv_styleOrWeight_0_8= '200' | lv_styleOrWeight_0_9= '300' | lv_styleOrWeight_0_10= '400' | lv_styleOrWeight_0_11= '500' | lv_styleOrWeight_0_12= '600' | lv_styleOrWeight_0_13= '700' | lv_styleOrWeight_0_14= '800' | lv_styleOrWeight_0_15= '900' ) ) )? ( (lv_size_1_0= ruleSizeValue ) ) ( (lv_family_2_0= ruleFontFamily ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7266:1: ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= ruleIntegerProperty ) ) )? ( (lv_size_2_0= ruleSizeValue ) ) ( (lv_family_3_0= ruleFontFamily ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7266:2: ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= ruleIntegerProperty ) ) )? ( (lv_size_2_0= ruleSizeValue ) ) ( (lv_family_3_0= ruleFontFamily ) )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7266:2: ( ( (lv_styleOrWeight_0_1= 'italic' | lv_styleOrWeight_0_2= 'oblique' | lv_styleOrWeight_0_3= 'normal' | lv_styleOrWeight_0_4= 'bold' | lv_styleOrWeight_0_5= 'bolder' | lv_styleOrWeight_0_6= 'lighter' | lv_styleOrWeight_0_7= '100' | lv_styleOrWeight_0_8= '200' | lv_styleOrWeight_0_9= '300' | lv_styleOrWeight_0_10= '400' | lv_styleOrWeight_0_11= '500' | lv_styleOrWeight_0_12= '600' | lv_styleOrWeight_0_13= '700' | lv_styleOrWeight_0_14= '800' | lv_styleOrWeight_0_15= '900' ) ) )?
-            int alt74=2;
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7266:2: ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= ruleIntegerProperty ) ) )?
+            int alt74=3;
             int LA74_0 = input.LA(1);
 
-            if ( ((LA74_0>=304 && LA74_0<=318)) ) {
+            if ( ((LA74_0>=304 && LA74_0<=309)) ) {
                 alt74=1;
+            }
+            else if ( ((LA74_0>=152 && LA74_0<=155)) ) {
+                alt74=2;
             }
             switch (alt74) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7267:1: ( (lv_styleOrWeight_0_1= 'italic' | lv_styleOrWeight_0_2= 'oblique' | lv_styleOrWeight_0_3= 'normal' | lv_styleOrWeight_0_4= 'bold' | lv_styleOrWeight_0_5= 'bolder' | lv_styleOrWeight_0_6= 'lighter' | lv_styleOrWeight_0_7= '100' | lv_styleOrWeight_0_8= '200' | lv_styleOrWeight_0_9= '300' | lv_styleOrWeight_0_10= '400' | lv_styleOrWeight_0_11= '500' | lv_styleOrWeight_0_12= '600' | lv_styleOrWeight_0_13= '700' | lv_styleOrWeight_0_14= '800' | lv_styleOrWeight_0_15= '900' ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7266:3: ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7267:1: ( (lv_styleOrWeight_0_1= 'italic' | lv_styleOrWeight_0_2= 'oblique' | lv_styleOrWeight_0_3= 'normal' | lv_styleOrWeight_0_4= 'bold' | lv_styleOrWeight_0_5= 'bolder' | lv_styleOrWeight_0_6= 'lighter' | lv_styleOrWeight_0_7= '100' | lv_styleOrWeight_0_8= '200' | lv_styleOrWeight_0_9= '300' | lv_styleOrWeight_0_10= '400' | lv_styleOrWeight_0_11= '500' | lv_styleOrWeight_0_12= '600' | lv_styleOrWeight_0_13= '700' | lv_styleOrWeight_0_14= '800' | lv_styleOrWeight_0_15= '900' ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7268:1: (lv_styleOrWeight_0_1= 'italic' | lv_styleOrWeight_0_2= 'oblique' | lv_styleOrWeight_0_3= 'normal' | lv_styleOrWeight_0_4= 'bold' | lv_styleOrWeight_0_5= 'bolder' | lv_styleOrWeight_0_6= 'lighter' | lv_styleOrWeight_0_7= '100' | lv_styleOrWeight_0_8= '200' | lv_styleOrWeight_0_9= '300' | lv_styleOrWeight_0_10= '400' | lv_styleOrWeight_0_11= '500' | lv_styleOrWeight_0_12= '600' | lv_styleOrWeight_0_13= '700' | lv_styleOrWeight_0_14= '800' | lv_styleOrWeight_0_15= '900' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7266:3: ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7267:1: ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7268:1: (lv_styleOrWeight_0_1= 'italic' | lv_styleOrWeight_0_2= 'oblique' | lv_styleOrWeight_0_3= 'normal' | lv_styleOrWeight_0_4= 'bold' | lv_styleOrWeight_0_5= 'bolder' | lv_styleOrWeight_0_6= 'lighter' | lv_styleOrWeight_0_7= '100' | lv_styleOrWeight_0_8= '200' | lv_styleOrWeight_0_9= '300' | lv_styleOrWeight_0_10= '400' | lv_styleOrWeight_0_11= '500' | lv_styleOrWeight_0_12= '600' | lv_styleOrWeight_0_13= '700' | lv_styleOrWeight_0_14= '800' | lv_styleOrWeight_0_15= '900' )
-                    int alt73=15;
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7267:1: ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7268:1: (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' )
+                    {
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7268:1: (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' )
+                    int alt73=6;
                     switch ( input.LA(1) ) {
                     case 304:
                         {
@@ -16853,51 +16843,6 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                         alt73=6;
                         }
                         break;
-                    case 310:
-                        {
-                        alt73=7;
-                        }
-                        break;
-                    case 311:
-                        {
-                        alt73=8;
-                        }
-                        break;
-                    case 312:
-                        {
-                        alt73=9;
-                        }
-                        break;
-                    case 313:
-                        {
-                        alt73=10;
-                        }
-                        break;
-                    case 314:
-                        {
-                        alt73=11;
-                        }
-                        break;
-                    case 315:
-                        {
-                        alt73=12;
-                        }
-                        break;
-                    case 316:
-                        {
-                        alt73=13;
-                        }
-                        break;
-                    case 317:
-                        {
-                        alt73=14;
-                        }
-                        break;
-                    case 318:
-                        {
-                        alt73=15;
-                        }
-                        break;
                     default:
                         NoViableAltException nvae =
                             new NoViableAltException("", 73, 0, input);
@@ -16907,245 +16852,141 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     switch (alt73) {
                         case 1 :
-                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7269:3: lv_styleOrWeight_0_1= 'italic'
+                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7269:3: lv_styleOrWeightString_0_1= 'italic'
                             {
-                            lv_styleOrWeight_0_1=(Token)match(input,304,FOLLOW_304_in_ruleFontValue17083); 
+                            lv_styleOrWeightString_0_1=(Token)match(input,304,FOLLOW_304_in_ruleFontValue17084); 
 
-                                    newLeafNode(lv_styleOrWeight_0_1, grammarAccess.getFontValueAccess().getStyleOrWeightItalicKeyword_0_0_0());
+                                    newLeafNode(lv_styleOrWeightString_0_1, grammarAccess.getFontValueAccess().getStyleOrWeightStringItalicKeyword_0_0_0_0());
                                 
 
                             	        if (current==null) {
                             	            current = createModelElement(grammarAccess.getFontValueRule());
                             	        }
-                                   		setWithLastConsumed(current, "styleOrWeight", lv_styleOrWeight_0_1, null);
+                                   		setWithLastConsumed(current, "styleOrWeightString", lv_styleOrWeightString_0_1, null);
                             	    
 
                             }
                             break;
                         case 2 :
-                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7281:8: lv_styleOrWeight_0_2= 'oblique'
+                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7281:8: lv_styleOrWeightString_0_2= 'oblique'
                             {
-                            lv_styleOrWeight_0_2=(Token)match(input,305,FOLLOW_305_in_ruleFontValue17112); 
+                            lv_styleOrWeightString_0_2=(Token)match(input,305,FOLLOW_305_in_ruleFontValue17113); 
 
-                                    newLeafNode(lv_styleOrWeight_0_2, grammarAccess.getFontValueAccess().getStyleOrWeightObliqueKeyword_0_0_1());
+                                    newLeafNode(lv_styleOrWeightString_0_2, grammarAccess.getFontValueAccess().getStyleOrWeightStringObliqueKeyword_0_0_0_1());
                                 
 
                             	        if (current==null) {
                             	            current = createModelElement(grammarAccess.getFontValueRule());
                             	        }
-                                   		setWithLastConsumed(current, "styleOrWeight", lv_styleOrWeight_0_2, null);
+                                   		setWithLastConsumed(current, "styleOrWeightString", lv_styleOrWeightString_0_2, null);
                             	    
 
                             }
                             break;
                         case 3 :
-                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7293:8: lv_styleOrWeight_0_3= 'normal'
+                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7293:8: lv_styleOrWeightString_0_3= 'normal'
                             {
-                            lv_styleOrWeight_0_3=(Token)match(input,306,FOLLOW_306_in_ruleFontValue17141); 
+                            lv_styleOrWeightString_0_3=(Token)match(input,306,FOLLOW_306_in_ruleFontValue17142); 
 
-                                    newLeafNode(lv_styleOrWeight_0_3, grammarAccess.getFontValueAccess().getStyleOrWeightNormalKeyword_0_0_2());
+                                    newLeafNode(lv_styleOrWeightString_0_3, grammarAccess.getFontValueAccess().getStyleOrWeightStringNormalKeyword_0_0_0_2());
                                 
 
                             	        if (current==null) {
                             	            current = createModelElement(grammarAccess.getFontValueRule());
                             	        }
-                                   		setWithLastConsumed(current, "styleOrWeight", lv_styleOrWeight_0_3, null);
+                                   		setWithLastConsumed(current, "styleOrWeightString", lv_styleOrWeightString_0_3, null);
                             	    
 
                             }
                             break;
                         case 4 :
-                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7305:8: lv_styleOrWeight_0_4= 'bold'
+                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7305:8: lv_styleOrWeightString_0_4= 'bold'
                             {
-                            lv_styleOrWeight_0_4=(Token)match(input,307,FOLLOW_307_in_ruleFontValue17170); 
+                            lv_styleOrWeightString_0_4=(Token)match(input,307,FOLLOW_307_in_ruleFontValue17171); 
 
-                                    newLeafNode(lv_styleOrWeight_0_4, grammarAccess.getFontValueAccess().getStyleOrWeightBoldKeyword_0_0_3());
+                                    newLeafNode(lv_styleOrWeightString_0_4, grammarAccess.getFontValueAccess().getStyleOrWeightStringBoldKeyword_0_0_0_3());
                                 
 
                             	        if (current==null) {
                             	            current = createModelElement(grammarAccess.getFontValueRule());
                             	        }
-                                   		setWithLastConsumed(current, "styleOrWeight", lv_styleOrWeight_0_4, null);
+                                   		setWithLastConsumed(current, "styleOrWeightString", lv_styleOrWeightString_0_4, null);
                             	    
 
                             }
                             break;
                         case 5 :
-                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7317:8: lv_styleOrWeight_0_5= 'bolder'
+                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7317:8: lv_styleOrWeightString_0_5= 'bolder'
                             {
-                            lv_styleOrWeight_0_5=(Token)match(input,308,FOLLOW_308_in_ruleFontValue17199); 
+                            lv_styleOrWeightString_0_5=(Token)match(input,308,FOLLOW_308_in_ruleFontValue17200); 
 
-                                    newLeafNode(lv_styleOrWeight_0_5, grammarAccess.getFontValueAccess().getStyleOrWeightBolderKeyword_0_0_4());
+                                    newLeafNode(lv_styleOrWeightString_0_5, grammarAccess.getFontValueAccess().getStyleOrWeightStringBolderKeyword_0_0_0_4());
                                 
 
                             	        if (current==null) {
                             	            current = createModelElement(grammarAccess.getFontValueRule());
                             	        }
-                                   		setWithLastConsumed(current, "styleOrWeight", lv_styleOrWeight_0_5, null);
+                                   		setWithLastConsumed(current, "styleOrWeightString", lv_styleOrWeightString_0_5, null);
                             	    
 
                             }
                             break;
                         case 6 :
-                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7329:8: lv_styleOrWeight_0_6= 'lighter'
+                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7329:8: lv_styleOrWeightString_0_6= 'lighter'
                             {
-                            lv_styleOrWeight_0_6=(Token)match(input,309,FOLLOW_309_in_ruleFontValue17228); 
+                            lv_styleOrWeightString_0_6=(Token)match(input,309,FOLLOW_309_in_ruleFontValue17229); 
 
-                                    newLeafNode(lv_styleOrWeight_0_6, grammarAccess.getFontValueAccess().getStyleOrWeightLighterKeyword_0_0_5());
+                                    newLeafNode(lv_styleOrWeightString_0_6, grammarAccess.getFontValueAccess().getStyleOrWeightStringLighterKeyword_0_0_0_5());
                                 
 
                             	        if (current==null) {
                             	            current = createModelElement(grammarAccess.getFontValueRule());
                             	        }
-                                   		setWithLastConsumed(current, "styleOrWeight", lv_styleOrWeight_0_6, null);
+                                   		setWithLastConsumed(current, "styleOrWeightString", lv_styleOrWeightString_0_6, null);
                             	    
 
                             }
                             break;
-                        case 7 :
-                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7341:8: lv_styleOrWeight_0_7= '100'
-                            {
-                            lv_styleOrWeight_0_7=(Token)match(input,310,FOLLOW_310_in_ruleFontValue17257); 
 
-                                    newLeafNode(lv_styleOrWeight_0_7, grammarAccess.getFontValueAccess().getStyleOrWeight100Keyword_0_0_6());
-                                
+                    }
 
-                            	        if (current==null) {
-                            	            current = createModelElement(grammarAccess.getFontValueRule());
-                            	        }
-                                   		setWithLastConsumed(current, "styleOrWeight", lv_styleOrWeight_0_7, null);
-                            	    
 
-                            }
-                            break;
-                        case 8 :
-                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7353:8: lv_styleOrWeight_0_8= '200'
-                            {
-                            lv_styleOrWeight_0_8=(Token)match(input,311,FOLLOW_311_in_ruleFontValue17286); 
+                    }
 
-                                    newLeafNode(lv_styleOrWeight_0_8, grammarAccess.getFontValueAccess().getStyleOrWeight200Keyword_0_0_7());
-                                
 
-                            	        if (current==null) {
-                            	            current = createModelElement(grammarAccess.getFontValueRule());
-                            	        }
-                                   		setWithLastConsumed(current, "styleOrWeight", lv_styleOrWeight_0_8, null);
-                            	    
+                    }
 
-                            }
-                            break;
-                        case 9 :
-                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7365:8: lv_styleOrWeight_0_9= '300'
-                            {
-                            lv_styleOrWeight_0_9=(Token)match(input,312,FOLLOW_312_in_ruleFontValue17315); 
 
-                                    newLeafNode(lv_styleOrWeight_0_9, grammarAccess.getFontValueAccess().getStyleOrWeight300Keyword_0_0_8());
-                                
+                    }
+                    break;
+                case 2 :
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7345:6: ( (lv_weight_1_0= ruleIntegerProperty ) )
+                    {
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7345:6: ( (lv_weight_1_0= ruleIntegerProperty ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7346:1: (lv_weight_1_0= ruleIntegerProperty )
+                    {
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7346:1: (lv_weight_1_0= ruleIntegerProperty )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7347:3: lv_weight_1_0= ruleIntegerProperty
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getFontValueAccess().getWeightIntegerPropertyParserRuleCall_0_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleIntegerProperty_in_ruleFontValue17272);
+                    lv_weight_1_0=ruleIntegerProperty();
 
-                            	        if (current==null) {
-                            	            current = createModelElement(grammarAccess.getFontValueRule());
-                            	        }
-                                   		setWithLastConsumed(current, "styleOrWeight", lv_styleOrWeight_0_9, null);
-                            	    
+                    state._fsp--;
 
-                            }
-                            break;
-                        case 10 :
-                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7377:8: lv_styleOrWeight_0_10= '400'
-                            {
-                            lv_styleOrWeight_0_10=(Token)match(input,313,FOLLOW_313_in_ruleFontValue17344); 
 
-                                    newLeafNode(lv_styleOrWeight_0_10, grammarAccess.getFontValueAccess().getStyleOrWeight400Keyword_0_0_9());
-                                
-
-                            	        if (current==null) {
-                            	            current = createModelElement(grammarAccess.getFontValueRule());
-                            	        }
-                                   		setWithLastConsumed(current, "styleOrWeight", lv_styleOrWeight_0_10, null);
-                            	    
-
-                            }
-                            break;
-                        case 11 :
-                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7389:8: lv_styleOrWeight_0_11= '500'
-                            {
-                            lv_styleOrWeight_0_11=(Token)match(input,314,FOLLOW_314_in_ruleFontValue17373); 
-
-                                    newLeafNode(lv_styleOrWeight_0_11, grammarAccess.getFontValueAccess().getStyleOrWeight500Keyword_0_0_10());
-                                
-
-                            	        if (current==null) {
-                            	            current = createModelElement(grammarAccess.getFontValueRule());
-                            	        }
-                                   		setWithLastConsumed(current, "styleOrWeight", lv_styleOrWeight_0_11, null);
-                            	    
-
-                            }
-                            break;
-                        case 12 :
-                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7401:8: lv_styleOrWeight_0_12= '600'
-                            {
-                            lv_styleOrWeight_0_12=(Token)match(input,315,FOLLOW_315_in_ruleFontValue17402); 
-
-                                    newLeafNode(lv_styleOrWeight_0_12, grammarAccess.getFontValueAccess().getStyleOrWeight600Keyword_0_0_11());
-                                
-
-                            	        if (current==null) {
-                            	            current = createModelElement(grammarAccess.getFontValueRule());
-                            	        }
-                                   		setWithLastConsumed(current, "styleOrWeight", lv_styleOrWeight_0_12, null);
-                            	    
-
-                            }
-                            break;
-                        case 13 :
-                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7413:8: lv_styleOrWeight_0_13= '700'
-                            {
-                            lv_styleOrWeight_0_13=(Token)match(input,316,FOLLOW_316_in_ruleFontValue17431); 
-
-                                    newLeafNode(lv_styleOrWeight_0_13, grammarAccess.getFontValueAccess().getStyleOrWeight700Keyword_0_0_12());
-                                
-
-                            	        if (current==null) {
-                            	            current = createModelElement(grammarAccess.getFontValueRule());
-                            	        }
-                                   		setWithLastConsumed(current, "styleOrWeight", lv_styleOrWeight_0_13, null);
-                            	    
-
-                            }
-                            break;
-                        case 14 :
-                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7425:8: lv_styleOrWeight_0_14= '800'
-                            {
-                            lv_styleOrWeight_0_14=(Token)match(input,317,FOLLOW_317_in_ruleFontValue17460); 
-
-                                    newLeafNode(lv_styleOrWeight_0_14, grammarAccess.getFontValueAccess().getStyleOrWeight800Keyword_0_0_13());
-                                
-
-                            	        if (current==null) {
-                            	            current = createModelElement(grammarAccess.getFontValueRule());
-                            	        }
-                                   		setWithLastConsumed(current, "styleOrWeight", lv_styleOrWeight_0_14, null);
-                            	    
-
-                            }
-                            break;
-                        case 15 :
-                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7437:8: lv_styleOrWeight_0_15= '900'
-                            {
-                            lv_styleOrWeight_0_15=(Token)match(input,318,FOLLOW_318_in_ruleFontValue17489); 
-
-                                    newLeafNode(lv_styleOrWeight_0_15, grammarAccess.getFontValueAccess().getStyleOrWeight900Keyword_0_0_14());
-                                
-
-                            	        if (current==null) {
-                            	            current = createModelElement(grammarAccess.getFontValueRule());
-                            	        }
-                                   		setWithLastConsumed(current, "styleOrWeight", lv_styleOrWeight_0_15, null);
-                            	    
-
-                            }
-                            break;
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getFontValueRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"weight",
+                            		lv_weight_1_0, 
+                            		"IntegerProperty");
+                    	        afterParserOrEnumRuleCall();
+                    	    
 
                     }
 
@@ -17158,17 +16999,17 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7452:3: ( (lv_size_1_0= ruleSizeValue ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7453:1: (lv_size_1_0= ruleSizeValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7363:4: ( (lv_size_2_0= ruleSizeValue ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7364:1: (lv_size_2_0= ruleSizeValue )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7453:1: (lv_size_1_0= ruleSizeValue )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7454:3: lv_size_1_0= ruleSizeValue
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7364:1: (lv_size_2_0= ruleSizeValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7365:3: lv_size_2_0= ruleSizeValue
             {
              
             	        newCompositeNode(grammarAccess.getFontValueAccess().getSizeSizeValueParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleSizeValue_in_ruleFontValue17527);
-            lv_size_1_0=ruleSizeValue();
+            pushFollow(FOLLOW_ruleSizeValue_in_ruleFontValue17295);
+            lv_size_2_0=ruleSizeValue();
 
             state._fsp--;
 
@@ -17179,7 +17020,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                    		set(
                    			current, 
                    			"size",
-                    		lv_size_1_0, 
+                    		lv_size_2_0, 
                     		"SizeValue");
             	        afterParserOrEnumRuleCall();
             	    
@@ -17189,17 +17030,17 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7470:2: ( (lv_family_2_0= ruleFontFamily ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7471:1: (lv_family_2_0= ruleFontFamily )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7381:2: ( (lv_family_3_0= ruleFontFamily ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7382:1: (lv_family_3_0= ruleFontFamily )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7471:1: (lv_family_2_0= ruleFontFamily )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7472:3: lv_family_2_0= ruleFontFamily
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7382:1: (lv_family_3_0= ruleFontFamily )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7383:3: lv_family_3_0= ruleFontFamily
             {
              
             	        newCompositeNode(grammarAccess.getFontValueAccess().getFamilyFontFamilyParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleFontFamily_in_ruleFontValue17548);
-            lv_family_2_0=ruleFontFamily();
+            pushFollow(FOLLOW_ruleFontFamily_in_ruleFontValue17316);
+            lv_family_3_0=ruleFontFamily();
 
             state._fsp--;
 
@@ -17210,7 +17051,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                    		set(
                    			current, 
                    			"family",
-                    		lv_family_2_0, 
+                    		lv_family_3_0, 
                     		"FontFamily");
             	        afterParserOrEnumRuleCall();
             	    
@@ -17241,7 +17082,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFontStyleValue"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7496:1: entryRuleFontStyleValue returns [EObject current=null] : iv_ruleFontStyleValue= ruleFontStyleValue EOF ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7407:1: entryRuleFontStyleValue returns [EObject current=null] : iv_ruleFontStyleValue= ruleFontStyleValue EOF ;
     public final EObject entryRuleFontStyleValue() throws RecognitionException {
         EObject current = null;
 
@@ -17249,17 +17090,17 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7497:2: (iv_ruleFontStyleValue= ruleFontStyleValue EOF )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7498:2: iv_ruleFontStyleValue= ruleFontStyleValue EOF
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7408:2: (iv_ruleFontStyleValue= ruleFontStyleValue EOF )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7409:2: iv_ruleFontStyleValue= ruleFontStyleValue EOF
             {
              newCompositeNode(grammarAccess.getFontStyleValueRule()); 
-            pushFollow(FOLLOW_ruleFontStyleValue_in_entryRuleFontStyleValue17584);
+            pushFollow(FOLLOW_ruleFontStyleValue_in_entryRuleFontStyleValue17352);
             iv_ruleFontStyleValue=ruleFontStyleValue();
 
             state._fsp--;
 
              current =iv_ruleFontStyleValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFontStyleValue17594); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFontStyleValue17362); 
 
             }
 
@@ -17277,7 +17118,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFontStyleValue"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7505:1: ruleFontStyleValue returns [EObject current=null] : ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) ) ) ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7416:1: ruleFontStyleValue returns [EObject current=null] : ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) ) ) ;
     public final EObject ruleFontStyleValue() throws RecognitionException {
         EObject current = null;
 
@@ -17288,16 +17129,16 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7508:28: ( ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) ) ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7509:1: ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7419:28: ( ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7420:1: ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) ) )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7509:1: ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7510:1: ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7420:1: ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7421:1: ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7510:1: ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7511:1: (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7421:1: ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7422:1: (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7511:1: (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7422:1: (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' )
             int alt75=3;
             switch ( input.LA(1) ) {
             case 306:
@@ -17324,9 +17165,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
             switch (alt75) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7512:3: lv_value_0_1= 'normal'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7423:3: lv_value_0_1= 'normal'
                     {
-                    lv_value_0_1=(Token)match(input,306,FOLLOW_306_in_ruleFontStyleValue17638); 
+                    lv_value_0_1=(Token)match(input,306,FOLLOW_306_in_ruleFontStyleValue17406); 
 
                             newLeafNode(lv_value_0_1, grammarAccess.getFontStyleValueAccess().getValueNormalKeyword_0_0());
                         
@@ -17340,9 +17181,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7524:8: lv_value_0_2= 'italic'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7435:8: lv_value_0_2= 'italic'
                     {
-                    lv_value_0_2=(Token)match(input,304,FOLLOW_304_in_ruleFontStyleValue17667); 
+                    lv_value_0_2=(Token)match(input,304,FOLLOW_304_in_ruleFontStyleValue17435); 
 
                             newLeafNode(lv_value_0_2, grammarAccess.getFontStyleValueAccess().getValueItalicKeyword_0_1());
                         
@@ -17356,9 +17197,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7536:8: lv_value_0_3= 'oblique'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7447:8: lv_value_0_3= 'oblique'
                     {
-                    lv_value_0_3=(Token)match(input,305,FOLLOW_305_in_ruleFontStyleValue17696); 
+                    lv_value_0_3=(Token)match(input,305,FOLLOW_305_in_ruleFontStyleValue17464); 
 
                             newLeafNode(lv_value_0_3, grammarAccess.getFontStyleValueAccess().getValueObliqueKeyword_0_2());
                         
@@ -17398,7 +17239,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFontWeightValue"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7559:1: entryRuleFontWeightValue returns [EObject current=null] : iv_ruleFontWeightValue= ruleFontWeightValue EOF ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7470:1: entryRuleFontWeightValue returns [EObject current=null] : iv_ruleFontWeightValue= ruleFontWeightValue EOF ;
     public final EObject entryRuleFontWeightValue() throws RecognitionException {
         EObject current = null;
 
@@ -17406,17 +17247,17 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7560:2: (iv_ruleFontWeightValue= ruleFontWeightValue EOF )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7561:2: iv_ruleFontWeightValue= ruleFontWeightValue EOF
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7471:2: (iv_ruleFontWeightValue= ruleFontWeightValue EOF )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7472:2: iv_ruleFontWeightValue= ruleFontWeightValue EOF
             {
              newCompositeNode(grammarAccess.getFontWeightValueRule()); 
-            pushFollow(FOLLOW_ruleFontWeightValue_in_entryRuleFontWeightValue17747);
+            pushFollow(FOLLOW_ruleFontWeightValue_in_entryRuleFontWeightValue17515);
             iv_ruleFontWeightValue=ruleFontWeightValue();
 
             state._fsp--;
 
              current =iv_ruleFontWeightValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFontWeightValue17757); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFontWeightValue17525); 
 
             }
 
@@ -17434,326 +17275,193 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFontWeightValue"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7568:1: ruleFontWeightValue returns [EObject current=null] : ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'bold' | lv_value_0_3= 'bolder' | lv_value_0_4= 'lighter' | lv_value_0_5= '100' | lv_value_0_6= '200' | lv_value_0_7= '300' | lv_value_0_8= '400' | lv_value_0_9= '500' | lv_value_0_10= '600' | lv_value_0_11= '700' | lv_value_0_12= '800' | lv_value_0_13= '900' ) ) ) ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7479:1: ruleFontWeightValue returns [EObject current=null] : ( ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) ) | ( (lv_valueInt_1_0= ruleNumberValue ) ) ) ;
     public final EObject ruleFontWeightValue() throws RecognitionException {
         EObject current = null;
 
-        Token lv_value_0_1=null;
-        Token lv_value_0_2=null;
-        Token lv_value_0_3=null;
-        Token lv_value_0_4=null;
-        Token lv_value_0_5=null;
-        Token lv_value_0_6=null;
-        Token lv_value_0_7=null;
-        Token lv_value_0_8=null;
-        Token lv_value_0_9=null;
-        Token lv_value_0_10=null;
-        Token lv_value_0_11=null;
-        Token lv_value_0_12=null;
-        Token lv_value_0_13=null;
+        Token lv_valueString_0_1=null;
+        Token lv_valueString_0_2=null;
+        Token lv_valueString_0_3=null;
+        Token lv_valueString_0_4=null;
+        EObject lv_valueInt_1_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7571:28: ( ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'bold' | lv_value_0_3= 'bolder' | lv_value_0_4= 'lighter' | lv_value_0_5= '100' | lv_value_0_6= '200' | lv_value_0_7= '300' | lv_value_0_8= '400' | lv_value_0_9= '500' | lv_value_0_10= '600' | lv_value_0_11= '700' | lv_value_0_12= '800' | lv_value_0_13= '900' ) ) ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7572:1: ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'bold' | lv_value_0_3= 'bolder' | lv_value_0_4= 'lighter' | lv_value_0_5= '100' | lv_value_0_6= '200' | lv_value_0_7= '300' | lv_value_0_8= '400' | lv_value_0_9= '500' | lv_value_0_10= '600' | lv_value_0_11= '700' | lv_value_0_12= '800' | lv_value_0_13= '900' ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7482:28: ( ( ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) ) | ( (lv_valueInt_1_0= ruleNumberValue ) ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7483:1: ( ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) ) | ( (lv_valueInt_1_0= ruleNumberValue ) ) )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7572:1: ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'bold' | lv_value_0_3= 'bolder' | lv_value_0_4= 'lighter' | lv_value_0_5= '100' | lv_value_0_6= '200' | lv_value_0_7= '300' | lv_value_0_8= '400' | lv_value_0_9= '500' | lv_value_0_10= '600' | lv_value_0_11= '700' | lv_value_0_12= '800' | lv_value_0_13= '900' ) ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7573:1: ( (lv_value_0_1= 'normal' | lv_value_0_2= 'bold' | lv_value_0_3= 'bolder' | lv_value_0_4= 'lighter' | lv_value_0_5= '100' | lv_value_0_6= '200' | lv_value_0_7= '300' | lv_value_0_8= '400' | lv_value_0_9= '500' | lv_value_0_10= '600' | lv_value_0_11= '700' | lv_value_0_12= '800' | lv_value_0_13= '900' ) )
-            {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7573:1: ( (lv_value_0_1= 'normal' | lv_value_0_2= 'bold' | lv_value_0_3= 'bolder' | lv_value_0_4= 'lighter' | lv_value_0_5= '100' | lv_value_0_6= '200' | lv_value_0_7= '300' | lv_value_0_8= '400' | lv_value_0_9= '500' | lv_value_0_10= '600' | lv_value_0_11= '700' | lv_value_0_12= '800' | lv_value_0_13= '900' ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7574:1: (lv_value_0_1= 'normal' | lv_value_0_2= 'bold' | lv_value_0_3= 'bolder' | lv_value_0_4= 'lighter' | lv_value_0_5= '100' | lv_value_0_6= '200' | lv_value_0_7= '300' | lv_value_0_8= '400' | lv_value_0_9= '500' | lv_value_0_10= '600' | lv_value_0_11= '700' | lv_value_0_12= '800' | lv_value_0_13= '900' )
-            {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7574:1: (lv_value_0_1= 'normal' | lv_value_0_2= 'bold' | lv_value_0_3= 'bolder' | lv_value_0_4= 'lighter' | lv_value_0_5= '100' | lv_value_0_6= '200' | lv_value_0_7= '300' | lv_value_0_8= '400' | lv_value_0_9= '500' | lv_value_0_10= '600' | lv_value_0_11= '700' | lv_value_0_12= '800' | lv_value_0_13= '900' )
-            int alt76=13;
-            switch ( input.LA(1) ) {
-            case 306:
-                {
-                alt76=1;
-                }
-                break;
-            case 307:
-                {
-                alt76=2;
-                }
-                break;
-            case 308:
-                {
-                alt76=3;
-                }
-                break;
-            case 309:
-                {
-                alt76=4;
-                }
-                break;
-            case 310:
-                {
-                alt76=5;
-                }
-                break;
-            case 311:
-                {
-                alt76=6;
-                }
-                break;
-            case 312:
-                {
-                alt76=7;
-                }
-                break;
-            case 313:
-                {
-                alt76=8;
-                }
-                break;
-            case 314:
-                {
-                alt76=9;
-                }
-                break;
-            case 315:
-                {
-                alt76=10;
-                }
-                break;
-            case 316:
-                {
-                alt76=11;
-                }
-                break;
-            case 317:
-                {
-                alt76=12;
-                }
-                break;
-            case 318:
-                {
-                alt76=13;
-                }
-                break;
-            default:
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7483:1: ( ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) ) | ( (lv_valueInt_1_0= ruleNumberValue ) ) )
+            int alt77=2;
+            int LA77_0 = input.LA(1);
+
+            if ( ((LA77_0>=306 && LA77_0<=309)) ) {
+                alt77=1;
+            }
+            else if ( (LA77_0==RULE_INT) ) {
+                alt77=2;
+            }
+            else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 76, 0, input);
+                    new NoViableAltException("", 77, 0, input);
 
                 throw nvae;
             }
-
-            switch (alt76) {
+            switch (alt77) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7575:3: lv_value_0_1= 'normal'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7483:2: ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) )
                     {
-                    lv_value_0_1=(Token)match(input,306,FOLLOW_306_in_ruleFontWeightValue17801); 
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7483:2: ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7484:1: ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) )
+                    {
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7484:1: ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7485:1: (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' )
+                    {
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7485:1: (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' )
+                    int alt76=4;
+                    switch ( input.LA(1) ) {
+                    case 306:
+                        {
+                        alt76=1;
+                        }
+                        break;
+                    case 307:
+                        {
+                        alt76=2;
+                        }
+                        break;
+                    case 308:
+                        {
+                        alt76=3;
+                        }
+                        break;
+                    case 309:
+                        {
+                        alt76=4;
+                        }
+                        break;
+                    default:
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 76, 0, input);
 
-                            newLeafNode(lv_value_0_1, grammarAccess.getFontWeightValueAccess().getValueNormalKeyword_0_0());
-                        
+                        throw nvae;
+                    }
 
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFontWeightValueRule());
-                    	        }
-                           		setWithLastConsumed(current, "value", lv_value_0_1, null);
-                    	    
+                    switch (alt76) {
+                        case 1 :
+                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7486:3: lv_valueString_0_1= 'normal'
+                            {
+                            lv_valueString_0_1=(Token)match(input,306,FOLLOW_306_in_ruleFontWeightValue17570); 
+
+                                    newLeafNode(lv_valueString_0_1, grammarAccess.getFontWeightValueAccess().getValueStringNormalKeyword_0_0_0());
+                                
+
+                            	        if (current==null) {
+                            	            current = createModelElement(grammarAccess.getFontWeightValueRule());
+                            	        }
+                                   		setWithLastConsumed(current, "valueString", lv_valueString_0_1, null);
+                            	    
+
+                            }
+                            break;
+                        case 2 :
+                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7498:8: lv_valueString_0_2= 'bold'
+                            {
+                            lv_valueString_0_2=(Token)match(input,307,FOLLOW_307_in_ruleFontWeightValue17599); 
+
+                                    newLeafNode(lv_valueString_0_2, grammarAccess.getFontWeightValueAccess().getValueStringBoldKeyword_0_0_1());
+                                
+
+                            	        if (current==null) {
+                            	            current = createModelElement(grammarAccess.getFontWeightValueRule());
+                            	        }
+                                   		setWithLastConsumed(current, "valueString", lv_valueString_0_2, null);
+                            	    
+
+                            }
+                            break;
+                        case 3 :
+                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7510:8: lv_valueString_0_3= 'bolder'
+                            {
+                            lv_valueString_0_3=(Token)match(input,308,FOLLOW_308_in_ruleFontWeightValue17628); 
+
+                                    newLeafNode(lv_valueString_0_3, grammarAccess.getFontWeightValueAccess().getValueStringBolderKeyword_0_0_2());
+                                
+
+                            	        if (current==null) {
+                            	            current = createModelElement(grammarAccess.getFontWeightValueRule());
+                            	        }
+                                   		setWithLastConsumed(current, "valueString", lv_valueString_0_3, null);
+                            	    
+
+                            }
+                            break;
+                        case 4 :
+                            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7522:8: lv_valueString_0_4= 'lighter'
+                            {
+                            lv_valueString_0_4=(Token)match(input,309,FOLLOW_309_in_ruleFontWeightValue17657); 
+
+                                    newLeafNode(lv_valueString_0_4, grammarAccess.getFontWeightValueAccess().getValueStringLighterKeyword_0_0_3());
+                                
+
+                            	        if (current==null) {
+                            	            current = createModelElement(grammarAccess.getFontWeightValueRule());
+                            	        }
+                                   		setWithLastConsumed(current, "valueString", lv_valueString_0_4, null);
+                            	    
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+
+
+                    }
+
 
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7587:8: lv_value_0_2= 'bold'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7538:6: ( (lv_valueInt_1_0= ruleNumberValue ) )
                     {
-                    lv_value_0_2=(Token)match(input,307,FOLLOW_307_in_ruleFontWeightValue17830); 
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7538:6: ( (lv_valueInt_1_0= ruleNumberValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7539:1: (lv_valueInt_1_0= ruleNumberValue )
+                    {
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7539:1: (lv_valueInt_1_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7540:3: lv_valueInt_1_0= ruleNumberValue
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getFontWeightValueAccess().getValueIntNumberValueParserRuleCall_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleNumberValue_in_ruleFontWeightValue17700);
+                    lv_valueInt_1_0=ruleNumberValue();
 
-                            newLeafNode(lv_value_0_2, grammarAccess.getFontWeightValueAccess().getValueBoldKeyword_0_1());
-                        
+                    state._fsp--;
+
 
                     	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFontWeightValueRule());
+                    	            current = createModelElementForParent(grammarAccess.getFontWeightValueRule());
                     	        }
-                           		setWithLastConsumed(current, "value", lv_value_0_2, null);
+                           		set(
+                           			current, 
+                           			"valueInt",
+                            		lv_valueInt_1_0, 
+                            		"NumberValue");
+                    	        afterParserOrEnumRuleCall();
                     	    
 
                     }
-                    break;
-                case 3 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7599:8: lv_value_0_3= 'bolder'
-                    {
-                    lv_value_0_3=(Token)match(input,308,FOLLOW_308_in_ruleFontWeightValue17859); 
 
-                            newLeafNode(lv_value_0_3, grammarAccess.getFontWeightValueAccess().getValueBolderKeyword_0_2());
-                        
 
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFontWeightValueRule());
-                    	        }
-                           		setWithLastConsumed(current, "value", lv_value_0_3, null);
-                    	    
+                    }
+
 
                     }
                     break;
-                case 4 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7611:8: lv_value_0_4= 'lighter'
-                    {
-                    lv_value_0_4=(Token)match(input,309,FOLLOW_309_in_ruleFontWeightValue17888); 
-
-                            newLeafNode(lv_value_0_4, grammarAccess.getFontWeightValueAccess().getValueLighterKeyword_0_3());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFontWeightValueRule());
-                    	        }
-                           		setWithLastConsumed(current, "value", lv_value_0_4, null);
-                    	    
-
-                    }
-                    break;
-                case 5 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7623:8: lv_value_0_5= '100'
-                    {
-                    lv_value_0_5=(Token)match(input,310,FOLLOW_310_in_ruleFontWeightValue17917); 
-
-                            newLeafNode(lv_value_0_5, grammarAccess.getFontWeightValueAccess().getValue100Keyword_0_4());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFontWeightValueRule());
-                    	        }
-                           		setWithLastConsumed(current, "value", lv_value_0_5, null);
-                    	    
-
-                    }
-                    break;
-                case 6 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7635:8: lv_value_0_6= '200'
-                    {
-                    lv_value_0_6=(Token)match(input,311,FOLLOW_311_in_ruleFontWeightValue17946); 
-
-                            newLeafNode(lv_value_0_6, grammarAccess.getFontWeightValueAccess().getValue200Keyword_0_5());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFontWeightValueRule());
-                    	        }
-                           		setWithLastConsumed(current, "value", lv_value_0_6, null);
-                    	    
-
-                    }
-                    break;
-                case 7 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7647:8: lv_value_0_7= '300'
-                    {
-                    lv_value_0_7=(Token)match(input,312,FOLLOW_312_in_ruleFontWeightValue17975); 
-
-                            newLeafNode(lv_value_0_7, grammarAccess.getFontWeightValueAccess().getValue300Keyword_0_6());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFontWeightValueRule());
-                    	        }
-                           		setWithLastConsumed(current, "value", lv_value_0_7, null);
-                    	    
-
-                    }
-                    break;
-                case 8 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7659:8: lv_value_0_8= '400'
-                    {
-                    lv_value_0_8=(Token)match(input,313,FOLLOW_313_in_ruleFontWeightValue18004); 
-
-                            newLeafNode(lv_value_0_8, grammarAccess.getFontWeightValueAccess().getValue400Keyword_0_7());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFontWeightValueRule());
-                    	        }
-                           		setWithLastConsumed(current, "value", lv_value_0_8, null);
-                    	    
-
-                    }
-                    break;
-                case 9 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7671:8: lv_value_0_9= '500'
-                    {
-                    lv_value_0_9=(Token)match(input,314,FOLLOW_314_in_ruleFontWeightValue18033); 
-
-                            newLeafNode(lv_value_0_9, grammarAccess.getFontWeightValueAccess().getValue500Keyword_0_8());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFontWeightValueRule());
-                    	        }
-                           		setWithLastConsumed(current, "value", lv_value_0_9, null);
-                    	    
-
-                    }
-                    break;
-                case 10 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7683:8: lv_value_0_10= '600'
-                    {
-                    lv_value_0_10=(Token)match(input,315,FOLLOW_315_in_ruleFontWeightValue18062); 
-
-                            newLeafNode(lv_value_0_10, grammarAccess.getFontWeightValueAccess().getValue600Keyword_0_9());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFontWeightValueRule());
-                    	        }
-                           		setWithLastConsumed(current, "value", lv_value_0_10, null);
-                    	    
-
-                    }
-                    break;
-                case 11 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7695:8: lv_value_0_11= '700'
-                    {
-                    lv_value_0_11=(Token)match(input,316,FOLLOW_316_in_ruleFontWeightValue18091); 
-
-                            newLeafNode(lv_value_0_11, grammarAccess.getFontWeightValueAccess().getValue700Keyword_0_10());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFontWeightValueRule());
-                    	        }
-                           		setWithLastConsumed(current, "value", lv_value_0_11, null);
-                    	    
-
-                    }
-                    break;
-                case 12 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7707:8: lv_value_0_12= '800'
-                    {
-                    lv_value_0_12=(Token)match(input,317,FOLLOW_317_in_ruleFontWeightValue18120); 
-
-                            newLeafNode(lv_value_0_12, grammarAccess.getFontWeightValueAccess().getValue800Keyword_0_11());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFontWeightValueRule());
-                    	        }
-                           		setWithLastConsumed(current, "value", lv_value_0_12, null);
-                    	    
-
-                    }
-                    break;
-                case 13 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7719:8: lv_value_0_13= '900'
-                    {
-                    lv_value_0_13=(Token)match(input,318,FOLLOW_318_in_ruleFontWeightValue18149); 
-
-                            newLeafNode(lv_value_0_13, grammarAccess.getFontWeightValueAccess().getValue900Keyword_0_12());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getFontWeightValueRule());
-                    	        }
-                           		setWithLastConsumed(current, "value", lv_value_0_13, null);
-                    	    
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
 
             }
 
@@ -17775,7 +17483,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFontFamily"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7742:1: entryRuleFontFamily returns [EObject current=null] : iv_ruleFontFamily= ruleFontFamily EOF ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7564:1: entryRuleFontFamily returns [EObject current=null] : iv_ruleFontFamily= ruleFontFamily EOF ;
     public final EObject entryRuleFontFamily() throws RecognitionException {
         EObject current = null;
 
@@ -17783,17 +17491,17 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7743:2: (iv_ruleFontFamily= ruleFontFamily EOF )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7744:2: iv_ruleFontFamily= ruleFontFamily EOF
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7565:2: (iv_ruleFontFamily= ruleFontFamily EOF )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7566:2: iv_ruleFontFamily= ruleFontFamily EOF
             {
              newCompositeNode(grammarAccess.getFontFamilyRule()); 
-            pushFollow(FOLLOW_ruleFontFamily_in_entryRuleFontFamily18200);
+            pushFollow(FOLLOW_ruleFontFamily_in_entryRuleFontFamily17736);
             iv_ruleFontFamily=ruleFontFamily();
 
             state._fsp--;
 
              current =iv_ruleFontFamily; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFontFamily18210); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFontFamily17746); 
 
             }
 
@@ -17811,7 +17519,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFontFamily"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7751:1: ruleFontFamily returns [EObject current=null] : ( (lv_value_0_0= RULE_ID ) ) ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7573:1: ruleFontFamily returns [EObject current=null] : ( (lv_value_0_0= RULE_ID ) ) ;
     public final EObject ruleFontFamily() throws RecognitionException {
         EObject current = null;
 
@@ -17820,16 +17528,16 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7754:28: ( ( (lv_value_0_0= RULE_ID ) ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7755:1: ( (lv_value_0_0= RULE_ID ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7576:28: ( ( (lv_value_0_0= RULE_ID ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7577:1: ( (lv_value_0_0= RULE_ID ) )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7755:1: ( (lv_value_0_0= RULE_ID ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7756:1: (lv_value_0_0= RULE_ID )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7577:1: ( (lv_value_0_0= RULE_ID ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7578:1: (lv_value_0_0= RULE_ID )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7756:1: (lv_value_0_0= RULE_ID )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7757:3: lv_value_0_0= RULE_ID
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7578:1: (lv_value_0_0= RULE_ID )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7579:3: lv_value_0_0= RULE_ID
             {
-            lv_value_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFontFamily18251); 
+            lv_value_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFontFamily17787); 
 
             			newLeafNode(lv_value_0_0, grammarAccess.getFontFamilyAccess().getValueIDTerminalRuleCall_0()); 
             		
@@ -17867,7 +17575,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePaintValue"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7781:1: entryRulePaintValue returns [EObject current=null] : iv_rulePaintValue= rulePaintValue EOF ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7603:1: entryRulePaintValue returns [EObject current=null] : iv_rulePaintValue= rulePaintValue EOF ;
     public final EObject entryRulePaintValue() throws RecognitionException {
         EObject current = null;
 
@@ -17875,17 +17583,17 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7782:2: (iv_rulePaintValue= rulePaintValue EOF )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7783:2: iv_rulePaintValue= rulePaintValue EOF
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7604:2: (iv_rulePaintValue= rulePaintValue EOF )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7605:2: iv_rulePaintValue= rulePaintValue EOF
             {
              newCompositeNode(grammarAccess.getPaintValueRule()); 
-            pushFollow(FOLLOW_rulePaintValue_in_entryRulePaintValue18291);
+            pushFollow(FOLLOW_rulePaintValue_in_entryRulePaintValue17827);
             iv_rulePaintValue=rulePaintValue();
 
             state._fsp--;
 
              current =iv_rulePaintValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePaintValue18301); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePaintValue17837); 
 
             }
 
@@ -17903,7 +17611,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePaintValue"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7790:1: rulePaintValue returns [EObject current=null] : (this_LinearGradient_0= ruleLinearGradient | this_RadialGradient_1= ruleRadialGradient | this_ColorValue_2= ruleColorValue ) ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7612:1: rulePaintValue returns [EObject current=null] : (this_LinearGradient_0= ruleLinearGradient | this_RadialGradient_1= ruleRadialGradient | this_ColorValue_2= ruleColorValue ) ;
     public final EObject rulePaintValue() throws RecognitionException {
         EObject current = null;
 
@@ -17917,26 +17625,35 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7793:28: ( (this_LinearGradient_0= ruleLinearGradient | this_RadialGradient_1= ruleRadialGradient | this_ColorValue_2= ruleColorValue ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7794:1: (this_LinearGradient_0= ruleLinearGradient | this_RadialGradient_1= ruleRadialGradient | this_ColorValue_2= ruleColorValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7615:28: ( (this_LinearGradient_0= ruleLinearGradient | this_RadialGradient_1= ruleRadialGradient | this_ColorValue_2= ruleColorValue ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7616:1: (this_LinearGradient_0= ruleLinearGradient | this_RadialGradient_1= ruleRadialGradient | this_ColorValue_2= ruleColorValue )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7794:1: (this_LinearGradient_0= ruleLinearGradient | this_RadialGradient_1= ruleRadialGradient | this_ColorValue_2= ruleColorValue )
-            int alt77=3;
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7616:1: (this_LinearGradient_0= ruleLinearGradient | this_RadialGradient_1= ruleRadialGradient | this_ColorValue_2= ruleColorValue )
+            int alt78=3;
             switch ( input.LA(1) ) {
-            case 319:
+            case 310:
                 {
-                alt77=1;
+                alt78=1;
                 }
                 break;
-            case 323:
+            case 314:
                 {
-                alt77=2;
+                alt78=2;
                 }
                 break;
             case 11:
             case 189:
             case 195:
             case 200:
+            case 316:
+            case 317:
+            case 318:
+            case 319:
+            case 320:
+            case 321:
+            case 322:
+            case 323:
+            case 324:
             case 325:
             case 326:
             case 327:
@@ -18079,34 +17796,25 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
             case 464:
             case 465:
             case 466:
-            case 467:
-            case 468:
-            case 469:
-            case 470:
-            case 471:
-            case 472:
-            case 473:
-            case 474:
-            case 475:
                 {
-                alt77=3;
+                alt78=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 77, 0, input);
+                    new NoViableAltException("", 78, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt77) {
+            switch (alt78) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7795:5: this_LinearGradient_0= ruleLinearGradient
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7617:5: this_LinearGradient_0= ruleLinearGradient
                     {
                      
                             newCompositeNode(grammarAccess.getPaintValueAccess().getLinearGradientParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleLinearGradient_in_rulePaintValue18348);
+                    pushFollow(FOLLOW_ruleLinearGradient_in_rulePaintValue17884);
                     this_LinearGradient_0=ruleLinearGradient();
 
                     state._fsp--;
@@ -18119,12 +17827,12 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7805:5: this_RadialGradient_1= ruleRadialGradient
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7627:5: this_RadialGradient_1= ruleRadialGradient
                     {
                      
                             newCompositeNode(grammarAccess.getPaintValueAccess().getRadialGradientParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleRadialGradient_in_rulePaintValue18375);
+                    pushFollow(FOLLOW_ruleRadialGradient_in_rulePaintValue17911);
                     this_RadialGradient_1=ruleRadialGradient();
 
                     state._fsp--;
@@ -18137,12 +17845,12 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7815:5: this_ColorValue_2= ruleColorValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7637:5: this_ColorValue_2= ruleColorValue
                     {
                      
                             newCompositeNode(grammarAccess.getPaintValueAccess().getColorValueParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleColorValue_in_rulePaintValue18402);
+                    pushFollow(FOLLOW_ruleColorValue_in_rulePaintValue17938);
                     this_ColorValue_2=ruleColorValue();
 
                     state._fsp--;
@@ -18175,7 +17883,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLinearGradient"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7831:1: entryRuleLinearGradient returns [EObject current=null] : iv_ruleLinearGradient= ruleLinearGradient EOF ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7653:1: entryRuleLinearGradient returns [EObject current=null] : iv_ruleLinearGradient= ruleLinearGradient EOF ;
     public final EObject entryRuleLinearGradient() throws RecognitionException {
         EObject current = null;
 
@@ -18183,17 +17891,17 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7832:2: (iv_ruleLinearGradient= ruleLinearGradient EOF )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7833:2: iv_ruleLinearGradient= ruleLinearGradient EOF
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7654:2: (iv_ruleLinearGradient= ruleLinearGradient EOF )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7655:2: iv_ruleLinearGradient= ruleLinearGradient EOF
             {
              newCompositeNode(grammarAccess.getLinearGradientRule()); 
-            pushFollow(FOLLOW_ruleLinearGradient_in_entryRuleLinearGradient18437);
+            pushFollow(FOLLOW_ruleLinearGradient_in_entryRuleLinearGradient17973);
             iv_ruleLinearGradient=ruleLinearGradient();
 
             state._fsp--;
 
              current =iv_ruleLinearGradient; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLinearGradient18447); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLinearGradient17983); 
 
             }
 
@@ -18211,7 +17919,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLinearGradient"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7840:1: ruleLinearGradient returns [EObject current=null] : (otherlv_0= 'linear' otherlv_1= '(' ( (lv_x1_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_y1_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= 'to' otherlv_7= '(' ( (lv_x2_8_0= ruleSizeValue ) ) otherlv_9= ',' ( (lv_y2_10_0= ruleSizeValue ) ) otherlv_11= ')' otherlv_12= 'stops' (otherlv_13= '(' ( (lv_stops_14_0= ruleStopValue ) ) otherlv_15= ')' )+ (otherlv_16= 'repeat' | otherlv_17= 'reflect' )? ) ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7662:1: ruleLinearGradient returns [EObject current=null] : (otherlv_0= 'linear' otherlv_1= '(' ( (lv_x1_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_y1_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= 'to' otherlv_7= '(' ( (lv_x2_8_0= ruleSizeValue ) ) otherlv_9= ',' ( (lv_y2_10_0= ruleSizeValue ) ) otherlv_11= ')' otherlv_12= 'stops' (otherlv_13= '(' ( (lv_stops_14_0= ruleStopValue ) ) otherlv_15= ')' )+ (otherlv_16= 'repeat' | otherlv_17= 'reflect' )? ) ;
     public final EObject ruleLinearGradient() throws RecognitionException {
         EObject current = null;
 
@@ -18242,30 +17950,30 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7843:28: ( (otherlv_0= 'linear' otherlv_1= '(' ( (lv_x1_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_y1_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= 'to' otherlv_7= '(' ( (lv_x2_8_0= ruleSizeValue ) ) otherlv_9= ',' ( (lv_y2_10_0= ruleSizeValue ) ) otherlv_11= ')' otherlv_12= 'stops' (otherlv_13= '(' ( (lv_stops_14_0= ruleStopValue ) ) otherlv_15= ')' )+ (otherlv_16= 'repeat' | otherlv_17= 'reflect' )? ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7844:1: (otherlv_0= 'linear' otherlv_1= '(' ( (lv_x1_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_y1_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= 'to' otherlv_7= '(' ( (lv_x2_8_0= ruleSizeValue ) ) otherlv_9= ',' ( (lv_y2_10_0= ruleSizeValue ) ) otherlv_11= ')' otherlv_12= 'stops' (otherlv_13= '(' ( (lv_stops_14_0= ruleStopValue ) ) otherlv_15= ')' )+ (otherlv_16= 'repeat' | otherlv_17= 'reflect' )? )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7665:28: ( (otherlv_0= 'linear' otherlv_1= '(' ( (lv_x1_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_y1_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= 'to' otherlv_7= '(' ( (lv_x2_8_0= ruleSizeValue ) ) otherlv_9= ',' ( (lv_y2_10_0= ruleSizeValue ) ) otherlv_11= ')' otherlv_12= 'stops' (otherlv_13= '(' ( (lv_stops_14_0= ruleStopValue ) ) otherlv_15= ')' )+ (otherlv_16= 'repeat' | otherlv_17= 'reflect' )? ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7666:1: (otherlv_0= 'linear' otherlv_1= '(' ( (lv_x1_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_y1_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= 'to' otherlv_7= '(' ( (lv_x2_8_0= ruleSizeValue ) ) otherlv_9= ',' ( (lv_y2_10_0= ruleSizeValue ) ) otherlv_11= ')' otherlv_12= 'stops' (otherlv_13= '(' ( (lv_stops_14_0= ruleStopValue ) ) otherlv_15= ')' )+ (otherlv_16= 'repeat' | otherlv_17= 'reflect' )? )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7844:1: (otherlv_0= 'linear' otherlv_1= '(' ( (lv_x1_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_y1_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= 'to' otherlv_7= '(' ( (lv_x2_8_0= ruleSizeValue ) ) otherlv_9= ',' ( (lv_y2_10_0= ruleSizeValue ) ) otherlv_11= ')' otherlv_12= 'stops' (otherlv_13= '(' ( (lv_stops_14_0= ruleStopValue ) ) otherlv_15= ')' )+ (otherlv_16= 'repeat' | otherlv_17= 'reflect' )? )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7844:3: otherlv_0= 'linear' otherlv_1= '(' ( (lv_x1_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_y1_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= 'to' otherlv_7= '(' ( (lv_x2_8_0= ruleSizeValue ) ) otherlv_9= ',' ( (lv_y2_10_0= ruleSizeValue ) ) otherlv_11= ')' otherlv_12= 'stops' (otherlv_13= '(' ( (lv_stops_14_0= ruleStopValue ) ) otherlv_15= ')' )+ (otherlv_16= 'repeat' | otherlv_17= 'reflect' )?
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7666:1: (otherlv_0= 'linear' otherlv_1= '(' ( (lv_x1_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_y1_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= 'to' otherlv_7= '(' ( (lv_x2_8_0= ruleSizeValue ) ) otherlv_9= ',' ( (lv_y2_10_0= ruleSizeValue ) ) otherlv_11= ')' otherlv_12= 'stops' (otherlv_13= '(' ( (lv_stops_14_0= ruleStopValue ) ) otherlv_15= ')' )+ (otherlv_16= 'repeat' | otherlv_17= 'reflect' )? )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7666:3: otherlv_0= 'linear' otherlv_1= '(' ( (lv_x1_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_y1_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= 'to' otherlv_7= '(' ( (lv_x2_8_0= ruleSizeValue ) ) otherlv_9= ',' ( (lv_y2_10_0= ruleSizeValue ) ) otherlv_11= ')' otherlv_12= 'stops' (otherlv_13= '(' ( (lv_stops_14_0= ruleStopValue ) ) otherlv_15= ')' )+ (otherlv_16= 'repeat' | otherlv_17= 'reflect' )?
             {
-            otherlv_0=(Token)match(input,319,FOLLOW_319_in_ruleLinearGradient18484); 
+            otherlv_0=(Token)match(input,310,FOLLOW_310_in_ruleLinearGradient18020); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getLinearGradientAccess().getLinearKeyword_0());
                 
-            otherlv_1=(Token)match(input,65,FOLLOW_65_in_ruleLinearGradient18496); 
+            otherlv_1=(Token)match(input,65,FOLLOW_65_in_ruleLinearGradient18032); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getLinearGradientAccess().getLeftParenthesisKeyword_1());
                 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7852:1: ( (lv_x1_2_0= ruleSizeValue ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7853:1: (lv_x1_2_0= ruleSizeValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7674:1: ( (lv_x1_2_0= ruleSizeValue ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7675:1: (lv_x1_2_0= ruleSizeValue )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7853:1: (lv_x1_2_0= ruleSizeValue )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7854:3: lv_x1_2_0= ruleSizeValue
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7675:1: (lv_x1_2_0= ruleSizeValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7676:3: lv_x1_2_0= ruleSizeValue
             {
              
             	        newCompositeNode(grammarAccess.getLinearGradientAccess().getX1SizeValueParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleSizeValue_in_ruleLinearGradient18517);
+            pushFollow(FOLLOW_ruleSizeValue_in_ruleLinearGradient18053);
             lv_x1_2_0=ruleSizeValue();
 
             state._fsp--;
@@ -18287,20 +17995,20 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,66,FOLLOW_66_in_ruleLinearGradient18529); 
+            otherlv_3=(Token)match(input,66,FOLLOW_66_in_ruleLinearGradient18065); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getLinearGradientAccess().getCommaKeyword_3());
                 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7874:1: ( (lv_y1_4_0= ruleSizeValue ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7875:1: (lv_y1_4_0= ruleSizeValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7696:1: ( (lv_y1_4_0= ruleSizeValue ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7697:1: (lv_y1_4_0= ruleSizeValue )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7875:1: (lv_y1_4_0= ruleSizeValue )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7876:3: lv_y1_4_0= ruleSizeValue
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7697:1: (lv_y1_4_0= ruleSizeValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7698:3: lv_y1_4_0= ruleSizeValue
             {
              
             	        newCompositeNode(grammarAccess.getLinearGradientAccess().getY1SizeValueParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleSizeValue_in_ruleLinearGradient18550);
+            pushFollow(FOLLOW_ruleSizeValue_in_ruleLinearGradient18086);
             lv_y1_4_0=ruleSizeValue();
 
             state._fsp--;
@@ -18322,28 +18030,28 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,67,FOLLOW_67_in_ruleLinearGradient18562); 
+            otherlv_5=(Token)match(input,67,FOLLOW_67_in_ruleLinearGradient18098); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getLinearGradientAccess().getRightParenthesisKeyword_5());
                 
-            otherlv_6=(Token)match(input,320,FOLLOW_320_in_ruleLinearGradient18574); 
+            otherlv_6=(Token)match(input,311,FOLLOW_311_in_ruleLinearGradient18110); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getLinearGradientAccess().getToKeyword_6());
                 
-            otherlv_7=(Token)match(input,65,FOLLOW_65_in_ruleLinearGradient18586); 
+            otherlv_7=(Token)match(input,65,FOLLOW_65_in_ruleLinearGradient18122); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getLinearGradientAccess().getLeftParenthesisKeyword_7());
                 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7904:1: ( (lv_x2_8_0= ruleSizeValue ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7905:1: (lv_x2_8_0= ruleSizeValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7726:1: ( (lv_x2_8_0= ruleSizeValue ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7727:1: (lv_x2_8_0= ruleSizeValue )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7905:1: (lv_x2_8_0= ruleSizeValue )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7906:3: lv_x2_8_0= ruleSizeValue
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7727:1: (lv_x2_8_0= ruleSizeValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7728:3: lv_x2_8_0= ruleSizeValue
             {
              
             	        newCompositeNode(grammarAccess.getLinearGradientAccess().getX2SizeValueParserRuleCall_8_0()); 
             	    
-            pushFollow(FOLLOW_ruleSizeValue_in_ruleLinearGradient18607);
+            pushFollow(FOLLOW_ruleSizeValue_in_ruleLinearGradient18143);
             lv_x2_8_0=ruleSizeValue();
 
             state._fsp--;
@@ -18365,20 +18073,20 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,66,FOLLOW_66_in_ruleLinearGradient18619); 
+            otherlv_9=(Token)match(input,66,FOLLOW_66_in_ruleLinearGradient18155); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getLinearGradientAccess().getCommaKeyword_9());
                 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7926:1: ( (lv_y2_10_0= ruleSizeValue ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7927:1: (lv_y2_10_0= ruleSizeValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7748:1: ( (lv_y2_10_0= ruleSizeValue ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7749:1: (lv_y2_10_0= ruleSizeValue )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7927:1: (lv_y2_10_0= ruleSizeValue )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7928:3: lv_y2_10_0= ruleSizeValue
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7749:1: (lv_y2_10_0= ruleSizeValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7750:3: lv_y2_10_0= ruleSizeValue
             {
              
             	        newCompositeNode(grammarAccess.getLinearGradientAccess().getY2SizeValueParserRuleCall_10_0()); 
             	    
-            pushFollow(FOLLOW_ruleSizeValue_in_ruleLinearGradient18640);
+            pushFollow(FOLLOW_ruleSizeValue_in_ruleLinearGradient18176);
             lv_y2_10_0=ruleSizeValue();
 
             state._fsp--;
@@ -18400,44 +18108,44 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_11=(Token)match(input,67,FOLLOW_67_in_ruleLinearGradient18652); 
+            otherlv_11=(Token)match(input,67,FOLLOW_67_in_ruleLinearGradient18188); 
 
                 	newLeafNode(otherlv_11, grammarAccess.getLinearGradientAccess().getRightParenthesisKeyword_11());
                 
-            otherlv_12=(Token)match(input,321,FOLLOW_321_in_ruleLinearGradient18664); 
+            otherlv_12=(Token)match(input,312,FOLLOW_312_in_ruleLinearGradient18200); 
 
                 	newLeafNode(otherlv_12, grammarAccess.getLinearGradientAccess().getStopsKeyword_12());
                 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7952:1: (otherlv_13= '(' ( (lv_stops_14_0= ruleStopValue ) ) otherlv_15= ')' )+
-            int cnt78=0;
-            loop78:
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7774:1: (otherlv_13= '(' ( (lv_stops_14_0= ruleStopValue ) ) otherlv_15= ')' )+
+            int cnt79=0;
+            loop79:
             do {
-                int alt78=2;
-                int LA78_0 = input.LA(1);
+                int alt79=2;
+                int LA79_0 = input.LA(1);
 
-                if ( (LA78_0==65) ) {
-                    alt78=1;
+                if ( (LA79_0==65) ) {
+                    alt79=1;
                 }
 
 
-                switch (alt78) {
+                switch (alt79) {
             	case 1 :
-            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7952:3: otherlv_13= '(' ( (lv_stops_14_0= ruleStopValue ) ) otherlv_15= ')'
+            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7774:3: otherlv_13= '(' ( (lv_stops_14_0= ruleStopValue ) ) otherlv_15= ')'
             	    {
-            	    otherlv_13=(Token)match(input,65,FOLLOW_65_in_ruleLinearGradient18677); 
+            	    otherlv_13=(Token)match(input,65,FOLLOW_65_in_ruleLinearGradient18213); 
 
             	        	newLeafNode(otherlv_13, grammarAccess.getLinearGradientAccess().getLeftParenthesisKeyword_13_0());
             	        
-            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7956:1: ( (lv_stops_14_0= ruleStopValue ) )
-            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7957:1: (lv_stops_14_0= ruleStopValue )
+            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7778:1: ( (lv_stops_14_0= ruleStopValue ) )
+            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7779:1: (lv_stops_14_0= ruleStopValue )
             	    {
-            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7957:1: (lv_stops_14_0= ruleStopValue )
-            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7958:3: lv_stops_14_0= ruleStopValue
+            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7779:1: (lv_stops_14_0= ruleStopValue )
+            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7780:3: lv_stops_14_0= ruleStopValue
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getLinearGradientAccess().getStopsStopValueParserRuleCall_13_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleStopValue_in_ruleLinearGradient18698);
+            	    pushFollow(FOLLOW_ruleStopValue_in_ruleLinearGradient18234);
             	    lv_stops_14_0=ruleStopValue();
 
             	    state._fsp--;
@@ -18459,7 +18167,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_15=(Token)match(input,67,FOLLOW_67_in_ruleLinearGradient18710); 
+            	    otherlv_15=(Token)match(input,67,FOLLOW_67_in_ruleLinearGradient18246); 
 
             	        	newLeafNode(otherlv_15, grammarAccess.getLinearGradientAccess().getRightParenthesisKeyword_13_2());
             	        
@@ -18468,29 +18176,29 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt78 >= 1 ) break loop78;
+            	    if ( cnt79 >= 1 ) break loop79;
                         EarlyExitException eee =
-                            new EarlyExitException(78, input);
+                            new EarlyExitException(79, input);
                         throw eee;
                 }
-                cnt78++;
+                cnt79++;
             } while (true);
 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7978:3: (otherlv_16= 'repeat' | otherlv_17= 'reflect' )?
-            int alt79=3;
-            int LA79_0 = input.LA(1);
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7800:3: (otherlv_16= 'repeat' | otherlv_17= 'reflect' )?
+            int alt80=3;
+            int LA80_0 = input.LA(1);
 
-            if ( (LA79_0==288) ) {
-                alt79=1;
+            if ( (LA80_0==288) ) {
+                alt80=1;
             }
-            else if ( (LA79_0==322) ) {
-                alt79=2;
+            else if ( (LA80_0==313) ) {
+                alt80=2;
             }
-            switch (alt79) {
+            switch (alt80) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7978:5: otherlv_16= 'repeat'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7800:5: otherlv_16= 'repeat'
                     {
-                    otherlv_16=(Token)match(input,288,FOLLOW_288_in_ruleLinearGradient18725); 
+                    otherlv_16=(Token)match(input,288,FOLLOW_288_in_ruleLinearGradient18261); 
 
                         	newLeafNode(otherlv_16, grammarAccess.getLinearGradientAccess().getRepeatKeyword_14_0());
                         
@@ -18498,9 +18206,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7983:7: otherlv_17= 'reflect'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7805:7: otherlv_17= 'reflect'
                     {
-                    otherlv_17=(Token)match(input,322,FOLLOW_322_in_ruleLinearGradient18743); 
+                    otherlv_17=(Token)match(input,313,FOLLOW_313_in_ruleLinearGradient18279); 
 
                         	newLeafNode(otherlv_17, grammarAccess.getLinearGradientAccess().getReflectKeyword_14_1());
                         
@@ -18531,7 +18239,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRadialGradient"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7995:1: entryRuleRadialGradient returns [EObject current=null] : iv_ruleRadialGradient= ruleRadialGradient EOF ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7817:1: entryRuleRadialGradient returns [EObject current=null] : iv_ruleRadialGradient= ruleRadialGradient EOF ;
     public final EObject entryRuleRadialGradient() throws RecognitionException {
         EObject current = null;
 
@@ -18539,17 +18247,17 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7996:2: (iv_ruleRadialGradient= ruleRadialGradient EOF )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7997:2: iv_ruleRadialGradient= ruleRadialGradient EOF
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7818:2: (iv_ruleRadialGradient= ruleRadialGradient EOF )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7819:2: iv_ruleRadialGradient= ruleRadialGradient EOF
             {
              newCompositeNode(grammarAccess.getRadialGradientRule()); 
-            pushFollow(FOLLOW_ruleRadialGradient_in_entryRuleRadialGradient18781);
+            pushFollow(FOLLOW_ruleRadialGradient_in_entryRuleRadialGradient18317);
             iv_ruleRadialGradient=ruleRadialGradient();
 
             state._fsp--;
 
              current =iv_ruleRadialGradient; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRadialGradient18791); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRadialGradient18327); 
 
             }
 
@@ -18567,7 +18275,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRadialGradient"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8004:1: ruleRadialGradient returns [EObject current=null] : (otherlv_0= 'radial' (otherlv_1= '(' ( (lv_cx_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_cy_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= ',' )? ( (lv_radius_7_0= ruleSizeValue ) ) (otherlv_8= 'focus' otherlv_9= '(' ( (lv_fx_10_0= ruleSizeValue ) ) otherlv_11= ',' ( (lv_fy_12_0= ruleSizeValue ) ) otherlv_13= ')' ) otherlv_14= 'stops' (otherlv_15= '(' ( (lv_stops_16_0= ruleStopValue ) ) otherlv_17= ')' )+ (otherlv_18= 'repeat' | otherlv_19= 'reflect' )? ) ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7826:1: ruleRadialGradient returns [EObject current=null] : (otherlv_0= 'radial' (otherlv_1= '(' ( (lv_cx_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_cy_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= ',' )? ( (lv_radius_7_0= ruleSizeValue ) ) (otherlv_8= 'focus' otherlv_9= '(' ( (lv_fx_10_0= ruleSizeValue ) ) otherlv_11= ',' ( (lv_fy_12_0= ruleSizeValue ) ) otherlv_13= ')' ) otherlv_14= 'stops' (otherlv_15= '(' ( (lv_stops_16_0= ruleStopValue ) ) otherlv_17= ')' )+ (otherlv_18= 'repeat' | otherlv_19= 'reflect' )? ) ;
     public final EObject ruleRadialGradient() throws RecognitionException {
         EObject current = null;
 
@@ -18601,41 +18309,41 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8007:28: ( (otherlv_0= 'radial' (otherlv_1= '(' ( (lv_cx_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_cy_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= ',' )? ( (lv_radius_7_0= ruleSizeValue ) ) (otherlv_8= 'focus' otherlv_9= '(' ( (lv_fx_10_0= ruleSizeValue ) ) otherlv_11= ',' ( (lv_fy_12_0= ruleSizeValue ) ) otherlv_13= ')' ) otherlv_14= 'stops' (otherlv_15= '(' ( (lv_stops_16_0= ruleStopValue ) ) otherlv_17= ')' )+ (otherlv_18= 'repeat' | otherlv_19= 'reflect' )? ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8008:1: (otherlv_0= 'radial' (otherlv_1= '(' ( (lv_cx_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_cy_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= ',' )? ( (lv_radius_7_0= ruleSizeValue ) ) (otherlv_8= 'focus' otherlv_9= '(' ( (lv_fx_10_0= ruleSizeValue ) ) otherlv_11= ',' ( (lv_fy_12_0= ruleSizeValue ) ) otherlv_13= ')' ) otherlv_14= 'stops' (otherlv_15= '(' ( (lv_stops_16_0= ruleStopValue ) ) otherlv_17= ')' )+ (otherlv_18= 'repeat' | otherlv_19= 'reflect' )? )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7829:28: ( (otherlv_0= 'radial' (otherlv_1= '(' ( (lv_cx_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_cy_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= ',' )? ( (lv_radius_7_0= ruleSizeValue ) ) (otherlv_8= 'focus' otherlv_9= '(' ( (lv_fx_10_0= ruleSizeValue ) ) otherlv_11= ',' ( (lv_fy_12_0= ruleSizeValue ) ) otherlv_13= ')' ) otherlv_14= 'stops' (otherlv_15= '(' ( (lv_stops_16_0= ruleStopValue ) ) otherlv_17= ')' )+ (otherlv_18= 'repeat' | otherlv_19= 'reflect' )? ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7830:1: (otherlv_0= 'radial' (otherlv_1= '(' ( (lv_cx_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_cy_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= ',' )? ( (lv_radius_7_0= ruleSizeValue ) ) (otherlv_8= 'focus' otherlv_9= '(' ( (lv_fx_10_0= ruleSizeValue ) ) otherlv_11= ',' ( (lv_fy_12_0= ruleSizeValue ) ) otherlv_13= ')' ) otherlv_14= 'stops' (otherlv_15= '(' ( (lv_stops_16_0= ruleStopValue ) ) otherlv_17= ')' )+ (otherlv_18= 'repeat' | otherlv_19= 'reflect' )? )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8008:1: (otherlv_0= 'radial' (otherlv_1= '(' ( (lv_cx_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_cy_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= ',' )? ( (lv_radius_7_0= ruleSizeValue ) ) (otherlv_8= 'focus' otherlv_9= '(' ( (lv_fx_10_0= ruleSizeValue ) ) otherlv_11= ',' ( (lv_fy_12_0= ruleSizeValue ) ) otherlv_13= ')' ) otherlv_14= 'stops' (otherlv_15= '(' ( (lv_stops_16_0= ruleStopValue ) ) otherlv_17= ')' )+ (otherlv_18= 'repeat' | otherlv_19= 'reflect' )? )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8008:3: otherlv_0= 'radial' (otherlv_1= '(' ( (lv_cx_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_cy_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= ',' )? ( (lv_radius_7_0= ruleSizeValue ) ) (otherlv_8= 'focus' otherlv_9= '(' ( (lv_fx_10_0= ruleSizeValue ) ) otherlv_11= ',' ( (lv_fy_12_0= ruleSizeValue ) ) otherlv_13= ')' ) otherlv_14= 'stops' (otherlv_15= '(' ( (lv_stops_16_0= ruleStopValue ) ) otherlv_17= ')' )+ (otherlv_18= 'repeat' | otherlv_19= 'reflect' )?
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7830:1: (otherlv_0= 'radial' (otherlv_1= '(' ( (lv_cx_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_cy_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= ',' )? ( (lv_radius_7_0= ruleSizeValue ) ) (otherlv_8= 'focus' otherlv_9= '(' ( (lv_fx_10_0= ruleSizeValue ) ) otherlv_11= ',' ( (lv_fy_12_0= ruleSizeValue ) ) otherlv_13= ')' ) otherlv_14= 'stops' (otherlv_15= '(' ( (lv_stops_16_0= ruleStopValue ) ) otherlv_17= ')' )+ (otherlv_18= 'repeat' | otherlv_19= 'reflect' )? )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7830:3: otherlv_0= 'radial' (otherlv_1= '(' ( (lv_cx_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_cy_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= ',' )? ( (lv_radius_7_0= ruleSizeValue ) ) (otherlv_8= 'focus' otherlv_9= '(' ( (lv_fx_10_0= ruleSizeValue ) ) otherlv_11= ',' ( (lv_fy_12_0= ruleSizeValue ) ) otherlv_13= ')' ) otherlv_14= 'stops' (otherlv_15= '(' ( (lv_stops_16_0= ruleStopValue ) ) otherlv_17= ')' )+ (otherlv_18= 'repeat' | otherlv_19= 'reflect' )?
             {
-            otherlv_0=(Token)match(input,323,FOLLOW_323_in_ruleRadialGradient18828); 
+            otherlv_0=(Token)match(input,314,FOLLOW_314_in_ruleRadialGradient18364); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getRadialGradientAccess().getRadialKeyword_0());
                 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8012:1: (otherlv_1= '(' ( (lv_cx_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_cy_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= ',' )?
-            int alt80=2;
-            int LA80_0 = input.LA(1);
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7834:1: (otherlv_1= '(' ( (lv_cx_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_cy_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= ',' )?
+            int alt81=2;
+            int LA81_0 = input.LA(1);
 
-            if ( (LA80_0==65) ) {
-                alt80=1;
+            if ( (LA81_0==65) ) {
+                alt81=1;
             }
-            switch (alt80) {
+            switch (alt81) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8012:3: otherlv_1= '(' ( (lv_cx_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_cy_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= ','
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7834:3: otherlv_1= '(' ( (lv_cx_2_0= ruleSizeValue ) ) otherlv_3= ',' ( (lv_cy_4_0= ruleSizeValue ) ) otherlv_5= ')' otherlv_6= ','
                     {
-                    otherlv_1=(Token)match(input,65,FOLLOW_65_in_ruleRadialGradient18841); 
+                    otherlv_1=(Token)match(input,65,FOLLOW_65_in_ruleRadialGradient18377); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getRadialGradientAccess().getLeftParenthesisKeyword_1_0());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8016:1: ( (lv_cx_2_0= ruleSizeValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8017:1: (lv_cx_2_0= ruleSizeValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7838:1: ( (lv_cx_2_0= ruleSizeValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7839:1: (lv_cx_2_0= ruleSizeValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8017:1: (lv_cx_2_0= ruleSizeValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8018:3: lv_cx_2_0= ruleSizeValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7839:1: (lv_cx_2_0= ruleSizeValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7840:3: lv_cx_2_0= ruleSizeValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getRadialGradientAccess().getCxSizeValueParserRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleSizeValue_in_ruleRadialGradient18862);
+                    pushFollow(FOLLOW_ruleSizeValue_in_ruleRadialGradient18398);
                     lv_cx_2_0=ruleSizeValue();
 
                     state._fsp--;
@@ -18657,20 +18365,20 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_3=(Token)match(input,66,FOLLOW_66_in_ruleRadialGradient18874); 
+                    otherlv_3=(Token)match(input,66,FOLLOW_66_in_ruleRadialGradient18410); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getRadialGradientAccess().getCommaKeyword_1_2());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8038:1: ( (lv_cy_4_0= ruleSizeValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8039:1: (lv_cy_4_0= ruleSizeValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7860:1: ( (lv_cy_4_0= ruleSizeValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7861:1: (lv_cy_4_0= ruleSizeValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8039:1: (lv_cy_4_0= ruleSizeValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8040:3: lv_cy_4_0= ruleSizeValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7861:1: (lv_cy_4_0= ruleSizeValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7862:3: lv_cy_4_0= ruleSizeValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getRadialGradientAccess().getCySizeValueParserRuleCall_1_3_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleSizeValue_in_ruleRadialGradient18895);
+                    pushFollow(FOLLOW_ruleSizeValue_in_ruleRadialGradient18431);
                     lv_cy_4_0=ruleSizeValue();
 
                     state._fsp--;
@@ -18692,11 +18400,11 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_5=(Token)match(input,67,FOLLOW_67_in_ruleRadialGradient18907); 
+                    otherlv_5=(Token)match(input,67,FOLLOW_67_in_ruleRadialGradient18443); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getRadialGradientAccess().getRightParenthesisKeyword_1_4());
                         
-                    otherlv_6=(Token)match(input,66,FOLLOW_66_in_ruleRadialGradient18919); 
+                    otherlv_6=(Token)match(input,66,FOLLOW_66_in_ruleRadialGradient18455); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getRadialGradientAccess().getCommaKeyword_1_5());
                         
@@ -18706,16 +18414,16 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8064:3: ( (lv_radius_7_0= ruleSizeValue ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8065:1: (lv_radius_7_0= ruleSizeValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7886:3: ( (lv_radius_7_0= ruleSizeValue ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7887:1: (lv_radius_7_0= ruleSizeValue )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8065:1: (lv_radius_7_0= ruleSizeValue )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8066:3: lv_radius_7_0= ruleSizeValue
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7887:1: (lv_radius_7_0= ruleSizeValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7888:3: lv_radius_7_0= ruleSizeValue
             {
              
             	        newCompositeNode(grammarAccess.getRadialGradientAccess().getRadiusSizeValueParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleSizeValue_in_ruleRadialGradient18942);
+            pushFollow(FOLLOW_ruleSizeValue_in_ruleRadialGradient18478);
             lv_radius_7_0=ruleSizeValue();
 
             state._fsp--;
@@ -18737,27 +18445,27 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8082:2: (otherlv_8= 'focus' otherlv_9= '(' ( (lv_fx_10_0= ruleSizeValue ) ) otherlv_11= ',' ( (lv_fy_12_0= ruleSizeValue ) ) otherlv_13= ')' )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8082:4: otherlv_8= 'focus' otherlv_9= '(' ( (lv_fx_10_0= ruleSizeValue ) ) otherlv_11= ',' ( (lv_fy_12_0= ruleSizeValue ) ) otherlv_13= ')'
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7904:2: (otherlv_8= 'focus' otherlv_9= '(' ( (lv_fx_10_0= ruleSizeValue ) ) otherlv_11= ',' ( (lv_fy_12_0= ruleSizeValue ) ) otherlv_13= ')' )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7904:4: otherlv_8= 'focus' otherlv_9= '(' ( (lv_fx_10_0= ruleSizeValue ) ) otherlv_11= ',' ( (lv_fy_12_0= ruleSizeValue ) ) otherlv_13= ')'
             {
-            otherlv_8=(Token)match(input,324,FOLLOW_324_in_ruleRadialGradient18955); 
+            otherlv_8=(Token)match(input,315,FOLLOW_315_in_ruleRadialGradient18491); 
 
                 	newLeafNode(otherlv_8, grammarAccess.getRadialGradientAccess().getFocusKeyword_3_0());
                 
-            otherlv_9=(Token)match(input,65,FOLLOW_65_in_ruleRadialGradient18967); 
+            otherlv_9=(Token)match(input,65,FOLLOW_65_in_ruleRadialGradient18503); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getRadialGradientAccess().getLeftParenthesisKeyword_3_1());
                 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8090:1: ( (lv_fx_10_0= ruleSizeValue ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8091:1: (lv_fx_10_0= ruleSizeValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7912:1: ( (lv_fx_10_0= ruleSizeValue ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7913:1: (lv_fx_10_0= ruleSizeValue )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8091:1: (lv_fx_10_0= ruleSizeValue )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8092:3: lv_fx_10_0= ruleSizeValue
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7913:1: (lv_fx_10_0= ruleSizeValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7914:3: lv_fx_10_0= ruleSizeValue
             {
              
             	        newCompositeNode(grammarAccess.getRadialGradientAccess().getFxSizeValueParserRuleCall_3_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleSizeValue_in_ruleRadialGradient18988);
+            pushFollow(FOLLOW_ruleSizeValue_in_ruleRadialGradient18524);
             lv_fx_10_0=ruleSizeValue();
 
             state._fsp--;
@@ -18779,20 +18487,20 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_11=(Token)match(input,66,FOLLOW_66_in_ruleRadialGradient19000); 
+            otherlv_11=(Token)match(input,66,FOLLOW_66_in_ruleRadialGradient18536); 
 
                 	newLeafNode(otherlv_11, grammarAccess.getRadialGradientAccess().getCommaKeyword_3_3());
                 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8112:1: ( (lv_fy_12_0= ruleSizeValue ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8113:1: (lv_fy_12_0= ruleSizeValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7934:1: ( (lv_fy_12_0= ruleSizeValue ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7935:1: (lv_fy_12_0= ruleSizeValue )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8113:1: (lv_fy_12_0= ruleSizeValue )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8114:3: lv_fy_12_0= ruleSizeValue
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7935:1: (lv_fy_12_0= ruleSizeValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7936:3: lv_fy_12_0= ruleSizeValue
             {
              
             	        newCompositeNode(grammarAccess.getRadialGradientAccess().getFySizeValueParserRuleCall_3_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleSizeValue_in_ruleRadialGradient19021);
+            pushFollow(FOLLOW_ruleSizeValue_in_ruleRadialGradient18557);
             lv_fy_12_0=ruleSizeValue();
 
             state._fsp--;
@@ -18814,47 +18522,47 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_13=(Token)match(input,67,FOLLOW_67_in_ruleRadialGradient19033); 
+            otherlv_13=(Token)match(input,67,FOLLOW_67_in_ruleRadialGradient18569); 
 
                 	newLeafNode(otherlv_13, grammarAccess.getRadialGradientAccess().getRightParenthesisKeyword_3_5());
                 
 
             }
 
-            otherlv_14=(Token)match(input,321,FOLLOW_321_in_ruleRadialGradient19046); 
+            otherlv_14=(Token)match(input,312,FOLLOW_312_in_ruleRadialGradient18582); 
 
                 	newLeafNode(otherlv_14, grammarAccess.getRadialGradientAccess().getStopsKeyword_4());
                 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8138:1: (otherlv_15= '(' ( (lv_stops_16_0= ruleStopValue ) ) otherlv_17= ')' )+
-            int cnt81=0;
-            loop81:
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7960:1: (otherlv_15= '(' ( (lv_stops_16_0= ruleStopValue ) ) otherlv_17= ')' )+
+            int cnt82=0;
+            loop82:
             do {
-                int alt81=2;
-                int LA81_0 = input.LA(1);
+                int alt82=2;
+                int LA82_0 = input.LA(1);
 
-                if ( (LA81_0==65) ) {
-                    alt81=1;
+                if ( (LA82_0==65) ) {
+                    alt82=1;
                 }
 
 
-                switch (alt81) {
+                switch (alt82) {
             	case 1 :
-            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8138:3: otherlv_15= '(' ( (lv_stops_16_0= ruleStopValue ) ) otherlv_17= ')'
+            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7960:3: otherlv_15= '(' ( (lv_stops_16_0= ruleStopValue ) ) otherlv_17= ')'
             	    {
-            	    otherlv_15=(Token)match(input,65,FOLLOW_65_in_ruleRadialGradient19059); 
+            	    otherlv_15=(Token)match(input,65,FOLLOW_65_in_ruleRadialGradient18595); 
 
             	        	newLeafNode(otherlv_15, grammarAccess.getRadialGradientAccess().getLeftParenthesisKeyword_5_0());
             	        
-            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8142:1: ( (lv_stops_16_0= ruleStopValue ) )
-            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8143:1: (lv_stops_16_0= ruleStopValue )
+            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7964:1: ( (lv_stops_16_0= ruleStopValue ) )
+            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7965:1: (lv_stops_16_0= ruleStopValue )
             	    {
-            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8143:1: (lv_stops_16_0= ruleStopValue )
-            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8144:3: lv_stops_16_0= ruleStopValue
+            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7965:1: (lv_stops_16_0= ruleStopValue )
+            	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7966:3: lv_stops_16_0= ruleStopValue
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getRadialGradientAccess().getStopsStopValueParserRuleCall_5_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleStopValue_in_ruleRadialGradient19080);
+            	    pushFollow(FOLLOW_ruleStopValue_in_ruleRadialGradient18616);
             	    lv_stops_16_0=ruleStopValue();
 
             	    state._fsp--;
@@ -18876,7 +18584,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_17=(Token)match(input,67,FOLLOW_67_in_ruleRadialGradient19092); 
+            	    otherlv_17=(Token)match(input,67,FOLLOW_67_in_ruleRadialGradient18628); 
 
             	        	newLeafNode(otherlv_17, grammarAccess.getRadialGradientAccess().getRightParenthesisKeyword_5_2());
             	        
@@ -18885,29 +18593,29 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt81 >= 1 ) break loop81;
+            	    if ( cnt82 >= 1 ) break loop82;
                         EarlyExitException eee =
-                            new EarlyExitException(81, input);
+                            new EarlyExitException(82, input);
                         throw eee;
                 }
-                cnt81++;
+                cnt82++;
             } while (true);
 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8164:3: (otherlv_18= 'repeat' | otherlv_19= 'reflect' )?
-            int alt82=3;
-            int LA82_0 = input.LA(1);
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7986:3: (otherlv_18= 'repeat' | otherlv_19= 'reflect' )?
+            int alt83=3;
+            int LA83_0 = input.LA(1);
 
-            if ( (LA82_0==288) ) {
-                alt82=1;
+            if ( (LA83_0==288) ) {
+                alt83=1;
             }
-            else if ( (LA82_0==322) ) {
-                alt82=2;
+            else if ( (LA83_0==313) ) {
+                alt83=2;
             }
-            switch (alt82) {
+            switch (alt83) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8164:5: otherlv_18= 'repeat'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7986:5: otherlv_18= 'repeat'
                     {
-                    otherlv_18=(Token)match(input,288,FOLLOW_288_in_ruleRadialGradient19107); 
+                    otherlv_18=(Token)match(input,288,FOLLOW_288_in_ruleRadialGradient18643); 
 
                         	newLeafNode(otherlv_18, grammarAccess.getRadialGradientAccess().getRepeatKeyword_6_0());
                         
@@ -18915,9 +18623,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8169:7: otherlv_19= 'reflect'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:7991:7: otherlv_19= 'reflect'
                     {
-                    otherlv_19=(Token)match(input,322,FOLLOW_322_in_ruleRadialGradient19125); 
+                    otherlv_19=(Token)match(input,313,FOLLOW_313_in_ruleRadialGradient18661); 
 
                         	newLeafNode(otherlv_19, grammarAccess.getRadialGradientAccess().getReflectKeyword_6_1());
                         
@@ -18948,7 +18656,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStopValue"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8181:1: entryRuleStopValue returns [EObject current=null] : iv_ruleStopValue= ruleStopValue EOF ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8003:1: entryRuleStopValue returns [EObject current=null] : iv_ruleStopValue= ruleStopValue EOF ;
     public final EObject entryRuleStopValue() throws RecognitionException {
         EObject current = null;
 
@@ -18956,17 +18664,17 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8182:2: (iv_ruleStopValue= ruleStopValue EOF )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8183:2: iv_ruleStopValue= ruleStopValue EOF
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8004:2: (iv_ruleStopValue= ruleStopValue EOF )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8005:2: iv_ruleStopValue= ruleStopValue EOF
             {
              newCompositeNode(grammarAccess.getStopValueRule()); 
-            pushFollow(FOLLOW_ruleStopValue_in_entryRuleStopValue19163);
+            pushFollow(FOLLOW_ruleStopValue_in_entryRuleStopValue18699);
             iv_ruleStopValue=ruleStopValue();
 
             state._fsp--;
 
              current =iv_ruleStopValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStopValue19173); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStopValue18709); 
 
             }
 
@@ -18984,7 +18692,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStopValue"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8190:1: ruleStopValue returns [EObject current=null] : ( ( (lv_pos_0_0= ruleNumberValue ) ) otherlv_1= ',' ( (lv_color_2_0= ruleColorValue ) ) ) ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8012:1: ruleStopValue returns [EObject current=null] : ( ( (lv_pos_0_0= ruleSizeValue ) ) otherlv_1= ',' ( (lv_color_2_0= ruleColorValue ) ) ) ;
     public final EObject ruleStopValue() throws RecognitionException {
         EObject current = null;
 
@@ -18997,23 +18705,23 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8193:28: ( ( ( (lv_pos_0_0= ruleNumberValue ) ) otherlv_1= ',' ( (lv_color_2_0= ruleColorValue ) ) ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8194:1: ( ( (lv_pos_0_0= ruleNumberValue ) ) otherlv_1= ',' ( (lv_color_2_0= ruleColorValue ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8015:28: ( ( ( (lv_pos_0_0= ruleSizeValue ) ) otherlv_1= ',' ( (lv_color_2_0= ruleColorValue ) ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8016:1: ( ( (lv_pos_0_0= ruleSizeValue ) ) otherlv_1= ',' ( (lv_color_2_0= ruleColorValue ) ) )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8194:1: ( ( (lv_pos_0_0= ruleNumberValue ) ) otherlv_1= ',' ( (lv_color_2_0= ruleColorValue ) ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8194:2: ( (lv_pos_0_0= ruleNumberValue ) ) otherlv_1= ',' ( (lv_color_2_0= ruleColorValue ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8016:1: ( ( (lv_pos_0_0= ruleSizeValue ) ) otherlv_1= ',' ( (lv_color_2_0= ruleColorValue ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8016:2: ( (lv_pos_0_0= ruleSizeValue ) ) otherlv_1= ',' ( (lv_color_2_0= ruleColorValue ) )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8194:2: ( (lv_pos_0_0= ruleNumberValue ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8195:1: (lv_pos_0_0= ruleNumberValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8016:2: ( (lv_pos_0_0= ruleSizeValue ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8017:1: (lv_pos_0_0= ruleSizeValue )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8195:1: (lv_pos_0_0= ruleNumberValue )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8196:3: lv_pos_0_0= ruleNumberValue
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8017:1: (lv_pos_0_0= ruleSizeValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8018:3: lv_pos_0_0= ruleSizeValue
             {
              
-            	        newCompositeNode(grammarAccess.getStopValueAccess().getPosNumberValueParserRuleCall_0_0()); 
+            	        newCompositeNode(grammarAccess.getStopValueAccess().getPosSizeValueParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleNumberValue_in_ruleStopValue19219);
-            lv_pos_0_0=ruleNumberValue();
+            pushFollow(FOLLOW_ruleSizeValue_in_ruleStopValue18755);
+            lv_pos_0_0=ruleSizeValue();
 
             state._fsp--;
 
@@ -19025,7 +18733,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"pos",
                     		lv_pos_0_0, 
-                    		"NumberValue");
+                    		"SizeValue");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -19034,20 +18742,20 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,66,FOLLOW_66_in_ruleStopValue19231); 
+            otherlv_1=(Token)match(input,66,FOLLOW_66_in_ruleStopValue18767); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getStopValueAccess().getCommaKeyword_1());
                 
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8216:1: ( (lv_color_2_0= ruleColorValue ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8217:1: (lv_color_2_0= ruleColorValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8038:1: ( (lv_color_2_0= ruleColorValue ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8039:1: (lv_color_2_0= ruleColorValue )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8217:1: (lv_color_2_0= ruleColorValue )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8218:3: lv_color_2_0= ruleColorValue
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8039:1: (lv_color_2_0= ruleColorValue )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8040:3: lv_color_2_0= ruleColorValue
             {
              
             	        newCompositeNode(grammarAccess.getStopValueAccess().getColorColorValueParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleColorValue_in_ruleStopValue19252);
+            pushFollow(FOLLOW_ruleColorValue_in_ruleStopValue18788);
             lv_color_2_0=ruleColorValue();
 
             state._fsp--;
@@ -19090,7 +18798,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleColorValue"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8242:1: entryRuleColorValue returns [EObject current=null] : iv_ruleColorValue= ruleColorValue EOF ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8064:1: entryRuleColorValue returns [EObject current=null] : iv_ruleColorValue= ruleColorValue EOF ;
     public final EObject entryRuleColorValue() throws RecognitionException {
         EObject current = null;
 
@@ -19098,17 +18806,17 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8243:2: (iv_ruleColorValue= ruleColorValue EOF )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8244:2: iv_ruleColorValue= ruleColorValue EOF
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8065:2: (iv_ruleColorValue= ruleColorValue EOF )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8066:2: iv_ruleColorValue= ruleColorValue EOF
             {
              newCompositeNode(grammarAccess.getColorValueRule()); 
-            pushFollow(FOLLOW_ruleColorValue_in_entryRuleColorValue19288);
+            pushFollow(FOLLOW_ruleColorValue_in_entryRuleColorValue18824);
             iv_ruleColorValue=ruleColorValue();
 
             state._fsp--;
 
              current =iv_ruleColorValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleColorValue19298); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleColorValue18834); 
 
             }
 
@@ -19126,7 +18834,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleColorValue"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8251:1: ruleColorValue returns [EObject current=null] : (this_NamedColor_0= ruleNamedColor | this_RGBColor_1= ruleRGBColor | this_HSBColor_2= ruleHSBColor | this_ColorFunction_3= ruleColorFunction ) ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8073:1: ruleColorValue returns [EObject current=null] : (this_NamedColor_0= ruleNamedColor | this_RGBColor_1= ruleRGBColor | this_HSBColor_2= ruleHSBColor | this_ColorFunction_3= ruleColorFunction ) ;
     public final EObject ruleColorValue() throws RecognitionException {
         EObject current = null;
 
@@ -19142,15 +18850,24 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8254:28: ( (this_NamedColor_0= ruleNamedColor | this_RGBColor_1= ruleRGBColor | this_HSBColor_2= ruleHSBColor | this_ColorFunction_3= ruleColorFunction ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8255:1: (this_NamedColor_0= ruleNamedColor | this_RGBColor_1= ruleRGBColor | this_HSBColor_2= ruleHSBColor | this_ColorFunction_3= ruleColorFunction )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8076:28: ( (this_NamedColor_0= ruleNamedColor | this_RGBColor_1= ruleRGBColor | this_HSBColor_2= ruleHSBColor | this_ColorFunction_3= ruleColorFunction ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8077:1: (this_NamedColor_0= ruleNamedColor | this_RGBColor_1= ruleRGBColor | this_HSBColor_2= ruleHSBColor | this_ColorFunction_3= ruleColorFunction )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8255:1: (this_NamedColor_0= ruleNamedColor | this_RGBColor_1= ruleRGBColor | this_HSBColor_2= ruleHSBColor | this_ColorFunction_3= ruleColorFunction )
-            int alt83=4;
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8077:1: (this_NamedColor_0= ruleNamedColor | this_RGBColor_1= ruleRGBColor | this_HSBColor_2= ruleHSBColor | this_ColorFunction_3= ruleColorFunction )
+            int alt84=4;
             switch ( input.LA(1) ) {
             case 189:
             case 195:
             case 200:
+            case 316:
+            case 317:
+            case 318:
+            case 319:
+            case 320:
+            case 321:
+            case 322:
+            case 323:
+            case 324:
             case 325:
             case 326:
             case 327:
@@ -19287,53 +19004,44 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
             case 458:
             case 459:
             case 460:
-            case 461:
-            case 462:
-            case 463:
-            case 464:
-            case 465:
-            case 466:
-            case 467:
-            case 468:
-            case 469:
                 {
-                alt83=1;
+                alt84=1;
                 }
                 break;
             case 11:
-            case 470:
-            case 471:
+            case 461:
+            case 462:
                 {
-                alt83=2;
+                alt84=2;
                 }
                 break;
-            case 472:
-            case 473:
+            case 463:
+            case 464:
                 {
-                alt83=3;
+                alt84=3;
                 }
                 break;
-            case 474:
-            case 475:
+            case 465:
+            case 466:
                 {
-                alt83=4;
+                alt84=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 83, 0, input);
+                    new NoViableAltException("", 84, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt83) {
+            switch (alt84) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8256:5: this_NamedColor_0= ruleNamedColor
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8078:5: this_NamedColor_0= ruleNamedColor
                     {
                      
                             newCompositeNode(grammarAccess.getColorValueAccess().getNamedColorParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleNamedColor_in_ruleColorValue19345);
+                    pushFollow(FOLLOW_ruleNamedColor_in_ruleColorValue18881);
                     this_NamedColor_0=ruleNamedColor();
 
                     state._fsp--;
@@ -19346,12 +19054,12 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8266:5: this_RGBColor_1= ruleRGBColor
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8088:5: this_RGBColor_1= ruleRGBColor
                     {
                      
                             newCompositeNode(grammarAccess.getColorValueAccess().getRGBColorParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleRGBColor_in_ruleColorValue19372);
+                    pushFollow(FOLLOW_ruleRGBColor_in_ruleColorValue18908);
                     this_RGBColor_1=ruleRGBColor();
 
                     state._fsp--;
@@ -19364,12 +19072,12 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8276:5: this_HSBColor_2= ruleHSBColor
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8098:5: this_HSBColor_2= ruleHSBColor
                     {
                      
                             newCompositeNode(grammarAccess.getColorValueAccess().getHSBColorParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleHSBColor_in_ruleColorValue19399);
+                    pushFollow(FOLLOW_ruleHSBColor_in_ruleColorValue18935);
                     this_HSBColor_2=ruleHSBColor();
 
                     state._fsp--;
@@ -19382,12 +19090,12 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8286:5: this_ColorFunction_3= ruleColorFunction
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8108:5: this_ColorFunction_3= ruleColorFunction
                     {
                      
                             newCompositeNode(grammarAccess.getColorValueAccess().getColorFunctionParserRuleCall_3()); 
                         
-                    pushFollow(FOLLOW_ruleColorFunction_in_ruleColorValue19426);
+                    pushFollow(FOLLOW_ruleColorFunction_in_ruleColorValue18962);
                     this_ColorFunction_3=ruleColorFunction();
 
                     state._fsp--;
@@ -19420,7 +19128,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNamedColor"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8302:1: entryRuleNamedColor returns [EObject current=null] : iv_ruleNamedColor= ruleNamedColor EOF ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8124:1: entryRuleNamedColor returns [EObject current=null] : iv_ruleNamedColor= ruleNamedColor EOF ;
     public final EObject entryRuleNamedColor() throws RecognitionException {
         EObject current = null;
 
@@ -19428,17 +19136,17 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8303:2: (iv_ruleNamedColor= ruleNamedColor EOF )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8304:2: iv_ruleNamedColor= ruleNamedColor EOF
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8125:2: (iv_ruleNamedColor= ruleNamedColor EOF )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8126:2: iv_ruleNamedColor= ruleNamedColor EOF
             {
              newCompositeNode(grammarAccess.getNamedColorRule()); 
-            pushFollow(FOLLOW_ruleNamedColor_in_entryRuleNamedColor19461);
+            pushFollow(FOLLOW_ruleNamedColor_in_entryRuleNamedColor18997);
             iv_ruleNamedColor=ruleNamedColor();
 
             state._fsp--;
 
              current =iv_ruleNamedColor; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNamedColor19471); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNamedColor19007); 
 
             }
 
@@ -19456,7 +19164,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNamedColor"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8311:1: ruleNamedColor returns [EObject current=null] : ( ( (lv_value_0_1= 'aliceblue' | lv_value_0_2= 'antiquewhite' | lv_value_0_3= 'aqua' | lv_value_0_4= 'aquamarine' | lv_value_0_5= 'azure' | lv_value_0_6= 'beige' | lv_value_0_7= 'bisque' | lv_value_0_8= 'black' | lv_value_0_9= 'blanchedalmond' | lv_value_0_10= 'blue' | lv_value_0_11= 'blueviolet' | lv_value_0_12= 'brown' | lv_value_0_13= 'burlywood' | lv_value_0_14= 'cadetblue' | lv_value_0_15= 'chartreuse' | lv_value_0_16= 'chocolate' | lv_value_0_17= 'coral' | lv_value_0_18= 'cornflowerblue' | lv_value_0_19= 'cornsilk' | lv_value_0_20= 'crimson' | lv_value_0_21= 'cyan' | lv_value_0_22= 'darkblue' | lv_value_0_23= 'darkcyan' | lv_value_0_24= 'darkgoldenrod' | lv_value_0_25= 'darkgray' | lv_value_0_26= 'darkgreen' | lv_value_0_27= 'darkgrey' | lv_value_0_28= 'darkkhaki' | lv_value_0_29= 'darkmagenta' | lv_value_0_30= 'darkolivegreen' | lv_value_0_31= 'darkorange' | lv_value_0_32= 'darkorchid' | lv_value_0_33= 'darkred' | lv_value_0_34= 'darksalmon' | lv_value_0_35= 'darkseagreen' | lv_value_0_36= 'darkslateblue' | lv_value_0_37= 'darkslategray' | lv_value_0_38= 'darkslategrey' | lv_value_0_39= 'darkturquoise' | lv_value_0_40= 'darkviolet' | lv_value_0_41= 'deeppink' | lv_value_0_42= 'deepskyblue' | lv_value_0_43= 'dimgray' | lv_value_0_44= 'dimgrey' | lv_value_0_45= 'dodgerblue' | lv_value_0_46= 'firebrick' | lv_value_0_47= 'floralwhite' | lv_value_0_48= 'forestgreen' | lv_value_0_49= 'fuchsia' | lv_value_0_50= 'gainsboro' | lv_value_0_51= 'ghostwhite' | lv_value_0_52= 'gold' | lv_value_0_53= 'goldenrod' | lv_value_0_54= 'gray' | lv_value_0_55= 'green' | lv_value_0_56= 'greenyellow' | lv_value_0_57= 'grey' | lv_value_0_58= 'honeydew' | lv_value_0_59= 'hotpink' | lv_value_0_60= 'indianred' | lv_value_0_61= 'indigo' | lv_value_0_62= 'ivory' | lv_value_0_63= 'khaki' | lv_value_0_64= 'lavender' | lv_value_0_65= 'lavenderblush' | lv_value_0_66= 'lawngreen' | lv_value_0_67= 'lemonchiffon' | lv_value_0_68= 'lightblue' | lv_value_0_69= 'lightcoral' | lv_value_0_70= 'lightcyan' | lv_value_0_71= 'lightgoldenrodyellow' | lv_value_0_72= 'lightgray' | lv_value_0_73= 'lightgreen' | lv_value_0_74= 'lightgrey' | lv_value_0_75= 'lightpink' | lv_value_0_76= 'lightsalmon' | lv_value_0_77= 'lightseagreen' | lv_value_0_78= 'lightskyblue' | lv_value_0_79= 'lightslategray' | lv_value_0_80= 'lightslategrey' | lv_value_0_81= 'lightsteelblue' | lv_value_0_82= 'lightyellow' | lv_value_0_83= 'lime' | lv_value_0_84= 'limegreen' | lv_value_0_85= 'linen' | lv_value_0_86= 'magenta' | lv_value_0_87= 'maroon' | lv_value_0_88= 'mediumaquamarine' | lv_value_0_89= 'mediumblue' | lv_value_0_90= 'mediumorchid' | lv_value_0_91= 'mediumpurple' | lv_value_0_92= 'mediumseagreen' | lv_value_0_93= 'mediumslateblue' | lv_value_0_94= 'mediumspringgreen' | lv_value_0_95= 'mediumturquoise' | lv_value_0_96= 'mediumvioletred' | lv_value_0_97= 'midnightblue' | lv_value_0_98= 'mintcream' | lv_value_0_99= 'mistyrose' | lv_value_0_100= 'moccasin' | lv_value_0_101= 'navajowhite' | lv_value_0_102= 'navy' | lv_value_0_103= 'oldlace' | lv_value_0_104= 'olive' | lv_value_0_105= 'olivedrab' | lv_value_0_106= 'orange' | lv_value_0_107= 'orangered' | lv_value_0_108= 'orchid' | lv_value_0_109= 'palegoldenrod' | lv_value_0_110= 'palegreen' | lv_value_0_111= 'paleturquoise' | lv_value_0_112= 'palevioletred' | lv_value_0_113= 'papayawhip' | lv_value_0_114= 'peachpuff' | lv_value_0_115= 'peru' | lv_value_0_116= 'pink' | lv_value_0_117= 'plum' | lv_value_0_118= 'powderblue' | lv_value_0_119= 'purple' | lv_value_0_120= 'red' | lv_value_0_121= 'rosybrown' | lv_value_0_122= 'royalblue' | lv_value_0_123= 'saddlebrown' | lv_value_0_124= 'salmon' | lv_value_0_125= 'sandybrown' | lv_value_0_126= 'seagreen' | lv_value_0_127= 'seashell' | lv_value_0_128= 'sienna' | lv_value_0_129= 'silver' | lv_value_0_130= 'skyblue' | lv_value_0_131= 'slateblue' | lv_value_0_132= 'slategray' | lv_value_0_133= 'slategrey' | lv_value_0_134= 'snow' | lv_value_0_135= 'springgreen' | lv_value_0_136= 'steelblue' | lv_value_0_137= 'tan' | lv_value_0_138= 'teal' | lv_value_0_139= 'thistle' | lv_value_0_140= 'tomato' | lv_value_0_141= 'turquoise' | lv_value_0_142= 'violet' | lv_value_0_143= 'wheat' | lv_value_0_144= 'white' | lv_value_0_145= 'whitesmoke' | lv_value_0_146= 'yellow' | lv_value_0_147= 'yellowgreen' | lv_value_0_148= 'transparent' ) ) ) ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8133:1: ruleNamedColor returns [EObject current=null] : ( ( (lv_value_0_1= 'aliceblue' | lv_value_0_2= 'antiquewhite' | lv_value_0_3= 'aqua' | lv_value_0_4= 'aquamarine' | lv_value_0_5= 'azure' | lv_value_0_6= 'beige' | lv_value_0_7= 'bisque' | lv_value_0_8= 'black' | lv_value_0_9= 'blanchedalmond' | lv_value_0_10= 'blue' | lv_value_0_11= 'blueviolet' | lv_value_0_12= 'brown' | lv_value_0_13= 'burlywood' | lv_value_0_14= 'cadetblue' | lv_value_0_15= 'chartreuse' | lv_value_0_16= 'chocolate' | lv_value_0_17= 'coral' | lv_value_0_18= 'cornflowerblue' | lv_value_0_19= 'cornsilk' | lv_value_0_20= 'crimson' | lv_value_0_21= 'cyan' | lv_value_0_22= 'darkblue' | lv_value_0_23= 'darkcyan' | lv_value_0_24= 'darkgoldenrod' | lv_value_0_25= 'darkgray' | lv_value_0_26= 'darkgreen' | lv_value_0_27= 'darkgrey' | lv_value_0_28= 'darkkhaki' | lv_value_0_29= 'darkmagenta' | lv_value_0_30= 'darkolivegreen' | lv_value_0_31= 'darkorange' | lv_value_0_32= 'darkorchid' | lv_value_0_33= 'darkred' | lv_value_0_34= 'darksalmon' | lv_value_0_35= 'darkseagreen' | lv_value_0_36= 'darkslateblue' | lv_value_0_37= 'darkslategray' | lv_value_0_38= 'darkslategrey' | lv_value_0_39= 'darkturquoise' | lv_value_0_40= 'darkviolet' | lv_value_0_41= 'deeppink' | lv_value_0_42= 'deepskyblue' | lv_value_0_43= 'dimgray' | lv_value_0_44= 'dimgrey' | lv_value_0_45= 'dodgerblue' | lv_value_0_46= 'firebrick' | lv_value_0_47= 'floralwhite' | lv_value_0_48= 'forestgreen' | lv_value_0_49= 'fuchsia' | lv_value_0_50= 'gainsboro' | lv_value_0_51= 'ghostwhite' | lv_value_0_52= 'gold' | lv_value_0_53= 'goldenrod' | lv_value_0_54= 'gray' | lv_value_0_55= 'green' | lv_value_0_56= 'greenyellow' | lv_value_0_57= 'grey' | lv_value_0_58= 'honeydew' | lv_value_0_59= 'hotpink' | lv_value_0_60= 'indianred' | lv_value_0_61= 'indigo' | lv_value_0_62= 'ivory' | lv_value_0_63= 'khaki' | lv_value_0_64= 'lavender' | lv_value_0_65= 'lavenderblush' | lv_value_0_66= 'lawngreen' | lv_value_0_67= 'lemonchiffon' | lv_value_0_68= 'lightblue' | lv_value_0_69= 'lightcoral' | lv_value_0_70= 'lightcyan' | lv_value_0_71= 'lightgoldenrodyellow' | lv_value_0_72= 'lightgray' | lv_value_0_73= 'lightgreen' | lv_value_0_74= 'lightgrey' | lv_value_0_75= 'lightpink' | lv_value_0_76= 'lightsalmon' | lv_value_0_77= 'lightseagreen' | lv_value_0_78= 'lightskyblue' | lv_value_0_79= 'lightslategray' | lv_value_0_80= 'lightslategrey' | lv_value_0_81= 'lightsteelblue' | lv_value_0_82= 'lightyellow' | lv_value_0_83= 'lime' | lv_value_0_84= 'limegreen' | lv_value_0_85= 'linen' | lv_value_0_86= 'magenta' | lv_value_0_87= 'maroon' | lv_value_0_88= 'mediumaquamarine' | lv_value_0_89= 'mediumblue' | lv_value_0_90= 'mediumorchid' | lv_value_0_91= 'mediumpurple' | lv_value_0_92= 'mediumseagreen' | lv_value_0_93= 'mediumslateblue' | lv_value_0_94= 'mediumspringgreen' | lv_value_0_95= 'mediumturquoise' | lv_value_0_96= 'mediumvioletred' | lv_value_0_97= 'midnightblue' | lv_value_0_98= 'mintcream' | lv_value_0_99= 'mistyrose' | lv_value_0_100= 'moccasin' | lv_value_0_101= 'navajowhite' | lv_value_0_102= 'navy' | lv_value_0_103= 'oldlace' | lv_value_0_104= 'olive' | lv_value_0_105= 'olivedrab' | lv_value_0_106= 'orange' | lv_value_0_107= 'orangered' | lv_value_0_108= 'orchid' | lv_value_0_109= 'palegoldenrod' | lv_value_0_110= 'palegreen' | lv_value_0_111= 'paleturquoise' | lv_value_0_112= 'palevioletred' | lv_value_0_113= 'papayawhip' | lv_value_0_114= 'peachpuff' | lv_value_0_115= 'peru' | lv_value_0_116= 'pink' | lv_value_0_117= 'plum' | lv_value_0_118= 'powderblue' | lv_value_0_119= 'purple' | lv_value_0_120= 'red' | lv_value_0_121= 'rosybrown' | lv_value_0_122= 'royalblue' | lv_value_0_123= 'saddlebrown' | lv_value_0_124= 'salmon' | lv_value_0_125= 'sandybrown' | lv_value_0_126= 'seagreen' | lv_value_0_127= 'seashell' | lv_value_0_128= 'sienna' | lv_value_0_129= 'silver' | lv_value_0_130= 'skyblue' | lv_value_0_131= 'slateblue' | lv_value_0_132= 'slategray' | lv_value_0_133= 'slategrey' | lv_value_0_134= 'snow' | lv_value_0_135= 'springgreen' | lv_value_0_136= 'steelblue' | lv_value_0_137= 'tan' | lv_value_0_138= 'teal' | lv_value_0_139= 'thistle' | lv_value_0_140= 'tomato' | lv_value_0_141= 'turquoise' | lv_value_0_142= 'violet' | lv_value_0_143= 'wheat' | lv_value_0_144= 'white' | lv_value_0_145= 'whitesmoke' | lv_value_0_146= 'yellow' | lv_value_0_147= 'yellowgreen' | lv_value_0_148= 'transparent' ) ) ) ;
     public final EObject ruleNamedColor() throws RecognitionException {
         EObject current = null;
 
@@ -19612,770 +19320,770 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8314:28: ( ( ( (lv_value_0_1= 'aliceblue' | lv_value_0_2= 'antiquewhite' | lv_value_0_3= 'aqua' | lv_value_0_4= 'aquamarine' | lv_value_0_5= 'azure' | lv_value_0_6= 'beige' | lv_value_0_7= 'bisque' | lv_value_0_8= 'black' | lv_value_0_9= 'blanchedalmond' | lv_value_0_10= 'blue' | lv_value_0_11= 'blueviolet' | lv_value_0_12= 'brown' | lv_value_0_13= 'burlywood' | lv_value_0_14= 'cadetblue' | lv_value_0_15= 'chartreuse' | lv_value_0_16= 'chocolate' | lv_value_0_17= 'coral' | lv_value_0_18= 'cornflowerblue' | lv_value_0_19= 'cornsilk' | lv_value_0_20= 'crimson' | lv_value_0_21= 'cyan' | lv_value_0_22= 'darkblue' | lv_value_0_23= 'darkcyan' | lv_value_0_24= 'darkgoldenrod' | lv_value_0_25= 'darkgray' | lv_value_0_26= 'darkgreen' | lv_value_0_27= 'darkgrey' | lv_value_0_28= 'darkkhaki' | lv_value_0_29= 'darkmagenta' | lv_value_0_30= 'darkolivegreen' | lv_value_0_31= 'darkorange' | lv_value_0_32= 'darkorchid' | lv_value_0_33= 'darkred' | lv_value_0_34= 'darksalmon' | lv_value_0_35= 'darkseagreen' | lv_value_0_36= 'darkslateblue' | lv_value_0_37= 'darkslategray' | lv_value_0_38= 'darkslategrey' | lv_value_0_39= 'darkturquoise' | lv_value_0_40= 'darkviolet' | lv_value_0_41= 'deeppink' | lv_value_0_42= 'deepskyblue' | lv_value_0_43= 'dimgray' | lv_value_0_44= 'dimgrey' | lv_value_0_45= 'dodgerblue' | lv_value_0_46= 'firebrick' | lv_value_0_47= 'floralwhite' | lv_value_0_48= 'forestgreen' | lv_value_0_49= 'fuchsia' | lv_value_0_50= 'gainsboro' | lv_value_0_51= 'ghostwhite' | lv_value_0_52= 'gold' | lv_value_0_53= 'goldenrod' | lv_value_0_54= 'gray' | lv_value_0_55= 'green' | lv_value_0_56= 'greenyellow' | lv_value_0_57= 'grey' | lv_value_0_58= 'honeydew' | lv_value_0_59= 'hotpink' | lv_value_0_60= 'indianred' | lv_value_0_61= 'indigo' | lv_value_0_62= 'ivory' | lv_value_0_63= 'khaki' | lv_value_0_64= 'lavender' | lv_value_0_65= 'lavenderblush' | lv_value_0_66= 'lawngreen' | lv_value_0_67= 'lemonchiffon' | lv_value_0_68= 'lightblue' | lv_value_0_69= 'lightcoral' | lv_value_0_70= 'lightcyan' | lv_value_0_71= 'lightgoldenrodyellow' | lv_value_0_72= 'lightgray' | lv_value_0_73= 'lightgreen' | lv_value_0_74= 'lightgrey' | lv_value_0_75= 'lightpink' | lv_value_0_76= 'lightsalmon' | lv_value_0_77= 'lightseagreen' | lv_value_0_78= 'lightskyblue' | lv_value_0_79= 'lightslategray' | lv_value_0_80= 'lightslategrey' | lv_value_0_81= 'lightsteelblue' | lv_value_0_82= 'lightyellow' | lv_value_0_83= 'lime' | lv_value_0_84= 'limegreen' | lv_value_0_85= 'linen' | lv_value_0_86= 'magenta' | lv_value_0_87= 'maroon' | lv_value_0_88= 'mediumaquamarine' | lv_value_0_89= 'mediumblue' | lv_value_0_90= 'mediumorchid' | lv_value_0_91= 'mediumpurple' | lv_value_0_92= 'mediumseagreen' | lv_value_0_93= 'mediumslateblue' | lv_value_0_94= 'mediumspringgreen' | lv_value_0_95= 'mediumturquoise' | lv_value_0_96= 'mediumvioletred' | lv_value_0_97= 'midnightblue' | lv_value_0_98= 'mintcream' | lv_value_0_99= 'mistyrose' | lv_value_0_100= 'moccasin' | lv_value_0_101= 'navajowhite' | lv_value_0_102= 'navy' | lv_value_0_103= 'oldlace' | lv_value_0_104= 'olive' | lv_value_0_105= 'olivedrab' | lv_value_0_106= 'orange' | lv_value_0_107= 'orangered' | lv_value_0_108= 'orchid' | lv_value_0_109= 'palegoldenrod' | lv_value_0_110= 'palegreen' | lv_value_0_111= 'paleturquoise' | lv_value_0_112= 'palevioletred' | lv_value_0_113= 'papayawhip' | lv_value_0_114= 'peachpuff' | lv_value_0_115= 'peru' | lv_value_0_116= 'pink' | lv_value_0_117= 'plum' | lv_value_0_118= 'powderblue' | lv_value_0_119= 'purple' | lv_value_0_120= 'red' | lv_value_0_121= 'rosybrown' | lv_value_0_122= 'royalblue' | lv_value_0_123= 'saddlebrown' | lv_value_0_124= 'salmon' | lv_value_0_125= 'sandybrown' | lv_value_0_126= 'seagreen' | lv_value_0_127= 'seashell' | lv_value_0_128= 'sienna' | lv_value_0_129= 'silver' | lv_value_0_130= 'skyblue' | lv_value_0_131= 'slateblue' | lv_value_0_132= 'slategray' | lv_value_0_133= 'slategrey' | lv_value_0_134= 'snow' | lv_value_0_135= 'springgreen' | lv_value_0_136= 'steelblue' | lv_value_0_137= 'tan' | lv_value_0_138= 'teal' | lv_value_0_139= 'thistle' | lv_value_0_140= 'tomato' | lv_value_0_141= 'turquoise' | lv_value_0_142= 'violet' | lv_value_0_143= 'wheat' | lv_value_0_144= 'white' | lv_value_0_145= 'whitesmoke' | lv_value_0_146= 'yellow' | lv_value_0_147= 'yellowgreen' | lv_value_0_148= 'transparent' ) ) ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8315:1: ( ( (lv_value_0_1= 'aliceblue' | lv_value_0_2= 'antiquewhite' | lv_value_0_3= 'aqua' | lv_value_0_4= 'aquamarine' | lv_value_0_5= 'azure' | lv_value_0_6= 'beige' | lv_value_0_7= 'bisque' | lv_value_0_8= 'black' | lv_value_0_9= 'blanchedalmond' | lv_value_0_10= 'blue' | lv_value_0_11= 'blueviolet' | lv_value_0_12= 'brown' | lv_value_0_13= 'burlywood' | lv_value_0_14= 'cadetblue' | lv_value_0_15= 'chartreuse' | lv_value_0_16= 'chocolate' | lv_value_0_17= 'coral' | lv_value_0_18= 'cornflowerblue' | lv_value_0_19= 'cornsilk' | lv_value_0_20= 'crimson' | lv_value_0_21= 'cyan' | lv_value_0_22= 'darkblue' | lv_value_0_23= 'darkcyan' | lv_value_0_24= 'darkgoldenrod' | lv_value_0_25= 'darkgray' | lv_value_0_26= 'darkgreen' | lv_value_0_27= 'darkgrey' | lv_value_0_28= 'darkkhaki' | lv_value_0_29= 'darkmagenta' | lv_value_0_30= 'darkolivegreen' | lv_value_0_31= 'darkorange' | lv_value_0_32= 'darkorchid' | lv_value_0_33= 'darkred' | lv_value_0_34= 'darksalmon' | lv_value_0_35= 'darkseagreen' | lv_value_0_36= 'darkslateblue' | lv_value_0_37= 'darkslategray' | lv_value_0_38= 'darkslategrey' | lv_value_0_39= 'darkturquoise' | lv_value_0_40= 'darkviolet' | lv_value_0_41= 'deeppink' | lv_value_0_42= 'deepskyblue' | lv_value_0_43= 'dimgray' | lv_value_0_44= 'dimgrey' | lv_value_0_45= 'dodgerblue' | lv_value_0_46= 'firebrick' | lv_value_0_47= 'floralwhite' | lv_value_0_48= 'forestgreen' | lv_value_0_49= 'fuchsia' | lv_value_0_50= 'gainsboro' | lv_value_0_51= 'ghostwhite' | lv_value_0_52= 'gold' | lv_value_0_53= 'goldenrod' | lv_value_0_54= 'gray' | lv_value_0_55= 'green' | lv_value_0_56= 'greenyellow' | lv_value_0_57= 'grey' | lv_value_0_58= 'honeydew' | lv_value_0_59= 'hotpink' | lv_value_0_60= 'indianred' | lv_value_0_61= 'indigo' | lv_value_0_62= 'ivory' | lv_value_0_63= 'khaki' | lv_value_0_64= 'lavender' | lv_value_0_65= 'lavenderblush' | lv_value_0_66= 'lawngreen' | lv_value_0_67= 'lemonchiffon' | lv_value_0_68= 'lightblue' | lv_value_0_69= 'lightcoral' | lv_value_0_70= 'lightcyan' | lv_value_0_71= 'lightgoldenrodyellow' | lv_value_0_72= 'lightgray' | lv_value_0_73= 'lightgreen' | lv_value_0_74= 'lightgrey' | lv_value_0_75= 'lightpink' | lv_value_0_76= 'lightsalmon' | lv_value_0_77= 'lightseagreen' | lv_value_0_78= 'lightskyblue' | lv_value_0_79= 'lightslategray' | lv_value_0_80= 'lightslategrey' | lv_value_0_81= 'lightsteelblue' | lv_value_0_82= 'lightyellow' | lv_value_0_83= 'lime' | lv_value_0_84= 'limegreen' | lv_value_0_85= 'linen' | lv_value_0_86= 'magenta' | lv_value_0_87= 'maroon' | lv_value_0_88= 'mediumaquamarine' | lv_value_0_89= 'mediumblue' | lv_value_0_90= 'mediumorchid' | lv_value_0_91= 'mediumpurple' | lv_value_0_92= 'mediumseagreen' | lv_value_0_93= 'mediumslateblue' | lv_value_0_94= 'mediumspringgreen' | lv_value_0_95= 'mediumturquoise' | lv_value_0_96= 'mediumvioletred' | lv_value_0_97= 'midnightblue' | lv_value_0_98= 'mintcream' | lv_value_0_99= 'mistyrose' | lv_value_0_100= 'moccasin' | lv_value_0_101= 'navajowhite' | lv_value_0_102= 'navy' | lv_value_0_103= 'oldlace' | lv_value_0_104= 'olive' | lv_value_0_105= 'olivedrab' | lv_value_0_106= 'orange' | lv_value_0_107= 'orangered' | lv_value_0_108= 'orchid' | lv_value_0_109= 'palegoldenrod' | lv_value_0_110= 'palegreen' | lv_value_0_111= 'paleturquoise' | lv_value_0_112= 'palevioletred' | lv_value_0_113= 'papayawhip' | lv_value_0_114= 'peachpuff' | lv_value_0_115= 'peru' | lv_value_0_116= 'pink' | lv_value_0_117= 'plum' | lv_value_0_118= 'powderblue' | lv_value_0_119= 'purple' | lv_value_0_120= 'red' | lv_value_0_121= 'rosybrown' | lv_value_0_122= 'royalblue' | lv_value_0_123= 'saddlebrown' | lv_value_0_124= 'salmon' | lv_value_0_125= 'sandybrown' | lv_value_0_126= 'seagreen' | lv_value_0_127= 'seashell' | lv_value_0_128= 'sienna' | lv_value_0_129= 'silver' | lv_value_0_130= 'skyblue' | lv_value_0_131= 'slateblue' | lv_value_0_132= 'slategray' | lv_value_0_133= 'slategrey' | lv_value_0_134= 'snow' | lv_value_0_135= 'springgreen' | lv_value_0_136= 'steelblue' | lv_value_0_137= 'tan' | lv_value_0_138= 'teal' | lv_value_0_139= 'thistle' | lv_value_0_140= 'tomato' | lv_value_0_141= 'turquoise' | lv_value_0_142= 'violet' | lv_value_0_143= 'wheat' | lv_value_0_144= 'white' | lv_value_0_145= 'whitesmoke' | lv_value_0_146= 'yellow' | lv_value_0_147= 'yellowgreen' | lv_value_0_148= 'transparent' ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8136:28: ( ( ( (lv_value_0_1= 'aliceblue' | lv_value_0_2= 'antiquewhite' | lv_value_0_3= 'aqua' | lv_value_0_4= 'aquamarine' | lv_value_0_5= 'azure' | lv_value_0_6= 'beige' | lv_value_0_7= 'bisque' | lv_value_0_8= 'black' | lv_value_0_9= 'blanchedalmond' | lv_value_0_10= 'blue' | lv_value_0_11= 'blueviolet' | lv_value_0_12= 'brown' | lv_value_0_13= 'burlywood' | lv_value_0_14= 'cadetblue' | lv_value_0_15= 'chartreuse' | lv_value_0_16= 'chocolate' | lv_value_0_17= 'coral' | lv_value_0_18= 'cornflowerblue' | lv_value_0_19= 'cornsilk' | lv_value_0_20= 'crimson' | lv_value_0_21= 'cyan' | lv_value_0_22= 'darkblue' | lv_value_0_23= 'darkcyan' | lv_value_0_24= 'darkgoldenrod' | lv_value_0_25= 'darkgray' | lv_value_0_26= 'darkgreen' | lv_value_0_27= 'darkgrey' | lv_value_0_28= 'darkkhaki' | lv_value_0_29= 'darkmagenta' | lv_value_0_30= 'darkolivegreen' | lv_value_0_31= 'darkorange' | lv_value_0_32= 'darkorchid' | lv_value_0_33= 'darkred' | lv_value_0_34= 'darksalmon' | lv_value_0_35= 'darkseagreen' | lv_value_0_36= 'darkslateblue' | lv_value_0_37= 'darkslategray' | lv_value_0_38= 'darkslategrey' | lv_value_0_39= 'darkturquoise' | lv_value_0_40= 'darkviolet' | lv_value_0_41= 'deeppink' | lv_value_0_42= 'deepskyblue' | lv_value_0_43= 'dimgray' | lv_value_0_44= 'dimgrey' | lv_value_0_45= 'dodgerblue' | lv_value_0_46= 'firebrick' | lv_value_0_47= 'floralwhite' | lv_value_0_48= 'forestgreen' | lv_value_0_49= 'fuchsia' | lv_value_0_50= 'gainsboro' | lv_value_0_51= 'ghostwhite' | lv_value_0_52= 'gold' | lv_value_0_53= 'goldenrod' | lv_value_0_54= 'gray' | lv_value_0_55= 'green' | lv_value_0_56= 'greenyellow' | lv_value_0_57= 'grey' | lv_value_0_58= 'honeydew' | lv_value_0_59= 'hotpink' | lv_value_0_60= 'indianred' | lv_value_0_61= 'indigo' | lv_value_0_62= 'ivory' | lv_value_0_63= 'khaki' | lv_value_0_64= 'lavender' | lv_value_0_65= 'lavenderblush' | lv_value_0_66= 'lawngreen' | lv_value_0_67= 'lemonchiffon' | lv_value_0_68= 'lightblue' | lv_value_0_69= 'lightcoral' | lv_value_0_70= 'lightcyan' | lv_value_0_71= 'lightgoldenrodyellow' | lv_value_0_72= 'lightgray' | lv_value_0_73= 'lightgreen' | lv_value_0_74= 'lightgrey' | lv_value_0_75= 'lightpink' | lv_value_0_76= 'lightsalmon' | lv_value_0_77= 'lightseagreen' | lv_value_0_78= 'lightskyblue' | lv_value_0_79= 'lightslategray' | lv_value_0_80= 'lightslategrey' | lv_value_0_81= 'lightsteelblue' | lv_value_0_82= 'lightyellow' | lv_value_0_83= 'lime' | lv_value_0_84= 'limegreen' | lv_value_0_85= 'linen' | lv_value_0_86= 'magenta' | lv_value_0_87= 'maroon' | lv_value_0_88= 'mediumaquamarine' | lv_value_0_89= 'mediumblue' | lv_value_0_90= 'mediumorchid' | lv_value_0_91= 'mediumpurple' | lv_value_0_92= 'mediumseagreen' | lv_value_0_93= 'mediumslateblue' | lv_value_0_94= 'mediumspringgreen' | lv_value_0_95= 'mediumturquoise' | lv_value_0_96= 'mediumvioletred' | lv_value_0_97= 'midnightblue' | lv_value_0_98= 'mintcream' | lv_value_0_99= 'mistyrose' | lv_value_0_100= 'moccasin' | lv_value_0_101= 'navajowhite' | lv_value_0_102= 'navy' | lv_value_0_103= 'oldlace' | lv_value_0_104= 'olive' | lv_value_0_105= 'olivedrab' | lv_value_0_106= 'orange' | lv_value_0_107= 'orangered' | lv_value_0_108= 'orchid' | lv_value_0_109= 'palegoldenrod' | lv_value_0_110= 'palegreen' | lv_value_0_111= 'paleturquoise' | lv_value_0_112= 'palevioletred' | lv_value_0_113= 'papayawhip' | lv_value_0_114= 'peachpuff' | lv_value_0_115= 'peru' | lv_value_0_116= 'pink' | lv_value_0_117= 'plum' | lv_value_0_118= 'powderblue' | lv_value_0_119= 'purple' | lv_value_0_120= 'red' | lv_value_0_121= 'rosybrown' | lv_value_0_122= 'royalblue' | lv_value_0_123= 'saddlebrown' | lv_value_0_124= 'salmon' | lv_value_0_125= 'sandybrown' | lv_value_0_126= 'seagreen' | lv_value_0_127= 'seashell' | lv_value_0_128= 'sienna' | lv_value_0_129= 'silver' | lv_value_0_130= 'skyblue' | lv_value_0_131= 'slateblue' | lv_value_0_132= 'slategray' | lv_value_0_133= 'slategrey' | lv_value_0_134= 'snow' | lv_value_0_135= 'springgreen' | lv_value_0_136= 'steelblue' | lv_value_0_137= 'tan' | lv_value_0_138= 'teal' | lv_value_0_139= 'thistle' | lv_value_0_140= 'tomato' | lv_value_0_141= 'turquoise' | lv_value_0_142= 'violet' | lv_value_0_143= 'wheat' | lv_value_0_144= 'white' | lv_value_0_145= 'whitesmoke' | lv_value_0_146= 'yellow' | lv_value_0_147= 'yellowgreen' | lv_value_0_148= 'transparent' ) ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8137:1: ( ( (lv_value_0_1= 'aliceblue' | lv_value_0_2= 'antiquewhite' | lv_value_0_3= 'aqua' | lv_value_0_4= 'aquamarine' | lv_value_0_5= 'azure' | lv_value_0_6= 'beige' | lv_value_0_7= 'bisque' | lv_value_0_8= 'black' | lv_value_0_9= 'blanchedalmond' | lv_value_0_10= 'blue' | lv_value_0_11= 'blueviolet' | lv_value_0_12= 'brown' | lv_value_0_13= 'burlywood' | lv_value_0_14= 'cadetblue' | lv_value_0_15= 'chartreuse' | lv_value_0_16= 'chocolate' | lv_value_0_17= 'coral' | lv_value_0_18= 'cornflowerblue' | lv_value_0_19= 'cornsilk' | lv_value_0_20= 'crimson' | lv_value_0_21= 'cyan' | lv_value_0_22= 'darkblue' | lv_value_0_23= 'darkcyan' | lv_value_0_24= 'darkgoldenrod' | lv_value_0_25= 'darkgray' | lv_value_0_26= 'darkgreen' | lv_value_0_27= 'darkgrey' | lv_value_0_28= 'darkkhaki' | lv_value_0_29= 'darkmagenta' | lv_value_0_30= 'darkolivegreen' | lv_value_0_31= 'darkorange' | lv_value_0_32= 'darkorchid' | lv_value_0_33= 'darkred' | lv_value_0_34= 'darksalmon' | lv_value_0_35= 'darkseagreen' | lv_value_0_36= 'darkslateblue' | lv_value_0_37= 'darkslategray' | lv_value_0_38= 'darkslategrey' | lv_value_0_39= 'darkturquoise' | lv_value_0_40= 'darkviolet' | lv_value_0_41= 'deeppink' | lv_value_0_42= 'deepskyblue' | lv_value_0_43= 'dimgray' | lv_value_0_44= 'dimgrey' | lv_value_0_45= 'dodgerblue' | lv_value_0_46= 'firebrick' | lv_value_0_47= 'floralwhite' | lv_value_0_48= 'forestgreen' | lv_value_0_49= 'fuchsia' | lv_value_0_50= 'gainsboro' | lv_value_0_51= 'ghostwhite' | lv_value_0_52= 'gold' | lv_value_0_53= 'goldenrod' | lv_value_0_54= 'gray' | lv_value_0_55= 'green' | lv_value_0_56= 'greenyellow' | lv_value_0_57= 'grey' | lv_value_0_58= 'honeydew' | lv_value_0_59= 'hotpink' | lv_value_0_60= 'indianred' | lv_value_0_61= 'indigo' | lv_value_0_62= 'ivory' | lv_value_0_63= 'khaki' | lv_value_0_64= 'lavender' | lv_value_0_65= 'lavenderblush' | lv_value_0_66= 'lawngreen' | lv_value_0_67= 'lemonchiffon' | lv_value_0_68= 'lightblue' | lv_value_0_69= 'lightcoral' | lv_value_0_70= 'lightcyan' | lv_value_0_71= 'lightgoldenrodyellow' | lv_value_0_72= 'lightgray' | lv_value_0_73= 'lightgreen' | lv_value_0_74= 'lightgrey' | lv_value_0_75= 'lightpink' | lv_value_0_76= 'lightsalmon' | lv_value_0_77= 'lightseagreen' | lv_value_0_78= 'lightskyblue' | lv_value_0_79= 'lightslategray' | lv_value_0_80= 'lightslategrey' | lv_value_0_81= 'lightsteelblue' | lv_value_0_82= 'lightyellow' | lv_value_0_83= 'lime' | lv_value_0_84= 'limegreen' | lv_value_0_85= 'linen' | lv_value_0_86= 'magenta' | lv_value_0_87= 'maroon' | lv_value_0_88= 'mediumaquamarine' | lv_value_0_89= 'mediumblue' | lv_value_0_90= 'mediumorchid' | lv_value_0_91= 'mediumpurple' | lv_value_0_92= 'mediumseagreen' | lv_value_0_93= 'mediumslateblue' | lv_value_0_94= 'mediumspringgreen' | lv_value_0_95= 'mediumturquoise' | lv_value_0_96= 'mediumvioletred' | lv_value_0_97= 'midnightblue' | lv_value_0_98= 'mintcream' | lv_value_0_99= 'mistyrose' | lv_value_0_100= 'moccasin' | lv_value_0_101= 'navajowhite' | lv_value_0_102= 'navy' | lv_value_0_103= 'oldlace' | lv_value_0_104= 'olive' | lv_value_0_105= 'olivedrab' | lv_value_0_106= 'orange' | lv_value_0_107= 'orangered' | lv_value_0_108= 'orchid' | lv_value_0_109= 'palegoldenrod' | lv_value_0_110= 'palegreen' | lv_value_0_111= 'paleturquoise' | lv_value_0_112= 'palevioletred' | lv_value_0_113= 'papayawhip' | lv_value_0_114= 'peachpuff' | lv_value_0_115= 'peru' | lv_value_0_116= 'pink' | lv_value_0_117= 'plum' | lv_value_0_118= 'powderblue' | lv_value_0_119= 'purple' | lv_value_0_120= 'red' | lv_value_0_121= 'rosybrown' | lv_value_0_122= 'royalblue' | lv_value_0_123= 'saddlebrown' | lv_value_0_124= 'salmon' | lv_value_0_125= 'sandybrown' | lv_value_0_126= 'seagreen' | lv_value_0_127= 'seashell' | lv_value_0_128= 'sienna' | lv_value_0_129= 'silver' | lv_value_0_130= 'skyblue' | lv_value_0_131= 'slateblue' | lv_value_0_132= 'slategray' | lv_value_0_133= 'slategrey' | lv_value_0_134= 'snow' | lv_value_0_135= 'springgreen' | lv_value_0_136= 'steelblue' | lv_value_0_137= 'tan' | lv_value_0_138= 'teal' | lv_value_0_139= 'thistle' | lv_value_0_140= 'tomato' | lv_value_0_141= 'turquoise' | lv_value_0_142= 'violet' | lv_value_0_143= 'wheat' | lv_value_0_144= 'white' | lv_value_0_145= 'whitesmoke' | lv_value_0_146= 'yellow' | lv_value_0_147= 'yellowgreen' | lv_value_0_148= 'transparent' ) ) )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8315:1: ( ( (lv_value_0_1= 'aliceblue' | lv_value_0_2= 'antiquewhite' | lv_value_0_3= 'aqua' | lv_value_0_4= 'aquamarine' | lv_value_0_5= 'azure' | lv_value_0_6= 'beige' | lv_value_0_7= 'bisque' | lv_value_0_8= 'black' | lv_value_0_9= 'blanchedalmond' | lv_value_0_10= 'blue' | lv_value_0_11= 'blueviolet' | lv_value_0_12= 'brown' | lv_value_0_13= 'burlywood' | lv_value_0_14= 'cadetblue' | lv_value_0_15= 'chartreuse' | lv_value_0_16= 'chocolate' | lv_value_0_17= 'coral' | lv_value_0_18= 'cornflowerblue' | lv_value_0_19= 'cornsilk' | lv_value_0_20= 'crimson' | lv_value_0_21= 'cyan' | lv_value_0_22= 'darkblue' | lv_value_0_23= 'darkcyan' | lv_value_0_24= 'darkgoldenrod' | lv_value_0_25= 'darkgray' | lv_value_0_26= 'darkgreen' | lv_value_0_27= 'darkgrey' | lv_value_0_28= 'darkkhaki' | lv_value_0_29= 'darkmagenta' | lv_value_0_30= 'darkolivegreen' | lv_value_0_31= 'darkorange' | lv_value_0_32= 'darkorchid' | lv_value_0_33= 'darkred' | lv_value_0_34= 'darksalmon' | lv_value_0_35= 'darkseagreen' | lv_value_0_36= 'darkslateblue' | lv_value_0_37= 'darkslategray' | lv_value_0_38= 'darkslategrey' | lv_value_0_39= 'darkturquoise' | lv_value_0_40= 'darkviolet' | lv_value_0_41= 'deeppink' | lv_value_0_42= 'deepskyblue' | lv_value_0_43= 'dimgray' | lv_value_0_44= 'dimgrey' | lv_value_0_45= 'dodgerblue' | lv_value_0_46= 'firebrick' | lv_value_0_47= 'floralwhite' | lv_value_0_48= 'forestgreen' | lv_value_0_49= 'fuchsia' | lv_value_0_50= 'gainsboro' | lv_value_0_51= 'ghostwhite' | lv_value_0_52= 'gold' | lv_value_0_53= 'goldenrod' | lv_value_0_54= 'gray' | lv_value_0_55= 'green' | lv_value_0_56= 'greenyellow' | lv_value_0_57= 'grey' | lv_value_0_58= 'honeydew' | lv_value_0_59= 'hotpink' | lv_value_0_60= 'indianred' | lv_value_0_61= 'indigo' | lv_value_0_62= 'ivory' | lv_value_0_63= 'khaki' | lv_value_0_64= 'lavender' | lv_value_0_65= 'lavenderblush' | lv_value_0_66= 'lawngreen' | lv_value_0_67= 'lemonchiffon' | lv_value_0_68= 'lightblue' | lv_value_0_69= 'lightcoral' | lv_value_0_70= 'lightcyan' | lv_value_0_71= 'lightgoldenrodyellow' | lv_value_0_72= 'lightgray' | lv_value_0_73= 'lightgreen' | lv_value_0_74= 'lightgrey' | lv_value_0_75= 'lightpink' | lv_value_0_76= 'lightsalmon' | lv_value_0_77= 'lightseagreen' | lv_value_0_78= 'lightskyblue' | lv_value_0_79= 'lightslategray' | lv_value_0_80= 'lightslategrey' | lv_value_0_81= 'lightsteelblue' | lv_value_0_82= 'lightyellow' | lv_value_0_83= 'lime' | lv_value_0_84= 'limegreen' | lv_value_0_85= 'linen' | lv_value_0_86= 'magenta' | lv_value_0_87= 'maroon' | lv_value_0_88= 'mediumaquamarine' | lv_value_0_89= 'mediumblue' | lv_value_0_90= 'mediumorchid' | lv_value_0_91= 'mediumpurple' | lv_value_0_92= 'mediumseagreen' | lv_value_0_93= 'mediumslateblue' | lv_value_0_94= 'mediumspringgreen' | lv_value_0_95= 'mediumturquoise' | lv_value_0_96= 'mediumvioletred' | lv_value_0_97= 'midnightblue' | lv_value_0_98= 'mintcream' | lv_value_0_99= 'mistyrose' | lv_value_0_100= 'moccasin' | lv_value_0_101= 'navajowhite' | lv_value_0_102= 'navy' | lv_value_0_103= 'oldlace' | lv_value_0_104= 'olive' | lv_value_0_105= 'olivedrab' | lv_value_0_106= 'orange' | lv_value_0_107= 'orangered' | lv_value_0_108= 'orchid' | lv_value_0_109= 'palegoldenrod' | lv_value_0_110= 'palegreen' | lv_value_0_111= 'paleturquoise' | lv_value_0_112= 'palevioletred' | lv_value_0_113= 'papayawhip' | lv_value_0_114= 'peachpuff' | lv_value_0_115= 'peru' | lv_value_0_116= 'pink' | lv_value_0_117= 'plum' | lv_value_0_118= 'powderblue' | lv_value_0_119= 'purple' | lv_value_0_120= 'red' | lv_value_0_121= 'rosybrown' | lv_value_0_122= 'royalblue' | lv_value_0_123= 'saddlebrown' | lv_value_0_124= 'salmon' | lv_value_0_125= 'sandybrown' | lv_value_0_126= 'seagreen' | lv_value_0_127= 'seashell' | lv_value_0_128= 'sienna' | lv_value_0_129= 'silver' | lv_value_0_130= 'skyblue' | lv_value_0_131= 'slateblue' | lv_value_0_132= 'slategray' | lv_value_0_133= 'slategrey' | lv_value_0_134= 'snow' | lv_value_0_135= 'springgreen' | lv_value_0_136= 'steelblue' | lv_value_0_137= 'tan' | lv_value_0_138= 'teal' | lv_value_0_139= 'thistle' | lv_value_0_140= 'tomato' | lv_value_0_141= 'turquoise' | lv_value_0_142= 'violet' | lv_value_0_143= 'wheat' | lv_value_0_144= 'white' | lv_value_0_145= 'whitesmoke' | lv_value_0_146= 'yellow' | lv_value_0_147= 'yellowgreen' | lv_value_0_148= 'transparent' ) ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8316:1: ( (lv_value_0_1= 'aliceblue' | lv_value_0_2= 'antiquewhite' | lv_value_0_3= 'aqua' | lv_value_0_4= 'aquamarine' | lv_value_0_5= 'azure' | lv_value_0_6= 'beige' | lv_value_0_7= 'bisque' | lv_value_0_8= 'black' | lv_value_0_9= 'blanchedalmond' | lv_value_0_10= 'blue' | lv_value_0_11= 'blueviolet' | lv_value_0_12= 'brown' | lv_value_0_13= 'burlywood' | lv_value_0_14= 'cadetblue' | lv_value_0_15= 'chartreuse' | lv_value_0_16= 'chocolate' | lv_value_0_17= 'coral' | lv_value_0_18= 'cornflowerblue' | lv_value_0_19= 'cornsilk' | lv_value_0_20= 'crimson' | lv_value_0_21= 'cyan' | lv_value_0_22= 'darkblue' | lv_value_0_23= 'darkcyan' | lv_value_0_24= 'darkgoldenrod' | lv_value_0_25= 'darkgray' | lv_value_0_26= 'darkgreen' | lv_value_0_27= 'darkgrey' | lv_value_0_28= 'darkkhaki' | lv_value_0_29= 'darkmagenta' | lv_value_0_30= 'darkolivegreen' | lv_value_0_31= 'darkorange' | lv_value_0_32= 'darkorchid' | lv_value_0_33= 'darkred' | lv_value_0_34= 'darksalmon' | lv_value_0_35= 'darkseagreen' | lv_value_0_36= 'darkslateblue' | lv_value_0_37= 'darkslategray' | lv_value_0_38= 'darkslategrey' | lv_value_0_39= 'darkturquoise' | lv_value_0_40= 'darkviolet' | lv_value_0_41= 'deeppink' | lv_value_0_42= 'deepskyblue' | lv_value_0_43= 'dimgray' | lv_value_0_44= 'dimgrey' | lv_value_0_45= 'dodgerblue' | lv_value_0_46= 'firebrick' | lv_value_0_47= 'floralwhite' | lv_value_0_48= 'forestgreen' | lv_value_0_49= 'fuchsia' | lv_value_0_50= 'gainsboro' | lv_value_0_51= 'ghostwhite' | lv_value_0_52= 'gold' | lv_value_0_53= 'goldenrod' | lv_value_0_54= 'gray' | lv_value_0_55= 'green' | lv_value_0_56= 'greenyellow' | lv_value_0_57= 'grey' | lv_value_0_58= 'honeydew' | lv_value_0_59= 'hotpink' | lv_value_0_60= 'indianred' | lv_value_0_61= 'indigo' | lv_value_0_62= 'ivory' | lv_value_0_63= 'khaki' | lv_value_0_64= 'lavender' | lv_value_0_65= 'lavenderblush' | lv_value_0_66= 'lawngreen' | lv_value_0_67= 'lemonchiffon' | lv_value_0_68= 'lightblue' | lv_value_0_69= 'lightcoral' | lv_value_0_70= 'lightcyan' | lv_value_0_71= 'lightgoldenrodyellow' | lv_value_0_72= 'lightgray' | lv_value_0_73= 'lightgreen' | lv_value_0_74= 'lightgrey' | lv_value_0_75= 'lightpink' | lv_value_0_76= 'lightsalmon' | lv_value_0_77= 'lightseagreen' | lv_value_0_78= 'lightskyblue' | lv_value_0_79= 'lightslategray' | lv_value_0_80= 'lightslategrey' | lv_value_0_81= 'lightsteelblue' | lv_value_0_82= 'lightyellow' | lv_value_0_83= 'lime' | lv_value_0_84= 'limegreen' | lv_value_0_85= 'linen' | lv_value_0_86= 'magenta' | lv_value_0_87= 'maroon' | lv_value_0_88= 'mediumaquamarine' | lv_value_0_89= 'mediumblue' | lv_value_0_90= 'mediumorchid' | lv_value_0_91= 'mediumpurple' | lv_value_0_92= 'mediumseagreen' | lv_value_0_93= 'mediumslateblue' | lv_value_0_94= 'mediumspringgreen' | lv_value_0_95= 'mediumturquoise' | lv_value_0_96= 'mediumvioletred' | lv_value_0_97= 'midnightblue' | lv_value_0_98= 'mintcream' | lv_value_0_99= 'mistyrose' | lv_value_0_100= 'moccasin' | lv_value_0_101= 'navajowhite' | lv_value_0_102= 'navy' | lv_value_0_103= 'oldlace' | lv_value_0_104= 'olive' | lv_value_0_105= 'olivedrab' | lv_value_0_106= 'orange' | lv_value_0_107= 'orangered' | lv_value_0_108= 'orchid' | lv_value_0_109= 'palegoldenrod' | lv_value_0_110= 'palegreen' | lv_value_0_111= 'paleturquoise' | lv_value_0_112= 'palevioletred' | lv_value_0_113= 'papayawhip' | lv_value_0_114= 'peachpuff' | lv_value_0_115= 'peru' | lv_value_0_116= 'pink' | lv_value_0_117= 'plum' | lv_value_0_118= 'powderblue' | lv_value_0_119= 'purple' | lv_value_0_120= 'red' | lv_value_0_121= 'rosybrown' | lv_value_0_122= 'royalblue' | lv_value_0_123= 'saddlebrown' | lv_value_0_124= 'salmon' | lv_value_0_125= 'sandybrown' | lv_value_0_126= 'seagreen' | lv_value_0_127= 'seashell' | lv_value_0_128= 'sienna' | lv_value_0_129= 'silver' | lv_value_0_130= 'skyblue' | lv_value_0_131= 'slateblue' | lv_value_0_132= 'slategray' | lv_value_0_133= 'slategrey' | lv_value_0_134= 'snow' | lv_value_0_135= 'springgreen' | lv_value_0_136= 'steelblue' | lv_value_0_137= 'tan' | lv_value_0_138= 'teal' | lv_value_0_139= 'thistle' | lv_value_0_140= 'tomato' | lv_value_0_141= 'turquoise' | lv_value_0_142= 'violet' | lv_value_0_143= 'wheat' | lv_value_0_144= 'white' | lv_value_0_145= 'whitesmoke' | lv_value_0_146= 'yellow' | lv_value_0_147= 'yellowgreen' | lv_value_0_148= 'transparent' ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8137:1: ( ( (lv_value_0_1= 'aliceblue' | lv_value_0_2= 'antiquewhite' | lv_value_0_3= 'aqua' | lv_value_0_4= 'aquamarine' | lv_value_0_5= 'azure' | lv_value_0_6= 'beige' | lv_value_0_7= 'bisque' | lv_value_0_8= 'black' | lv_value_0_9= 'blanchedalmond' | lv_value_0_10= 'blue' | lv_value_0_11= 'blueviolet' | lv_value_0_12= 'brown' | lv_value_0_13= 'burlywood' | lv_value_0_14= 'cadetblue' | lv_value_0_15= 'chartreuse' | lv_value_0_16= 'chocolate' | lv_value_0_17= 'coral' | lv_value_0_18= 'cornflowerblue' | lv_value_0_19= 'cornsilk' | lv_value_0_20= 'crimson' | lv_value_0_21= 'cyan' | lv_value_0_22= 'darkblue' | lv_value_0_23= 'darkcyan' | lv_value_0_24= 'darkgoldenrod' | lv_value_0_25= 'darkgray' | lv_value_0_26= 'darkgreen' | lv_value_0_27= 'darkgrey' | lv_value_0_28= 'darkkhaki' | lv_value_0_29= 'darkmagenta' | lv_value_0_30= 'darkolivegreen' | lv_value_0_31= 'darkorange' | lv_value_0_32= 'darkorchid' | lv_value_0_33= 'darkred' | lv_value_0_34= 'darksalmon' | lv_value_0_35= 'darkseagreen' | lv_value_0_36= 'darkslateblue' | lv_value_0_37= 'darkslategray' | lv_value_0_38= 'darkslategrey' | lv_value_0_39= 'darkturquoise' | lv_value_0_40= 'darkviolet' | lv_value_0_41= 'deeppink' | lv_value_0_42= 'deepskyblue' | lv_value_0_43= 'dimgray' | lv_value_0_44= 'dimgrey' | lv_value_0_45= 'dodgerblue' | lv_value_0_46= 'firebrick' | lv_value_0_47= 'floralwhite' | lv_value_0_48= 'forestgreen' | lv_value_0_49= 'fuchsia' | lv_value_0_50= 'gainsboro' | lv_value_0_51= 'ghostwhite' | lv_value_0_52= 'gold' | lv_value_0_53= 'goldenrod' | lv_value_0_54= 'gray' | lv_value_0_55= 'green' | lv_value_0_56= 'greenyellow' | lv_value_0_57= 'grey' | lv_value_0_58= 'honeydew' | lv_value_0_59= 'hotpink' | lv_value_0_60= 'indianred' | lv_value_0_61= 'indigo' | lv_value_0_62= 'ivory' | lv_value_0_63= 'khaki' | lv_value_0_64= 'lavender' | lv_value_0_65= 'lavenderblush' | lv_value_0_66= 'lawngreen' | lv_value_0_67= 'lemonchiffon' | lv_value_0_68= 'lightblue' | lv_value_0_69= 'lightcoral' | lv_value_0_70= 'lightcyan' | lv_value_0_71= 'lightgoldenrodyellow' | lv_value_0_72= 'lightgray' | lv_value_0_73= 'lightgreen' | lv_value_0_74= 'lightgrey' | lv_value_0_75= 'lightpink' | lv_value_0_76= 'lightsalmon' | lv_value_0_77= 'lightseagreen' | lv_value_0_78= 'lightskyblue' | lv_value_0_79= 'lightslategray' | lv_value_0_80= 'lightslategrey' | lv_value_0_81= 'lightsteelblue' | lv_value_0_82= 'lightyellow' | lv_value_0_83= 'lime' | lv_value_0_84= 'limegreen' | lv_value_0_85= 'linen' | lv_value_0_86= 'magenta' | lv_value_0_87= 'maroon' | lv_value_0_88= 'mediumaquamarine' | lv_value_0_89= 'mediumblue' | lv_value_0_90= 'mediumorchid' | lv_value_0_91= 'mediumpurple' | lv_value_0_92= 'mediumseagreen' | lv_value_0_93= 'mediumslateblue' | lv_value_0_94= 'mediumspringgreen' | lv_value_0_95= 'mediumturquoise' | lv_value_0_96= 'mediumvioletred' | lv_value_0_97= 'midnightblue' | lv_value_0_98= 'mintcream' | lv_value_0_99= 'mistyrose' | lv_value_0_100= 'moccasin' | lv_value_0_101= 'navajowhite' | lv_value_0_102= 'navy' | lv_value_0_103= 'oldlace' | lv_value_0_104= 'olive' | lv_value_0_105= 'olivedrab' | lv_value_0_106= 'orange' | lv_value_0_107= 'orangered' | lv_value_0_108= 'orchid' | lv_value_0_109= 'palegoldenrod' | lv_value_0_110= 'palegreen' | lv_value_0_111= 'paleturquoise' | lv_value_0_112= 'palevioletred' | lv_value_0_113= 'papayawhip' | lv_value_0_114= 'peachpuff' | lv_value_0_115= 'peru' | lv_value_0_116= 'pink' | lv_value_0_117= 'plum' | lv_value_0_118= 'powderblue' | lv_value_0_119= 'purple' | lv_value_0_120= 'red' | lv_value_0_121= 'rosybrown' | lv_value_0_122= 'royalblue' | lv_value_0_123= 'saddlebrown' | lv_value_0_124= 'salmon' | lv_value_0_125= 'sandybrown' | lv_value_0_126= 'seagreen' | lv_value_0_127= 'seashell' | lv_value_0_128= 'sienna' | lv_value_0_129= 'silver' | lv_value_0_130= 'skyblue' | lv_value_0_131= 'slateblue' | lv_value_0_132= 'slategray' | lv_value_0_133= 'slategrey' | lv_value_0_134= 'snow' | lv_value_0_135= 'springgreen' | lv_value_0_136= 'steelblue' | lv_value_0_137= 'tan' | lv_value_0_138= 'teal' | lv_value_0_139= 'thistle' | lv_value_0_140= 'tomato' | lv_value_0_141= 'turquoise' | lv_value_0_142= 'violet' | lv_value_0_143= 'wheat' | lv_value_0_144= 'white' | lv_value_0_145= 'whitesmoke' | lv_value_0_146= 'yellow' | lv_value_0_147= 'yellowgreen' | lv_value_0_148= 'transparent' ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8138:1: ( (lv_value_0_1= 'aliceblue' | lv_value_0_2= 'antiquewhite' | lv_value_0_3= 'aqua' | lv_value_0_4= 'aquamarine' | lv_value_0_5= 'azure' | lv_value_0_6= 'beige' | lv_value_0_7= 'bisque' | lv_value_0_8= 'black' | lv_value_0_9= 'blanchedalmond' | lv_value_0_10= 'blue' | lv_value_0_11= 'blueviolet' | lv_value_0_12= 'brown' | lv_value_0_13= 'burlywood' | lv_value_0_14= 'cadetblue' | lv_value_0_15= 'chartreuse' | lv_value_0_16= 'chocolate' | lv_value_0_17= 'coral' | lv_value_0_18= 'cornflowerblue' | lv_value_0_19= 'cornsilk' | lv_value_0_20= 'crimson' | lv_value_0_21= 'cyan' | lv_value_0_22= 'darkblue' | lv_value_0_23= 'darkcyan' | lv_value_0_24= 'darkgoldenrod' | lv_value_0_25= 'darkgray' | lv_value_0_26= 'darkgreen' | lv_value_0_27= 'darkgrey' | lv_value_0_28= 'darkkhaki' | lv_value_0_29= 'darkmagenta' | lv_value_0_30= 'darkolivegreen' | lv_value_0_31= 'darkorange' | lv_value_0_32= 'darkorchid' | lv_value_0_33= 'darkred' | lv_value_0_34= 'darksalmon' | lv_value_0_35= 'darkseagreen' | lv_value_0_36= 'darkslateblue' | lv_value_0_37= 'darkslategray' | lv_value_0_38= 'darkslategrey' | lv_value_0_39= 'darkturquoise' | lv_value_0_40= 'darkviolet' | lv_value_0_41= 'deeppink' | lv_value_0_42= 'deepskyblue' | lv_value_0_43= 'dimgray' | lv_value_0_44= 'dimgrey' | lv_value_0_45= 'dodgerblue' | lv_value_0_46= 'firebrick' | lv_value_0_47= 'floralwhite' | lv_value_0_48= 'forestgreen' | lv_value_0_49= 'fuchsia' | lv_value_0_50= 'gainsboro' | lv_value_0_51= 'ghostwhite' | lv_value_0_52= 'gold' | lv_value_0_53= 'goldenrod' | lv_value_0_54= 'gray' | lv_value_0_55= 'green' | lv_value_0_56= 'greenyellow' | lv_value_0_57= 'grey' | lv_value_0_58= 'honeydew' | lv_value_0_59= 'hotpink' | lv_value_0_60= 'indianred' | lv_value_0_61= 'indigo' | lv_value_0_62= 'ivory' | lv_value_0_63= 'khaki' | lv_value_0_64= 'lavender' | lv_value_0_65= 'lavenderblush' | lv_value_0_66= 'lawngreen' | lv_value_0_67= 'lemonchiffon' | lv_value_0_68= 'lightblue' | lv_value_0_69= 'lightcoral' | lv_value_0_70= 'lightcyan' | lv_value_0_71= 'lightgoldenrodyellow' | lv_value_0_72= 'lightgray' | lv_value_0_73= 'lightgreen' | lv_value_0_74= 'lightgrey' | lv_value_0_75= 'lightpink' | lv_value_0_76= 'lightsalmon' | lv_value_0_77= 'lightseagreen' | lv_value_0_78= 'lightskyblue' | lv_value_0_79= 'lightslategray' | lv_value_0_80= 'lightslategrey' | lv_value_0_81= 'lightsteelblue' | lv_value_0_82= 'lightyellow' | lv_value_0_83= 'lime' | lv_value_0_84= 'limegreen' | lv_value_0_85= 'linen' | lv_value_0_86= 'magenta' | lv_value_0_87= 'maroon' | lv_value_0_88= 'mediumaquamarine' | lv_value_0_89= 'mediumblue' | lv_value_0_90= 'mediumorchid' | lv_value_0_91= 'mediumpurple' | lv_value_0_92= 'mediumseagreen' | lv_value_0_93= 'mediumslateblue' | lv_value_0_94= 'mediumspringgreen' | lv_value_0_95= 'mediumturquoise' | lv_value_0_96= 'mediumvioletred' | lv_value_0_97= 'midnightblue' | lv_value_0_98= 'mintcream' | lv_value_0_99= 'mistyrose' | lv_value_0_100= 'moccasin' | lv_value_0_101= 'navajowhite' | lv_value_0_102= 'navy' | lv_value_0_103= 'oldlace' | lv_value_0_104= 'olive' | lv_value_0_105= 'olivedrab' | lv_value_0_106= 'orange' | lv_value_0_107= 'orangered' | lv_value_0_108= 'orchid' | lv_value_0_109= 'palegoldenrod' | lv_value_0_110= 'palegreen' | lv_value_0_111= 'paleturquoise' | lv_value_0_112= 'palevioletred' | lv_value_0_113= 'papayawhip' | lv_value_0_114= 'peachpuff' | lv_value_0_115= 'peru' | lv_value_0_116= 'pink' | lv_value_0_117= 'plum' | lv_value_0_118= 'powderblue' | lv_value_0_119= 'purple' | lv_value_0_120= 'red' | lv_value_0_121= 'rosybrown' | lv_value_0_122= 'royalblue' | lv_value_0_123= 'saddlebrown' | lv_value_0_124= 'salmon' | lv_value_0_125= 'sandybrown' | lv_value_0_126= 'seagreen' | lv_value_0_127= 'seashell' | lv_value_0_128= 'sienna' | lv_value_0_129= 'silver' | lv_value_0_130= 'skyblue' | lv_value_0_131= 'slateblue' | lv_value_0_132= 'slategray' | lv_value_0_133= 'slategrey' | lv_value_0_134= 'snow' | lv_value_0_135= 'springgreen' | lv_value_0_136= 'steelblue' | lv_value_0_137= 'tan' | lv_value_0_138= 'teal' | lv_value_0_139= 'thistle' | lv_value_0_140= 'tomato' | lv_value_0_141= 'turquoise' | lv_value_0_142= 'violet' | lv_value_0_143= 'wheat' | lv_value_0_144= 'white' | lv_value_0_145= 'whitesmoke' | lv_value_0_146= 'yellow' | lv_value_0_147= 'yellowgreen' | lv_value_0_148= 'transparent' ) )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8316:1: ( (lv_value_0_1= 'aliceblue' | lv_value_0_2= 'antiquewhite' | lv_value_0_3= 'aqua' | lv_value_0_4= 'aquamarine' | lv_value_0_5= 'azure' | lv_value_0_6= 'beige' | lv_value_0_7= 'bisque' | lv_value_0_8= 'black' | lv_value_0_9= 'blanchedalmond' | lv_value_0_10= 'blue' | lv_value_0_11= 'blueviolet' | lv_value_0_12= 'brown' | lv_value_0_13= 'burlywood' | lv_value_0_14= 'cadetblue' | lv_value_0_15= 'chartreuse' | lv_value_0_16= 'chocolate' | lv_value_0_17= 'coral' | lv_value_0_18= 'cornflowerblue' | lv_value_0_19= 'cornsilk' | lv_value_0_20= 'crimson' | lv_value_0_21= 'cyan' | lv_value_0_22= 'darkblue' | lv_value_0_23= 'darkcyan' | lv_value_0_24= 'darkgoldenrod' | lv_value_0_25= 'darkgray' | lv_value_0_26= 'darkgreen' | lv_value_0_27= 'darkgrey' | lv_value_0_28= 'darkkhaki' | lv_value_0_29= 'darkmagenta' | lv_value_0_30= 'darkolivegreen' | lv_value_0_31= 'darkorange' | lv_value_0_32= 'darkorchid' | lv_value_0_33= 'darkred' | lv_value_0_34= 'darksalmon' | lv_value_0_35= 'darkseagreen' | lv_value_0_36= 'darkslateblue' | lv_value_0_37= 'darkslategray' | lv_value_0_38= 'darkslategrey' | lv_value_0_39= 'darkturquoise' | lv_value_0_40= 'darkviolet' | lv_value_0_41= 'deeppink' | lv_value_0_42= 'deepskyblue' | lv_value_0_43= 'dimgray' | lv_value_0_44= 'dimgrey' | lv_value_0_45= 'dodgerblue' | lv_value_0_46= 'firebrick' | lv_value_0_47= 'floralwhite' | lv_value_0_48= 'forestgreen' | lv_value_0_49= 'fuchsia' | lv_value_0_50= 'gainsboro' | lv_value_0_51= 'ghostwhite' | lv_value_0_52= 'gold' | lv_value_0_53= 'goldenrod' | lv_value_0_54= 'gray' | lv_value_0_55= 'green' | lv_value_0_56= 'greenyellow' | lv_value_0_57= 'grey' | lv_value_0_58= 'honeydew' | lv_value_0_59= 'hotpink' | lv_value_0_60= 'indianred' | lv_value_0_61= 'indigo' | lv_value_0_62= 'ivory' | lv_value_0_63= 'khaki' | lv_value_0_64= 'lavender' | lv_value_0_65= 'lavenderblush' | lv_value_0_66= 'lawngreen' | lv_value_0_67= 'lemonchiffon' | lv_value_0_68= 'lightblue' | lv_value_0_69= 'lightcoral' | lv_value_0_70= 'lightcyan' | lv_value_0_71= 'lightgoldenrodyellow' | lv_value_0_72= 'lightgray' | lv_value_0_73= 'lightgreen' | lv_value_0_74= 'lightgrey' | lv_value_0_75= 'lightpink' | lv_value_0_76= 'lightsalmon' | lv_value_0_77= 'lightseagreen' | lv_value_0_78= 'lightskyblue' | lv_value_0_79= 'lightslategray' | lv_value_0_80= 'lightslategrey' | lv_value_0_81= 'lightsteelblue' | lv_value_0_82= 'lightyellow' | lv_value_0_83= 'lime' | lv_value_0_84= 'limegreen' | lv_value_0_85= 'linen' | lv_value_0_86= 'magenta' | lv_value_0_87= 'maroon' | lv_value_0_88= 'mediumaquamarine' | lv_value_0_89= 'mediumblue' | lv_value_0_90= 'mediumorchid' | lv_value_0_91= 'mediumpurple' | lv_value_0_92= 'mediumseagreen' | lv_value_0_93= 'mediumslateblue' | lv_value_0_94= 'mediumspringgreen' | lv_value_0_95= 'mediumturquoise' | lv_value_0_96= 'mediumvioletred' | lv_value_0_97= 'midnightblue' | lv_value_0_98= 'mintcream' | lv_value_0_99= 'mistyrose' | lv_value_0_100= 'moccasin' | lv_value_0_101= 'navajowhite' | lv_value_0_102= 'navy' | lv_value_0_103= 'oldlace' | lv_value_0_104= 'olive' | lv_value_0_105= 'olivedrab' | lv_value_0_106= 'orange' | lv_value_0_107= 'orangered' | lv_value_0_108= 'orchid' | lv_value_0_109= 'palegoldenrod' | lv_value_0_110= 'palegreen' | lv_value_0_111= 'paleturquoise' | lv_value_0_112= 'palevioletred' | lv_value_0_113= 'papayawhip' | lv_value_0_114= 'peachpuff' | lv_value_0_115= 'peru' | lv_value_0_116= 'pink' | lv_value_0_117= 'plum' | lv_value_0_118= 'powderblue' | lv_value_0_119= 'purple' | lv_value_0_120= 'red' | lv_value_0_121= 'rosybrown' | lv_value_0_122= 'royalblue' | lv_value_0_123= 'saddlebrown' | lv_value_0_124= 'salmon' | lv_value_0_125= 'sandybrown' | lv_value_0_126= 'seagreen' | lv_value_0_127= 'seashell' | lv_value_0_128= 'sienna' | lv_value_0_129= 'silver' | lv_value_0_130= 'skyblue' | lv_value_0_131= 'slateblue' | lv_value_0_132= 'slategray' | lv_value_0_133= 'slategrey' | lv_value_0_134= 'snow' | lv_value_0_135= 'springgreen' | lv_value_0_136= 'steelblue' | lv_value_0_137= 'tan' | lv_value_0_138= 'teal' | lv_value_0_139= 'thistle' | lv_value_0_140= 'tomato' | lv_value_0_141= 'turquoise' | lv_value_0_142= 'violet' | lv_value_0_143= 'wheat' | lv_value_0_144= 'white' | lv_value_0_145= 'whitesmoke' | lv_value_0_146= 'yellow' | lv_value_0_147= 'yellowgreen' | lv_value_0_148= 'transparent' ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8317:1: (lv_value_0_1= 'aliceblue' | lv_value_0_2= 'antiquewhite' | lv_value_0_3= 'aqua' | lv_value_0_4= 'aquamarine' | lv_value_0_5= 'azure' | lv_value_0_6= 'beige' | lv_value_0_7= 'bisque' | lv_value_0_8= 'black' | lv_value_0_9= 'blanchedalmond' | lv_value_0_10= 'blue' | lv_value_0_11= 'blueviolet' | lv_value_0_12= 'brown' | lv_value_0_13= 'burlywood' | lv_value_0_14= 'cadetblue' | lv_value_0_15= 'chartreuse' | lv_value_0_16= 'chocolate' | lv_value_0_17= 'coral' | lv_value_0_18= 'cornflowerblue' | lv_value_0_19= 'cornsilk' | lv_value_0_20= 'crimson' | lv_value_0_21= 'cyan' | lv_value_0_22= 'darkblue' | lv_value_0_23= 'darkcyan' | lv_value_0_24= 'darkgoldenrod' | lv_value_0_25= 'darkgray' | lv_value_0_26= 'darkgreen' | lv_value_0_27= 'darkgrey' | lv_value_0_28= 'darkkhaki' | lv_value_0_29= 'darkmagenta' | lv_value_0_30= 'darkolivegreen' | lv_value_0_31= 'darkorange' | lv_value_0_32= 'darkorchid' | lv_value_0_33= 'darkred' | lv_value_0_34= 'darksalmon' | lv_value_0_35= 'darkseagreen' | lv_value_0_36= 'darkslateblue' | lv_value_0_37= 'darkslategray' | lv_value_0_38= 'darkslategrey' | lv_value_0_39= 'darkturquoise' | lv_value_0_40= 'darkviolet' | lv_value_0_41= 'deeppink' | lv_value_0_42= 'deepskyblue' | lv_value_0_43= 'dimgray' | lv_value_0_44= 'dimgrey' | lv_value_0_45= 'dodgerblue' | lv_value_0_46= 'firebrick' | lv_value_0_47= 'floralwhite' | lv_value_0_48= 'forestgreen' | lv_value_0_49= 'fuchsia' | lv_value_0_50= 'gainsboro' | lv_value_0_51= 'ghostwhite' | lv_value_0_52= 'gold' | lv_value_0_53= 'goldenrod' | lv_value_0_54= 'gray' | lv_value_0_55= 'green' | lv_value_0_56= 'greenyellow' | lv_value_0_57= 'grey' | lv_value_0_58= 'honeydew' | lv_value_0_59= 'hotpink' | lv_value_0_60= 'indianred' | lv_value_0_61= 'indigo' | lv_value_0_62= 'ivory' | lv_value_0_63= 'khaki' | lv_value_0_64= 'lavender' | lv_value_0_65= 'lavenderblush' | lv_value_0_66= 'lawngreen' | lv_value_0_67= 'lemonchiffon' | lv_value_0_68= 'lightblue' | lv_value_0_69= 'lightcoral' | lv_value_0_70= 'lightcyan' | lv_value_0_71= 'lightgoldenrodyellow' | lv_value_0_72= 'lightgray' | lv_value_0_73= 'lightgreen' | lv_value_0_74= 'lightgrey' | lv_value_0_75= 'lightpink' | lv_value_0_76= 'lightsalmon' | lv_value_0_77= 'lightseagreen' | lv_value_0_78= 'lightskyblue' | lv_value_0_79= 'lightslategray' | lv_value_0_80= 'lightslategrey' | lv_value_0_81= 'lightsteelblue' | lv_value_0_82= 'lightyellow' | lv_value_0_83= 'lime' | lv_value_0_84= 'limegreen' | lv_value_0_85= 'linen' | lv_value_0_86= 'magenta' | lv_value_0_87= 'maroon' | lv_value_0_88= 'mediumaquamarine' | lv_value_0_89= 'mediumblue' | lv_value_0_90= 'mediumorchid' | lv_value_0_91= 'mediumpurple' | lv_value_0_92= 'mediumseagreen' | lv_value_0_93= 'mediumslateblue' | lv_value_0_94= 'mediumspringgreen' | lv_value_0_95= 'mediumturquoise' | lv_value_0_96= 'mediumvioletred' | lv_value_0_97= 'midnightblue' | lv_value_0_98= 'mintcream' | lv_value_0_99= 'mistyrose' | lv_value_0_100= 'moccasin' | lv_value_0_101= 'navajowhite' | lv_value_0_102= 'navy' | lv_value_0_103= 'oldlace' | lv_value_0_104= 'olive' | lv_value_0_105= 'olivedrab' | lv_value_0_106= 'orange' | lv_value_0_107= 'orangered' | lv_value_0_108= 'orchid' | lv_value_0_109= 'palegoldenrod' | lv_value_0_110= 'palegreen' | lv_value_0_111= 'paleturquoise' | lv_value_0_112= 'palevioletred' | lv_value_0_113= 'papayawhip' | lv_value_0_114= 'peachpuff' | lv_value_0_115= 'peru' | lv_value_0_116= 'pink' | lv_value_0_117= 'plum' | lv_value_0_118= 'powderblue' | lv_value_0_119= 'purple' | lv_value_0_120= 'red' | lv_value_0_121= 'rosybrown' | lv_value_0_122= 'royalblue' | lv_value_0_123= 'saddlebrown' | lv_value_0_124= 'salmon' | lv_value_0_125= 'sandybrown' | lv_value_0_126= 'seagreen' | lv_value_0_127= 'seashell' | lv_value_0_128= 'sienna' | lv_value_0_129= 'silver' | lv_value_0_130= 'skyblue' | lv_value_0_131= 'slateblue' | lv_value_0_132= 'slategray' | lv_value_0_133= 'slategrey' | lv_value_0_134= 'snow' | lv_value_0_135= 'springgreen' | lv_value_0_136= 'steelblue' | lv_value_0_137= 'tan' | lv_value_0_138= 'teal' | lv_value_0_139= 'thistle' | lv_value_0_140= 'tomato' | lv_value_0_141= 'turquoise' | lv_value_0_142= 'violet' | lv_value_0_143= 'wheat' | lv_value_0_144= 'white' | lv_value_0_145= 'whitesmoke' | lv_value_0_146= 'yellow' | lv_value_0_147= 'yellowgreen' | lv_value_0_148= 'transparent' )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8138:1: ( (lv_value_0_1= 'aliceblue' | lv_value_0_2= 'antiquewhite' | lv_value_0_3= 'aqua' | lv_value_0_4= 'aquamarine' | lv_value_0_5= 'azure' | lv_value_0_6= 'beige' | lv_value_0_7= 'bisque' | lv_value_0_8= 'black' | lv_value_0_9= 'blanchedalmond' | lv_value_0_10= 'blue' | lv_value_0_11= 'blueviolet' | lv_value_0_12= 'brown' | lv_value_0_13= 'burlywood' | lv_value_0_14= 'cadetblue' | lv_value_0_15= 'chartreuse' | lv_value_0_16= 'chocolate' | lv_value_0_17= 'coral' | lv_value_0_18= 'cornflowerblue' | lv_value_0_19= 'cornsilk' | lv_value_0_20= 'crimson' | lv_value_0_21= 'cyan' | lv_value_0_22= 'darkblue' | lv_value_0_23= 'darkcyan' | lv_value_0_24= 'darkgoldenrod' | lv_value_0_25= 'darkgray' | lv_value_0_26= 'darkgreen' | lv_value_0_27= 'darkgrey' | lv_value_0_28= 'darkkhaki' | lv_value_0_29= 'darkmagenta' | lv_value_0_30= 'darkolivegreen' | lv_value_0_31= 'darkorange' | lv_value_0_32= 'darkorchid' | lv_value_0_33= 'darkred' | lv_value_0_34= 'darksalmon' | lv_value_0_35= 'darkseagreen' | lv_value_0_36= 'darkslateblue' | lv_value_0_37= 'darkslategray' | lv_value_0_38= 'darkslategrey' | lv_value_0_39= 'darkturquoise' | lv_value_0_40= 'darkviolet' | lv_value_0_41= 'deeppink' | lv_value_0_42= 'deepskyblue' | lv_value_0_43= 'dimgray' | lv_value_0_44= 'dimgrey' | lv_value_0_45= 'dodgerblue' | lv_value_0_46= 'firebrick' | lv_value_0_47= 'floralwhite' | lv_value_0_48= 'forestgreen' | lv_value_0_49= 'fuchsia' | lv_value_0_50= 'gainsboro' | lv_value_0_51= 'ghostwhite' | lv_value_0_52= 'gold' | lv_value_0_53= 'goldenrod' | lv_value_0_54= 'gray' | lv_value_0_55= 'green' | lv_value_0_56= 'greenyellow' | lv_value_0_57= 'grey' | lv_value_0_58= 'honeydew' | lv_value_0_59= 'hotpink' | lv_value_0_60= 'indianred' | lv_value_0_61= 'indigo' | lv_value_0_62= 'ivory' | lv_value_0_63= 'khaki' | lv_value_0_64= 'lavender' | lv_value_0_65= 'lavenderblush' | lv_value_0_66= 'lawngreen' | lv_value_0_67= 'lemonchiffon' | lv_value_0_68= 'lightblue' | lv_value_0_69= 'lightcoral' | lv_value_0_70= 'lightcyan' | lv_value_0_71= 'lightgoldenrodyellow' | lv_value_0_72= 'lightgray' | lv_value_0_73= 'lightgreen' | lv_value_0_74= 'lightgrey' | lv_value_0_75= 'lightpink' | lv_value_0_76= 'lightsalmon' | lv_value_0_77= 'lightseagreen' | lv_value_0_78= 'lightskyblue' | lv_value_0_79= 'lightslategray' | lv_value_0_80= 'lightslategrey' | lv_value_0_81= 'lightsteelblue' | lv_value_0_82= 'lightyellow' | lv_value_0_83= 'lime' | lv_value_0_84= 'limegreen' | lv_value_0_85= 'linen' | lv_value_0_86= 'magenta' | lv_value_0_87= 'maroon' | lv_value_0_88= 'mediumaquamarine' | lv_value_0_89= 'mediumblue' | lv_value_0_90= 'mediumorchid' | lv_value_0_91= 'mediumpurple' | lv_value_0_92= 'mediumseagreen' | lv_value_0_93= 'mediumslateblue' | lv_value_0_94= 'mediumspringgreen' | lv_value_0_95= 'mediumturquoise' | lv_value_0_96= 'mediumvioletred' | lv_value_0_97= 'midnightblue' | lv_value_0_98= 'mintcream' | lv_value_0_99= 'mistyrose' | lv_value_0_100= 'moccasin' | lv_value_0_101= 'navajowhite' | lv_value_0_102= 'navy' | lv_value_0_103= 'oldlace' | lv_value_0_104= 'olive' | lv_value_0_105= 'olivedrab' | lv_value_0_106= 'orange' | lv_value_0_107= 'orangered' | lv_value_0_108= 'orchid' | lv_value_0_109= 'palegoldenrod' | lv_value_0_110= 'palegreen' | lv_value_0_111= 'paleturquoise' | lv_value_0_112= 'palevioletred' | lv_value_0_113= 'papayawhip' | lv_value_0_114= 'peachpuff' | lv_value_0_115= 'peru' | lv_value_0_116= 'pink' | lv_value_0_117= 'plum' | lv_value_0_118= 'powderblue' | lv_value_0_119= 'purple' | lv_value_0_120= 'red' | lv_value_0_121= 'rosybrown' | lv_value_0_122= 'royalblue' | lv_value_0_123= 'saddlebrown' | lv_value_0_124= 'salmon' | lv_value_0_125= 'sandybrown' | lv_value_0_126= 'seagreen' | lv_value_0_127= 'seashell' | lv_value_0_128= 'sienna' | lv_value_0_129= 'silver' | lv_value_0_130= 'skyblue' | lv_value_0_131= 'slateblue' | lv_value_0_132= 'slategray' | lv_value_0_133= 'slategrey' | lv_value_0_134= 'snow' | lv_value_0_135= 'springgreen' | lv_value_0_136= 'steelblue' | lv_value_0_137= 'tan' | lv_value_0_138= 'teal' | lv_value_0_139= 'thistle' | lv_value_0_140= 'tomato' | lv_value_0_141= 'turquoise' | lv_value_0_142= 'violet' | lv_value_0_143= 'wheat' | lv_value_0_144= 'white' | lv_value_0_145= 'whitesmoke' | lv_value_0_146= 'yellow' | lv_value_0_147= 'yellowgreen' | lv_value_0_148= 'transparent' ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8139:1: (lv_value_0_1= 'aliceblue' | lv_value_0_2= 'antiquewhite' | lv_value_0_3= 'aqua' | lv_value_0_4= 'aquamarine' | lv_value_0_5= 'azure' | lv_value_0_6= 'beige' | lv_value_0_7= 'bisque' | lv_value_0_8= 'black' | lv_value_0_9= 'blanchedalmond' | lv_value_0_10= 'blue' | lv_value_0_11= 'blueviolet' | lv_value_0_12= 'brown' | lv_value_0_13= 'burlywood' | lv_value_0_14= 'cadetblue' | lv_value_0_15= 'chartreuse' | lv_value_0_16= 'chocolate' | lv_value_0_17= 'coral' | lv_value_0_18= 'cornflowerblue' | lv_value_0_19= 'cornsilk' | lv_value_0_20= 'crimson' | lv_value_0_21= 'cyan' | lv_value_0_22= 'darkblue' | lv_value_0_23= 'darkcyan' | lv_value_0_24= 'darkgoldenrod' | lv_value_0_25= 'darkgray' | lv_value_0_26= 'darkgreen' | lv_value_0_27= 'darkgrey' | lv_value_0_28= 'darkkhaki' | lv_value_0_29= 'darkmagenta' | lv_value_0_30= 'darkolivegreen' | lv_value_0_31= 'darkorange' | lv_value_0_32= 'darkorchid' | lv_value_0_33= 'darkred' | lv_value_0_34= 'darksalmon' | lv_value_0_35= 'darkseagreen' | lv_value_0_36= 'darkslateblue' | lv_value_0_37= 'darkslategray' | lv_value_0_38= 'darkslategrey' | lv_value_0_39= 'darkturquoise' | lv_value_0_40= 'darkviolet' | lv_value_0_41= 'deeppink' | lv_value_0_42= 'deepskyblue' | lv_value_0_43= 'dimgray' | lv_value_0_44= 'dimgrey' | lv_value_0_45= 'dodgerblue' | lv_value_0_46= 'firebrick' | lv_value_0_47= 'floralwhite' | lv_value_0_48= 'forestgreen' | lv_value_0_49= 'fuchsia' | lv_value_0_50= 'gainsboro' | lv_value_0_51= 'ghostwhite' | lv_value_0_52= 'gold' | lv_value_0_53= 'goldenrod' | lv_value_0_54= 'gray' | lv_value_0_55= 'green' | lv_value_0_56= 'greenyellow' | lv_value_0_57= 'grey' | lv_value_0_58= 'honeydew' | lv_value_0_59= 'hotpink' | lv_value_0_60= 'indianred' | lv_value_0_61= 'indigo' | lv_value_0_62= 'ivory' | lv_value_0_63= 'khaki' | lv_value_0_64= 'lavender' | lv_value_0_65= 'lavenderblush' | lv_value_0_66= 'lawngreen' | lv_value_0_67= 'lemonchiffon' | lv_value_0_68= 'lightblue' | lv_value_0_69= 'lightcoral' | lv_value_0_70= 'lightcyan' | lv_value_0_71= 'lightgoldenrodyellow' | lv_value_0_72= 'lightgray' | lv_value_0_73= 'lightgreen' | lv_value_0_74= 'lightgrey' | lv_value_0_75= 'lightpink' | lv_value_0_76= 'lightsalmon' | lv_value_0_77= 'lightseagreen' | lv_value_0_78= 'lightskyblue' | lv_value_0_79= 'lightslategray' | lv_value_0_80= 'lightslategrey' | lv_value_0_81= 'lightsteelblue' | lv_value_0_82= 'lightyellow' | lv_value_0_83= 'lime' | lv_value_0_84= 'limegreen' | lv_value_0_85= 'linen' | lv_value_0_86= 'magenta' | lv_value_0_87= 'maroon' | lv_value_0_88= 'mediumaquamarine' | lv_value_0_89= 'mediumblue' | lv_value_0_90= 'mediumorchid' | lv_value_0_91= 'mediumpurple' | lv_value_0_92= 'mediumseagreen' | lv_value_0_93= 'mediumslateblue' | lv_value_0_94= 'mediumspringgreen' | lv_value_0_95= 'mediumturquoise' | lv_value_0_96= 'mediumvioletred' | lv_value_0_97= 'midnightblue' | lv_value_0_98= 'mintcream' | lv_value_0_99= 'mistyrose' | lv_value_0_100= 'moccasin' | lv_value_0_101= 'navajowhite' | lv_value_0_102= 'navy' | lv_value_0_103= 'oldlace' | lv_value_0_104= 'olive' | lv_value_0_105= 'olivedrab' | lv_value_0_106= 'orange' | lv_value_0_107= 'orangered' | lv_value_0_108= 'orchid' | lv_value_0_109= 'palegoldenrod' | lv_value_0_110= 'palegreen' | lv_value_0_111= 'paleturquoise' | lv_value_0_112= 'palevioletred' | lv_value_0_113= 'papayawhip' | lv_value_0_114= 'peachpuff' | lv_value_0_115= 'peru' | lv_value_0_116= 'pink' | lv_value_0_117= 'plum' | lv_value_0_118= 'powderblue' | lv_value_0_119= 'purple' | lv_value_0_120= 'red' | lv_value_0_121= 'rosybrown' | lv_value_0_122= 'royalblue' | lv_value_0_123= 'saddlebrown' | lv_value_0_124= 'salmon' | lv_value_0_125= 'sandybrown' | lv_value_0_126= 'seagreen' | lv_value_0_127= 'seashell' | lv_value_0_128= 'sienna' | lv_value_0_129= 'silver' | lv_value_0_130= 'skyblue' | lv_value_0_131= 'slateblue' | lv_value_0_132= 'slategray' | lv_value_0_133= 'slategrey' | lv_value_0_134= 'snow' | lv_value_0_135= 'springgreen' | lv_value_0_136= 'steelblue' | lv_value_0_137= 'tan' | lv_value_0_138= 'teal' | lv_value_0_139= 'thistle' | lv_value_0_140= 'tomato' | lv_value_0_141= 'turquoise' | lv_value_0_142= 'violet' | lv_value_0_143= 'wheat' | lv_value_0_144= 'white' | lv_value_0_145= 'whitesmoke' | lv_value_0_146= 'yellow' | lv_value_0_147= 'yellowgreen' | lv_value_0_148= 'transparent' )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8317:1: (lv_value_0_1= 'aliceblue' | lv_value_0_2= 'antiquewhite' | lv_value_0_3= 'aqua' | lv_value_0_4= 'aquamarine' | lv_value_0_5= 'azure' | lv_value_0_6= 'beige' | lv_value_0_7= 'bisque' | lv_value_0_8= 'black' | lv_value_0_9= 'blanchedalmond' | lv_value_0_10= 'blue' | lv_value_0_11= 'blueviolet' | lv_value_0_12= 'brown' | lv_value_0_13= 'burlywood' | lv_value_0_14= 'cadetblue' | lv_value_0_15= 'chartreuse' | lv_value_0_16= 'chocolate' | lv_value_0_17= 'coral' | lv_value_0_18= 'cornflowerblue' | lv_value_0_19= 'cornsilk' | lv_value_0_20= 'crimson' | lv_value_0_21= 'cyan' | lv_value_0_22= 'darkblue' | lv_value_0_23= 'darkcyan' | lv_value_0_24= 'darkgoldenrod' | lv_value_0_25= 'darkgray' | lv_value_0_26= 'darkgreen' | lv_value_0_27= 'darkgrey' | lv_value_0_28= 'darkkhaki' | lv_value_0_29= 'darkmagenta' | lv_value_0_30= 'darkolivegreen' | lv_value_0_31= 'darkorange' | lv_value_0_32= 'darkorchid' | lv_value_0_33= 'darkred' | lv_value_0_34= 'darksalmon' | lv_value_0_35= 'darkseagreen' | lv_value_0_36= 'darkslateblue' | lv_value_0_37= 'darkslategray' | lv_value_0_38= 'darkslategrey' | lv_value_0_39= 'darkturquoise' | lv_value_0_40= 'darkviolet' | lv_value_0_41= 'deeppink' | lv_value_0_42= 'deepskyblue' | lv_value_0_43= 'dimgray' | lv_value_0_44= 'dimgrey' | lv_value_0_45= 'dodgerblue' | lv_value_0_46= 'firebrick' | lv_value_0_47= 'floralwhite' | lv_value_0_48= 'forestgreen' | lv_value_0_49= 'fuchsia' | lv_value_0_50= 'gainsboro' | lv_value_0_51= 'ghostwhite' | lv_value_0_52= 'gold' | lv_value_0_53= 'goldenrod' | lv_value_0_54= 'gray' | lv_value_0_55= 'green' | lv_value_0_56= 'greenyellow' | lv_value_0_57= 'grey' | lv_value_0_58= 'honeydew' | lv_value_0_59= 'hotpink' | lv_value_0_60= 'indianred' | lv_value_0_61= 'indigo' | lv_value_0_62= 'ivory' | lv_value_0_63= 'khaki' | lv_value_0_64= 'lavender' | lv_value_0_65= 'lavenderblush' | lv_value_0_66= 'lawngreen' | lv_value_0_67= 'lemonchiffon' | lv_value_0_68= 'lightblue' | lv_value_0_69= 'lightcoral' | lv_value_0_70= 'lightcyan' | lv_value_0_71= 'lightgoldenrodyellow' | lv_value_0_72= 'lightgray' | lv_value_0_73= 'lightgreen' | lv_value_0_74= 'lightgrey' | lv_value_0_75= 'lightpink' | lv_value_0_76= 'lightsalmon' | lv_value_0_77= 'lightseagreen' | lv_value_0_78= 'lightskyblue' | lv_value_0_79= 'lightslategray' | lv_value_0_80= 'lightslategrey' | lv_value_0_81= 'lightsteelblue' | lv_value_0_82= 'lightyellow' | lv_value_0_83= 'lime' | lv_value_0_84= 'limegreen' | lv_value_0_85= 'linen' | lv_value_0_86= 'magenta' | lv_value_0_87= 'maroon' | lv_value_0_88= 'mediumaquamarine' | lv_value_0_89= 'mediumblue' | lv_value_0_90= 'mediumorchid' | lv_value_0_91= 'mediumpurple' | lv_value_0_92= 'mediumseagreen' | lv_value_0_93= 'mediumslateblue' | lv_value_0_94= 'mediumspringgreen' | lv_value_0_95= 'mediumturquoise' | lv_value_0_96= 'mediumvioletred' | lv_value_0_97= 'midnightblue' | lv_value_0_98= 'mintcream' | lv_value_0_99= 'mistyrose' | lv_value_0_100= 'moccasin' | lv_value_0_101= 'navajowhite' | lv_value_0_102= 'navy' | lv_value_0_103= 'oldlace' | lv_value_0_104= 'olive' | lv_value_0_105= 'olivedrab' | lv_value_0_106= 'orange' | lv_value_0_107= 'orangered' | lv_value_0_108= 'orchid' | lv_value_0_109= 'palegoldenrod' | lv_value_0_110= 'palegreen' | lv_value_0_111= 'paleturquoise' | lv_value_0_112= 'palevioletred' | lv_value_0_113= 'papayawhip' | lv_value_0_114= 'peachpuff' | lv_value_0_115= 'peru' | lv_value_0_116= 'pink' | lv_value_0_117= 'plum' | lv_value_0_118= 'powderblue' | lv_value_0_119= 'purple' | lv_value_0_120= 'red' | lv_value_0_121= 'rosybrown' | lv_value_0_122= 'royalblue' | lv_value_0_123= 'saddlebrown' | lv_value_0_124= 'salmon' | lv_value_0_125= 'sandybrown' | lv_value_0_126= 'seagreen' | lv_value_0_127= 'seashell' | lv_value_0_128= 'sienna' | lv_value_0_129= 'silver' | lv_value_0_130= 'skyblue' | lv_value_0_131= 'slateblue' | lv_value_0_132= 'slategray' | lv_value_0_133= 'slategrey' | lv_value_0_134= 'snow' | lv_value_0_135= 'springgreen' | lv_value_0_136= 'steelblue' | lv_value_0_137= 'tan' | lv_value_0_138= 'teal' | lv_value_0_139= 'thistle' | lv_value_0_140= 'tomato' | lv_value_0_141= 'turquoise' | lv_value_0_142= 'violet' | lv_value_0_143= 'wheat' | lv_value_0_144= 'white' | lv_value_0_145= 'whitesmoke' | lv_value_0_146= 'yellow' | lv_value_0_147= 'yellowgreen' | lv_value_0_148= 'transparent' )
-            int alt84=148;
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8139:1: (lv_value_0_1= 'aliceblue' | lv_value_0_2= 'antiquewhite' | lv_value_0_3= 'aqua' | lv_value_0_4= 'aquamarine' | lv_value_0_5= 'azure' | lv_value_0_6= 'beige' | lv_value_0_7= 'bisque' | lv_value_0_8= 'black' | lv_value_0_9= 'blanchedalmond' | lv_value_0_10= 'blue' | lv_value_0_11= 'blueviolet' | lv_value_0_12= 'brown' | lv_value_0_13= 'burlywood' | lv_value_0_14= 'cadetblue' | lv_value_0_15= 'chartreuse' | lv_value_0_16= 'chocolate' | lv_value_0_17= 'coral' | lv_value_0_18= 'cornflowerblue' | lv_value_0_19= 'cornsilk' | lv_value_0_20= 'crimson' | lv_value_0_21= 'cyan' | lv_value_0_22= 'darkblue' | lv_value_0_23= 'darkcyan' | lv_value_0_24= 'darkgoldenrod' | lv_value_0_25= 'darkgray' | lv_value_0_26= 'darkgreen' | lv_value_0_27= 'darkgrey' | lv_value_0_28= 'darkkhaki' | lv_value_0_29= 'darkmagenta' | lv_value_0_30= 'darkolivegreen' | lv_value_0_31= 'darkorange' | lv_value_0_32= 'darkorchid' | lv_value_0_33= 'darkred' | lv_value_0_34= 'darksalmon' | lv_value_0_35= 'darkseagreen' | lv_value_0_36= 'darkslateblue' | lv_value_0_37= 'darkslategray' | lv_value_0_38= 'darkslategrey' | lv_value_0_39= 'darkturquoise' | lv_value_0_40= 'darkviolet' | lv_value_0_41= 'deeppink' | lv_value_0_42= 'deepskyblue' | lv_value_0_43= 'dimgray' | lv_value_0_44= 'dimgrey' | lv_value_0_45= 'dodgerblue' | lv_value_0_46= 'firebrick' | lv_value_0_47= 'floralwhite' | lv_value_0_48= 'forestgreen' | lv_value_0_49= 'fuchsia' | lv_value_0_50= 'gainsboro' | lv_value_0_51= 'ghostwhite' | lv_value_0_52= 'gold' | lv_value_0_53= 'goldenrod' | lv_value_0_54= 'gray' | lv_value_0_55= 'green' | lv_value_0_56= 'greenyellow' | lv_value_0_57= 'grey' | lv_value_0_58= 'honeydew' | lv_value_0_59= 'hotpink' | lv_value_0_60= 'indianred' | lv_value_0_61= 'indigo' | lv_value_0_62= 'ivory' | lv_value_0_63= 'khaki' | lv_value_0_64= 'lavender' | lv_value_0_65= 'lavenderblush' | lv_value_0_66= 'lawngreen' | lv_value_0_67= 'lemonchiffon' | lv_value_0_68= 'lightblue' | lv_value_0_69= 'lightcoral' | lv_value_0_70= 'lightcyan' | lv_value_0_71= 'lightgoldenrodyellow' | lv_value_0_72= 'lightgray' | lv_value_0_73= 'lightgreen' | lv_value_0_74= 'lightgrey' | lv_value_0_75= 'lightpink' | lv_value_0_76= 'lightsalmon' | lv_value_0_77= 'lightseagreen' | lv_value_0_78= 'lightskyblue' | lv_value_0_79= 'lightslategray' | lv_value_0_80= 'lightslategrey' | lv_value_0_81= 'lightsteelblue' | lv_value_0_82= 'lightyellow' | lv_value_0_83= 'lime' | lv_value_0_84= 'limegreen' | lv_value_0_85= 'linen' | lv_value_0_86= 'magenta' | lv_value_0_87= 'maroon' | lv_value_0_88= 'mediumaquamarine' | lv_value_0_89= 'mediumblue' | lv_value_0_90= 'mediumorchid' | lv_value_0_91= 'mediumpurple' | lv_value_0_92= 'mediumseagreen' | lv_value_0_93= 'mediumslateblue' | lv_value_0_94= 'mediumspringgreen' | lv_value_0_95= 'mediumturquoise' | lv_value_0_96= 'mediumvioletred' | lv_value_0_97= 'midnightblue' | lv_value_0_98= 'mintcream' | lv_value_0_99= 'mistyrose' | lv_value_0_100= 'moccasin' | lv_value_0_101= 'navajowhite' | lv_value_0_102= 'navy' | lv_value_0_103= 'oldlace' | lv_value_0_104= 'olive' | lv_value_0_105= 'olivedrab' | lv_value_0_106= 'orange' | lv_value_0_107= 'orangered' | lv_value_0_108= 'orchid' | lv_value_0_109= 'palegoldenrod' | lv_value_0_110= 'palegreen' | lv_value_0_111= 'paleturquoise' | lv_value_0_112= 'palevioletred' | lv_value_0_113= 'papayawhip' | lv_value_0_114= 'peachpuff' | lv_value_0_115= 'peru' | lv_value_0_116= 'pink' | lv_value_0_117= 'plum' | lv_value_0_118= 'powderblue' | lv_value_0_119= 'purple' | lv_value_0_120= 'red' | lv_value_0_121= 'rosybrown' | lv_value_0_122= 'royalblue' | lv_value_0_123= 'saddlebrown' | lv_value_0_124= 'salmon' | lv_value_0_125= 'sandybrown' | lv_value_0_126= 'seagreen' | lv_value_0_127= 'seashell' | lv_value_0_128= 'sienna' | lv_value_0_129= 'silver' | lv_value_0_130= 'skyblue' | lv_value_0_131= 'slateblue' | lv_value_0_132= 'slategray' | lv_value_0_133= 'slategrey' | lv_value_0_134= 'snow' | lv_value_0_135= 'springgreen' | lv_value_0_136= 'steelblue' | lv_value_0_137= 'tan' | lv_value_0_138= 'teal' | lv_value_0_139= 'thistle' | lv_value_0_140= 'tomato' | lv_value_0_141= 'turquoise' | lv_value_0_142= 'violet' | lv_value_0_143= 'wheat' | lv_value_0_144= 'white' | lv_value_0_145= 'whitesmoke' | lv_value_0_146= 'yellow' | lv_value_0_147= 'yellowgreen' | lv_value_0_148= 'transparent' )
+            int alt85=148;
             switch ( input.LA(1) ) {
-            case 325:
+            case 316:
                 {
-                alt84=1;
+                alt85=1;
                 }
                 break;
-            case 326:
+            case 317:
                 {
-                alt84=2;
+                alt85=2;
                 }
                 break;
-            case 327:
+            case 318:
                 {
-                alt84=3;
+                alt85=3;
                 }
                 break;
-            case 328:
+            case 319:
                 {
-                alt84=4;
+                alt85=4;
                 }
                 break;
-            case 329:
+            case 320:
                 {
-                alt84=5;
+                alt85=5;
                 }
                 break;
-            case 330:
+            case 321:
                 {
-                alt84=6;
+                alt85=6;
                 }
                 break;
-            case 331:
+            case 322:
                 {
-                alt84=7;
+                alt85=7;
                 }
                 break;
-            case 332:
+            case 323:
                 {
-                alt84=8;
+                alt85=8;
                 }
                 break;
-            case 333:
+            case 324:
                 {
-                alt84=9;
+                alt85=9;
                 }
                 break;
             case 189:
                 {
-                alt84=10;
+                alt85=10;
+                }
+                break;
+            case 325:
+                {
+                alt85=11;
+                }
+                break;
+            case 326:
+                {
+                alt85=12;
+                }
+                break;
+            case 327:
+                {
+                alt85=13;
+                }
+                break;
+            case 328:
+                {
+                alt85=14;
+                }
+                break;
+            case 329:
+                {
+                alt85=15;
+                }
+                break;
+            case 330:
+                {
+                alt85=16;
+                }
+                break;
+            case 331:
+                {
+                alt85=17;
+                }
+                break;
+            case 332:
+                {
+                alt85=18;
+                }
+                break;
+            case 333:
+                {
+                alt85=19;
                 }
                 break;
             case 334:
                 {
-                alt84=11;
+                alt85=20;
                 }
                 break;
             case 335:
                 {
-                alt84=12;
+                alt85=21;
                 }
                 break;
             case 336:
                 {
-                alt84=13;
+                alt85=22;
                 }
                 break;
             case 337:
                 {
-                alt84=14;
+                alt85=23;
                 }
                 break;
             case 338:
                 {
-                alt84=15;
+                alt85=24;
                 }
                 break;
             case 339:
                 {
-                alt84=16;
+                alt85=25;
                 }
                 break;
             case 340:
                 {
-                alt84=17;
+                alt85=26;
                 }
                 break;
             case 341:
                 {
-                alt84=18;
+                alt85=27;
                 }
                 break;
             case 342:
                 {
-                alt84=19;
+                alt85=28;
                 }
                 break;
             case 343:
                 {
-                alt84=20;
+                alt85=29;
                 }
                 break;
             case 344:
                 {
-                alt84=21;
+                alt85=30;
                 }
                 break;
             case 345:
                 {
-                alt84=22;
+                alt85=31;
                 }
                 break;
             case 346:
                 {
-                alt84=23;
+                alt85=32;
                 }
                 break;
             case 347:
                 {
-                alt84=24;
+                alt85=33;
                 }
                 break;
             case 348:
                 {
-                alt84=25;
+                alt85=34;
                 }
                 break;
             case 349:
                 {
-                alt84=26;
+                alt85=35;
                 }
                 break;
             case 350:
                 {
-                alt84=27;
+                alt85=36;
                 }
                 break;
             case 351:
                 {
-                alt84=28;
+                alt85=37;
                 }
                 break;
             case 352:
                 {
-                alt84=29;
+                alt85=38;
                 }
                 break;
             case 353:
                 {
-                alt84=30;
+                alt85=39;
                 }
                 break;
             case 354:
                 {
-                alt84=31;
+                alt85=40;
                 }
                 break;
             case 355:
                 {
-                alt84=32;
+                alt85=41;
                 }
                 break;
             case 356:
                 {
-                alt84=33;
+                alt85=42;
                 }
                 break;
             case 357:
                 {
-                alt84=34;
+                alt85=43;
                 }
                 break;
             case 358:
                 {
-                alt84=35;
+                alt85=44;
                 }
                 break;
             case 359:
                 {
-                alt84=36;
+                alt85=45;
                 }
                 break;
             case 360:
                 {
-                alt84=37;
+                alt85=46;
                 }
                 break;
             case 361:
                 {
-                alt84=38;
+                alt85=47;
                 }
                 break;
             case 362:
                 {
-                alt84=39;
+                alt85=48;
                 }
                 break;
             case 363:
                 {
-                alt84=40;
+                alt85=49;
                 }
                 break;
             case 364:
                 {
-                alt84=41;
+                alt85=50;
                 }
                 break;
             case 365:
                 {
-                alt84=42;
+                alt85=51;
                 }
                 break;
             case 366:
                 {
-                alt84=43;
+                alt85=52;
                 }
                 break;
             case 367:
                 {
-                alt84=44;
+                alt85=53;
                 }
                 break;
             case 368:
                 {
-                alt84=45;
-                }
-                break;
-            case 369:
-                {
-                alt84=46;
-                }
-                break;
-            case 370:
-                {
-                alt84=47;
-                }
-                break;
-            case 371:
-                {
-                alt84=48;
-                }
-                break;
-            case 372:
-                {
-                alt84=49;
-                }
-                break;
-            case 373:
-                {
-                alt84=50;
-                }
-                break;
-            case 374:
-                {
-                alt84=51;
-                }
-                break;
-            case 375:
-                {
-                alt84=52;
-                }
-                break;
-            case 376:
-                {
-                alt84=53;
-                }
-                break;
-            case 377:
-                {
-                alt84=54;
+                alt85=54;
                 }
                 break;
             case 195:
                 {
-                alt84=55;
+                alt85=55;
+                }
+                break;
+            case 369:
+                {
+                alt85=56;
+                }
+                break;
+            case 370:
+                {
+                alt85=57;
+                }
+                break;
+            case 371:
+                {
+                alt85=58;
+                }
+                break;
+            case 372:
+                {
+                alt85=59;
+                }
+                break;
+            case 373:
+                {
+                alt85=60;
+                }
+                break;
+            case 374:
+                {
+                alt85=61;
+                }
+                break;
+            case 375:
+                {
+                alt85=62;
+                }
+                break;
+            case 376:
+                {
+                alt85=63;
+                }
+                break;
+            case 377:
+                {
+                alt85=64;
                 }
                 break;
             case 378:
                 {
-                alt84=56;
+                alt85=65;
                 }
                 break;
             case 379:
                 {
-                alt84=57;
+                alt85=66;
                 }
                 break;
             case 380:
                 {
-                alt84=58;
+                alt85=67;
                 }
                 break;
             case 381:
                 {
-                alt84=59;
+                alt85=68;
                 }
                 break;
             case 382:
                 {
-                alt84=60;
+                alt85=69;
                 }
                 break;
             case 383:
                 {
-                alt84=61;
+                alt85=70;
                 }
                 break;
             case 384:
                 {
-                alt84=62;
+                alt85=71;
                 }
                 break;
             case 385:
                 {
-                alt84=63;
+                alt85=72;
                 }
                 break;
             case 386:
                 {
-                alt84=64;
+                alt85=73;
                 }
                 break;
             case 387:
                 {
-                alt84=65;
+                alt85=74;
                 }
                 break;
             case 388:
                 {
-                alt84=66;
+                alt85=75;
                 }
                 break;
             case 389:
                 {
-                alt84=67;
+                alt85=76;
                 }
                 break;
             case 390:
                 {
-                alt84=68;
+                alt85=77;
                 }
                 break;
             case 391:
                 {
-                alt84=69;
+                alt85=78;
                 }
                 break;
             case 392:
                 {
-                alt84=70;
+                alt85=79;
                 }
                 break;
             case 393:
                 {
-                alt84=71;
+                alt85=80;
                 }
                 break;
             case 394:
                 {
-                alt84=72;
+                alt85=81;
                 }
                 break;
             case 395:
                 {
-                alt84=73;
+                alt85=82;
                 }
                 break;
             case 396:
                 {
-                alt84=74;
+                alt85=83;
                 }
                 break;
             case 397:
                 {
-                alt84=75;
+                alt85=84;
                 }
                 break;
             case 398:
                 {
-                alt84=76;
+                alt85=85;
                 }
                 break;
             case 399:
                 {
-                alt84=77;
+                alt85=86;
                 }
                 break;
             case 400:
                 {
-                alt84=78;
+                alt85=87;
                 }
                 break;
             case 401:
                 {
-                alt84=79;
+                alt85=88;
                 }
                 break;
             case 402:
                 {
-                alt84=80;
+                alt85=89;
                 }
                 break;
             case 403:
                 {
-                alt84=81;
+                alt85=90;
                 }
                 break;
             case 404:
                 {
-                alt84=82;
+                alt85=91;
                 }
                 break;
             case 405:
                 {
-                alt84=83;
+                alt85=92;
                 }
                 break;
             case 406:
                 {
-                alt84=84;
+                alt85=93;
                 }
                 break;
             case 407:
                 {
-                alt84=85;
+                alt85=94;
                 }
                 break;
             case 408:
                 {
-                alt84=86;
+                alt85=95;
                 }
                 break;
             case 409:
                 {
-                alt84=87;
+                alt85=96;
                 }
                 break;
             case 410:
                 {
-                alt84=88;
+                alt85=97;
                 }
                 break;
             case 411:
                 {
-                alt84=89;
+                alt85=98;
                 }
                 break;
             case 412:
                 {
-                alt84=90;
+                alt85=99;
                 }
                 break;
             case 413:
                 {
-                alt84=91;
+                alt85=100;
                 }
                 break;
             case 414:
                 {
-                alt84=92;
+                alt85=101;
                 }
                 break;
             case 415:
                 {
-                alt84=93;
+                alt85=102;
                 }
                 break;
             case 416:
                 {
-                alt84=94;
+                alt85=103;
                 }
                 break;
             case 417:
                 {
-                alt84=95;
+                alt85=104;
                 }
                 break;
             case 418:
                 {
-                alt84=96;
+                alt85=105;
                 }
                 break;
             case 419:
                 {
-                alt84=97;
+                alt85=106;
                 }
                 break;
             case 420:
                 {
-                alt84=98;
+                alt85=107;
                 }
                 break;
             case 421:
                 {
-                alt84=99;
+                alt85=108;
                 }
                 break;
             case 422:
                 {
-                alt84=100;
+                alt85=109;
                 }
                 break;
             case 423:
                 {
-                alt84=101;
+                alt85=110;
                 }
                 break;
             case 424:
                 {
-                alt84=102;
+                alt85=111;
                 }
                 break;
             case 425:
                 {
-                alt84=103;
+                alt85=112;
                 }
                 break;
             case 426:
                 {
-                alt84=104;
+                alt85=113;
                 }
                 break;
             case 427:
                 {
-                alt84=105;
+                alt85=114;
                 }
                 break;
             case 428:
                 {
-                alt84=106;
+                alt85=115;
                 }
                 break;
             case 429:
                 {
-                alt84=107;
+                alt85=116;
                 }
                 break;
             case 430:
                 {
-                alt84=108;
+                alt85=117;
                 }
                 break;
             case 431:
                 {
-                alt84=109;
+                alt85=118;
                 }
                 break;
             case 432:
                 {
-                alt84=110;
-                }
-                break;
-            case 433:
-                {
-                alt84=111;
-                }
-                break;
-            case 434:
-                {
-                alt84=112;
-                }
-                break;
-            case 435:
-                {
-                alt84=113;
-                }
-                break;
-            case 436:
-                {
-                alt84=114;
-                }
-                break;
-            case 437:
-                {
-                alt84=115;
-                }
-                break;
-            case 438:
-                {
-                alt84=116;
-                }
-                break;
-            case 439:
-                {
-                alt84=117;
-                }
-                break;
-            case 440:
-                {
-                alt84=118;
-                }
-                break;
-            case 441:
-                {
-                alt84=119;
+                alt85=119;
                 }
                 break;
             case 200:
                 {
-                alt84=120;
+                alt85=120;
+                }
+                break;
+            case 433:
+                {
+                alt85=121;
+                }
+                break;
+            case 434:
+                {
+                alt85=122;
+                }
+                break;
+            case 435:
+                {
+                alt85=123;
+                }
+                break;
+            case 436:
+                {
+                alt85=124;
+                }
+                break;
+            case 437:
+                {
+                alt85=125;
+                }
+                break;
+            case 438:
+                {
+                alt85=126;
+                }
+                break;
+            case 439:
+                {
+                alt85=127;
+                }
+                break;
+            case 440:
+                {
+                alt85=128;
+                }
+                break;
+            case 441:
+                {
+                alt85=129;
                 }
                 break;
             case 442:
                 {
-                alt84=121;
+                alt85=130;
                 }
                 break;
             case 443:
                 {
-                alt84=122;
+                alt85=131;
                 }
                 break;
             case 444:
                 {
-                alt84=123;
+                alt85=132;
                 }
                 break;
             case 445:
                 {
-                alt84=124;
+                alt85=133;
                 }
                 break;
             case 446:
                 {
-                alt84=125;
+                alt85=134;
                 }
                 break;
             case 447:
                 {
-                alt84=126;
+                alt85=135;
                 }
                 break;
             case 448:
                 {
-                alt84=127;
+                alt85=136;
                 }
                 break;
             case 449:
                 {
-                alt84=128;
+                alt85=137;
                 }
                 break;
             case 450:
                 {
-                alt84=129;
+                alt85=138;
                 }
                 break;
             case 451:
                 {
-                alt84=130;
+                alt85=139;
                 }
                 break;
             case 452:
                 {
-                alt84=131;
+                alt85=140;
                 }
                 break;
             case 453:
                 {
-                alt84=132;
+                alt85=141;
                 }
                 break;
             case 454:
                 {
-                alt84=133;
+                alt85=142;
                 }
                 break;
             case 455:
                 {
-                alt84=134;
+                alt85=143;
                 }
                 break;
             case 456:
                 {
-                alt84=135;
+                alt85=144;
                 }
                 break;
             case 457:
                 {
-                alt84=136;
+                alt85=145;
                 }
                 break;
             case 458:
                 {
-                alt84=137;
+                alt85=146;
                 }
                 break;
             case 459:
                 {
-                alt84=138;
+                alt85=147;
                 }
                 break;
             case 460:
                 {
-                alt84=139;
-                }
-                break;
-            case 461:
-                {
-                alt84=140;
-                }
-                break;
-            case 462:
-                {
-                alt84=141;
-                }
-                break;
-            case 463:
-                {
-                alt84=142;
-                }
-                break;
-            case 464:
-                {
-                alt84=143;
-                }
-                break;
-            case 465:
-                {
-                alt84=144;
-                }
-                break;
-            case 466:
-                {
-                alt84=145;
-                }
-                break;
-            case 467:
-                {
-                alt84=146;
-                }
-                break;
-            case 468:
-                {
-                alt84=147;
-                }
-                break;
-            case 469:
-                {
-                alt84=148;
+                alt85=148;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 84, 0, input);
+                    new NoViableAltException("", 85, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt84) {
+            switch (alt85) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8318:3: lv_value_0_1= 'aliceblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8140:3: lv_value_0_1= 'aliceblue'
                     {
-                    lv_value_0_1=(Token)match(input,325,FOLLOW_325_in_ruleNamedColor19515); 
+                    lv_value_0_1=(Token)match(input,316,FOLLOW_316_in_ruleNamedColor19051); 
 
                             newLeafNode(lv_value_0_1, grammarAccess.getNamedColorAccess().getValueAliceblueKeyword_0_0());
                         
@@ -20389,9 +20097,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8330:8: lv_value_0_2= 'antiquewhite'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8152:8: lv_value_0_2= 'antiquewhite'
                     {
-                    lv_value_0_2=(Token)match(input,326,FOLLOW_326_in_ruleNamedColor19544); 
+                    lv_value_0_2=(Token)match(input,317,FOLLOW_317_in_ruleNamedColor19080); 
 
                             newLeafNode(lv_value_0_2, grammarAccess.getNamedColorAccess().getValueAntiquewhiteKeyword_0_1());
                         
@@ -20405,9 +20113,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8342:8: lv_value_0_3= 'aqua'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8164:8: lv_value_0_3= 'aqua'
                     {
-                    lv_value_0_3=(Token)match(input,327,FOLLOW_327_in_ruleNamedColor19573); 
+                    lv_value_0_3=(Token)match(input,318,FOLLOW_318_in_ruleNamedColor19109); 
 
                             newLeafNode(lv_value_0_3, grammarAccess.getNamedColorAccess().getValueAquaKeyword_0_2());
                         
@@ -20421,9 +20129,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8354:8: lv_value_0_4= 'aquamarine'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8176:8: lv_value_0_4= 'aquamarine'
                     {
-                    lv_value_0_4=(Token)match(input,328,FOLLOW_328_in_ruleNamedColor19602); 
+                    lv_value_0_4=(Token)match(input,319,FOLLOW_319_in_ruleNamedColor19138); 
 
                             newLeafNode(lv_value_0_4, grammarAccess.getNamedColorAccess().getValueAquamarineKeyword_0_3());
                         
@@ -20437,9 +20145,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8366:8: lv_value_0_5= 'azure'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8188:8: lv_value_0_5= 'azure'
                     {
-                    lv_value_0_5=(Token)match(input,329,FOLLOW_329_in_ruleNamedColor19631); 
+                    lv_value_0_5=(Token)match(input,320,FOLLOW_320_in_ruleNamedColor19167); 
 
                             newLeafNode(lv_value_0_5, grammarAccess.getNamedColorAccess().getValueAzureKeyword_0_4());
                         
@@ -20453,9 +20161,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8378:8: lv_value_0_6= 'beige'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8200:8: lv_value_0_6= 'beige'
                     {
-                    lv_value_0_6=(Token)match(input,330,FOLLOW_330_in_ruleNamedColor19660); 
+                    lv_value_0_6=(Token)match(input,321,FOLLOW_321_in_ruleNamedColor19196); 
 
                             newLeafNode(lv_value_0_6, grammarAccess.getNamedColorAccess().getValueBeigeKeyword_0_5());
                         
@@ -20469,9 +20177,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8390:8: lv_value_0_7= 'bisque'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8212:8: lv_value_0_7= 'bisque'
                     {
-                    lv_value_0_7=(Token)match(input,331,FOLLOW_331_in_ruleNamedColor19689); 
+                    lv_value_0_7=(Token)match(input,322,FOLLOW_322_in_ruleNamedColor19225); 
 
                             newLeafNode(lv_value_0_7, grammarAccess.getNamedColorAccess().getValueBisqueKeyword_0_6());
                         
@@ -20485,9 +20193,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8402:8: lv_value_0_8= 'black'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8224:8: lv_value_0_8= 'black'
                     {
-                    lv_value_0_8=(Token)match(input,332,FOLLOW_332_in_ruleNamedColor19718); 
+                    lv_value_0_8=(Token)match(input,323,FOLLOW_323_in_ruleNamedColor19254); 
 
                             newLeafNode(lv_value_0_8, grammarAccess.getNamedColorAccess().getValueBlackKeyword_0_7());
                         
@@ -20501,9 +20209,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8414:8: lv_value_0_9= 'blanchedalmond'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8236:8: lv_value_0_9= 'blanchedalmond'
                     {
-                    lv_value_0_9=(Token)match(input,333,FOLLOW_333_in_ruleNamedColor19747); 
+                    lv_value_0_9=(Token)match(input,324,FOLLOW_324_in_ruleNamedColor19283); 
 
                             newLeafNode(lv_value_0_9, grammarAccess.getNamedColorAccess().getValueBlanchedalmondKeyword_0_8());
                         
@@ -20517,9 +20225,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8426:8: lv_value_0_10= 'blue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8248:8: lv_value_0_10= 'blue'
                     {
-                    lv_value_0_10=(Token)match(input,189,FOLLOW_189_in_ruleNamedColor19776); 
+                    lv_value_0_10=(Token)match(input,189,FOLLOW_189_in_ruleNamedColor19312); 
 
                             newLeafNode(lv_value_0_10, grammarAccess.getNamedColorAccess().getValueBlueKeyword_0_9());
                         
@@ -20533,9 +20241,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8438:8: lv_value_0_11= 'blueviolet'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8260:8: lv_value_0_11= 'blueviolet'
                     {
-                    lv_value_0_11=(Token)match(input,334,FOLLOW_334_in_ruleNamedColor19805); 
+                    lv_value_0_11=(Token)match(input,325,FOLLOW_325_in_ruleNamedColor19341); 
 
                             newLeafNode(lv_value_0_11, grammarAccess.getNamedColorAccess().getValueBluevioletKeyword_0_10());
                         
@@ -20549,9 +20257,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8450:8: lv_value_0_12= 'brown'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8272:8: lv_value_0_12= 'brown'
                     {
-                    lv_value_0_12=(Token)match(input,335,FOLLOW_335_in_ruleNamedColor19834); 
+                    lv_value_0_12=(Token)match(input,326,FOLLOW_326_in_ruleNamedColor19370); 
 
                             newLeafNode(lv_value_0_12, grammarAccess.getNamedColorAccess().getValueBrownKeyword_0_11());
                         
@@ -20565,9 +20273,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8462:8: lv_value_0_13= 'burlywood'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8284:8: lv_value_0_13= 'burlywood'
                     {
-                    lv_value_0_13=(Token)match(input,336,FOLLOW_336_in_ruleNamedColor19863); 
+                    lv_value_0_13=(Token)match(input,327,FOLLOW_327_in_ruleNamedColor19399); 
 
                             newLeafNode(lv_value_0_13, grammarAccess.getNamedColorAccess().getValueBurlywoodKeyword_0_12());
                         
@@ -20581,9 +20289,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8474:8: lv_value_0_14= 'cadetblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8296:8: lv_value_0_14= 'cadetblue'
                     {
-                    lv_value_0_14=(Token)match(input,337,FOLLOW_337_in_ruleNamedColor19892); 
+                    lv_value_0_14=(Token)match(input,328,FOLLOW_328_in_ruleNamedColor19428); 
 
                             newLeafNode(lv_value_0_14, grammarAccess.getNamedColorAccess().getValueCadetblueKeyword_0_13());
                         
@@ -20597,9 +20305,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8486:8: lv_value_0_15= 'chartreuse'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8308:8: lv_value_0_15= 'chartreuse'
                     {
-                    lv_value_0_15=(Token)match(input,338,FOLLOW_338_in_ruleNamedColor19921); 
+                    lv_value_0_15=(Token)match(input,329,FOLLOW_329_in_ruleNamedColor19457); 
 
                             newLeafNode(lv_value_0_15, grammarAccess.getNamedColorAccess().getValueChartreuseKeyword_0_14());
                         
@@ -20613,9 +20321,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8498:8: lv_value_0_16= 'chocolate'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8320:8: lv_value_0_16= 'chocolate'
                     {
-                    lv_value_0_16=(Token)match(input,339,FOLLOW_339_in_ruleNamedColor19950); 
+                    lv_value_0_16=(Token)match(input,330,FOLLOW_330_in_ruleNamedColor19486); 
 
                             newLeafNode(lv_value_0_16, grammarAccess.getNamedColorAccess().getValueChocolateKeyword_0_15());
                         
@@ -20629,9 +20337,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8510:8: lv_value_0_17= 'coral'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8332:8: lv_value_0_17= 'coral'
                     {
-                    lv_value_0_17=(Token)match(input,340,FOLLOW_340_in_ruleNamedColor19979); 
+                    lv_value_0_17=(Token)match(input,331,FOLLOW_331_in_ruleNamedColor19515); 
 
                             newLeafNode(lv_value_0_17, grammarAccess.getNamedColorAccess().getValueCoralKeyword_0_16());
                         
@@ -20645,9 +20353,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8522:8: lv_value_0_18= 'cornflowerblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8344:8: lv_value_0_18= 'cornflowerblue'
                     {
-                    lv_value_0_18=(Token)match(input,341,FOLLOW_341_in_ruleNamedColor20008); 
+                    lv_value_0_18=(Token)match(input,332,FOLLOW_332_in_ruleNamedColor19544); 
 
                             newLeafNode(lv_value_0_18, grammarAccess.getNamedColorAccess().getValueCornflowerblueKeyword_0_17());
                         
@@ -20661,9 +20369,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 19 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8534:8: lv_value_0_19= 'cornsilk'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8356:8: lv_value_0_19= 'cornsilk'
                     {
-                    lv_value_0_19=(Token)match(input,342,FOLLOW_342_in_ruleNamedColor20037); 
+                    lv_value_0_19=(Token)match(input,333,FOLLOW_333_in_ruleNamedColor19573); 
 
                             newLeafNode(lv_value_0_19, grammarAccess.getNamedColorAccess().getValueCornsilkKeyword_0_18());
                         
@@ -20677,9 +20385,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 20 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8546:8: lv_value_0_20= 'crimson'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8368:8: lv_value_0_20= 'crimson'
                     {
-                    lv_value_0_20=(Token)match(input,343,FOLLOW_343_in_ruleNamedColor20066); 
+                    lv_value_0_20=(Token)match(input,334,FOLLOW_334_in_ruleNamedColor19602); 
 
                             newLeafNode(lv_value_0_20, grammarAccess.getNamedColorAccess().getValueCrimsonKeyword_0_19());
                         
@@ -20693,9 +20401,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 21 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8558:8: lv_value_0_21= 'cyan'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8380:8: lv_value_0_21= 'cyan'
                     {
-                    lv_value_0_21=(Token)match(input,344,FOLLOW_344_in_ruleNamedColor20095); 
+                    lv_value_0_21=(Token)match(input,335,FOLLOW_335_in_ruleNamedColor19631); 
 
                             newLeafNode(lv_value_0_21, grammarAccess.getNamedColorAccess().getValueCyanKeyword_0_20());
                         
@@ -20709,9 +20417,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 22 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8570:8: lv_value_0_22= 'darkblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8392:8: lv_value_0_22= 'darkblue'
                     {
-                    lv_value_0_22=(Token)match(input,345,FOLLOW_345_in_ruleNamedColor20124); 
+                    lv_value_0_22=(Token)match(input,336,FOLLOW_336_in_ruleNamedColor19660); 
 
                             newLeafNode(lv_value_0_22, grammarAccess.getNamedColorAccess().getValueDarkblueKeyword_0_21());
                         
@@ -20725,9 +20433,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 23 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8582:8: lv_value_0_23= 'darkcyan'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8404:8: lv_value_0_23= 'darkcyan'
                     {
-                    lv_value_0_23=(Token)match(input,346,FOLLOW_346_in_ruleNamedColor20153); 
+                    lv_value_0_23=(Token)match(input,337,FOLLOW_337_in_ruleNamedColor19689); 
 
                             newLeafNode(lv_value_0_23, grammarAccess.getNamedColorAccess().getValueDarkcyanKeyword_0_22());
                         
@@ -20741,9 +20449,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 24 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8594:8: lv_value_0_24= 'darkgoldenrod'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8416:8: lv_value_0_24= 'darkgoldenrod'
                     {
-                    lv_value_0_24=(Token)match(input,347,FOLLOW_347_in_ruleNamedColor20182); 
+                    lv_value_0_24=(Token)match(input,338,FOLLOW_338_in_ruleNamedColor19718); 
 
                             newLeafNode(lv_value_0_24, grammarAccess.getNamedColorAccess().getValueDarkgoldenrodKeyword_0_23());
                         
@@ -20757,9 +20465,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 25 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8606:8: lv_value_0_25= 'darkgray'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8428:8: lv_value_0_25= 'darkgray'
                     {
-                    lv_value_0_25=(Token)match(input,348,FOLLOW_348_in_ruleNamedColor20211); 
+                    lv_value_0_25=(Token)match(input,339,FOLLOW_339_in_ruleNamedColor19747); 
 
                             newLeafNode(lv_value_0_25, grammarAccess.getNamedColorAccess().getValueDarkgrayKeyword_0_24());
                         
@@ -20773,9 +20481,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 26 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8618:8: lv_value_0_26= 'darkgreen'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8440:8: lv_value_0_26= 'darkgreen'
                     {
-                    lv_value_0_26=(Token)match(input,349,FOLLOW_349_in_ruleNamedColor20240); 
+                    lv_value_0_26=(Token)match(input,340,FOLLOW_340_in_ruleNamedColor19776); 
 
                             newLeafNode(lv_value_0_26, grammarAccess.getNamedColorAccess().getValueDarkgreenKeyword_0_25());
                         
@@ -20789,9 +20497,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 27 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8630:8: lv_value_0_27= 'darkgrey'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8452:8: lv_value_0_27= 'darkgrey'
                     {
-                    lv_value_0_27=(Token)match(input,350,FOLLOW_350_in_ruleNamedColor20269); 
+                    lv_value_0_27=(Token)match(input,341,FOLLOW_341_in_ruleNamedColor19805); 
 
                             newLeafNode(lv_value_0_27, grammarAccess.getNamedColorAccess().getValueDarkgreyKeyword_0_26());
                         
@@ -20805,9 +20513,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 28 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8642:8: lv_value_0_28= 'darkkhaki'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8464:8: lv_value_0_28= 'darkkhaki'
                     {
-                    lv_value_0_28=(Token)match(input,351,FOLLOW_351_in_ruleNamedColor20298); 
+                    lv_value_0_28=(Token)match(input,342,FOLLOW_342_in_ruleNamedColor19834); 
 
                             newLeafNode(lv_value_0_28, grammarAccess.getNamedColorAccess().getValueDarkkhakiKeyword_0_27());
                         
@@ -20821,9 +20529,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 29 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8654:8: lv_value_0_29= 'darkmagenta'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8476:8: lv_value_0_29= 'darkmagenta'
                     {
-                    lv_value_0_29=(Token)match(input,352,FOLLOW_352_in_ruleNamedColor20327); 
+                    lv_value_0_29=(Token)match(input,343,FOLLOW_343_in_ruleNamedColor19863); 
 
                             newLeafNode(lv_value_0_29, grammarAccess.getNamedColorAccess().getValueDarkmagentaKeyword_0_28());
                         
@@ -20837,9 +20545,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 30 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8666:8: lv_value_0_30= 'darkolivegreen'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8488:8: lv_value_0_30= 'darkolivegreen'
                     {
-                    lv_value_0_30=(Token)match(input,353,FOLLOW_353_in_ruleNamedColor20356); 
+                    lv_value_0_30=(Token)match(input,344,FOLLOW_344_in_ruleNamedColor19892); 
 
                             newLeafNode(lv_value_0_30, grammarAccess.getNamedColorAccess().getValueDarkolivegreenKeyword_0_29());
                         
@@ -20853,9 +20561,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 31 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8678:8: lv_value_0_31= 'darkorange'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8500:8: lv_value_0_31= 'darkorange'
                     {
-                    lv_value_0_31=(Token)match(input,354,FOLLOW_354_in_ruleNamedColor20385); 
+                    lv_value_0_31=(Token)match(input,345,FOLLOW_345_in_ruleNamedColor19921); 
 
                             newLeafNode(lv_value_0_31, grammarAccess.getNamedColorAccess().getValueDarkorangeKeyword_0_30());
                         
@@ -20869,9 +20577,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 32 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8690:8: lv_value_0_32= 'darkorchid'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8512:8: lv_value_0_32= 'darkorchid'
                     {
-                    lv_value_0_32=(Token)match(input,355,FOLLOW_355_in_ruleNamedColor20414); 
+                    lv_value_0_32=(Token)match(input,346,FOLLOW_346_in_ruleNamedColor19950); 
 
                             newLeafNode(lv_value_0_32, grammarAccess.getNamedColorAccess().getValueDarkorchidKeyword_0_31());
                         
@@ -20885,9 +20593,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 33 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8702:8: lv_value_0_33= 'darkred'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8524:8: lv_value_0_33= 'darkred'
                     {
-                    lv_value_0_33=(Token)match(input,356,FOLLOW_356_in_ruleNamedColor20443); 
+                    lv_value_0_33=(Token)match(input,347,FOLLOW_347_in_ruleNamedColor19979); 
 
                             newLeafNode(lv_value_0_33, grammarAccess.getNamedColorAccess().getValueDarkredKeyword_0_32());
                         
@@ -20901,9 +20609,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 34 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8714:8: lv_value_0_34= 'darksalmon'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8536:8: lv_value_0_34= 'darksalmon'
                     {
-                    lv_value_0_34=(Token)match(input,357,FOLLOW_357_in_ruleNamedColor20472); 
+                    lv_value_0_34=(Token)match(input,348,FOLLOW_348_in_ruleNamedColor20008); 
 
                             newLeafNode(lv_value_0_34, grammarAccess.getNamedColorAccess().getValueDarksalmonKeyword_0_33());
                         
@@ -20917,9 +20625,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 35 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8726:8: lv_value_0_35= 'darkseagreen'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8548:8: lv_value_0_35= 'darkseagreen'
                     {
-                    lv_value_0_35=(Token)match(input,358,FOLLOW_358_in_ruleNamedColor20501); 
+                    lv_value_0_35=(Token)match(input,349,FOLLOW_349_in_ruleNamedColor20037); 
 
                             newLeafNode(lv_value_0_35, grammarAccess.getNamedColorAccess().getValueDarkseagreenKeyword_0_34());
                         
@@ -20933,9 +20641,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 36 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8738:8: lv_value_0_36= 'darkslateblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8560:8: lv_value_0_36= 'darkslateblue'
                     {
-                    lv_value_0_36=(Token)match(input,359,FOLLOW_359_in_ruleNamedColor20530); 
+                    lv_value_0_36=(Token)match(input,350,FOLLOW_350_in_ruleNamedColor20066); 
 
                             newLeafNode(lv_value_0_36, grammarAccess.getNamedColorAccess().getValueDarkslateblueKeyword_0_35());
                         
@@ -20949,9 +20657,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 37 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8750:8: lv_value_0_37= 'darkslategray'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8572:8: lv_value_0_37= 'darkslategray'
                     {
-                    lv_value_0_37=(Token)match(input,360,FOLLOW_360_in_ruleNamedColor20559); 
+                    lv_value_0_37=(Token)match(input,351,FOLLOW_351_in_ruleNamedColor20095); 
 
                             newLeafNode(lv_value_0_37, grammarAccess.getNamedColorAccess().getValueDarkslategrayKeyword_0_36());
                         
@@ -20965,9 +20673,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 38 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8762:8: lv_value_0_38= 'darkslategrey'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8584:8: lv_value_0_38= 'darkslategrey'
                     {
-                    lv_value_0_38=(Token)match(input,361,FOLLOW_361_in_ruleNamedColor20588); 
+                    lv_value_0_38=(Token)match(input,352,FOLLOW_352_in_ruleNamedColor20124); 
 
                             newLeafNode(lv_value_0_38, grammarAccess.getNamedColorAccess().getValueDarkslategreyKeyword_0_37());
                         
@@ -20981,9 +20689,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 39 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8774:8: lv_value_0_39= 'darkturquoise'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8596:8: lv_value_0_39= 'darkturquoise'
                     {
-                    lv_value_0_39=(Token)match(input,362,FOLLOW_362_in_ruleNamedColor20617); 
+                    lv_value_0_39=(Token)match(input,353,FOLLOW_353_in_ruleNamedColor20153); 
 
                             newLeafNode(lv_value_0_39, grammarAccess.getNamedColorAccess().getValueDarkturquoiseKeyword_0_38());
                         
@@ -20997,9 +20705,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 40 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8786:8: lv_value_0_40= 'darkviolet'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8608:8: lv_value_0_40= 'darkviolet'
                     {
-                    lv_value_0_40=(Token)match(input,363,FOLLOW_363_in_ruleNamedColor20646); 
+                    lv_value_0_40=(Token)match(input,354,FOLLOW_354_in_ruleNamedColor20182); 
 
                             newLeafNode(lv_value_0_40, grammarAccess.getNamedColorAccess().getValueDarkvioletKeyword_0_39());
                         
@@ -21013,9 +20721,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 41 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8798:8: lv_value_0_41= 'deeppink'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8620:8: lv_value_0_41= 'deeppink'
                     {
-                    lv_value_0_41=(Token)match(input,364,FOLLOW_364_in_ruleNamedColor20675); 
+                    lv_value_0_41=(Token)match(input,355,FOLLOW_355_in_ruleNamedColor20211); 
 
                             newLeafNode(lv_value_0_41, grammarAccess.getNamedColorAccess().getValueDeeppinkKeyword_0_40());
                         
@@ -21029,9 +20737,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 42 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8810:8: lv_value_0_42= 'deepskyblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8632:8: lv_value_0_42= 'deepskyblue'
                     {
-                    lv_value_0_42=(Token)match(input,365,FOLLOW_365_in_ruleNamedColor20704); 
+                    lv_value_0_42=(Token)match(input,356,FOLLOW_356_in_ruleNamedColor20240); 
 
                             newLeafNode(lv_value_0_42, grammarAccess.getNamedColorAccess().getValueDeepskyblueKeyword_0_41());
                         
@@ -21045,9 +20753,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 43 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8822:8: lv_value_0_43= 'dimgray'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8644:8: lv_value_0_43= 'dimgray'
                     {
-                    lv_value_0_43=(Token)match(input,366,FOLLOW_366_in_ruleNamedColor20733); 
+                    lv_value_0_43=(Token)match(input,357,FOLLOW_357_in_ruleNamedColor20269); 
 
                             newLeafNode(lv_value_0_43, grammarAccess.getNamedColorAccess().getValueDimgrayKeyword_0_42());
                         
@@ -21061,9 +20769,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 44 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8834:8: lv_value_0_44= 'dimgrey'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8656:8: lv_value_0_44= 'dimgrey'
                     {
-                    lv_value_0_44=(Token)match(input,367,FOLLOW_367_in_ruleNamedColor20762); 
+                    lv_value_0_44=(Token)match(input,358,FOLLOW_358_in_ruleNamedColor20298); 
 
                             newLeafNode(lv_value_0_44, grammarAccess.getNamedColorAccess().getValueDimgreyKeyword_0_43());
                         
@@ -21077,9 +20785,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 45 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8846:8: lv_value_0_45= 'dodgerblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8668:8: lv_value_0_45= 'dodgerblue'
                     {
-                    lv_value_0_45=(Token)match(input,368,FOLLOW_368_in_ruleNamedColor20791); 
+                    lv_value_0_45=(Token)match(input,359,FOLLOW_359_in_ruleNamedColor20327); 
 
                             newLeafNode(lv_value_0_45, grammarAccess.getNamedColorAccess().getValueDodgerblueKeyword_0_44());
                         
@@ -21093,9 +20801,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 46 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8858:8: lv_value_0_46= 'firebrick'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8680:8: lv_value_0_46= 'firebrick'
                     {
-                    lv_value_0_46=(Token)match(input,369,FOLLOW_369_in_ruleNamedColor20820); 
+                    lv_value_0_46=(Token)match(input,360,FOLLOW_360_in_ruleNamedColor20356); 
 
                             newLeafNode(lv_value_0_46, grammarAccess.getNamedColorAccess().getValueFirebrickKeyword_0_45());
                         
@@ -21109,9 +20817,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 47 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8870:8: lv_value_0_47= 'floralwhite'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8692:8: lv_value_0_47= 'floralwhite'
                     {
-                    lv_value_0_47=(Token)match(input,370,FOLLOW_370_in_ruleNamedColor20849); 
+                    lv_value_0_47=(Token)match(input,361,FOLLOW_361_in_ruleNamedColor20385); 
 
                             newLeafNode(lv_value_0_47, grammarAccess.getNamedColorAccess().getValueFloralwhiteKeyword_0_46());
                         
@@ -21125,9 +20833,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 48 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8882:8: lv_value_0_48= 'forestgreen'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8704:8: lv_value_0_48= 'forestgreen'
                     {
-                    lv_value_0_48=(Token)match(input,371,FOLLOW_371_in_ruleNamedColor20878); 
+                    lv_value_0_48=(Token)match(input,362,FOLLOW_362_in_ruleNamedColor20414); 
 
                             newLeafNode(lv_value_0_48, grammarAccess.getNamedColorAccess().getValueForestgreenKeyword_0_47());
                         
@@ -21141,9 +20849,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 49 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8894:8: lv_value_0_49= 'fuchsia'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8716:8: lv_value_0_49= 'fuchsia'
                     {
-                    lv_value_0_49=(Token)match(input,372,FOLLOW_372_in_ruleNamedColor20907); 
+                    lv_value_0_49=(Token)match(input,363,FOLLOW_363_in_ruleNamedColor20443); 
 
                             newLeafNode(lv_value_0_49, grammarAccess.getNamedColorAccess().getValueFuchsiaKeyword_0_48());
                         
@@ -21157,9 +20865,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 50 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8906:8: lv_value_0_50= 'gainsboro'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8728:8: lv_value_0_50= 'gainsboro'
                     {
-                    lv_value_0_50=(Token)match(input,373,FOLLOW_373_in_ruleNamedColor20936); 
+                    lv_value_0_50=(Token)match(input,364,FOLLOW_364_in_ruleNamedColor20472); 
 
                             newLeafNode(lv_value_0_50, grammarAccess.getNamedColorAccess().getValueGainsboroKeyword_0_49());
                         
@@ -21173,9 +20881,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 51 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8918:8: lv_value_0_51= 'ghostwhite'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8740:8: lv_value_0_51= 'ghostwhite'
                     {
-                    lv_value_0_51=(Token)match(input,374,FOLLOW_374_in_ruleNamedColor20965); 
+                    lv_value_0_51=(Token)match(input,365,FOLLOW_365_in_ruleNamedColor20501); 
 
                             newLeafNode(lv_value_0_51, grammarAccess.getNamedColorAccess().getValueGhostwhiteKeyword_0_50());
                         
@@ -21189,9 +20897,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 52 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8930:8: lv_value_0_52= 'gold'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8752:8: lv_value_0_52= 'gold'
                     {
-                    lv_value_0_52=(Token)match(input,375,FOLLOW_375_in_ruleNamedColor20994); 
+                    lv_value_0_52=(Token)match(input,366,FOLLOW_366_in_ruleNamedColor20530); 
 
                             newLeafNode(lv_value_0_52, grammarAccess.getNamedColorAccess().getValueGoldKeyword_0_51());
                         
@@ -21205,9 +20913,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 53 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8942:8: lv_value_0_53= 'goldenrod'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8764:8: lv_value_0_53= 'goldenrod'
                     {
-                    lv_value_0_53=(Token)match(input,376,FOLLOW_376_in_ruleNamedColor21023); 
+                    lv_value_0_53=(Token)match(input,367,FOLLOW_367_in_ruleNamedColor20559); 
 
                             newLeafNode(lv_value_0_53, grammarAccess.getNamedColorAccess().getValueGoldenrodKeyword_0_52());
                         
@@ -21221,9 +20929,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 54 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8954:8: lv_value_0_54= 'gray'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8776:8: lv_value_0_54= 'gray'
                     {
-                    lv_value_0_54=(Token)match(input,377,FOLLOW_377_in_ruleNamedColor21052); 
+                    lv_value_0_54=(Token)match(input,368,FOLLOW_368_in_ruleNamedColor20588); 
 
                             newLeafNode(lv_value_0_54, grammarAccess.getNamedColorAccess().getValueGrayKeyword_0_53());
                         
@@ -21237,9 +20945,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 55 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8966:8: lv_value_0_55= 'green'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8788:8: lv_value_0_55= 'green'
                     {
-                    lv_value_0_55=(Token)match(input,195,FOLLOW_195_in_ruleNamedColor21081); 
+                    lv_value_0_55=(Token)match(input,195,FOLLOW_195_in_ruleNamedColor20617); 
 
                             newLeafNode(lv_value_0_55, grammarAccess.getNamedColorAccess().getValueGreenKeyword_0_54());
                         
@@ -21253,9 +20961,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 56 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8978:8: lv_value_0_56= 'greenyellow'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8800:8: lv_value_0_56= 'greenyellow'
                     {
-                    lv_value_0_56=(Token)match(input,378,FOLLOW_378_in_ruleNamedColor21110); 
+                    lv_value_0_56=(Token)match(input,369,FOLLOW_369_in_ruleNamedColor20646); 
 
                             newLeafNode(lv_value_0_56, grammarAccess.getNamedColorAccess().getValueGreenyellowKeyword_0_55());
                         
@@ -21269,9 +20977,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 57 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8990:8: lv_value_0_57= 'grey'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8812:8: lv_value_0_57= 'grey'
                     {
-                    lv_value_0_57=(Token)match(input,379,FOLLOW_379_in_ruleNamedColor21139); 
+                    lv_value_0_57=(Token)match(input,370,FOLLOW_370_in_ruleNamedColor20675); 
 
                             newLeafNode(lv_value_0_57, grammarAccess.getNamedColorAccess().getValueGreyKeyword_0_56());
                         
@@ -21285,9 +20993,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 58 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9002:8: lv_value_0_58= 'honeydew'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8824:8: lv_value_0_58= 'honeydew'
                     {
-                    lv_value_0_58=(Token)match(input,380,FOLLOW_380_in_ruleNamedColor21168); 
+                    lv_value_0_58=(Token)match(input,371,FOLLOW_371_in_ruleNamedColor20704); 
 
                             newLeafNode(lv_value_0_58, grammarAccess.getNamedColorAccess().getValueHoneydewKeyword_0_57());
                         
@@ -21301,9 +21009,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 59 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9014:8: lv_value_0_59= 'hotpink'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8836:8: lv_value_0_59= 'hotpink'
                     {
-                    lv_value_0_59=(Token)match(input,381,FOLLOW_381_in_ruleNamedColor21197); 
+                    lv_value_0_59=(Token)match(input,372,FOLLOW_372_in_ruleNamedColor20733); 
 
                             newLeafNode(lv_value_0_59, grammarAccess.getNamedColorAccess().getValueHotpinkKeyword_0_58());
                         
@@ -21317,9 +21025,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 60 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9026:8: lv_value_0_60= 'indianred'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8848:8: lv_value_0_60= 'indianred'
                     {
-                    lv_value_0_60=(Token)match(input,382,FOLLOW_382_in_ruleNamedColor21226); 
+                    lv_value_0_60=(Token)match(input,373,FOLLOW_373_in_ruleNamedColor20762); 
 
                             newLeafNode(lv_value_0_60, grammarAccess.getNamedColorAccess().getValueIndianredKeyword_0_59());
                         
@@ -21333,9 +21041,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 61 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9038:8: lv_value_0_61= 'indigo'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8860:8: lv_value_0_61= 'indigo'
                     {
-                    lv_value_0_61=(Token)match(input,383,FOLLOW_383_in_ruleNamedColor21255); 
+                    lv_value_0_61=(Token)match(input,374,FOLLOW_374_in_ruleNamedColor20791); 
 
                             newLeafNode(lv_value_0_61, grammarAccess.getNamedColorAccess().getValueIndigoKeyword_0_60());
                         
@@ -21349,9 +21057,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 62 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9050:8: lv_value_0_62= 'ivory'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8872:8: lv_value_0_62= 'ivory'
                     {
-                    lv_value_0_62=(Token)match(input,384,FOLLOW_384_in_ruleNamedColor21284); 
+                    lv_value_0_62=(Token)match(input,375,FOLLOW_375_in_ruleNamedColor20820); 
 
                             newLeafNode(lv_value_0_62, grammarAccess.getNamedColorAccess().getValueIvoryKeyword_0_61());
                         
@@ -21365,9 +21073,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 63 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9062:8: lv_value_0_63= 'khaki'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8884:8: lv_value_0_63= 'khaki'
                     {
-                    lv_value_0_63=(Token)match(input,385,FOLLOW_385_in_ruleNamedColor21313); 
+                    lv_value_0_63=(Token)match(input,376,FOLLOW_376_in_ruleNamedColor20849); 
 
                             newLeafNode(lv_value_0_63, grammarAccess.getNamedColorAccess().getValueKhakiKeyword_0_62());
                         
@@ -21381,9 +21089,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 64 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9074:8: lv_value_0_64= 'lavender'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8896:8: lv_value_0_64= 'lavender'
                     {
-                    lv_value_0_64=(Token)match(input,386,FOLLOW_386_in_ruleNamedColor21342); 
+                    lv_value_0_64=(Token)match(input,377,FOLLOW_377_in_ruleNamedColor20878); 
 
                             newLeafNode(lv_value_0_64, grammarAccess.getNamedColorAccess().getValueLavenderKeyword_0_63());
                         
@@ -21397,9 +21105,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 65 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9086:8: lv_value_0_65= 'lavenderblush'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8908:8: lv_value_0_65= 'lavenderblush'
                     {
-                    lv_value_0_65=(Token)match(input,387,FOLLOW_387_in_ruleNamedColor21371); 
+                    lv_value_0_65=(Token)match(input,378,FOLLOW_378_in_ruleNamedColor20907); 
 
                             newLeafNode(lv_value_0_65, grammarAccess.getNamedColorAccess().getValueLavenderblushKeyword_0_64());
                         
@@ -21413,9 +21121,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 66 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9098:8: lv_value_0_66= 'lawngreen'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8920:8: lv_value_0_66= 'lawngreen'
                     {
-                    lv_value_0_66=(Token)match(input,388,FOLLOW_388_in_ruleNamedColor21400); 
+                    lv_value_0_66=(Token)match(input,379,FOLLOW_379_in_ruleNamedColor20936); 
 
                             newLeafNode(lv_value_0_66, grammarAccess.getNamedColorAccess().getValueLawngreenKeyword_0_65());
                         
@@ -21429,9 +21137,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 67 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9110:8: lv_value_0_67= 'lemonchiffon'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8932:8: lv_value_0_67= 'lemonchiffon'
                     {
-                    lv_value_0_67=(Token)match(input,389,FOLLOW_389_in_ruleNamedColor21429); 
+                    lv_value_0_67=(Token)match(input,380,FOLLOW_380_in_ruleNamedColor20965); 
 
                             newLeafNode(lv_value_0_67, grammarAccess.getNamedColorAccess().getValueLemonchiffonKeyword_0_66());
                         
@@ -21445,9 +21153,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 68 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9122:8: lv_value_0_68= 'lightblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8944:8: lv_value_0_68= 'lightblue'
                     {
-                    lv_value_0_68=(Token)match(input,390,FOLLOW_390_in_ruleNamedColor21458); 
+                    lv_value_0_68=(Token)match(input,381,FOLLOW_381_in_ruleNamedColor20994); 
 
                             newLeafNode(lv_value_0_68, grammarAccess.getNamedColorAccess().getValueLightblueKeyword_0_67());
                         
@@ -21461,9 +21169,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 69 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9134:8: lv_value_0_69= 'lightcoral'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8956:8: lv_value_0_69= 'lightcoral'
                     {
-                    lv_value_0_69=(Token)match(input,391,FOLLOW_391_in_ruleNamedColor21487); 
+                    lv_value_0_69=(Token)match(input,382,FOLLOW_382_in_ruleNamedColor21023); 
 
                             newLeafNode(lv_value_0_69, grammarAccess.getNamedColorAccess().getValueLightcoralKeyword_0_68());
                         
@@ -21477,9 +21185,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 70 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9146:8: lv_value_0_70= 'lightcyan'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8968:8: lv_value_0_70= 'lightcyan'
                     {
-                    lv_value_0_70=(Token)match(input,392,FOLLOW_392_in_ruleNamedColor21516); 
+                    lv_value_0_70=(Token)match(input,383,FOLLOW_383_in_ruleNamedColor21052); 
 
                             newLeafNode(lv_value_0_70, grammarAccess.getNamedColorAccess().getValueLightcyanKeyword_0_69());
                         
@@ -21493,9 +21201,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 71 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9158:8: lv_value_0_71= 'lightgoldenrodyellow'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8980:8: lv_value_0_71= 'lightgoldenrodyellow'
                     {
-                    lv_value_0_71=(Token)match(input,393,FOLLOW_393_in_ruleNamedColor21545); 
+                    lv_value_0_71=(Token)match(input,384,FOLLOW_384_in_ruleNamedColor21081); 
 
                             newLeafNode(lv_value_0_71, grammarAccess.getNamedColorAccess().getValueLightgoldenrodyellowKeyword_0_70());
                         
@@ -21509,9 +21217,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 72 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9170:8: lv_value_0_72= 'lightgray'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:8992:8: lv_value_0_72= 'lightgray'
                     {
-                    lv_value_0_72=(Token)match(input,394,FOLLOW_394_in_ruleNamedColor21574); 
+                    lv_value_0_72=(Token)match(input,385,FOLLOW_385_in_ruleNamedColor21110); 
 
                             newLeafNode(lv_value_0_72, grammarAccess.getNamedColorAccess().getValueLightgrayKeyword_0_71());
                         
@@ -21525,9 +21233,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 73 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9182:8: lv_value_0_73= 'lightgreen'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9004:8: lv_value_0_73= 'lightgreen'
                     {
-                    lv_value_0_73=(Token)match(input,395,FOLLOW_395_in_ruleNamedColor21603); 
+                    lv_value_0_73=(Token)match(input,386,FOLLOW_386_in_ruleNamedColor21139); 
 
                             newLeafNode(lv_value_0_73, grammarAccess.getNamedColorAccess().getValueLightgreenKeyword_0_72());
                         
@@ -21541,9 +21249,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 74 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9194:8: lv_value_0_74= 'lightgrey'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9016:8: lv_value_0_74= 'lightgrey'
                     {
-                    lv_value_0_74=(Token)match(input,396,FOLLOW_396_in_ruleNamedColor21632); 
+                    lv_value_0_74=(Token)match(input,387,FOLLOW_387_in_ruleNamedColor21168); 
 
                             newLeafNode(lv_value_0_74, grammarAccess.getNamedColorAccess().getValueLightgreyKeyword_0_73());
                         
@@ -21557,9 +21265,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 75 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9206:8: lv_value_0_75= 'lightpink'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9028:8: lv_value_0_75= 'lightpink'
                     {
-                    lv_value_0_75=(Token)match(input,397,FOLLOW_397_in_ruleNamedColor21661); 
+                    lv_value_0_75=(Token)match(input,388,FOLLOW_388_in_ruleNamedColor21197); 
 
                             newLeafNode(lv_value_0_75, grammarAccess.getNamedColorAccess().getValueLightpinkKeyword_0_74());
                         
@@ -21573,9 +21281,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 76 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9218:8: lv_value_0_76= 'lightsalmon'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9040:8: lv_value_0_76= 'lightsalmon'
                     {
-                    lv_value_0_76=(Token)match(input,398,FOLLOW_398_in_ruleNamedColor21690); 
+                    lv_value_0_76=(Token)match(input,389,FOLLOW_389_in_ruleNamedColor21226); 
 
                             newLeafNode(lv_value_0_76, grammarAccess.getNamedColorAccess().getValueLightsalmonKeyword_0_75());
                         
@@ -21589,9 +21297,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 77 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9230:8: lv_value_0_77= 'lightseagreen'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9052:8: lv_value_0_77= 'lightseagreen'
                     {
-                    lv_value_0_77=(Token)match(input,399,FOLLOW_399_in_ruleNamedColor21719); 
+                    lv_value_0_77=(Token)match(input,390,FOLLOW_390_in_ruleNamedColor21255); 
 
                             newLeafNode(lv_value_0_77, grammarAccess.getNamedColorAccess().getValueLightseagreenKeyword_0_76());
                         
@@ -21605,9 +21313,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 78 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9242:8: lv_value_0_78= 'lightskyblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9064:8: lv_value_0_78= 'lightskyblue'
                     {
-                    lv_value_0_78=(Token)match(input,400,FOLLOW_400_in_ruleNamedColor21748); 
+                    lv_value_0_78=(Token)match(input,391,FOLLOW_391_in_ruleNamedColor21284); 
 
                             newLeafNode(lv_value_0_78, grammarAccess.getNamedColorAccess().getValueLightskyblueKeyword_0_77());
                         
@@ -21621,9 +21329,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 79 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9254:8: lv_value_0_79= 'lightslategray'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9076:8: lv_value_0_79= 'lightslategray'
                     {
-                    lv_value_0_79=(Token)match(input,401,FOLLOW_401_in_ruleNamedColor21777); 
+                    lv_value_0_79=(Token)match(input,392,FOLLOW_392_in_ruleNamedColor21313); 
 
                             newLeafNode(lv_value_0_79, grammarAccess.getNamedColorAccess().getValueLightslategrayKeyword_0_78());
                         
@@ -21637,9 +21345,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 80 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9266:8: lv_value_0_80= 'lightslategrey'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9088:8: lv_value_0_80= 'lightslategrey'
                     {
-                    lv_value_0_80=(Token)match(input,402,FOLLOW_402_in_ruleNamedColor21806); 
+                    lv_value_0_80=(Token)match(input,393,FOLLOW_393_in_ruleNamedColor21342); 
 
                             newLeafNode(lv_value_0_80, grammarAccess.getNamedColorAccess().getValueLightslategreyKeyword_0_79());
                         
@@ -21653,9 +21361,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 81 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9278:8: lv_value_0_81= 'lightsteelblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9100:8: lv_value_0_81= 'lightsteelblue'
                     {
-                    lv_value_0_81=(Token)match(input,403,FOLLOW_403_in_ruleNamedColor21835); 
+                    lv_value_0_81=(Token)match(input,394,FOLLOW_394_in_ruleNamedColor21371); 
 
                             newLeafNode(lv_value_0_81, grammarAccess.getNamedColorAccess().getValueLightsteelblueKeyword_0_80());
                         
@@ -21669,9 +21377,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 82 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9290:8: lv_value_0_82= 'lightyellow'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9112:8: lv_value_0_82= 'lightyellow'
                     {
-                    lv_value_0_82=(Token)match(input,404,FOLLOW_404_in_ruleNamedColor21864); 
+                    lv_value_0_82=(Token)match(input,395,FOLLOW_395_in_ruleNamedColor21400); 
 
                             newLeafNode(lv_value_0_82, grammarAccess.getNamedColorAccess().getValueLightyellowKeyword_0_81());
                         
@@ -21685,9 +21393,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 83 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9302:8: lv_value_0_83= 'lime'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9124:8: lv_value_0_83= 'lime'
                     {
-                    lv_value_0_83=(Token)match(input,405,FOLLOW_405_in_ruleNamedColor21893); 
+                    lv_value_0_83=(Token)match(input,396,FOLLOW_396_in_ruleNamedColor21429); 
 
                             newLeafNode(lv_value_0_83, grammarAccess.getNamedColorAccess().getValueLimeKeyword_0_82());
                         
@@ -21701,9 +21409,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 84 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9314:8: lv_value_0_84= 'limegreen'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9136:8: lv_value_0_84= 'limegreen'
                     {
-                    lv_value_0_84=(Token)match(input,406,FOLLOW_406_in_ruleNamedColor21922); 
+                    lv_value_0_84=(Token)match(input,397,FOLLOW_397_in_ruleNamedColor21458); 
 
                             newLeafNode(lv_value_0_84, grammarAccess.getNamedColorAccess().getValueLimegreenKeyword_0_83());
                         
@@ -21717,9 +21425,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 85 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9326:8: lv_value_0_85= 'linen'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9148:8: lv_value_0_85= 'linen'
                     {
-                    lv_value_0_85=(Token)match(input,407,FOLLOW_407_in_ruleNamedColor21951); 
+                    lv_value_0_85=(Token)match(input,398,FOLLOW_398_in_ruleNamedColor21487); 
 
                             newLeafNode(lv_value_0_85, grammarAccess.getNamedColorAccess().getValueLinenKeyword_0_84());
                         
@@ -21733,9 +21441,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 86 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9338:8: lv_value_0_86= 'magenta'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9160:8: lv_value_0_86= 'magenta'
                     {
-                    lv_value_0_86=(Token)match(input,408,FOLLOW_408_in_ruleNamedColor21980); 
+                    lv_value_0_86=(Token)match(input,399,FOLLOW_399_in_ruleNamedColor21516); 
 
                             newLeafNode(lv_value_0_86, grammarAccess.getNamedColorAccess().getValueMagentaKeyword_0_85());
                         
@@ -21749,9 +21457,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 87 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9350:8: lv_value_0_87= 'maroon'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9172:8: lv_value_0_87= 'maroon'
                     {
-                    lv_value_0_87=(Token)match(input,409,FOLLOW_409_in_ruleNamedColor22009); 
+                    lv_value_0_87=(Token)match(input,400,FOLLOW_400_in_ruleNamedColor21545); 
 
                             newLeafNode(lv_value_0_87, grammarAccess.getNamedColorAccess().getValueMaroonKeyword_0_86());
                         
@@ -21765,9 +21473,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 88 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9362:8: lv_value_0_88= 'mediumaquamarine'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9184:8: lv_value_0_88= 'mediumaquamarine'
                     {
-                    lv_value_0_88=(Token)match(input,410,FOLLOW_410_in_ruleNamedColor22038); 
+                    lv_value_0_88=(Token)match(input,401,FOLLOW_401_in_ruleNamedColor21574); 
 
                             newLeafNode(lv_value_0_88, grammarAccess.getNamedColorAccess().getValueMediumaquamarineKeyword_0_87());
                         
@@ -21781,9 +21489,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 89 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9374:8: lv_value_0_89= 'mediumblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9196:8: lv_value_0_89= 'mediumblue'
                     {
-                    lv_value_0_89=(Token)match(input,411,FOLLOW_411_in_ruleNamedColor22067); 
+                    lv_value_0_89=(Token)match(input,402,FOLLOW_402_in_ruleNamedColor21603); 
 
                             newLeafNode(lv_value_0_89, grammarAccess.getNamedColorAccess().getValueMediumblueKeyword_0_88());
                         
@@ -21797,9 +21505,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 90 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9386:8: lv_value_0_90= 'mediumorchid'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9208:8: lv_value_0_90= 'mediumorchid'
                     {
-                    lv_value_0_90=(Token)match(input,412,FOLLOW_412_in_ruleNamedColor22096); 
+                    lv_value_0_90=(Token)match(input,403,FOLLOW_403_in_ruleNamedColor21632); 
 
                             newLeafNode(lv_value_0_90, grammarAccess.getNamedColorAccess().getValueMediumorchidKeyword_0_89());
                         
@@ -21813,9 +21521,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 91 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9398:8: lv_value_0_91= 'mediumpurple'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9220:8: lv_value_0_91= 'mediumpurple'
                     {
-                    lv_value_0_91=(Token)match(input,413,FOLLOW_413_in_ruleNamedColor22125); 
+                    lv_value_0_91=(Token)match(input,404,FOLLOW_404_in_ruleNamedColor21661); 
 
                             newLeafNode(lv_value_0_91, grammarAccess.getNamedColorAccess().getValueMediumpurpleKeyword_0_90());
                         
@@ -21829,9 +21537,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 92 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9410:8: lv_value_0_92= 'mediumseagreen'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9232:8: lv_value_0_92= 'mediumseagreen'
                     {
-                    lv_value_0_92=(Token)match(input,414,FOLLOW_414_in_ruleNamedColor22154); 
+                    lv_value_0_92=(Token)match(input,405,FOLLOW_405_in_ruleNamedColor21690); 
 
                             newLeafNode(lv_value_0_92, grammarAccess.getNamedColorAccess().getValueMediumseagreenKeyword_0_91());
                         
@@ -21845,9 +21553,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 93 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9422:8: lv_value_0_93= 'mediumslateblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9244:8: lv_value_0_93= 'mediumslateblue'
                     {
-                    lv_value_0_93=(Token)match(input,415,FOLLOW_415_in_ruleNamedColor22183); 
+                    lv_value_0_93=(Token)match(input,406,FOLLOW_406_in_ruleNamedColor21719); 
 
                             newLeafNode(lv_value_0_93, grammarAccess.getNamedColorAccess().getValueMediumslateblueKeyword_0_92());
                         
@@ -21861,9 +21569,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 94 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9434:8: lv_value_0_94= 'mediumspringgreen'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9256:8: lv_value_0_94= 'mediumspringgreen'
                     {
-                    lv_value_0_94=(Token)match(input,416,FOLLOW_416_in_ruleNamedColor22212); 
+                    lv_value_0_94=(Token)match(input,407,FOLLOW_407_in_ruleNamedColor21748); 
 
                             newLeafNode(lv_value_0_94, grammarAccess.getNamedColorAccess().getValueMediumspringgreenKeyword_0_93());
                         
@@ -21877,9 +21585,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 95 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9446:8: lv_value_0_95= 'mediumturquoise'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9268:8: lv_value_0_95= 'mediumturquoise'
                     {
-                    lv_value_0_95=(Token)match(input,417,FOLLOW_417_in_ruleNamedColor22241); 
+                    lv_value_0_95=(Token)match(input,408,FOLLOW_408_in_ruleNamedColor21777); 
 
                             newLeafNode(lv_value_0_95, grammarAccess.getNamedColorAccess().getValueMediumturquoiseKeyword_0_94());
                         
@@ -21893,9 +21601,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 96 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9458:8: lv_value_0_96= 'mediumvioletred'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9280:8: lv_value_0_96= 'mediumvioletred'
                     {
-                    lv_value_0_96=(Token)match(input,418,FOLLOW_418_in_ruleNamedColor22270); 
+                    lv_value_0_96=(Token)match(input,409,FOLLOW_409_in_ruleNamedColor21806); 
 
                             newLeafNode(lv_value_0_96, grammarAccess.getNamedColorAccess().getValueMediumvioletredKeyword_0_95());
                         
@@ -21909,9 +21617,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 97 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9470:8: lv_value_0_97= 'midnightblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9292:8: lv_value_0_97= 'midnightblue'
                     {
-                    lv_value_0_97=(Token)match(input,419,FOLLOW_419_in_ruleNamedColor22299); 
+                    lv_value_0_97=(Token)match(input,410,FOLLOW_410_in_ruleNamedColor21835); 
 
                             newLeafNode(lv_value_0_97, grammarAccess.getNamedColorAccess().getValueMidnightblueKeyword_0_96());
                         
@@ -21925,9 +21633,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 98 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9482:8: lv_value_0_98= 'mintcream'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9304:8: lv_value_0_98= 'mintcream'
                     {
-                    lv_value_0_98=(Token)match(input,420,FOLLOW_420_in_ruleNamedColor22328); 
+                    lv_value_0_98=(Token)match(input,411,FOLLOW_411_in_ruleNamedColor21864); 
 
                             newLeafNode(lv_value_0_98, grammarAccess.getNamedColorAccess().getValueMintcreamKeyword_0_97());
                         
@@ -21941,9 +21649,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 99 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9494:8: lv_value_0_99= 'mistyrose'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9316:8: lv_value_0_99= 'mistyrose'
                     {
-                    lv_value_0_99=(Token)match(input,421,FOLLOW_421_in_ruleNamedColor22357); 
+                    lv_value_0_99=(Token)match(input,412,FOLLOW_412_in_ruleNamedColor21893); 
 
                             newLeafNode(lv_value_0_99, grammarAccess.getNamedColorAccess().getValueMistyroseKeyword_0_98());
                         
@@ -21957,9 +21665,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 100 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9506:8: lv_value_0_100= 'moccasin'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9328:8: lv_value_0_100= 'moccasin'
                     {
-                    lv_value_0_100=(Token)match(input,422,FOLLOW_422_in_ruleNamedColor22386); 
+                    lv_value_0_100=(Token)match(input,413,FOLLOW_413_in_ruleNamedColor21922); 
 
                             newLeafNode(lv_value_0_100, grammarAccess.getNamedColorAccess().getValueMoccasinKeyword_0_99());
                         
@@ -21973,9 +21681,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 101 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9518:8: lv_value_0_101= 'navajowhite'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9340:8: lv_value_0_101= 'navajowhite'
                     {
-                    lv_value_0_101=(Token)match(input,423,FOLLOW_423_in_ruleNamedColor22415); 
+                    lv_value_0_101=(Token)match(input,414,FOLLOW_414_in_ruleNamedColor21951); 
 
                             newLeafNode(lv_value_0_101, grammarAccess.getNamedColorAccess().getValueNavajowhiteKeyword_0_100());
                         
@@ -21989,9 +21697,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 102 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9530:8: lv_value_0_102= 'navy'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9352:8: lv_value_0_102= 'navy'
                     {
-                    lv_value_0_102=(Token)match(input,424,FOLLOW_424_in_ruleNamedColor22444); 
+                    lv_value_0_102=(Token)match(input,415,FOLLOW_415_in_ruleNamedColor21980); 
 
                             newLeafNode(lv_value_0_102, grammarAccess.getNamedColorAccess().getValueNavyKeyword_0_101());
                         
@@ -22005,9 +21713,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 103 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9542:8: lv_value_0_103= 'oldlace'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9364:8: lv_value_0_103= 'oldlace'
                     {
-                    lv_value_0_103=(Token)match(input,425,FOLLOW_425_in_ruleNamedColor22473); 
+                    lv_value_0_103=(Token)match(input,416,FOLLOW_416_in_ruleNamedColor22009); 
 
                             newLeafNode(lv_value_0_103, grammarAccess.getNamedColorAccess().getValueOldlaceKeyword_0_102());
                         
@@ -22021,9 +21729,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 104 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9554:8: lv_value_0_104= 'olive'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9376:8: lv_value_0_104= 'olive'
                     {
-                    lv_value_0_104=(Token)match(input,426,FOLLOW_426_in_ruleNamedColor22502); 
+                    lv_value_0_104=(Token)match(input,417,FOLLOW_417_in_ruleNamedColor22038); 
 
                             newLeafNode(lv_value_0_104, grammarAccess.getNamedColorAccess().getValueOliveKeyword_0_103());
                         
@@ -22037,9 +21745,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 105 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9566:8: lv_value_0_105= 'olivedrab'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9388:8: lv_value_0_105= 'olivedrab'
                     {
-                    lv_value_0_105=(Token)match(input,427,FOLLOW_427_in_ruleNamedColor22531); 
+                    lv_value_0_105=(Token)match(input,418,FOLLOW_418_in_ruleNamedColor22067); 
 
                             newLeafNode(lv_value_0_105, grammarAccess.getNamedColorAccess().getValueOlivedrabKeyword_0_104());
                         
@@ -22053,9 +21761,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 106 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9578:8: lv_value_0_106= 'orange'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9400:8: lv_value_0_106= 'orange'
                     {
-                    lv_value_0_106=(Token)match(input,428,FOLLOW_428_in_ruleNamedColor22560); 
+                    lv_value_0_106=(Token)match(input,419,FOLLOW_419_in_ruleNamedColor22096); 
 
                             newLeafNode(lv_value_0_106, grammarAccess.getNamedColorAccess().getValueOrangeKeyword_0_105());
                         
@@ -22069,9 +21777,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 107 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9590:8: lv_value_0_107= 'orangered'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9412:8: lv_value_0_107= 'orangered'
                     {
-                    lv_value_0_107=(Token)match(input,429,FOLLOW_429_in_ruleNamedColor22589); 
+                    lv_value_0_107=(Token)match(input,420,FOLLOW_420_in_ruleNamedColor22125); 
 
                             newLeafNode(lv_value_0_107, grammarAccess.getNamedColorAccess().getValueOrangeredKeyword_0_106());
                         
@@ -22085,9 +21793,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 108 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9602:8: lv_value_0_108= 'orchid'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9424:8: lv_value_0_108= 'orchid'
                     {
-                    lv_value_0_108=(Token)match(input,430,FOLLOW_430_in_ruleNamedColor22618); 
+                    lv_value_0_108=(Token)match(input,421,FOLLOW_421_in_ruleNamedColor22154); 
 
                             newLeafNode(lv_value_0_108, grammarAccess.getNamedColorAccess().getValueOrchidKeyword_0_107());
                         
@@ -22101,9 +21809,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 109 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9614:8: lv_value_0_109= 'palegoldenrod'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9436:8: lv_value_0_109= 'palegoldenrod'
                     {
-                    lv_value_0_109=(Token)match(input,431,FOLLOW_431_in_ruleNamedColor22647); 
+                    lv_value_0_109=(Token)match(input,422,FOLLOW_422_in_ruleNamedColor22183); 
 
                             newLeafNode(lv_value_0_109, grammarAccess.getNamedColorAccess().getValuePalegoldenrodKeyword_0_108());
                         
@@ -22117,9 +21825,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 110 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9626:8: lv_value_0_110= 'palegreen'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9448:8: lv_value_0_110= 'palegreen'
                     {
-                    lv_value_0_110=(Token)match(input,432,FOLLOW_432_in_ruleNamedColor22676); 
+                    lv_value_0_110=(Token)match(input,423,FOLLOW_423_in_ruleNamedColor22212); 
 
                             newLeafNode(lv_value_0_110, grammarAccess.getNamedColorAccess().getValuePalegreenKeyword_0_109());
                         
@@ -22133,9 +21841,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 111 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9638:8: lv_value_0_111= 'paleturquoise'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9460:8: lv_value_0_111= 'paleturquoise'
                     {
-                    lv_value_0_111=(Token)match(input,433,FOLLOW_433_in_ruleNamedColor22705); 
+                    lv_value_0_111=(Token)match(input,424,FOLLOW_424_in_ruleNamedColor22241); 
 
                             newLeafNode(lv_value_0_111, grammarAccess.getNamedColorAccess().getValuePaleturquoiseKeyword_0_110());
                         
@@ -22149,9 +21857,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 112 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9650:8: lv_value_0_112= 'palevioletred'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9472:8: lv_value_0_112= 'palevioletred'
                     {
-                    lv_value_0_112=(Token)match(input,434,FOLLOW_434_in_ruleNamedColor22734); 
+                    lv_value_0_112=(Token)match(input,425,FOLLOW_425_in_ruleNamedColor22270); 
 
                             newLeafNode(lv_value_0_112, grammarAccess.getNamedColorAccess().getValuePalevioletredKeyword_0_111());
                         
@@ -22165,9 +21873,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 113 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9662:8: lv_value_0_113= 'papayawhip'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9484:8: lv_value_0_113= 'papayawhip'
                     {
-                    lv_value_0_113=(Token)match(input,435,FOLLOW_435_in_ruleNamedColor22763); 
+                    lv_value_0_113=(Token)match(input,426,FOLLOW_426_in_ruleNamedColor22299); 
 
                             newLeafNode(lv_value_0_113, grammarAccess.getNamedColorAccess().getValuePapayawhipKeyword_0_112());
                         
@@ -22181,9 +21889,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 114 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9674:8: lv_value_0_114= 'peachpuff'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9496:8: lv_value_0_114= 'peachpuff'
                     {
-                    lv_value_0_114=(Token)match(input,436,FOLLOW_436_in_ruleNamedColor22792); 
+                    lv_value_0_114=(Token)match(input,427,FOLLOW_427_in_ruleNamedColor22328); 
 
                             newLeafNode(lv_value_0_114, grammarAccess.getNamedColorAccess().getValuePeachpuffKeyword_0_113());
                         
@@ -22197,9 +21905,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 115 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9686:8: lv_value_0_115= 'peru'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9508:8: lv_value_0_115= 'peru'
                     {
-                    lv_value_0_115=(Token)match(input,437,FOLLOW_437_in_ruleNamedColor22821); 
+                    lv_value_0_115=(Token)match(input,428,FOLLOW_428_in_ruleNamedColor22357); 
 
                             newLeafNode(lv_value_0_115, grammarAccess.getNamedColorAccess().getValuePeruKeyword_0_114());
                         
@@ -22213,9 +21921,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 116 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9698:8: lv_value_0_116= 'pink'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9520:8: lv_value_0_116= 'pink'
                     {
-                    lv_value_0_116=(Token)match(input,438,FOLLOW_438_in_ruleNamedColor22850); 
+                    lv_value_0_116=(Token)match(input,429,FOLLOW_429_in_ruleNamedColor22386); 
 
                             newLeafNode(lv_value_0_116, grammarAccess.getNamedColorAccess().getValuePinkKeyword_0_115());
                         
@@ -22229,9 +21937,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 117 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9710:8: lv_value_0_117= 'plum'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9532:8: lv_value_0_117= 'plum'
                     {
-                    lv_value_0_117=(Token)match(input,439,FOLLOW_439_in_ruleNamedColor22879); 
+                    lv_value_0_117=(Token)match(input,430,FOLLOW_430_in_ruleNamedColor22415); 
 
                             newLeafNode(lv_value_0_117, grammarAccess.getNamedColorAccess().getValuePlumKeyword_0_116());
                         
@@ -22245,9 +21953,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 118 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9722:8: lv_value_0_118= 'powderblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9544:8: lv_value_0_118= 'powderblue'
                     {
-                    lv_value_0_118=(Token)match(input,440,FOLLOW_440_in_ruleNamedColor22908); 
+                    lv_value_0_118=(Token)match(input,431,FOLLOW_431_in_ruleNamedColor22444); 
 
                             newLeafNode(lv_value_0_118, grammarAccess.getNamedColorAccess().getValuePowderblueKeyword_0_117());
                         
@@ -22261,9 +21969,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 119 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9734:8: lv_value_0_119= 'purple'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9556:8: lv_value_0_119= 'purple'
                     {
-                    lv_value_0_119=(Token)match(input,441,FOLLOW_441_in_ruleNamedColor22937); 
+                    lv_value_0_119=(Token)match(input,432,FOLLOW_432_in_ruleNamedColor22473); 
 
                             newLeafNode(lv_value_0_119, grammarAccess.getNamedColorAccess().getValuePurpleKeyword_0_118());
                         
@@ -22277,9 +21985,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 120 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9746:8: lv_value_0_120= 'red'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9568:8: lv_value_0_120= 'red'
                     {
-                    lv_value_0_120=(Token)match(input,200,FOLLOW_200_in_ruleNamedColor22966); 
+                    lv_value_0_120=(Token)match(input,200,FOLLOW_200_in_ruleNamedColor22502); 
 
                             newLeafNode(lv_value_0_120, grammarAccess.getNamedColorAccess().getValueRedKeyword_0_119());
                         
@@ -22293,9 +22001,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 121 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9758:8: lv_value_0_121= 'rosybrown'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9580:8: lv_value_0_121= 'rosybrown'
                     {
-                    lv_value_0_121=(Token)match(input,442,FOLLOW_442_in_ruleNamedColor22995); 
+                    lv_value_0_121=(Token)match(input,433,FOLLOW_433_in_ruleNamedColor22531); 
 
                             newLeafNode(lv_value_0_121, grammarAccess.getNamedColorAccess().getValueRosybrownKeyword_0_120());
                         
@@ -22309,9 +22017,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 122 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9770:8: lv_value_0_122= 'royalblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9592:8: lv_value_0_122= 'royalblue'
                     {
-                    lv_value_0_122=(Token)match(input,443,FOLLOW_443_in_ruleNamedColor23024); 
+                    lv_value_0_122=(Token)match(input,434,FOLLOW_434_in_ruleNamedColor22560); 
 
                             newLeafNode(lv_value_0_122, grammarAccess.getNamedColorAccess().getValueRoyalblueKeyword_0_121());
                         
@@ -22325,9 +22033,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 123 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9782:8: lv_value_0_123= 'saddlebrown'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9604:8: lv_value_0_123= 'saddlebrown'
                     {
-                    lv_value_0_123=(Token)match(input,444,FOLLOW_444_in_ruleNamedColor23053); 
+                    lv_value_0_123=(Token)match(input,435,FOLLOW_435_in_ruleNamedColor22589); 
 
                             newLeafNode(lv_value_0_123, grammarAccess.getNamedColorAccess().getValueSaddlebrownKeyword_0_122());
                         
@@ -22341,9 +22049,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 124 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9794:8: lv_value_0_124= 'salmon'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9616:8: lv_value_0_124= 'salmon'
                     {
-                    lv_value_0_124=(Token)match(input,445,FOLLOW_445_in_ruleNamedColor23082); 
+                    lv_value_0_124=(Token)match(input,436,FOLLOW_436_in_ruleNamedColor22618); 
 
                             newLeafNode(lv_value_0_124, grammarAccess.getNamedColorAccess().getValueSalmonKeyword_0_123());
                         
@@ -22357,9 +22065,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 125 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9806:8: lv_value_0_125= 'sandybrown'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9628:8: lv_value_0_125= 'sandybrown'
                     {
-                    lv_value_0_125=(Token)match(input,446,FOLLOW_446_in_ruleNamedColor23111); 
+                    lv_value_0_125=(Token)match(input,437,FOLLOW_437_in_ruleNamedColor22647); 
 
                             newLeafNode(lv_value_0_125, grammarAccess.getNamedColorAccess().getValueSandybrownKeyword_0_124());
                         
@@ -22373,9 +22081,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 126 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9818:8: lv_value_0_126= 'seagreen'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9640:8: lv_value_0_126= 'seagreen'
                     {
-                    lv_value_0_126=(Token)match(input,447,FOLLOW_447_in_ruleNamedColor23140); 
+                    lv_value_0_126=(Token)match(input,438,FOLLOW_438_in_ruleNamedColor22676); 
 
                             newLeafNode(lv_value_0_126, grammarAccess.getNamedColorAccess().getValueSeagreenKeyword_0_125());
                         
@@ -22389,9 +22097,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 127 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9830:8: lv_value_0_127= 'seashell'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9652:8: lv_value_0_127= 'seashell'
                     {
-                    lv_value_0_127=(Token)match(input,448,FOLLOW_448_in_ruleNamedColor23169); 
+                    lv_value_0_127=(Token)match(input,439,FOLLOW_439_in_ruleNamedColor22705); 
 
                             newLeafNode(lv_value_0_127, grammarAccess.getNamedColorAccess().getValueSeashellKeyword_0_126());
                         
@@ -22405,9 +22113,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 128 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9842:8: lv_value_0_128= 'sienna'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9664:8: lv_value_0_128= 'sienna'
                     {
-                    lv_value_0_128=(Token)match(input,449,FOLLOW_449_in_ruleNamedColor23198); 
+                    lv_value_0_128=(Token)match(input,440,FOLLOW_440_in_ruleNamedColor22734); 
 
                             newLeafNode(lv_value_0_128, grammarAccess.getNamedColorAccess().getValueSiennaKeyword_0_127());
                         
@@ -22421,9 +22129,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 129 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9854:8: lv_value_0_129= 'silver'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9676:8: lv_value_0_129= 'silver'
                     {
-                    lv_value_0_129=(Token)match(input,450,FOLLOW_450_in_ruleNamedColor23227); 
+                    lv_value_0_129=(Token)match(input,441,FOLLOW_441_in_ruleNamedColor22763); 
 
                             newLeafNode(lv_value_0_129, grammarAccess.getNamedColorAccess().getValueSilverKeyword_0_128());
                         
@@ -22437,9 +22145,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 130 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9866:8: lv_value_0_130= 'skyblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9688:8: lv_value_0_130= 'skyblue'
                     {
-                    lv_value_0_130=(Token)match(input,451,FOLLOW_451_in_ruleNamedColor23256); 
+                    lv_value_0_130=(Token)match(input,442,FOLLOW_442_in_ruleNamedColor22792); 
 
                             newLeafNode(lv_value_0_130, grammarAccess.getNamedColorAccess().getValueSkyblueKeyword_0_129());
                         
@@ -22453,9 +22161,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 131 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9878:8: lv_value_0_131= 'slateblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9700:8: lv_value_0_131= 'slateblue'
                     {
-                    lv_value_0_131=(Token)match(input,452,FOLLOW_452_in_ruleNamedColor23285); 
+                    lv_value_0_131=(Token)match(input,443,FOLLOW_443_in_ruleNamedColor22821); 
 
                             newLeafNode(lv_value_0_131, grammarAccess.getNamedColorAccess().getValueSlateblueKeyword_0_130());
                         
@@ -22469,9 +22177,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 132 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9890:8: lv_value_0_132= 'slategray'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9712:8: lv_value_0_132= 'slategray'
                     {
-                    lv_value_0_132=(Token)match(input,453,FOLLOW_453_in_ruleNamedColor23314); 
+                    lv_value_0_132=(Token)match(input,444,FOLLOW_444_in_ruleNamedColor22850); 
 
                             newLeafNode(lv_value_0_132, grammarAccess.getNamedColorAccess().getValueSlategrayKeyword_0_131());
                         
@@ -22485,9 +22193,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 133 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9902:8: lv_value_0_133= 'slategrey'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9724:8: lv_value_0_133= 'slategrey'
                     {
-                    lv_value_0_133=(Token)match(input,454,FOLLOW_454_in_ruleNamedColor23343); 
+                    lv_value_0_133=(Token)match(input,445,FOLLOW_445_in_ruleNamedColor22879); 
 
                             newLeafNode(lv_value_0_133, grammarAccess.getNamedColorAccess().getValueSlategreyKeyword_0_132());
                         
@@ -22501,9 +22209,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 134 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9914:8: lv_value_0_134= 'snow'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9736:8: lv_value_0_134= 'snow'
                     {
-                    lv_value_0_134=(Token)match(input,455,FOLLOW_455_in_ruleNamedColor23372); 
+                    lv_value_0_134=(Token)match(input,446,FOLLOW_446_in_ruleNamedColor22908); 
 
                             newLeafNode(lv_value_0_134, grammarAccess.getNamedColorAccess().getValueSnowKeyword_0_133());
                         
@@ -22517,9 +22225,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 135 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9926:8: lv_value_0_135= 'springgreen'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9748:8: lv_value_0_135= 'springgreen'
                     {
-                    lv_value_0_135=(Token)match(input,456,FOLLOW_456_in_ruleNamedColor23401); 
+                    lv_value_0_135=(Token)match(input,447,FOLLOW_447_in_ruleNamedColor22937); 
 
                             newLeafNode(lv_value_0_135, grammarAccess.getNamedColorAccess().getValueSpringgreenKeyword_0_134());
                         
@@ -22533,9 +22241,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 136 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9938:8: lv_value_0_136= 'steelblue'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9760:8: lv_value_0_136= 'steelblue'
                     {
-                    lv_value_0_136=(Token)match(input,457,FOLLOW_457_in_ruleNamedColor23430); 
+                    lv_value_0_136=(Token)match(input,448,FOLLOW_448_in_ruleNamedColor22966); 
 
                             newLeafNode(lv_value_0_136, grammarAccess.getNamedColorAccess().getValueSteelblueKeyword_0_135());
                         
@@ -22549,9 +22257,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 137 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9950:8: lv_value_0_137= 'tan'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9772:8: lv_value_0_137= 'tan'
                     {
-                    lv_value_0_137=(Token)match(input,458,FOLLOW_458_in_ruleNamedColor23459); 
+                    lv_value_0_137=(Token)match(input,449,FOLLOW_449_in_ruleNamedColor22995); 
 
                             newLeafNode(lv_value_0_137, grammarAccess.getNamedColorAccess().getValueTanKeyword_0_136());
                         
@@ -22565,9 +22273,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 138 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9962:8: lv_value_0_138= 'teal'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9784:8: lv_value_0_138= 'teal'
                     {
-                    lv_value_0_138=(Token)match(input,459,FOLLOW_459_in_ruleNamedColor23488); 
+                    lv_value_0_138=(Token)match(input,450,FOLLOW_450_in_ruleNamedColor23024); 
 
                             newLeafNode(lv_value_0_138, grammarAccess.getNamedColorAccess().getValueTealKeyword_0_137());
                         
@@ -22581,9 +22289,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 139 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9974:8: lv_value_0_139= 'thistle'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9796:8: lv_value_0_139= 'thistle'
                     {
-                    lv_value_0_139=(Token)match(input,460,FOLLOW_460_in_ruleNamedColor23517); 
+                    lv_value_0_139=(Token)match(input,451,FOLLOW_451_in_ruleNamedColor23053); 
 
                             newLeafNode(lv_value_0_139, grammarAccess.getNamedColorAccess().getValueThistleKeyword_0_138());
                         
@@ -22597,9 +22305,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 140 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9986:8: lv_value_0_140= 'tomato'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9808:8: lv_value_0_140= 'tomato'
                     {
-                    lv_value_0_140=(Token)match(input,461,FOLLOW_461_in_ruleNamedColor23546); 
+                    lv_value_0_140=(Token)match(input,452,FOLLOW_452_in_ruleNamedColor23082); 
 
                             newLeafNode(lv_value_0_140, grammarAccess.getNamedColorAccess().getValueTomatoKeyword_0_139());
                         
@@ -22613,9 +22321,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 141 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9998:8: lv_value_0_141= 'turquoise'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9820:8: lv_value_0_141= 'turquoise'
                     {
-                    lv_value_0_141=(Token)match(input,462,FOLLOW_462_in_ruleNamedColor23575); 
+                    lv_value_0_141=(Token)match(input,453,FOLLOW_453_in_ruleNamedColor23111); 
 
                             newLeafNode(lv_value_0_141, grammarAccess.getNamedColorAccess().getValueTurquoiseKeyword_0_140());
                         
@@ -22629,9 +22337,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 142 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10010:8: lv_value_0_142= 'violet'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9832:8: lv_value_0_142= 'violet'
                     {
-                    lv_value_0_142=(Token)match(input,463,FOLLOW_463_in_ruleNamedColor23604); 
+                    lv_value_0_142=(Token)match(input,454,FOLLOW_454_in_ruleNamedColor23140); 
 
                             newLeafNode(lv_value_0_142, grammarAccess.getNamedColorAccess().getValueVioletKeyword_0_141());
                         
@@ -22645,9 +22353,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 143 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10022:8: lv_value_0_143= 'wheat'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9844:8: lv_value_0_143= 'wheat'
                     {
-                    lv_value_0_143=(Token)match(input,464,FOLLOW_464_in_ruleNamedColor23633); 
+                    lv_value_0_143=(Token)match(input,455,FOLLOW_455_in_ruleNamedColor23169); 
 
                             newLeafNode(lv_value_0_143, grammarAccess.getNamedColorAccess().getValueWheatKeyword_0_142());
                         
@@ -22661,9 +22369,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 144 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10034:8: lv_value_0_144= 'white'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9856:8: lv_value_0_144= 'white'
                     {
-                    lv_value_0_144=(Token)match(input,465,FOLLOW_465_in_ruleNamedColor23662); 
+                    lv_value_0_144=(Token)match(input,456,FOLLOW_456_in_ruleNamedColor23198); 
 
                             newLeafNode(lv_value_0_144, grammarAccess.getNamedColorAccess().getValueWhiteKeyword_0_143());
                         
@@ -22677,9 +22385,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 145 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10046:8: lv_value_0_145= 'whitesmoke'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9868:8: lv_value_0_145= 'whitesmoke'
                     {
-                    lv_value_0_145=(Token)match(input,466,FOLLOW_466_in_ruleNamedColor23691); 
+                    lv_value_0_145=(Token)match(input,457,FOLLOW_457_in_ruleNamedColor23227); 
 
                             newLeafNode(lv_value_0_145, grammarAccess.getNamedColorAccess().getValueWhitesmokeKeyword_0_144());
                         
@@ -22693,9 +22401,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 146 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10058:8: lv_value_0_146= 'yellow'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9880:8: lv_value_0_146= 'yellow'
                     {
-                    lv_value_0_146=(Token)match(input,467,FOLLOW_467_in_ruleNamedColor23720); 
+                    lv_value_0_146=(Token)match(input,458,FOLLOW_458_in_ruleNamedColor23256); 
 
                             newLeafNode(lv_value_0_146, grammarAccess.getNamedColorAccess().getValueYellowKeyword_0_145());
                         
@@ -22709,9 +22417,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 147 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10070:8: lv_value_0_147= 'yellowgreen'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9892:8: lv_value_0_147= 'yellowgreen'
                     {
-                    lv_value_0_147=(Token)match(input,468,FOLLOW_468_in_ruleNamedColor23749); 
+                    lv_value_0_147=(Token)match(input,459,FOLLOW_459_in_ruleNamedColor23285); 
 
                             newLeafNode(lv_value_0_147, grammarAccess.getNamedColorAccess().getValueYellowgreenKeyword_0_146());
                         
@@ -22725,9 +22433,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 148 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10082:8: lv_value_0_148= 'transparent'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9904:8: lv_value_0_148= 'transparent'
                     {
-                    lv_value_0_148=(Token)match(input,469,FOLLOW_469_in_ruleNamedColor23778); 
+                    lv_value_0_148=(Token)match(input,460,FOLLOW_460_in_ruleNamedColor23314); 
 
                             newLeafNode(lv_value_0_148, grammarAccess.getNamedColorAccess().getValueTransparentKeyword_0_147());
                         
@@ -22767,7 +22475,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRGBColor"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10105:1: entryRuleRGBColor returns [EObject current=null] : iv_ruleRGBColor= ruleRGBColor EOF ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9927:1: entryRuleRGBColor returns [EObject current=null] : iv_ruleRGBColor= ruleRGBColor EOF ;
     public final EObject entryRuleRGBColor() throws RecognitionException {
         EObject current = null;
 
@@ -22775,17 +22483,17 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10106:2: (iv_ruleRGBColor= ruleRGBColor EOF )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10107:2: iv_ruleRGBColor= ruleRGBColor EOF
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9928:2: (iv_ruleRGBColor= ruleRGBColor EOF )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9929:2: iv_ruleRGBColor= ruleRGBColor EOF
             {
              newCompositeNode(grammarAccess.getRGBColorRule()); 
-            pushFollow(FOLLOW_ruleRGBColor_in_entryRuleRGBColor23829);
+            pushFollow(FOLLOW_ruleRGBColor_in_entryRuleRGBColor23365);
             iv_ruleRGBColor=ruleRGBColor();
 
             state._fsp--;
 
              current =iv_ruleRGBColor; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRGBColor23839); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRGBColor23375); 
 
             }
 
@@ -22803,7 +22511,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRGBColor"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10114:1: ruleRGBColor returns [EObject current=null] : ( (otherlv_0= '#' ( (lv_hex_1_0= ruleHexDigit ) ) ) | (otherlv_2= 'rgb' otherlv_3= '(' ( (lv_r_4_0= ruleIntegerValue ) ) otherlv_5= ',' ( (lv_g_6_0= ruleIntegerValue ) ) otherlv_7= ',' ( (lv_b_8_0= ruleIntegerValue ) ) otherlv_9= ')' ) | (otherlv_10= 'rgb' otherlv_11= '(' ( (lv_rp_12_0= ruleIntegerValue ) ) otherlv_13= '%' otherlv_14= ',' ( (lv_gp_15_0= ruleIntegerValue ) ) otherlv_16= '%' otherlv_17= ',' ( (lv_bp_18_0= ruleIntegerValue ) ) otherlv_19= '%' otherlv_20= ')' ) | (otherlv_21= 'rgba' otherlv_22= '(' ( (lv_r_23_0= ruleIntegerValue ) ) otherlv_24= ',' ( (lv_g_25_0= ruleIntegerValue ) ) otherlv_26= ',' ( (lv_b_27_0= ruleIntegerValue ) ) otherlv_28= ',' ( (lv_alpha_29_0= ruleNumberValue ) ) otherlv_30= ')' ) | (otherlv_31= 'rgba' otherlv_32= '(' ( (lv_rp_33_0= ruleIntegerValue ) ) otherlv_34= '%' otherlv_35= ',' ( (lv_gp_36_0= ruleIntegerValue ) ) otherlv_37= '%' otherlv_38= ',' ( (lv_bp_39_0= ruleIntegerValue ) ) otherlv_40= '%' otherlv_41= ',' ( (lv_alpha_42_0= ruleNumberValue ) ) otherlv_43= ')' ) ) ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9936:1: ruleRGBColor returns [EObject current=null] : ( (otherlv_0= '#' ( (lv_hex_1_0= ruleHexDigit ) ) ) | (otherlv_2= 'rgb' otherlv_3= '(' ( (lv_r_4_0= ruleIntegerValue ) ) otherlv_5= ',' ( (lv_g_6_0= ruleIntegerValue ) ) otherlv_7= ',' ( (lv_b_8_0= ruleIntegerValue ) ) otherlv_9= ')' ) | (otherlv_10= 'rgb' otherlv_11= '(' ( (lv_rp_12_0= ruleIntegerValue ) ) otherlv_13= '%' otherlv_14= ',' ( (lv_gp_15_0= ruleIntegerValue ) ) otherlv_16= '%' otherlv_17= ',' ( (lv_bp_18_0= ruleIntegerValue ) ) otherlv_19= '%' otherlv_20= ')' ) | (otherlv_21= 'rgba' otherlv_22= '(' ( (lv_r_23_0= ruleIntegerValue ) ) otherlv_24= ',' ( (lv_g_25_0= ruleIntegerValue ) ) otherlv_26= ',' ( (lv_b_27_0= ruleIntegerValue ) ) otherlv_28= ',' ( (lv_alpha_29_0= ruleNumberValue ) ) otherlv_30= ')' ) | (otherlv_31= 'rgba' otherlv_32= '(' ( (lv_rp_33_0= ruleIntegerValue ) ) otherlv_34= '%' otherlv_35= ',' ( (lv_gp_36_0= ruleIntegerValue ) ) otherlv_37= '%' otherlv_38= ',' ( (lv_bp_39_0= ruleIntegerValue ) ) otherlv_40= '%' otherlv_41= ',' ( (lv_alpha_42_0= ruleNumberValue ) ) otherlv_43= ')' ) ) ;
     public final EObject ruleRGBColor() throws RecognitionException {
         EObject current = null;
 
@@ -22870,33 +22578,33 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10117:28: ( ( (otherlv_0= '#' ( (lv_hex_1_0= ruleHexDigit ) ) ) | (otherlv_2= 'rgb' otherlv_3= '(' ( (lv_r_4_0= ruleIntegerValue ) ) otherlv_5= ',' ( (lv_g_6_0= ruleIntegerValue ) ) otherlv_7= ',' ( (lv_b_8_0= ruleIntegerValue ) ) otherlv_9= ')' ) | (otherlv_10= 'rgb' otherlv_11= '(' ( (lv_rp_12_0= ruleIntegerValue ) ) otherlv_13= '%' otherlv_14= ',' ( (lv_gp_15_0= ruleIntegerValue ) ) otherlv_16= '%' otherlv_17= ',' ( (lv_bp_18_0= ruleIntegerValue ) ) otherlv_19= '%' otherlv_20= ')' ) | (otherlv_21= 'rgba' otherlv_22= '(' ( (lv_r_23_0= ruleIntegerValue ) ) otherlv_24= ',' ( (lv_g_25_0= ruleIntegerValue ) ) otherlv_26= ',' ( (lv_b_27_0= ruleIntegerValue ) ) otherlv_28= ',' ( (lv_alpha_29_0= ruleNumberValue ) ) otherlv_30= ')' ) | (otherlv_31= 'rgba' otherlv_32= '(' ( (lv_rp_33_0= ruleIntegerValue ) ) otherlv_34= '%' otherlv_35= ',' ( (lv_gp_36_0= ruleIntegerValue ) ) otherlv_37= '%' otherlv_38= ',' ( (lv_bp_39_0= ruleIntegerValue ) ) otherlv_40= '%' otherlv_41= ',' ( (lv_alpha_42_0= ruleNumberValue ) ) otherlv_43= ')' ) ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10118:1: ( (otherlv_0= '#' ( (lv_hex_1_0= ruleHexDigit ) ) ) | (otherlv_2= 'rgb' otherlv_3= '(' ( (lv_r_4_0= ruleIntegerValue ) ) otherlv_5= ',' ( (lv_g_6_0= ruleIntegerValue ) ) otherlv_7= ',' ( (lv_b_8_0= ruleIntegerValue ) ) otherlv_9= ')' ) | (otherlv_10= 'rgb' otherlv_11= '(' ( (lv_rp_12_0= ruleIntegerValue ) ) otherlv_13= '%' otherlv_14= ',' ( (lv_gp_15_0= ruleIntegerValue ) ) otherlv_16= '%' otherlv_17= ',' ( (lv_bp_18_0= ruleIntegerValue ) ) otherlv_19= '%' otherlv_20= ')' ) | (otherlv_21= 'rgba' otherlv_22= '(' ( (lv_r_23_0= ruleIntegerValue ) ) otherlv_24= ',' ( (lv_g_25_0= ruleIntegerValue ) ) otherlv_26= ',' ( (lv_b_27_0= ruleIntegerValue ) ) otherlv_28= ',' ( (lv_alpha_29_0= ruleNumberValue ) ) otherlv_30= ')' ) | (otherlv_31= 'rgba' otherlv_32= '(' ( (lv_rp_33_0= ruleIntegerValue ) ) otherlv_34= '%' otherlv_35= ',' ( (lv_gp_36_0= ruleIntegerValue ) ) otherlv_37= '%' otherlv_38= ',' ( (lv_bp_39_0= ruleIntegerValue ) ) otherlv_40= '%' otherlv_41= ',' ( (lv_alpha_42_0= ruleNumberValue ) ) otherlv_43= ')' ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9939:28: ( ( (otherlv_0= '#' ( (lv_hex_1_0= ruleHexDigit ) ) ) | (otherlv_2= 'rgb' otherlv_3= '(' ( (lv_r_4_0= ruleIntegerValue ) ) otherlv_5= ',' ( (lv_g_6_0= ruleIntegerValue ) ) otherlv_7= ',' ( (lv_b_8_0= ruleIntegerValue ) ) otherlv_9= ')' ) | (otherlv_10= 'rgb' otherlv_11= '(' ( (lv_rp_12_0= ruleIntegerValue ) ) otherlv_13= '%' otherlv_14= ',' ( (lv_gp_15_0= ruleIntegerValue ) ) otherlv_16= '%' otherlv_17= ',' ( (lv_bp_18_0= ruleIntegerValue ) ) otherlv_19= '%' otherlv_20= ')' ) | (otherlv_21= 'rgba' otherlv_22= '(' ( (lv_r_23_0= ruleIntegerValue ) ) otherlv_24= ',' ( (lv_g_25_0= ruleIntegerValue ) ) otherlv_26= ',' ( (lv_b_27_0= ruleIntegerValue ) ) otherlv_28= ',' ( (lv_alpha_29_0= ruleNumberValue ) ) otherlv_30= ')' ) | (otherlv_31= 'rgba' otherlv_32= '(' ( (lv_rp_33_0= ruleIntegerValue ) ) otherlv_34= '%' otherlv_35= ',' ( (lv_gp_36_0= ruleIntegerValue ) ) otherlv_37= '%' otherlv_38= ',' ( (lv_bp_39_0= ruleIntegerValue ) ) otherlv_40= '%' otherlv_41= ',' ( (lv_alpha_42_0= ruleNumberValue ) ) otherlv_43= ')' ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9940:1: ( (otherlv_0= '#' ( (lv_hex_1_0= ruleHexDigit ) ) ) | (otherlv_2= 'rgb' otherlv_3= '(' ( (lv_r_4_0= ruleIntegerValue ) ) otherlv_5= ',' ( (lv_g_6_0= ruleIntegerValue ) ) otherlv_7= ',' ( (lv_b_8_0= ruleIntegerValue ) ) otherlv_9= ')' ) | (otherlv_10= 'rgb' otherlv_11= '(' ( (lv_rp_12_0= ruleIntegerValue ) ) otherlv_13= '%' otherlv_14= ',' ( (lv_gp_15_0= ruleIntegerValue ) ) otherlv_16= '%' otherlv_17= ',' ( (lv_bp_18_0= ruleIntegerValue ) ) otherlv_19= '%' otherlv_20= ')' ) | (otherlv_21= 'rgba' otherlv_22= '(' ( (lv_r_23_0= ruleIntegerValue ) ) otherlv_24= ',' ( (lv_g_25_0= ruleIntegerValue ) ) otherlv_26= ',' ( (lv_b_27_0= ruleIntegerValue ) ) otherlv_28= ',' ( (lv_alpha_29_0= ruleNumberValue ) ) otherlv_30= ')' ) | (otherlv_31= 'rgba' otherlv_32= '(' ( (lv_rp_33_0= ruleIntegerValue ) ) otherlv_34= '%' otherlv_35= ',' ( (lv_gp_36_0= ruleIntegerValue ) ) otherlv_37= '%' otherlv_38= ',' ( (lv_bp_39_0= ruleIntegerValue ) ) otherlv_40= '%' otherlv_41= ',' ( (lv_alpha_42_0= ruleNumberValue ) ) otherlv_43= ')' ) )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10118:1: ( (otherlv_0= '#' ( (lv_hex_1_0= ruleHexDigit ) ) ) | (otherlv_2= 'rgb' otherlv_3= '(' ( (lv_r_4_0= ruleIntegerValue ) ) otherlv_5= ',' ( (lv_g_6_0= ruleIntegerValue ) ) otherlv_7= ',' ( (lv_b_8_0= ruleIntegerValue ) ) otherlv_9= ')' ) | (otherlv_10= 'rgb' otherlv_11= '(' ( (lv_rp_12_0= ruleIntegerValue ) ) otherlv_13= '%' otherlv_14= ',' ( (lv_gp_15_0= ruleIntegerValue ) ) otherlv_16= '%' otherlv_17= ',' ( (lv_bp_18_0= ruleIntegerValue ) ) otherlv_19= '%' otherlv_20= ')' ) | (otherlv_21= 'rgba' otherlv_22= '(' ( (lv_r_23_0= ruleIntegerValue ) ) otherlv_24= ',' ( (lv_g_25_0= ruleIntegerValue ) ) otherlv_26= ',' ( (lv_b_27_0= ruleIntegerValue ) ) otherlv_28= ',' ( (lv_alpha_29_0= ruleNumberValue ) ) otherlv_30= ')' ) | (otherlv_31= 'rgba' otherlv_32= '(' ( (lv_rp_33_0= ruleIntegerValue ) ) otherlv_34= '%' otherlv_35= ',' ( (lv_gp_36_0= ruleIntegerValue ) ) otherlv_37= '%' otherlv_38= ',' ( (lv_bp_39_0= ruleIntegerValue ) ) otherlv_40= '%' otherlv_41= ',' ( (lv_alpha_42_0= ruleNumberValue ) ) otherlv_43= ')' ) )
-            int alt85=5;
-            alt85 = dfa85.predict(input);
-            switch (alt85) {
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9940:1: ( (otherlv_0= '#' ( (lv_hex_1_0= ruleHexDigit ) ) ) | (otherlv_2= 'rgb' otherlv_3= '(' ( (lv_r_4_0= ruleIntegerValue ) ) otherlv_5= ',' ( (lv_g_6_0= ruleIntegerValue ) ) otherlv_7= ',' ( (lv_b_8_0= ruleIntegerValue ) ) otherlv_9= ')' ) | (otherlv_10= 'rgb' otherlv_11= '(' ( (lv_rp_12_0= ruleIntegerValue ) ) otherlv_13= '%' otherlv_14= ',' ( (lv_gp_15_0= ruleIntegerValue ) ) otherlv_16= '%' otherlv_17= ',' ( (lv_bp_18_0= ruleIntegerValue ) ) otherlv_19= '%' otherlv_20= ')' ) | (otherlv_21= 'rgba' otherlv_22= '(' ( (lv_r_23_0= ruleIntegerValue ) ) otherlv_24= ',' ( (lv_g_25_0= ruleIntegerValue ) ) otherlv_26= ',' ( (lv_b_27_0= ruleIntegerValue ) ) otherlv_28= ',' ( (lv_alpha_29_0= ruleNumberValue ) ) otherlv_30= ')' ) | (otherlv_31= 'rgba' otherlv_32= '(' ( (lv_rp_33_0= ruleIntegerValue ) ) otherlv_34= '%' otherlv_35= ',' ( (lv_gp_36_0= ruleIntegerValue ) ) otherlv_37= '%' otherlv_38= ',' ( (lv_bp_39_0= ruleIntegerValue ) ) otherlv_40= '%' otherlv_41= ',' ( (lv_alpha_42_0= ruleNumberValue ) ) otherlv_43= ')' ) )
+            int alt86=5;
+            alt86 = dfa86.predict(input);
+            switch (alt86) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10118:2: (otherlv_0= '#' ( (lv_hex_1_0= ruleHexDigit ) ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9940:2: (otherlv_0= '#' ( (lv_hex_1_0= ruleHexDigit ) ) )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10118:2: (otherlv_0= '#' ( (lv_hex_1_0= ruleHexDigit ) ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10118:4: otherlv_0= '#' ( (lv_hex_1_0= ruleHexDigit ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9940:2: (otherlv_0= '#' ( (lv_hex_1_0= ruleHexDigit ) ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9940:4: otherlv_0= '#' ( (lv_hex_1_0= ruleHexDigit ) )
                     {
-                    otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleRGBColor23877); 
+                    otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleRGBColor23413); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getRGBColorAccess().getNumberSignKeyword_0_0());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10122:1: ( (lv_hex_1_0= ruleHexDigit ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10123:1: (lv_hex_1_0= ruleHexDigit )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9944:1: ( (lv_hex_1_0= ruleHexDigit ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9945:1: (lv_hex_1_0= ruleHexDigit )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10123:1: (lv_hex_1_0= ruleHexDigit )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10124:3: lv_hex_1_0= ruleHexDigit
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9945:1: (lv_hex_1_0= ruleHexDigit )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9946:3: lv_hex_1_0= ruleHexDigit
                     {
                      
                     	        newCompositeNode(grammarAccess.getRGBColorAccess().getHexHexDigitParserRuleCall_0_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleHexDigit_in_ruleRGBColor23898);
+                    pushFollow(FOLLOW_ruleHexDigit_in_ruleRGBColor23434);
                     lv_hex_1_0=ruleHexDigit();
 
                     state._fsp--;
@@ -22925,29 +22633,29 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10141:6: (otherlv_2= 'rgb' otherlv_3= '(' ( (lv_r_4_0= ruleIntegerValue ) ) otherlv_5= ',' ( (lv_g_6_0= ruleIntegerValue ) ) otherlv_7= ',' ( (lv_b_8_0= ruleIntegerValue ) ) otherlv_9= ')' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9963:6: (otherlv_2= 'rgb' otherlv_3= '(' ( (lv_r_4_0= ruleIntegerValue ) ) otherlv_5= ',' ( (lv_g_6_0= ruleIntegerValue ) ) otherlv_7= ',' ( (lv_b_8_0= ruleIntegerValue ) ) otherlv_9= ')' )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10141:6: (otherlv_2= 'rgb' otherlv_3= '(' ( (lv_r_4_0= ruleIntegerValue ) ) otherlv_5= ',' ( (lv_g_6_0= ruleIntegerValue ) ) otherlv_7= ',' ( (lv_b_8_0= ruleIntegerValue ) ) otherlv_9= ')' )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10141:8: otherlv_2= 'rgb' otherlv_3= '(' ( (lv_r_4_0= ruleIntegerValue ) ) otherlv_5= ',' ( (lv_g_6_0= ruleIntegerValue ) ) otherlv_7= ',' ( (lv_b_8_0= ruleIntegerValue ) ) otherlv_9= ')'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9963:6: (otherlv_2= 'rgb' otherlv_3= '(' ( (lv_r_4_0= ruleIntegerValue ) ) otherlv_5= ',' ( (lv_g_6_0= ruleIntegerValue ) ) otherlv_7= ',' ( (lv_b_8_0= ruleIntegerValue ) ) otherlv_9= ')' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9963:8: otherlv_2= 'rgb' otherlv_3= '(' ( (lv_r_4_0= ruleIntegerValue ) ) otherlv_5= ',' ( (lv_g_6_0= ruleIntegerValue ) ) otherlv_7= ',' ( (lv_b_8_0= ruleIntegerValue ) ) otherlv_9= ')'
                     {
-                    otherlv_2=(Token)match(input,470,FOLLOW_470_in_ruleRGBColor23918); 
+                    otherlv_2=(Token)match(input,461,FOLLOW_461_in_ruleRGBColor23454); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getRGBColorAccess().getRgbKeyword_1_0());
                         
-                    otherlv_3=(Token)match(input,65,FOLLOW_65_in_ruleRGBColor23930); 
+                    otherlv_3=(Token)match(input,65,FOLLOW_65_in_ruleRGBColor23466); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getRGBColorAccess().getLeftParenthesisKeyword_1_1());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10149:1: ( (lv_r_4_0= ruleIntegerValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10150:1: (lv_r_4_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9971:1: ( (lv_r_4_0= ruleIntegerValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9972:1: (lv_r_4_0= ruleIntegerValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10150:1: (lv_r_4_0= ruleIntegerValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10151:3: lv_r_4_0= ruleIntegerValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9972:1: (lv_r_4_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9973:3: lv_r_4_0= ruleIntegerValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getRGBColorAccess().getRIntegerValueParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor23951);
+                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor23487);
                     lv_r_4_0=ruleIntegerValue();
 
                     state._fsp--;
@@ -22969,20 +22677,20 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_5=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor23963); 
+                    otherlv_5=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor23499); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getRGBColorAccess().getCommaKeyword_1_3());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10171:1: ( (lv_g_6_0= ruleIntegerValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10172:1: (lv_g_6_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9993:1: ( (lv_g_6_0= ruleIntegerValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9994:1: (lv_g_6_0= ruleIntegerValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10172:1: (lv_g_6_0= ruleIntegerValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10173:3: lv_g_6_0= ruleIntegerValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9994:1: (lv_g_6_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:9995:3: lv_g_6_0= ruleIntegerValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getRGBColorAccess().getGIntegerValueParserRuleCall_1_4_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor23984);
+                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor23520);
                     lv_g_6_0=ruleIntegerValue();
 
                     state._fsp--;
@@ -23004,20 +22712,20 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_7=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor23996); 
+                    otherlv_7=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor23532); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getRGBColorAccess().getCommaKeyword_1_5());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10193:1: ( (lv_b_8_0= ruleIntegerValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10194:1: (lv_b_8_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10015:1: ( (lv_b_8_0= ruleIntegerValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10016:1: (lv_b_8_0= ruleIntegerValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10194:1: (lv_b_8_0= ruleIntegerValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10195:3: lv_b_8_0= ruleIntegerValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10016:1: (lv_b_8_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10017:3: lv_b_8_0= ruleIntegerValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getRGBColorAccess().getBIntegerValueParserRuleCall_1_6_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor24017);
+                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor23553);
                     lv_b_8_0=ruleIntegerValue();
 
                     state._fsp--;
@@ -23039,7 +22747,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_9=(Token)match(input,67,FOLLOW_67_in_ruleRGBColor24029); 
+                    otherlv_9=(Token)match(input,67,FOLLOW_67_in_ruleRGBColor23565); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getRGBColorAccess().getRightParenthesisKeyword_1_7());
                         
@@ -23050,29 +22758,29 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10216:6: (otherlv_10= 'rgb' otherlv_11= '(' ( (lv_rp_12_0= ruleIntegerValue ) ) otherlv_13= '%' otherlv_14= ',' ( (lv_gp_15_0= ruleIntegerValue ) ) otherlv_16= '%' otherlv_17= ',' ( (lv_bp_18_0= ruleIntegerValue ) ) otherlv_19= '%' otherlv_20= ')' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10038:6: (otherlv_10= 'rgb' otherlv_11= '(' ( (lv_rp_12_0= ruleIntegerValue ) ) otherlv_13= '%' otherlv_14= ',' ( (lv_gp_15_0= ruleIntegerValue ) ) otherlv_16= '%' otherlv_17= ',' ( (lv_bp_18_0= ruleIntegerValue ) ) otherlv_19= '%' otherlv_20= ')' )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10216:6: (otherlv_10= 'rgb' otherlv_11= '(' ( (lv_rp_12_0= ruleIntegerValue ) ) otherlv_13= '%' otherlv_14= ',' ( (lv_gp_15_0= ruleIntegerValue ) ) otherlv_16= '%' otherlv_17= ',' ( (lv_bp_18_0= ruleIntegerValue ) ) otherlv_19= '%' otherlv_20= ')' )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10216:8: otherlv_10= 'rgb' otherlv_11= '(' ( (lv_rp_12_0= ruleIntegerValue ) ) otherlv_13= '%' otherlv_14= ',' ( (lv_gp_15_0= ruleIntegerValue ) ) otherlv_16= '%' otherlv_17= ',' ( (lv_bp_18_0= ruleIntegerValue ) ) otherlv_19= '%' otherlv_20= ')'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10038:6: (otherlv_10= 'rgb' otherlv_11= '(' ( (lv_rp_12_0= ruleIntegerValue ) ) otherlv_13= '%' otherlv_14= ',' ( (lv_gp_15_0= ruleIntegerValue ) ) otherlv_16= '%' otherlv_17= ',' ( (lv_bp_18_0= ruleIntegerValue ) ) otherlv_19= '%' otherlv_20= ')' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10038:8: otherlv_10= 'rgb' otherlv_11= '(' ( (lv_rp_12_0= ruleIntegerValue ) ) otherlv_13= '%' otherlv_14= ',' ( (lv_gp_15_0= ruleIntegerValue ) ) otherlv_16= '%' otherlv_17= ',' ( (lv_bp_18_0= ruleIntegerValue ) ) otherlv_19= '%' otherlv_20= ')'
                     {
-                    otherlv_10=(Token)match(input,470,FOLLOW_470_in_ruleRGBColor24049); 
+                    otherlv_10=(Token)match(input,461,FOLLOW_461_in_ruleRGBColor23585); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getRGBColorAccess().getRgbKeyword_2_0());
                         
-                    otherlv_11=(Token)match(input,65,FOLLOW_65_in_ruleRGBColor24061); 
+                    otherlv_11=(Token)match(input,65,FOLLOW_65_in_ruleRGBColor23597); 
 
                         	newLeafNode(otherlv_11, grammarAccess.getRGBColorAccess().getLeftParenthesisKeyword_2_1());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10224:1: ( (lv_rp_12_0= ruleIntegerValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10225:1: (lv_rp_12_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10046:1: ( (lv_rp_12_0= ruleIntegerValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10047:1: (lv_rp_12_0= ruleIntegerValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10225:1: (lv_rp_12_0= ruleIntegerValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10226:3: lv_rp_12_0= ruleIntegerValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10047:1: (lv_rp_12_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10048:3: lv_rp_12_0= ruleIntegerValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getRGBColorAccess().getRpIntegerValueParserRuleCall_2_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor24082);
+                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor23618);
                     lv_rp_12_0=ruleIntegerValue();
 
                     state._fsp--;
@@ -23094,24 +22802,24 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_13=(Token)match(input,277,FOLLOW_277_in_ruleRGBColor24094); 
+                    otherlv_13=(Token)match(input,277,FOLLOW_277_in_ruleRGBColor23630); 
 
                         	newLeafNode(otherlv_13, grammarAccess.getRGBColorAccess().getPercentSignKeyword_2_3());
                         
-                    otherlv_14=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor24106); 
+                    otherlv_14=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor23642); 
 
                         	newLeafNode(otherlv_14, grammarAccess.getRGBColorAccess().getCommaKeyword_2_4());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10250:1: ( (lv_gp_15_0= ruleIntegerValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10251:1: (lv_gp_15_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10072:1: ( (lv_gp_15_0= ruleIntegerValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10073:1: (lv_gp_15_0= ruleIntegerValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10251:1: (lv_gp_15_0= ruleIntegerValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10252:3: lv_gp_15_0= ruleIntegerValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10073:1: (lv_gp_15_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10074:3: lv_gp_15_0= ruleIntegerValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getRGBColorAccess().getGpIntegerValueParserRuleCall_2_5_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor24127);
+                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor23663);
                     lv_gp_15_0=ruleIntegerValue();
 
                     state._fsp--;
@@ -23133,24 +22841,24 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_16=(Token)match(input,277,FOLLOW_277_in_ruleRGBColor24139); 
+                    otherlv_16=(Token)match(input,277,FOLLOW_277_in_ruleRGBColor23675); 
 
                         	newLeafNode(otherlv_16, grammarAccess.getRGBColorAccess().getPercentSignKeyword_2_6());
                         
-                    otherlv_17=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor24151); 
+                    otherlv_17=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor23687); 
 
                         	newLeafNode(otherlv_17, grammarAccess.getRGBColorAccess().getCommaKeyword_2_7());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10276:1: ( (lv_bp_18_0= ruleIntegerValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10277:1: (lv_bp_18_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10098:1: ( (lv_bp_18_0= ruleIntegerValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10099:1: (lv_bp_18_0= ruleIntegerValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10277:1: (lv_bp_18_0= ruleIntegerValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10278:3: lv_bp_18_0= ruleIntegerValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10099:1: (lv_bp_18_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10100:3: lv_bp_18_0= ruleIntegerValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getRGBColorAccess().getBpIntegerValueParserRuleCall_2_8_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor24172);
+                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor23708);
                     lv_bp_18_0=ruleIntegerValue();
 
                     state._fsp--;
@@ -23172,11 +22880,11 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_19=(Token)match(input,277,FOLLOW_277_in_ruleRGBColor24184); 
+                    otherlv_19=(Token)match(input,277,FOLLOW_277_in_ruleRGBColor23720); 
 
                         	newLeafNode(otherlv_19, grammarAccess.getRGBColorAccess().getPercentSignKeyword_2_9());
                         
-                    otherlv_20=(Token)match(input,67,FOLLOW_67_in_ruleRGBColor24196); 
+                    otherlv_20=(Token)match(input,67,FOLLOW_67_in_ruleRGBColor23732); 
 
                         	newLeafNode(otherlv_20, grammarAccess.getRGBColorAccess().getRightParenthesisKeyword_2_10());
                         
@@ -23187,29 +22895,29 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10303:6: (otherlv_21= 'rgba' otherlv_22= '(' ( (lv_r_23_0= ruleIntegerValue ) ) otherlv_24= ',' ( (lv_g_25_0= ruleIntegerValue ) ) otherlv_26= ',' ( (lv_b_27_0= ruleIntegerValue ) ) otherlv_28= ',' ( (lv_alpha_29_0= ruleNumberValue ) ) otherlv_30= ')' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10125:6: (otherlv_21= 'rgba' otherlv_22= '(' ( (lv_r_23_0= ruleIntegerValue ) ) otherlv_24= ',' ( (lv_g_25_0= ruleIntegerValue ) ) otherlv_26= ',' ( (lv_b_27_0= ruleIntegerValue ) ) otherlv_28= ',' ( (lv_alpha_29_0= ruleNumberValue ) ) otherlv_30= ')' )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10303:6: (otherlv_21= 'rgba' otherlv_22= '(' ( (lv_r_23_0= ruleIntegerValue ) ) otherlv_24= ',' ( (lv_g_25_0= ruleIntegerValue ) ) otherlv_26= ',' ( (lv_b_27_0= ruleIntegerValue ) ) otherlv_28= ',' ( (lv_alpha_29_0= ruleNumberValue ) ) otherlv_30= ')' )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10303:8: otherlv_21= 'rgba' otherlv_22= '(' ( (lv_r_23_0= ruleIntegerValue ) ) otherlv_24= ',' ( (lv_g_25_0= ruleIntegerValue ) ) otherlv_26= ',' ( (lv_b_27_0= ruleIntegerValue ) ) otherlv_28= ',' ( (lv_alpha_29_0= ruleNumberValue ) ) otherlv_30= ')'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10125:6: (otherlv_21= 'rgba' otherlv_22= '(' ( (lv_r_23_0= ruleIntegerValue ) ) otherlv_24= ',' ( (lv_g_25_0= ruleIntegerValue ) ) otherlv_26= ',' ( (lv_b_27_0= ruleIntegerValue ) ) otherlv_28= ',' ( (lv_alpha_29_0= ruleNumberValue ) ) otherlv_30= ')' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10125:8: otherlv_21= 'rgba' otherlv_22= '(' ( (lv_r_23_0= ruleIntegerValue ) ) otherlv_24= ',' ( (lv_g_25_0= ruleIntegerValue ) ) otherlv_26= ',' ( (lv_b_27_0= ruleIntegerValue ) ) otherlv_28= ',' ( (lv_alpha_29_0= ruleNumberValue ) ) otherlv_30= ')'
                     {
-                    otherlv_21=(Token)match(input,471,FOLLOW_471_in_ruleRGBColor24216); 
+                    otherlv_21=(Token)match(input,462,FOLLOW_462_in_ruleRGBColor23752); 
 
                         	newLeafNode(otherlv_21, grammarAccess.getRGBColorAccess().getRgbaKeyword_3_0());
                         
-                    otherlv_22=(Token)match(input,65,FOLLOW_65_in_ruleRGBColor24228); 
+                    otherlv_22=(Token)match(input,65,FOLLOW_65_in_ruleRGBColor23764); 
 
                         	newLeafNode(otherlv_22, grammarAccess.getRGBColorAccess().getLeftParenthesisKeyword_3_1());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10311:1: ( (lv_r_23_0= ruleIntegerValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10312:1: (lv_r_23_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10133:1: ( (lv_r_23_0= ruleIntegerValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10134:1: (lv_r_23_0= ruleIntegerValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10312:1: (lv_r_23_0= ruleIntegerValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10313:3: lv_r_23_0= ruleIntegerValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10134:1: (lv_r_23_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10135:3: lv_r_23_0= ruleIntegerValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getRGBColorAccess().getRIntegerValueParserRuleCall_3_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor24249);
+                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor23785);
                     lv_r_23_0=ruleIntegerValue();
 
                     state._fsp--;
@@ -23231,20 +22939,20 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_24=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor24261); 
+                    otherlv_24=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor23797); 
 
                         	newLeafNode(otherlv_24, grammarAccess.getRGBColorAccess().getCommaKeyword_3_3());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10333:1: ( (lv_g_25_0= ruleIntegerValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10334:1: (lv_g_25_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10155:1: ( (lv_g_25_0= ruleIntegerValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10156:1: (lv_g_25_0= ruleIntegerValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10334:1: (lv_g_25_0= ruleIntegerValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10335:3: lv_g_25_0= ruleIntegerValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10156:1: (lv_g_25_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10157:3: lv_g_25_0= ruleIntegerValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getRGBColorAccess().getGIntegerValueParserRuleCall_3_4_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor24282);
+                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor23818);
                     lv_g_25_0=ruleIntegerValue();
 
                     state._fsp--;
@@ -23266,20 +22974,20 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_26=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor24294); 
+                    otherlv_26=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor23830); 
 
                         	newLeafNode(otherlv_26, grammarAccess.getRGBColorAccess().getCommaKeyword_3_5());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10355:1: ( (lv_b_27_0= ruleIntegerValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10356:1: (lv_b_27_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10177:1: ( (lv_b_27_0= ruleIntegerValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10178:1: (lv_b_27_0= ruleIntegerValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10356:1: (lv_b_27_0= ruleIntegerValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10357:3: lv_b_27_0= ruleIntegerValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10178:1: (lv_b_27_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10179:3: lv_b_27_0= ruleIntegerValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getRGBColorAccess().getBIntegerValueParserRuleCall_3_6_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor24315);
+                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor23851);
                     lv_b_27_0=ruleIntegerValue();
 
                     state._fsp--;
@@ -23301,20 +23009,20 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_28=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor24327); 
+                    otherlv_28=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor23863); 
 
                         	newLeafNode(otherlv_28, grammarAccess.getRGBColorAccess().getCommaKeyword_3_7());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10377:1: ( (lv_alpha_29_0= ruleNumberValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10378:1: (lv_alpha_29_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10199:1: ( (lv_alpha_29_0= ruleNumberValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10200:1: (lv_alpha_29_0= ruleNumberValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10378:1: (lv_alpha_29_0= ruleNumberValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10379:3: lv_alpha_29_0= ruleNumberValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10200:1: (lv_alpha_29_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10201:3: lv_alpha_29_0= ruleNumberValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getRGBColorAccess().getAlphaNumberValueParserRuleCall_3_8_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNumberValue_in_ruleRGBColor24348);
+                    pushFollow(FOLLOW_ruleNumberValue_in_ruleRGBColor23884);
                     lv_alpha_29_0=ruleNumberValue();
 
                     state._fsp--;
@@ -23336,7 +23044,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_30=(Token)match(input,67,FOLLOW_67_in_ruleRGBColor24360); 
+                    otherlv_30=(Token)match(input,67,FOLLOW_67_in_ruleRGBColor23896); 
 
                         	newLeafNode(otherlv_30, grammarAccess.getRGBColorAccess().getRightParenthesisKeyword_3_9());
                         
@@ -23347,29 +23055,29 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10400:6: (otherlv_31= 'rgba' otherlv_32= '(' ( (lv_rp_33_0= ruleIntegerValue ) ) otherlv_34= '%' otherlv_35= ',' ( (lv_gp_36_0= ruleIntegerValue ) ) otherlv_37= '%' otherlv_38= ',' ( (lv_bp_39_0= ruleIntegerValue ) ) otherlv_40= '%' otherlv_41= ',' ( (lv_alpha_42_0= ruleNumberValue ) ) otherlv_43= ')' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10222:6: (otherlv_31= 'rgba' otherlv_32= '(' ( (lv_rp_33_0= ruleIntegerValue ) ) otherlv_34= '%' otherlv_35= ',' ( (lv_gp_36_0= ruleIntegerValue ) ) otherlv_37= '%' otherlv_38= ',' ( (lv_bp_39_0= ruleIntegerValue ) ) otherlv_40= '%' otherlv_41= ',' ( (lv_alpha_42_0= ruleNumberValue ) ) otherlv_43= ')' )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10400:6: (otherlv_31= 'rgba' otherlv_32= '(' ( (lv_rp_33_0= ruleIntegerValue ) ) otherlv_34= '%' otherlv_35= ',' ( (lv_gp_36_0= ruleIntegerValue ) ) otherlv_37= '%' otherlv_38= ',' ( (lv_bp_39_0= ruleIntegerValue ) ) otherlv_40= '%' otherlv_41= ',' ( (lv_alpha_42_0= ruleNumberValue ) ) otherlv_43= ')' )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10400:8: otherlv_31= 'rgba' otherlv_32= '(' ( (lv_rp_33_0= ruleIntegerValue ) ) otherlv_34= '%' otherlv_35= ',' ( (lv_gp_36_0= ruleIntegerValue ) ) otherlv_37= '%' otherlv_38= ',' ( (lv_bp_39_0= ruleIntegerValue ) ) otherlv_40= '%' otherlv_41= ',' ( (lv_alpha_42_0= ruleNumberValue ) ) otherlv_43= ')'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10222:6: (otherlv_31= 'rgba' otherlv_32= '(' ( (lv_rp_33_0= ruleIntegerValue ) ) otherlv_34= '%' otherlv_35= ',' ( (lv_gp_36_0= ruleIntegerValue ) ) otherlv_37= '%' otherlv_38= ',' ( (lv_bp_39_0= ruleIntegerValue ) ) otherlv_40= '%' otherlv_41= ',' ( (lv_alpha_42_0= ruleNumberValue ) ) otherlv_43= ')' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10222:8: otherlv_31= 'rgba' otherlv_32= '(' ( (lv_rp_33_0= ruleIntegerValue ) ) otherlv_34= '%' otherlv_35= ',' ( (lv_gp_36_0= ruleIntegerValue ) ) otherlv_37= '%' otherlv_38= ',' ( (lv_bp_39_0= ruleIntegerValue ) ) otherlv_40= '%' otherlv_41= ',' ( (lv_alpha_42_0= ruleNumberValue ) ) otherlv_43= ')'
                     {
-                    otherlv_31=(Token)match(input,471,FOLLOW_471_in_ruleRGBColor24380); 
+                    otherlv_31=(Token)match(input,462,FOLLOW_462_in_ruleRGBColor23916); 
 
                         	newLeafNode(otherlv_31, grammarAccess.getRGBColorAccess().getRgbaKeyword_4_0());
                         
-                    otherlv_32=(Token)match(input,65,FOLLOW_65_in_ruleRGBColor24392); 
+                    otherlv_32=(Token)match(input,65,FOLLOW_65_in_ruleRGBColor23928); 
 
                         	newLeafNode(otherlv_32, grammarAccess.getRGBColorAccess().getLeftParenthesisKeyword_4_1());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10408:1: ( (lv_rp_33_0= ruleIntegerValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10409:1: (lv_rp_33_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10230:1: ( (lv_rp_33_0= ruleIntegerValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10231:1: (lv_rp_33_0= ruleIntegerValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10409:1: (lv_rp_33_0= ruleIntegerValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10410:3: lv_rp_33_0= ruleIntegerValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10231:1: (lv_rp_33_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10232:3: lv_rp_33_0= ruleIntegerValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getRGBColorAccess().getRpIntegerValueParserRuleCall_4_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor24413);
+                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor23949);
                     lv_rp_33_0=ruleIntegerValue();
 
                     state._fsp--;
@@ -23391,24 +23099,24 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_34=(Token)match(input,277,FOLLOW_277_in_ruleRGBColor24425); 
+                    otherlv_34=(Token)match(input,277,FOLLOW_277_in_ruleRGBColor23961); 
 
                         	newLeafNode(otherlv_34, grammarAccess.getRGBColorAccess().getPercentSignKeyword_4_3());
                         
-                    otherlv_35=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor24437); 
+                    otherlv_35=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor23973); 
 
                         	newLeafNode(otherlv_35, grammarAccess.getRGBColorAccess().getCommaKeyword_4_4());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10434:1: ( (lv_gp_36_0= ruleIntegerValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10435:1: (lv_gp_36_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10256:1: ( (lv_gp_36_0= ruleIntegerValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10257:1: (lv_gp_36_0= ruleIntegerValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10435:1: (lv_gp_36_0= ruleIntegerValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10436:3: lv_gp_36_0= ruleIntegerValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10257:1: (lv_gp_36_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10258:3: lv_gp_36_0= ruleIntegerValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getRGBColorAccess().getGpIntegerValueParserRuleCall_4_5_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor24458);
+                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor23994);
                     lv_gp_36_0=ruleIntegerValue();
 
                     state._fsp--;
@@ -23430,24 +23138,24 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_37=(Token)match(input,277,FOLLOW_277_in_ruleRGBColor24470); 
+                    otherlv_37=(Token)match(input,277,FOLLOW_277_in_ruleRGBColor24006); 
 
                         	newLeafNode(otherlv_37, grammarAccess.getRGBColorAccess().getPercentSignKeyword_4_6());
                         
-                    otherlv_38=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor24482); 
+                    otherlv_38=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor24018); 
 
                         	newLeafNode(otherlv_38, grammarAccess.getRGBColorAccess().getCommaKeyword_4_7());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10460:1: ( (lv_bp_39_0= ruleIntegerValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10461:1: (lv_bp_39_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10282:1: ( (lv_bp_39_0= ruleIntegerValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10283:1: (lv_bp_39_0= ruleIntegerValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10461:1: (lv_bp_39_0= ruleIntegerValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10462:3: lv_bp_39_0= ruleIntegerValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10283:1: (lv_bp_39_0= ruleIntegerValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10284:3: lv_bp_39_0= ruleIntegerValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getRGBColorAccess().getBpIntegerValueParserRuleCall_4_8_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor24503);
+                    pushFollow(FOLLOW_ruleIntegerValue_in_ruleRGBColor24039);
                     lv_bp_39_0=ruleIntegerValue();
 
                     state._fsp--;
@@ -23469,24 +23177,24 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_40=(Token)match(input,277,FOLLOW_277_in_ruleRGBColor24515); 
+                    otherlv_40=(Token)match(input,277,FOLLOW_277_in_ruleRGBColor24051); 
 
                         	newLeafNode(otherlv_40, grammarAccess.getRGBColorAccess().getPercentSignKeyword_4_9());
                         
-                    otherlv_41=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor24527); 
+                    otherlv_41=(Token)match(input,66,FOLLOW_66_in_ruleRGBColor24063); 
 
                         	newLeafNode(otherlv_41, grammarAccess.getRGBColorAccess().getCommaKeyword_4_10());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10486:1: ( (lv_alpha_42_0= ruleNumberValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10487:1: (lv_alpha_42_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10308:1: ( (lv_alpha_42_0= ruleNumberValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10309:1: (lv_alpha_42_0= ruleNumberValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10487:1: (lv_alpha_42_0= ruleNumberValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10488:3: lv_alpha_42_0= ruleNumberValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10309:1: (lv_alpha_42_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10310:3: lv_alpha_42_0= ruleNumberValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getRGBColorAccess().getAlphaNumberValueParserRuleCall_4_11_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNumberValue_in_ruleRGBColor24548);
+                    pushFollow(FOLLOW_ruleNumberValue_in_ruleRGBColor24084);
                     lv_alpha_42_0=ruleNumberValue();
 
                     state._fsp--;
@@ -23508,7 +23216,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_43=(Token)match(input,67,FOLLOW_67_in_ruleRGBColor24560); 
+                    otherlv_43=(Token)match(input,67,FOLLOW_67_in_ruleRGBColor24096); 
 
                         	newLeafNode(otherlv_43, grammarAccess.getRGBColorAccess().getRightParenthesisKeyword_4_12());
                         
@@ -23539,7 +23247,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHSBColor"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10516:1: entryRuleHSBColor returns [EObject current=null] : iv_ruleHSBColor= ruleHSBColor EOF ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10338:1: entryRuleHSBColor returns [EObject current=null] : iv_ruleHSBColor= ruleHSBColor EOF ;
     public final EObject entryRuleHSBColor() throws RecognitionException {
         EObject current = null;
 
@@ -23547,17 +23255,17 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10517:2: (iv_ruleHSBColor= ruleHSBColor EOF )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10518:2: iv_ruleHSBColor= ruleHSBColor EOF
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10339:2: (iv_ruleHSBColor= ruleHSBColor EOF )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10340:2: iv_ruleHSBColor= ruleHSBColor EOF
             {
              newCompositeNode(grammarAccess.getHSBColorRule()); 
-            pushFollow(FOLLOW_ruleHSBColor_in_entryRuleHSBColor24597);
+            pushFollow(FOLLOW_ruleHSBColor_in_entryRuleHSBColor24133);
             iv_ruleHSBColor=ruleHSBColor();
 
             state._fsp--;
 
              current =iv_ruleHSBColor; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleHSBColor24607); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleHSBColor24143); 
 
             }
 
@@ -23575,7 +23283,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHSBColor"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10525:1: ruleHSBColor returns [EObject current=null] : ( (otherlv_0= 'hsb' otherlv_1= '(' ( (lv_hue_2_0= ruleNumberValue ) ) otherlv_3= ',' ( (lv_saturation_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ',' ( (lv_brightness_7_0= ruleNumberValue ) ) otherlv_8= '%' otherlv_9= ')' ) | (otherlv_10= 'hsba' otherlv_11= '(' ( (lv_hue_12_0= ruleNumberValue ) ) otherlv_13= ',' ( (lv_saturation_14_0= ruleNumberValue ) ) otherlv_15= '%' otherlv_16= ',' ( (lv_brightness_17_0= ruleNumberValue ) ) otherlv_18= '%' otherlv_19= ',' ( (lv_alpha_20_0= ruleNumberValue ) ) otherlv_21= ')' ) ) ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10347:1: ruleHSBColor returns [EObject current=null] : ( (otherlv_0= 'hsb' otherlv_1= '(' ( (lv_hue_2_0= ruleNumberValue ) ) otherlv_3= ',' ( (lv_saturation_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ',' ( (lv_brightness_7_0= ruleNumberValue ) ) otherlv_8= '%' otherlv_9= ')' ) | (otherlv_10= 'hsba' otherlv_11= '(' ( (lv_hue_12_0= ruleNumberValue ) ) otherlv_13= ',' ( (lv_saturation_14_0= ruleNumberValue ) ) otherlv_15= '%' otherlv_16= ',' ( (lv_brightness_17_0= ruleNumberValue ) ) otherlv_18= '%' otherlv_19= ',' ( (lv_alpha_20_0= ruleNumberValue ) ) otherlv_21= ')' ) ) ;
     public final EObject ruleHSBColor() throws RecognitionException {
         EObject current = null;
 
@@ -23612,50 +23320,50 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10528:28: ( ( (otherlv_0= 'hsb' otherlv_1= '(' ( (lv_hue_2_0= ruleNumberValue ) ) otherlv_3= ',' ( (lv_saturation_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ',' ( (lv_brightness_7_0= ruleNumberValue ) ) otherlv_8= '%' otherlv_9= ')' ) | (otherlv_10= 'hsba' otherlv_11= '(' ( (lv_hue_12_0= ruleNumberValue ) ) otherlv_13= ',' ( (lv_saturation_14_0= ruleNumberValue ) ) otherlv_15= '%' otherlv_16= ',' ( (lv_brightness_17_0= ruleNumberValue ) ) otherlv_18= '%' otherlv_19= ',' ( (lv_alpha_20_0= ruleNumberValue ) ) otherlv_21= ')' ) ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10529:1: ( (otherlv_0= 'hsb' otherlv_1= '(' ( (lv_hue_2_0= ruleNumberValue ) ) otherlv_3= ',' ( (lv_saturation_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ',' ( (lv_brightness_7_0= ruleNumberValue ) ) otherlv_8= '%' otherlv_9= ')' ) | (otherlv_10= 'hsba' otherlv_11= '(' ( (lv_hue_12_0= ruleNumberValue ) ) otherlv_13= ',' ( (lv_saturation_14_0= ruleNumberValue ) ) otherlv_15= '%' otherlv_16= ',' ( (lv_brightness_17_0= ruleNumberValue ) ) otherlv_18= '%' otherlv_19= ',' ( (lv_alpha_20_0= ruleNumberValue ) ) otherlv_21= ')' ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10350:28: ( ( (otherlv_0= 'hsb' otherlv_1= '(' ( (lv_hue_2_0= ruleNumberValue ) ) otherlv_3= ',' ( (lv_saturation_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ',' ( (lv_brightness_7_0= ruleNumberValue ) ) otherlv_8= '%' otherlv_9= ')' ) | (otherlv_10= 'hsba' otherlv_11= '(' ( (lv_hue_12_0= ruleNumberValue ) ) otherlv_13= ',' ( (lv_saturation_14_0= ruleNumberValue ) ) otherlv_15= '%' otherlv_16= ',' ( (lv_brightness_17_0= ruleNumberValue ) ) otherlv_18= '%' otherlv_19= ',' ( (lv_alpha_20_0= ruleNumberValue ) ) otherlv_21= ')' ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10351:1: ( (otherlv_0= 'hsb' otherlv_1= '(' ( (lv_hue_2_0= ruleNumberValue ) ) otherlv_3= ',' ( (lv_saturation_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ',' ( (lv_brightness_7_0= ruleNumberValue ) ) otherlv_8= '%' otherlv_9= ')' ) | (otherlv_10= 'hsba' otherlv_11= '(' ( (lv_hue_12_0= ruleNumberValue ) ) otherlv_13= ',' ( (lv_saturation_14_0= ruleNumberValue ) ) otherlv_15= '%' otherlv_16= ',' ( (lv_brightness_17_0= ruleNumberValue ) ) otherlv_18= '%' otherlv_19= ',' ( (lv_alpha_20_0= ruleNumberValue ) ) otherlv_21= ')' ) )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10529:1: ( (otherlv_0= 'hsb' otherlv_1= '(' ( (lv_hue_2_0= ruleNumberValue ) ) otherlv_3= ',' ( (lv_saturation_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ',' ( (lv_brightness_7_0= ruleNumberValue ) ) otherlv_8= '%' otherlv_9= ')' ) | (otherlv_10= 'hsba' otherlv_11= '(' ( (lv_hue_12_0= ruleNumberValue ) ) otherlv_13= ',' ( (lv_saturation_14_0= ruleNumberValue ) ) otherlv_15= '%' otherlv_16= ',' ( (lv_brightness_17_0= ruleNumberValue ) ) otherlv_18= '%' otherlv_19= ',' ( (lv_alpha_20_0= ruleNumberValue ) ) otherlv_21= ')' ) )
-            int alt86=2;
-            int LA86_0 = input.LA(1);
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10351:1: ( (otherlv_0= 'hsb' otherlv_1= '(' ( (lv_hue_2_0= ruleNumberValue ) ) otherlv_3= ',' ( (lv_saturation_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ',' ( (lv_brightness_7_0= ruleNumberValue ) ) otherlv_8= '%' otherlv_9= ')' ) | (otherlv_10= 'hsba' otherlv_11= '(' ( (lv_hue_12_0= ruleNumberValue ) ) otherlv_13= ',' ( (lv_saturation_14_0= ruleNumberValue ) ) otherlv_15= '%' otherlv_16= ',' ( (lv_brightness_17_0= ruleNumberValue ) ) otherlv_18= '%' otherlv_19= ',' ( (lv_alpha_20_0= ruleNumberValue ) ) otherlv_21= ')' ) )
+            int alt87=2;
+            int LA87_0 = input.LA(1);
 
-            if ( (LA86_0==472) ) {
-                alt86=1;
+            if ( (LA87_0==463) ) {
+                alt87=1;
             }
-            else if ( (LA86_0==473) ) {
-                alt86=2;
+            else if ( (LA87_0==464) ) {
+                alt87=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 86, 0, input);
+                    new NoViableAltException("", 87, 0, input);
 
                 throw nvae;
             }
-            switch (alt86) {
+            switch (alt87) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10529:2: (otherlv_0= 'hsb' otherlv_1= '(' ( (lv_hue_2_0= ruleNumberValue ) ) otherlv_3= ',' ( (lv_saturation_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ',' ( (lv_brightness_7_0= ruleNumberValue ) ) otherlv_8= '%' otherlv_9= ')' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10351:2: (otherlv_0= 'hsb' otherlv_1= '(' ( (lv_hue_2_0= ruleNumberValue ) ) otherlv_3= ',' ( (lv_saturation_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ',' ( (lv_brightness_7_0= ruleNumberValue ) ) otherlv_8= '%' otherlv_9= ')' )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10529:2: (otherlv_0= 'hsb' otherlv_1= '(' ( (lv_hue_2_0= ruleNumberValue ) ) otherlv_3= ',' ( (lv_saturation_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ',' ( (lv_brightness_7_0= ruleNumberValue ) ) otherlv_8= '%' otherlv_9= ')' )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10529:4: otherlv_0= 'hsb' otherlv_1= '(' ( (lv_hue_2_0= ruleNumberValue ) ) otherlv_3= ',' ( (lv_saturation_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ',' ( (lv_brightness_7_0= ruleNumberValue ) ) otherlv_8= '%' otherlv_9= ')'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10351:2: (otherlv_0= 'hsb' otherlv_1= '(' ( (lv_hue_2_0= ruleNumberValue ) ) otherlv_3= ',' ( (lv_saturation_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ',' ( (lv_brightness_7_0= ruleNumberValue ) ) otherlv_8= '%' otherlv_9= ')' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10351:4: otherlv_0= 'hsb' otherlv_1= '(' ( (lv_hue_2_0= ruleNumberValue ) ) otherlv_3= ',' ( (lv_saturation_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ',' ( (lv_brightness_7_0= ruleNumberValue ) ) otherlv_8= '%' otherlv_9= ')'
                     {
-                    otherlv_0=(Token)match(input,472,FOLLOW_472_in_ruleHSBColor24645); 
+                    otherlv_0=(Token)match(input,463,FOLLOW_463_in_ruleHSBColor24181); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getHSBColorAccess().getHsbKeyword_0_0());
                         
-                    otherlv_1=(Token)match(input,65,FOLLOW_65_in_ruleHSBColor24657); 
+                    otherlv_1=(Token)match(input,65,FOLLOW_65_in_ruleHSBColor24193); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getHSBColorAccess().getLeftParenthesisKeyword_0_1());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10537:1: ( (lv_hue_2_0= ruleNumberValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10538:1: (lv_hue_2_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10359:1: ( (lv_hue_2_0= ruleNumberValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10360:1: (lv_hue_2_0= ruleNumberValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10538:1: (lv_hue_2_0= ruleNumberValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10539:3: lv_hue_2_0= ruleNumberValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10360:1: (lv_hue_2_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10361:3: lv_hue_2_0= ruleNumberValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getHSBColorAccess().getHueNumberValueParserRuleCall_0_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNumberValue_in_ruleHSBColor24678);
+                    pushFollow(FOLLOW_ruleNumberValue_in_ruleHSBColor24214);
                     lv_hue_2_0=ruleNumberValue();
 
                     state._fsp--;
@@ -23677,20 +23385,20 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_3=(Token)match(input,66,FOLLOW_66_in_ruleHSBColor24690); 
+                    otherlv_3=(Token)match(input,66,FOLLOW_66_in_ruleHSBColor24226); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getHSBColorAccess().getCommaKeyword_0_3());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10559:1: ( (lv_saturation_4_0= ruleNumberValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10560:1: (lv_saturation_4_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10381:1: ( (lv_saturation_4_0= ruleNumberValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10382:1: (lv_saturation_4_0= ruleNumberValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10560:1: (lv_saturation_4_0= ruleNumberValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10561:3: lv_saturation_4_0= ruleNumberValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10382:1: (lv_saturation_4_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10383:3: lv_saturation_4_0= ruleNumberValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getHSBColorAccess().getSaturationNumberValueParserRuleCall_0_4_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNumberValue_in_ruleHSBColor24711);
+                    pushFollow(FOLLOW_ruleNumberValue_in_ruleHSBColor24247);
                     lv_saturation_4_0=ruleNumberValue();
 
                     state._fsp--;
@@ -23712,24 +23420,24 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_5=(Token)match(input,277,FOLLOW_277_in_ruleHSBColor24723); 
+                    otherlv_5=(Token)match(input,277,FOLLOW_277_in_ruleHSBColor24259); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getHSBColorAccess().getPercentSignKeyword_0_5());
                         
-                    otherlv_6=(Token)match(input,66,FOLLOW_66_in_ruleHSBColor24735); 
+                    otherlv_6=(Token)match(input,66,FOLLOW_66_in_ruleHSBColor24271); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getHSBColorAccess().getCommaKeyword_0_6());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10585:1: ( (lv_brightness_7_0= ruleNumberValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10586:1: (lv_brightness_7_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10407:1: ( (lv_brightness_7_0= ruleNumberValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10408:1: (lv_brightness_7_0= ruleNumberValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10586:1: (lv_brightness_7_0= ruleNumberValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10587:3: lv_brightness_7_0= ruleNumberValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10408:1: (lv_brightness_7_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10409:3: lv_brightness_7_0= ruleNumberValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getHSBColorAccess().getBrightnessNumberValueParserRuleCall_0_7_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNumberValue_in_ruleHSBColor24756);
+                    pushFollow(FOLLOW_ruleNumberValue_in_ruleHSBColor24292);
                     lv_brightness_7_0=ruleNumberValue();
 
                     state._fsp--;
@@ -23751,11 +23459,11 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_8=(Token)match(input,277,FOLLOW_277_in_ruleHSBColor24768); 
+                    otherlv_8=(Token)match(input,277,FOLLOW_277_in_ruleHSBColor24304); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getHSBColorAccess().getPercentSignKeyword_0_8());
                         
-                    otherlv_9=(Token)match(input,67,FOLLOW_67_in_ruleHSBColor24780); 
+                    otherlv_9=(Token)match(input,67,FOLLOW_67_in_ruleHSBColor24316); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getHSBColorAccess().getRightParenthesisKeyword_0_9());
                         
@@ -23766,29 +23474,29 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10612:6: (otherlv_10= 'hsba' otherlv_11= '(' ( (lv_hue_12_0= ruleNumberValue ) ) otherlv_13= ',' ( (lv_saturation_14_0= ruleNumberValue ) ) otherlv_15= '%' otherlv_16= ',' ( (lv_brightness_17_0= ruleNumberValue ) ) otherlv_18= '%' otherlv_19= ',' ( (lv_alpha_20_0= ruleNumberValue ) ) otherlv_21= ')' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10434:6: (otherlv_10= 'hsba' otherlv_11= '(' ( (lv_hue_12_0= ruleNumberValue ) ) otherlv_13= ',' ( (lv_saturation_14_0= ruleNumberValue ) ) otherlv_15= '%' otherlv_16= ',' ( (lv_brightness_17_0= ruleNumberValue ) ) otherlv_18= '%' otherlv_19= ',' ( (lv_alpha_20_0= ruleNumberValue ) ) otherlv_21= ')' )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10612:6: (otherlv_10= 'hsba' otherlv_11= '(' ( (lv_hue_12_0= ruleNumberValue ) ) otherlv_13= ',' ( (lv_saturation_14_0= ruleNumberValue ) ) otherlv_15= '%' otherlv_16= ',' ( (lv_brightness_17_0= ruleNumberValue ) ) otherlv_18= '%' otherlv_19= ',' ( (lv_alpha_20_0= ruleNumberValue ) ) otherlv_21= ')' )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10612:8: otherlv_10= 'hsba' otherlv_11= '(' ( (lv_hue_12_0= ruleNumberValue ) ) otherlv_13= ',' ( (lv_saturation_14_0= ruleNumberValue ) ) otherlv_15= '%' otherlv_16= ',' ( (lv_brightness_17_0= ruleNumberValue ) ) otherlv_18= '%' otherlv_19= ',' ( (lv_alpha_20_0= ruleNumberValue ) ) otherlv_21= ')'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10434:6: (otherlv_10= 'hsba' otherlv_11= '(' ( (lv_hue_12_0= ruleNumberValue ) ) otherlv_13= ',' ( (lv_saturation_14_0= ruleNumberValue ) ) otherlv_15= '%' otherlv_16= ',' ( (lv_brightness_17_0= ruleNumberValue ) ) otherlv_18= '%' otherlv_19= ',' ( (lv_alpha_20_0= ruleNumberValue ) ) otherlv_21= ')' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10434:8: otherlv_10= 'hsba' otherlv_11= '(' ( (lv_hue_12_0= ruleNumberValue ) ) otherlv_13= ',' ( (lv_saturation_14_0= ruleNumberValue ) ) otherlv_15= '%' otherlv_16= ',' ( (lv_brightness_17_0= ruleNumberValue ) ) otherlv_18= '%' otherlv_19= ',' ( (lv_alpha_20_0= ruleNumberValue ) ) otherlv_21= ')'
                     {
-                    otherlv_10=(Token)match(input,473,FOLLOW_473_in_ruleHSBColor24800); 
+                    otherlv_10=(Token)match(input,464,FOLLOW_464_in_ruleHSBColor24336); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getHSBColorAccess().getHsbaKeyword_1_0());
                         
-                    otherlv_11=(Token)match(input,65,FOLLOW_65_in_ruleHSBColor24812); 
+                    otherlv_11=(Token)match(input,65,FOLLOW_65_in_ruleHSBColor24348); 
 
                         	newLeafNode(otherlv_11, grammarAccess.getHSBColorAccess().getLeftParenthesisKeyword_1_1());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10620:1: ( (lv_hue_12_0= ruleNumberValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10621:1: (lv_hue_12_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10442:1: ( (lv_hue_12_0= ruleNumberValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10443:1: (lv_hue_12_0= ruleNumberValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10621:1: (lv_hue_12_0= ruleNumberValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10622:3: lv_hue_12_0= ruleNumberValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10443:1: (lv_hue_12_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10444:3: lv_hue_12_0= ruleNumberValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getHSBColorAccess().getHueNumberValueParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNumberValue_in_ruleHSBColor24833);
+                    pushFollow(FOLLOW_ruleNumberValue_in_ruleHSBColor24369);
                     lv_hue_12_0=ruleNumberValue();
 
                     state._fsp--;
@@ -23810,20 +23518,20 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_13=(Token)match(input,66,FOLLOW_66_in_ruleHSBColor24845); 
+                    otherlv_13=(Token)match(input,66,FOLLOW_66_in_ruleHSBColor24381); 
 
                         	newLeafNode(otherlv_13, grammarAccess.getHSBColorAccess().getCommaKeyword_1_3());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10642:1: ( (lv_saturation_14_0= ruleNumberValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10643:1: (lv_saturation_14_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10464:1: ( (lv_saturation_14_0= ruleNumberValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10465:1: (lv_saturation_14_0= ruleNumberValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10643:1: (lv_saturation_14_0= ruleNumberValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10644:3: lv_saturation_14_0= ruleNumberValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10465:1: (lv_saturation_14_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10466:3: lv_saturation_14_0= ruleNumberValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getHSBColorAccess().getSaturationNumberValueParserRuleCall_1_4_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNumberValue_in_ruleHSBColor24866);
+                    pushFollow(FOLLOW_ruleNumberValue_in_ruleHSBColor24402);
                     lv_saturation_14_0=ruleNumberValue();
 
                     state._fsp--;
@@ -23845,24 +23553,24 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_15=(Token)match(input,277,FOLLOW_277_in_ruleHSBColor24878); 
+                    otherlv_15=(Token)match(input,277,FOLLOW_277_in_ruleHSBColor24414); 
 
                         	newLeafNode(otherlv_15, grammarAccess.getHSBColorAccess().getPercentSignKeyword_1_5());
                         
-                    otherlv_16=(Token)match(input,66,FOLLOW_66_in_ruleHSBColor24890); 
+                    otherlv_16=(Token)match(input,66,FOLLOW_66_in_ruleHSBColor24426); 
 
                         	newLeafNode(otherlv_16, grammarAccess.getHSBColorAccess().getCommaKeyword_1_6());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10668:1: ( (lv_brightness_17_0= ruleNumberValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10669:1: (lv_brightness_17_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10490:1: ( (lv_brightness_17_0= ruleNumberValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10491:1: (lv_brightness_17_0= ruleNumberValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10669:1: (lv_brightness_17_0= ruleNumberValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10670:3: lv_brightness_17_0= ruleNumberValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10491:1: (lv_brightness_17_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10492:3: lv_brightness_17_0= ruleNumberValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getHSBColorAccess().getBrightnessNumberValueParserRuleCall_1_7_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNumberValue_in_ruleHSBColor24911);
+                    pushFollow(FOLLOW_ruleNumberValue_in_ruleHSBColor24447);
                     lv_brightness_17_0=ruleNumberValue();
 
                     state._fsp--;
@@ -23884,24 +23592,24 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_18=(Token)match(input,277,FOLLOW_277_in_ruleHSBColor24923); 
+                    otherlv_18=(Token)match(input,277,FOLLOW_277_in_ruleHSBColor24459); 
 
                         	newLeafNode(otherlv_18, grammarAccess.getHSBColorAccess().getPercentSignKeyword_1_8());
                         
-                    otherlv_19=(Token)match(input,66,FOLLOW_66_in_ruleHSBColor24935); 
+                    otherlv_19=(Token)match(input,66,FOLLOW_66_in_ruleHSBColor24471); 
 
                         	newLeafNode(otherlv_19, grammarAccess.getHSBColorAccess().getCommaKeyword_1_9());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10694:1: ( (lv_alpha_20_0= ruleNumberValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10695:1: (lv_alpha_20_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10516:1: ( (lv_alpha_20_0= ruleNumberValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10517:1: (lv_alpha_20_0= ruleNumberValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10695:1: (lv_alpha_20_0= ruleNumberValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10696:3: lv_alpha_20_0= ruleNumberValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10517:1: (lv_alpha_20_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10518:3: lv_alpha_20_0= ruleNumberValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getHSBColorAccess().getAlphaNumberValueParserRuleCall_1_10_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNumberValue_in_ruleHSBColor24956);
+                    pushFollow(FOLLOW_ruleNumberValue_in_ruleHSBColor24492);
                     lv_alpha_20_0=ruleNumberValue();
 
                     state._fsp--;
@@ -23923,7 +23631,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_21=(Token)match(input,67,FOLLOW_67_in_ruleHSBColor24968); 
+                    otherlv_21=(Token)match(input,67,FOLLOW_67_in_ruleHSBColor24504); 
 
                         	newLeafNode(otherlv_21, grammarAccess.getHSBColorAccess().getRightParenthesisKeyword_1_11());
                         
@@ -23954,7 +23662,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleColorFunction"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10724:1: entryRuleColorFunction returns [EObject current=null] : iv_ruleColorFunction= ruleColorFunction EOF ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10546:1: entryRuleColorFunction returns [EObject current=null] : iv_ruleColorFunction= ruleColorFunction EOF ;
     public final EObject entryRuleColorFunction() throws RecognitionException {
         EObject current = null;
 
@@ -23962,17 +23670,17 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10725:2: (iv_ruleColorFunction= ruleColorFunction EOF )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10726:2: iv_ruleColorFunction= ruleColorFunction EOF
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10547:2: (iv_ruleColorFunction= ruleColorFunction EOF )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10548:2: iv_ruleColorFunction= ruleColorFunction EOF
             {
              newCompositeNode(grammarAccess.getColorFunctionRule()); 
-            pushFollow(FOLLOW_ruleColorFunction_in_entryRuleColorFunction25005);
+            pushFollow(FOLLOW_ruleColorFunction_in_entryRuleColorFunction24541);
             iv_ruleColorFunction=ruleColorFunction();
 
             state._fsp--;
 
              current =iv_ruleColorFunction; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleColorFunction25015); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleColorFunction24551); 
 
             }
 
@@ -23990,7 +23698,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleColorFunction"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10733:1: ruleColorFunction returns [EObject current=null] : ( (otherlv_0= 'derive' otherlv_1= '(' ( (lv_orig_2_0= ruleColorValue ) ) otherlv_3= ',' ( (lv_mod_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ')' ) | (otherlv_7= 'ladder' otherlv_8= '(' ( (lv_orig_9_0= ruleColorValue ) ) otherlv_10= ')' otherlv_11= 'stops' (otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')' )+ ) ) ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10555:1: ruleColorFunction returns [EObject current=null] : ( (otherlv_0= 'derive' otherlv_1= '(' ( (lv_orig_2_0= ruleColorValue ) ) otherlv_3= ',' ( (lv_mod_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ')' ) | (otherlv_7= 'ladder' otherlv_8= '(' ( (lv_orig_9_0= ruleColorValue ) ) otherlv_10= ')' otherlv_11= 'stops' (otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')' )+ ) ) ;
     public final EObject ruleColorFunction() throws RecognitionException {
         EObject current = null;
 
@@ -24020,50 +23728,50 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10736:28: ( ( (otherlv_0= 'derive' otherlv_1= '(' ( (lv_orig_2_0= ruleColorValue ) ) otherlv_3= ',' ( (lv_mod_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ')' ) | (otherlv_7= 'ladder' otherlv_8= '(' ( (lv_orig_9_0= ruleColorValue ) ) otherlv_10= ')' otherlv_11= 'stops' (otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')' )+ ) ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10737:1: ( (otherlv_0= 'derive' otherlv_1= '(' ( (lv_orig_2_0= ruleColorValue ) ) otherlv_3= ',' ( (lv_mod_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ')' ) | (otherlv_7= 'ladder' otherlv_8= '(' ( (lv_orig_9_0= ruleColorValue ) ) otherlv_10= ')' otherlv_11= 'stops' (otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')' )+ ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10558:28: ( ( (otherlv_0= 'derive' otherlv_1= '(' ( (lv_orig_2_0= ruleColorValue ) ) otherlv_3= ',' ( (lv_mod_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ')' ) | (otherlv_7= 'ladder' otherlv_8= '(' ( (lv_orig_9_0= ruleColorValue ) ) otherlv_10= ')' otherlv_11= 'stops' (otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')' )+ ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10559:1: ( (otherlv_0= 'derive' otherlv_1= '(' ( (lv_orig_2_0= ruleColorValue ) ) otherlv_3= ',' ( (lv_mod_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ')' ) | (otherlv_7= 'ladder' otherlv_8= '(' ( (lv_orig_9_0= ruleColorValue ) ) otherlv_10= ')' otherlv_11= 'stops' (otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')' )+ ) )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10737:1: ( (otherlv_0= 'derive' otherlv_1= '(' ( (lv_orig_2_0= ruleColorValue ) ) otherlv_3= ',' ( (lv_mod_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ')' ) | (otherlv_7= 'ladder' otherlv_8= '(' ( (lv_orig_9_0= ruleColorValue ) ) otherlv_10= ')' otherlv_11= 'stops' (otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')' )+ ) )
-            int alt88=2;
-            int LA88_0 = input.LA(1);
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10559:1: ( (otherlv_0= 'derive' otherlv_1= '(' ( (lv_orig_2_0= ruleColorValue ) ) otherlv_3= ',' ( (lv_mod_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ')' ) | (otherlv_7= 'ladder' otherlv_8= '(' ( (lv_orig_9_0= ruleColorValue ) ) otherlv_10= ')' otherlv_11= 'stops' (otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')' )+ ) )
+            int alt89=2;
+            int LA89_0 = input.LA(1);
 
-            if ( (LA88_0==474) ) {
-                alt88=1;
+            if ( (LA89_0==465) ) {
+                alt89=1;
             }
-            else if ( (LA88_0==475) ) {
-                alt88=2;
+            else if ( (LA89_0==466) ) {
+                alt89=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 88, 0, input);
+                    new NoViableAltException("", 89, 0, input);
 
                 throw nvae;
             }
-            switch (alt88) {
+            switch (alt89) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10737:2: (otherlv_0= 'derive' otherlv_1= '(' ( (lv_orig_2_0= ruleColorValue ) ) otherlv_3= ',' ( (lv_mod_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ')' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10559:2: (otherlv_0= 'derive' otherlv_1= '(' ( (lv_orig_2_0= ruleColorValue ) ) otherlv_3= ',' ( (lv_mod_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ')' )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10737:2: (otherlv_0= 'derive' otherlv_1= '(' ( (lv_orig_2_0= ruleColorValue ) ) otherlv_3= ',' ( (lv_mod_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ')' )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10737:4: otherlv_0= 'derive' otherlv_1= '(' ( (lv_orig_2_0= ruleColorValue ) ) otherlv_3= ',' ( (lv_mod_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ')'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10559:2: (otherlv_0= 'derive' otherlv_1= '(' ( (lv_orig_2_0= ruleColorValue ) ) otherlv_3= ',' ( (lv_mod_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ')' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10559:4: otherlv_0= 'derive' otherlv_1= '(' ( (lv_orig_2_0= ruleColorValue ) ) otherlv_3= ',' ( (lv_mod_4_0= ruleNumberValue ) ) otherlv_5= '%' otherlv_6= ')'
                     {
-                    otherlv_0=(Token)match(input,474,FOLLOW_474_in_ruleColorFunction25053); 
+                    otherlv_0=(Token)match(input,465,FOLLOW_465_in_ruleColorFunction24589); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getColorFunctionAccess().getDeriveKeyword_0_0());
                         
-                    otherlv_1=(Token)match(input,65,FOLLOW_65_in_ruleColorFunction25065); 
+                    otherlv_1=(Token)match(input,65,FOLLOW_65_in_ruleColorFunction24601); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getColorFunctionAccess().getLeftParenthesisKeyword_0_1());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10745:1: ( (lv_orig_2_0= ruleColorValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10746:1: (lv_orig_2_0= ruleColorValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10567:1: ( (lv_orig_2_0= ruleColorValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10568:1: (lv_orig_2_0= ruleColorValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10746:1: (lv_orig_2_0= ruleColorValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10747:3: lv_orig_2_0= ruleColorValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10568:1: (lv_orig_2_0= ruleColorValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10569:3: lv_orig_2_0= ruleColorValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getColorFunctionAccess().getOrigColorValueParserRuleCall_0_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleColorValue_in_ruleColorFunction25086);
+                    pushFollow(FOLLOW_ruleColorValue_in_ruleColorFunction24622);
                     lv_orig_2_0=ruleColorValue();
 
                     state._fsp--;
@@ -24085,20 +23793,20 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_3=(Token)match(input,66,FOLLOW_66_in_ruleColorFunction25098); 
+                    otherlv_3=(Token)match(input,66,FOLLOW_66_in_ruleColorFunction24634); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getColorFunctionAccess().getCommaKeyword_0_3());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10767:1: ( (lv_mod_4_0= ruleNumberValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10768:1: (lv_mod_4_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10589:1: ( (lv_mod_4_0= ruleNumberValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10590:1: (lv_mod_4_0= ruleNumberValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10768:1: (lv_mod_4_0= ruleNumberValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10769:3: lv_mod_4_0= ruleNumberValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10590:1: (lv_mod_4_0= ruleNumberValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10591:3: lv_mod_4_0= ruleNumberValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getColorFunctionAccess().getModNumberValueParserRuleCall_0_4_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleNumberValue_in_ruleColorFunction25119);
+                    pushFollow(FOLLOW_ruleNumberValue_in_ruleColorFunction24655);
                     lv_mod_4_0=ruleNumberValue();
 
                     state._fsp--;
@@ -24120,11 +23828,11 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_5=(Token)match(input,277,FOLLOW_277_in_ruleColorFunction25131); 
+                    otherlv_5=(Token)match(input,277,FOLLOW_277_in_ruleColorFunction24667); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getColorFunctionAccess().getPercentSignKeyword_0_5());
                         
-                    otherlv_6=(Token)match(input,67,FOLLOW_67_in_ruleColorFunction25143); 
+                    otherlv_6=(Token)match(input,67,FOLLOW_67_in_ruleColorFunction24679); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getColorFunctionAccess().getRightParenthesisKeyword_0_6());
                         
@@ -24135,29 +23843,29 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10794:6: (otherlv_7= 'ladder' otherlv_8= '(' ( (lv_orig_9_0= ruleColorValue ) ) otherlv_10= ')' otherlv_11= 'stops' (otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')' )+ )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10616:6: (otherlv_7= 'ladder' otherlv_8= '(' ( (lv_orig_9_0= ruleColorValue ) ) otherlv_10= ')' otherlv_11= 'stops' (otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')' )+ )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10794:6: (otherlv_7= 'ladder' otherlv_8= '(' ( (lv_orig_9_0= ruleColorValue ) ) otherlv_10= ')' otherlv_11= 'stops' (otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')' )+ )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10794:8: otherlv_7= 'ladder' otherlv_8= '(' ( (lv_orig_9_0= ruleColorValue ) ) otherlv_10= ')' otherlv_11= 'stops' (otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')' )+
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10616:6: (otherlv_7= 'ladder' otherlv_8= '(' ( (lv_orig_9_0= ruleColorValue ) ) otherlv_10= ')' otherlv_11= 'stops' (otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')' )+ )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10616:8: otherlv_7= 'ladder' otherlv_8= '(' ( (lv_orig_9_0= ruleColorValue ) ) otherlv_10= ')' otherlv_11= 'stops' (otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')' )+
                     {
-                    otherlv_7=(Token)match(input,475,FOLLOW_475_in_ruleColorFunction25163); 
+                    otherlv_7=(Token)match(input,466,FOLLOW_466_in_ruleColorFunction24699); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getColorFunctionAccess().getLadderKeyword_1_0());
                         
-                    otherlv_8=(Token)match(input,65,FOLLOW_65_in_ruleColorFunction25175); 
+                    otherlv_8=(Token)match(input,65,FOLLOW_65_in_ruleColorFunction24711); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getColorFunctionAccess().getLeftParenthesisKeyword_1_1());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10802:1: ( (lv_orig_9_0= ruleColorValue ) )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10803:1: (lv_orig_9_0= ruleColorValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10624:1: ( (lv_orig_9_0= ruleColorValue ) )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10625:1: (lv_orig_9_0= ruleColorValue )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10803:1: (lv_orig_9_0= ruleColorValue )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10804:3: lv_orig_9_0= ruleColorValue
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10625:1: (lv_orig_9_0= ruleColorValue )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10626:3: lv_orig_9_0= ruleColorValue
                     {
                      
                     	        newCompositeNode(grammarAccess.getColorFunctionAccess().getOrigColorValueParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleColorValue_in_ruleColorFunction25196);
+                    pushFollow(FOLLOW_ruleColorValue_in_ruleColorFunction24732);
                     lv_orig_9_0=ruleColorValue();
 
                     state._fsp--;
@@ -24179,44 +23887,44 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_10=(Token)match(input,67,FOLLOW_67_in_ruleColorFunction25208); 
+                    otherlv_10=(Token)match(input,67,FOLLOW_67_in_ruleColorFunction24744); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getColorFunctionAccess().getRightParenthesisKeyword_1_3());
                         
-                    otherlv_11=(Token)match(input,321,FOLLOW_321_in_ruleColorFunction25220); 
+                    otherlv_11=(Token)match(input,312,FOLLOW_312_in_ruleColorFunction24756); 
 
                         	newLeafNode(otherlv_11, grammarAccess.getColorFunctionAccess().getStopsKeyword_1_4());
                         
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10828:1: (otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')' )+
-                    int cnt87=0;
-                    loop87:
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10650:1: (otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')' )+
+                    int cnt88=0;
+                    loop88:
                     do {
-                        int alt87=2;
-                        int LA87_0 = input.LA(1);
+                        int alt88=2;
+                        int LA88_0 = input.LA(1);
 
-                        if ( (LA87_0==65) ) {
-                            alt87=1;
+                        if ( (LA88_0==65) ) {
+                            alt88=1;
                         }
 
 
-                        switch (alt87) {
+                        switch (alt88) {
                     	case 1 :
-                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10828:3: otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')'
+                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10650:3: otherlv_12= '(' ( (lv_stopNumbers_13_0= ruleNumberValue ) ) otherlv_14= ',' ( (lv_stopColors_15_0= ruleColorValue ) ) otherlv_16= ')'
                     	    {
-                    	    otherlv_12=(Token)match(input,65,FOLLOW_65_in_ruleColorFunction25233); 
+                    	    otherlv_12=(Token)match(input,65,FOLLOW_65_in_ruleColorFunction24769); 
 
                     	        	newLeafNode(otherlv_12, grammarAccess.getColorFunctionAccess().getLeftParenthesisKeyword_1_5_0());
                     	        
-                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10832:1: ( (lv_stopNumbers_13_0= ruleNumberValue ) )
-                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10833:1: (lv_stopNumbers_13_0= ruleNumberValue )
+                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10654:1: ( (lv_stopNumbers_13_0= ruleNumberValue ) )
+                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10655:1: (lv_stopNumbers_13_0= ruleNumberValue )
                     	    {
-                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10833:1: (lv_stopNumbers_13_0= ruleNumberValue )
-                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10834:3: lv_stopNumbers_13_0= ruleNumberValue
+                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10655:1: (lv_stopNumbers_13_0= ruleNumberValue )
+                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10656:3: lv_stopNumbers_13_0= ruleNumberValue
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getColorFunctionAccess().getStopNumbersNumberValueParserRuleCall_1_5_1_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleNumberValue_in_ruleColorFunction25254);
+                    	    pushFollow(FOLLOW_ruleNumberValue_in_ruleColorFunction24790);
                     	    lv_stopNumbers_13_0=ruleNumberValue();
 
                     	    state._fsp--;
@@ -24238,20 +23946,20 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     	    }
 
-                    	    otherlv_14=(Token)match(input,66,FOLLOW_66_in_ruleColorFunction25266); 
+                    	    otherlv_14=(Token)match(input,66,FOLLOW_66_in_ruleColorFunction24802); 
 
                     	        	newLeafNode(otherlv_14, grammarAccess.getColorFunctionAccess().getCommaKeyword_1_5_2());
                     	        
-                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10854:1: ( (lv_stopColors_15_0= ruleColorValue ) )
-                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10855:1: (lv_stopColors_15_0= ruleColorValue )
+                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10676:1: ( (lv_stopColors_15_0= ruleColorValue ) )
+                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10677:1: (lv_stopColors_15_0= ruleColorValue )
                     	    {
-                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10855:1: (lv_stopColors_15_0= ruleColorValue )
-                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10856:3: lv_stopColors_15_0= ruleColorValue
+                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10677:1: (lv_stopColors_15_0= ruleColorValue )
+                    	    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10678:3: lv_stopColors_15_0= ruleColorValue
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getColorFunctionAccess().getStopColorsColorValueParserRuleCall_1_5_3_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleColorValue_in_ruleColorFunction25287);
+                    	    pushFollow(FOLLOW_ruleColorValue_in_ruleColorFunction24823);
                     	    lv_stopColors_15_0=ruleColorValue();
 
                     	    state._fsp--;
@@ -24273,7 +23981,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
                     	    }
 
-                    	    otherlv_16=(Token)match(input,67,FOLLOW_67_in_ruleColorFunction25299); 
+                    	    otherlv_16=(Token)match(input,67,FOLLOW_67_in_ruleColorFunction24835); 
 
                     	        	newLeafNode(otherlv_16, grammarAccess.getColorFunctionAccess().getRightParenthesisKeyword_1_5_4());
                     	        
@@ -24282,12 +23990,12 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    if ( cnt87 >= 1 ) break loop87;
+                    	    if ( cnt88 >= 1 ) break loop88;
                                 EarlyExitException eee =
-                                    new EarlyExitException(87, input);
+                                    new EarlyExitException(88, input);
                                 throw eee;
                         }
-                        cnt87++;
+                        cnt88++;
                     } while (true);
 
 
@@ -24317,7 +24025,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHexDigit"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10884:1: entryRuleHexDigit returns [String current=null] : iv_ruleHexDigit= ruleHexDigit EOF ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10706:1: entryRuleHexDigit returns [String current=null] : iv_ruleHexDigit= ruleHexDigit EOF ;
     public final String entryRuleHexDigit() throws RecognitionException {
         String current = null;
 
@@ -24328,17 +24036,17 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
         	
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10888:2: (iv_ruleHexDigit= ruleHexDigit EOF )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10889:2: iv_ruleHexDigit= ruleHexDigit EOF
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10710:2: (iv_ruleHexDigit= ruleHexDigit EOF )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10711:2: iv_ruleHexDigit= ruleHexDigit EOF
             {
              newCompositeNode(grammarAccess.getHexDigitRule()); 
-            pushFollow(FOLLOW_ruleHexDigit_in_entryRuleHexDigit25345);
+            pushFollow(FOLLOW_ruleHexDigit_in_entryRuleHexDigit24881);
             iv_ruleHexDigit=ruleHexDigit();
 
             state._fsp--;
 
              current =iv_ruleHexDigit.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleHexDigit25356); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleHexDigit24892); 
 
             }
 
@@ -24359,7 +24067,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHexDigit"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10899:1: ruleHexDigit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | (this_INT_1= RULE_INT this_ID_2= RULE_ID ) | this_INT_3= RULE_INT ) ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10721:1: ruleHexDigit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID | (this_INT_1= RULE_INT this_ID_2= RULE_ID ) | this_INT_3= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleHexDigit() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -24372,43 +24080,43 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
             
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10903:28: ( (this_ID_0= RULE_ID | (this_INT_1= RULE_INT this_ID_2= RULE_ID ) | this_INT_3= RULE_INT ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10904:1: (this_ID_0= RULE_ID | (this_INT_1= RULE_INT this_ID_2= RULE_ID ) | this_INT_3= RULE_INT )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10725:28: ( (this_ID_0= RULE_ID | (this_INT_1= RULE_INT this_ID_2= RULE_ID ) | this_INT_3= RULE_INT ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10726:1: (this_ID_0= RULE_ID | (this_INT_1= RULE_INT this_ID_2= RULE_ID ) | this_INT_3= RULE_INT )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10904:1: (this_ID_0= RULE_ID | (this_INT_1= RULE_INT this_ID_2= RULE_ID ) | this_INT_3= RULE_INT )
-            int alt89=3;
-            int LA89_0 = input.LA(1);
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10726:1: (this_ID_0= RULE_ID | (this_INT_1= RULE_INT this_ID_2= RULE_ID ) | this_INT_3= RULE_INT )
+            int alt90=3;
+            int LA90_0 = input.LA(1);
 
-            if ( (LA89_0==RULE_ID) ) {
-                alt89=1;
+            if ( (LA90_0==RULE_ID) ) {
+                alt90=1;
             }
-            else if ( (LA89_0==RULE_INT) ) {
-                int LA89_2 = input.LA(2);
+            else if ( (LA90_0==RULE_INT) ) {
+                int LA90_2 = input.LA(2);
 
-                if ( (LA89_2==RULE_ID) ) {
-                    alt89=2;
+                if ( (LA90_2==RULE_ID) ) {
+                    alt90=2;
                 }
-                else if ( (LA89_2==EOF||LA89_2==11||LA89_2==14||(LA89_2>=66 && LA89_2<=67)||LA89_2==189||LA89_2==195||LA89_2==200||LA89_2==319||LA89_2==323||(LA89_2>=325 && LA89_2<=475)) ) {
-                    alt89=3;
+                else if ( (LA90_2==EOF||LA90_2==11||LA90_2==14||(LA90_2>=66 && LA90_2<=67)||LA90_2==189||LA90_2==195||LA90_2==200||LA90_2==310||LA90_2==314||(LA90_2>=316 && LA90_2<=466)) ) {
+                    alt90=3;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 89, 2, input);
+                        new NoViableAltException("", 90, 2, input);
 
                     throw nvae;
                 }
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 89, 0, input);
+                    new NoViableAltException("", 90, 0, input);
 
                 throw nvae;
             }
-            switch (alt89) {
+            switch (alt90) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10904:6: this_ID_0= RULE_ID
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10726:6: this_ID_0= RULE_ID
                     {
-                    this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleHexDigit25400); 
+                    this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleHexDigit24936); 
 
                     		current.merge(this_ID_0);
                         
@@ -24419,19 +24127,19 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10912:6: (this_INT_1= RULE_INT this_ID_2= RULE_ID )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10734:6: (this_INT_1= RULE_INT this_ID_2= RULE_ID )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10912:6: (this_INT_1= RULE_INT this_ID_2= RULE_ID )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10912:11: this_INT_1= RULE_INT this_ID_2= RULE_ID
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10734:6: (this_INT_1= RULE_INT this_ID_2= RULE_ID )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10734:11: this_INT_1= RULE_INT this_ID_2= RULE_ID
                     {
-                    this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleHexDigit25427); 
+                    this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleHexDigit24963); 
 
                     		current.merge(this_INT_1);
                         
                      
                         newLeafNode(this_INT_1, grammarAccess.getHexDigitAccess().getINTTerminalRuleCall_1_0()); 
                         
-                    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleHexDigit25447); 
+                    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleHexDigit24983); 
 
                     		current.merge(this_ID_2);
                         
@@ -24445,9 +24153,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10927:10: this_INT_3= RULE_INT
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10749:10: this_INT_3= RULE_INT
                     {
-                    this_INT_3=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleHexDigit25474); 
+                    this_INT_3=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleHexDigit25010); 
 
                     		current.merge(this_INT_3);
                         
@@ -24481,7 +24189,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBooleanValue"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10945:1: ruleBooleanValue returns [Enumerator current=null] : ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) ) ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10767:1: ruleBooleanValue returns [Enumerator current=null] : ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) ) ;
     public final Enumerator ruleBooleanValue() throws RecognitionException {
         Enumerator current = null;
 
@@ -24490,33 +24198,33 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10947:28: ( ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10948:1: ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10769:28: ( ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10770:1: ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10948:1: ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) )
-            int alt90=2;
-            int LA90_0 = input.LA(1);
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10770:1: ( (enumLiteral_0= 'true' ) | (enumLiteral_1= 'false' ) )
+            int alt91=2;
+            int LA91_0 = input.LA(1);
 
-            if ( (LA90_0==476) ) {
-                alt90=1;
+            if ( (LA91_0==467) ) {
+                alt91=1;
             }
-            else if ( (LA90_0==477) ) {
-                alt90=2;
+            else if ( (LA91_0==468) ) {
+                alt91=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 90, 0, input);
+                    new NoViableAltException("", 91, 0, input);
 
                 throw nvae;
             }
-            switch (alt90) {
+            switch (alt91) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10948:2: (enumLiteral_0= 'true' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10770:2: (enumLiteral_0= 'true' )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10948:2: (enumLiteral_0= 'true' )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10948:4: enumLiteral_0= 'true'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10770:2: (enumLiteral_0= 'true' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10770:4: enumLiteral_0= 'true'
                     {
-                    enumLiteral_0=(Token)match(input,476,FOLLOW_476_in_ruleBooleanValue25537); 
+                    enumLiteral_0=(Token)match(input,467,FOLLOW_467_in_ruleBooleanValue25073); 
 
                             current = grammarAccess.getBooleanValueAccess().getTrueEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getBooleanValueAccess().getTrueEnumLiteralDeclaration_0()); 
@@ -24528,12 +24236,12 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10954:6: (enumLiteral_1= 'false' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10776:6: (enumLiteral_1= 'false' )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10954:6: (enumLiteral_1= 'false' )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10954:8: enumLiteral_1= 'false'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10776:6: (enumLiteral_1= 'false' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10776:8: enumLiteral_1= 'false'
                     {
-                    enumLiteral_1=(Token)match(input,477,FOLLOW_477_in_ruleBooleanValue25554); 
+                    enumLiteral_1=(Token)match(input,468,FOLLOW_468_in_ruleBooleanValue25090); 
 
                             current = grammarAccess.getBooleanValueAccess().getFalseEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getBooleanValueAccess().getFalseEnumLiteralDeclaration_1()); 
@@ -24565,7 +24273,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHPositionValue"
-    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10964:1: ruleHPositionValue returns [Enumerator current=null] : ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) | (enumLiteral_3= 'leading' ) | (enumLiteral_4= 'trailing' ) ) ;
+    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10786:1: ruleHPositionValue returns [Enumerator current=null] : ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) | (enumLiteral_3= 'leading' ) | (enumLiteral_4= 'trailing' ) ) ;
     public final Enumerator ruleHPositionValue() throws RecognitionException {
         Enumerator current = null;
 
@@ -24577,52 +24285,52 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10966:28: ( ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) | (enumLiteral_3= 'leading' ) | (enumLiteral_4= 'trailing' ) ) )
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10967:1: ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) | (enumLiteral_3= 'leading' ) | (enumLiteral_4= 'trailing' ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10788:28: ( ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) | (enumLiteral_3= 'leading' ) | (enumLiteral_4= 'trailing' ) ) )
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10789:1: ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) | (enumLiteral_3= 'leading' ) | (enumLiteral_4= 'trailing' ) )
             {
-            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10967:1: ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) | (enumLiteral_3= 'leading' ) | (enumLiteral_4= 'trailing' ) )
-            int alt91=5;
+            // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10789:1: ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) | (enumLiteral_3= 'leading' ) | (enumLiteral_4= 'trailing' ) )
+            int alt92=5;
             switch ( input.LA(1) ) {
             case 226:
                 {
-                alt91=1;
+                alt92=1;
                 }
                 break;
             case 247:
                 {
-                alt91=2;
+                alt92=2;
                 }
                 break;
             case 227:
                 {
-                alt91=3;
+                alt92=3;
                 }
                 break;
-            case 478:
+            case 469:
                 {
-                alt91=4;
+                alt92=4;
                 }
                 break;
-            case 479:
+            case 470:
                 {
-                alt91=5;
+                alt92=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 91, 0, input);
+                    new NoViableAltException("", 92, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt91) {
+            switch (alt92) {
                 case 1 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10967:2: (enumLiteral_0= 'left' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10789:2: (enumLiteral_0= 'left' )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10967:2: (enumLiteral_0= 'left' )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10967:4: enumLiteral_0= 'left'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10789:2: (enumLiteral_0= 'left' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10789:4: enumLiteral_0= 'left'
                     {
-                    enumLiteral_0=(Token)match(input,226,FOLLOW_226_in_ruleHPositionValue25599); 
+                    enumLiteral_0=(Token)match(input,226,FOLLOW_226_in_ruleHPositionValue25135); 
 
                             current = grammarAccess.getHPositionValueAccess().getLeftEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getHPositionValueAccess().getLeftEnumLiteralDeclaration_0()); 
@@ -24634,12 +24342,12 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10973:6: (enumLiteral_1= 'center' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10795:6: (enumLiteral_1= 'center' )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10973:6: (enumLiteral_1= 'center' )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10973:8: enumLiteral_1= 'center'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10795:6: (enumLiteral_1= 'center' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10795:8: enumLiteral_1= 'center'
                     {
-                    enumLiteral_1=(Token)match(input,247,FOLLOW_247_in_ruleHPositionValue25616); 
+                    enumLiteral_1=(Token)match(input,247,FOLLOW_247_in_ruleHPositionValue25152); 
 
                             current = grammarAccess.getHPositionValueAccess().getCenterEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getHPositionValueAccess().getCenterEnumLiteralDeclaration_1()); 
@@ -24651,12 +24359,12 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10979:6: (enumLiteral_2= 'right' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10801:6: (enumLiteral_2= 'right' )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10979:6: (enumLiteral_2= 'right' )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10979:8: enumLiteral_2= 'right'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10801:6: (enumLiteral_2= 'right' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10801:8: enumLiteral_2= 'right'
                     {
-                    enumLiteral_2=(Token)match(input,227,FOLLOW_227_in_ruleHPositionValue25633); 
+                    enumLiteral_2=(Token)match(input,227,FOLLOW_227_in_ruleHPositionValue25169); 
 
                             current = grammarAccess.getHPositionValueAccess().getRightEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getHPositionValueAccess().getRightEnumLiteralDeclaration_2()); 
@@ -24668,12 +24376,12 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10985:6: (enumLiteral_3= 'leading' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10807:6: (enumLiteral_3= 'leading' )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10985:6: (enumLiteral_3= 'leading' )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10985:8: enumLiteral_3= 'leading'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10807:6: (enumLiteral_3= 'leading' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10807:8: enumLiteral_3= 'leading'
                     {
-                    enumLiteral_3=(Token)match(input,478,FOLLOW_478_in_ruleHPositionValue25650); 
+                    enumLiteral_3=(Token)match(input,469,FOLLOW_469_in_ruleHPositionValue25186); 
 
                             current = grammarAccess.getHPositionValueAccess().getLeadingEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getHPositionValueAccess().getLeadingEnumLiteralDeclaration_3()); 
@@ -24685,12 +24393,12 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10991:6: (enumLiteral_4= 'trailing' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10813:6: (enumLiteral_4= 'trailing' )
                     {
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10991:6: (enumLiteral_4= 'trailing' )
-                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10991:8: enumLiteral_4= 'trailing'
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10813:6: (enumLiteral_4= 'trailing' )
+                    // ../at.bestsolution.e4.jfx.xtext.css/src-gen/at/bestsolution/e4/jfx/xtext/parser/antlr/internal/InternalJFXCss.g:10813:8: enumLiteral_4= 'trailing'
                     {
-                    enumLiteral_4=(Token)match(input,479,FOLLOW_479_in_ruleHPositionValue25667); 
+                    enumLiteral_4=(Token)match(input,470,FOLLOW_470_in_ruleHPositionValue25203); 
 
                             current = grammarAccess.getHPositionValueAccess().getTrailingEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_4, grammarAccess.getHPositionValueAccess().getTrailingEnumLiteralDeclaration_4()); 
@@ -24725,7 +24433,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
 
     protected DFA3 dfa3 = new DFA3(this);
     protected DFA49 dfa49 = new DFA49(this);
-    protected DFA85 dfa85 = new DFA85(this);
+    protected DFA86 dfa86 = new DFA86(this);
     static final String DFA3_eotS =
         "\53\uffff";
     static final String DFA3_eofS =
@@ -24733,7 +24441,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     static final String DFA3_minS =
         "\1\6\10\uffff\1\25\40\uffff\1\u00e0";
     static final String DFA3_maxS =
-        "\1\u010d\10\uffff\1\25\40\uffff\1\u01dd";
+        "\1\u010d\10\uffff\1\25\40\uffff\1\u01d4";
     static final String DFA3_acceptS =
         "\1\uffff\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\uffff\1\11\1\12\1\13"+
         "\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30"+
@@ -24789,7 +24497,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
             "",
             "",
             "",
-            "\2\23\25\uffff\1\23\2\uffff\1\23\23\uffff\2\23\u00cc\uffff"+
+            "\2\23\25\uffff\1\23\2\uffff\1\23\23\uffff\2\23\u00c3\uffff"+
             "\2\10"
     };
 
@@ -24888,20 +24596,20 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
             return "6379:1: ( ( (lv_values_0_0= ruleSizeValue ) ) | ( ( (lv_values_1_0= ruleSizeValue ) ) ( (lv_values_2_0= ruleSizeValue ) ) ( (lv_values_3_0= ruleSizeValue ) ) ( (lv_values_4_0= ruleSizeValue ) ) ) )";
         }
     }
-    static final String DFA85_eotS =
+    static final String DFA86_eotS =
         "\14\uffff";
-    static final String DFA85_eofS =
+    static final String DFA86_eofS =
         "\14\uffff";
-    static final String DFA85_minS =
+    static final String DFA86_minS =
         "\1\13\1\uffff\2\101\2\6\2\102\4\uffff";
-    static final String DFA85_maxS =
-        "\1\u01d7\1\uffff\2\101\2\6\2\u0115\4\uffff";
-    static final String DFA85_acceptS =
+    static final String DFA86_maxS =
+        "\1\u01ce\1\uffff\2\101\2\6\2\u0115\4\uffff";
+    static final String DFA86_acceptS =
         "\1\uffff\1\1\6\uffff\1\3\1\2\1\5\1\4";
-    static final String DFA85_specialS =
+    static final String DFA86_specialS =
         "\14\uffff}>";
-    static final String[] DFA85_transitionS = {
-            "\1\1\u01ca\uffff\1\2\1\3",
+    static final String[] DFA86_transitionS = {
+            "\1\1\u01c1\uffff\1\2\1\3",
             "",
             "\1\4",
             "\1\5",
@@ -24915,37 +24623,37 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
             ""
     };
 
-    static final short[] DFA85_eot = DFA.unpackEncodedString(DFA85_eotS);
-    static final short[] DFA85_eof = DFA.unpackEncodedString(DFA85_eofS);
-    static final char[] DFA85_min = DFA.unpackEncodedStringToUnsignedChars(DFA85_minS);
-    static final char[] DFA85_max = DFA.unpackEncodedStringToUnsignedChars(DFA85_maxS);
-    static final short[] DFA85_accept = DFA.unpackEncodedString(DFA85_acceptS);
-    static final short[] DFA85_special = DFA.unpackEncodedString(DFA85_specialS);
-    static final short[][] DFA85_transition;
+    static final short[] DFA86_eot = DFA.unpackEncodedString(DFA86_eotS);
+    static final short[] DFA86_eof = DFA.unpackEncodedString(DFA86_eofS);
+    static final char[] DFA86_min = DFA.unpackEncodedStringToUnsignedChars(DFA86_minS);
+    static final char[] DFA86_max = DFA.unpackEncodedStringToUnsignedChars(DFA86_maxS);
+    static final short[] DFA86_accept = DFA.unpackEncodedString(DFA86_acceptS);
+    static final short[] DFA86_special = DFA.unpackEncodedString(DFA86_specialS);
+    static final short[][] DFA86_transition;
 
     static {
-        int numStates = DFA85_transitionS.length;
-        DFA85_transition = new short[numStates][];
+        int numStates = DFA86_transitionS.length;
+        DFA86_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA85_transition[i] = DFA.unpackEncodedString(DFA85_transitionS[i]);
+            DFA86_transition[i] = DFA.unpackEncodedString(DFA86_transitionS[i]);
         }
     }
 
-    class DFA85 extends DFA {
+    class DFA86 extends DFA {
 
-        public DFA85(BaseRecognizer recognizer) {
+        public DFA86(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 85;
-            this.eot = DFA85_eot;
-            this.eof = DFA85_eof;
-            this.min = DFA85_min;
-            this.max = DFA85_max;
-            this.accept = DFA85_accept;
-            this.special = DFA85_special;
-            this.transition = DFA85_transition;
+            this.decisionNumber = 86;
+            this.eot = DFA86_eot;
+            this.eof = DFA86_eof;
+            this.min = DFA86_min;
+            this.max = DFA86_max;
+            this.accept = DFA86_accept;
+            this.special = DFA86_special;
+            this.transition = DFA86_transition;
         }
         public String getDescription() {
-            return "10118:1: ( (otherlv_0= '#' ( (lv_hex_1_0= ruleHexDigit ) ) ) | (otherlv_2= 'rgb' otherlv_3= '(' ( (lv_r_4_0= ruleIntegerValue ) ) otherlv_5= ',' ( (lv_g_6_0= ruleIntegerValue ) ) otherlv_7= ',' ( (lv_b_8_0= ruleIntegerValue ) ) otherlv_9= ')' ) | (otherlv_10= 'rgb' otherlv_11= '(' ( (lv_rp_12_0= ruleIntegerValue ) ) otherlv_13= '%' otherlv_14= ',' ( (lv_gp_15_0= ruleIntegerValue ) ) otherlv_16= '%' otherlv_17= ',' ( (lv_bp_18_0= ruleIntegerValue ) ) otherlv_19= '%' otherlv_20= ')' ) | (otherlv_21= 'rgba' otherlv_22= '(' ( (lv_r_23_0= ruleIntegerValue ) ) otherlv_24= ',' ( (lv_g_25_0= ruleIntegerValue ) ) otherlv_26= ',' ( (lv_b_27_0= ruleIntegerValue ) ) otherlv_28= ',' ( (lv_alpha_29_0= ruleNumberValue ) ) otherlv_30= ')' ) | (otherlv_31= 'rgba' otherlv_32= '(' ( (lv_rp_33_0= ruleIntegerValue ) ) otherlv_34= '%' otherlv_35= ',' ( (lv_gp_36_0= ruleIntegerValue ) ) otherlv_37= '%' otherlv_38= ',' ( (lv_bp_39_0= ruleIntegerValue ) ) otherlv_40= '%' otherlv_41= ',' ( (lv_alpha_42_0= ruleNumberValue ) ) otherlv_43= ')' ) )";
+            return "9940:1: ( (otherlv_0= '#' ( (lv_hex_1_0= ruleHexDigit ) ) ) | (otherlv_2= 'rgb' otherlv_3= '(' ( (lv_r_4_0= ruleIntegerValue ) ) otherlv_5= ',' ( (lv_g_6_0= ruleIntegerValue ) ) otherlv_7= ',' ( (lv_b_8_0= ruleIntegerValue ) ) otherlv_9= ')' ) | (otherlv_10= 'rgb' otherlv_11= '(' ( (lv_rp_12_0= ruleIntegerValue ) ) otherlv_13= '%' otherlv_14= ',' ( (lv_gp_15_0= ruleIntegerValue ) ) otherlv_16= '%' otherlv_17= ',' ( (lv_bp_18_0= ruleIntegerValue ) ) otherlv_19= '%' otherlv_20= ')' ) | (otherlv_21= 'rgba' otherlv_22= '(' ( (lv_r_23_0= ruleIntegerValue ) ) otherlv_24= ',' ( (lv_g_25_0= ruleIntegerValue ) ) otherlv_26= ',' ( (lv_b_27_0= ruleIntegerValue ) ) otherlv_28= ',' ( (lv_alpha_29_0= ruleNumberValue ) ) otherlv_30= ')' ) | (otherlv_31= 'rgba' otherlv_32= '(' ( (lv_rp_33_0= ruleIntegerValue ) ) otherlv_34= '%' otherlv_35= ',' ( (lv_gp_36_0= ruleIntegerValue ) ) otherlv_37= '%' otherlv_38= ',' ( (lv_bp_39_0= ruleIntegerValue ) ) otherlv_40= '%' otherlv_41= ',' ( (lv_alpha_42_0= ruleNumberValue ) ) otherlv_43= ')' ) )";
         }
     }
  
@@ -25011,7 +24719,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_18_in_ruleFontProperty1620 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_19_in_ruleFontProperty1649 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_20_in_ruleFontProperty1678 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleFontProperty1706 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
+    public static final BitSet FOLLOW_21_in_ruleFontProperty1706 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
     public static final BitSet FOLLOW_ruleFontValue_in_ruleFontProperty1727 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFontFamilyProperty_in_entryRuleFontFamilyProperty1763 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleFontFamilyProperty1773 = new BitSet(new long[]{0x0000000000000002L});
@@ -25031,7 +24739,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_31_in_ruleFontSizeProperty2190 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_32_in_ruleFontSizeProperty2219 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_33_in_ruleFontSizeProperty2248 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleFontSizeProperty2276 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
+    public static final BitSet FOLLOW_21_in_ruleFontSizeProperty2276 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
     public static final BitSet FOLLOW_ruleSizeValue_in_ruleFontSizeProperty2297 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFontStyleProperty_in_entryRuleFontStyleProperty2333 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleFontStyleProperty2343 = new BitSet(new long[]{0x0000000000000002L});
@@ -25051,7 +24759,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_43_in_ruleFontWeightProperty2760 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_44_in_ruleFontWeightProperty2789 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_45_in_ruleFontWeightProperty2818 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleFontWeightProperty2846 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFC000000000000L});
+    public static final BitSet FOLLOW_21_in_ruleFontWeightProperty2846 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x003C000000000800L});
     public static final BitSet FOLLOW_ruleFontWeightValue_in_ruleFontWeightProperty2867 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCursorProperty_in_entryRuleCursorProperty2903 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCursorProperty2913 = new BitSet(new long[]{0x0000000000000002L});
@@ -25087,7 +24795,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_64_in_ruleEffectDropShadow3751 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
     public static final BitSet FOLLOW_65_in_ruleEffectDropShadow3763 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00000000000F0000L});
     public static final BitSet FOLLOW_ruleBlurValue_in_ruleEffectDropShadow3784 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleEffectDropShadow3796 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0x0000000000000000L,0xFFFFFFFFFFFFFFE0L,0xFFFFFFFFFFFFFFFFL,0x000000000FFFFFFFL});
+    public static final BitSet FOLLOW_66_in_ruleEffectDropShadow3796 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0xF000000000000000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000007FFFFL});
     public static final BitSet FOLLOW_ruleColorValue_in_ruleEffectDropShadow3817 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_66_in_ruleEffectDropShadow3829 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
     public static final BitSet FOLLOW_ruleNumberValue_in_ruleEffectDropShadow3850 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
@@ -25102,7 +24810,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleEffectInnerShadow4007 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_68_in_ruleEffectInnerShadow4044 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00000000000F0000L});
     public static final BitSet FOLLOW_ruleBlurValue_in_ruleEffectInnerShadow4065 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleEffectInnerShadow4077 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0x0000000000000000L,0xFFFFFFFFFFFFFFE0L,0xFFFFFFFFFFFFFFFFL,0x000000000FFFFFFFL});
+    public static final BitSet FOLLOW_66_in_ruleEffectInnerShadow4077 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0xF000000000000000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000007FFFFL});
     public static final BitSet FOLLOW_ruleColorValue_in_ruleEffectInnerShadow4098 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
     public static final BitSet FOLLOW_66_in_ruleEffectInnerShadow4110 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
     public static final BitSet FOLLOW_ruleNumberValue_in_ruleEffectInnerShadow4131 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
@@ -25150,7 +24858,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_101_in_ruleBooleanProperty5261 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_102_in_ruleBooleanProperty5290 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_103_in_ruleBooleanProperty5319 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleBooleanProperty5347 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000030000000L});
+    public static final BitSet FOLLOW_21_in_ruleBooleanProperty5347 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000180000L});
     public static final BitSet FOLLOW_ruleBooleanValue_in_ruleBooleanProperty5368 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSizeProperty_in_entryRuleSizeProperty5404 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSizeProperty5414 = new BitSet(new long[]{0x0000000000000002L});
@@ -25180,7 +24888,7 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_127_in_ruleSizeProperty6126 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_128_in_ruleSizeProperty6155 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_129_in_ruleSizeProperty6184 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleSizeProperty6212 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
+    public static final BitSet FOLLOW_21_in_ruleSizeProperty6212 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
     public static final BitSet FOLLOW_ruleSizeValue_in_ruleSizeProperty6233 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNumberProperty_in_entryRuleNumberProperty6269 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleNumberProperty6279 = new BitSet(new long[]{0x0000000000000002L});
@@ -25248,14 +24956,14 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_183_in_rulePaintProperty8083 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_184_in_rulePaintProperty8112 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_185_in_rulePaintProperty8141 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_rulePaintProperty8169 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0x8000000000000000L,0xFFFFFFFFFFFFFFE8L,0xFFFFFFFFFFFFFFFFL,0x000000000FFFFFFFL});
+    public static final BitSet FOLLOW_21_in_rulePaintProperty8169 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0xF440000000000000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000007FFFFL});
     public static final BitSet FOLLOW_rulePaintValue_in_rulePaintProperty8190 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePaintProperties_in_entryRulePaintProperties8226 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRulePaintProperties8236 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_186_in_rulePaintProperties8279 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_rulePaintProperties8304 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0x8000000000000000L,0xFFFFFFFFFFFFFFE8L,0xFFFFFFFFFFFFFFFFL,0x000000000FFFFFFFL});
+    public static final BitSet FOLLOW_21_in_rulePaintProperties8304 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0xF440000000000000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000007FFFFL});
     public static final BitSet FOLLOW_rulePaintValue_in_rulePaintProperties8325 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_rulePaintProperties8338 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0x8000000000000000L,0xFFFFFFFFFFFFFFE8L,0xFFFFFFFFFFFFFFFFL,0x000000000FFFFFFFL});
+    public static final BitSet FOLLOW_66_in_rulePaintProperties8338 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0xF440000000000000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000007FFFFL});
     public static final BitSet FOLLOW_rulePaintValue_in_rulePaintProperties8359 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
     public static final BitSet FOLLOW_ruleBlendProperty_in_entryRuleBlendProperty8397 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBlendProperty8407 = new BitSet(new long[]{0x0000000000000002L});
@@ -25295,16 +25003,16 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_213_in_ruleMultiSizeProperties9390 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_214_in_ruleMultiSizeProperties9419 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_215_in_ruleMultiSizeProperties9448 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleMultiSizeProperties9476 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
+    public static final BitSet FOLLOW_21_in_ruleMultiSizeProperties9476 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
     public static final BitSet FOLLOW_ruleMultiSizeValue_in_ruleMultiSizeProperties9497 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleMultiSizeProperties9510 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
+    public static final BitSet FOLLOW_66_in_ruleMultiSizeProperties9510 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
     public static final BitSet FOLLOW_ruleMultiSizeValue_in_ruleMultiSizeProperties9531 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
     public static final BitSet FOLLOW_ruleHPositionProperty_in_entryRuleHPositionProperty9569 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleHPositionProperty9579 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_216_in_ruleHPositionProperty9624 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_217_in_ruleHPositionProperty9653 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_218_in_ruleHPositionProperty9682 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleHPositionProperty9710 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0080000C00000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00000000C0000000L});
+    public static final BitSet FOLLOW_21_in_ruleHPositionProperty9710 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0080000C00000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000600000L});
     public static final BitSet FOLLOW_ruleHPositionValue_in_ruleHPositionProperty9731 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleVPositionProperty_in_entryRuleVPositionProperty9767 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleVPositionProperty9777 = new BitSet(new long[]{0x0000000000000002L});
@@ -25350,13 +25058,13 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleMultiSizeProperty_in_entryRuleMultiSizeProperty10917 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMultiSizeProperty10927 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_237_in_ruleMultiSizeProperty10970 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleMultiSizeProperty10995 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
+    public static final BitSet FOLLOW_21_in_ruleMultiSizeProperty10995 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
     public static final BitSet FOLLOW_ruleMultiSizeValue_in_ruleMultiSizeProperty11016 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSizeProperties_in_entryRuleSizeProperties11052 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSizeProperties11062 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_238_in_ruleSizeProperties11105 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleSizeProperties11130 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_ruleSizeValue_in_ruleSizeProperties11151 = new BitSet(new long[]{0x0000000000000042L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
+    public static final BitSet FOLLOW_21_in_ruleSizeProperties11130 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_ruleSizeValue_in_ruleSizeProperties11151 = new BitSet(new long[]{0x0000000000000042L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
     public static final BitSet FOLLOW_ruleStrokeLineCapProperty_in_entryRuleStrokeLineCapProperty11188 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleStrokeLineCapProperty11198 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_239_in_ruleStrokeLineCapProperty11235 = new BitSet(new long[]{0x0000000000200000L});
@@ -25389,23 +25097,23 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleBackgroundImagePositionProperty_in_entryRuleBackgroundImagePositionProperty11973 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBackgroundImagePositionProperty11983 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_251_in_ruleBackgroundImagePositionProperty12020 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleBackgroundImagePositionProperty12032 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0080000C00000000L,0x7FFF000000000800L});
+    public static final BitSet FOLLOW_21_in_ruleBackgroundImagePositionProperty12032 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0080000C00000000L,0x003F000000000800L});
     public static final BitSet FOLLOW_ruleBgPositionValue_in_ruleBackgroundImagePositionProperty12053 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleBackgroundImagePositionProperty12066 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0080000C00000000L,0x7FFF000000000800L});
+    public static final BitSet FOLLOW_66_in_ruleBackgroundImagePositionProperty12066 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0080000C00000000L,0x003F000000000800L});
     public static final BitSet FOLLOW_ruleBgPositionValue_in_ruleBackgroundImagePositionProperty12087 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
     public static final BitSet FOLLOW_ruleBackgroundImageSizeProperty_in_entryRuleBackgroundImageSizeProperty12125 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBackgroundImageSizeProperty12135 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_252_in_ruleBackgroundImageSizeProperty12172 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleBackgroundImageSizeProperty12184 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF003800000800L});
+    public static final BitSet FOLLOW_21_in_ruleBackgroundImageSizeProperty12184 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F003800000800L});
     public static final BitSet FOLLOW_ruleBgSizeValue_in_ruleBackgroundImageSizeProperty12205 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleBackgroundImageSizeProperty12218 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF003800000800L});
+    public static final BitSet FOLLOW_66_in_ruleBackgroundImageSizeProperty12218 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F003800000800L});
     public static final BitSet FOLLOW_ruleBgSizeValue_in_ruleBackgroundImageSizeProperty12239 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
     public static final BitSet FOLLOW_ruleBorderColorProperty_in_entryRuleBorderColorProperty12277 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBorderColorProperty12287 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_253_in_ruleBorderColorProperty12324 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleBorderColorProperty12336 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0x8000000000000000L,0xFFFFFFFFFFFFFFE8L,0xFFFFFFFFFFFFFFFFL,0x000000000FFFFFFFL});
+    public static final BitSet FOLLOW_21_in_ruleBorderColorProperty12336 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0xF440000000000000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000007FFFFL});
     public static final BitSet FOLLOW_ruleMultiPaintValue_in_ruleBorderColorProperty12357 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleBorderColorProperty12370 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0x8000000000000000L,0xFFFFFFFFFFFFFFE8L,0xFFFFFFFFFFFFFFFFL,0x000000000FFFFFFFL});
+    public static final BitSet FOLLOW_66_in_ruleBorderColorProperty12370 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0xF440000000000000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000007FFFFL});
     public static final BitSet FOLLOW_ruleMultiPaintValue_in_ruleBorderColorProperty12391 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
     public static final BitSet FOLLOW_ruleBorderStyleProperty_in_entryRuleBorderStyleProperty12429 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBorderStyleProperty12439 = new BitSet(new long[]{0x0000000000000002L});
@@ -25417,9 +25125,9 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleBorderImageSliceProperty_in_entryRuleBorderImageSliceProperty12581 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBorderImageSliceProperty12591 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_255_in_ruleBorderImageSliceProperty12628 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleBorderImageSliceProperty12640 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
+    public static final BitSet FOLLOW_21_in_ruleBorderImageSliceProperty12640 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
     public static final BitSet FOLLOW_ruleSizeFill_in_ruleBorderImageSliceProperty12661 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleBorderImageSliceProperty12674 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
+    public static final BitSet FOLLOW_66_in_ruleBorderImageSliceProperty12674 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
     public static final BitSet FOLLOW_ruleSizeFill_in_ruleBorderImageSliceProperty12695 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000004L});
     public static final BitSet FOLLOW_ruleShapeProperty_in_entryRuleShapeProperty12733 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleShapeProperty12743 = new BitSet(new long[]{0x0000000000000002L});
@@ -25510,16 +25218,16 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleMultiSizeValue_in_entryRuleMultiSizeValue15045 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMultiSizeValue15055 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSizeValue_in_ruleMultiSizeValue15101 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSizeValue_in_ruleMultiSizeValue15129 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_ruleSizeValue_in_ruleMultiSizeValue15150 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_ruleSizeValue_in_ruleMultiSizeValue15171 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
+    public static final BitSet FOLLOW_ruleSizeValue_in_ruleMultiSizeValue15129 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_ruleSizeValue_in_ruleMultiSizeValue15150 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_ruleSizeValue_in_ruleMultiSizeValue15171 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
     public static final BitSet FOLLOW_ruleSizeValue_in_ruleMultiSizeValue15192 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBgPositionValue_in_entryRuleBgPositionValue15229 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBgPositionValue15239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSizeValue_in_ruleBgPositionValue15286 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0080000300000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_226_in_ruleBgPositionValue15312 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0080000300000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_247_in_ruleBgPositionValue15341 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0080000300000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_227_in_ruleBgPositionValue15370 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0080000300000000L,0x7FFF000000000800L});
+    public static final BitSet FOLLOW_ruleSizeValue_in_ruleBgPositionValue15286 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0080000300000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_226_in_ruleBgPositionValue15312 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0080000300000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_247_in_ruleBgPositionValue15341 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0080000300000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_227_in_ruleBgPositionValue15370 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0080000300000000L,0x003F000000000800L});
     public static final BitSet FOLLOW_ruleSizeValue_in_ruleBgPositionValue15409 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_224_in_ruleBgPositionValue15435 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_247_in_ruleBgPositionValue15464 = new BitSet(new long[]{0x0000000000000002L});
@@ -25538,15 +25246,15 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_290_in_ruleRepeatStyleValue15883 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBgSizeValue_in_entryRuleBgSizeValue15937 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBgSizeValue15947 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSizeValue_in_ruleBgSizeValue15995 = new BitSet(new long[]{0x0000000000000042L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000800000800L});
-    public static final BitSet FOLLOW_291_in_ruleBgSizeValue16019 = new BitSet(new long[]{0x0000000000000042L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000800000800L});
+    public static final BitSet FOLLOW_ruleSizeValue_in_ruleBgSizeValue15995 = new BitSet(new long[]{0x0000000000000042L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000800000800L});
+    public static final BitSet FOLLOW_291_in_ruleBgSizeValue16019 = new BitSet(new long[]{0x0000000000000042L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000800000800L});
     public static final BitSet FOLLOW_ruleSizeValue_in_ruleBgSizeValue16055 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_291_in_ruleBgSizeValue16079 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_292_in_ruleBgSizeValue16121 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_293_in_ruleBgSizeValue16150 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMultiPaintValue_in_entryRuleMultiPaintValue16202 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMultiPaintValue16212 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePaintValue_in_ruleMultiPaintValue16257 = new BitSet(new long[]{0x0000000000000802L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0x8000000000000000L,0xFFFFFFFFFFFFFFE8L,0xFFFFFFFFFFFFFFFFL,0x000000000FFFFFFFL});
+    public static final BitSet FOLLOW_rulePaintValue_in_ruleMultiPaintValue16257 = new BitSet(new long[]{0x0000000000000802L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0xF440000000000000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000007FFFFL});
     public static final BitSet FOLLOW_ruleBorderStyleValue_in_entryRuleBorderStyleValue16293 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBorderStyleValue16303 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDashStyleValue_in_ruleBorderStyleValue16349 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x000007C000000000L});
@@ -25574,355 +25282,339 @@ public class InternalJFXCssParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_303_in_ruleSizeFill16978 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFontValue_in_entryRuleFontValue17028 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleFontValue17038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_304_in_ruleFontValue17083 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_305_in_ruleFontValue17112 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_306_in_ruleFontValue17141 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_307_in_ruleFontValue17170 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_308_in_ruleFontValue17199 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_309_in_ruleFontValue17228 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_310_in_ruleFontValue17257 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_311_in_ruleFontValue17286 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_312_in_ruleFontValue17315 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_313_in_ruleFontValue17344 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_314_in_ruleFontValue17373 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_315_in_ruleFontValue17402 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_316_in_ruleFontValue17431 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_317_in_ruleFontValue17460 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_318_in_ruleFontValue17489 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_ruleSizeValue_in_ruleFontValue17527 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleFontFamily_in_ruleFontValue17548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFontStyleValue_in_entryRuleFontStyleValue17584 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFontStyleValue17594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_306_in_ruleFontStyleValue17638 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_304_in_ruleFontStyleValue17667 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_305_in_ruleFontStyleValue17696 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFontWeightValue_in_entryRuleFontWeightValue17747 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFontWeightValue17757 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_306_in_ruleFontWeightValue17801 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_307_in_ruleFontWeightValue17830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_308_in_ruleFontWeightValue17859 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_309_in_ruleFontWeightValue17888 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_310_in_ruleFontWeightValue17917 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_311_in_ruleFontWeightValue17946 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_312_in_ruleFontWeightValue17975 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_313_in_ruleFontWeightValue18004 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_314_in_ruleFontWeightValue18033 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_315_in_ruleFontWeightValue18062 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_316_in_ruleFontWeightValue18091 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_317_in_ruleFontWeightValue18120 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_318_in_ruleFontWeightValue18149 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFontFamily_in_entryRuleFontFamily18200 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFontFamily18210 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFontFamily18251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePaintValue_in_entryRulePaintValue18291 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePaintValue18301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLinearGradient_in_rulePaintValue18348 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRadialGradient_in_rulePaintValue18375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleColorValue_in_rulePaintValue18402 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLinearGradient_in_entryRuleLinearGradient18437 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLinearGradient18447 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_319_in_ruleLinearGradient18484 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleLinearGradient18496 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_ruleSizeValue_in_ruleLinearGradient18517 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleLinearGradient18529 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_ruleSizeValue_in_ruleLinearGradient18550 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_ruleLinearGradient18562 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_320_in_ruleLinearGradient18574 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleLinearGradient18586 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_ruleSizeValue_in_ruleLinearGradient18607 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleLinearGradient18619 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_ruleSizeValue_in_ruleLinearGradient18640 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_ruleLinearGradient18652 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_321_in_ruleLinearGradient18664 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleLinearGradient18677 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleStopValue_in_ruleLinearGradient18698 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_ruleLinearGradient18710 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000100000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_288_in_ruleLinearGradient18725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_322_in_ruleLinearGradient18743 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRadialGradient_in_entryRuleRadialGradient18781 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRadialGradient18791 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_323_in_ruleRadialGradient18828 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_65_in_ruleRadialGradient18841 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_ruleSizeValue_in_ruleRadialGradient18862 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleRadialGradient18874 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_ruleSizeValue_in_ruleRadialGradient18895 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_ruleRadialGradient18907 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleRadialGradient18919 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_ruleSizeValue_in_ruleRadialGradient18942 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_324_in_ruleRadialGradient18955 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleRadialGradient18967 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_ruleSizeValue_in_ruleRadialGradient18988 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleRadialGradient19000 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x7FFF000000000800L});
-    public static final BitSet FOLLOW_ruleSizeValue_in_ruleRadialGradient19021 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_ruleRadialGradient19033 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_321_in_ruleRadialGradient19046 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleRadialGradient19059 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleStopValue_in_ruleRadialGradient19080 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_ruleRadialGradient19092 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000100000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_288_in_ruleRadialGradient19107 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_322_in_ruleRadialGradient19125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStopValue_in_entryRuleStopValue19163 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStopValue19173 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumberValue_in_ruleStopValue19219 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleStopValue19231 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0x0000000000000000L,0xFFFFFFFFFFFFFFE0L,0xFFFFFFFFFFFFFFFFL,0x000000000FFFFFFFL});
-    public static final BitSet FOLLOW_ruleColorValue_in_ruleStopValue19252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleColorValue_in_entryRuleColorValue19288 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleColorValue19298 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNamedColor_in_ruleColorValue19345 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRGBColor_in_ruleColorValue19372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleHSBColor_in_ruleColorValue19399 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleColorFunction_in_ruleColorValue19426 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNamedColor_in_entryRuleNamedColor19461 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNamedColor19471 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_325_in_ruleNamedColor19515 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_326_in_ruleNamedColor19544 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_327_in_ruleNamedColor19573 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_328_in_ruleNamedColor19602 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_329_in_ruleNamedColor19631 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_330_in_ruleNamedColor19660 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_331_in_ruleNamedColor19689 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_332_in_ruleNamedColor19718 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_333_in_ruleNamedColor19747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_189_in_ruleNamedColor19776 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_334_in_ruleNamedColor19805 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_335_in_ruleNamedColor19834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_336_in_ruleNamedColor19863 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_337_in_ruleNamedColor19892 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_338_in_ruleNamedColor19921 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_339_in_ruleNamedColor19950 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_340_in_ruleNamedColor19979 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_341_in_ruleNamedColor20008 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_342_in_ruleNamedColor20037 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_343_in_ruleNamedColor20066 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_344_in_ruleNamedColor20095 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_345_in_ruleNamedColor20124 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_346_in_ruleNamedColor20153 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_347_in_ruleNamedColor20182 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_348_in_ruleNamedColor20211 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_349_in_ruleNamedColor20240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_350_in_ruleNamedColor20269 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_351_in_ruleNamedColor20298 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_352_in_ruleNamedColor20327 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_353_in_ruleNamedColor20356 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_354_in_ruleNamedColor20385 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_355_in_ruleNamedColor20414 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_356_in_ruleNamedColor20443 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_357_in_ruleNamedColor20472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_358_in_ruleNamedColor20501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_359_in_ruleNamedColor20530 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_360_in_ruleNamedColor20559 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_361_in_ruleNamedColor20588 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_362_in_ruleNamedColor20617 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_363_in_ruleNamedColor20646 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_364_in_ruleNamedColor20675 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_365_in_ruleNamedColor20704 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_366_in_ruleNamedColor20733 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_367_in_ruleNamedColor20762 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_368_in_ruleNamedColor20791 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_369_in_ruleNamedColor20820 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_370_in_ruleNamedColor20849 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_371_in_ruleNamedColor20878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_372_in_ruleNamedColor20907 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_373_in_ruleNamedColor20936 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_374_in_ruleNamedColor20965 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_375_in_ruleNamedColor20994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_376_in_ruleNamedColor21023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_377_in_ruleNamedColor21052 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_195_in_ruleNamedColor21081 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_378_in_ruleNamedColor21110 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_379_in_ruleNamedColor21139 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_380_in_ruleNamedColor21168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_381_in_ruleNamedColor21197 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_382_in_ruleNamedColor21226 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_383_in_ruleNamedColor21255 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_384_in_ruleNamedColor21284 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_385_in_ruleNamedColor21313 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_386_in_ruleNamedColor21342 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_387_in_ruleNamedColor21371 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_388_in_ruleNamedColor21400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_389_in_ruleNamedColor21429 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_390_in_ruleNamedColor21458 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_391_in_ruleNamedColor21487 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_392_in_ruleNamedColor21516 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_393_in_ruleNamedColor21545 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_394_in_ruleNamedColor21574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_395_in_ruleNamedColor21603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_396_in_ruleNamedColor21632 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_397_in_ruleNamedColor21661 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_398_in_ruleNamedColor21690 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_399_in_ruleNamedColor21719 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_400_in_ruleNamedColor21748 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_401_in_ruleNamedColor21777 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_402_in_ruleNamedColor21806 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_403_in_ruleNamedColor21835 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_404_in_ruleNamedColor21864 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_405_in_ruleNamedColor21893 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_406_in_ruleNamedColor21922 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_407_in_ruleNamedColor21951 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_408_in_ruleNamedColor21980 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_409_in_ruleNamedColor22009 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_410_in_ruleNamedColor22038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_411_in_ruleNamedColor22067 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_412_in_ruleNamedColor22096 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_413_in_ruleNamedColor22125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_414_in_ruleNamedColor22154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_415_in_ruleNamedColor22183 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_416_in_ruleNamedColor22212 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_417_in_ruleNamedColor22241 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_418_in_ruleNamedColor22270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_419_in_ruleNamedColor22299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_420_in_ruleNamedColor22328 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_421_in_ruleNamedColor22357 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_422_in_ruleNamedColor22386 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_423_in_ruleNamedColor22415 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_424_in_ruleNamedColor22444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_425_in_ruleNamedColor22473 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_426_in_ruleNamedColor22502 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_427_in_ruleNamedColor22531 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_428_in_ruleNamedColor22560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_429_in_ruleNamedColor22589 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_430_in_ruleNamedColor22618 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_431_in_ruleNamedColor22647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_432_in_ruleNamedColor22676 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_433_in_ruleNamedColor22705 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_434_in_ruleNamedColor22734 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_435_in_ruleNamedColor22763 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_436_in_ruleNamedColor22792 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_437_in_ruleNamedColor22821 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_438_in_ruleNamedColor22850 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_439_in_ruleNamedColor22879 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_440_in_ruleNamedColor22908 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_441_in_ruleNamedColor22937 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_200_in_ruleNamedColor22966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_442_in_ruleNamedColor22995 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_443_in_ruleNamedColor23024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_444_in_ruleNamedColor23053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_445_in_ruleNamedColor23082 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_446_in_ruleNamedColor23111 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_447_in_ruleNamedColor23140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_448_in_ruleNamedColor23169 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_449_in_ruleNamedColor23198 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_450_in_ruleNamedColor23227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_451_in_ruleNamedColor23256 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_452_in_ruleNamedColor23285 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_453_in_ruleNamedColor23314 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_454_in_ruleNamedColor23343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_455_in_ruleNamedColor23372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_456_in_ruleNamedColor23401 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_457_in_ruleNamedColor23430 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_458_in_ruleNamedColor23459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_459_in_ruleNamedColor23488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_460_in_ruleNamedColor23517 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_461_in_ruleNamedColor23546 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_462_in_ruleNamedColor23575 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_463_in_ruleNamedColor23604 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_464_in_ruleNamedColor23633 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_465_in_ruleNamedColor23662 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_466_in_ruleNamedColor23691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_467_in_ruleNamedColor23720 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_468_in_ruleNamedColor23749 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_469_in_ruleNamedColor23778 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRGBColor_in_entryRuleRGBColor23829 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRGBColor23839 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_ruleRGBColor23877 = new BitSet(new long[]{0x0000000000000050L});
-    public static final BitSet FOLLOW_ruleHexDigit_in_ruleRGBColor23898 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_470_in_ruleRGBColor23918 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleRGBColor23930 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor23951 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleRGBColor23963 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor23984 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleRGBColor23996 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor24017 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_ruleRGBColor24029 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_470_in_ruleRGBColor24049 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleRGBColor24061 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor24082 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_277_in_ruleRGBColor24094 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleRGBColor24106 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor24127 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_277_in_ruleRGBColor24139 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleRGBColor24151 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor24172 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_277_in_ruleRGBColor24184 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_ruleRGBColor24196 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_471_in_ruleRGBColor24216 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleRGBColor24228 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor24249 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleRGBColor24261 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor24282 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleRGBColor24294 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor24315 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleRGBColor24327 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleNumberValue_in_ruleRGBColor24348 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_ruleRGBColor24360 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_471_in_ruleRGBColor24380 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleRGBColor24392 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor24413 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_277_in_ruleRGBColor24425 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleRGBColor24437 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor24458 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_277_in_ruleRGBColor24470 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleRGBColor24482 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor24503 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_277_in_ruleRGBColor24515 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleRGBColor24527 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleNumberValue_in_ruleRGBColor24548 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_ruleRGBColor24560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleHSBColor_in_entryRuleHSBColor24597 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleHSBColor24607 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_472_in_ruleHSBColor24645 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleHSBColor24657 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleNumberValue_in_ruleHSBColor24678 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleHSBColor24690 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleNumberValue_in_ruleHSBColor24711 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_277_in_ruleHSBColor24723 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleHSBColor24735 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleNumberValue_in_ruleHSBColor24756 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_277_in_ruleHSBColor24768 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_ruleHSBColor24780 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_473_in_ruleHSBColor24800 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleHSBColor24812 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleNumberValue_in_ruleHSBColor24833 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleHSBColor24845 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleNumberValue_in_ruleHSBColor24866 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_277_in_ruleHSBColor24878 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleHSBColor24890 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleNumberValue_in_ruleHSBColor24911 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_277_in_ruleHSBColor24923 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleHSBColor24935 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleNumberValue_in_ruleHSBColor24956 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_ruleHSBColor24968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleColorFunction_in_entryRuleColorFunction25005 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleColorFunction25015 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_474_in_ruleColorFunction25053 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleColorFunction25065 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0x0000000000000000L,0xFFFFFFFFFFFFFFE0L,0xFFFFFFFFFFFFFFFFL,0x000000000FFFFFFFL});
-    public static final BitSet FOLLOW_ruleColorValue_in_ruleColorFunction25086 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleColorFunction25098 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleNumberValue_in_ruleColorFunction25119 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_277_in_ruleColorFunction25131 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_ruleColorFunction25143 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_475_in_ruleColorFunction25163 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleColorFunction25175 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0x0000000000000000L,0xFFFFFFFFFFFFFFE0L,0xFFFFFFFFFFFFFFFFL,0x000000000FFFFFFFL});
-    public static final BitSet FOLLOW_ruleColorValue_in_ruleColorFunction25196 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_ruleColorFunction25208 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_321_in_ruleColorFunction25220 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleColorFunction25233 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_ruleNumberValue_in_ruleColorFunction25254 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_66_in_ruleColorFunction25266 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0x0000000000000000L,0xFFFFFFFFFFFFFFE0L,0xFFFFFFFFFFFFFFFFL,0x000000000FFFFFFFL});
-    public static final BitSet FOLLOW_ruleColorValue_in_ruleColorFunction25287 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
-    public static final BitSet FOLLOW_67_in_ruleColorFunction25299 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleHexDigit_in_entryRuleHexDigit25345 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleHexDigit25356 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleHexDigit25400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleHexDigit25427 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleHexDigit25447 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleHexDigit25474 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_476_in_ruleBooleanValue25537 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_477_in_ruleBooleanValue25554 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_226_in_ruleHPositionValue25599 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_247_in_ruleHPositionValue25616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_227_in_ruleHPositionValue25633 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_478_in_ruleHPositionValue25650 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_479_in_ruleHPositionValue25667 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_304_in_ruleFontValue17084 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_305_in_ruleFontValue17113 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_306_in_ruleFontValue17142 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_307_in_ruleFontValue17171 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_308_in_ruleFontValue17200 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_309_in_ruleFontValue17229 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_ruleIntegerProperty_in_ruleFontValue17272 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_ruleSizeValue_in_ruleFontValue17295 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleFontFamily_in_ruleFontValue17316 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFontStyleValue_in_entryRuleFontStyleValue17352 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFontStyleValue17362 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_306_in_ruleFontStyleValue17406 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_304_in_ruleFontStyleValue17435 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_305_in_ruleFontStyleValue17464 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFontWeightValue_in_entryRuleFontWeightValue17515 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFontWeightValue17525 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_306_in_ruleFontWeightValue17570 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_307_in_ruleFontWeightValue17599 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_308_in_ruleFontWeightValue17628 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_309_in_ruleFontWeightValue17657 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumberValue_in_ruleFontWeightValue17700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFontFamily_in_entryRuleFontFamily17736 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFontFamily17746 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFontFamily17787 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePaintValue_in_entryRulePaintValue17827 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePaintValue17837 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLinearGradient_in_rulePaintValue17884 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRadialGradient_in_rulePaintValue17911 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleColorValue_in_rulePaintValue17938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLinearGradient_in_entryRuleLinearGradient17973 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLinearGradient17983 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_310_in_ruleLinearGradient18020 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleLinearGradient18032 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_ruleSizeValue_in_ruleLinearGradient18053 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleLinearGradient18065 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_ruleSizeValue_in_ruleLinearGradient18086 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleLinearGradient18098 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0080000000000000L});
+    public static final BitSet FOLLOW_311_in_ruleLinearGradient18110 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleLinearGradient18122 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_ruleSizeValue_in_ruleLinearGradient18143 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleLinearGradient18155 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_ruleSizeValue_in_ruleLinearGradient18176 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleLinearGradient18188 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0100000000000000L});
+    public static final BitSet FOLLOW_312_in_ruleLinearGradient18200 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleLinearGradient18213 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_ruleStopValue_in_ruleLinearGradient18234 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleLinearGradient18246 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0200000100000000L});
+    public static final BitSet FOLLOW_288_in_ruleLinearGradient18261 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_313_in_ruleLinearGradient18279 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRadialGradient_in_entryRuleRadialGradient18317 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRadialGradient18327 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_314_in_ruleRadialGradient18364 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000002L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_65_in_ruleRadialGradient18377 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_ruleSizeValue_in_ruleRadialGradient18398 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleRadialGradient18410 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_ruleSizeValue_in_ruleRadialGradient18431 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleRadialGradient18443 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleRadialGradient18455 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_ruleSizeValue_in_ruleRadialGradient18478 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0800000000000000L});
+    public static final BitSet FOLLOW_315_in_ruleRadialGradient18491 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleRadialGradient18503 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_ruleSizeValue_in_ruleRadialGradient18524 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleRadialGradient18536 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_ruleSizeValue_in_ruleRadialGradient18557 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleRadialGradient18569 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0100000000000000L});
+    public static final BitSet FOLLOW_312_in_ruleRadialGradient18582 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleRadialGradient18595 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x000000000F000000L,0x0000000000000000L,0x003F000000000800L});
+    public static final BitSet FOLLOW_ruleStopValue_in_ruleRadialGradient18616 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleRadialGradient18628 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0200000100000000L});
+    public static final BitSet FOLLOW_288_in_ruleRadialGradient18643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_313_in_ruleRadialGradient18661 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStopValue_in_entryRuleStopValue18699 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStopValue18709 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSizeValue_in_ruleStopValue18755 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleStopValue18767 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0xF000000000000000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000007FFFFL});
+    public static final BitSet FOLLOW_ruleColorValue_in_ruleStopValue18788 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleColorValue_in_entryRuleColorValue18824 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleColorValue18834 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNamedColor_in_ruleColorValue18881 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRGBColor_in_ruleColorValue18908 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleHSBColor_in_ruleColorValue18935 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleColorFunction_in_ruleColorValue18962 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNamedColor_in_entryRuleNamedColor18997 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNamedColor19007 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_316_in_ruleNamedColor19051 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_317_in_ruleNamedColor19080 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_318_in_ruleNamedColor19109 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_319_in_ruleNamedColor19138 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_320_in_ruleNamedColor19167 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_321_in_ruleNamedColor19196 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_322_in_ruleNamedColor19225 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_323_in_ruleNamedColor19254 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_324_in_ruleNamedColor19283 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_189_in_ruleNamedColor19312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_325_in_ruleNamedColor19341 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_326_in_ruleNamedColor19370 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_327_in_ruleNamedColor19399 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_328_in_ruleNamedColor19428 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_329_in_ruleNamedColor19457 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_330_in_ruleNamedColor19486 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_331_in_ruleNamedColor19515 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_332_in_ruleNamedColor19544 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_333_in_ruleNamedColor19573 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_334_in_ruleNamedColor19602 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_335_in_ruleNamedColor19631 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_336_in_ruleNamedColor19660 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_337_in_ruleNamedColor19689 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_338_in_ruleNamedColor19718 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_339_in_ruleNamedColor19747 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_340_in_ruleNamedColor19776 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_341_in_ruleNamedColor19805 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_342_in_ruleNamedColor19834 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_343_in_ruleNamedColor19863 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_344_in_ruleNamedColor19892 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_345_in_ruleNamedColor19921 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_346_in_ruleNamedColor19950 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_347_in_ruleNamedColor19979 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_348_in_ruleNamedColor20008 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_349_in_ruleNamedColor20037 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_350_in_ruleNamedColor20066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_351_in_ruleNamedColor20095 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_352_in_ruleNamedColor20124 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_353_in_ruleNamedColor20153 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_354_in_ruleNamedColor20182 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_355_in_ruleNamedColor20211 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_356_in_ruleNamedColor20240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_357_in_ruleNamedColor20269 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_358_in_ruleNamedColor20298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_359_in_ruleNamedColor20327 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_360_in_ruleNamedColor20356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_361_in_ruleNamedColor20385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_362_in_ruleNamedColor20414 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_363_in_ruleNamedColor20443 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_364_in_ruleNamedColor20472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_365_in_ruleNamedColor20501 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_366_in_ruleNamedColor20530 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_367_in_ruleNamedColor20559 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_368_in_ruleNamedColor20588 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_195_in_ruleNamedColor20617 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_369_in_ruleNamedColor20646 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_370_in_ruleNamedColor20675 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_371_in_ruleNamedColor20704 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_372_in_ruleNamedColor20733 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_373_in_ruleNamedColor20762 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_374_in_ruleNamedColor20791 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_375_in_ruleNamedColor20820 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_376_in_ruleNamedColor20849 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_377_in_ruleNamedColor20878 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_378_in_ruleNamedColor20907 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_379_in_ruleNamedColor20936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_380_in_ruleNamedColor20965 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_381_in_ruleNamedColor20994 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_382_in_ruleNamedColor21023 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_383_in_ruleNamedColor21052 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_384_in_ruleNamedColor21081 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_385_in_ruleNamedColor21110 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_386_in_ruleNamedColor21139 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_387_in_ruleNamedColor21168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_388_in_ruleNamedColor21197 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_389_in_ruleNamedColor21226 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_390_in_ruleNamedColor21255 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_391_in_ruleNamedColor21284 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_392_in_ruleNamedColor21313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_393_in_ruleNamedColor21342 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_394_in_ruleNamedColor21371 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_395_in_ruleNamedColor21400 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_396_in_ruleNamedColor21429 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_397_in_ruleNamedColor21458 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_398_in_ruleNamedColor21487 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_399_in_ruleNamedColor21516 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_400_in_ruleNamedColor21545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_401_in_ruleNamedColor21574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_402_in_ruleNamedColor21603 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_403_in_ruleNamedColor21632 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_404_in_ruleNamedColor21661 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_405_in_ruleNamedColor21690 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_406_in_ruleNamedColor21719 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_407_in_ruleNamedColor21748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_408_in_ruleNamedColor21777 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_409_in_ruleNamedColor21806 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_410_in_ruleNamedColor21835 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_411_in_ruleNamedColor21864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_412_in_ruleNamedColor21893 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_413_in_ruleNamedColor21922 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_414_in_ruleNamedColor21951 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_415_in_ruleNamedColor21980 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_416_in_ruleNamedColor22009 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_417_in_ruleNamedColor22038 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_418_in_ruleNamedColor22067 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_419_in_ruleNamedColor22096 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_420_in_ruleNamedColor22125 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_421_in_ruleNamedColor22154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_422_in_ruleNamedColor22183 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_423_in_ruleNamedColor22212 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_424_in_ruleNamedColor22241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_425_in_ruleNamedColor22270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_426_in_ruleNamedColor22299 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_427_in_ruleNamedColor22328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_428_in_ruleNamedColor22357 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_429_in_ruleNamedColor22386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_430_in_ruleNamedColor22415 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_431_in_ruleNamedColor22444 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_432_in_ruleNamedColor22473 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_200_in_ruleNamedColor22502 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_433_in_ruleNamedColor22531 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_434_in_ruleNamedColor22560 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_435_in_ruleNamedColor22589 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_436_in_ruleNamedColor22618 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_437_in_ruleNamedColor22647 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_438_in_ruleNamedColor22676 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_439_in_ruleNamedColor22705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_440_in_ruleNamedColor22734 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_441_in_ruleNamedColor22763 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_442_in_ruleNamedColor22792 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_443_in_ruleNamedColor22821 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_444_in_ruleNamedColor22850 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_445_in_ruleNamedColor22879 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_446_in_ruleNamedColor22908 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_447_in_ruleNamedColor22937 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_448_in_ruleNamedColor22966 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_449_in_ruleNamedColor22995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_450_in_ruleNamedColor23024 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_451_in_ruleNamedColor23053 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_452_in_ruleNamedColor23082 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_453_in_ruleNamedColor23111 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_454_in_ruleNamedColor23140 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_455_in_ruleNamedColor23169 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_456_in_ruleNamedColor23198 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_457_in_ruleNamedColor23227 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_458_in_ruleNamedColor23256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_459_in_ruleNamedColor23285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_460_in_ruleNamedColor23314 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRGBColor_in_entryRuleRGBColor23365 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRGBColor23375 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_ruleRGBColor23413 = new BitSet(new long[]{0x0000000000000050L});
+    public static final BitSet FOLLOW_ruleHexDigit_in_ruleRGBColor23434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_461_in_ruleRGBColor23454 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleRGBColor23466 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor23487 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleRGBColor23499 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor23520 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleRGBColor23532 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor23553 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleRGBColor23565 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_461_in_ruleRGBColor23585 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleRGBColor23597 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor23618 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_277_in_ruleRGBColor23630 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleRGBColor23642 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor23663 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_277_in_ruleRGBColor23675 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleRGBColor23687 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor23708 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_277_in_ruleRGBColor23720 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleRGBColor23732 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_462_in_ruleRGBColor23752 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleRGBColor23764 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor23785 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleRGBColor23797 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor23818 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleRGBColor23830 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor23851 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleRGBColor23863 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleNumberValue_in_ruleRGBColor23884 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleRGBColor23896 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_462_in_ruleRGBColor23916 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleRGBColor23928 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor23949 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_277_in_ruleRGBColor23961 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleRGBColor23973 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor23994 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_277_in_ruleRGBColor24006 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleRGBColor24018 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleIntegerValue_in_ruleRGBColor24039 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_277_in_ruleRGBColor24051 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleRGBColor24063 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleNumberValue_in_ruleRGBColor24084 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleRGBColor24096 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleHSBColor_in_entryRuleHSBColor24133 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleHSBColor24143 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_463_in_ruleHSBColor24181 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleHSBColor24193 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleNumberValue_in_ruleHSBColor24214 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleHSBColor24226 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleNumberValue_in_ruleHSBColor24247 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_277_in_ruleHSBColor24259 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleHSBColor24271 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleNumberValue_in_ruleHSBColor24292 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_277_in_ruleHSBColor24304 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleHSBColor24316 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_464_in_ruleHSBColor24336 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleHSBColor24348 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleNumberValue_in_ruleHSBColor24369 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleHSBColor24381 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleNumberValue_in_ruleHSBColor24402 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_277_in_ruleHSBColor24414 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleHSBColor24426 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleNumberValue_in_ruleHSBColor24447 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_277_in_ruleHSBColor24459 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleHSBColor24471 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleNumberValue_in_ruleHSBColor24492 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleHSBColor24504 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleColorFunction_in_entryRuleColorFunction24541 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleColorFunction24551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_465_in_ruleColorFunction24589 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleColorFunction24601 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0xF000000000000000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000007FFFFL});
+    public static final BitSet FOLLOW_ruleColorValue_in_ruleColorFunction24622 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleColorFunction24634 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleNumberValue_in_ruleColorFunction24655 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_277_in_ruleColorFunction24667 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleColorFunction24679 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_466_in_ruleColorFunction24699 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleColorFunction24711 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0xF000000000000000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000007FFFFL});
+    public static final BitSet FOLLOW_ruleColorValue_in_ruleColorFunction24732 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleColorFunction24744 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0100000000000000L});
+    public static final BitSet FOLLOW_312_in_ruleColorFunction24756 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleColorFunction24769 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_ruleNumberValue_in_ruleColorFunction24790 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_66_in_ruleColorFunction24802 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000000L,0x2000000000000000L,0x0000000000000108L,0xF000000000000000L,0xFFFFFFFFFFFFFFFFL,0xFFFFFFFFFFFFFFFFL,0x000000000007FFFFL});
+    public static final BitSet FOLLOW_ruleColorValue_in_ruleColorFunction24823 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_67_in_ruleColorFunction24835 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleHexDigit_in_entryRuleHexDigit24881 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleHexDigit24892 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleHexDigit24936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleHexDigit24963 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleHexDigit24983 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleHexDigit25010 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_467_in_ruleBooleanValue25073 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_468_in_ruleBooleanValue25090 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_226_in_ruleHPositionValue25135 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_247_in_ruleHPositionValue25152 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_227_in_ruleHPositionValue25169 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_469_in_ruleHPositionValue25186 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_470_in_ruleHPositionValue25203 = new BitSet(new long[]{0x0000000000000002L});
 
 }

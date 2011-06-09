@@ -3652,89 +3652,63 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	public class FontValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FontValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cStyleOrWeightAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Alternatives cStyleOrWeightAlternatives_0_0 = (Alternatives)cStyleOrWeightAssignment_0.eContents().get(0);
-		private final Keyword cStyleOrWeightItalicKeyword_0_0_0 = (Keyword)cStyleOrWeightAlternatives_0_0.eContents().get(0);
-		private final Keyword cStyleOrWeightObliqueKeyword_0_0_1 = (Keyword)cStyleOrWeightAlternatives_0_0.eContents().get(1);
-		private final Keyword cStyleOrWeightNormalKeyword_0_0_2 = (Keyword)cStyleOrWeightAlternatives_0_0.eContents().get(2);
-		private final Keyword cStyleOrWeightBoldKeyword_0_0_3 = (Keyword)cStyleOrWeightAlternatives_0_0.eContents().get(3);
-		private final Keyword cStyleOrWeightBolderKeyword_0_0_4 = (Keyword)cStyleOrWeightAlternatives_0_0.eContents().get(4);
-		private final Keyword cStyleOrWeightLighterKeyword_0_0_5 = (Keyword)cStyleOrWeightAlternatives_0_0.eContents().get(5);
-		private final Keyword cStyleOrWeight100Keyword_0_0_6 = (Keyword)cStyleOrWeightAlternatives_0_0.eContents().get(6);
-		private final Keyword cStyleOrWeight200Keyword_0_0_7 = (Keyword)cStyleOrWeightAlternatives_0_0.eContents().get(7);
-		private final Keyword cStyleOrWeight300Keyword_0_0_8 = (Keyword)cStyleOrWeightAlternatives_0_0.eContents().get(8);
-		private final Keyword cStyleOrWeight400Keyword_0_0_9 = (Keyword)cStyleOrWeightAlternatives_0_0.eContents().get(9);
-		private final Keyword cStyleOrWeight500Keyword_0_0_10 = (Keyword)cStyleOrWeightAlternatives_0_0.eContents().get(10);
-		private final Keyword cStyleOrWeight600Keyword_0_0_11 = (Keyword)cStyleOrWeightAlternatives_0_0.eContents().get(11);
-		private final Keyword cStyleOrWeight700Keyword_0_0_12 = (Keyword)cStyleOrWeightAlternatives_0_0.eContents().get(12);
-		private final Keyword cStyleOrWeight800Keyword_0_0_13 = (Keyword)cStyleOrWeightAlternatives_0_0.eContents().get(13);
-		private final Keyword cStyleOrWeight900Keyword_0_0_14 = (Keyword)cStyleOrWeightAlternatives_0_0.eContents().get(14);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Assignment cStyleOrWeightStringAssignment_0_0 = (Assignment)cAlternatives_0.eContents().get(0);
+		private final Alternatives cStyleOrWeightStringAlternatives_0_0_0 = (Alternatives)cStyleOrWeightStringAssignment_0_0.eContents().get(0);
+		private final Keyword cStyleOrWeightStringItalicKeyword_0_0_0_0 = (Keyword)cStyleOrWeightStringAlternatives_0_0_0.eContents().get(0);
+		private final Keyword cStyleOrWeightStringObliqueKeyword_0_0_0_1 = (Keyword)cStyleOrWeightStringAlternatives_0_0_0.eContents().get(1);
+		private final Keyword cStyleOrWeightStringNormalKeyword_0_0_0_2 = (Keyword)cStyleOrWeightStringAlternatives_0_0_0.eContents().get(2);
+		private final Keyword cStyleOrWeightStringBoldKeyword_0_0_0_3 = (Keyword)cStyleOrWeightStringAlternatives_0_0_0.eContents().get(3);
+		private final Keyword cStyleOrWeightStringBolderKeyword_0_0_0_4 = (Keyword)cStyleOrWeightStringAlternatives_0_0_0.eContents().get(4);
+		private final Keyword cStyleOrWeightStringLighterKeyword_0_0_0_5 = (Keyword)cStyleOrWeightStringAlternatives_0_0_0.eContents().get(5);
+		private final Assignment cWeightAssignment_0_1 = (Assignment)cAlternatives_0.eContents().get(1);
+		private final RuleCall cWeightIntegerPropertyParserRuleCall_0_1_0 = (RuleCall)cWeightAssignment_0_1.eContents().get(0);
 		private final Assignment cSizeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cSizeSizeValueParserRuleCall_1_0 = (RuleCall)cSizeAssignment_1.eContents().get(0);
 		private final Assignment cFamilyAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cFamilyFontFamilyParserRuleCall_2_0 = (RuleCall)cFamilyAssignment_2.eContents().get(0);
 		
 		//FontValue:
-		//	styleOrWeight=("italic" | "oblique" | "normal" | "bold" | "bolder" | "lighter" | "100" | "200" | "300" | "400" | "500"
-		//	| "600" | "700" | "800" | "900")? size=SizeValue family=FontFamily;
+		//	(styleOrWeightString=("italic" | "oblique" | "normal" | "bold" | "bolder" | "lighter") | weight=IntegerProperty)?
+		//	size=SizeValue family=FontFamily;
 		public ParserRule getRule() { return rule; }
 
-		//styleOrWeight=("italic" | "oblique" | "normal" | "bold" | "bolder" | "lighter" | "100" | "200" | "300" | "400" | "500" |
-		//"600" | "700" | "800" | "900")? size=SizeValue family=FontFamily
+		//(styleOrWeightString=("italic" | "oblique" | "normal" | "bold" | "bolder" | "lighter") | weight=IntegerProperty)?
+		//size=SizeValue family=FontFamily
 		public Group getGroup() { return cGroup; }
 
-		//styleOrWeight=("italic" | "oblique" | "normal" | "bold" | "bolder" | "lighter" | "100" | "200" | "300" | "400" | "500" |
-		//"600" | "700" | "800" | "900")?
-		public Assignment getStyleOrWeightAssignment_0() { return cStyleOrWeightAssignment_0; }
+		//(styleOrWeightString=("italic" | "oblique" | "normal" | "bold" | "bolder" | "lighter") | weight=IntegerProperty)?
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
-		//"italic" | "oblique" | "normal" | "bold" | "bolder" | "lighter" | "100" | "200" | "300" | "400" | "500" | "600" | "700"
-		//| "800" | "900"
-		public Alternatives getStyleOrWeightAlternatives_0_0() { return cStyleOrWeightAlternatives_0_0; }
+		//styleOrWeightString=("italic" | "oblique" | "normal" | "bold" | "bolder" | "lighter")
+		public Assignment getStyleOrWeightStringAssignment_0_0() { return cStyleOrWeightStringAssignment_0_0; }
+
+		//"italic" | "oblique" | "normal" | "bold" | "bolder" | "lighter"
+		public Alternatives getStyleOrWeightStringAlternatives_0_0_0() { return cStyleOrWeightStringAlternatives_0_0_0; }
 
 		//"italic"
-		public Keyword getStyleOrWeightItalicKeyword_0_0_0() { return cStyleOrWeightItalicKeyword_0_0_0; }
+		public Keyword getStyleOrWeightStringItalicKeyword_0_0_0_0() { return cStyleOrWeightStringItalicKeyword_0_0_0_0; }
 
 		//"oblique"
-		public Keyword getStyleOrWeightObliqueKeyword_0_0_1() { return cStyleOrWeightObliqueKeyword_0_0_1; }
+		public Keyword getStyleOrWeightStringObliqueKeyword_0_0_0_1() { return cStyleOrWeightStringObliqueKeyword_0_0_0_1; }
 
 		//"normal"
-		public Keyword getStyleOrWeightNormalKeyword_0_0_2() { return cStyleOrWeightNormalKeyword_0_0_2; }
+		public Keyword getStyleOrWeightStringNormalKeyword_0_0_0_2() { return cStyleOrWeightStringNormalKeyword_0_0_0_2; }
 
 		//"bold"
-		public Keyword getStyleOrWeightBoldKeyword_0_0_3() { return cStyleOrWeightBoldKeyword_0_0_3; }
+		public Keyword getStyleOrWeightStringBoldKeyword_0_0_0_3() { return cStyleOrWeightStringBoldKeyword_0_0_0_3; }
 
 		//"bolder"
-		public Keyword getStyleOrWeightBolderKeyword_0_0_4() { return cStyleOrWeightBolderKeyword_0_0_4; }
+		public Keyword getStyleOrWeightStringBolderKeyword_0_0_0_4() { return cStyleOrWeightStringBolderKeyword_0_0_0_4; }
 
 		//"lighter"
-		public Keyword getStyleOrWeightLighterKeyword_0_0_5() { return cStyleOrWeightLighterKeyword_0_0_5; }
+		public Keyword getStyleOrWeightStringLighterKeyword_0_0_0_5() { return cStyleOrWeightStringLighterKeyword_0_0_0_5; }
 
-		//"100"
-		public Keyword getStyleOrWeight100Keyword_0_0_6() { return cStyleOrWeight100Keyword_0_0_6; }
+		//weight=IntegerProperty
+		public Assignment getWeightAssignment_0_1() { return cWeightAssignment_0_1; }
 
-		//"200"
-		public Keyword getStyleOrWeight200Keyword_0_0_7() { return cStyleOrWeight200Keyword_0_0_7; }
-
-		//"300"
-		public Keyword getStyleOrWeight300Keyword_0_0_8() { return cStyleOrWeight300Keyword_0_0_8; }
-
-		//"400"
-		public Keyword getStyleOrWeight400Keyword_0_0_9() { return cStyleOrWeight400Keyword_0_0_9; }
-
-		//"500"
-		public Keyword getStyleOrWeight500Keyword_0_0_10() { return cStyleOrWeight500Keyword_0_0_10; }
-
-		//"600"
-		public Keyword getStyleOrWeight600Keyword_0_0_11() { return cStyleOrWeight600Keyword_0_0_11; }
-
-		//"700"
-		public Keyword getStyleOrWeight700Keyword_0_0_12() { return cStyleOrWeight700Keyword_0_0_12; }
-
-		//"800"
-		public Keyword getStyleOrWeight800Keyword_0_0_13() { return cStyleOrWeight800Keyword_0_0_13; }
-
-		//"900"
-		public Keyword getStyleOrWeight900Keyword_0_0_14() { return cStyleOrWeight900Keyword_0_0_14; }
+		//IntegerProperty
+		public RuleCall getWeightIntegerPropertyParserRuleCall_0_1_0() { return cWeightIntegerPropertyParserRuleCall_0_1_0; }
 
 		//size=SizeValue
 		public Assignment getSizeAssignment_1() { return cSizeAssignment_1; }
@@ -3779,71 +3753,46 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class FontWeightValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FontWeightValue");
-		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final Alternatives cValueAlternatives_0 = (Alternatives)cValueAssignment.eContents().get(0);
-		private final Keyword cValueNormalKeyword_0_0 = (Keyword)cValueAlternatives_0.eContents().get(0);
-		private final Keyword cValueBoldKeyword_0_1 = (Keyword)cValueAlternatives_0.eContents().get(1);
-		private final Keyword cValueBolderKeyword_0_2 = (Keyword)cValueAlternatives_0.eContents().get(2);
-		private final Keyword cValueLighterKeyword_0_3 = (Keyword)cValueAlternatives_0.eContents().get(3);
-		private final Keyword cValue100Keyword_0_4 = (Keyword)cValueAlternatives_0.eContents().get(4);
-		private final Keyword cValue200Keyword_0_5 = (Keyword)cValueAlternatives_0.eContents().get(5);
-		private final Keyword cValue300Keyword_0_6 = (Keyword)cValueAlternatives_0.eContents().get(6);
-		private final Keyword cValue400Keyword_0_7 = (Keyword)cValueAlternatives_0.eContents().get(7);
-		private final Keyword cValue500Keyword_0_8 = (Keyword)cValueAlternatives_0.eContents().get(8);
-		private final Keyword cValue600Keyword_0_9 = (Keyword)cValueAlternatives_0.eContents().get(9);
-		private final Keyword cValue700Keyword_0_10 = (Keyword)cValueAlternatives_0.eContents().get(10);
-		private final Keyword cValue800Keyword_0_11 = (Keyword)cValueAlternatives_0.eContents().get(11);
-		private final Keyword cValue900Keyword_0_12 = (Keyword)cValueAlternatives_0.eContents().get(12);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cValueStringAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final Alternatives cValueStringAlternatives_0_0 = (Alternatives)cValueStringAssignment_0.eContents().get(0);
+		private final Keyword cValueStringNormalKeyword_0_0_0 = (Keyword)cValueStringAlternatives_0_0.eContents().get(0);
+		private final Keyword cValueStringBoldKeyword_0_0_1 = (Keyword)cValueStringAlternatives_0_0.eContents().get(1);
+		private final Keyword cValueStringBolderKeyword_0_0_2 = (Keyword)cValueStringAlternatives_0_0.eContents().get(2);
+		private final Keyword cValueStringLighterKeyword_0_0_3 = (Keyword)cValueStringAlternatives_0_0.eContents().get(3);
+		private final Assignment cValueIntAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cValueIntNumberValueParserRuleCall_1_0 = (RuleCall)cValueIntAssignment_1.eContents().get(0);
 		
 		//FontWeightValue:
-		//	value=("normal" | "bold" | "bolder" | "lighter" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" |
-		//	"900");
+		//	valueString=("normal" | "bold" | "bolder" | "lighter") | valueInt=NumberValue;
 		public ParserRule getRule() { return rule; }
 
-		//value=("normal" | "bold" | "bolder" | "lighter" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900")
-		public Assignment getValueAssignment() { return cValueAssignment; }
+		//valueString=("normal" | "bold" | "bolder" | "lighter") | valueInt=NumberValue
+		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"normal" | "bold" | "bolder" | "lighter" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900"
-		public Alternatives getValueAlternatives_0() { return cValueAlternatives_0; }
+		//valueString=("normal" | "bold" | "bolder" | "lighter")
+		public Assignment getValueStringAssignment_0() { return cValueStringAssignment_0; }
+
+		//"normal" | "bold" | "bolder" | "lighter"
+		public Alternatives getValueStringAlternatives_0_0() { return cValueStringAlternatives_0_0; }
 
 		//"normal"
-		public Keyword getValueNormalKeyword_0_0() { return cValueNormalKeyword_0_0; }
+		public Keyword getValueStringNormalKeyword_0_0_0() { return cValueStringNormalKeyword_0_0_0; }
 
 		//"bold"
-		public Keyword getValueBoldKeyword_0_1() { return cValueBoldKeyword_0_1; }
+		public Keyword getValueStringBoldKeyword_0_0_1() { return cValueStringBoldKeyword_0_0_1; }
 
 		//"bolder"
-		public Keyword getValueBolderKeyword_0_2() { return cValueBolderKeyword_0_2; }
+		public Keyword getValueStringBolderKeyword_0_0_2() { return cValueStringBolderKeyword_0_0_2; }
 
 		//"lighter"
-		public Keyword getValueLighterKeyword_0_3() { return cValueLighterKeyword_0_3; }
+		public Keyword getValueStringLighterKeyword_0_0_3() { return cValueStringLighterKeyword_0_0_3; }
 
-		//"100"
-		public Keyword getValue100Keyword_0_4() { return cValue100Keyword_0_4; }
+		//valueInt=NumberValue
+		public Assignment getValueIntAssignment_1() { return cValueIntAssignment_1; }
 
-		//"200"
-		public Keyword getValue200Keyword_0_5() { return cValue200Keyword_0_5; }
-
-		//"300"
-		public Keyword getValue300Keyword_0_6() { return cValue300Keyword_0_6; }
-
-		//"400"
-		public Keyword getValue400Keyword_0_7() { return cValue400Keyword_0_7; }
-
-		//"500"
-		public Keyword getValue500Keyword_0_8() { return cValue500Keyword_0_8; }
-
-		//"600"
-		public Keyword getValue600Keyword_0_9() { return cValue600Keyword_0_9; }
-
-		//"700"
-		public Keyword getValue700Keyword_0_10() { return cValue700Keyword_0_10; }
-
-		//"800"
-		public Keyword getValue800Keyword_0_11() { return cValue800Keyword_0_11; }
-
-		//"900"
-		public Keyword getValue900Keyword_0_12() { return cValue900Keyword_0_12; }
+		//NumberValue
+		public RuleCall getValueIntNumberValueParserRuleCall_1_0() { return cValueIntNumberValueParserRuleCall_1_0; }
 	}
 
 	public class FontFamilyElements extends AbstractParserRuleElementFinder {
@@ -4138,23 +4087,23 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StopValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cPosAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cPosNumberValueParserRuleCall_0_0 = (RuleCall)cPosAssignment_0.eContents().get(0);
+		private final RuleCall cPosSizeValueParserRuleCall_0_0 = (RuleCall)cPosAssignment_0.eContents().get(0);
 		private final Keyword cCommaKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cColorAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cColorColorValueParserRuleCall_2_0 = (RuleCall)cColorAssignment_2.eContents().get(0);
 		
 		//StopValue:
-		//	pos=NumberValue "," color=ColorValue;
+		//	pos=SizeValue "," color=ColorValue;
 		public ParserRule getRule() { return rule; }
 
-		//pos=NumberValue "," color=ColorValue
+		//pos=SizeValue "," color=ColorValue
 		public Group getGroup() { return cGroup; }
 
-		//pos=NumberValue
+		//pos=SizeValue
 		public Assignment getPosAssignment_0() { return cPosAssignment_0; }
 
-		//NumberValue
-		public RuleCall getPosNumberValueParserRuleCall_0_0() { return cPosNumberValueParserRuleCall_0_0; }
+		//SizeValue
+		public RuleCall getPosSizeValueParserRuleCall_0_0() { return cPosSizeValueParserRuleCall_0_0; }
 
 		//","
 		public Keyword getCommaKeyword_1() { return cCommaKeyword_1; }
@@ -6289,8 +6238,8 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//FontValue:
-	//	styleOrWeight=("italic" | "oblique" | "normal" | "bold" | "bolder" | "lighter" | "100" | "200" | "300" | "400" | "500"
-	//	| "600" | "700" | "800" | "900")? size=SizeValue family=FontFamily;
+	//	(styleOrWeightString=("italic" | "oblique" | "normal" | "bold" | "bolder" | "lighter") | weight=IntegerProperty)?
+	//	size=SizeValue family=FontFamily;
 	public FontValueElements getFontValueAccess() {
 		return (pFontValue != null) ? pFontValue : (pFontValue = new FontValueElements());
 	}
@@ -6310,8 +6259,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//FontWeightValue:
-	//	value=("normal" | "bold" | "bolder" | "lighter" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" |
-	//	"900");
+	//	valueString=("normal" | "bold" | "bolder" | "lighter") | valueInt=NumberValue;
 	public FontWeightValueElements getFontWeightValueAccess() {
 		return (pFontWeightValue != null) ? pFontWeightValue : (pFontWeightValue = new FontWeightValueElements());
 	}
@@ -6363,7 +6311,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//StopValue:
-	//	pos=NumberValue "," color=ColorValue;
+	//	pos=SizeValue "," color=ColorValue;
 	public StopValueElements getStopValueAccess() {
 		return (pStopValue != null) ? pStopValue : (pStopValue = new StopValueElements());
 	}

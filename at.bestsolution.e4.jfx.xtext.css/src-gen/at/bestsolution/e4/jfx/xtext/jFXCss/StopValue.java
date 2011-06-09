@@ -36,12 +36,12 @@ public interface StopValue extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Pos</em>' containment reference.
-   * @see #setPos(NumberValue)
+   * @see #setPos(SizeValue)
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage#getStopValue_Pos()
    * @model containment="true"
    * @generated
    */
-  NumberValue getPos();
+  SizeValue getPos();
 
   /**
    * Sets the value of the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.StopValue#getPos <em>Pos</em>}' containment reference.
@@ -51,7 +51,7 @@ public interface StopValue extends EObject
    * @see #getPos()
    * @generated
    */
-  void setPos(NumberValue value);
+  void setPos(SizeValue value);
 
   /**
    * Returns the value of the '<em><b>Color</b></em>' containment reference.

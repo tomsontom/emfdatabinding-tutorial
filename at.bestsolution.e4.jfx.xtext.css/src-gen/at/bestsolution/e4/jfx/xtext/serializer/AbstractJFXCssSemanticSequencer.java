@@ -1192,28 +1192,28 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	 * Constraint:
 	 *     (
 	 *         (
-	 *             styleOrWeight='italic' | 
-	 *             styleOrWeight='oblique' | 
-	 *             styleOrWeight='normal' | 
-	 *             styleOrWeight='bold' | 
-	 *             styleOrWeight='bolder' | 
-	 *             styleOrWeight='lighter' | 
-	 *             styleOrWeight='100' | 
-	 *             styleOrWeight='200' | 
-	 *             styleOrWeight='300' | 
-	 *             styleOrWeight='400' | 
-	 *             styleOrWeight='500' | 
-	 *             styleOrWeight='600' | 
-	 *             styleOrWeight='700' | 
-	 *             styleOrWeight='800' | 
-	 *             styleOrWeight='900'
+	 *             styleOrWeightString='italic' | 
+	 *             styleOrWeightString='oblique' | 
+	 *             styleOrWeightString='normal' | 
+	 *             styleOrWeightString='bold' | 
+	 *             styleOrWeightString='bolder' | 
+	 *             styleOrWeightString='lighter' | 
+	 *             weight=IntegerProperty
 	 *         )? 
 	 *         size=SizeValue 
 	 *         family=FontFamily
 	 *     )
 	 *
 	 * Features:
-	 *    styleOrWeight[0, 15]
+	 *    styleOrWeightString[0, 6]
+	 *         EXCLUDE_IF_SET weight
+	 *    weight[0, 1]
+	 *         EXCLUDE_IF_SET styleOrWeightString
+	 *         EXCLUDE_IF_SET styleOrWeightString
+	 *         EXCLUDE_IF_SET styleOrWeightString
+	 *         EXCLUDE_IF_SET styleOrWeightString
+	 *         EXCLUDE_IF_SET styleOrWeightString
+	 *         EXCLUDE_IF_SET styleOrWeightString
 	 *    size[1, 1]
 	 *    family[1, 1]
 	 */
@@ -1247,24 +1247,16 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         value='normal' | 
-	 *         value='bold' | 
-	 *         value='bolder' | 
-	 *         value='lighter' | 
-	 *         value='100' | 
-	 *         value='200' | 
-	 *         value='300' | 
-	 *         value='400' | 
-	 *         value='500' | 
-	 *         value='600' | 
-	 *         value='700' | 
-	 *         value='800' | 
-	 *         value='900'
-	 *     )
+	 *     (valueString='normal' | valueString='bold' | valueString='bolder' | valueString='lighter' | valueInt=NumberValue)
 	 *
 	 * Features:
-	 *    value[0, 13]
+	 *    valueString[0, 4]
+	 *         EXCLUDE_IF_SET valueInt
+	 *    valueInt[0, 1]
+	 *         EXCLUDE_IF_SET valueString
+	 *         EXCLUDE_IF_SET valueString
+	 *         EXCLUDE_IF_SET valueString
+	 *         EXCLUDE_IF_SET valueString
 	 */
 	protected void sequence_FontWeightValue_FontWeightValue(EObject context, FontWeightValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1999,7 +1991,7 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (pos=NumberValue color=ColorValue)
+	 *     (pos=SizeValue color=ColorValue)
 	 *
 	 * Features:
 	 *    pos[1, 1]
@@ -2014,7 +2006,7 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getStopValueAccess().getPosNumberValueParserRuleCall_0_0(), semanticObject.getPos());
+		feeder.accept(grammarAccess.getStopValueAccess().getPosSizeValueParserRuleCall_0_0(), semanticObject.getPos());
 		feeder.accept(grammarAccess.getStopValueAccess().getColorColorValueParserRuleCall_2_0(), semanticObject.getColor());
 		feeder.finish();
 	}

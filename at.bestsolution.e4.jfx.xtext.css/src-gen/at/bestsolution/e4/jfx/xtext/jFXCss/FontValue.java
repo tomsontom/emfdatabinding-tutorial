@@ -16,7 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.FontValue#getStyleOrWeight <em>Style Or Weight</em>}</li>
+ *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.FontValue#getStyleOrWeightString <em>Style Or Weight String</em>}</li>
+ *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.FontValue#getWeight <em>Weight</em>}</li>
  *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.FontValue#getSize <em>Size</em>}</li>
  *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.FontValue#getFamily <em>Family</em>}</li>
  * </ul>
@@ -29,30 +30,56 @@ import org.eclipse.emf.ecore.EObject;
 public interface FontValue extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Style Or Weight</b></em>' attribute.
+   * Returns the value of the '<em><b>Style Or Weight String</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Style Or Weight</em>' attribute isn't clear,
+   * If the meaning of the '<em>Style Or Weight String</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Style Or Weight</em>' attribute.
-   * @see #setStyleOrWeight(String)
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage#getFontValue_StyleOrWeight()
+   * @return the value of the '<em>Style Or Weight String</em>' attribute.
+   * @see #setStyleOrWeightString(String)
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage#getFontValue_StyleOrWeightString()
    * @model
    * @generated
    */
-  String getStyleOrWeight();
+  String getStyleOrWeightString();
 
   /**
-   * Sets the value of the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.FontValue#getStyleOrWeight <em>Style Or Weight</em>}' attribute.
+   * Sets the value of the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.FontValue#getStyleOrWeightString <em>Style Or Weight String</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Style Or Weight</em>' attribute.
-   * @see #getStyleOrWeight()
+   * @param value the new value of the '<em>Style Or Weight String</em>' attribute.
+   * @see #getStyleOrWeightString()
    * @generated
    */
-  void setStyleOrWeight(String value);
+  void setStyleOrWeightString(String value);
+
+  /**
+   * Returns the value of the '<em><b>Weight</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Weight</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Weight</em>' containment reference.
+   * @see #setWeight(IntegerProperty)
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage#getFontValue_Weight()
+   * @model containment="true"
+   * @generated
+   */
+  IntegerProperty getWeight();
+
+  /**
+   * Sets the value of the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.FontValue#getWeight <em>Weight</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Weight</em>' containment reference.
+   * @see #getWeight()
+   * @generated
+   */
+  void setWeight(IntegerProperty value);
 
   /**
    * Returns the value of the '<em><b>Size</b></em>' containment reference.

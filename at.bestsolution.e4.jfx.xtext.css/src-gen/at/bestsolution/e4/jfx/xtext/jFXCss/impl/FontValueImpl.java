@@ -8,6 +8,7 @@ package at.bestsolution.e4.jfx.xtext.jFXCss.impl;
 
 import at.bestsolution.e4.jfx.xtext.jFXCss.FontFamily;
 import at.bestsolution.e4.jfx.xtext.jFXCss.FontValue;
+import at.bestsolution.e4.jfx.xtext.jFXCss.IntegerProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage;
 import at.bestsolution.e4.jfx.xtext.jFXCss.SizeValue;
 
@@ -27,7 +28,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.FontValueImpl#getStyleOrWeight <em>Style Or Weight</em>}</li>
+ *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.FontValueImpl#getStyleOrWeightString <em>Style Or Weight String</em>}</li>
+ *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.FontValueImpl#getWeight <em>Weight</em>}</li>
  *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.FontValueImpl#getSize <em>Size</em>}</li>
  *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.FontValueImpl#getFamily <em>Family</em>}</li>
  * </ul>
@@ -38,24 +40,34 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class FontValueImpl extends MinimalEObjectImpl.Container implements FontValue
 {
   /**
-   * The default value of the '{@link #getStyleOrWeight() <em>Style Or Weight</em>}' attribute.
+   * The default value of the '{@link #getStyleOrWeightString() <em>Style Or Weight String</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStyleOrWeight()
+   * @see #getStyleOrWeightString()
    * @generated
    * @ordered
    */
-  protected static final String STYLE_OR_WEIGHT_EDEFAULT = null;
+  protected static final String STYLE_OR_WEIGHT_STRING_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getStyleOrWeight() <em>Style Or Weight</em>}' attribute.
+   * The cached value of the '{@link #getStyleOrWeightString() <em>Style Or Weight String</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStyleOrWeight()
+   * @see #getStyleOrWeightString()
    * @generated
    * @ordered
    */
-  protected String styleOrWeight = STYLE_OR_WEIGHT_EDEFAULT;
+  protected String styleOrWeightString = STYLE_OR_WEIGHT_STRING_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getWeight() <em>Weight</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getWeight()
+   * @generated
+   * @ordered
+   */
+  protected IntegerProperty weight;
 
   /**
    * The cached value of the '{@link #getSize() <em>Size</em>}' containment reference.
@@ -103,9 +115,9 @@ public class FontValueImpl extends MinimalEObjectImpl.Container implements FontV
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getStyleOrWeight()
+  public String getStyleOrWeightString()
   {
-    return styleOrWeight;
+    return styleOrWeightString;
   }
 
   /**
@@ -113,12 +125,60 @@ public class FontValueImpl extends MinimalEObjectImpl.Container implements FontV
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setStyleOrWeight(String newStyleOrWeight)
+  public void setStyleOrWeightString(String newStyleOrWeightString)
   {
-    String oldStyleOrWeight = styleOrWeight;
-    styleOrWeight = newStyleOrWeight;
+    String oldStyleOrWeightString = styleOrWeightString;
+    styleOrWeightString = newStyleOrWeightString;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JFXCssPackage.FONT_VALUE__STYLE_OR_WEIGHT, oldStyleOrWeight, styleOrWeight));
+      eNotify(new ENotificationImpl(this, Notification.SET, JFXCssPackage.FONT_VALUE__STYLE_OR_WEIGHT_STRING, oldStyleOrWeightString, styleOrWeightString));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IntegerProperty getWeight()
+  {
+    return weight;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetWeight(IntegerProperty newWeight, NotificationChain msgs)
+  {
+    IntegerProperty oldWeight = weight;
+    weight = newWeight;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JFXCssPackage.FONT_VALUE__WEIGHT, oldWeight, newWeight);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setWeight(IntegerProperty newWeight)
+  {
+    if (newWeight != weight)
+    {
+      NotificationChain msgs = null;
+      if (weight != null)
+        msgs = ((InternalEObject)weight).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JFXCssPackage.FONT_VALUE__WEIGHT, null, msgs);
+      if (newWeight != null)
+        msgs = ((InternalEObject)newWeight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JFXCssPackage.FONT_VALUE__WEIGHT, null, msgs);
+      msgs = basicSetWeight(newWeight, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JFXCssPackage.FONT_VALUE__WEIGHT, newWeight, newWeight));
   }
 
   /**
@@ -227,6 +287,8 @@ public class FontValueImpl extends MinimalEObjectImpl.Container implements FontV
   {
     switch (featureID)
     {
+      case JFXCssPackage.FONT_VALUE__WEIGHT:
+        return basicSetWeight(null, msgs);
       case JFXCssPackage.FONT_VALUE__SIZE:
         return basicSetSize(null, msgs);
       case JFXCssPackage.FONT_VALUE__FAMILY:
@@ -245,8 +307,10 @@ public class FontValueImpl extends MinimalEObjectImpl.Container implements FontV
   {
     switch (featureID)
     {
-      case JFXCssPackage.FONT_VALUE__STYLE_OR_WEIGHT:
-        return getStyleOrWeight();
+      case JFXCssPackage.FONT_VALUE__STYLE_OR_WEIGHT_STRING:
+        return getStyleOrWeightString();
+      case JFXCssPackage.FONT_VALUE__WEIGHT:
+        return getWeight();
       case JFXCssPackage.FONT_VALUE__SIZE:
         return getSize();
       case JFXCssPackage.FONT_VALUE__FAMILY:
@@ -265,8 +329,11 @@ public class FontValueImpl extends MinimalEObjectImpl.Container implements FontV
   {
     switch (featureID)
     {
-      case JFXCssPackage.FONT_VALUE__STYLE_OR_WEIGHT:
-        setStyleOrWeight((String)newValue);
+      case JFXCssPackage.FONT_VALUE__STYLE_OR_WEIGHT_STRING:
+        setStyleOrWeightString((String)newValue);
+        return;
+      case JFXCssPackage.FONT_VALUE__WEIGHT:
+        setWeight((IntegerProperty)newValue);
         return;
       case JFXCssPackage.FONT_VALUE__SIZE:
         setSize((SizeValue)newValue);
@@ -288,8 +355,11 @@ public class FontValueImpl extends MinimalEObjectImpl.Container implements FontV
   {
     switch (featureID)
     {
-      case JFXCssPackage.FONT_VALUE__STYLE_OR_WEIGHT:
-        setStyleOrWeight(STYLE_OR_WEIGHT_EDEFAULT);
+      case JFXCssPackage.FONT_VALUE__STYLE_OR_WEIGHT_STRING:
+        setStyleOrWeightString(STYLE_OR_WEIGHT_STRING_EDEFAULT);
+        return;
+      case JFXCssPackage.FONT_VALUE__WEIGHT:
+        setWeight((IntegerProperty)null);
         return;
       case JFXCssPackage.FONT_VALUE__SIZE:
         setSize((SizeValue)null);
@@ -311,8 +381,10 @@ public class FontValueImpl extends MinimalEObjectImpl.Container implements FontV
   {
     switch (featureID)
     {
-      case JFXCssPackage.FONT_VALUE__STYLE_OR_WEIGHT:
-        return STYLE_OR_WEIGHT_EDEFAULT == null ? styleOrWeight != null : !STYLE_OR_WEIGHT_EDEFAULT.equals(styleOrWeight);
+      case JFXCssPackage.FONT_VALUE__STYLE_OR_WEIGHT_STRING:
+        return STYLE_OR_WEIGHT_STRING_EDEFAULT == null ? styleOrWeightString != null : !STYLE_OR_WEIGHT_STRING_EDEFAULT.equals(styleOrWeightString);
+      case JFXCssPackage.FONT_VALUE__WEIGHT:
+        return weight != null;
       case JFXCssPackage.FONT_VALUE__SIZE:
         return size != null;
       case JFXCssPackage.FONT_VALUE__FAMILY:
@@ -332,8 +404,8 @@ public class FontValueImpl extends MinimalEObjectImpl.Container implements FontV
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (styleOrWeight: ");
-    result.append(styleOrWeight);
+    result.append(" (styleOrWeightString: ");
+    result.append(styleOrWeightString);
     result.append(')');
     return result.toString();
   }

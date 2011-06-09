@@ -392,7 +392,7 @@ SizeFill:
 ;
 
 FontValue:
-	( styleOrWeight=('italic' | 'oblique' | 'normal' | 'bold' | 'bolder' | 'lighter' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' ) )? size=SizeValue family=FontFamily
+	( styleOrWeightString=('italic' | 'oblique' | 'normal' | 'bold' | 'bolder' | 'lighter') | weight=IntegerProperty )? size=SizeValue family=FontFamily
 ;
 
 FontStyleValue:
@@ -400,7 +400,7 @@ FontStyleValue:
 ;
 
 FontWeightValue:
-	value=('normal' | 'bold' | 'bolder' | 'lighter' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' ) 
+	valueString=('normal' | 'bold' | 'bolder' | 'lighter') | valueInt=NumberValue 
 ;
 
 FontFamily:
@@ -421,7 +421,7 @@ RadialGradient:
 ;
 
 StopValue:
-	pos=NumberValue ',' color=ColorValue
+	pos=SizeValue ',' color=ColorValue
 ;
 
 ColorValue:

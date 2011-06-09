@@ -7263,205 +7263,116 @@ ruleFontValue returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(((
 (
 (
-		lv_styleOrWeight_0_1=	'italic' 
+		lv_styleOrWeightString_0_1=	'italic' 
     {
-        newLeafNode(lv_styleOrWeight_0_1, grammarAccess.getFontValueAccess().getStyleOrWeightItalicKeyword_0_0_0());
+        newLeafNode(lv_styleOrWeightString_0_1, grammarAccess.getFontValueAccess().getStyleOrWeightStringItalicKeyword_0_0_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getFontValueRule());
 	        }
-       		setWithLastConsumed($current, "styleOrWeight", lv_styleOrWeight_0_1, null);
+       		setWithLastConsumed($current, "styleOrWeightString", lv_styleOrWeightString_0_1, null);
 	    }
 
-    |		lv_styleOrWeight_0_2=	'oblique' 
+    |		lv_styleOrWeightString_0_2=	'oblique' 
     {
-        newLeafNode(lv_styleOrWeight_0_2, grammarAccess.getFontValueAccess().getStyleOrWeightObliqueKeyword_0_0_1());
+        newLeafNode(lv_styleOrWeightString_0_2, grammarAccess.getFontValueAccess().getStyleOrWeightStringObliqueKeyword_0_0_0_1());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getFontValueRule());
 	        }
-       		setWithLastConsumed($current, "styleOrWeight", lv_styleOrWeight_0_2, null);
+       		setWithLastConsumed($current, "styleOrWeightString", lv_styleOrWeightString_0_2, null);
 	    }
 
-    |		lv_styleOrWeight_0_3=	'normal' 
+    |		lv_styleOrWeightString_0_3=	'normal' 
     {
-        newLeafNode(lv_styleOrWeight_0_3, grammarAccess.getFontValueAccess().getStyleOrWeightNormalKeyword_0_0_2());
+        newLeafNode(lv_styleOrWeightString_0_3, grammarAccess.getFontValueAccess().getStyleOrWeightStringNormalKeyword_0_0_0_2());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getFontValueRule());
 	        }
-       		setWithLastConsumed($current, "styleOrWeight", lv_styleOrWeight_0_3, null);
+       		setWithLastConsumed($current, "styleOrWeightString", lv_styleOrWeightString_0_3, null);
 	    }
 
-    |		lv_styleOrWeight_0_4=	'bold' 
+    |		lv_styleOrWeightString_0_4=	'bold' 
     {
-        newLeafNode(lv_styleOrWeight_0_4, grammarAccess.getFontValueAccess().getStyleOrWeightBoldKeyword_0_0_3());
+        newLeafNode(lv_styleOrWeightString_0_4, grammarAccess.getFontValueAccess().getStyleOrWeightStringBoldKeyword_0_0_0_3());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getFontValueRule());
 	        }
-       		setWithLastConsumed($current, "styleOrWeight", lv_styleOrWeight_0_4, null);
+       		setWithLastConsumed($current, "styleOrWeightString", lv_styleOrWeightString_0_4, null);
 	    }
 
-    |		lv_styleOrWeight_0_5=	'bolder' 
+    |		lv_styleOrWeightString_0_5=	'bolder' 
     {
-        newLeafNode(lv_styleOrWeight_0_5, grammarAccess.getFontValueAccess().getStyleOrWeightBolderKeyword_0_0_4());
+        newLeafNode(lv_styleOrWeightString_0_5, grammarAccess.getFontValueAccess().getStyleOrWeightStringBolderKeyword_0_0_0_4());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getFontValueRule());
 	        }
-       		setWithLastConsumed($current, "styleOrWeight", lv_styleOrWeight_0_5, null);
+       		setWithLastConsumed($current, "styleOrWeightString", lv_styleOrWeightString_0_5, null);
 	    }
 
-    |		lv_styleOrWeight_0_6=	'lighter' 
+    |		lv_styleOrWeightString_0_6=	'lighter' 
     {
-        newLeafNode(lv_styleOrWeight_0_6, grammarAccess.getFontValueAccess().getStyleOrWeightLighterKeyword_0_0_5());
+        newLeafNode(lv_styleOrWeightString_0_6, grammarAccess.getFontValueAccess().getStyleOrWeightStringLighterKeyword_0_0_0_5());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getFontValueRule());
 	        }
-       		setWithLastConsumed($current, "styleOrWeight", lv_styleOrWeight_0_6, null);
-	    }
-
-    |		lv_styleOrWeight_0_7=	'100' 
-    {
-        newLeafNode(lv_styleOrWeight_0_7, grammarAccess.getFontValueAccess().getStyleOrWeight100Keyword_0_0_6());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontValueRule());
-	        }
-       		setWithLastConsumed($current, "styleOrWeight", lv_styleOrWeight_0_7, null);
-	    }
-
-    |		lv_styleOrWeight_0_8=	'200' 
-    {
-        newLeafNode(lv_styleOrWeight_0_8, grammarAccess.getFontValueAccess().getStyleOrWeight200Keyword_0_0_7());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontValueRule());
-	        }
-       		setWithLastConsumed($current, "styleOrWeight", lv_styleOrWeight_0_8, null);
-	    }
-
-    |		lv_styleOrWeight_0_9=	'300' 
-    {
-        newLeafNode(lv_styleOrWeight_0_9, grammarAccess.getFontValueAccess().getStyleOrWeight300Keyword_0_0_8());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontValueRule());
-	        }
-       		setWithLastConsumed($current, "styleOrWeight", lv_styleOrWeight_0_9, null);
-	    }
-
-    |		lv_styleOrWeight_0_10=	'400' 
-    {
-        newLeafNode(lv_styleOrWeight_0_10, grammarAccess.getFontValueAccess().getStyleOrWeight400Keyword_0_0_9());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontValueRule());
-	        }
-       		setWithLastConsumed($current, "styleOrWeight", lv_styleOrWeight_0_10, null);
-	    }
-
-    |		lv_styleOrWeight_0_11=	'500' 
-    {
-        newLeafNode(lv_styleOrWeight_0_11, grammarAccess.getFontValueAccess().getStyleOrWeight500Keyword_0_0_10());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontValueRule());
-	        }
-       		setWithLastConsumed($current, "styleOrWeight", lv_styleOrWeight_0_11, null);
-	    }
-
-    |		lv_styleOrWeight_0_12=	'600' 
-    {
-        newLeafNode(lv_styleOrWeight_0_12, grammarAccess.getFontValueAccess().getStyleOrWeight600Keyword_0_0_11());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontValueRule());
-	        }
-       		setWithLastConsumed($current, "styleOrWeight", lv_styleOrWeight_0_12, null);
-	    }
-
-    |		lv_styleOrWeight_0_13=	'700' 
-    {
-        newLeafNode(lv_styleOrWeight_0_13, grammarAccess.getFontValueAccess().getStyleOrWeight700Keyword_0_0_12());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontValueRule());
-	        }
-       		setWithLastConsumed($current, "styleOrWeight", lv_styleOrWeight_0_13, null);
-	    }
-
-    |		lv_styleOrWeight_0_14=	'800' 
-    {
-        newLeafNode(lv_styleOrWeight_0_14, grammarAccess.getFontValueAccess().getStyleOrWeight800Keyword_0_0_13());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontValueRule());
-	        }
-       		setWithLastConsumed($current, "styleOrWeight", lv_styleOrWeight_0_14, null);
-	    }
-
-    |		lv_styleOrWeight_0_15=	'900' 
-    {
-        newLeafNode(lv_styleOrWeight_0_15, grammarAccess.getFontValueAccess().getStyleOrWeight900Keyword_0_0_14());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontValueRule());
-	        }
-       		setWithLastConsumed($current, "styleOrWeight", lv_styleOrWeight_0_15, null);
+       		setWithLastConsumed($current, "styleOrWeightString", lv_styleOrWeightString_0_6, null);
 	    }
 
 )
 
 )
-)?(
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getFontValueAccess().getWeightIntegerPropertyParserRuleCall_0_1_0()); 
+	    }
+		lv_weight_1_0=ruleIntegerProperty		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getFontValueRule());
+	        }
+       		set(
+       			$current, 
+       			"weight",
+        		lv_weight_1_0, 
+        		"IntegerProperty");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getFontValueAccess().getSizeSizeValueParserRuleCall_1_0()); 
 	    }
-		lv_size_1_0=ruleSizeValue		{
+		lv_size_2_0=ruleSizeValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFontValueRule());
 	        }
        		set(
        			$current, 
        			"size",
-        		lv_size_1_0, 
+        		lv_size_2_0, 
         		"SizeValue");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -7472,14 +7383,14 @@ ruleFontValue returns [EObject current=null]
 		{ 
 	        newCompositeNode(grammarAccess.getFontValueAccess().getFamilyFontFamilyParserRuleCall_2_0()); 
 	    }
-		lv_family_2_0=ruleFontFamily		{
+		lv_family_3_0=ruleFontFamily		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFontValueRule());
 	        }
        		set(
        			$current, 
        			"family",
-        		lv_family_2_0, 
+        		lv_family_3_0, 
         		"FontFamily");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -7569,169 +7480,80 @@ ruleFontWeightValue returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
+((
 (
 (
-(
-		lv_value_0_1=	'normal' 
+		lv_valueString_0_1=	'normal' 
     {
-        newLeafNode(lv_value_0_1, grammarAccess.getFontWeightValueAccess().getValueNormalKeyword_0_0());
+        newLeafNode(lv_valueString_0_1, grammarAccess.getFontWeightValueAccess().getValueStringNormalKeyword_0_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getFontWeightValueRule());
 	        }
-       		setWithLastConsumed($current, "value", lv_value_0_1, null);
+       		setWithLastConsumed($current, "valueString", lv_valueString_0_1, null);
 	    }
 
-    |		lv_value_0_2=	'bold' 
+    |		lv_valueString_0_2=	'bold' 
     {
-        newLeafNode(lv_value_0_2, grammarAccess.getFontWeightValueAccess().getValueBoldKeyword_0_1());
+        newLeafNode(lv_valueString_0_2, grammarAccess.getFontWeightValueAccess().getValueStringBoldKeyword_0_0_1());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getFontWeightValueRule());
 	        }
-       		setWithLastConsumed($current, "value", lv_value_0_2, null);
+       		setWithLastConsumed($current, "valueString", lv_valueString_0_2, null);
 	    }
 
-    |		lv_value_0_3=	'bolder' 
+    |		lv_valueString_0_3=	'bolder' 
     {
-        newLeafNode(lv_value_0_3, grammarAccess.getFontWeightValueAccess().getValueBolderKeyword_0_2());
+        newLeafNode(lv_valueString_0_3, grammarAccess.getFontWeightValueAccess().getValueStringBolderKeyword_0_0_2());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getFontWeightValueRule());
 	        }
-       		setWithLastConsumed($current, "value", lv_value_0_3, null);
+       		setWithLastConsumed($current, "valueString", lv_valueString_0_3, null);
 	    }
 
-    |		lv_value_0_4=	'lighter' 
+    |		lv_valueString_0_4=	'lighter' 
     {
-        newLeafNode(lv_value_0_4, grammarAccess.getFontWeightValueAccess().getValueLighterKeyword_0_3());
+        newLeafNode(lv_valueString_0_4, grammarAccess.getFontWeightValueAccess().getValueStringLighterKeyword_0_0_3());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getFontWeightValueRule());
 	        }
-       		setWithLastConsumed($current, "value", lv_value_0_4, null);
-	    }
-
-    |		lv_value_0_5=	'100' 
-    {
-        newLeafNode(lv_value_0_5, grammarAccess.getFontWeightValueAccess().getValue100Keyword_0_4());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontWeightValueRule());
-	        }
-       		setWithLastConsumed($current, "value", lv_value_0_5, null);
-	    }
-
-    |		lv_value_0_6=	'200' 
-    {
-        newLeafNode(lv_value_0_6, grammarAccess.getFontWeightValueAccess().getValue200Keyword_0_5());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontWeightValueRule());
-	        }
-       		setWithLastConsumed($current, "value", lv_value_0_6, null);
-	    }
-
-    |		lv_value_0_7=	'300' 
-    {
-        newLeafNode(lv_value_0_7, grammarAccess.getFontWeightValueAccess().getValue300Keyword_0_6());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontWeightValueRule());
-	        }
-       		setWithLastConsumed($current, "value", lv_value_0_7, null);
-	    }
-
-    |		lv_value_0_8=	'400' 
-    {
-        newLeafNode(lv_value_0_8, grammarAccess.getFontWeightValueAccess().getValue400Keyword_0_7());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontWeightValueRule());
-	        }
-       		setWithLastConsumed($current, "value", lv_value_0_8, null);
-	    }
-
-    |		lv_value_0_9=	'500' 
-    {
-        newLeafNode(lv_value_0_9, grammarAccess.getFontWeightValueAccess().getValue500Keyword_0_8());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontWeightValueRule());
-	        }
-       		setWithLastConsumed($current, "value", lv_value_0_9, null);
-	    }
-
-    |		lv_value_0_10=	'600' 
-    {
-        newLeafNode(lv_value_0_10, grammarAccess.getFontWeightValueAccess().getValue600Keyword_0_9());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontWeightValueRule());
-	        }
-       		setWithLastConsumed($current, "value", lv_value_0_10, null);
-	    }
-
-    |		lv_value_0_11=	'700' 
-    {
-        newLeafNode(lv_value_0_11, grammarAccess.getFontWeightValueAccess().getValue700Keyword_0_10());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontWeightValueRule());
-	        }
-       		setWithLastConsumed($current, "value", lv_value_0_11, null);
-	    }
-
-    |		lv_value_0_12=	'800' 
-    {
-        newLeafNode(lv_value_0_12, grammarAccess.getFontWeightValueAccess().getValue800Keyword_0_11());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontWeightValueRule());
-	        }
-       		setWithLastConsumed($current, "value", lv_value_0_12, null);
-	    }
-
-    |		lv_value_0_13=	'900' 
-    {
-        newLeafNode(lv_value_0_13, grammarAccess.getFontWeightValueAccess().getValue900Keyword_0_12());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getFontWeightValueRule());
-	        }
-       		setWithLastConsumed($current, "value", lv_value_0_13, null);
+       		setWithLastConsumed($current, "valueString", lv_valueString_0_4, null);
 	    }
 
 )
 
 )
 )
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getFontWeightValueAccess().getValueIntNumberValueParserRuleCall_1_0()); 
+	    }
+		lv_valueInt_1_0=ruleNumberValue		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getFontWeightValueRule());
+	        }
+       		set(
+       			$current, 
+       			"valueInt",
+        		lv_valueInt_1_0, 
+        		"NumberValue");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
 ;
 
 
@@ -8194,9 +8016,9 @@ ruleStopValue returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getStopValueAccess().getPosNumberValueParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getStopValueAccess().getPosSizeValueParserRuleCall_0_0()); 
 	    }
-		lv_pos_0_0=ruleNumberValue		{
+		lv_pos_0_0=ruleSizeValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getStopValueRule());
 	        }
@@ -8204,7 +8026,7 @@ ruleStopValue returns [EObject current=null]
        			$current, 
        			"pos",
         		lv_pos_0_0, 
-        		"NumberValue");
+        		"SizeValue");
 	        afterParserOrEnumRuleCall();
 	    }
 

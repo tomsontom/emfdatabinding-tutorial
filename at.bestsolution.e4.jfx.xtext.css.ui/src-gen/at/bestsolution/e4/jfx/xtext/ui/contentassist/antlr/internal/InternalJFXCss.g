@@ -1851,9 +1851,9 @@ ruleFontWeightValue
     }
 	:
 (
-{ before(grammarAccess.getFontWeightValueAccess().getValueAssignment()); }
-(rule__FontWeightValue__ValueAssignment)
-{ after(grammarAccess.getFontWeightValueAccess().getValueAssignment()); }
+{ before(grammarAccess.getFontWeightValueAccess().getAlternatives()); }
+(rule__FontWeightValue__Alternatives)
+{ after(grammarAccess.getFontWeightValueAccess().getAlternatives()); }
 )
 
 ;
@@ -5344,129 +5344,79 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FontValue__StyleOrWeightAlternatives_0_0
+rule__FontValue__Alternatives_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFontValueAccess().getStyleOrWeightItalicKeyword_0_0_0()); }
+{ before(grammarAccess.getFontValueAccess().getStyleOrWeightStringAssignment_0_0()); }
+(rule__FontValue__StyleOrWeightStringAssignment_0_0)
+{ after(grammarAccess.getFontValueAccess().getStyleOrWeightStringAssignment_0_0()); }
+)
+
+    |(
+{ before(grammarAccess.getFontValueAccess().getWeightAssignment_0_1()); }
+(rule__FontValue__WeightAssignment_0_1)
+{ after(grammarAccess.getFontValueAccess().getWeightAssignment_0_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__FontValue__StyleOrWeightStringAlternatives_0_0_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getFontValueAccess().getStyleOrWeightStringItalicKeyword_0_0_0_0()); }
 
 	'italic' 
 
-{ after(grammarAccess.getFontValueAccess().getStyleOrWeightItalicKeyword_0_0_0()); }
+{ after(grammarAccess.getFontValueAccess().getStyleOrWeightStringItalicKeyword_0_0_0_0()); }
 )
 
     |(
-{ before(grammarAccess.getFontValueAccess().getStyleOrWeightObliqueKeyword_0_0_1()); }
+{ before(grammarAccess.getFontValueAccess().getStyleOrWeightStringObliqueKeyword_0_0_0_1()); }
 
 	'oblique' 
 
-{ after(grammarAccess.getFontValueAccess().getStyleOrWeightObliqueKeyword_0_0_1()); }
+{ after(grammarAccess.getFontValueAccess().getStyleOrWeightStringObliqueKeyword_0_0_0_1()); }
 )
 
     |(
-{ before(grammarAccess.getFontValueAccess().getStyleOrWeightNormalKeyword_0_0_2()); }
+{ before(grammarAccess.getFontValueAccess().getStyleOrWeightStringNormalKeyword_0_0_0_2()); }
 
 	'normal' 
 
-{ after(grammarAccess.getFontValueAccess().getStyleOrWeightNormalKeyword_0_0_2()); }
+{ after(grammarAccess.getFontValueAccess().getStyleOrWeightStringNormalKeyword_0_0_0_2()); }
 )
 
     |(
-{ before(grammarAccess.getFontValueAccess().getStyleOrWeightBoldKeyword_0_0_3()); }
+{ before(grammarAccess.getFontValueAccess().getStyleOrWeightStringBoldKeyword_0_0_0_3()); }
 
 	'bold' 
 
-{ after(grammarAccess.getFontValueAccess().getStyleOrWeightBoldKeyword_0_0_3()); }
+{ after(grammarAccess.getFontValueAccess().getStyleOrWeightStringBoldKeyword_0_0_0_3()); }
 )
 
     |(
-{ before(grammarAccess.getFontValueAccess().getStyleOrWeightBolderKeyword_0_0_4()); }
+{ before(grammarAccess.getFontValueAccess().getStyleOrWeightStringBolderKeyword_0_0_0_4()); }
 
 	'bolder' 
 
-{ after(grammarAccess.getFontValueAccess().getStyleOrWeightBolderKeyword_0_0_4()); }
+{ after(grammarAccess.getFontValueAccess().getStyleOrWeightStringBolderKeyword_0_0_0_4()); }
 )
 
     |(
-{ before(grammarAccess.getFontValueAccess().getStyleOrWeightLighterKeyword_0_0_5()); }
+{ before(grammarAccess.getFontValueAccess().getStyleOrWeightStringLighterKeyword_0_0_0_5()); }
 
 	'lighter' 
 
-{ after(grammarAccess.getFontValueAccess().getStyleOrWeightLighterKeyword_0_0_5()); }
-)
-
-    |(
-{ before(grammarAccess.getFontValueAccess().getStyleOrWeight100Keyword_0_0_6()); }
-
-	'100' 
-
-{ after(grammarAccess.getFontValueAccess().getStyleOrWeight100Keyword_0_0_6()); }
-)
-
-    |(
-{ before(grammarAccess.getFontValueAccess().getStyleOrWeight200Keyword_0_0_7()); }
-
-	'200' 
-
-{ after(grammarAccess.getFontValueAccess().getStyleOrWeight200Keyword_0_0_7()); }
-)
-
-    |(
-{ before(grammarAccess.getFontValueAccess().getStyleOrWeight300Keyword_0_0_8()); }
-
-	'300' 
-
-{ after(grammarAccess.getFontValueAccess().getStyleOrWeight300Keyword_0_0_8()); }
-)
-
-    |(
-{ before(grammarAccess.getFontValueAccess().getStyleOrWeight400Keyword_0_0_9()); }
-
-	'400' 
-
-{ after(grammarAccess.getFontValueAccess().getStyleOrWeight400Keyword_0_0_9()); }
-)
-
-    |(
-{ before(grammarAccess.getFontValueAccess().getStyleOrWeight500Keyword_0_0_10()); }
-
-	'500' 
-
-{ after(grammarAccess.getFontValueAccess().getStyleOrWeight500Keyword_0_0_10()); }
-)
-
-    |(
-{ before(grammarAccess.getFontValueAccess().getStyleOrWeight600Keyword_0_0_11()); }
-
-	'600' 
-
-{ after(grammarAccess.getFontValueAccess().getStyleOrWeight600Keyword_0_0_11()); }
-)
-
-    |(
-{ before(grammarAccess.getFontValueAccess().getStyleOrWeight700Keyword_0_0_12()); }
-
-	'700' 
-
-{ after(grammarAccess.getFontValueAccess().getStyleOrWeight700Keyword_0_0_12()); }
-)
-
-    |(
-{ before(grammarAccess.getFontValueAccess().getStyleOrWeight800Keyword_0_0_13()); }
-
-	'800' 
-
-{ after(grammarAccess.getFontValueAccess().getStyleOrWeight800Keyword_0_0_13()); }
-)
-
-    |(
-{ before(grammarAccess.getFontValueAccess().getStyleOrWeight900Keyword_0_0_14()); }
-
-	'900' 
-
-{ after(grammarAccess.getFontValueAccess().getStyleOrWeight900Keyword_0_0_14()); }
+{ after(grammarAccess.getFontValueAccess().getStyleOrWeightStringLighterKeyword_0_0_0_5()); }
 )
 
 ;
@@ -5508,113 +5458,63 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FontWeightValue__ValueAlternatives_0
+rule__FontWeightValue__Alternatives
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFontWeightValueAccess().getValueNormalKeyword_0_0()); }
+{ before(grammarAccess.getFontWeightValueAccess().getValueStringAssignment_0()); }
+(rule__FontWeightValue__ValueStringAssignment_0)
+{ after(grammarAccess.getFontWeightValueAccess().getValueStringAssignment_0()); }
+)
+
+    |(
+{ before(grammarAccess.getFontWeightValueAccess().getValueIntAssignment_1()); }
+(rule__FontWeightValue__ValueIntAssignment_1)
+{ after(grammarAccess.getFontWeightValueAccess().getValueIntAssignment_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__FontWeightValue__ValueStringAlternatives_0_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getFontWeightValueAccess().getValueStringNormalKeyword_0_0_0()); }
 
 	'normal' 
 
-{ after(grammarAccess.getFontWeightValueAccess().getValueNormalKeyword_0_0()); }
+{ after(grammarAccess.getFontWeightValueAccess().getValueStringNormalKeyword_0_0_0()); }
 )
 
     |(
-{ before(grammarAccess.getFontWeightValueAccess().getValueBoldKeyword_0_1()); }
+{ before(grammarAccess.getFontWeightValueAccess().getValueStringBoldKeyword_0_0_1()); }
 
 	'bold' 
 
-{ after(grammarAccess.getFontWeightValueAccess().getValueBoldKeyword_0_1()); }
+{ after(grammarAccess.getFontWeightValueAccess().getValueStringBoldKeyword_0_0_1()); }
 )
 
     |(
-{ before(grammarAccess.getFontWeightValueAccess().getValueBolderKeyword_0_2()); }
+{ before(grammarAccess.getFontWeightValueAccess().getValueStringBolderKeyword_0_0_2()); }
 
 	'bolder' 
 
-{ after(grammarAccess.getFontWeightValueAccess().getValueBolderKeyword_0_2()); }
+{ after(grammarAccess.getFontWeightValueAccess().getValueStringBolderKeyword_0_0_2()); }
 )
 
     |(
-{ before(grammarAccess.getFontWeightValueAccess().getValueLighterKeyword_0_3()); }
+{ before(grammarAccess.getFontWeightValueAccess().getValueStringLighterKeyword_0_0_3()); }
 
 	'lighter' 
 
-{ after(grammarAccess.getFontWeightValueAccess().getValueLighterKeyword_0_3()); }
-)
-
-    |(
-{ before(grammarAccess.getFontWeightValueAccess().getValue100Keyword_0_4()); }
-
-	'100' 
-
-{ after(grammarAccess.getFontWeightValueAccess().getValue100Keyword_0_4()); }
-)
-
-    |(
-{ before(grammarAccess.getFontWeightValueAccess().getValue200Keyword_0_5()); }
-
-	'200' 
-
-{ after(grammarAccess.getFontWeightValueAccess().getValue200Keyword_0_5()); }
-)
-
-    |(
-{ before(grammarAccess.getFontWeightValueAccess().getValue300Keyword_0_6()); }
-
-	'300' 
-
-{ after(grammarAccess.getFontWeightValueAccess().getValue300Keyword_0_6()); }
-)
-
-    |(
-{ before(grammarAccess.getFontWeightValueAccess().getValue400Keyword_0_7()); }
-
-	'400' 
-
-{ after(grammarAccess.getFontWeightValueAccess().getValue400Keyword_0_7()); }
-)
-
-    |(
-{ before(grammarAccess.getFontWeightValueAccess().getValue500Keyword_0_8()); }
-
-	'500' 
-
-{ after(grammarAccess.getFontWeightValueAccess().getValue500Keyword_0_8()); }
-)
-
-    |(
-{ before(grammarAccess.getFontWeightValueAccess().getValue600Keyword_0_9()); }
-
-	'600' 
-
-{ after(grammarAccess.getFontWeightValueAccess().getValue600Keyword_0_9()); }
-)
-
-    |(
-{ before(grammarAccess.getFontWeightValueAccess().getValue700Keyword_0_10()); }
-
-	'700' 
-
-{ after(grammarAccess.getFontWeightValueAccess().getValue700Keyword_0_10()); }
-)
-
-    |(
-{ before(grammarAccess.getFontWeightValueAccess().getValue800Keyword_0_11()); }
-
-	'800' 
-
-{ after(grammarAccess.getFontWeightValueAccess().getValue800Keyword_0_11()); }
-)
-
-    |(
-{ before(grammarAccess.getFontWeightValueAccess().getValue900Keyword_0_12()); }
-
-	'900' 
-
-{ after(grammarAccess.getFontWeightValueAccess().getValue900Keyword_0_12()); }
+{ after(grammarAccess.getFontWeightValueAccess().getValueStringLighterKeyword_0_0_3()); }
 )
 
 ;
@@ -13911,9 +13811,9 @@ rule__FontValue__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getFontValueAccess().getStyleOrWeightAssignment_0()); }
-(rule__FontValue__StyleOrWeightAssignment_0)?
-{ after(grammarAccess.getFontValueAccess().getStyleOrWeightAssignment_0()); }
+{ before(grammarAccess.getFontValueAccess().getAlternatives_0()); }
+(rule__FontValue__Alternatives_0)?
+{ after(grammarAccess.getFontValueAccess().getAlternatives_0()); }
 )
 
 ;
@@ -20081,15 +19981,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FontValue__StyleOrWeightAssignment_0
+rule__FontValue__StyleOrWeightStringAssignment_0_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFontValueAccess().getStyleOrWeightAlternatives_0_0()); }
-(rule__FontValue__StyleOrWeightAlternatives_0_0)
-{ after(grammarAccess.getFontValueAccess().getStyleOrWeightAlternatives_0_0()); }
+{ before(grammarAccess.getFontValueAccess().getStyleOrWeightStringAlternatives_0_0_0()); }
+(rule__FontValue__StyleOrWeightStringAlternatives_0_0_0)
+{ after(grammarAccess.getFontValueAccess().getStyleOrWeightStringAlternatives_0_0_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__FontValue__WeightAssignment_0_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getFontValueAccess().getWeightIntegerPropertyParserRuleCall_0_1_0()); }
+	ruleIntegerProperty{ after(grammarAccess.getFontValueAccess().getWeightIntegerPropertyParserRuleCall_0_1_0()); }
 )
 
 ;
@@ -20143,15 +20058,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FontWeightValue__ValueAssignment
+rule__FontWeightValue__ValueStringAssignment_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getFontWeightValueAccess().getValueAlternatives_0()); }
-(rule__FontWeightValue__ValueAlternatives_0)
-{ after(grammarAccess.getFontWeightValueAccess().getValueAlternatives_0()); }
+{ before(grammarAccess.getFontWeightValueAccess().getValueStringAlternatives_0_0()); }
+(rule__FontWeightValue__ValueStringAlternatives_0_0)
+{ after(grammarAccess.getFontWeightValueAccess().getValueStringAlternatives_0_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__FontWeightValue__ValueIntAssignment_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getFontWeightValueAccess().getValueIntNumberValueParserRuleCall_1_0()); }
+	ruleNumberValue{ after(grammarAccess.getFontWeightValueAccess().getValueIntNumberValueParserRuleCall_1_0()); }
 )
 
 ;
@@ -20345,8 +20275,8 @@ rule__StopValue__PosAssignment_0
     }
 :
 (
-{ before(grammarAccess.getStopValueAccess().getPosNumberValueParserRuleCall_0_0()); }
-	ruleNumberValue{ after(grammarAccess.getStopValueAccess().getPosNumberValueParserRuleCall_0_0()); }
+{ before(grammarAccess.getStopValueAccess().getPosSizeValueParserRuleCall_0_0()); }
+	ruleSizeValue{ after(grammarAccess.getStopValueAccess().getPosSizeValueParserRuleCall_0_0()); }
 )
 
 ;

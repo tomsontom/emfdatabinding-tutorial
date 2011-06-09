@@ -2311,7 +2311,7 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFontValue_StyleOrWeight()
+  public EAttribute getFontValue_StyleOrWeightString()
   {
     return (EAttribute)fontValueEClass.getEStructuralFeatures().get(0);
   }
@@ -2321,7 +2321,7 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFontValue_Size()
+  public EReference getFontValue_Weight()
   {
     return (EReference)fontValueEClass.getEStructuralFeatures().get(1);
   }
@@ -2331,9 +2331,19 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFontValue_Family()
+  public EReference getFontValue_Size()
   {
     return (EReference)fontValueEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFontValue_Family()
+  {
+    return (EReference)fontValueEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2371,9 +2381,19 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFontWeightValue_Value()
+  public EAttribute getFontWeightValue_ValueString()
   {
     return (EAttribute)fontWeightValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFontWeightValue_ValueInt()
+  {
+    return (EReference)fontWeightValueEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -3058,7 +3078,8 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     createEAttribute(sizeFillEClass, SIZE_FILL__FILL);
 
     fontValueEClass = createEClass(FONT_VALUE);
-    createEAttribute(fontValueEClass, FONT_VALUE__STYLE_OR_WEIGHT);
+    createEAttribute(fontValueEClass, FONT_VALUE__STYLE_OR_WEIGHT_STRING);
+    createEReference(fontValueEClass, FONT_VALUE__WEIGHT);
     createEReference(fontValueEClass, FONT_VALUE__SIZE);
     createEReference(fontValueEClass, FONT_VALUE__FAMILY);
 
@@ -3066,7 +3087,8 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     createEAttribute(fontStyleValueEClass, FONT_STYLE_VALUE__VALUE);
 
     fontWeightValueEClass = createEClass(FONT_WEIGHT_VALUE);
-    createEAttribute(fontWeightValueEClass, FONT_WEIGHT_VALUE__VALUE);
+    createEAttribute(fontWeightValueEClass, FONT_WEIGHT_VALUE__VALUE_STRING);
+    createEReference(fontWeightValueEClass, FONT_WEIGHT_VALUE__VALUE_INT);
 
     fontFamilyEClass = createEClass(FONT_FAMILY);
     createEAttribute(fontFamilyEClass, FONT_FAMILY__VALUE);
@@ -3427,7 +3449,8 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     initEAttribute(getSizeFill_Fill(), ecorePackage.getEString(), "fill", null, 0, 1, SizeFill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fontValueEClass, FontValue.class, "FontValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFontValue_StyleOrWeight(), ecorePackage.getEString(), "styleOrWeight", null, 0, 1, FontValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFontValue_StyleOrWeightString(), ecorePackage.getEString(), "styleOrWeightString", null, 0, 1, FontValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFontValue_Weight(), this.getIntegerProperty(), null, "weight", null, 0, 1, FontValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFontValue_Size(), this.getSizeValue(), null, "size", null, 0, 1, FontValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFontValue_Family(), this.getFontFamily(), null, "family", null, 0, 1, FontValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -3435,7 +3458,8 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     initEAttribute(getFontStyleValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, FontStyleValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fontWeightValueEClass, FontWeightValue.class, "FontWeightValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFontWeightValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, FontWeightValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFontWeightValue_ValueString(), ecorePackage.getEString(), "valueString", null, 0, 1, FontWeightValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFontWeightValue_ValueInt(), this.getNumberValue(), null, "valueInt", null, 0, 1, FontWeightValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fontFamilyEClass, FontFamily.class, "FontFamily", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFontFamily_Value(), ecorePackage.getEString(), "value", null, 0, 1, FontFamily.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3458,7 +3482,7 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     initEReference(getRadialGradient_Stops(), this.getStopValue(), null, "stops", null, 0, -1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stopValueEClass, StopValue.class, "StopValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStopValue_Pos(), this.getNumberValue(), null, "pos", null, 0, 1, StopValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStopValue_Pos(), this.getSizeValue(), null, "pos", null, 0, 1, StopValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStopValue_Color(), this.getColorValue(), null, "color", null, 0, 1, StopValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(colorValueEClass, ColorValue.class, "ColorValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

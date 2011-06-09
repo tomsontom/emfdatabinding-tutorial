@@ -8,7 +8,7 @@ package at.bestsolution.e4.jfx.xtext.jFXCss.impl;
 
 import at.bestsolution.e4.jfx.xtext.jFXCss.ColorValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage;
-import at.bestsolution.e4.jfx.xtext.jFXCss.NumberValue;
+import at.bestsolution.e4.jfx.xtext.jFXCss.SizeValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.StopValue;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -44,7 +44,7 @@ public class StopValueImpl extends MinimalEObjectImpl.Container implements StopV
    * @generated
    * @ordered
    */
-  protected NumberValue pos;
+  protected SizeValue pos;
 
   /**
    * The cached value of the '{@link #getColor() <em>Color</em>}' containment reference.
@@ -82,7 +82,7 @@ public class StopValueImpl extends MinimalEObjectImpl.Container implements StopV
    * <!-- end-user-doc -->
    * @generated
    */
-  public NumberValue getPos()
+  public SizeValue getPos()
   {
     return pos;
   }
@@ -92,9 +92,9 @@ public class StopValueImpl extends MinimalEObjectImpl.Container implements StopV
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPos(NumberValue newPos, NotificationChain msgs)
+  public NotificationChain basicSetPos(SizeValue newPos, NotificationChain msgs)
   {
-    NumberValue oldPos = pos;
+    SizeValue oldPos = pos;
     pos = newPos;
     if (eNotificationRequired())
     {
@@ -109,7 +109,7 @@ public class StopValueImpl extends MinimalEObjectImpl.Container implements StopV
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPos(NumberValue newPos)
+  public void setPos(SizeValue newPos)
   {
     if (newPos != pos)
     {
@@ -220,7 +220,7 @@ public class StopValueImpl extends MinimalEObjectImpl.Container implements StopV
     switch (featureID)
     {
       case JFXCssPackage.STOP_VALUE__POS:
-        setPos((NumberValue)newValue);
+        setPos((SizeValue)newValue);
         return;
       case JFXCssPackage.STOP_VALUE__COLOR:
         setColor((ColorValue)newValue);
@@ -240,7 +240,7 @@ public class StopValueImpl extends MinimalEObjectImpl.Container implements StopV
     switch (featureID)
     {
       case JFXCssPackage.STOP_VALUE__POS:
-        setPos((NumberValue)null);
+        setPos((SizeValue)null);
         return;
       case JFXCssPackage.STOP_VALUE__COLOR:
         setColor((ColorValue)null);

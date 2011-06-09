@@ -2212,13 +2212,22 @@ public interface JFXCssPackage extends EPackage
   int FONT_VALUE = 61;
 
   /**
-   * The feature id for the '<em><b>Style Or Weight</b></em>' attribute.
+   * The feature id for the '<em><b>Style Or Weight String</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FONT_VALUE__STYLE_OR_WEIGHT = 0;
+  int FONT_VALUE__STYLE_OR_WEIGHT_STRING = 0;
+
+  /**
+   * The feature id for the '<em><b>Weight</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FONT_VALUE__WEIGHT = 1;
 
   /**
    * The feature id for the '<em><b>Size</b></em>' containment reference.
@@ -2227,7 +2236,7 @@ public interface JFXCssPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FONT_VALUE__SIZE = 1;
+  int FONT_VALUE__SIZE = 2;
 
   /**
    * The feature id for the '<em><b>Family</b></em>' containment reference.
@@ -2236,7 +2245,7 @@ public interface JFXCssPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FONT_VALUE__FAMILY = 2;
+  int FONT_VALUE__FAMILY = 3;
 
   /**
    * The number of structural features of the '<em>Font Value</em>' class.
@@ -2245,7 +2254,7 @@ public interface JFXCssPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FONT_VALUE_FEATURE_COUNT = 3;
+  int FONT_VALUE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.FontStyleValueImpl <em>Font Style Value</em>}' class.
@@ -2286,13 +2295,22 @@ public interface JFXCssPackage extends EPackage
   int FONT_WEIGHT_VALUE = 63;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value String</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FONT_WEIGHT_VALUE__VALUE = 0;
+  int FONT_WEIGHT_VALUE__VALUE_STRING = 0;
+
+  /**
+   * The feature id for the '<em><b>Value Int</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FONT_WEIGHT_VALUE__VALUE_INT = 1;
 
   /**
    * The number of structural features of the '<em>Font Weight Value</em>' class.
@@ -2301,7 +2319,7 @@ public interface JFXCssPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FONT_WEIGHT_VALUE_FEATURE_COUNT = 1;
+  int FONT_WEIGHT_VALUE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.FontFamilyImpl <em>Font Family</em>}' class.
@@ -4503,15 +4521,26 @@ public interface JFXCssPackage extends EPackage
   EClass getFontValue();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.e4.jfx.xtext.jFXCss.FontValue#getStyleOrWeight <em>Style Or Weight</em>}'.
+   * Returns the meta object for the attribute '{@link at.bestsolution.e4.jfx.xtext.jFXCss.FontValue#getStyleOrWeightString <em>Style Or Weight String</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Style Or Weight</em>'.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.FontValue#getStyleOrWeight()
+   * @return the meta object for the attribute '<em>Style Or Weight String</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.FontValue#getStyleOrWeightString()
    * @see #getFontValue()
    * @generated
    */
-  EAttribute getFontValue_StyleOrWeight();
+  EAttribute getFontValue_StyleOrWeightString();
+
+  /**
+   * Returns the meta object for the containment reference '{@link at.bestsolution.e4.jfx.xtext.jFXCss.FontValue#getWeight <em>Weight</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Weight</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.FontValue#getWeight()
+   * @see #getFontValue()
+   * @generated
+   */
+  EReference getFontValue_Weight();
 
   /**
    * Returns the meta object for the containment reference '{@link at.bestsolution.e4.jfx.xtext.jFXCss.FontValue#getSize <em>Size</em>}'.
@@ -4567,15 +4596,26 @@ public interface JFXCssPackage extends EPackage
   EClass getFontWeightValue();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.e4.jfx.xtext.jFXCss.FontWeightValue#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link at.bestsolution.e4.jfx.xtext.jFXCss.FontWeightValue#getValueString <em>Value String</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.FontWeightValue#getValue()
+   * @return the meta object for the attribute '<em>Value String</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.FontWeightValue#getValueString()
    * @see #getFontWeightValue()
    * @generated
    */
-  EAttribute getFontWeightValue_Value();
+  EAttribute getFontWeightValue_ValueString();
+
+  /**
+   * Returns the meta object for the containment reference '{@link at.bestsolution.e4.jfx.xtext.jFXCss.FontWeightValue#getValueInt <em>Value Int</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value Int</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.FontWeightValue#getValueInt()
+   * @see #getFontWeightValue()
+   * @generated
+   */
+  EReference getFontWeightValue_ValueInt();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.FontFamily <em>Font Family</em>}'.
@@ -6474,12 +6514,20 @@ public interface JFXCssPackage extends EPackage
     EClass FONT_VALUE = eINSTANCE.getFontValue();
 
     /**
-     * The meta object literal for the '<em><b>Style Or Weight</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Style Or Weight String</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FONT_VALUE__STYLE_OR_WEIGHT = eINSTANCE.getFontValue_StyleOrWeight();
+    EAttribute FONT_VALUE__STYLE_OR_WEIGHT_STRING = eINSTANCE.getFontValue_StyleOrWeightString();
+
+    /**
+     * The meta object literal for the '<em><b>Weight</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FONT_VALUE__WEIGHT = eINSTANCE.getFontValue_Weight();
 
     /**
      * The meta object literal for the '<em><b>Size</b></em>' containment reference feature.
@@ -6526,12 +6574,20 @@ public interface JFXCssPackage extends EPackage
     EClass FONT_WEIGHT_VALUE = eINSTANCE.getFontWeightValue();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value String</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FONT_WEIGHT_VALUE__VALUE = eINSTANCE.getFontWeightValue_Value();
+    EAttribute FONT_WEIGHT_VALUE__VALUE_STRING = eINSTANCE.getFontWeightValue_ValueString();
+
+    /**
+     * The meta object literal for the '<em><b>Value Int</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FONT_WEIGHT_VALUE__VALUE_INT = eINSTANCE.getFontWeightValue_ValueInt();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.FontFamilyImpl <em>Font Family</em>}' class.
