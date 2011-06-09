@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.Definition#getId <em>Id</em>}</li>
+ *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.Definition#getSelector <em>Selector</em>}</li>
  *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.Definition#getProperties <em>Properties</em>}</li>
  * </ul>
  * </p>
@@ -30,30 +30,20 @@ import org.eclipse.emf.ecore.EObject;
 public interface Definition extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Id</b></em>' attribute.
+   * Returns the value of the '<em><b>Selector</b></em>' containment reference list.
+   * The list contents are of type {@link at.bestsolution.e4.jfx.xtext.jFXCss.Selector}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Id</em>' attribute isn't clear,
+   * If the meaning of the '<em>Selector</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' attribute.
-   * @see #setId(String)
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage#getDefinition_Id()
-   * @model
+   * @return the value of the '<em>Selector</em>' containment reference list.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage#getDefinition_Selector()
+   * @model containment="true"
    * @generated
    */
-  String getId();
-
-  /**
-   * Sets the value of the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.Definition#getId <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' attribute.
-   * @see #getId()
-   * @generated
-   */
-  void setId(String value);
+  EList<Selector> getSelector();
 
   /**
    * Returns the value of the '<em><b>Properties</b></em>' containment reference list.

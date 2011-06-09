@@ -30,6 +30,10 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.Effect;
 import at.bestsolution.e4.jfx.xtext.jFXCss.EffectDropShadow;
 import at.bestsolution.e4.jfx.xtext.jFXCss.EffectInnerShadow;
 import at.bestsolution.e4.jfx.xtext.jFXCss.EffectProperty;
+import at.bestsolution.e4.jfx.xtext.jFXCss.ElementClass;
+import at.bestsolution.e4.jfx.xtext.jFXCss.ElementId;
+import at.bestsolution.e4.jfx.xtext.jFXCss.ElementName;
+import at.bestsolution.e4.jfx.xtext.jFXCss.ElementPseudoClass;
 import at.bestsolution.e4.jfx.xtext.jFXCss.FXProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.FontFamily;
 import at.bestsolution.e4.jfx.xtext.jFXCss.FontFamilyProperty;
@@ -66,8 +70,10 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.RadialGradient;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RealValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RepeatProperties;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RepeatStyleValue;
+import at.bestsolution.e4.jfx.xtext.jFXCss.Selector;
 import at.bestsolution.e4.jfx.xtext.jFXCss.ShapeProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.SideProperty;
+import at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector;
 import at.bestsolution.e4.jfx.xtext.jFXCss.SizeFill;
 import at.bestsolution.e4.jfx.xtext.jFXCss.SizeProperties;
 import at.bestsolution.e4.jfx.xtext.jFXCss.SizeProperty;
@@ -115,6 +121,48 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * @generated
    */
   private EClass definitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass selectorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass simpleSelectorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass elementNameEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass elementIdEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass elementClassEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass elementPseudoClassEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -739,9 +787,9 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDefinition_Id()
+  public EReference getDefinition_Selector()
   {
-    return (EAttribute)definitionEClass.getEStructuralFeatures().get(0);
+    return (EReference)definitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -752,6 +800,156 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
   public EReference getDefinition_Properties()
   {
     return (EReference)definitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSelector()
+  {
+    return selectorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSelector_SimpleSelector()
+  {
+    return (EReference)selectorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSimpleSelector()
+  {
+    return simpleSelectorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSimpleSelector_Element()
+  {
+    return (EReference)simpleSelectorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSimpleSelector_Id()
+  {
+    return (EReference)simpleSelectorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSimpleSelector_Class()
+  {
+    return (EReference)simpleSelectorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSimpleSelector_PseudoClass()
+  {
+    return (EReference)simpleSelectorEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getElementName()
+  {
+    return elementNameEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getElementName_Value()
+  {
+    return (EAttribute)elementNameEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getElementId()
+  {
+    return elementIdEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getElementId_Id()
+  {
+    return (EAttribute)elementIdEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getElementClass()
+  {
+    return elementClassEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getElementClass_Id()
+  {
+    return (EAttribute)elementClassEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getElementPseudoClass()
+  {
+    return elementPseudoClassEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getElementPseudoClass_Value()
+  {
+    return (EAttribute)elementPseudoClassEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2888,8 +3086,29 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     createEReference(jfxCssEClass, JFX_CSS__DEFINITIONS);
 
     definitionEClass = createEClass(DEFINITION);
-    createEAttribute(definitionEClass, DEFINITION__ID);
+    createEReference(definitionEClass, DEFINITION__SELECTOR);
     createEReference(definitionEClass, DEFINITION__PROPERTIES);
+
+    selectorEClass = createEClass(SELECTOR);
+    createEReference(selectorEClass, SELECTOR__SIMPLE_SELECTOR);
+
+    simpleSelectorEClass = createEClass(SIMPLE_SELECTOR);
+    createEReference(simpleSelectorEClass, SIMPLE_SELECTOR__ELEMENT);
+    createEReference(simpleSelectorEClass, SIMPLE_SELECTOR__ID);
+    createEReference(simpleSelectorEClass, SIMPLE_SELECTOR__CLASS);
+    createEReference(simpleSelectorEClass, SIMPLE_SELECTOR__PSEUDO_CLASS);
+
+    elementNameEClass = createEClass(ELEMENT_NAME);
+    createEAttribute(elementNameEClass, ELEMENT_NAME__VALUE);
+
+    elementIdEClass = createEClass(ELEMENT_ID);
+    createEAttribute(elementIdEClass, ELEMENT_ID__ID);
+
+    elementClassEClass = createEClass(ELEMENT_CLASS);
+    createEAttribute(elementClassEClass, ELEMENT_CLASS__ID);
+
+    elementPseudoClassEClass = createEClass(ELEMENT_PSEUDO_CLASS);
+    createEAttribute(elementPseudoClassEClass, ELEMENT_PSEUDO_CLASS__VALUE);
 
     fxPropertyEClass = createEClass(FX_PROPERTY);
 
@@ -3263,8 +3482,29 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
     initEReference(getJFXCss_Definitions(), this.getDefinition(), null, "definitions", null, 0, -1, JFXCss.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(definitionEClass, Definition.class, "Definition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDefinition_Id(), ecorePackage.getEString(), "id", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDefinition_Selector(), this.getSelector(), null, "selector", null, 0, -1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDefinition_Properties(), this.getFXProperty(), null, "properties", null, 0, -1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(selectorEClass, Selector.class, "Selector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSelector_SimpleSelector(), this.getSimpleSelector(), null, "simpleSelector", null, 0, -1, Selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(simpleSelectorEClass, SimpleSelector.class, "SimpleSelector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSimpleSelector_Element(), this.getElementName(), null, "element", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSimpleSelector_Id(), this.getElementId(), null, "id", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSimpleSelector_Class(), this.getElementClass(), null, "class", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSimpleSelector_PseudoClass(), this.getElementPseudoClass(), null, "pseudoClass", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(elementNameEClass, ElementName.class, "ElementName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getElementName_Value(), ecorePackage.getEString(), "value", null, 0, 1, ElementName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(elementIdEClass, ElementId.class, "ElementId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getElementId_Id(), ecorePackage.getEString(), "id", null, 0, 1, ElementId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(elementClassEClass, ElementClass.class, "ElementClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getElementClass_Id(), ecorePackage.getEString(), "id", null, 0, 1, ElementClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(elementPseudoClassEClass, ElementPseudoClass.class, "ElementPseudoClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getElementPseudoClass_Value(), ecorePackage.getEString(), "value", null, 0, 1, ElementPseudoClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fxPropertyEClass, FXProperty.class, "FXProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

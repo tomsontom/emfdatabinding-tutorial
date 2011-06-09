@@ -71,6 +71,12 @@ public class JFXCssFactoryImpl extends EFactoryImpl implements JFXCssFactory
     {
       case JFXCssPackage.JFX_CSS: return createJFXCss();
       case JFXCssPackage.DEFINITION: return createDefinition();
+      case JFXCssPackage.SELECTOR: return createSelector();
+      case JFXCssPackage.SIMPLE_SELECTOR: return createSimpleSelector();
+      case JFXCssPackage.ELEMENT_NAME: return createElementName();
+      case JFXCssPackage.ELEMENT_ID: return createElementId();
+      case JFXCssPackage.ELEMENT_CLASS: return createElementClass();
+      case JFXCssPackage.ELEMENT_PSEUDO_CLASS: return createElementPseudoClass();
       case JFXCssPackage.FX_PROPERTY: return createFXProperty();
       case JFXCssPackage.FONT_PROPERTY: return createFontProperty();
       case JFXCssPackage.FONT_FAMILY_PROPERTY: return createFontFamilyProperty();
@@ -207,6 +213,72 @@ public class JFXCssFactoryImpl extends EFactoryImpl implements JFXCssFactory
   {
     DefinitionImpl definition = new DefinitionImpl();
     return definition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Selector createSelector()
+  {
+    SelectorImpl selector = new SelectorImpl();
+    return selector;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SimpleSelector createSimpleSelector()
+  {
+    SimpleSelectorImpl simpleSelector = new SimpleSelectorImpl();
+    return simpleSelector;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ElementName createElementName()
+  {
+    ElementNameImpl elementName = new ElementNameImpl();
+    return elementName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ElementId createElementId()
+  {
+    ElementIdImpl elementId = new ElementIdImpl();
+    return elementId;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ElementClass createElementClass()
+  {
+    ElementClassImpl elementClass = new ElementClassImpl();
+    return elementClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ElementPseudoClass createElementPseudoClass()
+  {
+    ElementPseudoClassImpl elementPseudoClass = new ElementPseudoClassImpl();
+    return elementPseudoClass;
   }
 
   /**

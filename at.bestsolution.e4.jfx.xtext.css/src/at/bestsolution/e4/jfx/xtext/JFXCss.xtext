@@ -9,11 +9,43 @@ JFXCss:
 ;
 
 Definition:
-	( '#' id=ID ) 
+	selector+=Selector
 	// (':' ('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing') )? 
 		'{'
 		properties+=FXProperty+
 	'}'
+;
+
+Selector:
+	simpleSelector+=SimpleSelector+	
+;
+
+SimpleSelector:
+	element=ElementName |
+	id=ElementId | 
+	class=ElementClass |
+	pseudoClass=ElementPseudoClass
+	/* (element=ElementName id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
+	|
+	(id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
+	|
+	(class=ElementClass pseudoClass=ElementPseudoClass?)
+	|
+	pseudoClass=ElementPseudoClass*/
+;
+
+ElementName: value=ID;
+
+ElementId:
+	('#') id=ID 
+;
+
+ElementClass:
+	('.') id=ID
+;
+
+ElementPseudoClass:
+	':' value=('blabla')//('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing')
 ;
 
 FXProperty:
@@ -406,7 +438,7 @@ FontWeightValue:
 ;
 
 FontFamily:
-	value=ID
+	value=STRING
 ;
 
 PaintValue:

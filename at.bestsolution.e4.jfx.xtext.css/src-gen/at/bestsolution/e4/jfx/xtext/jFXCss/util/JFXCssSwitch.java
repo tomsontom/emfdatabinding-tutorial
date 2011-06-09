@@ -90,6 +90,48 @@ public class JFXCssSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case JFXCssPackage.SELECTOR:
+      {
+        Selector selector = (Selector)theEObject;
+        T result = caseSelector(selector);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JFXCssPackage.SIMPLE_SELECTOR:
+      {
+        SimpleSelector simpleSelector = (SimpleSelector)theEObject;
+        T result = caseSimpleSelector(simpleSelector);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JFXCssPackage.ELEMENT_NAME:
+      {
+        ElementName elementName = (ElementName)theEObject;
+        T result = caseElementName(elementName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JFXCssPackage.ELEMENT_ID:
+      {
+        ElementId elementId = (ElementId)theEObject;
+        T result = caseElementId(elementId);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JFXCssPackage.ELEMENT_CLASS:
+      {
+        ElementClass elementClass = (ElementClass)theEObject;
+        T result = caseElementClass(elementClass);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JFXCssPackage.ELEMENT_PSEUDO_CLASS:
+      {
+        ElementPseudoClass elementPseudoClass = (ElementPseudoClass)theEObject;
+        T result = caseElementPseudoClass(elementPseudoClass);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case JFXCssPackage.FX_PROPERTY:
       {
         FXProperty fxProperty = (FXProperty)theEObject;
@@ -688,6 +730,102 @@ public class JFXCssSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDefinition(Definition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Selector</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Selector</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSelector(Selector object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Simple Selector</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Simple Selector</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSimpleSelector(SimpleSelector object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElementName(ElementName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element Id</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element Id</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElementId(ElementId object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element Class</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element Class</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElementClass(ElementClass object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element Pseudo Class</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element Pseudo Class</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElementPseudoClass(ElementPseudoClass object)
   {
     return null;
   }

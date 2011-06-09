@@ -35,35 +35,27 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	public class DefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Definition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
-		private final Keyword cNumberSignKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cIdAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cIdIDTerminalRuleCall_0_1_0 = (RuleCall)cIdAssignment_0_1.eContents().get(0);
+		private final Assignment cSelectorAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cSelectorSelectorParserRuleCall_0_0 = (RuleCall)cSelectorAssignment_0.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cPropertiesAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cPropertiesFXPropertyParserRuleCall_2_0 = (RuleCall)cPropertiesAssignment_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Definition:
-		//	("#" id=ID) // (':' ('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing') )? 
+		//	selector+=Selector // (':' ('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing') )? 
 		//	"{" properties+=FXProperty+ "}";
 		public ParserRule getRule() { return rule; }
 
-		//("#" id=ID) // (':' ('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing') )? 
+		//selector+=Selector // (':' ('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing') )? 
 		//"{" properties+=FXProperty+ "}"
 		public Group getGroup() { return cGroup; }
 
-		//"#" id=ID
-		public Group getGroup_0() { return cGroup_0; }
+		//selector+=Selector
+		public Assignment getSelectorAssignment_0() { return cSelectorAssignment_0; }
 
-		//"#"
-		public Keyword getNumberSignKeyword_0_0() { return cNumberSignKeyword_0_0; }
-
-		//id=ID
-		public Assignment getIdAssignment_0_1() { return cIdAssignment_0_1; }
-
-		//ID
-		public RuleCall getIdIDTerminalRuleCall_0_1_0() { return cIdIDTerminalRuleCall_0_1_0; }
+		//Selector
+		public RuleCall getSelectorSelectorParserRuleCall_0_0() { return cSelectorSelectorParserRuleCall_0_0; }
 
 		//// (':' ('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing') )? 
 		//"{"
@@ -77,6 +69,163 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+
+	public class SelectorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Selector");
+		private final Assignment cSimpleSelectorAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cSimpleSelectorSimpleSelectorParserRuleCall_0 = (RuleCall)cSimpleSelectorAssignment.eContents().get(0);
+		
+		//Selector:
+		//	simpleSelector+=SimpleSelector+;
+		public ParserRule getRule() { return rule; }
+
+		//simpleSelector+=SimpleSelector+
+		public Assignment getSimpleSelectorAssignment() { return cSimpleSelectorAssignment; }
+
+		//SimpleSelector
+		public RuleCall getSimpleSelectorSimpleSelectorParserRuleCall_0() { return cSimpleSelectorSimpleSelectorParserRuleCall_0; }
+	}
+
+	public class SimpleSelectorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SimpleSelector");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cElementAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cElementElementNameParserRuleCall_0_0 = (RuleCall)cElementAssignment_0.eContents().get(0);
+		private final Assignment cIdAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cIdElementIdParserRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
+		private final Assignment cClassAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cClassElementClassParserRuleCall_2_0 = (RuleCall)cClassAssignment_2.eContents().get(0);
+		private final Assignment cPseudoClassAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cPseudoClassElementPseudoClassParserRuleCall_3_0 = (RuleCall)cPseudoClassAssignment_3.eContents().get(0);
+		
+		/// * (element=ElementName id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
+		//	|
+		//	(id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
+		//	|
+		//	(class=ElementClass pseudoClass=ElementPseudoClass?)
+		//	|
+		//	pseudoClass=ElementPseudoClass* / SimpleSelector:
+		//	element=ElementName | id=ElementId | class=ElementClass | pseudoClass=ElementPseudoClass;
+		public ParserRule getRule() { return rule; }
+
+		//element=ElementName | id=ElementId | class=ElementClass | pseudoClass=ElementPseudoClass
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//element=ElementName
+		public Assignment getElementAssignment_0() { return cElementAssignment_0; }
+
+		//ElementName
+		public RuleCall getElementElementNameParserRuleCall_0_0() { return cElementElementNameParserRuleCall_0_0; }
+
+		//id=ElementId
+		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
+
+		//ElementId
+		public RuleCall getIdElementIdParserRuleCall_1_0() { return cIdElementIdParserRuleCall_1_0; }
+
+		//class=ElementClass
+		public Assignment getClassAssignment_2() { return cClassAssignment_2; }
+
+		//ElementClass
+		public RuleCall getClassElementClassParserRuleCall_2_0() { return cClassElementClassParserRuleCall_2_0; }
+
+		//pseudoClass=ElementPseudoClass
+		public Assignment getPseudoClassAssignment_3() { return cPseudoClassAssignment_3; }
+
+		//ElementPseudoClass
+		public RuleCall getPseudoClassElementPseudoClassParserRuleCall_3_0() { return cPseudoClassElementPseudoClassParserRuleCall_3_0; }
+	}
+
+	public class ElementNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ElementName");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueIDTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//ElementName:
+		//	value=ID;
+		public ParserRule getRule() { return rule; }
+
+		//value=ID
+		public Assignment getValueAssignment() { return cValueAssignment; }
+
+		//ID
+		public RuleCall getValueIDTerminalRuleCall_0() { return cValueIDTerminalRuleCall_0; }
+	}
+
+	public class ElementIdElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ElementId");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNumberSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cIdIDTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
+		
+		//ElementId:
+		//	"#" id=ID;
+		public ParserRule getRule() { return rule; }
+
+		//"#" id=ID
+		public Group getGroup() { return cGroup; }
+
+		//"#"
+		public Keyword getNumberSignKeyword_0() { return cNumberSignKeyword_0; }
+
+		//id=ID
+		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
+
+		//ID
+		public RuleCall getIdIDTerminalRuleCall_1_0() { return cIdIDTerminalRuleCall_1_0; }
+	}
+
+	public class ElementClassElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ElementClass");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFullStopKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cIdIDTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
+		
+		//ElementClass:
+		//	"." id=ID;
+		public ParserRule getRule() { return rule; }
+
+		//"." id=ID
+		public Group getGroup() { return cGroup; }
+
+		//"."
+		public Keyword getFullStopKeyword_0() { return cFullStopKeyword_0; }
+
+		//id=ID
+		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
+
+		//ID
+		public RuleCall getIdIDTerminalRuleCall_1_0() { return cIdIDTerminalRuleCall_1_0; }
+	}
+
+	public class ElementPseudoClassElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ElementPseudoClass");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cColonKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cValueBlablaKeyword_1_0 = (Keyword)cValueAssignment_1.eContents().get(0);
+		
+		//ElementPseudoClass:
+		//	":" //('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing')
+		//	value="blabla";
+		public ParserRule getRule() { return rule; }
+
+		//":" //('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing')
+		//value="blabla"
+		public Group getGroup() { return cGroup; }
+
+		//":"
+		public Keyword getColonKeyword_0() { return cColonKeyword_0; }
+
+		////('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing')
+		//value="blabla"
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+
+		//"blabla"
+		public Keyword getValueBlablaKeyword_1_0() { return cValueBlablaKeyword_1_0; }
 	}
 
 	public class FXPropertyElements extends AbstractParserRuleElementFinder {
@@ -3837,17 +3986,17 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	public class FontFamilyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FontFamily");
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cValueIDTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		private final RuleCall cValueSTRINGTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//FontFamily:
-		//	value=ID;
+		//	value=STRING;
 		public ParserRule getRule() { return rule; }
 
-		//value=ID
+		//value=STRING
 		public Assignment getValueAssignment() { return cValueAssignment; }
 
-		//ID
-		public RuleCall getValueIDTerminalRuleCall_0() { return cValueIDTerminalRuleCall_0; }
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_0() { return cValueSTRINGTerminalRuleCall_0; }
 	}
 
 	public class PaintValueElements extends AbstractParserRuleElementFinder {
@@ -5447,6 +5596,12 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private JFXCssElements pJFXCss;
 	private DefinitionElements pDefinition;
+	private SelectorElements pSelector;
+	private SimpleSelectorElements pSimpleSelector;
+	private ElementNameElements pElementName;
+	private ElementIdElements pElementId;
+	private ElementClassElements pElementClass;
+	private ElementPseudoClassElements pElementPseudoClass;
 	private FXPropertyElements pFXProperty;
 	private FontPropertyElements pFontProperty;
 	private FontFamilyPropertyElements pFontFamilyProperty;
@@ -5555,7 +5710,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Definition:
-	//	("#" id=ID) // (':' ('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing') )? 
+	//	selector+=Selector // (':' ('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing') )? 
 	//	"{" properties+=FXProperty+ "}";
 	public DefinitionElements getDefinitionAccess() {
 		return (pDefinition != null) ? pDefinition : (pDefinition = new DefinitionElements());
@@ -5563,6 +5718,73 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getDefinitionRule() {
 		return getDefinitionAccess().getRule();
+	}
+
+	//Selector:
+	//	simpleSelector+=SimpleSelector+;
+	public SelectorElements getSelectorAccess() {
+		return (pSelector != null) ? pSelector : (pSelector = new SelectorElements());
+	}
+	
+	public ParserRule getSelectorRule() {
+		return getSelectorAccess().getRule();
+	}
+
+	/// * (element=ElementName id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
+	//	|
+	//	(id=ElementId class=ElementClass? pseudoClass=ElementPseudoClass?)
+	//	|
+	//	(class=ElementClass pseudoClass=ElementPseudoClass?)
+	//	|
+	//	pseudoClass=ElementPseudoClass* / SimpleSelector:
+	//	element=ElementName | id=ElementId | class=ElementClass | pseudoClass=ElementPseudoClass;
+	public SimpleSelectorElements getSimpleSelectorAccess() {
+		return (pSimpleSelector != null) ? pSimpleSelector : (pSimpleSelector = new SimpleSelectorElements());
+	}
+	
+	public ParserRule getSimpleSelectorRule() {
+		return getSimpleSelectorAccess().getRule();
+	}
+
+	//ElementName:
+	//	value=ID;
+	public ElementNameElements getElementNameAccess() {
+		return (pElementName != null) ? pElementName : (pElementName = new ElementNameElements());
+	}
+	
+	public ParserRule getElementNameRule() {
+		return getElementNameAccess().getRule();
+	}
+
+	//ElementId:
+	//	"#" id=ID;
+	public ElementIdElements getElementIdAccess() {
+		return (pElementId != null) ? pElementId : (pElementId = new ElementIdElements());
+	}
+	
+	public ParserRule getElementIdRule() {
+		return getElementIdAccess().getRule();
+	}
+
+	//ElementClass:
+	//	"." id=ID;
+	public ElementClassElements getElementClassAccess() {
+		return (pElementClass != null) ? pElementClass : (pElementClass = new ElementClassElements());
+	}
+	
+	public ParserRule getElementClassRule() {
+		return getElementClassAccess().getRule();
+	}
+
+	//ElementPseudoClass:
+	//	":" //('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'selected'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly'|'selected'|'showing')
+	//	value="blabla";
+	public ElementPseudoClassElements getElementPseudoClassAccess() {
+		return (pElementPseudoClass != null) ? pElementPseudoClass : (pElementPseudoClass = new ElementPseudoClassElements());
+	}
+	
+	public ParserRule getElementPseudoClassRule() {
+		return getElementPseudoClassAccess().getRule();
 	}
 
 	//FXProperty: // Font
@@ -6275,7 +6497,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//FontFamily:
-	//	value=ID;
+	//	value=STRING;
 	public FontFamilyElements getFontFamilyAccess() {
 		return (pFontFamily != null) ? pFontFamily : (pFontFamily = new FontFamilyElements());
 	}

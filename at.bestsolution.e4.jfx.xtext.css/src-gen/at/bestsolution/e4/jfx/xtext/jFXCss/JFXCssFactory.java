@@ -45,6 +45,60 @@ public interface JFXCssFactory extends EFactory
   Definition createDefinition();
 
   /**
+   * Returns a new object of class '<em>Selector</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Selector</em>'.
+   * @generated
+   */
+  Selector createSelector();
+
+  /**
+   * Returns a new object of class '<em>Simple Selector</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple Selector</em>'.
+   * @generated
+   */
+  SimpleSelector createSimpleSelector();
+
+  /**
+   * Returns a new object of class '<em>Element Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element Name</em>'.
+   * @generated
+   */
+  ElementName createElementName();
+
+  /**
+   * Returns a new object of class '<em>Element Id</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element Id</em>'.
+   * @generated
+   */
+  ElementId createElementId();
+
+  /**
+   * Returns a new object of class '<em>Element Class</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element Class</em>'.
+   * @generated
+   */
+  ElementClass createElementClass();
+
+  /**
+   * Returns a new object of class '<em>Element Pseudo Class</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element Pseudo Class</em>'.
+   * @generated
+   */
+  ElementPseudoClass createElementPseudoClass();
+
+  /**
    * Returns a new object of class '<em>FX Property</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

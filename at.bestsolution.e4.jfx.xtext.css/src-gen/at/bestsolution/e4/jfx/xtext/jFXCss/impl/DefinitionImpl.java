@@ -9,10 +9,10 @@ package at.bestsolution.e4.jfx.xtext.jFXCss.impl;
 import at.bestsolution.e4.jfx.xtext.jFXCss.Definition;
 import at.bestsolution.e4.jfx.xtext.jFXCss.FXProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage;
+import at.bestsolution.e4.jfx.xtext.jFXCss.Selector;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -20,7 +20,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -33,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.DefinitionImpl#getId <em>Id</em>}</li>
+ *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.DefinitionImpl#getSelector <em>Selector</em>}</li>
  *   <li>{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.DefinitionImpl#getProperties <em>Properties</em>}</li>
  * </ul>
  * </p>
@@ -43,24 +42,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class DefinitionImpl extends MinimalEObjectImpl.Container implements Definition
 {
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The cached value of the '{@link #getSelector() <em>Selector</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getId()
+   * @see #getSelector()
    * @generated
    * @ordered
    */
-  protected static final String ID_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
-  protected String id = ID_EDEFAULT;
+  protected EList<Selector> selector;
 
   /**
    * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
@@ -98,22 +87,13 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getId()
+  public EList<Selector> getSelector()
   {
-    return id;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setId(String newId)
-  {
-    String oldId = id;
-    id = newId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JFXCssPackage.DEFINITION__ID, oldId, id));
+    if (selector == null)
+    {
+      selector = new EObjectContainmentEList<Selector>(Selector.class, this, JFXCssPackage.DEFINITION__SELECTOR);
+    }
+    return selector;
   }
 
   /**
@@ -140,6 +120,8 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
   {
     switch (featureID)
     {
+      case JFXCssPackage.DEFINITION__SELECTOR:
+        return ((InternalEList<?>)getSelector()).basicRemove(otherEnd, msgs);
       case JFXCssPackage.DEFINITION__PROPERTIES:
         return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
     }
@@ -156,8 +138,8 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
   {
     switch (featureID)
     {
-      case JFXCssPackage.DEFINITION__ID:
-        return getId();
+      case JFXCssPackage.DEFINITION__SELECTOR:
+        return getSelector();
       case JFXCssPackage.DEFINITION__PROPERTIES:
         return getProperties();
     }
@@ -175,8 +157,9 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
   {
     switch (featureID)
     {
-      case JFXCssPackage.DEFINITION__ID:
-        setId((String)newValue);
+      case JFXCssPackage.DEFINITION__SELECTOR:
+        getSelector().clear();
+        getSelector().addAll((Collection<? extends Selector>)newValue);
         return;
       case JFXCssPackage.DEFINITION__PROPERTIES:
         getProperties().clear();
@@ -196,8 +179,8 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
   {
     switch (featureID)
     {
-      case JFXCssPackage.DEFINITION__ID:
-        setId(ID_EDEFAULT);
+      case JFXCssPackage.DEFINITION__SELECTOR:
+        getSelector().clear();
         return;
       case JFXCssPackage.DEFINITION__PROPERTIES:
         getProperties().clear();
@@ -216,29 +199,12 @@ public class DefinitionImpl extends MinimalEObjectImpl.Container implements Defi
   {
     switch (featureID)
     {
-      case JFXCssPackage.DEFINITION__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+      case JFXCssPackage.DEFINITION__SELECTOR:
+        return selector != null && !selector.isEmpty();
       case JFXCssPackage.DEFINITION__PROPERTIES:
         return properties != null && !properties.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (id: ");
-    result.append(id);
-    result.append(')');
-    return result.toString();
   }
 
 } //DefinitionImpl

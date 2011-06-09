@@ -21,6 +21,10 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.EchoCharProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.EffectDropShadow;
 import at.bestsolution.e4.jfx.xtext.jFXCss.EffectInnerShadow;
 import at.bestsolution.e4.jfx.xtext.jFXCss.EffectProperty;
+import at.bestsolution.e4.jfx.xtext.jFXCss.ElementClass;
+import at.bestsolution.e4.jfx.xtext.jFXCss.ElementId;
+import at.bestsolution.e4.jfx.xtext.jFXCss.ElementName;
+import at.bestsolution.e4.jfx.xtext.jFXCss.ElementPseudoClass;
 import at.bestsolution.e4.jfx.xtext.jFXCss.FontFamily;
 import at.bestsolution.e4.jfx.xtext.jFXCss.FontFamilyProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.FontProperty;
@@ -52,8 +56,10 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.RadialGradient;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RealValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RepeatProperties;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RepeatStyleValue;
+import at.bestsolution.e4.jfx.xtext.jFXCss.Selector;
 import at.bestsolution.e4.jfx.xtext.jFXCss.ShapeProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.SideProperty;
+import at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector;
 import at.bestsolution.e4.jfx.xtext.jFXCss.SizeFill;
 import at.bestsolution.e4.jfx.xtext.jFXCss.SizeProperties;
 import at.bestsolution.e4.jfx.xtext.jFXCss.SizeProperty;
@@ -252,6 +258,30 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 				if(context == grammarAccess.getFXPropertyRule() ||
 				   context == grammarAccess.getEffectPropertyRule()) {
 					sequence_EffectProperty_EffectProperty(context, (EffectProperty) semanticObject); 
+					return; 
+				}
+				else break;
+			case JFXCssPackage.ELEMENT_CLASS:
+				if(context == grammarAccess.getElementClassRule()) {
+					sequence_ElementClass_ElementClass(context, (ElementClass) semanticObject); 
+					return; 
+				}
+				else break;
+			case JFXCssPackage.ELEMENT_ID:
+				if(context == grammarAccess.getElementIdRule()) {
+					sequence_ElementId_ElementId(context, (ElementId) semanticObject); 
+					return; 
+				}
+				else break;
+			case JFXCssPackage.ELEMENT_NAME:
+				if(context == grammarAccess.getElementNameRule()) {
+					sequence_ElementName_ElementName(context, (ElementName) semanticObject); 
+					return; 
+				}
+				else break;
+			case JFXCssPackage.ELEMENT_PSEUDO_CLASS:
+				if(context == grammarAccess.getElementPseudoClassRule()) {
+					sequence_ElementPseudoClass_ElementPseudoClass(context, (ElementPseudoClass) semanticObject); 
 					return; 
 				}
 				else break;
@@ -460,6 +490,12 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
+			case JFXCssPackage.SELECTOR:
+				if(context == grammarAccess.getSelectorRule()) {
+					sequence_Selector_Selector(context, (Selector) semanticObject); 
+					return; 
+				}
+				else break;
 			case JFXCssPackage.SHAPE_PROPERTY:
 				if(context == grammarAccess.getFXPropertyRule() ||
 				   context == grammarAccess.getShapePropertyRule()) {
@@ -471,6 +507,12 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 				if(context == grammarAccess.getFXPropertyRule() ||
 				   context == grammarAccess.getSidePropertyRule()) {
 					sequence_SideProperty_SideProperty(context, (SideProperty) semanticObject); 
+					return; 
+				}
+				else break;
+			case JFXCssPackage.SIMPLE_SELECTOR:
+				if(context == grammarAccess.getSimpleSelectorRule()) {
+					sequence_SimpleSelector_SimpleSelector(context, (SimpleSelector) semanticObject); 
 					return; 
 				}
 				else break;
@@ -932,10 +974,10 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (id=ID properties+=FXProperty+)
+	 *     (selector+=Selector properties+=FXProperty+)
 	 *
 	 * Features:
-	 *    id[1, 1]
+	 *    selector[1, 1]
 	 *    properties[1, *]
 	 */
 	protected void sequence_Definition_Definition(EObject context, Definition semanticObject) {
@@ -1075,6 +1117,82 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     id=ID
+	 *
+	 * Features:
+	 *    id[1, 1]
+	 */
+	protected void sequence_ElementClass_ElementClass(EObject context, ElementClass semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, JFXCssPackage.Literals.ELEMENT_CLASS__ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JFXCssPackage.Literals.ELEMENT_CLASS__ID));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getElementClassAccess().getIdIDTerminalRuleCall_1_0(), semanticObject.getId());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     id=ID
+	 *
+	 * Features:
+	 *    id[1, 1]
+	 */
+	protected void sequence_ElementId_ElementId(EObject context, ElementId semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, JFXCssPackage.Literals.ELEMENT_ID__ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JFXCssPackage.Literals.ELEMENT_ID__ID));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getElementIdAccess().getIdIDTerminalRuleCall_1_0(), semanticObject.getId());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=ID
+	 *
+	 * Features:
+	 *    value[1, 1]
+	 */
+	protected void sequence_ElementName_ElementName(EObject context, ElementName semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, JFXCssPackage.Literals.ELEMENT_NAME__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JFXCssPackage.Literals.ELEMENT_NAME__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getElementNameAccess().getValueIDTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value='blabla'
+	 *
+	 * Features:
+	 *    value[1, 1]
+	 */
+	protected void sequence_ElementPseudoClass_ElementPseudoClass(EObject context, ElementPseudoClass semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, JFXCssPackage.Literals.ELEMENT_PSEUDO_CLASS__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JFXCssPackage.Literals.ELEMENT_PSEUDO_CLASS__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getElementPseudoClassAccess().getValueBlablaKeyword_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         (
 	 *             property='-fx-font-family' | 
@@ -1098,7 +1216,7 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     value=ID
+	 *     value=STRING
 	 *
 	 * Features:
 	 *    value[1, 1]
@@ -1110,7 +1228,7 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getFontFamilyAccess().getValueIDTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getFontFamilyAccess().getValueSTRINGTerminalRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -1891,6 +2009,18 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     simpleSelector+=SimpleSelector+
+	 *
+	 * Features:
+	 *    simpleSelector[1, *]
+	 */
+	protected void sequence_Selector_Selector(EObject context, Selector semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     value=STRING
 	 *
 	 * Features:
@@ -1917,6 +2047,33 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	 *    value[0, 4]
 	 */
 	protected void sequence_SideProperty_SideProperty(EObject context, SideProperty semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (element=ElementName | id=ElementId | class=ElementClass | pseudoClass=ElementPseudoClass)
+	 *
+	 * Features:
+	 *    element[0, 1]
+	 *         EXCLUDE_IF_SET id
+	 *         EXCLUDE_IF_SET class
+	 *         EXCLUDE_IF_SET pseudoClass
+	 *    id[0, 1]
+	 *         EXCLUDE_IF_SET element
+	 *         EXCLUDE_IF_SET class
+	 *         EXCLUDE_IF_SET pseudoClass
+	 *    class[0, 1]
+	 *         EXCLUDE_IF_SET element
+	 *         EXCLUDE_IF_SET id
+	 *         EXCLUDE_IF_SET pseudoClass
+	 *    pseudoClass[0, 1]
+	 *         EXCLUDE_IF_SET element
+	 *         EXCLUDE_IF_SET id
+	 *         EXCLUDE_IF_SET class
+	 */
+	protected void sequence_SimpleSelector_SimpleSelector(EObject context, SimpleSelector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

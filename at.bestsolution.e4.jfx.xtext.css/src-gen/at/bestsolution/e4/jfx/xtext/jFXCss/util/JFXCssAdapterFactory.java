@@ -89,6 +89,36 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
         return createDefinitionAdapter();
       }
       @Override
+      public Adapter caseSelector(Selector object)
+      {
+        return createSelectorAdapter();
+      }
+      @Override
+      public Adapter caseSimpleSelector(SimpleSelector object)
+      {
+        return createSimpleSelectorAdapter();
+      }
+      @Override
+      public Adapter caseElementName(ElementName object)
+      {
+        return createElementNameAdapter();
+      }
+      @Override
+      public Adapter caseElementId(ElementId object)
+      {
+        return createElementIdAdapter();
+      }
+      @Override
+      public Adapter caseElementClass(ElementClass object)
+      {
+        return createElementClassAdapter();
+      }
+      @Override
+      public Adapter caseElementPseudoClass(ElementPseudoClass object)
+      {
+        return createElementPseudoClassAdapter();
+      }
+      @Override
       public Adapter caseFXProperty(FXProperty object)
       {
         return createFXPropertyAdapter();
@@ -501,6 +531,96 @@ public class JFXCssAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.Selector <em>Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.Selector
+   * @generated
+   */
+  public Adapter createSelectorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector <em>Simple Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector
+   * @generated
+   */
+  public Adapter createSimpleSelectorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.ElementName <em>Element Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.ElementName
+   * @generated
+   */
+  public Adapter createElementNameAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.ElementId <em>Element Id</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.ElementId
+   * @generated
+   */
+  public Adapter createElementIdAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.ElementClass <em>Element Class</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.ElementClass
+   * @generated
+   */
+  public Adapter createElementClassAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.ElementPseudoClass <em>Element Pseudo Class</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.ElementPseudoClass
+   * @generated
+   */
+  public Adapter createElementPseudoClassAdapter()
   {
     return null;
   }
