@@ -1669,11 +1669,11 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (property='-fx-background-color' values+=PaintValue values+=PaintValue*)
+	 *     (property='-fx-background-color' (values+=PaintValue values+=PaintValue*)?)
 	 *
 	 * Features:
 	 *    property[1, 1]
-	 *    values[1, *]
+	 *    values[0, *]
 	 */
 	protected void sequence_PaintProperties_PaintProperties(EObject context, PaintProperties semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

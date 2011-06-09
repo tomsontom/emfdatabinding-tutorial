@@ -50,6 +50,7 @@ public class JFXCssParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNumberPropertyAccess().getPropertyAlternatives_0_0(), "rule__NumberProperty__PropertyAlternatives_0_0");
 					put(grammarAccess.getIntegerPropertyAccess().getPropertyAlternatives_0_0(), "rule__IntegerProperty__PropertyAlternatives_0_0");
 					put(grammarAccess.getPaintPropertyAccess().getPropertyAlternatives_0_0(), "rule__PaintProperty__PropertyAlternatives_0_0");
+					put(grammarAccess.getPaintPropertiesAccess().getAlternatives_2(), "rule__PaintProperties__Alternatives_2");
 					put(grammarAccess.getBlendPropertyAccess().getValueAlternatives_2_0(), "rule__BlendProperty__ValueAlternatives_2_0");
 					put(grammarAccess.getUrlPropertyAccess().getPropertyAlternatives_0_0(), "rule__UrlProperty__PropertyAlternatives_0_0");
 					put(grammarAccess.getMultiSizePropertiesAccess().getPropertyAlternatives_0_0(), "rule__MultiSizeProperties__PropertyAlternatives_0_0");
@@ -122,7 +123,8 @@ public class JFXCssParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIntegerPropertyAccess().getGroup(), "rule__IntegerProperty__Group__0");
 					put(grammarAccess.getPaintPropertyAccess().getGroup(), "rule__PaintProperty__Group__0");
 					put(grammarAccess.getPaintPropertiesAccess().getGroup(), "rule__PaintProperties__Group__0");
-					put(grammarAccess.getPaintPropertiesAccess().getGroup_3(), "rule__PaintProperties__Group_3__0");
+					put(grammarAccess.getPaintPropertiesAccess().getGroup_2_0(), "rule__PaintProperties__Group_2_0__0");
+					put(grammarAccess.getPaintPropertiesAccess().getGroup_2_0_1(), "rule__PaintProperties__Group_2_0_1__0");
 					put(grammarAccess.getBlendPropertyAccess().getGroup(), "rule__BlendProperty__Group__0");
 					put(grammarAccess.getUrlPropertyAccess().getGroup(), "rule__UrlProperty__Group__0");
 					put(grammarAccess.getMultiSizePropertiesAccess().getGroup(), "rule__MultiSizeProperties__Group__0");
@@ -225,8 +227,8 @@ public class JFXCssParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPaintPropertyAccess().getPropertyAssignment_0(), "rule__PaintProperty__PropertyAssignment_0");
 					put(grammarAccess.getPaintPropertyAccess().getValueAssignment_2(), "rule__PaintProperty__ValueAssignment_2");
 					put(grammarAccess.getPaintPropertiesAccess().getPropertyAssignment_0(), "rule__PaintProperties__PropertyAssignment_0");
-					put(grammarAccess.getPaintPropertiesAccess().getValuesAssignment_2(), "rule__PaintProperties__ValuesAssignment_2");
-					put(grammarAccess.getPaintPropertiesAccess().getValuesAssignment_3_1(), "rule__PaintProperties__ValuesAssignment_3_1");
+					put(grammarAccess.getPaintPropertiesAccess().getValuesAssignment_2_0_0(), "rule__PaintProperties__ValuesAssignment_2_0_0");
+					put(grammarAccess.getPaintPropertiesAccess().getValuesAssignment_2_0_1_1(), "rule__PaintProperties__ValuesAssignment_2_0_1_1");
 					put(grammarAccess.getBlendPropertyAccess().getValueAssignment_2(), "rule__BlendProperty__ValueAssignment_2");
 					put(grammarAccess.getUrlPropertyAccess().getPropertyAssignment_0(), "rule__UrlProperty__PropertyAssignment_0");
 					put(grammarAccess.getUrlPropertyAccess().getValueAssignment_2(), "rule__UrlProperty__ValueAssignment_2");

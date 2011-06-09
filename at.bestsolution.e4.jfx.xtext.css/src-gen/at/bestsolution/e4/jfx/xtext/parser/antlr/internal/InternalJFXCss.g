@@ -3515,10 +3515,10 @@ rulePaintProperties returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getPaintPropertiesAccess().getColonKeyword_1());
     }
-(
+(((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPaintPropertiesAccess().getValuesPaintValueParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getPaintPropertiesAccess().getValuesPaintValueParserRuleCall_2_0_0_0()); 
 	    }
 		lv_values_2_0=rulePaintValue		{
 	        if ($current==null) {
@@ -3535,12 +3535,12 @@ rulePaintProperties returns [EObject current=null]
 )
 )(	otherlv_3=',' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getPaintPropertiesAccess().getCommaKeyword_3_0());
+    	newLeafNode(otherlv_3, grammarAccess.getPaintPropertiesAccess().getCommaKeyword_2_0_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPaintPropertiesAccess().getValuesPaintValueParserRuleCall_3_1_0()); 
+	        newCompositeNode(grammarAccess.getPaintPropertiesAccess().getValuesPaintValueParserRuleCall_2_0_1_1_0()); 
 	    }
 		lv_values_4_0=rulePaintValue		{
 	        if ($current==null) {
@@ -3556,6 +3556,11 @@ rulePaintProperties returns [EObject current=null]
 
 )
 ))*)
+    |	otherlv_5='null' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getPaintPropertiesAccess().getNullKeyword_2_1());
+    }
+))
 ;
 
 

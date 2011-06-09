@@ -175,7 +175,7 @@ PaintProperty:
 PaintProperties:
 	property=(
 		'-fx-background-color'
-	) ':' (values+=PaintValue) (',' values+=PaintValue)*
+	) ':' (((values+=PaintValue) (',' values+=PaintValue)*) | 'null')
 ;
 
 BlendProperty:

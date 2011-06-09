@@ -1641,18 +1641,21 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPropertyAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final Keyword cPropertyFxBackgroundColorKeyword_0_0 = (Keyword)cPropertyAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValuesAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValuesPaintValueParserRuleCall_2_0 = (RuleCall)cValuesAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cValuesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cValuesPaintValueParserRuleCall_3_1_0 = (RuleCall)cValuesAssignment_3_1.eContents().get(0);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
+		private final Assignment cValuesAssignment_2_0_0 = (Assignment)cGroup_2_0.eContents().get(0);
+		private final RuleCall cValuesPaintValueParserRuleCall_2_0_0_0 = (RuleCall)cValuesAssignment_2_0_0.eContents().get(0);
+		private final Group cGroup_2_0_1 = (Group)cGroup_2_0.eContents().get(1);
+		private final Keyword cCommaKeyword_2_0_1_0 = (Keyword)cGroup_2_0_1.eContents().get(0);
+		private final Assignment cValuesAssignment_2_0_1_1 = (Assignment)cGroup_2_0_1.eContents().get(1);
+		private final RuleCall cValuesPaintValueParserRuleCall_2_0_1_1_0 = (RuleCall)cValuesAssignment_2_0_1_1.eContents().get(0);
+		private final Keyword cNullKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
 		
 		//PaintProperties:
-		//	property="-fx-background-color" ":" values+=PaintValue ("," values+=PaintValue)*;
+		//	property="-fx-background-color" ":" (values+=PaintValue ("," values+=PaintValue)* | "null");
 		public ParserRule getRule() { return rule; }
 
-		//property="-fx-background-color" ":" values+=PaintValue ("," values+=PaintValue)*
+		//property="-fx-background-color" ":" (values+=PaintValue ("," values+=PaintValue)* | "null")
 		public Group getGroup() { return cGroup; }
 
 		//property="-fx-background-color"
@@ -1664,23 +1667,32 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 
+		//values+=PaintValue ("," values+=PaintValue)* | "null"
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+
+		//values+=PaintValue ("," values+=PaintValue)*
+		public Group getGroup_2_0() { return cGroup_2_0; }
+
 		//values+=PaintValue
-		public Assignment getValuesAssignment_2() { return cValuesAssignment_2; }
+		public Assignment getValuesAssignment_2_0_0() { return cValuesAssignment_2_0_0; }
 
 		//PaintValue
-		public RuleCall getValuesPaintValueParserRuleCall_2_0() { return cValuesPaintValueParserRuleCall_2_0; }
+		public RuleCall getValuesPaintValueParserRuleCall_2_0_0_0() { return cValuesPaintValueParserRuleCall_2_0_0_0; }
 
 		//("," values+=PaintValue)*
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2_0_1() { return cGroup_2_0_1; }
 
 		//","
-		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+		public Keyword getCommaKeyword_2_0_1_0() { return cCommaKeyword_2_0_1_0; }
 
 		//values+=PaintValue
-		public Assignment getValuesAssignment_3_1() { return cValuesAssignment_3_1; }
+		public Assignment getValuesAssignment_2_0_1_1() { return cValuesAssignment_2_0_1_1; }
 
 		//PaintValue
-		public RuleCall getValuesPaintValueParserRuleCall_3_1_0() { return cValuesPaintValueParserRuleCall_3_1_0; }
+		public RuleCall getValuesPaintValueParserRuleCall_2_0_1_1_0() { return cValuesPaintValueParserRuleCall_2_0_1_1_0; }
+
+		//"null"
+		public Keyword getNullKeyword_2_1() { return cNullKeyword_2_1; }
 	}
 
 	public class BlendPropertyElements extends AbstractParserRuleElementFinder {
@@ -5745,7 +5757,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PaintProperties:
-	//	property="-fx-background-color" ":" values+=PaintValue ("," values+=PaintValue)*;
+	//	property="-fx-background-color" ":" (values+=PaintValue ("," values+=PaintValue)* | "null");
 	public PaintPropertiesElements getPaintPropertiesAccess() {
 		return (pPaintProperties != null) ? pPaintProperties : (pPaintProperties = new PaintPropertiesElements());
 	}
