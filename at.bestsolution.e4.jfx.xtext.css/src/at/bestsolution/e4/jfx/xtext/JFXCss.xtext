@@ -3,7 +3,7 @@ grammar at.bestsolution.e4.jfx.xtext.JFXCss with org.eclipse.xtext.common.Termin
 generate jFXCss "http://www.bestsolution.at/e4/jfx/xtext/JFXCss"
 
 JFXCss:
-	definitions+=Definition
+	definitions+=Definition+
 ;
 
 Definition:
@@ -218,8 +218,8 @@ BarPolicyProperty:
 ;
 
 UrlProperties:
-	property=('
-		-fx-background-image' | '-fx-border-image'
+	property=(
+		'-fx-background-image' | '-fx-border-image'
 	) ':' values+=UrlValue ( ',' values+=UrlValue )*
 ;
 
@@ -339,7 +339,7 @@ IntegerValue:
 //;
 
 UrlValue:
-	'url(' (("'" address=AddressValue "'" ) | ('"' address=AddressValue '"' ))  ')'
+	'url(' address=AddressValue  ')'
 ;
 
 AddressValue:

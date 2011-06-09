@@ -1369,10 +1369,10 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     definitions+=Definition
+	 *     definitions+=Definition+
 	 *
 	 * Features:
-	 *    definitions[1, 1]
+	 *    definitions[1, *]
 	 */
 	protected void sequence_JFXCss_JFXCss(EObject context, JFXCss semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -2109,15 +2109,7 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         (
-	 *             property='
-	 *             		-fx-background-image' | 
-	 *             property='-fx-border-image'
-	 *         ) 
-	 *         values+=UrlValue 
-	 *         values+=UrlValue*
-	 *     )
+	 *     ((property='-fx-background-image' | property='-fx-border-image') values+=UrlValue values+=UrlValue*)
 	 *
 	 * Features:
 	 *    property[0, 2]
@@ -2143,13 +2135,20 @@ public class AbstractJFXCssSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (address=AddressValue | address=AddressValue)
+	 *     address=AddressValue
 	 *
 	 * Features:
-	 *    address[0, 2]
+	 *    address[1, 1]
 	 */
 	protected void sequence_UrlValue_UrlValue(EObject context, UrlValue semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, JFXCssPackage.Literals.URL_VALUE__ADDRESS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JFXCssPackage.Literals.URL_VALUE__ADDRESS));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getUrlValueAccess().getAddressAddressValueParserRuleCall_1_0(), semanticObject.getAddress());
+		feeder.finish();
 	}
 	
 	

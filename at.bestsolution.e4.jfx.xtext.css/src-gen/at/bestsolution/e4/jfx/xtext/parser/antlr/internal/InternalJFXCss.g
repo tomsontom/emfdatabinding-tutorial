@@ -96,7 +96,7 @@ ruleJFXCss returns [EObject current=null]
 	    }
 
 )
-)
+)+
 ;
 
 
@@ -4458,7 +4458,7 @@ ruleUrlProperties returns [EObject current=null]
 ((
 (
 (
-		lv_property_0_1=	'\n\t\t-fx-background-image' 
+		lv_property_0_1=	'-fx-background-image' 
     {
         newLeafNode(lv_property_0_1, grammarAccess.getUrlPropertiesAccess().getPropertyFxBackgroundImageKeyword_0_0_0());
     }
@@ -6141,62 +6141,27 @@ ruleUrlValue returns [EObject current=null]
     {
     	newLeafNode(otherlv_0, grammarAccess.getUrlValueAccess().getUrlKeyword_0());
     }
-((	otherlv_1='\'' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getUrlValueAccess().getApostropheKeyword_1_0_0());
-    }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getUrlValueAccess().getAddressAddressValueParserRuleCall_1_0_1_0()); 
+	        newCompositeNode(grammarAccess.getUrlValueAccess().getAddressAddressValueParserRuleCall_1_0()); 
 	    }
-		lv_address_2_0=ruleAddressValue		{
+		lv_address_1_0=ruleAddressValue		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getUrlValueRule());
 	        }
        		set(
        			$current, 
        			"address",
-        		lv_address_2_0, 
+        		lv_address_1_0, 
         		"AddressValue");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_3='\'' 
+)	otherlv_2=')' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getUrlValueAccess().getApostropheKeyword_1_0_2());
-    }
-)
-    |(	otherlv_4='"' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getUrlValueAccess().getQuotationMarkKeyword_1_1_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getUrlValueAccess().getAddressAddressValueParserRuleCall_1_1_1_0()); 
-	    }
-		lv_address_5_0=ruleAddressValue		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getUrlValueRule());
-	        }
-       		set(
-       			$current, 
-       			"address",
-        		lv_address_5_0, 
-        		"AddressValue");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)	otherlv_6='"' 
-    {
-    	newLeafNode(otherlv_6, grammarAccess.getUrlValueAccess().getQuotationMarkKeyword_1_1_2());
-    }
-))	otherlv_7=')' 
-    {
-    	newLeafNode(otherlv_7, grammarAccess.getUrlValueAccess().getRightParenthesisKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getUrlValueAccess().getRightParenthesisKeyword_2());
     }
 )
 ;

@@ -69,7 +69,6 @@ public class JFXCssParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInsetsPropertyAccess().getAlternatives(), "rule__InsetsProperty__Alternatives");
 					put(grammarAccess.getVPositionValueAccess().getVAlternatives_0(), "rule__VPositionValue__VAlternatives_0");
 					put(grammarAccess.getBlurValueAccess().getVAlternatives_0(), "rule__BlurValue__VAlternatives_0");
-					put(grammarAccess.getUrlValueAccess().getAlternatives_1(), "rule__UrlValue__Alternatives_1");
 					put(grammarAccess.getSizeValueAccess().getDimensionAlternatives_1_0(), "rule__SizeValue__DimensionAlternatives_1_0");
 					put(grammarAccess.getMultiSizeValueAccess().getAlternatives(), "rule__MultiSizeValue__Alternatives");
 					put(grammarAccess.getBgPositionValueAccess().getAlternatives_0(), "rule__BgPositionValue__Alternatives_0");
@@ -159,8 +158,6 @@ public class JFXCssParser extends AbstractContentAssistParser {
 					put(grammarAccess.getHorizontalGridLineStrokeDashArrayPropertyAccess().getGroup(), "rule__HorizontalGridLineStrokeDashArrayProperty__Group__0");
 					put(grammarAccess.getVerticalGridLineStrokeDashArrayPropertyAccess().getGroup(), "rule__VerticalGridLineStrokeDashArrayProperty__Group__0");
 					put(grammarAccess.getUrlValueAccess().getGroup(), "rule__UrlValue__Group__0");
-					put(grammarAccess.getUrlValueAccess().getGroup_1_0(), "rule__UrlValue__Group_1_0__0");
-					put(grammarAccess.getUrlValueAccess().getGroup_1_1(), "rule__UrlValue__Group_1_1__0");
 					put(grammarAccess.getSizeValueAccess().getGroup(), "rule__SizeValue__Group__0");
 					put(grammarAccess.getMultiSizeValueAccess().getGroup_1(), "rule__MultiSizeValue__Group_1__0");
 					put(grammarAccess.getBgPositionValueAccess().getGroup(), "rule__BgPositionValue__Group__0");
@@ -283,8 +280,7 @@ public class JFXCssParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVPositionValueAccess().getVAssignment(), "rule__VPositionValue__VAssignment");
 					put(grammarAccess.getBlurValueAccess().getVAssignment(), "rule__BlurValue__VAssignment");
 					put(grammarAccess.getIntegerValueAccess().getValueAssignment(), "rule__IntegerValue__ValueAssignment");
-					put(grammarAccess.getUrlValueAccess().getAddressAssignment_1_0_1(), "rule__UrlValue__AddressAssignment_1_0_1");
-					put(grammarAccess.getUrlValueAccess().getAddressAssignment_1_1_1(), "rule__UrlValue__AddressAssignment_1_1_1");
+					put(grammarAccess.getUrlValueAccess().getAddressAssignment_1(), "rule__UrlValue__AddressAssignment_1");
 					put(grammarAccess.getAddressValueAccess().getValueAssignment(), "rule__AddressValue__ValueAssignment");
 					put(grammarAccess.getSizeValueAccess().getValueAssignment_0(), "rule__SizeValue__ValueAssignment_0");
 					put(grammarAccess.getSizeValueAccess().getDimensionAssignment_1(), "rule__SizeValue__DimensionAssignment_1");

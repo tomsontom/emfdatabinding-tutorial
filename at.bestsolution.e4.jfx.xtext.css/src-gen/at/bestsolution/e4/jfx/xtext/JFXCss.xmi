@@ -8,7 +8,7 @@
       <type metamodel="/0/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/e4/jfx/xtext/JFXCss#//JFXCss"/>
       </type>
-      <alternatives xsi:type="xtext:Assignment" feature="definitions" operator="+=">
+      <alternatives xsi:type="xtext:Assignment" cardinality="+" feature="definitions" operator="+=">
         <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
       </alternatives>
     </rules>
@@ -676,7 +676,7 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="property" operator="=">
           <terminal xsi:type="xtext:Alternatives">
-            <elements xsi:type="xtext:Keyword" value="&#xA;&#x9;&#x9;-fx-background-image"/>
+            <elements xsi:type="xtext:Keyword" value="-fx-background-image"/>
             <elements xsi:type="xtext:Keyword" value="-fx-border-image"/>
           </terminal>
         </elements>
@@ -1099,21 +1099,8 @@
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="url("/>
-        <elements xsi:type="xtext:Alternatives">
-          <elements xsi:type="xtext:Group">
-            <elements xsi:type="xtext:Keyword" value="'"/>
-            <elements xsi:type="xtext:Assignment" feature="address" operator="=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.53"/>
-            </elements>
-            <elements xsi:type="xtext:Keyword" value="'"/>
-          </elements>
-          <elements xsi:type="xtext:Group">
-            <elements xsi:type="xtext:Keyword" value="&quot;"/>
-            <elements xsi:type="xtext:Assignment" feature="address" operator="=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.53"/>
-            </elements>
-            <elements xsi:type="xtext:Keyword" value="&quot;"/>
-          </elements>
+        <elements xsi:type="xtext:Assignment" feature="address" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.53"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=")"/>
       </alternatives>

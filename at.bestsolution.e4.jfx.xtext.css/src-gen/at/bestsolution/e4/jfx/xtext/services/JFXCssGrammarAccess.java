@@ -23,10 +23,10 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDefinitionsDefinitionParserRuleCall_0 = (RuleCall)cDefinitionsAssignment.eContents().get(0);
 		
 		//JFXCss:
-		//	definitions+=Definition;
+		//	definitions+=Definition+;
 		public ParserRule getRule() { return rule; }
 
-		//definitions+=Definition
+		//definitions+=Definition+
 		public Assignment getDefinitionsAssignment() { return cDefinitionsAssignment; }
 
 		//Definition
@@ -2132,19 +2132,19 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValuesUrlValueParserRuleCall_3_1_0 = (RuleCall)cValuesAssignment_3_1.eContents().get(0);
 		
 		//UrlProperties:
-		//	property=("\n\t\t-fx-background-image" | "-fx-border-image") ":" values+=UrlValue ("," values+=UrlValue)*;
+		//	property=("-fx-background-image" | "-fx-border-image") ":" values+=UrlValue ("," values+=UrlValue)*;
 		public ParserRule getRule() { return rule; }
 
-		//property=("\n\t\t-fx-background-image" | "-fx-border-image") ":" values+=UrlValue ("," values+=UrlValue)*
+		//property=("-fx-background-image" | "-fx-border-image") ":" values+=UrlValue ("," values+=UrlValue)*
 		public Group getGroup() { return cGroup; }
 
-		//property=("\n\t\t-fx-background-image" | "-fx-border-image")
+		//property=("-fx-background-image" | "-fx-border-image")
 		public Assignment getPropertyAssignment_0() { return cPropertyAssignment_0; }
 
-		//"\n\t\t-fx-background-image" | "-fx-border-image"
+		//"-fx-background-image" | "-fx-border-image"
 		public Alternatives getPropertyAlternatives_0_0() { return cPropertyAlternatives_0_0; }
 
-		//"\n\t\t-fx-background-image"
+		//"-fx-background-image"
 		public Keyword getPropertyFxBackgroundImageKeyword_0_0_0() { return cPropertyFxBackgroundImageKeyword_0_0_0; }
 
 		//"-fx-border-image"
@@ -3059,64 +3059,28 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "UrlValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cUrlKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
-		private final Keyword cApostropheKeyword_1_0_0 = (Keyword)cGroup_1_0.eContents().get(0);
-		private final Assignment cAddressAssignment_1_0_1 = (Assignment)cGroup_1_0.eContents().get(1);
-		private final RuleCall cAddressAddressValueParserRuleCall_1_0_1_0 = (RuleCall)cAddressAssignment_1_0_1.eContents().get(0);
-		private final Keyword cApostropheKeyword_1_0_2 = (Keyword)cGroup_1_0.eContents().get(2);
-		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
-		private final Keyword cQuotationMarkKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
-		private final Assignment cAddressAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
-		private final RuleCall cAddressAddressValueParserRuleCall_1_1_1_0 = (RuleCall)cAddressAssignment_1_1_1.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_1_1_2 = (Keyword)cGroup_1_1.eContents().get(2);
+		private final Assignment cAddressAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cAddressAddressValueParserRuleCall_1_0 = (RuleCall)cAddressAssignment_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		////RealValue:
 		////	value=INT
 		////;
 		//UrlValue:
-		//	"url(" ("\'" address=AddressValue "\'" | "\"" address=AddressValue "\"") ")";
+		//	"url(" address=AddressValue ")";
 		public ParserRule getRule() { return rule; }
 
-		//"url(" ("\'" address=AddressValue "\'" | "\"" address=AddressValue "\"") ")"
+		//"url(" address=AddressValue ")"
 		public Group getGroup() { return cGroup; }
 
 		//"url("
 		public Keyword getUrlKeyword_0() { return cUrlKeyword_0; }
 
-		//"\'" address=AddressValue "\'" | "\"" address=AddressValue "\""
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
-
-		//"\'" address=AddressValue "\'"
-		public Group getGroup_1_0() { return cGroup_1_0; }
-
-		//"\'"
-		public Keyword getApostropheKeyword_1_0_0() { return cApostropheKeyword_1_0_0; }
-
 		//address=AddressValue
-		public Assignment getAddressAssignment_1_0_1() { return cAddressAssignment_1_0_1; }
+		public Assignment getAddressAssignment_1() { return cAddressAssignment_1; }
 
 		//AddressValue
-		public RuleCall getAddressAddressValueParserRuleCall_1_0_1_0() { return cAddressAddressValueParserRuleCall_1_0_1_0; }
-
-		//"\'"
-		public Keyword getApostropheKeyword_1_0_2() { return cApostropheKeyword_1_0_2; }
-
-		//"\"" address=AddressValue "\""
-		public Group getGroup_1_1() { return cGroup_1_1; }
-
-		//"\""
-		public Keyword getQuotationMarkKeyword_1_1_0() { return cQuotationMarkKeyword_1_1_0; }
-
-		//address=AddressValue
-		public Assignment getAddressAssignment_1_1_1() { return cAddressAssignment_1_1_1; }
-
-		//AddressValue
-		public RuleCall getAddressAddressValueParserRuleCall_1_1_1_0() { return cAddressAddressValueParserRuleCall_1_1_1_0; }
-
-		//"\""
-		public Keyword getQuotationMarkKeyword_1_1_2() { return cQuotationMarkKeyword_1_1_2; }
+		public RuleCall getAddressAddressValueParserRuleCall_1_0() { return cAddressAddressValueParserRuleCall_1_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_2() { return cRightParenthesisKeyword_2; }
@@ -5633,7 +5597,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//JFXCss:
-	//	definitions+=Definition;
+	//	definitions+=Definition+;
 	public JFXCssElements getJFXCssAccess() {
 		return (pJFXCss != null) ? pJFXCss : (pJFXCss = new JFXCssElements());
 	}
@@ -5937,7 +5901,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//UrlProperties:
-	//	property=("\n\t\t-fx-background-image" | "-fx-border-image") ":" values+=UrlValue ("," values+=UrlValue)*;
+	//	property=("-fx-background-image" | "-fx-border-image") ":" values+=UrlValue ("," values+=UrlValue)*;
 	public UrlPropertiesElements getUrlPropertiesAccess() {
 		return (pUrlProperties != null) ? pUrlProperties : (pUrlProperties = new UrlPropertiesElements());
 	}
@@ -6206,7 +6170,7 @@ public class JFXCssGrammarAccess extends AbstractGrammarElementFinder {
 	////	value=INT
 	////;
 	//UrlValue:
-	//	"url(" ("\'" address=AddressValue "\'" | "\"" address=AddressValue "\"") ")";
+	//	"url(" address=AddressValue ")";
 	public UrlValueElements getUrlValueAccess() {
 		return (pUrlValue != null) ? pUrlValue : (pUrlValue = new UrlValueElements());
 	}
