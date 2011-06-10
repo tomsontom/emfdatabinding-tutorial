@@ -21,19 +21,27 @@ Selector:
 
 SimpleSelector:
 //TODO Needs to be fixed
-//	(element=ID ('#' id=ID)? ('.' class=ID)? ( ':' pseudoClass+=ElementPseudoClass)*)
+//	(element=ID (id=IdSelector)? (class=ClassSelector)? ( ':' pseudoClass+=ElementPseudoClass)*)
 //	|
-//	( '#' id=ID ('.' class=ID)? ( ':' pseudoClass+=ElementPseudoClass)* )
+//	( id=IdSelector ('.' class=ClassSelector)? ( ':' pseudoClass+=ElementPseudoClass)* )
 //	|
-//	( '.' class=ID ( ':' pseudoClass+=ElementPseudoClass)* )
+//	( class=ClassSelector ( ':' pseudoClass+=ElementPseudoClass)* )
 //	
 	(element=ID ) |
-	( '#' id=ID ( ':' pseudoClass+=ElementPseudoClass)*) | 
-	( '.' class=ID ( ':' pseudoClass+=ElementPseudoClass)* )
+	( id=IdSelector (pseudoClass+=PseudoClassSelector)*) | 
+	( class=ClassSelector (pseudoClass+=PseudoClassSelector)* )
 ;
 
-ElementPseudoClass:
-	value=('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly')
+IdSelector:
+	'#' id=ID
+;
+
+ClassSelector:
+	'.' class=ID
+;
+
+PseudoClassSelector:
+	':' value=('disabled'|'focused'|'hover'|'pressed'|'strong'|'armed'|'empty'|'filled'|'defined'|'undefined'|'showing'|'visited'|'even'|'odd'|'selected'|'horizontal'|'vertical'|'determinate'|'indetermindate'|'pannable'|'multiline'|'editable'|'readonly')
 ;
 
 FXProperty:

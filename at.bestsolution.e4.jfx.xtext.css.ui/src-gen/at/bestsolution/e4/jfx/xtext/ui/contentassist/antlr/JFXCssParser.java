@@ -38,7 +38,7 @@ public class JFXCssParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getSimpleSelectorAccess().getAlternatives(), "rule__SimpleSelector__Alternatives");
-					put(grammarAccess.getElementPseudoClassAccess().getValueAlternatives_0(), "rule__ElementPseudoClass__ValueAlternatives_0");
+					put(grammarAccess.getPseudoClassSelectorAccess().getValueAlternatives_1_0(), "rule__PseudoClassSelector__ValueAlternatives_1_0");
 					put(grammarAccess.getFXPropertyAccess().getAlternatives_0(), "rule__FXProperty__Alternatives_0");
 					put(grammarAccess.getFontPropertyAccess().getPropertyAlternatives_0_0(), "rule__FontProperty__PropertyAlternatives_0_0");
 					put(grammarAccess.getFontFamilyPropertyAccess().getPropertyAlternatives_0_0(), "rule__FontFamilyProperty__PropertyAlternatives_0_0");
@@ -117,9 +117,10 @@ public class JFXCssParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDefinitionAccess().getGroup(), "rule__Definition__Group__0");
 					put(grammarAccess.getDefinitionAccess().getGroup_1(), "rule__Definition__Group_1__0");
 					put(grammarAccess.getSimpleSelectorAccess().getGroup_1(), "rule__SimpleSelector__Group_1__0");
-					put(grammarAccess.getSimpleSelectorAccess().getGroup_1_2(), "rule__SimpleSelector__Group_1_2__0");
 					put(grammarAccess.getSimpleSelectorAccess().getGroup_2(), "rule__SimpleSelector__Group_2__0");
-					put(grammarAccess.getSimpleSelectorAccess().getGroup_2_2(), "rule__SimpleSelector__Group_2_2__0");
+					put(grammarAccess.getIdSelectorAccess().getGroup(), "rule__IdSelector__Group__0");
+					put(grammarAccess.getClassSelectorAccess().getGroup(), "rule__ClassSelector__Group__0");
+					put(grammarAccess.getPseudoClassSelectorAccess().getGroup(), "rule__PseudoClassSelector__Group__0");
 					put(grammarAccess.getFXPropertyAccess().getGroup(), "rule__FXProperty__Group__0");
 					put(grammarAccess.getFontPropertyAccess().getGroup(), "rule__FontProperty__Group__0");
 					put(grammarAccess.getFontFamilyPropertyAccess().getGroup(), "rule__FontFamilyProperty__Group__0");
@@ -208,11 +209,13 @@ public class JFXCssParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDefinitionAccess().getPropertiesAssignment_3(), "rule__Definition__PropertiesAssignment_3");
 					put(grammarAccess.getSelectorAccess().getSimpleSelectorAssignment(), "rule__Selector__SimpleSelectorAssignment");
 					put(grammarAccess.getSimpleSelectorAccess().getElementAssignment_0(), "rule__SimpleSelector__ElementAssignment_0");
-					put(grammarAccess.getSimpleSelectorAccess().getIdAssignment_1_1(), "rule__SimpleSelector__IdAssignment_1_1");
-					put(grammarAccess.getSimpleSelectorAccess().getPseudoClassAssignment_1_2_1(), "rule__SimpleSelector__PseudoClassAssignment_1_2_1");
-					put(grammarAccess.getSimpleSelectorAccess().getClassAssignment_2_1(), "rule__SimpleSelector__ClassAssignment_2_1");
-					put(grammarAccess.getSimpleSelectorAccess().getPseudoClassAssignment_2_2_1(), "rule__SimpleSelector__PseudoClassAssignment_2_2_1");
-					put(grammarAccess.getElementPseudoClassAccess().getValueAssignment(), "rule__ElementPseudoClass__ValueAssignment");
+					put(grammarAccess.getSimpleSelectorAccess().getIdAssignment_1_0(), "rule__SimpleSelector__IdAssignment_1_0");
+					put(grammarAccess.getSimpleSelectorAccess().getPseudoClassAssignment_1_1(), "rule__SimpleSelector__PseudoClassAssignment_1_1");
+					put(grammarAccess.getSimpleSelectorAccess().getClassAssignment_2_0(), "rule__SimpleSelector__ClassAssignment_2_0");
+					put(grammarAccess.getSimpleSelectorAccess().getPseudoClassAssignment_2_1(), "rule__SimpleSelector__PseudoClassAssignment_2_1");
+					put(grammarAccess.getIdSelectorAccess().getIdAssignment_1(), "rule__IdSelector__IdAssignment_1");
+					put(grammarAccess.getClassSelectorAccess().getClassAssignment_1(), "rule__ClassSelector__ClassAssignment_1");
+					put(grammarAccess.getPseudoClassSelectorAccess().getValueAssignment_1(), "rule__PseudoClassSelector__ValueAssignment_1");
 					put(grammarAccess.getFontPropertyAccess().getPropertyAssignment_0(), "rule__FontProperty__PropertyAssignment_0");
 					put(grammarAccess.getFontPropertyAccess().getValueAssignment_2(), "rule__FontProperty__ValueAssignment_2");
 					put(grammarAccess.getFontFamilyPropertyAccess().getPropertyAssignment_0(), "rule__FontFamilyProperty__PropertyAssignment_0");

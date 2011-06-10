@@ -19,6 +19,7 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.BooleanValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.BorderImageSliceProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.BorderStyleProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.BorderStyleValue;
+import at.bestsolution.e4.jfx.xtext.jFXCss.ClassSelector;
 import at.bestsolution.e4.jfx.xtext.jFXCss.ColorFunction;
 import at.bestsolution.e4.jfx.xtext.jFXCss.ColorProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.ColorValue;
@@ -29,7 +30,6 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.Effect;
 import at.bestsolution.e4.jfx.xtext.jFXCss.EffectDropShadow;
 import at.bestsolution.e4.jfx.xtext.jFXCss.EffectInnerShadow;
 import at.bestsolution.e4.jfx.xtext.jFXCss.EffectProperty;
-import at.bestsolution.e4.jfx.xtext.jFXCss.ElementPseudoClass;
 import at.bestsolution.e4.jfx.xtext.jFXCss.FXProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.FontFamily;
 import at.bestsolution.e4.jfx.xtext.jFXCss.FontFamilyProperty;
@@ -44,6 +44,7 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.HPositionProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.HPositionValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.HSBColor;
 import at.bestsolution.e4.jfx.xtext.jFXCss.HorizontalGridLineStrokeDashArrayProperty;
+import at.bestsolution.e4.jfx.xtext.jFXCss.IdSelector;
 import at.bestsolution.e4.jfx.xtext.jFXCss.InsetsProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.IntegerProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.IntegerValue;
@@ -64,6 +65,7 @@ import at.bestsolution.e4.jfx.xtext.jFXCss.PaintProperties;
 import at.bestsolution.e4.jfx.xtext.jFXCss.PaintProperty;
 import at.bestsolution.e4.jfx.xtext.jFXCss.PaintValue;
 import at.bestsolution.e4.jfx.xtext.jFXCss.PositionProperty;
+import at.bestsolution.e4.jfx.xtext.jFXCss.PseudoClassSelector;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RGBColor;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RadialGradient;
 import at.bestsolution.e4.jfx.xtext.jFXCss.RealValue;
@@ -138,7 +140,21 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass elementPseudoClassEClass = null;
+  private EClass idSelectorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass classSelectorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass pseudoClassSelectorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -823,9 +839,9 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSimpleSelector_Id()
+  public EReference getSimpleSelector_Id()
   {
-    return (EAttribute)simpleSelectorEClass.getEStructuralFeatures().get(1);
+    return (EReference)simpleSelectorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -843,9 +859,9 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSimpleSelector_Class()
+  public EReference getSimpleSelector_Class()
   {
-    return (EAttribute)simpleSelectorEClass.getEStructuralFeatures().get(3);
+    return (EReference)simpleSelectorEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -853,9 +869,9 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getElementPseudoClass()
+  public EClass getIdSelector()
   {
-    return elementPseudoClassEClass;
+    return idSelectorEClass;
   }
 
   /**
@@ -863,9 +879,49 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getElementPseudoClass_Value()
+  public EAttribute getIdSelector_Id()
   {
-    return (EAttribute)elementPseudoClassEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)idSelectorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getClassSelector()
+  {
+    return classSelectorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getClassSelector_Class()
+  {
+    return (EAttribute)classSelectorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPseudoClassSelector()
+  {
+    return pseudoClassSelectorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPseudoClassSelector_Value()
+  {
+    return (EAttribute)pseudoClassSelectorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3060,12 +3116,18 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
 
     simpleSelectorEClass = createEClass(SIMPLE_SELECTOR);
     createEAttribute(simpleSelectorEClass, SIMPLE_SELECTOR__ELEMENT);
-    createEAttribute(simpleSelectorEClass, SIMPLE_SELECTOR__ID);
+    createEReference(simpleSelectorEClass, SIMPLE_SELECTOR__ID);
     createEReference(simpleSelectorEClass, SIMPLE_SELECTOR__PSEUDO_CLASS);
-    createEAttribute(simpleSelectorEClass, SIMPLE_SELECTOR__CLASS);
+    createEReference(simpleSelectorEClass, SIMPLE_SELECTOR__CLASS);
 
-    elementPseudoClassEClass = createEClass(ELEMENT_PSEUDO_CLASS);
-    createEAttribute(elementPseudoClassEClass, ELEMENT_PSEUDO_CLASS__VALUE);
+    idSelectorEClass = createEClass(ID_SELECTOR);
+    createEAttribute(idSelectorEClass, ID_SELECTOR__ID);
+
+    classSelectorEClass = createEClass(CLASS_SELECTOR);
+    createEAttribute(classSelectorEClass, CLASS_SELECTOR__CLASS);
+
+    pseudoClassSelectorEClass = createEClass(PSEUDO_CLASS_SELECTOR);
+    createEAttribute(pseudoClassSelectorEClass, PSEUDO_CLASS_SELECTOR__VALUE);
 
     fxPropertyEClass = createEClass(FX_PROPERTY);
 
@@ -3452,12 +3514,18 @@ public class JFXCssPackageImpl extends EPackageImpl implements JFXCssPackage
 
     initEClass(simpleSelectorEClass, SimpleSelector.class, "SimpleSelector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSimpleSelector_Element(), ecorePackage.getEString(), "element", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSimpleSelector_Id(), ecorePackage.getEString(), "id", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSimpleSelector_PseudoClass(), this.getElementPseudoClass(), null, "pseudoClass", null, 0, -1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSimpleSelector_Class(), ecorePackage.getEString(), "class", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSimpleSelector_Id(), this.getIdSelector(), null, "id", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSimpleSelector_PseudoClass(), this.getPseudoClassSelector(), null, "pseudoClass", null, 0, -1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSimpleSelector_Class(), this.getClassSelector(), null, "class", null, 0, 1, SimpleSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(elementPseudoClassEClass, ElementPseudoClass.class, "ElementPseudoClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getElementPseudoClass_Value(), ecorePackage.getEString(), "value", null, 0, 1, ElementPseudoClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(idSelectorEClass, IdSelector.class, "IdSelector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIdSelector_Id(), ecorePackage.getEString(), "id", null, 0, 1, IdSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(classSelectorEClass, ClassSelector.class, "ClassSelector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getClassSelector_Class(), ecorePackage.getEString(), "class", null, 0, 1, ClassSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pseudoClassSelectorEClass, PseudoClassSelector.class, "PseudoClassSelector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPseudoClassSelector_Value(), ecorePackage.getEString(), "value", null, 0, 1, PseudoClassSelector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fxPropertyEClass, FXProperty.class, "FXProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

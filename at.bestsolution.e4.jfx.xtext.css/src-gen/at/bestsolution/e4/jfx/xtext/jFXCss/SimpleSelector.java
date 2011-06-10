@@ -58,34 +58,34 @@ public interface SimpleSelector extends EObject
   void setElement(String value);
 
   /**
-   * Returns the value of the '<em><b>Id</b></em>' attribute.
+   * Returns the value of the '<em><b>Id</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Id</em>' attribute isn't clear,
+   * If the meaning of the '<em>Id</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' attribute.
-   * @see #setId(String)
+   * @return the value of the '<em>Id</em>' containment reference.
+   * @see #setId(IdSelector)
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage#getSimpleSelector_Id()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getId();
+  IdSelector getId();
 
   /**
-   * Sets the value of the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getId <em>Id</em>}' attribute.
+   * Sets the value of the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getId <em>Id</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' attribute.
+   * @param value the new value of the '<em>Id</em>' containment reference.
    * @see #getId()
    * @generated
    */
-  void setId(String value);
+  void setId(IdSelector value);
 
   /**
    * Returns the value of the '<em><b>Pseudo Class</b></em>' containment reference list.
-   * The list contents are of type {@link at.bestsolution.e4.jfx.xtext.jFXCss.ElementPseudoClass}.
+   * The list contents are of type {@link at.bestsolution.e4.jfx.xtext.jFXCss.PseudoClassSelector}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Pseudo Class</em>' containment reference list isn't clear,
@@ -97,32 +97,32 @@ public interface SimpleSelector extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<ElementPseudoClass> getPseudoClass();
+  EList<PseudoClassSelector> getPseudoClass();
 
   /**
-   * Returns the value of the '<em><b>Class</b></em>' attribute.
+   * Returns the value of the '<em><b>Class</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Class</em>' attribute isn't clear,
+   * If the meaning of the '<em>Class</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Class</em>' attribute.
-   * @see #setClass(String)
+   * @return the value of the '<em>Class</em>' containment reference.
+   * @see #setClass(ClassSelector)
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.JFXCssPackage#getSimpleSelector_Class()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getClass_();
+  ClassSelector getClass_();
 
   /**
-   * Sets the value of the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getClass_ <em>Class</em>}' attribute.
+   * Sets the value of the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getClass_ <em>Class</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Class</em>' attribute.
+   * @param value the new value of the '<em>Class</em>' containment reference.
    * @see #getClass_()
    * @generated
    */
-  void setClass(String value);
+  void setClass(ClassSelector value);
 
 } // SimpleSelector

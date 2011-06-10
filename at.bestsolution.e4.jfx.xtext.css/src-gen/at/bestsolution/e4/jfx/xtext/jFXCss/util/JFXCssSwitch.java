@@ -104,10 +104,24 @@ public class JFXCssSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case JFXCssPackage.ELEMENT_PSEUDO_CLASS:
+      case JFXCssPackage.ID_SELECTOR:
       {
-        ElementPseudoClass elementPseudoClass = (ElementPseudoClass)theEObject;
-        T result = caseElementPseudoClass(elementPseudoClass);
+        IdSelector idSelector = (IdSelector)theEObject;
+        T result = caseIdSelector(idSelector);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JFXCssPackage.CLASS_SELECTOR:
+      {
+        ClassSelector classSelector = (ClassSelector)theEObject;
+        T result = caseClassSelector(classSelector);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case JFXCssPackage.PSEUDO_CLASS_SELECTOR:
+      {
+        PseudoClassSelector pseudoClassSelector = (PseudoClassSelector)theEObject;
+        T result = casePseudoClassSelector(pseudoClassSelector);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -747,17 +761,49 @@ public class JFXCssSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Element Pseudo Class</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Id Selector</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Element Pseudo Class</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Id Selector</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseElementPseudoClass(ElementPseudoClass object)
+  public T caseIdSelector(IdSelector object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Class Selector</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Class Selector</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseClassSelector(ClassSelector object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Pseudo Class Selector</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Pseudo Class Selector</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePseudoClassSelector(PseudoClassSelector object)
   {
     return null;
   }

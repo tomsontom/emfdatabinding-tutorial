@@ -63,13 +63,31 @@ public interface JFXCssFactory extends EFactory
   SimpleSelector createSimpleSelector();
 
   /**
-   * Returns a new object of class '<em>Element Pseudo Class</em>'.
+   * Returns a new object of class '<em>Id Selector</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Element Pseudo Class</em>'.
+   * @return a new object of class '<em>Id Selector</em>'.
    * @generated
    */
-  ElementPseudoClass createElementPseudoClass();
+  IdSelector createIdSelector();
+
+  /**
+   * Returns a new object of class '<em>Class Selector</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Class Selector</em>'.
+   * @generated
+   */
+  ClassSelector createClassSelector();
+
+  /**
+   * Returns a new object of class '<em>Pseudo Class Selector</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pseudo Class Selector</em>'.
+   * @generated
+   */
+  PseudoClassSelector createPseudoClassSelector();
 
   /**
    * Returns a new object of class '<em>FX Property</em>'.

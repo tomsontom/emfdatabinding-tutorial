@@ -73,7 +73,9 @@ public class JFXCssFactoryImpl extends EFactoryImpl implements JFXCssFactory
       case JFXCssPackage.DEFINITION: return createDefinition();
       case JFXCssPackage.SELECTOR: return createSelector();
       case JFXCssPackage.SIMPLE_SELECTOR: return createSimpleSelector();
-      case JFXCssPackage.ELEMENT_PSEUDO_CLASS: return createElementPseudoClass();
+      case JFXCssPackage.ID_SELECTOR: return createIdSelector();
+      case JFXCssPackage.CLASS_SELECTOR: return createClassSelector();
+      case JFXCssPackage.PSEUDO_CLASS_SELECTOR: return createPseudoClassSelector();
       case JFXCssPackage.FX_PROPERTY: return createFXProperty();
       case JFXCssPackage.FONT_PROPERTY: return createFontProperty();
       case JFXCssPackage.FONT_FAMILY_PROPERTY: return createFontFamilyProperty();
@@ -239,10 +241,32 @@ public class JFXCssFactoryImpl extends EFactoryImpl implements JFXCssFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ElementPseudoClass createElementPseudoClass()
+  public IdSelector createIdSelector()
   {
-    ElementPseudoClassImpl elementPseudoClass = new ElementPseudoClassImpl();
-    return elementPseudoClass;
+    IdSelectorImpl idSelector = new IdSelectorImpl();
+    return idSelector;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ClassSelector createClassSelector()
+  {
+    ClassSelectorImpl classSelector = new ClassSelectorImpl();
+    return classSelector;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PseudoClassSelector createPseudoClassSelector()
+  {
+    PseudoClassSelectorImpl pseudoClassSelector = new PseudoClassSelectorImpl();
+    return pseudoClassSelector;
   }
 
   /**

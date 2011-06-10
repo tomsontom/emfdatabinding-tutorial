@@ -6,6 +6,10 @@ package at.bestsolution.e4.jfx.xtext.ui.labeling;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
 
+import at.bestsolution.e4.jfx.xtext.jFXCss.Definition;
+import at.bestsolution.e4.jfx.xtext.jFXCss.Selector;
+import at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector;
+
 import com.google.inject.Inject;
 
 /**
@@ -19,6 +23,38 @@ public class JFXCssLabelProvider extends DefaultEObjectLabelProvider {
 	public JFXCssLabelProvider(AdapterFactoryLabelProvider delegate) {
 		super(delegate);
 	}
+	
+	/*public String text(Definition definition) {
+		StringBuilder b = new StringBuilder();
+		boolean flag = false;
+		for( Selector selector : definition.getSelector() ) {
+			if( flag ) {
+				b.append(", ");
+			}
+			flag = true;
+			for( SimpleSelector s : selector.getSimpleSelector() ) {
+				if( s.getElement() != null ) {
+					b.append(s.getElement());
+				}
+				
+				if( s.getId() != null ) {
+					b.append("#" + s.getId());
+				}
+				
+				if( s.getClass_() != null ) {
+					b.append("." + s.getClass_());
+				}
+				
+				for( ElementPseudoClass cl: s.getPseudoClass() ) {
+					b.append(":" + cl.getValue());
+				}
+				
+				b.append(" ");
+			}
+		}
+
+		return b.toString();
+	}*/
 
 /*
 	//Labels and icons can be computed like this:

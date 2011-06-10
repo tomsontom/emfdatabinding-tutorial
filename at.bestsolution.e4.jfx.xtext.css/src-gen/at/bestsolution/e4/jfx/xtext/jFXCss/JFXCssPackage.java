@@ -174,7 +174,7 @@ public interface JFXCssPackage extends EPackage
   int SIMPLE_SELECTOR__ELEMENT = 0;
 
   /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * The feature id for the '<em><b>Id</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -192,7 +192,7 @@ public interface JFXCssPackage extends EPackage
   int SIMPLE_SELECTOR__PSEUDO_CLASS = 2;
 
   /**
-   * The feature id for the '<em><b>Class</b></em>' attribute.
+   * The feature id for the '<em><b>Class</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -210,14 +210,70 @@ public interface JFXCssPackage extends EPackage
   int SIMPLE_SELECTOR_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.ElementPseudoClassImpl <em>Element Pseudo Class</em>}' class.
+   * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.IdSelectorImpl <em>Id Selector</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.ElementPseudoClassImpl
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getElementPseudoClass()
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.IdSelectorImpl
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getIdSelector()
    * @generated
    */
-  int ELEMENT_PSEUDO_CLASS = 4;
+  int ID_SELECTOR = 4;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ID_SELECTOR__ID = 0;
+
+  /**
+   * The number of structural features of the '<em>Id Selector</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ID_SELECTOR_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.ClassSelectorImpl <em>Class Selector</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.ClassSelectorImpl
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getClassSelector()
+   * @generated
+   */
+  int CLASS_SELECTOR = 5;
+
+  /**
+   * The feature id for the '<em><b>Class</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SELECTOR__CLASS = 0;
+
+  /**
+   * The number of structural features of the '<em>Class Selector</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLASS_SELECTOR_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.PseudoClassSelectorImpl <em>Pseudo Class Selector</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.PseudoClassSelectorImpl
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getPseudoClassSelector()
+   * @generated
+   */
+  int PSEUDO_CLASS_SELECTOR = 6;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -226,16 +282,16 @@ public interface JFXCssPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT_PSEUDO_CLASS__VALUE = 0;
+  int PSEUDO_CLASS_SELECTOR__VALUE = 0;
 
   /**
-   * The number of structural features of the '<em>Element Pseudo Class</em>' class.
+   * The number of structural features of the '<em>Pseudo Class Selector</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT_PSEUDO_CLASS_FEATURE_COUNT = 1;
+  int PSEUDO_CLASS_SELECTOR_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.FXPropertyImpl <em>FX Property</em>}' class.
@@ -245,7 +301,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getFXProperty()
    * @generated
    */
-  int FX_PROPERTY = 5;
+  int FX_PROPERTY = 7;
 
   /**
    * The number of structural features of the '<em>FX Property</em>' class.
@@ -264,7 +320,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getFontProperty()
    * @generated
    */
-  int FONT_PROPERTY = 6;
+  int FONT_PROPERTY = 8;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -301,7 +357,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getFontFamilyProperty()
    * @generated
    */
-  int FONT_FAMILY_PROPERTY = 7;
+  int FONT_FAMILY_PROPERTY = 9;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -338,7 +394,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getFontSizeProperty()
    * @generated
    */
-  int FONT_SIZE_PROPERTY = 8;
+  int FONT_SIZE_PROPERTY = 10;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -375,7 +431,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getFontStyleProperty()
    * @generated
    */
-  int FONT_STYLE_PROPERTY = 9;
+  int FONT_STYLE_PROPERTY = 11;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -412,7 +468,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getFontWeightProperty()
    * @generated
    */
-  int FONT_WEIGHT_PROPERTY = 10;
+  int FONT_WEIGHT_PROPERTY = 12;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -449,7 +505,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getCursorProperty()
    * @generated
    */
-  int CURSOR_PROPERTY = 11;
+  int CURSOR_PROPERTY = 13;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -477,7 +533,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getEffectProperty()
    * @generated
    */
-  int EFFECT_PROPERTY = 12;
+  int EFFECT_PROPERTY = 14;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -505,7 +561,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getEffect()
    * @generated
    */
-  int EFFECT = 13;
+  int EFFECT = 15;
 
   /**
    * The feature id for the '<em><b>Blur</b></em>' containment reference.
@@ -569,7 +625,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getEffectDropShadow()
    * @generated
    */
-  int EFFECT_DROP_SHADOW = 14;
+  int EFFECT_DROP_SHADOW = 16;
 
   /**
    * The feature id for the '<em><b>Blur</b></em>' containment reference.
@@ -642,7 +698,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getEffectInnerShadow()
    * @generated
    */
-  int EFFECT_INNER_SHADOW = 15;
+  int EFFECT_INNER_SHADOW = 17;
 
   /**
    * The feature id for the '<em><b>Blur</b></em>' containment reference.
@@ -715,7 +771,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getBooleanProperty()
    * @generated
    */
-  int BOOLEAN_PROPERTY = 16;
+  int BOOLEAN_PROPERTY = 18;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -752,7 +808,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getSizeProperty()
    * @generated
    */
-  int SIZE_PROPERTY = 17;
+  int SIZE_PROPERTY = 19;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -789,7 +845,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getNumberProperty()
    * @generated
    */
-  int NUMBER_PROPERTY = 18;
+  int NUMBER_PROPERTY = 20;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -826,7 +882,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getIntegerProperty()
    * @generated
    */
-  int INTEGER_PROPERTY = 19;
+  int INTEGER_PROPERTY = 21;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -863,7 +919,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getPaintProperty()
    * @generated
    */
-  int PAINT_PROPERTY = 20;
+  int PAINT_PROPERTY = 22;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -900,7 +956,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getPaintProperties()
    * @generated
    */
-  int PAINT_PROPERTIES = 21;
+  int PAINT_PROPERTIES = 23;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -937,7 +993,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getBlendProperty()
    * @generated
    */
-  int BLEND_PROPERTY = 22;
+  int BLEND_PROPERTY = 24;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -965,7 +1021,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getUrlProperty()
    * @generated
    */
-  int URL_PROPERTY = 23;
+  int URL_PROPERTY = 25;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1002,7 +1058,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getMultiSizeProperties()
    * @generated
    */
-  int MULTI_SIZE_PROPERTIES = 24;
+  int MULTI_SIZE_PROPERTIES = 26;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1039,7 +1095,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getHPositionProperty()
    * @generated
    */
-  int HPOSITION_PROPERTY = 25;
+  int HPOSITION_PROPERTY = 27;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1076,7 +1132,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getVPositionProperty()
    * @generated
    */
-  int VPOSITION_PROPERTY = 26;
+  int VPOSITION_PROPERTY = 28;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1113,7 +1169,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getSideProperty()
    * @generated
    */
-  int SIDE_PROPERTY = 27;
+  int SIDE_PROPERTY = 29;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1150,7 +1206,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getBarPolicyProperty()
    * @generated
    */
-  int BAR_POLICY_PROPERTY = 28;
+  int BAR_POLICY_PROPERTY = 30;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1187,7 +1243,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getUrlProperties()
    * @generated
    */
-  int URL_PROPERTIES = 29;
+  int URL_PROPERTIES = 31;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1224,7 +1280,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getRepeatProperties()
    * @generated
    */
-  int REPEAT_PROPERTIES = 30;
+  int REPEAT_PROPERTIES = 32;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1261,7 +1317,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getMultiSizeProperty()
    * @generated
    */
-  int MULTI_SIZE_PROPERTY = 31;
+  int MULTI_SIZE_PROPERTY = 33;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1298,7 +1354,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getSizeProperties()
    * @generated
    */
-  int SIZE_PROPERTIES = 32;
+  int SIZE_PROPERTIES = 34;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1335,7 +1391,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getMultiPaintProperties()
    * @generated
    */
-  int MULTI_PAINT_PROPERTIES = 33;
+  int MULTI_PAINT_PROPERTIES = 35;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1372,7 +1428,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getColorProperty()
    * @generated
    */
-  int COLOR_PROPERTY = 34;
+  int COLOR_PROPERTY = 36;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1409,7 +1465,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getStringProperty()
    * @generated
    */
-  int STRING_PROPERTY = 35;
+  int STRING_PROPERTY = 37;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1446,7 +1502,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getPositionProperty()
    * @generated
    */
-  int POSITION_PROPERTY = 36;
+  int POSITION_PROPERTY = 38;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1483,7 +1539,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getAlignmentProperty()
    * @generated
    */
-  int ALIGNMENT_PROPERTY = 37;
+  int ALIGNMENT_PROPERTY = 39;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1520,7 +1576,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getStrokeLineCapProperty()
    * @generated
    */
-  int STROKE_LINE_CAP_PROPERTY = 38;
+  int STROKE_LINE_CAP_PROPERTY = 40;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1548,7 +1604,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getStrokeLineJoinProperty()
    * @generated
    */
-  int STROKE_LINE_JOIN_PROPERTY = 39;
+  int STROKE_LINE_JOIN_PROPERTY = 41;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1576,7 +1632,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getTextOriginProperty()
    * @generated
    */
-  int TEXT_ORIGIN_PROPERTY = 40;
+  int TEXT_ORIGIN_PROPERTY = 42;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1604,7 +1660,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getBackgroundImageSizeProperty()
    * @generated
    */
-  int BACKGROUND_IMAGE_SIZE_PROPERTY = 41;
+  int BACKGROUND_IMAGE_SIZE_PROPERTY = 43;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -1632,7 +1688,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getBorderStyleProperty()
    * @generated
    */
-  int BORDER_STYLE_PROPERTY = 42;
+  int BORDER_STYLE_PROPERTY = 44;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -1660,7 +1716,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getBorderImageSliceProperty()
    * @generated
    */
-  int BORDER_IMAGE_SLICE_PROPERTY = 43;
+  int BORDER_IMAGE_SLICE_PROPERTY = 45;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -1688,7 +1744,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getTextOverrunProperty()
    * @generated
    */
-  int TEXT_OVERRUN_PROPERTY = 44;
+  int TEXT_OVERRUN_PROPERTY = 46;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1716,7 +1772,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getInsetsProperty()
    * @generated
    */
-  int INSETS_PROPERTY = 45;
+  int INSETS_PROPERTY = 47;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -1744,7 +1800,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getHorizontalGridLineStrokeDashArrayProperty()
    * @generated
    */
-  int HORIZONTAL_GRID_LINE_STROKE_DASH_ARRAY_PROPERTY = 46;
+  int HORIZONTAL_GRID_LINE_STROKE_DASH_ARRAY_PROPERTY = 48;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -1772,7 +1828,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getVerticalGridLineStrokeDashArrayProperty()
    * @generated
    */
-  int VERTICAL_GRID_LINE_STROKE_DASH_ARRAY_PROPERTY = 47;
+  int VERTICAL_GRID_LINE_STROKE_DASH_ARRAY_PROPERTY = 49;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -1800,7 +1856,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getVPositionValue()
    * @generated
    */
-  int VPOSITION_VALUE = 48;
+  int VPOSITION_VALUE = 50;
 
   /**
    * The feature id for the '<em><b>V</b></em>' attribute.
@@ -1828,7 +1884,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getBlurValue()
    * @generated
    */
-  int BLUR_VALUE = 49;
+  int BLUR_VALUE = 51;
 
   /**
    * The feature id for the '<em><b>V</b></em>' attribute.
@@ -1856,7 +1912,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getNumberValue()
    * @generated
    */
-  int NUMBER_VALUE = 50;
+  int NUMBER_VALUE = 52;
 
   /**
    * The number of structural features of the '<em>Number Value</em>' class.
@@ -1875,7 +1931,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getIntegerValue()
    * @generated
    */
-  int INTEGER_VALUE = 51;
+  int INTEGER_VALUE = 53;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1903,7 +1959,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getRealValue()
    * @generated
    */
-  int REAL_VALUE = 52;
+  int REAL_VALUE = 54;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1931,7 +1987,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getUrlValue()
    * @generated
    */
-  int URL_VALUE = 53;
+  int URL_VALUE = 55;
 
   /**
    * The feature id for the '<em><b>Address</b></em>' containment reference.
@@ -1959,7 +2015,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getAddressValue()
    * @generated
    */
-  int ADDRESS_VALUE = 54;
+  int ADDRESS_VALUE = 56;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1987,7 +2043,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getSizeValue()
    * @generated
    */
-  int SIZE_VALUE = 55;
+  int SIZE_VALUE = 57;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -2024,7 +2080,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getMultiSizeValue()
    * @generated
    */
-  int MULTI_SIZE_VALUE = 56;
+  int MULTI_SIZE_VALUE = 58;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -2052,7 +2108,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getBgPositionValue()
    * @generated
    */
-  int BG_POSITION_VALUE = 57;
+  int BG_POSITION_VALUE = 59;
 
   /**
    * The feature id for the '<em><b>Absx</b></em>' containment reference.
@@ -2107,7 +2163,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getRepeatStyleValue()
    * @generated
    */
-  int REPEAT_STYLE_VALUE = 58;
+  int REPEAT_STYLE_VALUE = 60;
 
   /**
    * The feature id for the '<em><b>V</b></em>' attribute.
@@ -2144,7 +2200,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getBgSizeValue()
    * @generated
    */
-  int BG_SIZE_VALUE = 59;
+  int BG_SIZE_VALUE = 61;
 
   /**
    * The feature id for the '<em><b>Xsize</b></em>' containment reference.
@@ -2208,7 +2264,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getMultiPaintValue()
    * @generated
    */
-  int MULTI_PAINT_VALUE = 60;
+  int MULTI_PAINT_VALUE = 62;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -2236,7 +2292,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getBorderStyleValue()
    * @generated
    */
-  int BORDER_STYLE_VALUE = 61;
+  int BORDER_STYLE_VALUE = 63;
 
   /**
    * The feature id for the '<em><b>Dash Style</b></em>' containment reference.
@@ -2300,7 +2356,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getDashStyleValue()
    * @generated
    */
-  int DASH_STYLE_VALUE = 62;
+  int DASH_STYLE_VALUE = 64;
 
   /**
    * The feature id for the '<em><b>V</b></em>' attribute.
@@ -2328,7 +2384,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getSizeFill()
    * @generated
    */
-  int SIZE_FILL = 63;
+  int SIZE_FILL = 65;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -2365,7 +2421,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getFontValue()
    * @generated
    */
-  int FONT_VALUE = 64;
+  int FONT_VALUE = 66;
 
   /**
    * The feature id for the '<em><b>Style Or Weight String</b></em>' attribute.
@@ -2420,7 +2476,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getFontStyleValue()
    * @generated
    */
-  int FONT_STYLE_VALUE = 65;
+  int FONT_STYLE_VALUE = 67;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2448,7 +2504,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getFontWeightValue()
    * @generated
    */
-  int FONT_WEIGHT_VALUE = 66;
+  int FONT_WEIGHT_VALUE = 68;
 
   /**
    * The feature id for the '<em><b>Value String</b></em>' attribute.
@@ -2485,7 +2541,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getFontFamily()
    * @generated
    */
-  int FONT_FAMILY = 67;
+  int FONT_FAMILY = 69;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2513,7 +2569,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getPaintValue()
    * @generated
    */
-  int PAINT_VALUE = 68;
+  int PAINT_VALUE = 70;
 
   /**
    * The number of structural features of the '<em>Paint Value</em>' class.
@@ -2532,7 +2588,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getLinearGradient()
    * @generated
    */
-  int LINEAR_GRADIENT = 69;
+  int LINEAR_GRADIENT = 71;
 
   /**
    * The feature id for the '<em><b>X1</b></em>' containment reference.
@@ -2596,7 +2652,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getRadialGradient()
    * @generated
    */
-  int RADIAL_GRADIENT = 70;
+  int RADIAL_GRADIENT = 72;
 
   /**
    * The feature id for the '<em><b>Cx</b></em>' containment reference.
@@ -2669,7 +2725,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getStopValue()
    * @generated
    */
-  int STOP_VALUE = 71;
+  int STOP_VALUE = 73;
 
   /**
    * The feature id for the '<em><b>Pos</b></em>' containment reference.
@@ -2706,7 +2762,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getColorValue()
    * @generated
    */
-  int COLOR_VALUE = 72;
+  int COLOR_VALUE = 74;
 
   /**
    * The number of structural features of the '<em>Color Value</em>' class.
@@ -2725,7 +2781,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getLookedUpColor()
    * @generated
    */
-  int LOOKED_UP_COLOR = 73;
+  int LOOKED_UP_COLOR = 75;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2753,7 +2809,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getNamedColor()
    * @generated
    */
-  int NAMED_COLOR = 74;
+  int NAMED_COLOR = 76;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2781,7 +2837,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getRGBColor()
    * @generated
    */
-  int RGB_COLOR = 75;
+  int RGB_COLOR = 77;
 
   /**
    * The feature id for the '<em><b>Hex</b></em>' attribute.
@@ -2872,7 +2928,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getHSBColor()
    * @generated
    */
-  int HSB_COLOR = 76;
+  int HSB_COLOR = 78;
 
   /**
    * The feature id for the '<em><b>Hue</b></em>' containment reference.
@@ -2927,7 +2983,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getColorFunction()
    * @generated
    */
-  int COLOR_FUNCTION = 77;
+  int COLOR_FUNCTION = 79;
 
   /**
    * The feature id for the '<em><b>Orig</b></em>' containment reference.
@@ -2982,7 +3038,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getBooleanValue()
    * @generated
    */
-  int BOOLEAN_VALUE = 78;
+  int BOOLEAN_VALUE = 80;
 
   /**
    * The meta object id for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.HPositionValue <em>HPosition Value</em>}' enum.
@@ -2992,7 +3048,7 @@ public interface JFXCssPackage extends EPackage
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getHPositionValue()
    * @generated
    */
-  int HPOSITION_VALUE = 79;
+  int HPOSITION_VALUE = 81;
 
 
   /**
@@ -3091,15 +3147,15 @@ public interface JFXCssPackage extends EPackage
   EAttribute getSimpleSelector_Element();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getId <em>Id</em>}'.
+   * Returns the meta object for the containment reference '{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getId <em>Id</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
+   * @return the meta object for the containment reference '<em>Id</em>'.
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getId()
    * @see #getSimpleSelector()
    * @generated
    */
-  EAttribute getSimpleSelector_Id();
+  EReference getSimpleSelector_Id();
 
   /**
    * Returns the meta object for the containment reference list '{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getPseudoClass <em>Pseudo Class</em>}'.
@@ -3113,36 +3169,78 @@ public interface JFXCssPackage extends EPackage
   EReference getSimpleSelector_PseudoClass();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getClass_ <em>Class</em>}'.
+   * Returns the meta object for the containment reference '{@link at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getClass_ <em>Class</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Class</em>'.
+   * @return the meta object for the containment reference '<em>Class</em>'.
    * @see at.bestsolution.e4.jfx.xtext.jFXCss.SimpleSelector#getClass_()
    * @see #getSimpleSelector()
    * @generated
    */
-  EAttribute getSimpleSelector_Class();
+  EReference getSimpleSelector_Class();
 
   /**
-   * Returns the meta object for class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.ElementPseudoClass <em>Element Pseudo Class</em>}'.
+   * Returns the meta object for class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.IdSelector <em>Id Selector</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Element Pseudo Class</em>'.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.ElementPseudoClass
+   * @return the meta object for class '<em>Id Selector</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.IdSelector
    * @generated
    */
-  EClass getElementPseudoClass();
+  EClass getIdSelector();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.e4.jfx.xtext.jFXCss.ElementPseudoClass#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link at.bestsolution.e4.jfx.xtext.jFXCss.IdSelector#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.IdSelector#getId()
+   * @see #getIdSelector()
+   * @generated
+   */
+  EAttribute getIdSelector_Id();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.ClassSelector <em>Class Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Class Selector</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.ClassSelector
+   * @generated
+   */
+  EClass getClassSelector();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.e4.jfx.xtext.jFXCss.ClassSelector#getClass_ <em>Class</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Class</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.ClassSelector#getClass_()
+   * @see #getClassSelector()
+   * @generated
+   */
+  EAttribute getClassSelector_Class();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.PseudoClassSelector <em>Pseudo Class Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pseudo Class Selector</em>'.
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.PseudoClassSelector
+   * @generated
+   */
+  EClass getPseudoClassSelector();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.e4.jfx.xtext.jFXCss.PseudoClassSelector#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see at.bestsolution.e4.jfx.xtext.jFXCss.ElementPseudoClass#getValue()
-   * @see #getElementPseudoClass()
+   * @see at.bestsolution.e4.jfx.xtext.jFXCss.PseudoClassSelector#getValue()
+   * @see #getPseudoClassSelector()
    * @generated
    */
-  EAttribute getElementPseudoClass_Value();
+  EAttribute getPseudoClassSelector_Value();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.e4.jfx.xtext.jFXCss.FXProperty <em>FX Property</em>}'.
@@ -5538,12 +5636,12 @@ public interface JFXCssPackage extends EPackage
     EAttribute SIMPLE_SELECTOR__ELEMENT = eINSTANCE.getSimpleSelector_Element();
 
     /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Id</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SIMPLE_SELECTOR__ID = eINSTANCE.getSimpleSelector_Id();
+    EReference SIMPLE_SELECTOR__ID = eINSTANCE.getSimpleSelector_Id();
 
     /**
      * The meta object literal for the '<em><b>Pseudo Class</b></em>' containment reference list feature.
@@ -5554,22 +5652,58 @@ public interface JFXCssPackage extends EPackage
     EReference SIMPLE_SELECTOR__PSEUDO_CLASS = eINSTANCE.getSimpleSelector_PseudoClass();
 
     /**
+     * The meta object literal for the '<em><b>Class</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_SELECTOR__CLASS = eINSTANCE.getSimpleSelector_Class();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.IdSelectorImpl <em>Id Selector</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.IdSelectorImpl
+     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getIdSelector()
+     * @generated
+     */
+    EClass ID_SELECTOR = eINSTANCE.getIdSelector();
+
+    /**
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ID_SELECTOR__ID = eINSTANCE.getIdSelector_Id();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.ClassSelectorImpl <em>Class Selector</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.ClassSelectorImpl
+     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getClassSelector()
+     * @generated
+     */
+    EClass CLASS_SELECTOR = eINSTANCE.getClassSelector();
+
+    /**
      * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SIMPLE_SELECTOR__CLASS = eINSTANCE.getSimpleSelector_Class();
+    EAttribute CLASS_SELECTOR__CLASS = eINSTANCE.getClassSelector_Class();
 
     /**
-     * The meta object literal for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.ElementPseudoClassImpl <em>Element Pseudo Class</em>}' class.
+     * The meta object literal for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.PseudoClassSelectorImpl <em>Pseudo Class Selector</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.ElementPseudoClassImpl
-     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getElementPseudoClass()
+     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.PseudoClassSelectorImpl
+     * @see at.bestsolution.e4.jfx.xtext.jFXCss.impl.JFXCssPackageImpl#getPseudoClassSelector()
      * @generated
      */
-    EClass ELEMENT_PSEUDO_CLASS = eINSTANCE.getElementPseudoClass();
+    EClass PSEUDO_CLASS_SELECTOR = eINSTANCE.getPseudoClassSelector();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -5577,7 +5711,7 @@ public interface JFXCssPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ELEMENT_PSEUDO_CLASS__VALUE = eINSTANCE.getElementPseudoClass_Value();
+    EAttribute PSEUDO_CLASS_SELECTOR__VALUE = eINSTANCE.getPseudoClassSelector_Value();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.e4.jfx.xtext.jFXCss.impl.FXPropertyImpl <em>FX Property</em>}' class.
